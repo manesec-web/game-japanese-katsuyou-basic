@@ -1,0 +1,2422 @@
+{
+  "lesson_40": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "数える",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえる",
+          "sentence": [
+            {
+              "japanese": "先生は 黒板の 前に 立って、生徒の 人数を 数える。",
+              "chinese": "老師站在黑板前數學生的人數。"
+            },
+            {
+              "japanese": "毎晩 寝る 前に、その 日の お金を 数える。",
+              "chinese": "每天晚上睡前都數當天的錢。"
+            },
+            {
+              "japanese": "妹は 1から 100まで 数える ことが できる。",
+              "chinese": "妹妹能從一數到一百。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "数えます",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえます",
+          "sentence": [
+            {
+              "japanese": "店長は 毎朝 商品の 数を 数えます。",
+              "chinese": "店長每天早上數商品的數量。"
+            },
+            {
+              "japanese": "子どもたちは 公園で 石を 数えます。",
+              "chinese": "孩子們在公園數石頭。"
+            },
+            {
+              "japanese": "会計の 前に もう 一度 お金を 数えます。",
+              "chinese": "結帳前再數一次錢。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "数えません",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえません",
+          "sentence": [
+            {
+              "japanese": "この 店では 売れた 数を 数えません。",
+              "chinese": "這家店不數賣出的數量。"
+            },
+            {
+              "japanese": "時間が ないので、今日は 数を 数えません。",
+              "chinese": "因為沒時間，今天不數數量。"
+            },
+            {
+              "japanese": "兄は お釣りを 数えません。",
+              "chinese": "哥哥不數找零。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "数えました",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえました",
+          "sentence": [
+            {
+              "japanese": "昨日 店で 売れた 商品を 数えました。",
+              "chinese": "昨天數了店裡賣出的商品。"
+            },
+            {
+              "japanese": "先生は 教室の いすを 数えました。",
+              "chinese": "老師數了教室的椅子。"
+            },
+            {
+              "japanese": "旅行の 前に 荷物を 数えました。",
+              "chinese": "旅行前數了行李。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "数えませんでした",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 忙しくて、お金を 数えませんでした。",
+              "chinese": "昨天太忙，沒有數錢。"
+            },
+            {
+              "japanese": "私は 小さい ころ、星を 数えませんでした。",
+              "chinese": "我小時候沒有數星星。"
+            },
+            {
+              "japanese": "会議で 人数を 数えませんでした。",
+              "chinese": "開會時沒有數人數。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "数えない",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえない",
+          "sentence": [
+            {
+              "japanese": "この 部屋の いすは 多すぎて、一人では 数えない。",
+              "chinese": "這房間的椅子太多，一個人數不完。"
+            },
+            {
+              "japanese": "うちの 店では 売り上げを 毎日は 数えない。",
+              "chinese": "我們店不是每天數營業額。"
+            },
+            {
+              "japanese": "弟は まだ 10まで 数えない。",
+              "chinese": "弟弟還不會數到十。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "数えた",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえた",
+          "sentence": [
+            {
+              "japanese": "店の 人が お釣りを 数えた。",
+              "chinese": "店員數了找零。"
+            },
+            {
+              "japanese": "昨夜 私は 星空の 星を 数えた。",
+              "chinese": "昨晚我數了滿天的星星。"
+            },
+            {
+              "japanese": "先生は テストの 枚数を 数えた。",
+              "chinese": "老師數了考卷的張數。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "数えなかった",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 数が 多くて、全部は 数えなかった。",
+              "chinese": "昨天數量太多，沒有全部數完。"
+            },
+            {
+              "japanese": "妹は お菓子を 数えなかった。",
+              "chinese": "妹妹沒有數點心。"
+            },
+            {
+              "japanese": "私は 小さい ころ、お金を 数えなかった。",
+              "chinese": "我小時候沒有數過錢。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "数えて",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえて",
+          "sentence": [
+            {
+              "japanese": "一つずつ 数えて、かごに 入れて ください。",
+              "chinese": "請一個一個數好後放進籃子。"
+            },
+            {
+              "japanese": "店員は お金を 数えて、レジに 入れた。",
+              "chinese": "店員數了錢後放進收銀機。"
+            },
+            {
+              "japanese": "みんなで 人数を 数えてから、席を 決めた。",
+              "chinese": "大家一起數了人數之後才決定座位。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "数えられる",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえられる",
+          "sentence": [
+            {
+              "japanese": "この アプリで 写真の 中の 人を 数えられる。",
+              "chinese": "用這個應用程式可以數照片裡的人。"
+            },
+            {
+              "japanese": "私は 100まで 数えられる。",
+              "chinese": "我能數到一百。"
+            },
+            {
+              "japanese": "この 機械は 1分で 部品を 数えられる。",
+              "chinese": "這台機器一分鐘就能數完零件。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "数えよう",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえよう",
+          "sentence": [
+            {
+              "japanese": "会議の 前に もう 一度 人数を 数えよう。",
+              "chinese": "開會前再數一次人數吧。"
+            },
+            {
+              "japanese": "みんなで 声を 出して 1から 10まで 数えよう。",
+              "chinese": "大家出聲從一數到十吧。"
+            },
+            {
+              "japanese": "まず 売れた 数を 数えよう。",
+              "chinese": "先數賣出的數量吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "数えろ",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえろ",
+          "sentence": [
+            {
+              "japanese": "店長は 新人に「もう 一度 お金を 数えろ」と 言った。",
+              "chinese": "店長對新人說「再數一次錢」。"
+            },
+            {
+              "japanese": "先生は 生徒に「黒板の 字を 数えろ」と 指示した。",
+              "chinese": "老師指示學生「數黑板上的字」。"
+            },
+            {
+              "japanese": "コーチは「ボールを 数えろ」と 叫んだ。",
+              "chinese": "教練大喊「數球」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "数えれば",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえれば",
+          "sentence": [
+            {
+              "japanese": "一つずつ 数えれば、間違いが 少ない。",
+              "chinese": "一個一個數的話，錯誤就少。"
+            },
+            {
+              "japanese": "毎日 お金を 数えれば、使いすぎに 気が つく。",
+              "chinese": "每天數錢的話，就會注意到花太多。"
+            },
+            {
+              "japanese": "人数を 数えれば、いすが 足りるか わかる。",
+              "chinese": "數了人數就知道椅子夠不夠。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "数えられる",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえられる",
+          "sentence": [
+            {
+              "japanese": "お金は 店員に 数えられる。",
+              "chinese": "錢由店員來數。"
+            },
+            {
+              "japanese": "答案は 先生に 数えられる。",
+              "chinese": "考卷由老師來數。"
+            },
+            {
+              "japanese": "商品は 毎朝 店長に 数えられる。",
+              "chinese": "商品每天早上由店長來數。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "数えさせる",
+          "group": "2",
+          "chinese": "數; 計算",
+          "japanese": "かぞえさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 生徒に 人数を 数えさせる。",
+              "chinese": "老師讓學生數人數。"
+            },
+            {
+              "japanese": "店長は 新人に お金を 数えさせる。",
+              "chinese": "店長讓新人數錢。"
+            },
+            {
+              "japanese": "親は 子どもに お菓子を 数えさせる。",
+              "chinese": "父母讓孩子數點心。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "計る",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はかる",
+          "sentence": [
+            {
+              "japanese": "この 荷物の 重さを 計る。",
+              "chinese": "量這件行李的重量。"
+            },
+            {
+              "japanese": "駅の 係の 人は スーツケースの 重さを 計る。",
+              "chinese": "車站人員會稱行李箱的重量。"
+            },
+            {
+              "japanese": "長さを 計る には メジャーが 必要だ。",
+              "chinese": "量長度需要捲尺。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "計ります",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はかります",
+          "sentence": [
+            {
+              "japanese": "空港で 荷物の 重さを 計ります。",
+              "chinese": "在機場稱行李的重量。"
+            },
+            {
+              "japanese": "医者は 患者の 体重を 計ります。",
+              "chinese": "醫生量患者的體重。"
+            },
+            {
+              "japanese": "この 大会では 走った 時間を 計ります。",
+              "chinese": "這個大會會計時跑步的時間。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "計りません",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はかりません",
+          "sentence": [
+            {
+              "japanese": "手荷物は ここでは 計りません。",
+              "chinese": "手提行李在這裡不稱重。"
+            },
+            {
+              "japanese": "今日は 時間を 計りません。",
+              "chinese": "今天不計時。"
+            },
+            {
+              "japanese": "この 店では 長さを 計りません。",
+              "chinese": "這家店不量長度。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "計りました",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はかりました",
+          "sentence": [
+            {
+              "japanese": "昨日 空港で 荷物を 計りました。",
+              "chinese": "昨天在機場稱了行李。"
+            },
+            {
+              "japanese": "マラソンの 前に 体重を 計りました。",
+              "chinese": "馬拉松前量了體重。"
+            },
+            {
+              "japanese": "店の 人が スーツの サイズを 計りました。",
+              "chinese": "店員量了西裝的尺寸。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "計りませんでした",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はかりませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 忙しくて、重さを 計りませんでした。",
+              "chinese": "昨天太忙，沒有稱重量。"
+            },
+            {
+              "japanese": "小さい 荷物は 計りませんでした。",
+              "chinese": "小的行李沒有稱重。"
+            },
+            {
+              "japanese": "時間が なくて、長さを 計りませんでした。",
+              "chinese": "因為沒時間，沒有量長度。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "計らない",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はからない",
+          "sentence": [
+            {
+              "japanese": "この はかりは 壊れて いて、重さを 計らない。",
+              "chinese": "這個秤壞了，不量重量。"
+            },
+            {
+              "japanese": "手荷物は だれも 計らない。",
+              "chinese": "手提行李誰都不稱。"
+            },
+            {
+              "japanese": "時間を 計らないと、記録が 残らない。",
+              "chinese": "不計時的話就沒有記錄。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "計った",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はかった",
+          "sentence": [
+            {
+              "japanese": "出発の 前に 荷物を 計った。",
+              "chinese": "出發前稱了行李。"
+            },
+            {
+              "japanese": "先生は 教室の 長さを 計った。",
+              "chinese": "老師量了教室的長度。"
+            },
+            {
+              "japanese": "係の 人が スーツケースを 計った。",
+              "chinese": "工作人員稱了行李箱。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "計らなかった",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はからなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 時間を 計らなかった。",
+              "chinese": "昨天沒有計時。"
+            },
+            {
+              "japanese": "私は 体重を 計らなかった。",
+              "chinese": "我沒有量體重。"
+            },
+            {
+              "japanese": "店では サイズを 計らなかった。",
+              "chinese": "店裡沒有量尺寸。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "計って",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はかって",
+          "sentence": [
+            {
+              "japanese": "重さを 計って、表に 書いた。",
+              "chinese": "稱了重量後寫在表上。"
+            },
+            {
+              "japanese": "まず 荷物を 計ってから、中に 入れて ください。",
+              "chinese": "請先稱行李再放進去。"
+            },
+            {
+              "japanese": "係の 人は 長さを 計って、切符を くれた。",
+              "chinese": "工作人員量了長度後給我票。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "計れる",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はかれる",
+          "sentence": [
+            {
+              "japanese": "この はかりで 赤ちゃんの 体重も 計れる。",
+              "chinese": "這個秤也能量嬰兒的體重。"
+            },
+            {
+              "japanese": "メジャーが あれば、部屋の 長さを 計れる。",
+              "chinese": "有捲尺就能量房間的長度。"
+            },
+            {
+              "japanese": "1分で 荷物の 重さを 計れる。",
+              "chinese": "一分鐘就能稱完行李的重量。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "計ろう",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はかろう",
+          "sentence": [
+            {
+              "japanese": "出発の 前に もう 一度 荷物を 計ろう。",
+              "chinese": "出發前再稱一次行李吧。"
+            },
+            {
+              "japanese": "みんなで 体重を 計ろう。",
+              "chinese": "大家來量體重吧。"
+            },
+            {
+              "japanese": "まず スーツケースの 重さを 計ろう。",
+              "chinese": "先稱行李箱的重量吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "計れ",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はかれ",
+          "sentence": [
+            {
+              "japanese": "係の 人は 客に「ここで 荷物を 計れ」と 言った。",
+              "chinese": "工作人員對客人說「在這裡稱行李」。"
+            },
+            {
+              "japanese": "先生は 生徒に「この ひもの 長さを 計れ」と 指示した。",
+              "chinese": "老師指示學生「量這條繩子的長度」。"
+            },
+            {
+              "japanese": "コーチは「走った 時間を 計れ」と 叫んだ。",
+              "chinese": "教練大喊「計時跑步時間」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "計れば",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はかれば",
+          "sentence": [
+            {
+              "japanese": "重さを 計れば、送料が わかる。",
+              "chinese": "稱了重量就知道運費。"
+            },
+            {
+              "japanese": "毎日 体重を 計れば、変化が わかる。",
+              "chinese": "每天量體重就能知道變化。"
+            },
+            {
+              "japanese": "時間を 計れば、どの くらい 速いか わかる。",
+              "chinese": "計時就能知道有多快。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "計られる",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はかられる",
+          "sentence": [
+            {
+              "japanese": "荷物は 空港で 係の 人に 計られる。",
+              "chinese": "行李在機場由工作人員稱重。"
+            },
+            {
+              "japanese": "体重は 病院で 看護師に 計られる。",
+              "chinese": "體重在醫院由護士量。"
+            },
+            {
+              "japanese": "長さは 店の 人に 計られる。",
+              "chinese": "長度由店員量。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "計らせる",
+          "group": "1",
+          "chinese": "計量; 測量; 稱重",
+          "japanese": "はからせる",
+          "sentence": [
+            {
+              "japanese": "店の 人は 客に 荷物を 計らせる。",
+              "chinese": "店員讓客人自己稱行李。"
+            },
+            {
+              "japanese": "先生は 生徒に 体重を 計らせる。",
+              "chinese": "老師讓學生量體重。"
+            },
+            {
+              "japanese": "コーチは 選手に 時間を 計らせる。",
+              "chinese": "教練讓選手計時。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "確かめる",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめる",
+          "sentence": [
+            {
+              "japanese": "出発の 前に もう 一度 時間を 確かめる。",
+              "chinese": "出發前再確認一次時間。"
+            },
+            {
+              "japanese": "私は 毎朝 天気を 確かめる。",
+              "chinese": "我每天早上確認天氣。"
+            },
+            {
+              "japanese": "会議の 前に 人数を 確かめる。",
+              "chinese": "開會前確認人數。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "確かめます",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめます",
+          "sentence": [
+            {
+              "japanese": "先生は 試験の 日を 確かめます。",
+              "chinese": "老師確認考試的日期。"
+            },
+            {
+              "japanese": "出かける 前に かぎを 確かめます。",
+              "chinese": "出門前確認鑰匙。"
+            },
+            {
+              "japanese": "店の 人は サイズを 確かめます。",
+              "chinese": "店員確認尺寸。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "確かめません",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめません",
+          "sentence": [
+            {
+              "japanese": "私は まだ 帰る 時間を 確かめません。",
+              "chinese": "我還沒有確認回去的時間。"
+            },
+            {
+              "japanese": "この 店では 予約の 名前を 確かめません。",
+              "chinese": "這家店不確認預約的名字。"
+            },
+            {
+              "japanese": "急いで いる 時は 値段を 確かめません。",
+              "chinese": "趕時間的時候不確認價格。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "確かめました",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめました",
+          "sentence": [
+            {
+              "japanese": "出発の 前に 切符の 時間を 確かめました。",
+              "chinese": "出發前確認了車票的時間。"
+            },
+            {
+              "japanese": "兄は 会場の 場所を 確かめました。",
+              "chinese": "哥哥確認了會場的地點。"
+            },
+            {
+              "japanese": "私は 忘年会の 日にちを 確かめました。",
+              "chinese": "我確認了忘年會的日子。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "確かめませんでした",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめませんでした",
+          "sentence": [
+            {
+              "japanese": "旅行の 前に ホテルの 場所を 確かめませんでした。",
+              "chinese": "旅行前沒有確認飯店的地點。"
+            },
+            {
+              "japanese": "私は テストの 日を 確かめませんでした。",
+              "chinese": "我沒有確認考試的日子。"
+            },
+            {
+              "japanese": "出発の 前に 荷物の 数を 確かめませんでした。",
+              "chinese": "出發前沒有確認行李的數量。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "確かめない",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめない",
+          "sentence": [
+            {
+              "japanese": "だれも 会場の 場所を 確かめない。",
+              "chinese": "沒有人確認會場的地點。"
+            },
+            {
+              "japanese": "時間を 確かめないと、遅れるよ。",
+              "chinese": "不確認時間的話會遲到喔。"
+            },
+            {
+              "japanese": "この 店の 人は 値段を 確かめない。",
+              "chinese": "這家店的人不確認價格。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "確かめた",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめた",
+          "sentence": [
+            {
+              "japanese": "出発の 朝、もう 一度 時間を 確かめた。",
+              "chinese": "出發當天早上又確認了一次時間。"
+            },
+            {
+              "japanese": "母は 忘年会の 場所を 確かめた。",
+              "chinese": "媽媽確認了忘年會的地點。"
+            },
+            {
+              "japanese": "店の 人が サイズを 確かめた。",
+              "chinese": "店員確認了尺寸。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "確かめなかった",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめなかった",
+          "sentence": [
+            {
+              "japanese": "私は 会場の 場所を 確かめなかった。",
+              "chinese": "我沒有確認會場的地點。"
+            },
+            {
+              "japanese": "兄は テストの 日を 確かめなかった。",
+              "chinese": "哥哥沒有確認考試的日子。"
+            },
+            {
+              "japanese": "時間を 確かめなかったので、遅れた。",
+              "chinese": "因為沒有確認時間，所以遲到了。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "確かめて",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめて",
+          "sentence": [
+            {
+              "japanese": "時間を 確かめてから、出発した。",
+              "chinese": "確認時間後才出發。"
+            },
+            {
+              "japanese": "まず 会場を 確かめて、それから 申し込んで ください。",
+              "chinese": "請先確認會場再報名。"
+            },
+            {
+              "japanese": "店の 人は サイズを 確かめて、ズボンを 出した。",
+              "chinese": "店員確認尺寸後拿出了褲子。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "確かめられる",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめられる",
+          "sentence": [
+            {
+              "japanese": "この アプリで 会場の 場所を 確かめられる。",
+              "chinese": "用這個應用程式可以確認會場的地點。"
+            },
+            {
+              "japanese": "一 度 電話すれば、時間を 確かめられる。",
+              "chinese": "打一次電話就能確認時間。"
+            },
+            {
+              "japanese": "インターネットで ホテルの 値段を 確かめられる。",
+              "chinese": "在網路上可以確認飯店的價格。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "確かめよう",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめよう",
+          "sentence": [
+            {
+              "japanese": "出発の 前に もう 一度 時間を 確かめよう。",
+              "chinese": "出發前再確認一次時間吧。"
+            },
+            {
+              "japanese": "みんなで 会場の 場所を 確かめよう。",
+              "chinese": "大家一起確認會場的地點吧。"
+            },
+            {
+              "japanese": "まず 申し込みの 日を 確かめよう。",
+              "chinese": "先確認報名的日期吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "確かめろ",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめろ",
+          "sentence": [
+            {
+              "japanese": "先生は 生徒に「家で 時間を 確かめろ」と 言った。",
+              "chinese": "老師對學生說「在家確認時間」。"
+            },
+            {
+              "japanese": "係の 人は「出発の 前に 切符を 確かめろ」と 言った。",
+              "chinese": "工作人員說「出發前確認車票」。"
+            },
+            {
+              "japanese": "コーチは「会場の 場所を 確かめろ」と 指示した。",
+              "chinese": "教練指示「確認會場的地點」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "確かめれば",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめれば",
+          "sentence": [
+            {
+              "japanese": "時間を 確かめれば、安心だ。",
+              "chinese": "確認了時間就安心了。"
+            },
+            {
+              "japanese": "地図で 場所を 確かめれば、迷わない。",
+              "chinese": "用地圖確認地點就不會迷路。"
+            },
+            {
+              "japanese": "値段を 確かめれば、買うか どうか 決められる。",
+              "chinese": "確認價格就能決定買不買。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "確かめられる",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめられる",
+          "sentence": [
+            {
+              "japanese": "この 申し込みは 店の 人に 確かめられる。",
+              "chinese": "這份報名由店員確認。"
+            },
+            {
+              "japanese": "テストの 日は 事務所で 確かめられる。",
+              "chinese": "考試的日子在辦公室確認。"
+            },
+            {
+              "japanese": "会場の 場所は 係の 人に 確かめられる。",
+              "chinese": "會場的地點由工作人員確認。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "確かめさせる",
+          "group": "2",
+          "chinese": "確認; 查明",
+          "japanese": "たしかめさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 会場の 場所を 確かめさせる。",
+              "chinese": "老師讓學生確認會場的地點。"
+            },
+            {
+              "japanese": "店の 人は 客に サイズを 確かめさせる。",
+              "chinese": "店員讓客人確認尺寸。"
+            },
+            {
+              "japanese": "親は 子どもに 時間を 確かめさせる。",
+              "chinese": "父母讓孩子確認時間。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "合う",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あう",
+          "sentence": [
+            {
+              "japanese": "この ズボンは 私の 足に 合う。",
+              "chinese": "這條褲子適合我的腿。"
+            },
+            {
+              "japanese": "この ネクタイは スーツに 合う。",
+              "chinese": "這條領帶和西裝很配。"
+            },
+            {
+              "japanese": "二人の 意見は いつも 合う。",
+              "chinese": "兩個人的意見總是一致。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "合います",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あいます",
+          "sentence": [
+            {
+              "japanese": "この サイズが 私に 合います。",
+              "chinese": "這個尺寸適合我。"
+            },
+            {
+              "japanese": "その 色は 会場の 雰囲気に 合います。",
+              "chinese": "那個顏色和會場的氣氛很配。"
+            },
+            {
+              "japanese": "この 靴は 足に 合いますか。",
+              "chinese": "這雙鞋合腳嗎？"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "合いません",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あいません",
+          "sentence": [
+            {
+              "japanese": "この シャツは 私に 合いません。",
+              "chinese": "這件襯衫不適合我。"
+            },
+            {
+              "japanese": "この ズボンは 長さが 合いません。",
+              "chinese": "這條褲子的長度不合。"
+            },
+            {
+              "japanese": "その 意見は みんなの 考えと 合いません。",
+              "chinese": "那個意見和大家的想法不一致。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "合いました",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あいました",
+          "sentence": [
+            {
+              "japanese": "先週 買った 靴は 足に 合いました。",
+              "chinese": "上週買的鞋很合腳。"
+            },
+            {
+              "japanese": "二人の 答えは 最後に 合いました。",
+              "chinese": "兩個人的答案最後一致了。"
+            },
+            {
+              "japanese": "その 色は 部屋に 合いました。",
+              "chinese": "那個顏色和房間很配。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "合いませんでした",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あいませんでした",
+          "sentence": [
+            {
+              "japanese": "この スーツは 私の 体に 合いませんでした。",
+              "chinese": "這套西裝不適合我的身材。"
+            },
+            {
+              "japanese": "昨日の シャツは ネクタイに 合いませんでした。",
+              "chinese": "昨天的襯衫和領帶不配。"
+            },
+            {
+              "japanese": "話し合いは 長かったが、意見は 合いませんでした。",
+              "chinese": "討論了很久，但意見沒有達成一致。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "合わない",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あわない",
+          "sentence": [
+            {
+              "japanese": "この ズボンは 長さが 合わない。",
+              "chinese": "這條褲子的長度不合。"
+            },
+            {
+              "japanese": "私の 考えは 彼と 合わない。",
+              "chinese": "我的想法和他不合。"
+            },
+            {
+              "japanese": "その 靴は サイズが 合わない。",
+              "chinese": "那雙鞋的尺寸不合。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "合った",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あった",
+          "sentence": [
+            {
+              "japanese": "この ネクタイは スーツに 合った。",
+              "chinese": "這條領帶和西裝很配。"
+            },
+            {
+              "japanese": "二人の 意見が 合ったので、話が 早く 進んだ。",
+              "chinese": "因為兩個人意見一致，事情進展得很快。"
+            },
+            {
+              "japanese": "新しい 机は 部屋に 合った。",
+              "chinese": "新的桌子很配房間。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "合わなかった",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あわなかった",
+          "sentence": [
+            {
+              "japanese": "あの 色は 私に 合わなかった。",
+              "chinese": "那個顏色不適合我。"
+            },
+            {
+              "japanese": "その 靴は 足に 合わなかった。",
+              "chinese": "那雙鞋不合腳。"
+            },
+            {
+              "japanese": "みんなの 考えは 合わなかった。",
+              "chinese": "大家的想法不一致。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "合って",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あって",
+          "sentence": [
+            {
+              "japanese": "サイズが 合って、とても 楽だ。",
+              "chinese": "尺寸剛好，很舒服。"
+            },
+            {
+              "japanese": "二人の 意見が 合って、すぐに 決まった。",
+              "chinese": "兩個人意見一致，馬上就決定了。"
+            },
+            {
+              "japanese": "この 色は 服に 合って いる。",
+              "chinese": "這個顏色和衣服很配。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "合える",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あえる",
+          "sentence": [
+            {
+              "japanese": "気の 合える 友達と 旅行に 行った。",
+              "chinese": "和合得來的朋友去旅行了。"
+            },
+            {
+              "japanese": "話の 合える 人と 一緒に 働いて いる。",
+              "chinese": "和談得來的人一起工作。"
+            },
+            {
+              "japanese": "息の 合える 選手と 組むと、 試合が 楽だ。",
+              "chinese": "和默契合的選手搭檔，比賽就輕鬆。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "合おう",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あおう",
+          "sentence": [
+            {
+              "japanese": "みんなで 声を 合おう。",
+              "chinese": "大家一起把聲音對齊吧。"
+            },
+            {
+              "japanese": "まず 予定を 合おう。",
+              "chinese": "先對一下行程吧。"
+            },
+            {
+              "japanese": "最後に もう 一度 意見を 合おう。",
+              "chinese": "最後再對一次意見吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "合え",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あえ",
+          "sentence": [
+            {
+              "japanese": "コーチは 選手に「もっと 相手の リズムに 合え」と 叫んだ。",
+              "chinese": "教練對選手大喊「更配合對方的節奏」。"
+            },
+            {
+              "japanese": "監督は「声を 合え」と 指示した。",
+              "chinese": "教練指示「把聲音對齊」。"
+            },
+            {
+              "japanese": "先生は 生徒に「前に 出て、声を 合え」と 言った。",
+              "chinese": "老師對學生說「到前面來，把聲音對齊」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "合えば",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あえば",
+          "sentence": [
+            {
+              "japanese": "サイズが 合えば、この 靴を 買います。",
+              "chinese": "尺寸合的話就買這雙鞋。"
+            },
+            {
+              "japanese": "色が 合えば、この ネクタイも 買う。",
+              "chinese": "顏色配的話也買這條領帶。"
+            },
+            {
+              "japanese": "意見が 合えば、すぐに 決まる。",
+              "chinese": "意見一致的話馬上就能決定。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "合われる",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あわれる",
+          "sentence": [
+            {
+              "japanese": "この スーツは 彼の 体に 合われるように 仕立てられた。",
+              "chinese": "這套西裝是照他的身材訂做的。"
+            },
+            {
+              "japanese": "その 色は 若い 人に 合われる ことが 多い。",
+              "chinese": "那個顏色常被年輕人選用。"
+            },
+            {
+              "japanese": "サイズは 店の 人に 合われる ので、少し 時間が かかる。",
+              "chinese": "尺寸由店員調整，所以要花一點時間。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "合わせる",
+          "group": "1",
+          "chinese": "合適; 相配; 一致",
+          "japanese": "あわせる",
+          "sentence": [
+            {
+              "japanese": "店の 人は お客さんの 足に 靴を 合わせる。",
+              "chinese": "店員配合客人的腳調整鞋子。"
+            },
+            {
+              "japanese": "母は 子どもの 体に 服の サイズを 合わせる。",
+              "chinese": "媽媽依孩子的身材調整衣服的尺寸。"
+            },
+            {
+              "japanese": "コーチは 選手の 動きを 相手に 合わせる。",
+              "chinese": "教練讓選手的動作配合對手。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "出発する",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつする",
+          "sentence": [
+            {
+              "japanese": "列車は 7時に 出発する。",
+              "chinese": "列車七點出發。"
+            },
+            {
+              "japanese": "私たちは 明日の 朝 6時に 出発する。",
+              "chinese": "我們明天早上六點出發。"
+            },
+            {
+              "japanese": "ツアーは 駅の 前で 出発する。",
+              "chinese": "旅行團在車站前出發。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "出発します",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつします",
+          "sentence": [
+            {
+              "japanese": "飛行機は 10時に 出発します。",
+              "chinese": "飛機十點出發。"
+            },
+            {
+              "japanese": "会議の 後で すぐに 出発します。",
+              "chinese": "會議結束後馬上出發。"
+            },
+            {
+              "japanese": "バスは 8時に 出発します。",
+              "chinese": "巴士八點出發。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "出発しません",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつしません",
+          "sentence": [
+            {
+              "japanese": "台風の 日は 飛行機が 出発しません。",
+              "chinese": "颱風天飛機不飛。"
+            },
+            {
+              "japanese": "この 便は 月曜日には 出発しません。",
+              "chinese": "這個班次星期一不出發。"
+            },
+            {
+              "japanese": "雪で バスは 出発しません。",
+              "chinese": "因為下雪，巴士不出發。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "出発しました",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつしました",
+          "sentence": [
+            {
+              "japanese": "列車は 定刻に 出発しました。",
+              "chinese": "列車準時出發了。"
+            },
+            {
+              "japanese": "私たちは 朝 5時に 出発しました。",
+              "chinese": "我們早上五點出發了。"
+            },
+            {
+              "japanese": "マラソンの 選手は 一斉に 出発しました。",
+              "chinese": "馬拉松選手一起出發了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "出発しませんでした",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつしませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は ストで バスが 出発しませんでした。",
+              "chinese": "昨天因為罷工，巴士沒有出發。"
+            },
+            {
+              "japanese": "雨で ツアーは 出発しませんでした。",
+              "chinese": "因為下雨，旅行團沒有出發。"
+            },
+            {
+              "japanese": "私の 便は 時間どおり 出発しませんでした。",
+              "chinese": "我的班機沒有準時出發。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "出発しない",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつしない",
+          "sentence": [
+            {
+              "japanese": "霧で 飛行機が 出発しない。",
+              "chinese": "因為起霧，飛機不出發。"
+            },
+            {
+              "japanese": "今日は 船が 出発しない。",
+              "chinese": "今天船不出發。"
+            },
+            {
+              "japanese": "人数が 足りないと バスは 出発しない。",
+              "chinese": "人數不夠的話巴士不出發。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "出発した",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつした",
+          "sentence": [
+            {
+              "japanese": "バスは 6時に 出発した。",
+              "chinese": "巴士六點出發了。"
+            },
+            {
+              "japanese": "みんなは 駅を 出発した。",
+              "chinese": "大家從車站出發了。"
+            },
+            {
+              "japanese": "飛行機は 雪の 中を 出発した。",
+              "chinese": "飛機在雪中出發了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "出発しなかった",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつしなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 台風で 飛行機が 出発しなかった。",
+              "chinese": "昨天因為颱風，飛機沒有出發。"
+            },
+            {
+              "japanese": "バスは 時間どおり 出発しなかった。",
+              "chinese": "巴士沒有準時出發。"
+            },
+            {
+              "japanese": "ツアーは 雨で 出発しなかった。",
+              "chinese": "旅行團因為下雨沒有出發。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "出発して",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつして",
+          "sentence": [
+            {
+              "japanese": "朝 6時に 出発して、昼に 着いた。",
+              "chinese": "早上六點出發，中午到達。"
+            },
+            {
+              "japanese": "全員が そろって 出発して ください。",
+              "chinese": "請全員到齊後出發。"
+            },
+            {
+              "japanese": "私たちは 駅を 出発して、海へ 向かった。",
+              "chinese": "我們從車站出發，往海邊去。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "出発できる",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつできる",
+          "sentence": [
+            {
+              "japanese": "準備が できたら 出発できる。",
+              "chinese": "準備好了就能出發。"
+            },
+            {
+              "japanese": "この 天気なら 飛行機は 出発できる。",
+              "chinese": "這種天氣的話飛機可以起飛。"
+            },
+            {
+              "japanese": "工事が 終われば、8時に 出発できる。",
+              "chinese": "工程結束的話，八點就能出發。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "出発しよう",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつしよう",
+          "sentence": [
+            {
+              "japanese": "そろそろ 出発しよう。",
+              "chinese": "差不多該出發了。"
+            },
+            {
+              "japanese": "明日は 早いから、5時に 出発しよう。",
+              "chinese": "明天要早起，五點出發吧。"
+            },
+            {
+              "japanese": "雨が 止んだら 出発しよう。",
+              "chinese": "雨停了就出發吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "出発しろ",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつしろ",
+          "sentence": [
+            {
+              "japanese": "教官は 兵士に「すぐ 出発しろ」と 命じた。",
+              "chinese": "教官命令士兵「馬上出發」。"
+            },
+            {
+              "japanese": "監督は「10時までに 出発しろ」と 言った。",
+              "chinese": "教練說「十點前出發」。"
+            },
+            {
+              "japanese": "ガイドは 客に「8時に 出発しろ」と 言った。",
+              "chinese": "導遊對客人說「八點出發」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "出発すれば",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつすれば",
+          "sentence": [
+            {
+              "japanese": "今 出発すれば、昼までに 着く。",
+              "chinese": "現在出發的話，中午前就能到。"
+            },
+            {
+              "japanese": "6時に 出発すれば、渋滞に 合わない。",
+              "chinese": "六點出發的話就不會遇到塞車。"
+            },
+            {
+              "japanese": "早く 出発すれば、雨に 降られない。",
+              "chinese": "早點出發就不會淋到雨。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "出発される",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつされる",
+          "sentence": [
+            {
+              "japanese": "社長は 明日 東京を 出発される。",
+              "chinese": "社長明天從東京出發。"
+            },
+            {
+              "japanese": "お客様は 9時に 出発される。",
+              "chinese": "客人九點出發。"
+            },
+            {
+              "japanese": "先生は もう 出発される そうだ。",
+              "chinese": "聽說老師已經要出發了。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "出発させる",
+          "group": "3",
+          "chinese": "出發",
+          "japanese": "しゅっぱつさせる",
+          "sentence": [
+            {
+              "japanese": "台風の ため、空港は 飛行機を 早く 出発させる。",
+              "chinese": "因為颱風，機場讓飛機提早出發。"
+            },
+            {
+              "japanese": "会社は 社員を 午前中に 出発させる。",
+              "chinese": "公司讓員工上午出發。"
+            },
+            {
+              "japanese": "ガイドは 客を 7時に 出発させる。",
+              "chinese": "導遊讓客人七點出發。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "到着する",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくする",
+          "sentence": [
+            {
+              "japanese": "飛行機は 3時に 到着する。",
+              "chinese": "飛機三點到達。"
+            },
+            {
+              "japanese": "荷物は 明日 到着する。",
+              "chinese": "行李明天到達。"
+            },
+            {
+              "japanese": "マラソンの 選手は 夕方 到着する。",
+              "chinese": "馬拉松選手傍晚到達。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "到着します",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくします",
+          "sentence": [
+            {
+              "japanese": "列車は 9時に 到着します。",
+              "chinese": "列車九點到達。"
+            },
+            {
+              "japanese": "お客様は 11時に 到着します。",
+              "chinese": "客人十一點到達。"
+            },
+            {
+              "japanese": "荷物は 午後に 到着します。",
+              "chinese": "行李下午到達。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "到着しません",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくしません",
+          "sentence": [
+            {
+              "japanese": "この 便は 今日は 到着しません。",
+              "chinese": "這個班次今天不到達。"
+            },
+            {
+              "japanese": "雪で バスは 夜まで 到着しません。",
+              "chinese": "因為下雪，巴士到晚上都還沒到。"
+            },
+            {
+              "japanese": "荷物は 明日までは 到着しません。",
+              "chinese": "行李到明天都還不會到。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "到着しました",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくしました",
+          "sentence": [
+            {
+              "japanese": "飛行機は 予定どおり 到着しました。",
+              "chinese": "飛機按照預定到達了。"
+            },
+            {
+              "japanese": "私たちは 5時に 会場に 到着しました。",
+              "chinese": "我們五點到達會場。"
+            },
+            {
+              "japanese": "荷物は 今朝 到着しました。",
+              "chinese": "行李今天早上到了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "到着しませんでした",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくしませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 台風で 飛行機が 到着しませんでした。",
+              "chinese": "昨天因為颱風，飛機沒有到達。"
+            },
+            {
+              "japanese": "荷物は まだ 到着しませんでした。",
+              "chinese": "行李還沒有到。"
+            },
+            {
+              "japanese": "バスは 雪で 到着しませんでした。",
+              "chinese": "巴士因為下雪沒有到達。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "到着しない",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくしない",
+          "sentence": [
+            {
+              "japanese": "悪天候の 日は 飛行機が 到着しない。",
+              "chinese": "天氣不好的日子飛機不到達。"
+            },
+            {
+              "japanese": "荷物は まだ 到着しない。",
+              "chinese": "行李還沒到。"
+            },
+            {
+              "japanese": "この 便は 日曜日には 到着しない。",
+              "chinese": "這個班次星期天不到達。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "到着した",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくした",
+          "sentence": [
+            {
+              "japanese": "列車は 定刻に 到着した。",
+              "chinese": "列車準時到達了。"
+            },
+            {
+              "japanese": "荷物は 朝 到着した。",
+              "chinese": "行李早上到了。"
+            },
+            {
+              "japanese": "選手たちは 夕方 到着した。",
+              "chinese": "選手們傍晚到達了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "到着しなかった",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくしなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 荷物が 到着しなかった。",
+              "chinese": "昨天行李沒有到。"
+            },
+            {
+              "japanese": "飛行機は 霧で 到着しなかった。",
+              "chinese": "飛機因為霧沒有到達。"
+            },
+            {
+              "japanese": "お客様は 時間どおり 到着しなかった。",
+              "chinese": "客人沒有準時到達。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "到着して",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくして",
+          "sentence": [
+            {
+              "japanese": "荷物が 到着して、すぐに 開けた。",
+              "chinese": "行李到了就馬上打開了。"
+            },
+            {
+              "japanese": "お客様が 到着してから、会議を 始めた。",
+              "chinese": "客人到達後才開始會議。"
+            },
+            {
+              "japanese": "全員 到着して、ツアーが 始まった。",
+              "chinese": "全員到達後旅行團開始了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "到着できる",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくできる",
+          "sentence": [
+            {
+              "japanese": "この 天気なら 飛行機は 到着できる。",
+              "chinese": "這種天氣的話飛機可以到達。"
+            },
+            {
+              "japanese": "雪が やめば、 荷物は 午後に 到着できる。",
+              "chinese": "雪停了的話，行李下午就能送到。"
+            },
+            {
+              "japanese": "バスは 8時までに 到着できる。",
+              "chinese": "巴士八點前可以到達。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "到着しよう",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくしよう",
+          "sentence": [
+            {
+              "japanese": "夕方までに 到着しよう。",
+              "chinese": "傍晚前到達吧。"
+            },
+            {
+              "japanese": "急げば 昼までに 到着しよう。",
+              "chinese": "快一點的話中午前就能到吧。"
+            },
+            {
+              "japanese": "明日は 早く 到着しよう。",
+              "chinese": "明天早點到達吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "到着しろ",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくしろ",
+          "sentence": [
+            {
+              "japanese": "係の 人は 運転手に「9時までに 到着しろ」と 言った。",
+              "chinese": "工作人員對司機說「九點前到達」。"
+            },
+            {
+              "japanese": "ガイドは「5時に 会場に 到着しろ」と 指示した。",
+              "chinese": "導遊指示「五點到達會場」。"
+            },
+            {
+              "japanese": "コーチは 選手に「夕方までに 到着しろ」と 叫んだ。",
+              "chinese": "教練對選手大喊「傍晚前到達」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "到着すれば",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくすれば",
+          "sentence": [
+            {
+              "japanese": "飛行機が 予定どおり 到着すれば、3時に 会える。",
+              "chinese": "飛機照預定到達的話，三點就能見面。"
+            },
+            {
+              "japanese": "荷物が 到着すれば、すぐに 開ける。",
+              "chinese": "行李到了就馬上打開。"
+            },
+            {
+              "japanese": "早く 到着すれば、観光の 時間が ある。",
+              "chinese": "早點到達的話就有觀光的時間。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "到着される",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくされる",
+          "sentence": [
+            {
+              "japanese": "首相は 夕方 空港に 到着される。",
+              "chinese": "首相傍晚抵達機場。"
+            },
+            {
+              "japanese": "お客様は もう 到着される そうだ。",
+              "chinese": "聽說客人已經要到了。"
+            },
+            {
+              "japanese": "先生は 3時に 駅に 到着される。",
+              "chinese": "老師三點抵達車站。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "到着させる",
+          "group": "3",
+          "chinese": "到達; 抵達",
+          "japanese": "とうちゃくさせる",
+          "sentence": [
+            {
+              "japanese": "係の 人は 荷物を 先に 到着させる。",
+              "chinese": "工作人員讓行李先到達。"
+            },
+            {
+              "japanese": "バスの 会社は 客を 早く 到着させる。",
+              "chinese": "巴士公司讓客人早點到達。"
+            },
+            {
+              "japanese": "時間を 調整して、選手を 夕方に 到着させる。",
+              "chinese": "調整時間讓選手傍晚到達。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "酔う",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よう",
+          "sentence": [
+            {
+              "japanese": "彼は すぐに 酒に 酔う。",
+              "chinese": "他馬上就喝醉。"
+            },
+            {
+              "japanese": "私は 車に 酔う。",
+              "chinese": "我會暈車。"
+            },
+            {
+              "japanese": "忘年会で たくさん 飲むと 酔う。",
+              "chinese": "在忘年會喝太多就會醉。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "酔います",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よいます",
+          "sentence": [
+            {
+              "japanese": "父は ビール 1本でも 酔います。",
+              "chinese": "父親只喝一瓶啤酒也會醉。"
+            },
+            {
+              "japanese": "私は 長い 旅行の バスで 酔います。",
+              "chinese": "我搭長途旅行的巴士會暈車。"
+            },
+            {
+              "japanese": "先輩は 強い 酒に 酔います。",
+              "chinese": "學長喝烈酒會醉。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "酔いません",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よいません",
+          "sentence": [
+            {
+              "japanese": "私は ぜんぜん 酔いません。",
+              "chinese": "我一點也不會醉。"
+            },
+            {
+              "japanese": "彼は 車では 酔いません。",
+              "chinese": "他搭車不會暈。"
+            },
+            {
+              "japanese": "この くらいの 酒では 酔いません。",
+              "chinese": "這種程度的酒不會醉。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "酔いました",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よいました",
+          "sentence": [
+            {
+              "japanese": "昨日の 新年会で 酔いました。",
+              "chinese": "昨天的新年會上醉了。"
+            },
+            {
+              "japanese": "父は 二次会で 酔いました。",
+              "chinese": "父親在續攤時醉了。"
+            },
+            {
+              "japanese": "私は 山の 道で 酔いました。",
+              "chinese": "我在山路暈車了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "酔いませんでした",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よいませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 飲まなかったので、酔いませんでした。",
+              "chinese": "昨天沒喝酒，所以沒有醉。"
+            },
+            {
+              "japanese": "私は 車では 酔いませんでした。",
+              "chinese": "我搭車沒有暈。"
+            },
+            {
+              "japanese": "彼は 忘年会でも 酔いませんでした。",
+              "chinese": "他在忘年會也沒有醉。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "酔わない",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よわない",
+          "sentence": [
+            {
+              "japanese": "彼は 酒を 飲んでも 酔わない。",
+              "chinese": "他就算喝酒也不會醉。"
+            },
+            {
+              "japanese": "私は 船では 酔わない。",
+              "chinese": "我搭船不會暈。"
+            },
+            {
+              "japanese": "この くらいでは 酔わない。",
+              "chinese": "這種程度不會醉。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "酔った",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よった",
+          "sentence": [
+            {
+              "japanese": "二次会で 先輩が 酔った。",
+              "chinese": "續攤時學長醉了。"
+            },
+            {
+              "japanese": "私は バスで 酔った。",
+              "chinese": "我搭巴士暈車了。"
+            },
+            {
+              "japanese": "新年会で みんな 酔った。",
+              "chinese": "新年會上大家都醉了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "酔わなかった",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よわなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 車で 酔わなかった。",
+              "chinese": "昨天搭車沒有暈。"
+            },
+            {
+              "japanese": "彼は 忘年会で 酔わなかった。",
+              "chinese": "他在忘年會沒有醉。"
+            },
+            {
+              "japanese": "私は 船では 酔わなかった。",
+              "chinese": "我搭船沒有暈。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "酔って",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よって",
+          "sentence": [
+            {
+              "japanese": "酔って、駅で 降りた。",
+              "chinese": "暈車了，在車站下車。"
+            },
+            {
+              "japanese": "彼は 酔って、ねむそうだ。",
+              "chinese": "他醉了，看起來很想睡。"
+            },
+            {
+              "japanese": "父は 酔って、早く 寝た。",
+              "chinese": "父親醉了，很早就睡了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "酔える",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よえる",
+          "sentence": [
+            {
+              "japanese": "この 強い 酒なら すぐに 酔える。",
+              "chinese": "這種烈酒的話馬上就能醉。"
+            },
+            {
+              "japanese": "お金が なくても、安い 酒で 酔える。",
+              "chinese": "就算沒錢，便宜的也能喝醉。"
+            },
+            {
+              "japanese": "ビール 2本で 十分 酔える。",
+              "chinese": "兩瓶啤酒就足夠醉了。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "酔おう",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よおう",
+          "sentence": [
+            {
+              "japanese": "今夜は みんなで 酔おう。",
+              "chinese": "今晚大家一起喝醉吧。"
+            },
+            {
+              "japanese": "今日は 新年会だから、ゆっくり 酔おう。",
+              "chinese": "今天是新年會，慢慢喝醉吧。"
+            },
+            {
+              "japanese": "せっかくの 忘年会だから、みんなで 酔おう。",
+              "chinese": "難得的忘年會，大家一起醉吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "酔え",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よえ",
+          "sentence": [
+            {
+              "japanese": "上司は「今日は 俺の 奢りだから 酔え」と 言った。",
+              "chinese": "上司說「今天我請客，喝醉吧」。"
+            },
+            {
+              "japanese": "先輩は「遠慮しないで 酔え」と 笑った。",
+              "chinese": "學長笑著說「別客氣，喝醉吧」。"
+            },
+            {
+              "japanese": "部長は 若い 社員に「もっと 酔え」と 言った。",
+              "chinese": "部長對年輕員工說「再多喝一點」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "酔えば",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よえば",
+          "sentence": [
+            {
+              "japanese": "そんなに 飲んで 酔えば、明日は 大変だ。",
+              "chinese": "喝那麼多醉的話，明天就難受了。"
+            },
+            {
+              "japanese": "車に 酔えば、すぐに 薬を 飲む。",
+              "chinese": "暈車的話就馬上吃藥。"
+            },
+            {
+              "japanese": "酒を 飲みすぎて 酔えば、記憶が なくなる。",
+              "chinese": "喝太多酒醉的話會失憶。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "酔われる",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よわれる",
+          "sentence": [
+            {
+              "japanese": "電車で 隣の 人に 酔われると、とても 困る。",
+              "chinese": "在電車上旁邊的人醉倒的話，很困擾。"
+            },
+            {
+              "japanese": "忘年会で 先輩に 酔われると、家まで 送るのが 大変だ。",
+              "chinese": "忘年會上學長醉倒的話，送他回家很麻煩。"
+            },
+            {
+              "japanese": "パーティーで 友達に 酔われると、タクシーを 呼ぶしか ない。",
+              "chinese": "派對上朋友醉倒的話，只能叫計程車。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "酔わせる",
+          "group": "1",
+          "chinese": "醉; 暈車",
+          "japanese": "よわせる",
+          "sentence": [
+            {
+              "japanese": "彼は いつも お酒で 友達を 酔わせる。",
+              "chinese": "他總是用酒把朋友灌醉。"
+            },
+            {
+              "japanese": "強い 酒は すぐに 人を 酔わせる。",
+              "chinese": "烈酒馬上就讓人醉。"
+            },
+            {
+              "japanese": "先輩は 後輩を 酔わせるのが 好きだ。",
+              "chinese": "學長喜歡把學弟灌醉。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "量る",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はかる",
+          "sentence": [
+            {
+              "japanese": "米を 量る ときは はかりを 使う。",
+              "chinese": "量米的時候要用秤。"
+            },
+            {
+              "japanese": "毎朝 自分の 体重を 量る。",
+              "chinese": "每天早上量自己的體重。"
+            },
+            {
+              "japanese": "荷物の 重さを 量る のは 私の 仕事だ。",
+              "chinese": "量行李的重量是我的工作。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "量ります",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はかります",
+          "sentence": [
+            {
+              "japanese": "私は 毎日 体重を 量ります。",
+              "chinese": "我每天量體重。"
+            },
+            {
+              "japanese": "この 店では お米を グラムで 量ります。",
+              "chinese": "這家店用公克稱米。"
+            },
+            {
+              "japanese": "出発の 前に スーツケースを 量ります。",
+              "chinese": "出發前量行李箱。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "量りません",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はかりません",
+          "sentence": [
+            {
+              "japanese": "この はかりでは 重い 物を 量りません。",
+              "chinese": "這個秤不量重的東西。"
+            },
+            {
+              "japanese": "今日は 体重を 量りません。",
+              "chinese": "今天不量體重。"
+            },
+            {
+              "japanese": "小包は ここでは 量りません。",
+              "chinese": "包裹在這裡不稱重。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "量りました",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はかりました",
+          "sentence": [
+            {
+              "japanese": "昨日 スーパーで 米を 2キロ 量りました。",
+              "chinese": "昨天在超市稱了兩公斤米。"
+            },
+            {
+              "japanese": "朝 体重を 量りました。",
+              "chinese": "早上量了體重。"
+            },
+            {
+              "japanese": "係の 人が 荷物の 重さを 量りました。",
+              "chinese": "工作人員量了行李的重量。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "量りませんでした",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はかりませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 時間が なくて、体重を 量りませんでした。",
+              "chinese": "昨天沒時間，沒有量體重。"
+            },
+            {
+              "japanese": "この 店では 米を 量りませんでした。",
+              "chinese": "這家店沒有稱米。"
+            },
+            {
+              "japanese": "旅行の 前の 日は 荷物を 量りませんでした。",
+              "chinese": "旅行前一天沒有量行李。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "量らない",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はからない",
+          "sentence": [
+            {
+              "japanese": "忙しい 日は 体重を 量らない。",
+              "chinese": "忙的日子不量體重。"
+            },
+            {
+              "japanese": "この はかりは 古くて、正確に 量らない。",
+              "chinese": "這個秤很舊，量不準。"
+            },
+            {
+              "japanese": "母は 目分量で 作り、米を 量らない。",
+              "chinese": "媽媽憑目測做菜，不量米。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "量った",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はかった",
+          "sentence": [
+            {
+              "japanese": "今朝 体重を 量ったら、少し 減って いた。",
+              "chinese": "今天早上量體重，發現少了一點。"
+            },
+            {
+              "japanese": "店の 人が 米を はかりで 量った。",
+              "chinese": "店員用秤稱了米。"
+            },
+            {
+              "japanese": "出発の 前に 荷物の 重さを 量った。",
+              "chinese": "出發前量了行李的重量。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "量らなかった",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はからなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 体重を 量らなかった。",
+              "chinese": "昨天沒有量體重。"
+            },
+            {
+              "japanese": "忙しかったので、米を 量らなかった。",
+              "chinese": "因為很忙，沒有量米。"
+            },
+            {
+              "japanese": "私は 荷物の 重さを 量らなかった。",
+              "chinese": "我沒有量行李的重量。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "量って",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はかって",
+          "sentence": [
+            {
+              "japanese": "米を 量って、袋に 入れた。",
+              "chinese": "量了米之後裝進袋子。"
+            },
+            {
+              "japanese": "体重を 量って、ノートに 書いた。",
+              "chinese": "量了體重後寫在筆記本上。"
+            },
+            {
+              "japanese": "荷物を 量ってから、送る。",
+              "chinese": "量了行李之後再寄。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "量れる",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はかれる",
+          "sentence": [
+            {
+              "japanese": "この はかりで 100キロまで 量れる。",
+              "chinese": "這個秤最多能量到一百公斤。"
+            },
+            {
+              "japanese": "赤ちゃんも この はかりで 量れる。",
+              "chinese": "嬰兒也能用這個秤量。"
+            },
+            {
+              "japanese": "バネばかりが あれば、米を 量れる。",
+              "chinese": "有彈簧秤就能量米。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "量ろう",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はかろう",
+          "sentence": [
+            {
+              "japanese": "まず 荷物の 重さを 量ろう。",
+              "chinese": "先量行李的重量吧。"
+            },
+            {
+              "japanese": "みんなで 体重を 量ろう。",
+              "chinese": "大家來量體重吧。"
+            },
+            {
+              "japanese": "出発の 前に 米を 量ろう。",
+              "chinese": "出發前量米吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "量れ",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はかれ",
+          "sentence": [
+            {
+              "japanese": "店長は 店員に「この 米を 量れ」と 言った。",
+              "chinese": "店長對店員說「稱這些米」。"
+            },
+            {
+              "japanese": "先生は 生徒に「体重を 量れ」と 指示した。",
+              "chinese": "老師指示學生「量體重」。"
+            },
+            {
+              "japanese": "係の 人は「荷物を 量れ」と 叫んだ。",
+              "chinese": "工作人員大喊「量行李」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "量れば",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はかれば",
+          "sentence": [
+            {
+              "japanese": "米を 量れば、何人分か わかる。",
+              "chinese": "量了米就知道夠幾人份。"
+            },
+            {
+              "japanese": "体重を 量れば、健康の 変化が わかる。",
+              "chinese": "量體重就能知道健康的變化。"
+            },
+            {
+              "japanese": "荷物を 量れば、送料が 決まる。",
+              "chinese": "量了行李就能決定運費。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "量られる",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はかられる",
+          "sentence": [
+            {
+              "japanese": "米は 店で 店員に 量られる。",
+              "chinese": "米在店裡由店員稱。"
+            },
+            {
+              "japanese": "荷物は 受付で 係の 人に 量られる。",
+              "chinese": "行李在櫃檯由工作人員量。"
+            },
+            {
+              "japanese": "お米は 買う ときに 店の 人に 量られる。",
+              "chinese": "米在買的時候由店員稱。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "量らせる",
+          "group": "1",
+          "chinese": "量（重量）; 稱; 測量",
+          "japanese": "はからせる",
+          "sentence": [
+            {
+              "japanese": "店長は 新人に 米を 量らせる。",
+              "chinese": "店長讓新人稱米。"
+            },
+            {
+              "japanese": "母は 子どもに 体重を 量らせる。",
+              "chinese": "媽媽讓孩子量體重。"
+            },
+            {
+              "japanese": "先生は 生徒に 荷物を 量らせる。",
+              "chinese": "老師讓學生量行李。"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

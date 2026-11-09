@@ -1,0 +1,610 @@
+{
+  "lesson_10": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "いる",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いる",
+          "sentence": [
+            {
+              "japanese": "庭に 犬が いる。",
+              "chinese": "院子裡有狗。"
+            },
+            {
+              "japanese": "教室に 学生が 三人 いる。",
+              "chinese": "教室裡有三個學生。"
+            },
+            {
+              "japanese": "子どもたちは 公園に いる。",
+              "chinese": "孩子們在公園裡。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "います",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "います",
+          "sentence": [
+            {
+              "japanese": "今、部屋に 誰か いますか。",
+              "chinese": "現在房間裡有人在嗎？"
+            },
+            {
+              "japanese": "うちには 猫が 二匹 います。",
+              "chinese": "我家有兩隻貓。"
+            },
+            {
+              "japanese": "父は 今、会社に います。",
+              "chinese": "父親現在在公司。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "いません",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いません",
+          "sentence": [
+            {
+              "japanese": "今夜は 家に いません。",
+              "chinese": "今晚不在家。"
+            },
+            {
+              "japanese": "公園には 子どもが いません。",
+              "chinese": "公園裡沒有小孩。"
+            },
+            {
+              "japanese": "あの 部屋には 犬は いません。",
+              "chinese": "那個房間裡沒有狗。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "いました",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いました",
+          "sentence": [
+            {
+              "japanese": "さっき 田中さんは ここに いました。",
+              "chinese": "剛才田中先生在這裡。"
+            },
+            {
+              "japanese": "昨日、駅前に 友だちが いました。",
+              "chinese": "昨天朋友在車站前。"
+            },
+            {
+              "japanese": "子どもの ころ、大阪に いました。",
+              "chinese": "小時候住在大阪。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "いませんでした",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日の 会議には 誰も いませんでした。",
+              "chinese": "昨天的會議上沒有任何人。"
+            },
+            {
+              "japanese": "今朝は 先生は いませんでした。",
+              "chinese": "今天早上老師不在。"
+            },
+            {
+              "japanese": "その 時、母は 台所に いませんでした。",
+              "chinese": "那時母親不在廚房。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "いない",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いない",
+          "sentence": [
+            {
+              "japanese": "ここには 誰も いない。",
+              "chinese": "這裡沒有任何人。"
+            },
+            {
+              "japanese": "うちには 猫が いない。",
+              "chinese": "我家沒有貓。"
+            },
+            {
+              "japanese": "今日は 妹が いないので、静かだ。",
+              "chinese": "今天妹妹不在，所以很安靜。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "いた",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いた",
+          "sentence": [
+            {
+              "japanese": "昨日、図書館に 友だちが いた。",
+              "chinese": "昨天朋友在圖書館。"
+            },
+            {
+              "japanese": "小さい ころ、よく 海に いた。",
+              "chinese": "小時候常在海邊。"
+            },
+            {
+              "japanese": "その 時、彼は まだ そこに いた。",
+              "chinese": "那時他還在那裡。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "いなかった",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いなかった",
+          "sentence": [
+            {
+              "japanese": "今日は 教室に 誰も いなかった。",
+              "chinese": "今天教室裡沒有人。"
+            },
+            {
+              "japanese": "昨日は 犬が いなかったので、寂しかった。",
+              "chinese": "昨天狗不在，所以很寂寞。"
+            },
+            {
+              "japanese": "あの ころ、この 町には 動物が いなかった。",
+              "chinese": "那時候這個城鎮裡沒有動物。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "いて",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いて",
+          "sentence": [
+            {
+              "japanese": "犬が 庭に いて、子どもたちと 遊んでいる。",
+              "chinese": "狗在院子裡，正和孩子們玩耍。"
+            },
+            {
+              "japanese": "母は 台所に いて、料理を している。",
+              "chinese": "母親在廚房做菜。"
+            },
+            {
+              "japanese": "先生が そこに いて、みんな 安心した。",
+              "chinese": "老師在那裡，大家就安心了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "いられる",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いられる",
+          "sentence": [
+            {
+              "japanese": "この 部屋には 十人 いられる。",
+              "chinese": "這個房間可以容納十個人。"
+            },
+            {
+              "japanese": "静かな 場所なら、ゆっくり いられる。",
+              "chinese": "如果是安靜的地方，就能待得輕鬆。"
+            },
+            {
+              "japanese": "家族と 一緒なら、どこでも いられる。",
+              "chinese": "只要和家人一起，哪裡都能待。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "いよう",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いよう",
+          "sentence": [
+            {
+              "japanese": "今日は 家に いよう。",
+              "chinese": "今天待在家裡吧。"
+            },
+            {
+              "japanese": "いつも 君の そばに いよう。",
+              "chinese": "我會一直在你身邊。"
+            },
+            {
+              "japanese": "もう 少し ここに いようと 思う。",
+              "chinese": "我想再在這裡待一會兒。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "いろ",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いろ",
+          "sentence": [
+            {
+              "japanese": "そこに いろ。",
+              "chinese": "待在那裡。"
+            },
+            {
+              "japanese": "静かに いろ。",
+              "chinese": "安靜待著。"
+            },
+            {
+              "japanese": "外は 寒い。家に いろ。",
+              "chinese": "外面很冷，待在家裡。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "いれば",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いれば",
+          "sentence": [
+            {
+              "japanese": "時間が あるなら、そこに いれば いい。",
+              "chinese": "有時間的話，待在那裡就好。"
+            },
+            {
+              "japanese": "家に いれば、雨は 気に ならない。",
+              "chinese": "待在家裡的話，就不必在意下雨。"
+            },
+            {
+              "japanese": "誰か いれば、安心だ。",
+              "chinese": "有人在的話就安心。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "いられる",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いられる",
+          "sentence": [
+            {
+              "japanese": "一日中 子どもに 家に いられる ので、買い物に 行けない。",
+              "chinese": "孩子一整天待在家裡，我連買東西都不能去。"
+            },
+            {
+              "japanese": "会議の 間、部長に そばに いられる と、話しにくい。",
+              "chinese": "開會時部長一直在旁邊，就很難開口。"
+            },
+            {
+              "japanese": "試験の 前の 日に 妹に 部屋に いられる ので、集中できない。",
+              "chinese": "考試前一天妹妹待在房間裡，我沒法專心。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "いさせる",
+          "group": "2",
+          "chinese": "有; 在（表示生物的存在）",
+          "japanese": "いさせる",
+          "sentence": [
+            {
+              "japanese": "子供を 一人で 部屋に いさせるのは 心配だ。",
+              "chinese": "讓孩子獨自待在房間裡令人擔心。"
+            },
+            {
+              "japanese": "先生は 学生を 教室に いさせる。",
+              "chinese": "老師讓學生待在教室裡。"
+            },
+            {
+              "japanese": "毎日 犬を 庭に いさせる。",
+              "chinese": "每天讓狗待在院子裡。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "ある",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "ある",
+          "sentence": [
+            {
+              "japanese": "部屋に テレビが ある。",
+              "chinese": "房間裡有電視。"
+            },
+            {
+              "japanese": "明日は 休みが ある。",
+              "chinese": "明天有休假。"
+            },
+            {
+              "japanese": "この 町には 郵便局が ある。",
+              "chinese": "這個城鎮裡有郵局。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "あります",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "あります",
+          "sentence": [
+            {
+              "japanese": "机の 上に 本が あります。",
+              "chinese": "桌上有書。"
+            },
+            {
+              "japanese": "駅の 近くに 大きな ビルが あります。",
+              "chinese": "車站附近有大樓。"
+            },
+            {
+              "japanese": "冷蔵庫に 牛乳が あります。",
+              "chinese": "冰箱裡有牛奶。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "ありません",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "ありません",
+          "sentence": [
+            {
+              "japanese": "今日は お金が ありません。",
+              "chinese": "今天沒有錢。"
+            },
+            {
+              "japanese": "この 店には パンが ありません。",
+              "chinese": "這家店沒有麵包。"
+            },
+            {
+              "japanese": "財布に お金が ありません。",
+              "chinese": "錢包裡沒有錢。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "ありました",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "ありました",
+          "sentence": [
+            {
+              "japanese": "昨日、学校で テストが ありました。",
+              "chinese": "昨天在學校有考試。"
+            },
+            {
+              "japanese": "先週、公園で お祭りが ありました。",
+              "chinese": "上週在公園有祭典。"
+            },
+            {
+              "japanese": "さっき、ここに 傘が ありました。",
+              "chinese": "剛才這裡有傘。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "ありませんでした",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "ありませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 会議が ありませんでした。",
+              "chinese": "昨天沒有會議。"
+            },
+            {
+              "japanese": "先週は 雨が ありませんでした。",
+              "chinese": "上週沒有下雨。"
+            },
+            {
+              "japanese": "今朝は パンが ありませんでした。",
+              "chinese": "今天早上沒有麵包。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "ない",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "ない",
+          "sentence": [
+            {
+              "japanese": "冷蔵庫に 牛乳が ない。",
+              "chinese": "冰箱裡沒有牛奶。"
+            },
+            {
+              "japanese": "この 部屋には 窓が ない。",
+              "chinese": "這個房間沒有窗戶。"
+            },
+            {
+              "japanese": "お金が ないから、買えない。",
+              "chinese": "因為沒有錢，所以買不了。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "あった",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "あった",
+          "sentence": [
+            {
+              "japanese": "昨日、駅前に 大きな イベントが あった。",
+              "chinese": "昨天車站前有大型活動。"
+            },
+            {
+              "japanese": "昔、この 場所に 古い お寺が あった。",
+              "chinese": "從前這個地方有古老的寺廟。"
+            },
+            {
+              "japanese": "先週、大切な 会議が あった。",
+              "chinese": "上週有重要的會議。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "なかった",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "なかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 時間が なかった。",
+              "chinese": "昨天沒有時間。"
+            },
+            {
+              "japanese": "子どもの ころ、この 公園には 遊具が なかった。",
+              "chinese": "小時候這個公園沒有遊樂設施。"
+            },
+            {
+              "japanese": "先週の 会議には 質問が なかった。",
+              "chinese": "上週的會議沒有提問。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "あって",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "あって",
+          "sentence": [
+            {
+              "japanese": "冷蔵庫に ケーキが あって、うれしい。",
+              "chinese": "冰箱裡有蛋糕，很高興。"
+            },
+            {
+              "japanese": "この 町には 公園が あって、子どもが 遊べる。",
+              "chinese": "這個城鎮有公園，孩子可以玩。"
+            },
+            {
+              "japanese": "昨日は テストが あって、とても 疲れた。",
+              "chinese": "昨天有考試，非常累。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "ありえる",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "ありえる",
+          "sentence": [
+            {
+              "japanese": "そんな 事故は ありえる ことだ。",
+              "chinese": "那樣的事故是可能發生的。"
+            },
+            {
+              "japanese": "ここで 地震が 起きる ことも ありえる。",
+              "chinese": "這裡也可能發生地震。"
+            },
+            {
+              "japanese": "こういう 失敗は よく ありえる。",
+              "chinese": "這種失敗是常有的。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "あろう",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "あろう",
+          "sentence": [
+            {
+              "japanese": "そんな こと、あろう はずが ない。",
+              "chinese": "那種事不可能有。"
+            },
+            {
+              "japanese": "あろう ことか、彼は 約束を 忘れた。",
+              "chinese": "真不該發生，他忘了約定。"
+            },
+            {
+              "japanese": "この 先、何が あろうと 私は ここに 残る。",
+              "chinese": "今後無論發生什麼，我都會留在這裡。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "あれ",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "あれ",
+          "sentence": [
+            {
+              "japanese": "暗い 世界に 光あれ。",
+              "chinese": "願黑暗的世界有光。"
+            },
+            {
+              "japanese": "みんなに 幸あれ。",
+              "chinese": "願大家幸福。"
+            },
+            {
+              "japanese": "どうか 明日も いい 日で あれ。",
+              "chinese": "願明天也是美好的一天。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "あれば",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "あれば",
+          "sentence": [
+            {
+              "japanese": "時間が あれば、手伝います。",
+              "chinese": "有時間的話就幫忙。"
+            },
+            {
+              "japanese": "お金が あれば、旅行に 行きたい。",
+              "chinese": "有錢的話想去旅行。"
+            },
+            {
+              "japanese": "質問が あれば、いつでも 聞いて ください。",
+              "chinese": "有問題的話請隨時問。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "あられる",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "あられる",
+          "sentence": [
+            {
+              "japanese": "校長先生は 今 応接室に あられる。",
+              "chinese": "校長現在在接待室。"
+            },
+            {
+              "japanese": "お客さまは 三時ごろ こちらに あられる はずです。",
+              "chinese": "客人三點左右應該會在這裡。"
+            },
+            {
+              "japanese": "先生がたは 講堂に あられる。",
+              "chinese": "老師們在講堂。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "あらせる",
+          "group": "0",
+          "chinese": "有; 在（表示無生物的存在）",
+          "japanese": "あらせる",
+          "sentence": [
+            {
+              "japanese": "王は 都に 大いなる 繁栄を あらせる。",
+              "chinese": "國王讓都城有巨大的繁榮。"
+            },
+            {
+              "japanese": "神は 人の 心に 希望を あらせる。",
+              "chinese": "神讓人心中有希望。"
+            },
+            {
+              "japanese": "自然は 静かな 湖に 命を あらせる。",
+              "chinese": "大自然讓寂靜的湖有生命。"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

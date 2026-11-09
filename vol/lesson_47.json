@@ -1,0 +1,2120 @@
+{
+  "lesson_47": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "集まる",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまる",
+          "sentence": [
+            {
+              "japanese": "駅の 前に 人が 集まる。",
+              "chinese": "車站前聚集了人。"
+            },
+            {
+              "japanese": "休みの 日は 公園に 子どもが 集まる。",
+              "chinese": "放假時公園裡聚集著小孩。"
+            },
+            {
+              "japanese": "会議室に 社員が 集まる。",
+              "chinese": "員工在會議室集合。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "集まります",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまります",
+          "sentence": [
+            {
+              "japanese": "夕方 公園に 近所の 人が 集まります。",
+              "chinese": "傍晚附近的人會聚集到公園。"
+            },
+            {
+              "japanese": "毎週 金曜日に 友だちが うちに 集まります。",
+              "chinese": "每週五朋友們會來我家聚會。"
+            },
+            {
+              "japanese": "授業の 後で 学生が 教室に 集まります。",
+              "chinese": "下課後學生在教室集合。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "集まりません",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまりません",
+          "sentence": [
+            {
+              "japanese": "雨の 日は 公園に 人が 集まりません。",
+              "chinese": "下雨天公園裡不會聚集人。"
+            },
+            {
+              "japanese": "今日は 会議が ないので 社員は 集まりません。",
+              "chinese": "今天沒有會議，所以員工不集合。"
+            },
+            {
+              "japanese": "夜は この 広場に だれも 集まりません。",
+              "chinese": "晚上這個廣場不會有人聚集。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "集まりました",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまりました",
+          "sentence": [
+            {
+              "japanese": "昨日 駅の 前に 大勢の 人が 集まりました。",
+              "chinese": "昨天車站前聚集了很多人。"
+            },
+            {
+              "japanese": "パーティーに 友だちが 十人 集まりました。",
+              "chinese": "有十個朋友來參加派對。"
+            },
+            {
+              "japanese": "朝 公園に お年寄りが 集まりました。",
+              "chinese": "早上老人們聚集到公園。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "集まりませんでした",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまりませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 雨だったので だれも 集まりませんでした。",
+              "chinese": "昨天下雨，所以沒有人聚集。"
+            },
+            {
+              "japanese": "会議が 中止に なって 社員は 集まりませんでした。",
+              "chinese": "會議取消，員工沒有集合。"
+            },
+            {
+              "japanese": "先週の 日曜日は 公園に 人が 集まりませんでした。",
+              "chinese": "上週日公園裡沒有聚集人。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "集まらない",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまらない",
+          "sentence": [
+            {
+              "japanese": "この 町には あまり 観光客が 集まらない。",
+              "chinese": "這個城鎮不太有觀光客聚集。"
+            },
+            {
+              "japanese": "冬は 公園に 人が 集まらない。",
+              "chinese": "冬天公園裡不會有人聚集。"
+            },
+            {
+              "japanese": "平日の 朝は だれも 集まらない。",
+              "chinese": "平日的早上沒有人聚集。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "集まった",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまった",
+          "sentence": [
+            {
+              "japanese": "昨日 広場に 多くの 人が 集まった。",
+              "chinese": "昨天廣場聚集了很多人。"
+            },
+            {
+              "japanese": "夕方 駅の 前で 友だちが 集まった。",
+              "chinese": "傍晚朋友們在車站前集合了。"
+            },
+            {
+              "japanese": "子どもたちが 校庭に 集まった。",
+              "chinese": "孩子們聚集到校園。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "集まらなかった",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまらなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 雨で 公園に 人が 集まらなかった。",
+              "chinese": "昨天下雨，公園沒有聚集人。"
+            },
+            {
+              "japanese": "会議が なかったので 社員は 集まらなかった。",
+              "chinese": "因為沒有會議，員工沒有集合。"
+            },
+            {
+              "japanese": "日曜日は だれも 集まらなかった。",
+              "chinese": "星期天沒有人聚集。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "集まって",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまって",
+          "sentence": [
+            {
+              "japanese": "広場に 人が 集まって、 歌を 歌っている。",
+              "chinese": "人們聚集在廣場唱歌。"
+            },
+            {
+              "japanese": "学生が 教室に 集まって、 先生を 待っている。",
+              "chinese": "學生聚集在教室等老師。"
+            },
+            {
+              "japanese": "家族が 集まって、 食事を した。",
+              "chinese": "家人聚在一起吃了飯。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "集まれる",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまれる",
+          "sentence": [
+            {
+              "japanese": "この 公園には たくさんの 人が 集まれる。",
+              "chinese": "這個公園可以容納很多人聚集。"
+            },
+            {
+              "japanese": "休みの 日は 友だちが うちに 集まれる。",
+              "chinese": "放假時朋友們可以來我家聚會。"
+            },
+            {
+              "japanese": "駅の 前の 広場に 人が 集まれる。",
+              "chinese": "人們可以在車站前的廣場集合。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "集まろう",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまろう",
+          "sentence": [
+            {
+              "japanese": "今夜 みんなで 駅の 前に 集まろう。",
+              "chinese": "今晚大家到車站前集合吧。"
+            },
+            {
+              "japanese": "週末は 公園に 集まろう。",
+              "chinese": "週末到公園集合吧。"
+            },
+            {
+              "japanese": "会議の 後で 教室に 集まろう。",
+              "chinese": "會議結束後到教室集合吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "集まれ",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまれ",
+          "sentence": [
+            {
+              "japanese": "非常の 時は すぐ 広場に 集まれ。",
+              "chinese": "緊急時立刻到廣場集合。"
+            },
+            {
+              "japanese": "全員 ここに 集まれ。",
+              "chinese": "全員到這裡集合。"
+            },
+            {
+              "japanese": "授業の 前に 教室に 集まれ。",
+              "chinese": "上課前到教室集合。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "集まれば",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまれば",
+          "sentence": [
+            {
+              "japanese": "駅の 前に 集まれば、 友だちに 会える。",
+              "chinese": "在車站前集合的話，就能見到朋友。"
+            },
+            {
+              "japanese": "公園に 集まれば、 試合が 始まる。",
+              "chinese": "聚集到公園的話，比賽就開始。"
+            },
+            {
+              "japanese": "朝 早く 集まれば、 いい 席が 取れる。",
+              "chinese": "早上早點集合的話，就能占到好位子。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "集まられる",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまられる",
+          "sentence": [
+            {
+              "japanese": "店の 前に 人に 集まられる と、 車が 出せない。",
+              "chinese": "店前聚集了人，車子就開不出去。"
+            },
+            {
+              "japanese": "家の 前に 野良猫に 集まられる ので、 庭が 汚れる。",
+              "chinese": "野貓聚集在家門前，庭院就弄髒。"
+            },
+            {
+              "japanese": "駅の 前に 屋台に 集まられる と、 道が 狭く なる。",
+              "chinese": "攤販聚集在車站前，道路就變窄。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "集まらせる",
+          "group": "1",
+          "chinese": "聚集; 集合; 聚會",
+          "japanese": "あつまらせる",
+          "sentence": [
+            {
+              "japanese": "先生は 生徒を 教室に 集まらせる。",
+              "chinese": "老師讓學生聚集到教室。"
+            },
+            {
+              "japanese": "母は 家族を リビングに 集まらせる。",
+              "chinese": "媽媽讓家人聚集到客廳。"
+            },
+            {
+              "japanese": "係の 人は 参加者を 受付の 前に 集まらせる。",
+              "chinese": "工作人員讓參加者聚集到櫃台前。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "別れる",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれる",
+          "sentence": [
+            {
+              "japanese": "わたしは 毎朝 駅で 友だちと 別れる。",
+              "chinese": "我每天早上在車站和朋友分開。"
+            },
+            {
+              "japanese": "別れる 前に、 もう 一度 話そう。",
+              "chinese": "分開前再談一次吧。"
+            },
+            {
+              "japanese": "長い 付き合いの 恋人と 別れるのは 悲しい。",
+              "chinese": "和交往很久的戀人分手很悲傷。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "別れます",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれます",
+          "sentence": [
+            {
+              "japanese": "授業が 終わって、 友だちと 別れます。",
+              "chinese": "下課後和朋友分開。"
+            },
+            {
+              "japanese": "毎朝 駅で 家族と 別れます。",
+              "chinese": "每天早上在車站和家人分開。"
+            },
+            {
+              "japanese": "来月 大阪で 友だちと 別れます。",
+              "chinese": "下個月在大阪和朋友分別。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "別れません",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれません",
+          "sentence": [
+            {
+              "japanese": "今日は 一緒に 帰るので、 駅で 別れません。",
+              "chinese": "今天一起回家，所以不在車站分開。"
+            },
+            {
+              "japanese": "まだ 話す ことが あるので、 別れません。",
+              "chinese": "還有話要說，所以不分開。"
+            },
+            {
+              "japanese": "雨の 日は 校門の 前で 別れません。",
+              "chinese": "下雨天不在校門前分開。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "別れました",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれました",
+          "sentence": [
+            {
+              "japanese": "昨日 駅の 前で 友だちと 別れました。",
+              "chinese": "昨天在車站前和朋友分開了。"
+            },
+            {
+              "japanese": "卒業式の 後で 先生と 別れました。",
+              "chinese": "畢業典禮後和老師道別了。"
+            },
+            {
+              "japanese": "空港で 家族と 別れました。",
+              "chinese": "在機場和家人分開了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "別れませんでした",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 同じ 電車に 乗ったので、 駅で 別れませんでした。",
+              "chinese": "昨天搭同一班電車，所以沒在車站分開。"
+            },
+            {
+              "japanese": "まだ 話が あったので、 すぐには 別れませんでした。",
+              "chinese": "還有話要說，所以沒有馬上分開。"
+            },
+            {
+              "japanese": "最後まで 一緒に いて、 だれとも 別れませんでした。",
+              "chinese": "到最後都在一起，沒有和任何人分開。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "別れない",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれない",
+          "sentence": [
+            {
+              "japanese": "わたしは 友だちとは 別れない。",
+              "chinese": "我不會和朋友分開。"
+            },
+            {
+              "japanese": "彼は 家族と 別れない つもりだ。",
+              "chinese": "他打算不離開家人。"
+            },
+            {
+              "japanese": "まだ 別れないで、 もう 少し 話そう。",
+              "chinese": "先別分開，再聊一下吧。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "別れた",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれた",
+          "sentence": [
+            {
+              "japanese": "ゆうべ 駅で 友だちと 別れた。",
+              "chinese": "昨晚在車站和朋友分開了。"
+            },
+            {
+              "japanese": "二人は 静かに 別れた。",
+              "chinese": "兩人靜靜地分手了。"
+            },
+            {
+              "japanese": "わたしは 空港で 家族と 別れた。",
+              "chinese": "我在機場和家人分開了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "別れなかった",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 一緒に 帰ったので、 駅で 別れなかった。",
+              "chinese": "昨天一起回家，所以沒在車站分開。"
+            },
+            {
+              "japanese": "最後まで 話して、 だれとも 別れなかった。",
+              "chinese": "聊到最後，沒有和任何人分開。"
+            },
+            {
+              "japanese": "彼は 家族と 別れなかった。",
+              "chinese": "他沒有和家人分開。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "別れて",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれて",
+          "sentence": [
+            {
+              "japanese": "友だちと 別れて、 一人で 家に 帰った。",
+              "chinese": "和朋友分開後獨自回家。"
+            },
+            {
+              "japanese": "家族と 別れて、 新しい 町で 暮らし始めた。",
+              "chinese": "和家人分開後在新城鎮開始生活。"
+            },
+            {
+              "japanese": "先生と 別れて、 校門を 出た。",
+              "chinese": "和老師道別後走出校門。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "別れられる",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれられる",
+          "sentence": [
+            {
+              "japanese": "今なら 笑って 別れられる。",
+              "chinese": "現在的話能笑著道別。"
+            },
+            {
+              "japanese": "時間が あれば、 ゆっくり 別れられる。",
+              "chinese": "有時間的話，就能好好道別。"
+            },
+            {
+              "japanese": "駅の 前で 家族と 別れられる。",
+              "chinese": "可以在車站前和家人道別。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "別れよう",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれよう",
+          "sentence": [
+            {
+              "japanese": "そろそろ 駅で 別れよう。",
+              "chinese": "差不多在車站分開吧。"
+            },
+            {
+              "japanese": "明日の 朝 ここで 別れよう。",
+              "chinese": "明天早上在這裡分開吧。"
+            },
+            {
+              "japanese": "泣かないで、 笑って 別れよう。",
+              "chinese": "別哭，笑著道別吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "別れろ",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれろ",
+          "sentence": [
+            {
+              "japanese": "さよならを 言って、 早く 別れろ。",
+              "chinese": "說完再見就快點分開。"
+            },
+            {
+              "japanese": "けんかを やめて、 仲良く 別れろ。",
+              "chinese": "別吵架，好好道別。"
+            },
+            {
+              "japanese": "駅に 着いたら、 そこで 別れろ。",
+              "chinese": "到了車站就在那裡分開。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "別れれば",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれれば",
+          "sentence": [
+            {
+              "japanese": "駅で 別れれば、 一人で 帰れる。",
+              "chinese": "在車站分開的話，就能一個人回去。"
+            },
+            {
+              "japanese": "今 別れれば、 まだ 電車が ある。",
+              "chinese": "現在分開的話，還有電車。"
+            },
+            {
+              "japanese": "家族と 別れれば、 自由に なれる。",
+              "chinese": "和家人分開的話，就能自由。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "別れられる",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれられる",
+          "sentence": [
+            {
+              "japanese": "彼女は 恋人に 別れられる のが 怖い。",
+              "chinese": "她害怕被戀人分手。"
+            },
+            {
+              "japanese": "わたしは 友だちに 別れられる と、 とても 寂しい。",
+              "chinese": "被朋友離開的話，我會很寂寞。"
+            },
+            {
+              "japanese": "家族に 別れられる のは つらい。",
+              "chinese": "被家人離開是很痛苦的。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "別れさせる",
+          "group": "2",
+          "chinese": "分別; 分開; 離別",
+          "japanese": "わかれさせる",
+          "sentence": [
+            {
+              "japanese": "母親は 子どもを 友だちと 別れさせる。",
+              "chinese": "母親讓孩子和朋友分開。"
+            },
+            {
+              "japanese": "父は 息子を 恋人と 別れさせる つもりだ。",
+              "chinese": "父親打算讓兒子和戀人分手。"
+            },
+            {
+              "japanese": "教師は 学生を 校門の 前で 別れさせる。",
+              "chinese": "老師讓學生在校門前分開。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "長生きする",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきする",
+          "sentence": [
+            {
+              "japanese": "祖父は 九十歳まで 長生きする つもりだ。",
+              "chinese": "祖父打算活到九十歲。"
+            },
+            {
+              "japanese": "健康な 人ほど 長生きする。",
+              "chinese": "越健康的人越長壽。"
+            },
+            {
+              "japanese": "この 村の 人は みな 長生きする。",
+              "chinese": "這個村子的人都很長壽。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "長生きします",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきします",
+          "sentence": [
+            {
+              "japanese": "祖母は 毎日 野菜を 食べて 長生きします。",
+              "chinese": "祖母每天吃蔬菜，活得很長。"
+            },
+            {
+              "japanese": "わたしも 百歳まで 長生きします。",
+              "chinese": "我也要活到一百歲。"
+            },
+            {
+              "japanese": "この 地方の 人は 長生きします。",
+              "chinese": "這個地方的人很長壽。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "長生きしません",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきしません",
+          "sentence": [
+            {
+              "japanese": "たばこを 吸う 人は あまり 長生きしません。",
+              "chinese": "抽菸的人不太長壽。"
+            },
+            {
+              "japanese": "夜 遅くまで 起きて いると 長生きしません。",
+              "chinese": "熬夜到很晚的話不會長壽。"
+            },
+            {
+              "japanese": "彼は 不摂生なので 長生きしません。",
+              "chinese": "他生活不規律，所以不會長壽。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "長生きしました",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきしました",
+          "sentence": [
+            {
+              "japanese": "祖父は 九十五歳まで 長生きしました。",
+              "chinese": "祖父活到九十五歲。"
+            },
+            {
+              "japanese": "祖母は 元気に 長生きしました。",
+              "chinese": "祖母健康地活得很長。"
+            },
+            {
+              "japanese": "この 犬は 二十歳まで 長生きしました。",
+              "chinese": "這隻狗活到二十歲。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "長生きしませんでした",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきしませんでした",
+          "sentence": [
+            {
+              "japanese": "父は 若い 時 無理を して、 長生きしませんでした。",
+              "chinese": "父親年輕時逞強，所以沒有長壽。"
+            },
+            {
+              "japanese": "あの 人は 七十歳で 亡くなり、 長生きしませんでした。",
+              "chinese": "那個人七十歲就去世，沒有長壽。"
+            },
+            {
+              "japanese": "戦争の 時代を 生きた 人たちは 長生きしませんでした。",
+              "chinese": "經歷戰爭時代的人們沒有長壽。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "長生きしない",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきしない",
+          "sentence": [
+            {
+              "japanese": "毎日 運動しないと 長生きしない。",
+              "chinese": "不每天運動的話不會長壽。"
+            },
+            {
+              "japanese": "酒ばかり 飲む 人は 長生きしない。",
+              "chinese": "只喝酒的人不會長壽。"
+            },
+            {
+              "japanese": "無理を すると 長生きしない。",
+              "chinese": "逞強的話不會長壽。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "長生きした",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきした",
+          "sentence": [
+            {
+              "japanese": "祖父は 百歳まで 長生きした。",
+              "chinese": "祖父活到一百歲。"
+            },
+            {
+              "japanese": "祖母は 戦後を 元気に 長生きした。",
+              "chinese": "祖母在戰後健康地活了很久。"
+            },
+            {
+              "japanese": "この 木は 千年 長生きした。",
+              "chinese": "這棵樹活了千年。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "長生きしなかった",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきしなかった",
+          "sentence": [
+            {
+              "japanese": "父は 六十歳で 亡くなり、 長生きしなかった。",
+              "chinese": "父親六十歲去世，沒有長壽。"
+            },
+            {
+              "japanese": "昔の 人は 今ほど 長生きしなかった。",
+              "chinese": "以前的人沒有現在這麼長壽。"
+            },
+            {
+              "japanese": "あの 作家は 長生きしなかった。",
+              "chinese": "那位作家沒有長壽。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "長生きして",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきして",
+          "sentence": [
+            {
+              "japanese": "祖父は 長生きして、 孫の 結婚式に 出席した。",
+              "chinese": "祖父長壽，出席了孫子的婚禮。"
+            },
+            {
+              "japanese": "祖母は 長生きして、 今も 元気だ。",
+              "chinese": "祖母長壽，現在也很健康。"
+            },
+            {
+              "japanese": "この 亀は 長生きして、 三百歳に なった。",
+              "chinese": "這隻龜活了很久，已經三百歲。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "長生きできる",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきできる",
+          "sentence": [
+            {
+              "japanese": "野菜を 多く 食べれば 長生きできる。",
+              "chinese": "多吃蔬菜就能長壽。"
+            },
+            {
+              "japanese": "この 町の 人は 百歳まで 長生きできる。",
+              "chinese": "這個城鎮的人能活到一百歲。"
+            },
+            {
+              "japanese": "毎日 歩けば 長生きできる。",
+              "chinese": "每天走路就能長壽。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "長生きしよう",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきしよう",
+          "sentence": [
+            {
+              "japanese": "これからも 元気に 長生きしよう。",
+              "chinese": "今後也要健康地長壽。"
+            },
+            {
+              "japanese": "家族と 一緒に 長生きしよう。",
+              "chinese": "和家人一起長壽吧。"
+            },
+            {
+              "japanese": "百歳まで 長生きしよう。",
+              "chinese": "活到一百歲吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "長生きしろ",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきしろ",
+          "sentence": [
+            {
+              "japanese": "祖父は 孫に 「長生きしろ」と 言った。",
+              "chinese": "祖父對孫子說「要長壽」。"
+            },
+            {
+              "japanese": "先生は 生徒に 「長生きしろ」と 励ました。",
+              "chinese": "老師鼓勵學生「要長壽」。"
+            },
+            {
+              "japanese": "友だちに 「長生きしろよ」と 声を かけた。",
+              "chinese": "對朋友喊了「要長壽啊」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "長生きすれば",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきすれば",
+          "sentence": [
+            {
+              "japanese": "長生きすれば、 多くの 人に 会える。",
+              "chinese": "長壽的話，就能見到很多人。"
+            },
+            {
+              "japanese": "長生きすれば、 孫の 成長が 見られる。",
+              "chinese": "長壽的話，就能看到孫子成長。"
+            },
+            {
+              "japanese": "長生きすれば、 世界が もっと 変わるのを 見られる。",
+              "chinese": "長壽的話，就能看到世界更大的變化。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "長生きされる",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきされる",
+          "sentence": [
+            {
+              "japanese": "そんなに 長生きされる と、 家族が 心配する。",
+              "chinese": "你活得那麼久，家人會擔心。"
+            },
+            {
+              "japanese": "あの 人に 長生きされる と、 会社の 席が 空かない。",
+              "chinese": "那個人一直不老死，公司的位子就空不出來。"
+            },
+            {
+              "japanese": "犬に 長生きされる と、 旅行に 行けない。",
+              "chinese": "狗活得太久，就沒法去旅行。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "長生きさせる",
+          "group": "3",
+          "chinese": "長壽; 活得長",
+          "japanese": "ながいきさせる",
+          "sentence": [
+            {
+              "japanese": "医者は 患者を 長生きさせる ために 努力する。",
+              "chinese": "醫生為讓患者長壽而努力。"
+            },
+            {
+              "japanese": "良い 食事は 人を 長生きさせる。",
+              "chinese": "好的飲食讓人長壽。"
+            },
+            {
+              "japanese": "この 薬は 人を 長生きさせる。",
+              "chinese": "這種藥讓人長壽。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "する",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "する",
+          "sentence": [
+            {
+              "japanese": "外から 変な 音が する。",
+              "chinese": "外面傳來奇怪的聲音。"
+            },
+            {
+              "japanese": "台所から いい においが する。",
+              "chinese": "廚房傳來香味。"
+            },
+            {
+              "japanese": "この スープは 少し 辛い 味が する。",
+              "chinese": "這湯有點辣味。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "します",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "します",
+          "sentence": [
+            {
+              "japanese": "二階から 子どもの 声が します。",
+              "chinese": "二樓傳來小孩的聲音。"
+            },
+            {
+              "japanese": "この 花は とても いい においが します。",
+              "chinese": "這朵花很香。"
+            },
+            {
+              "japanese": "この お茶は 甘い 味が します。",
+              "chinese": "這茶有甜味。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "しません",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "しません",
+          "sentence": [
+            {
+              "japanese": "この 部屋は 静かで、 何の 音も しません。",
+              "chinese": "這個房間很安靜，沒有任何聲音。"
+            },
+            {
+              "japanese": "この パンは あまり においが しません。",
+              "chinese": "這個麵包不太有香味。"
+            },
+            {
+              "japanese": "この 水は 変な 味が しません。",
+              "chinese": "這水沒有奇怪的味道。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "しました",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "しました",
+          "sentence": [
+            {
+              "japanese": "昨夜 台所で 変な 音が しました。",
+              "chinese": "昨晚廚房傳來奇怪的聲音。"
+            },
+            {
+              "japanese": "この 花は 昨日 いい においが しました。",
+              "chinese": "這朵花昨天很香。"
+            },
+            {
+              "japanese": "その 料理は とても いい 味が しました。",
+              "chinese": "那道菜味道很好。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "しませんでした",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "しませんでした",
+          "sentence": [
+            {
+              "japanese": "昨夜は 静かで、 何の 音も しませんでした。",
+              "chinese": "昨晚很安靜，沒有任何聲音。"
+            },
+            {
+              "japanese": "この 果物は あまり においが しませんでした。",
+              "chinese": "這個水果不太有香味。"
+            },
+            {
+              "japanese": "その スープは 変な 味が しませんでした。",
+              "chinese": "那湯沒有奇怪的味道。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "しない",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "しない",
+          "sentence": [
+            {
+              "japanese": "この 部屋は 静かで、 音が しない。",
+              "chinese": "這個房間很安靜，沒有聲音。"
+            },
+            {
+              "japanese": "この 花は においが しない。",
+              "chinese": "這朵花沒有香味。"
+            },
+            {
+              "japanese": "この 料理は 辛い 味が しない。",
+              "chinese": "這道菜沒有辣味。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "した",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "した",
+          "sentence": [
+            {
+              "japanese": "夜中に 階下で 大きな 音が した。",
+              "chinese": "半夜樓下發出很大的聲音。"
+            },
+            {
+              "japanese": "台所から いい においが した。",
+              "chinese": "廚房傳來香味。"
+            },
+            {
+              "japanese": "この スープは 昨日と 違う 味が した。",
+              "chinese": "這湯的味道和昨天不同。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "しなかった",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "しなかった",
+          "sentence": [
+            {
+              "japanese": "昨夜は 静かで、 音が しなかった。",
+              "chinese": "昨晚很安靜，沒有聲音。"
+            },
+            {
+              "japanese": "この 花は においが しなかった。",
+              "chinese": "這朵花沒有香味。"
+            },
+            {
+              "japanese": "その 料理は 変な 味が しなかった。",
+              "chinese": "那道菜沒有奇怪的味道。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "して",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "して",
+          "sentence": [
+            {
+              "japanese": "台所から いい においが して、 おなかが すいた。",
+              "chinese": "廚房傳來香味，肚子餓了。"
+            },
+            {
+              "japanese": "外で 大きな 音が して、 びっくりした。",
+              "chinese": "外面發出大聲響，嚇了一跳。"
+            },
+            {
+              "japanese": "この お茶は いい 味が して、 人気が ある。",
+              "chinese": "這茶味道好，很受歡迎。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "できる",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "できる",
+          "sentence": [
+            {
+              "japanese": "彼は 一人で 料理が できる。",
+              "chinese": "他能一個人做菜。"
+            },
+            {
+              "japanese": "この 店では 予約が できる。",
+              "chinese": "這家店可以預約。"
+            },
+            {
+              "japanese": "日本語で 説明が できる。",
+              "chinese": "能用日語說明。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "しよう",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "しよう",
+          "sentence": [
+            {
+              "japanese": "今夜は 家族で パーティーを しよう。",
+              "chinese": "今晚和家人一起開派對吧。"
+            },
+            {
+              "japanese": "週末は 何を しよう か。",
+              "chinese": "週末要做什麼呢。"
+            },
+            {
+              "japanese": "みんなで 部屋の 掃除を しよう。",
+              "chinese": "大家一起打掃房間吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "しろ",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "しろ",
+          "sentence": [
+            {
+              "japanese": "静かに しろ。",
+              "chinese": "安靜一點。"
+            },
+            {
+              "japanese": "自分の 部屋の 掃除を しろ。",
+              "chinese": "去打掃自己的房間。"
+            },
+            {
+              "japanese": "ちゃんと 説明を しろ。",
+              "chinese": "好好說明。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "すれば",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "すれば",
+          "sentence": [
+            {
+              "japanese": "予約を すれば、 待たないで 入れる。",
+              "chinese": "預約的話，就不用等就能進去。"
+            },
+            {
+              "japanese": "毎日 練習すれば、 上手に できる。",
+              "chinese": "每天練習的話，就能變得熟練。"
+            },
+            {
+              "japanese": "早く 宿題を すれば、 遊べる。",
+              "chinese": "早點做完作業的話，就能去玩。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "される",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "される",
+          "sentence": [
+            {
+              "japanese": "夜中に 隣の 部屋で 大きな 音を される と、 眠れない。",
+              "chinese": "半夜隔壁房間傳來大聲響，就睡不著。"
+            },
+            {
+              "japanese": "先生に 突然 質問を される と、 いつも 緊張する。",
+              "chinese": "被老師突然提問，總是會緊張。"
+            },
+            {
+              "japanese": "そんな ことを 人に される と、 誰でも 腹が 立つ。",
+              "chinese": "被別人那樣對待，任何人都會生氣。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "させる",
+          "group": "0",
+          "chinese": "做; 發出(聲音); 有(味道、氣味)",
+          "japanese": "させる",
+          "sentence": [
+            {
+              "japanese": "母は 子どもに 部屋の 掃除を させる。",
+              "chinese": "媽媽讓孩子打掃房間。"
+            },
+            {
+              "japanese": "先生は 学生に 発表を させる。",
+              "chinese": "老師讓學生發表。"
+            },
+            {
+              "japanese": "部長は 部下に 残業を させる。",
+              "chinese": "部長讓部下加班。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "差す",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "さす",
+          "sentence": [
+            {
+              "japanese": "雨の 日は 傘を 差す。",
+              "chinese": "下雨天撐傘。"
+            },
+            {
+              "japanese": "夏は 日傘を 差す 人を よく 見る。",
+              "chinese": "夏天常看到撐陽傘的人。"
+            },
+            {
+              "japanese": "駅まで 傘を 差す。",
+              "chinese": "撐傘到車站。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "差します",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "さします",
+          "sentence": [
+            {
+              "japanese": "雨なので 傘を 差します。",
+              "chinese": "因為下雨，所以撐傘。"
+            },
+            {
+              "japanese": "母は 日傘を 差します。",
+              "chinese": "媽媽撐陽傘。"
+            },
+            {
+              "japanese": "わたしは 黒い 傘を 差します。",
+              "chinese": "我撐黑色的傘。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "差しません",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "さしません",
+          "sentence": [
+            {
+              "japanese": "今日は 雨が やんだので、 傘を 差しません。",
+              "chinese": "今天雨停了，所以不撐傘。"
+            },
+            {
+              "japanese": "この 傘は 壊れているので 差しません。",
+              "chinese": "這把傘壞了，所以不撐。"
+            },
+            {
+              "japanese": "風が 強い 日は 傘を 差しません。",
+              "chinese": "風大的日子不撐傘。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "差しました",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "さしました",
+          "sentence": [
+            {
+              "japanese": "朝は 雨だったので 傘を 差しました。",
+              "chinese": "早上因為下雨，所以撐了傘。"
+            },
+            {
+              "japanese": "昨日 母は 日傘を 差しました。",
+              "chinese": "昨天媽媽撐了陽傘。"
+            },
+            {
+              "japanese": "旅行の 日は 赤い 傘を 差しました。",
+              "chinese": "旅行那天撐了紅色的傘。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "差しませんでした",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "さしませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 晴れだったので 傘を 差しませんでした。",
+              "chinese": "昨天是晴天，所以沒有撐傘。"
+            },
+            {
+              "japanese": "雨が やんだので、 傘を 差しませんでした。",
+              "chinese": "雨停了，所以沒有撐傘。"
+            },
+            {
+              "japanese": "わたしは 日傘を 差しませんでした。",
+              "chinese": "我沒有撐陽傘。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "差さない",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "ささない",
+          "sentence": [
+            {
+              "japanese": "雨が やんだから 傘を 差さない。",
+              "chinese": "雨停了，所以不撐傘。"
+            },
+            {
+              "japanese": "風が 強い 日は 傘を 差さない。",
+              "chinese": "風大的日子不撐傘。"
+            },
+            {
+              "japanese": "わたしは あまり 日傘を 差さない。",
+              "chinese": "我不太撐陽傘。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "差した",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "さした",
+          "sentence": [
+            {
+              "japanese": "朝 雨が 降ったので 傘を 差した。",
+              "chinese": "早上因為下雨，所以撐了傘。"
+            },
+            {
+              "japanese": "母は 夏に 日傘を 差した。",
+              "chinese": "媽媽夏天撐了陽傘。"
+            },
+            {
+              "japanese": "駅まで 傘を 差した。",
+              "chinese": "撐著傘走到車站。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "差さなかった",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "ささなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 晴れたので 傘を 差さなかった。",
+              "chinese": "昨天是晴天，所以沒有撐傘。"
+            },
+            {
+              "japanese": "雨が すぐ やんだので、 傘を 差さなかった。",
+              "chinese": "雨很快就停了，所以沒有撐傘。"
+            },
+            {
+              "japanese": "わたしは 日傘を 差さなかった。",
+              "chinese": "我沒有撐陽傘。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "差して",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "さして",
+          "sentence": [
+            {
+              "japanese": "傘を 差して、 駅まで 歩いた。",
+              "chinese": "撐著傘走到車站。"
+            },
+            {
+              "japanese": "母は 日傘を 差して、 買い物に 行った。",
+              "chinese": "媽媽撐著陽傘去買東西。"
+            },
+            {
+              "japanese": "雨の 中を 傘を 差して 帰った。",
+              "chinese": "在雨中撐著傘回家。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "差せる",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "させる",
+          "sentence": [
+            {
+              "japanese": "この 傘は 軽いので 誰でも 差せる。",
+              "chinese": "這把傘很輕，誰都能撐。"
+            },
+            {
+              "japanese": "雨の 日でも 傘を 差せる。",
+              "chinese": "下雨天也能撐傘。"
+            },
+            {
+              "japanese": "風が 強くなければ 傘を 差せる。",
+              "chinese": "風不強的話就能撐傘。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "差そう",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "さそう",
+          "sentence": [
+            {
+              "japanese": "雨だから 傘を 差そう。",
+              "chinese": "因為下雨，撐傘吧。"
+            },
+            {
+              "japanese": "日が 強いので 日傘を 差そう。",
+              "chinese": "太陽很大，撐陽傘吧。"
+            },
+            {
+              "japanese": "駅まで 傘を 差そう。",
+              "chinese": "撐傘到車站吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "差せ",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "させ",
+          "sentence": [
+            {
+              "japanese": "雨だ。 傘を 差せ。",
+              "chinese": "下雨了。撐傘。"
+            },
+            {
+              "japanese": "日射しが 強い。 日傘を 差せ。",
+              "chinese": "陽光很強。撐陽傘。"
+            },
+            {
+              "japanese": "早く 傘を 差せ。",
+              "chinese": "快點撐傘。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "差せば",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "させば",
+          "sentence": [
+            {
+              "japanese": "傘を 差せば、 服が ぬれない。",
+              "chinese": "撐傘的話，衣服就不會濕。"
+            },
+            {
+              "japanese": "日傘を 差せば、 顔が 焼けない。",
+              "chinese": "撐陽傘的話，臉就不會被曬黑。"
+            },
+            {
+              "japanese": "雨の 日は 傘を 差せば いい。",
+              "chinese": "下雨天撐傘就好。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "差される",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "さされる",
+          "sentence": [
+            {
+              "japanese": "後ろから 傘を 差される と、 前が 見えない。",
+              "chinese": "被人從後面撐著傘，就看不到前面。"
+            },
+            {
+              "japanese": "母に 日傘を 差される と、 少し 恥ずかしい。",
+              "chinese": "被媽媽撐著陽傘，有點不好意思。"
+            },
+            {
+              "japanese": "知らない 人に 傘を 差される と、 びっくりする。",
+              "chinese": "被陌生人撐著傘，會嚇一跳。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "差させる",
+          "group": "1",
+          "chinese": "撐(傘); 舉(傘)",
+          "japanese": "ささせる",
+          "sentence": [
+            {
+              "japanese": "母は 子どもに 傘を 差させる。",
+              "chinese": "媽媽讓孩子撐傘。"
+            },
+            {
+              "japanese": "先生は 生徒に 日傘を 差させる。",
+              "chinese": "老師讓學生撐陽傘。"
+            },
+            {
+              "japanese": "雨の 日は 会社が 社員に 傘を 差させる。",
+              "chinese": "下雨天公司讓員工撐傘。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "婚約する",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくする",
+          "sentence": [
+            {
+              "japanese": "二人は 来月 婚約する そうだ。",
+              "chinese": "聽說兩人下個月要訂婚。"
+            },
+            {
+              "japanese": "彼女は まだ 婚約する つもりは ない。",
+              "chinese": "她還沒有訂婚的打算。"
+            },
+            {
+              "japanese": "恋人は 今年 婚約する と 言った。",
+              "chinese": "戀人說今年要訂婚。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "婚約します",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくします",
+          "sentence": [
+            {
+              "japanese": "姉は 来月 婚約します。",
+              "chinese": "姊姊下個月訂婚。"
+            },
+            {
+              "japanese": "わたしの 友だちは 先輩と 婚約します。",
+              "chinese": "我朋友要和學長訂婚。"
+            },
+            {
+              "japanese": "二人は 春に 婚約します。",
+              "chinese": "兩人春天訂婚。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "婚約しません",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくしません",
+          "sentence": [
+            {
+              "japanese": "彼は まだ 婚約しません。",
+              "chinese": "他還沒有訂婚。"
+            },
+            {
+              "japanese": "わたしは すぐには 婚約しません。",
+              "chinese": "我不會馬上訂婚。"
+            },
+            {
+              "japanese": "二人は 今年 婚約しません。",
+              "chinese": "兩人今年不訂婚。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "婚約しました",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくしました",
+          "sentence": [
+            {
+              "japanese": "兄は 去年 婚約しました。",
+              "chinese": "哥哥去年訂婚了。"
+            },
+            {
+              "japanese": "友だちは 先月 恋人と 婚約しました。",
+              "chinese": "朋友上個月和戀人訂婚了。"
+            },
+            {
+              "japanese": "姉は 春に 婚約しました。",
+              "chinese": "姊姊春天訂婚了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "婚約しませんでした",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくしませんでした",
+          "sentence": [
+            {
+              "japanese": "彼は まだ 婚約しませんでした。",
+              "chinese": "他還沒有訂婚。"
+            },
+            {
+              "japanese": "二人は 去年は 婚約しませんでした。",
+              "chinese": "兩人去年沒有訂婚。"
+            },
+            {
+              "japanese": "わたしは その 時 婚約しませんでした。",
+              "chinese": "我當時沒有訂婚。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "婚約しない",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくしない",
+          "sentence": [
+            {
+              "japanese": "彼は まだ 婚約しない。",
+              "chinese": "他還沒有訂婚。"
+            },
+            {
+              "japanese": "わたしは 当分 婚約しない つもりだ。",
+              "chinese": "我打算暫時不訂婚。"
+            },
+            {
+              "japanese": "二人は 今年は 婚約しない。",
+              "chinese": "兩人今年不訂婚。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "婚約した",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくした",
+          "sentence": [
+            {
+              "japanese": "兄は 三年前に 婚約した。",
+              "chinese": "哥哥三年前訂婚了。"
+            },
+            {
+              "japanese": "友だちは 先月 恋人と 婚約した。",
+              "chinese": "朋友上個月和戀人訂婚了。"
+            },
+            {
+              "japanese": "姉は 大学を 出て すぐ 婚約した。",
+              "chinese": "姊姊大學畢業後馬上訂婚了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "婚約しなかった",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくしなかった",
+          "sentence": [
+            {
+              "japanese": "父は 若い 時 婚約しなかった。",
+              "chinese": "父親年輕時沒有訂婚。"
+            },
+            {
+              "japanese": "二人は 去年は 婚約しなかった。",
+              "chinese": "兩人去年沒有訂婚。"
+            },
+            {
+              "japanese": "彼女は ずっと 婚約しなかった。",
+              "chinese": "她一直沒有訂婚。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "婚約して",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくして",
+          "sentence": [
+            {
+              "japanese": "兄は 婚約して、 来月 結婚する。",
+              "chinese": "哥哥訂婚了，下個月結婚。"
+            },
+            {
+              "japanese": "友だちは 婚約して、 家族に 報告した。",
+              "chinese": "朋友訂婚後向家人報告了。"
+            },
+            {
+              "japanese": "二人は 婚約して、 一緒に 住み始めた。",
+              "chinese": "兩人訂婚後開始同居。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "婚約できる",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくできる",
+          "sentence": [
+            {
+              "japanese": "二人は 来年 婚約できる。",
+              "chinese": "兩人明年可以訂婚。"
+            },
+            {
+              "japanese": "仕事が 落ち着けば 婚約できる。",
+              "chinese": "工作穩定下來就能訂婚。"
+            },
+            {
+              "japanese": "親が 許せば 婚約できる。",
+              "chinese": "父母允許的話就能訂婚。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "婚約しよう",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくしよう",
+          "sentence": [
+            {
+              "japanese": "来年 婚約しよう と 思う。",
+              "chinese": "我想明年訂婚。"
+            },
+            {
+              "japanese": "二人で 婚約しよう。",
+              "chinese": "兩人訂婚吧。"
+            },
+            {
+              "japanese": "そろそろ 婚約しよう か。",
+              "chinese": "差不多該訂婚了吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "婚約しろ",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくしろ",
+          "sentence": [
+            {
+              "japanese": "母は 息子に 「早く 婚約しろ」と 言った。",
+              "chinese": "媽媽對兒子說「快點訂婚」。"
+            },
+            {
+              "japanese": "友だちは 彼に 「婚約しろよ」と 声を かけた。",
+              "chinese": "朋友對他喊「快訂婚吧」。"
+            },
+            {
+              "japanese": "彼は 恋人に 「婚約しろ」と 迫られた。",
+              "chinese": "他被戀人逼著「訂婚」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "婚約すれば",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくすれば",
+          "sentence": [
+            {
+              "japanese": "婚約すれば、 二人の 生活が 変わる。",
+              "chinese": "訂婚的話，兩人的生活會改變。"
+            },
+            {
+              "japanese": "早く 婚約すれば、 家族も 喜ぶ。",
+              "chinese": "早點訂婚的話，家人也會高興。"
+            },
+            {
+              "japanese": "婚約すれば、 結婚の 準備が 始まる。",
+              "chinese": "訂婚的話，就會開始準備結婚。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "婚約される",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくされる",
+          "sentence": [
+            {
+              "japanese": "彼女は 有名な 人に 婚約される と 聞いて 驚いた。",
+              "chinese": "她聽說要被名人和她訂婚，很驚訝。"
+            },
+            {
+              "japanese": "妹は 医者に 婚約される らしい。",
+              "chinese": "聽說妹妹要被醫生訂婚。"
+            },
+            {
+              "japanese": "わたしは そんな 人に 婚約される のは いやだ。",
+              "chinese": "我不想被那種人訂婚。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "婚約させる",
+          "group": "3",
+          "chinese": "訂婚",
+          "japanese": "こんやくさせる",
+          "sentence": [
+            {
+              "japanese": "両親は 二人を 婚約させる つもりだ。",
+              "chinese": "父母打算讓兩人訂婚。"
+            },
+            {
+              "japanese": "祖父は 孫を 早く 婚約させる と 言った。",
+              "chinese": "祖父說要讓孫子早點訂婚。"
+            },
+            {
+              "japanese": "親は 娘を 医者と 婚約させる。",
+              "chinese": "父母讓女兒和醫生訂婚。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "知り合う",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあう",
+          "sentence": [
+            {
+              "japanese": "二人は 大学で 知り合う。",
+              "chinese": "兩人在大學認識。"
+            },
+            {
+              "japanese": "わたしは 彼と 駅で 知り合う 予定だ。",
+              "chinese": "我預定在車站和他認識。"
+            },
+            {
+              "japanese": "友だちは 旅行先で 知り合う ことが 多い。",
+              "chinese": "朋友常在旅行地結識人。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "知り合います",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあいます",
+          "sentence": [
+            {
+              "japanese": "入社式で 新しい 同僚と 知り合います。",
+              "chinese": "在入社典禮上認識新同事。"
+            },
+            {
+              "japanese": "旅行先で いろいろな 人と 知り合います。",
+              "chinese": "在旅行地結識各式各樣的人。"
+            },
+            {
+              "japanese": "二人は 来月の パーティーで 知り合います。",
+              "chinese": "兩人在下個月的派對上認識。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "知り合いません",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあいません",
+          "sentence": [
+            {
+              "japanese": "わたしは あまり 人と 知り合いません。",
+              "chinese": "我不太和別人結識。"
+            },
+            {
+              "japanese": "彼は 家に ばかり いて、 人と 知り合いません。",
+              "chinese": "他總待在家裡，不結識人。"
+            },
+            {
+              "japanese": "この 町では 新しい 人と 知り合いません。",
+              "chinese": "在這個城鎮不會認識新的人。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "知り合いました",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあいました",
+          "sentence": [
+            {
+              "japanese": "わたしは 去年 彼と 知り合いました。",
+              "chinese": "我去年認識了他。"
+            },
+            {
+              "japanese": "二人は 大学で 知り合いました。",
+              "chinese": "兩人在大學認識了。"
+            },
+            {
+              "japanese": "姉は 旅行先で 友だちと 知り合いました。",
+              "chinese": "姊姊在旅行地認識了朋友。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "知り合いませんでした",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあいませんでした",
+          "sentence": [
+            {
+              "japanese": "わたしは その 会に 行かず、 彼と 知り合いませんでした。",
+              "chinese": "我沒去那個會，所以沒認識他。"
+            },
+            {
+              "japanese": "今年は 新しい 人と 知り合いませんでした。",
+              "chinese": "今年沒有認識新的人。"
+            },
+            {
+              "japanese": "彼は 結局 彼女と 知り合いませんでした。",
+              "chinese": "他結果沒有認識她。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "知り合わない",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあわない",
+          "sentence": [
+            {
+              "japanese": "わたしは あまり 人と 知り合わない。",
+              "chinese": "我不太和別人結識。"
+            },
+            {
+              "japanese": "彼は 外に 出ないので、 人と 知り合わない。",
+              "chinese": "他不外出，所以不結識人。"
+            },
+            {
+              "japanese": "この 町では 新しい 人と 知り合わない。",
+              "chinese": "在這個城鎮不會認識新的人。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "知り合った",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあった",
+          "sentence": [
+            {
+              "japanese": "わたしは 三年前 彼と 知り合った。",
+              "chinese": "我三年前認識了他。"
+            },
+            {
+              "japanese": "二人は 大学の サークルで 知り合った。",
+              "chinese": "兩人在大學社團認識。"
+            },
+            {
+              "japanese": "姉は 仕事の 研修で 友だちと 知り合った。",
+              "chinese": "姊姊在工作研習中認識了朋友。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "知り合わなかった",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあわなかった",
+          "sentence": [
+            {
+              "japanese": "わたしは その 会に 行かず、 彼と 知り合わなかった。",
+              "chinese": "我沒去那個會，所以沒認識他。"
+            },
+            {
+              "japanese": "今年は 新しい 人と 知り合わなかった。",
+              "chinese": "今年沒有認識新的人。"
+            },
+            {
+              "japanese": "彼は 結局 彼女と 知り合わなかった。",
+              "chinese": "他結果沒有認識她。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "知り合って",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあって",
+          "sentence": [
+            {
+              "japanese": "わたしは 彼と 知り合って、 すぐ 友だちに なった。",
+              "chinese": "我認識他之後，馬上成了朋友。"
+            },
+            {
+              "japanese": "二人は 大学で 知り合って、 三年後 結婚した。",
+              "chinese": "兩人在大學認識，三年後結婚了。"
+            },
+            {
+              "japanese": "姉は 旅行先で 友だちと 知り合って、 今も 連絡を 取っている。",
+              "chinese": "姊姊在旅行地認識朋友，現在仍保持聯絡。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "知り合える",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあえる",
+          "sentence": [
+            {
+              "japanese": "この パーティーで 多くの 人と 知り合える。",
+              "chinese": "在這個派對上能認識很多人。"
+            },
+            {
+              "japanese": "旅行に 行けば 新しい 人と 知り合える。",
+              "chinese": "去旅行的話就能認識新的人。"
+            },
+            {
+              "japanese": "わたしは 彼と すぐ 知り合える と 思う。",
+              "chinese": "我想我能馬上認識他。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "知り合おう",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあおう",
+          "sentence": [
+            {
+              "japanese": "明日の 会で 新しい 人と 知り合おう。",
+              "chinese": "在明天的會上認識新的人吧。"
+            },
+            {
+              "japanese": "旅行先で いろいろな 人と 知り合おう。",
+              "chinese": "在旅行地結識各種人吧。"
+            },
+            {
+              "japanese": "まず 挨拶して、 彼と 知り合おう。",
+              "chinese": "先打招呼，再認識他吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "知り合え",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあえ",
+          "sentence": [
+            {
+              "japanese": "大学で 多くの 人と 知り合え。",
+              "chinese": "在大學多認識一些人。"
+            },
+            {
+              "japanese": "パーティーで 彼と 知り合え。",
+              "chinese": "在派對上認識他。"
+            },
+            {
+              "japanese": "まず 挨拶して、 同僚と 知り合え。",
+              "chinese": "先打招呼，認識同事。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "知り合えば",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあえば",
+          "sentence": [
+            {
+              "japanese": "大学で 知り合えば、 友だちが 増える。",
+              "chinese": "在大學認識的話，朋友會增加。"
+            },
+            {
+              "japanese": "旅行先で 知り合えば、 世界が 広がる。",
+              "chinese": "在旅行地結識的話，世界會變寬廣。"
+            },
+            {
+              "japanese": "彼と 知り合えば、 きっと 楽しい。",
+              "chinese": "認識他的話，一定很開心。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "知り合われる",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあわれる",
+          "sentence": [
+            {
+              "japanese": "彼は 多くの 人に 知り合われる のが 嬉しい らしい。",
+              "chinese": "他似乎很高興被很多人認識。"
+            },
+            {
+              "japanese": "有名に なると、 いろいろな 人に 知り合われる。",
+              "chinese": "出名後，會被各種人認識。"
+            },
+            {
+              "japanese": "わたしは そんな 人に 知り合われる のは いやだ。",
+              "chinese": "我不想被那種人認識。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "知り合わせる",
+          "group": "1",
+          "chinese": "認識; 結識; 相識",
+          "japanese": "しりあわせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生を 地域の 人と 知り合わせる。",
+              "chinese": "老師讓學生和當地人認識。"
+            },
+            {
+              "japanese": "会社は 新入社員を 先輩と 知り合わせる。",
+              "chinese": "公司讓新員工和學長認識。"
+            },
+            {
+              "japanese": "母は 子どもを 近所の 人と 知り合わせる。",
+              "chinese": "媽媽讓孩子和鄰居認識。"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,3932 @@
+{
+  "lesson_39": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "答える",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえる",
+          "sentence": [
+            {
+              "japanese": "「はい」と 答える。",
+              "chinese": "回答「是」。"
+            },
+            {
+              "japanese": "先生の 質問に 答える。",
+              "chinese": "回答老師的問題。"
+            },
+            {
+              "japanese": "名前を 呼ばれたら すぐ 答える。",
+              "chinese": "被叫到名字就馬上回答。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "答えます",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえます",
+          "sentence": [
+            {
+              "japanese": "毎日 質問に 答えます。",
+              "chinese": "每天回答問題。"
+            },
+            {
+              "japanese": "クラスで 先生の 質問に 答えます。",
+              "chinese": "在課堂上回答老師的問題。"
+            },
+            {
+              "japanese": "電話で お客さんの 質問に 答えます。",
+              "chinese": "在電話裡回答客人的問題。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "答えません",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえません",
+          "sentence": [
+            {
+              "japanese": "きょうは その 質問に 答えません。",
+              "chinese": "今天不回答那個問題。"
+            },
+            {
+              "japanese": "むずかしいので まだ 答えません。",
+              "chinese": "太難了，還不回答。"
+            },
+            {
+              "japanese": "だれも 答えません。",
+              "chinese": "誰都不回答。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "答えました",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえました",
+          "sentence": [
+            {
+              "japanese": "きのう 質問に 答えました。",
+              "chinese": "昨天回答了問題。"
+            },
+            {
+              "japanese": "ゆうべ メールで 答えました。",
+              "chinese": "昨晚用郵件回答了。"
+            },
+            {
+              "japanese": "さっき 名前を 呼ばれて 答えました。",
+              "chinese": "剛才被叫到名字就回答了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "答えませんでした",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえませんでした",
+          "sentence": [
+            {
+              "japanese": "きのうは 質問に 答えませんでした。",
+              "chinese": "昨天沒有回答問題。"
+            },
+            {
+              "japanese": "時間が なくて 答えませんでした。",
+              "chinese": "因為沒有時間，所以沒有回答。"
+            },
+            {
+              "japanese": "こどもは 何も 答えませんでした。",
+              "chinese": "孩子什麼都沒有回答。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "答えない",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえない",
+          "sentence": [
+            {
+              "japanese": "だれも 答えない。",
+              "chinese": "誰都不回答。"
+            },
+            {
+              "japanese": "彼は いつも 質問に 答えない。",
+              "chinese": "他總是不回答問題。"
+            },
+            {
+              "japanese": "こたえを 知って いても 答えない。",
+              "chinese": "即使知道答案也不回答。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "答えた",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえた",
+          "sentence": [
+            {
+              "japanese": "妹が 元気に 答えた。",
+              "chinese": "妹妹精神地回答了。"
+            },
+            {
+              "japanese": "きのう 彼は すぐ 答えた。",
+              "chinese": "昨天他馬上回答了。"
+            },
+            {
+              "japanese": "学生が 大きな 声で 答えた。",
+              "chinese": "學生用大聲回答。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "答えなかった",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえなかった",
+          "sentence": [
+            {
+              "japanese": "きのうは だれも 答えなかった。",
+              "chinese": "昨天誰都沒有回答。"
+            },
+            {
+              "japanese": "彼は 最後まで 答えなかった。",
+              "chinese": "他到最後都沒有回答。"
+            },
+            {
+              "japanese": "わたしは 質問に 答えなかった。",
+              "chinese": "我沒有回答問題。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "答えて",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえて",
+          "sentence": [
+            {
+              "japanese": "手を あげて 答えて ください。",
+              "chinese": "請舉手回答。"
+            },
+            {
+              "japanese": "はいと 答えて、 席に すわった。",
+              "chinese": "回答了「是」，然後坐下。"
+            },
+            {
+              "japanese": "先生は うなずいて 答えて、 また 質問した。",
+              "chinese": "老師點頭回答後，又提出問題。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "答えられる",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえられる",
+          "sentence": [
+            {
+              "japanese": "この 問題は だれでも 答えられる。",
+              "chinese": "這個問題誰都能回答。"
+            },
+            {
+              "japanese": "やさしい 質問なら、 すぐに 答えられる。",
+              "chinese": "如果是簡單的問題，馬上就能回答。"
+            },
+            {
+              "japanese": "簡単な ことなら 日本語で 答えられる。",
+              "chinese": "簡單的事情能用日語回答。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "答えよう",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえよう",
+          "sentence": [
+            {
+              "japanese": "さあ、 質問に 答えよう。",
+              "chinese": "來吧，回答問題吧。"
+            },
+            {
+              "japanese": "大きな 声で 答えよう。",
+              "chinese": "用大聲回答吧。"
+            },
+            {
+              "japanese": "わたしが 先に 答えよう。",
+              "chinese": "我先回答吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "答えろ",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえろ",
+          "sentence": [
+            {
+              "japanese": "早く 答えろ。",
+              "chinese": "快回答。"
+            },
+            {
+              "japanese": "先生の 質問に 答えろ。",
+              "chinese": "回答老師的問題。"
+            },
+            {
+              "japanese": "はいか いいえか、 はっきり 答えろ。",
+              "chinese": "是或不是，清楚地回答。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "答えれば",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえれば",
+          "sentence": [
+            {
+              "japanese": "この 質問に 答えれば、 点が もらえる。",
+              "chinese": "回答這個問題就能得分。"
+            },
+            {
+              "japanese": "先生の 質問に 答えれば、 次に 進める。",
+              "chinese": "回答老師的問題就能繼續往下。"
+            },
+            {
+              "japanese": "英語でも 答えれば いいです。",
+              "chinese": "用英語回答也可以。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "答えられる",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえられる",
+          "sentence": [
+            {
+              "japanese": "この 問題は すぐ 答えられる。",
+              "chinese": "這個問題馬上就能回答。"
+            },
+            {
+              "japanese": "名前を 呼ばれたら、大きな 声で 答えられる。",
+              "chinese": "被叫到名字時，能大聲回答。"
+            },
+            {
+              "japanese": "準備が できていれば、どんな 質問にも 答えられる。",
+              "chinese": "有準備的話，任何問題都能回答。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "答えさせる",
+          "group": "2",
+          "chinese": "回答; 作答; 答覆",
+          "japanese": "こたえさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 質問を 答えさせる。",
+              "chinese": "老師讓學生回答問題。"
+            },
+            {
+              "japanese": "母は こどもに 名前を 答えさせる。",
+              "chinese": "媽媽讓孩子回答名字。"
+            },
+            {
+              "japanese": "面接では 簡単な 質問を 答えさせる。",
+              "chinese": "面試時讓人回答簡單的問題。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "倒れる",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれる",
+          "sentence": [
+            {
+              "japanese": "大きな 地震で 家が 倒れる。",
+              "chinese": "大地震時房子會倒塌。"
+            },
+            {
+              "japanese": "台風で 木が 倒れる。",
+              "chinese": "颱風時樹會倒下。"
+            },
+            {
+              "japanese": "父が 急に 倒れる。",
+              "chinese": "父親突然倒下。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "倒れます",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれます",
+          "sentence": [
+            {
+              "japanese": "強い 風で 木が 倒れます。",
+              "chinese": "強風會把樹吹倒。"
+            },
+            {
+              "japanese": "地震が 来ると この 壁は 倒れます。",
+              "chinese": "地震一來這面牆就會倒。"
+            },
+            {
+              "japanese": "暑い 日は お年寄りが 倒れます。",
+              "chinese": "天熱時老人會病倒。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "倒れません",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれません",
+          "sentence": [
+            {
+              "japanese": "この 木は 太いので 倒れません。",
+              "chinese": "這棵樹很粗，不會倒。"
+            },
+            {
+              "japanese": "台風でも この 家は 倒れません。",
+              "chinese": "即使颱風這房子也不會倒。"
+            },
+            {
+              "japanese": "彼は 丈夫なので 倒れません。",
+              "chinese": "他很健壯，不會病倒。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "倒れました",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれました",
+          "sentence": [
+            {
+              "japanese": "きのうの 台風で 木が 倒れました。",
+              "chinese": "昨天的颱風把樹吹倒了。"
+            },
+            {
+              "japanese": "地震で 古い 壁が 倒れました。",
+              "chinese": "地震把舊牆震倒了。"
+            },
+            {
+              "japanese": "父は 仕事の 途中で 倒れました。",
+              "chinese": "父親在工作中病倒了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "倒れませんでした",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれませんでした",
+          "sentence": [
+            {
+              "japanese": "台風でも 木は 倒れませんでした。",
+              "chinese": "即使颱風樹也沒有倒。"
+            },
+            {
+              "japanese": "この ビルは 地震でも 倒れませんでした。",
+              "chinese": "這棟大樓即使地震也沒有倒。"
+            },
+            {
+              "japanese": "兄は 忙しくても 倒れませんでした。",
+              "chinese": "哥哥即使忙碌也沒有病倒。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "倒れない",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれない",
+          "sentence": [
+            {
+              "japanese": "この くらいの 風では 倒れない。",
+              "chinese": "這種程度的風不會倒。"
+            },
+            {
+              "japanese": "太い 木は 簡単には 倒れない。",
+              "chinese": "粗的樹不會輕易倒。"
+            },
+            {
+              "japanese": "毎日 運動する 人は あまり 倒れない。",
+              "chinese": "每天運動的人不太會病倒。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "倒れた",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれた",
+          "sentence": [
+            {
+              "japanese": "台風で 大きな 木が 倒れた。",
+              "chinese": "颱風把大樹吹倒了。"
+            },
+            {
+              "japanese": "地震で 塀が 倒れた。",
+              "chinese": "地震把圍牆震倒了。"
+            },
+            {
+              "japanese": "祖父は 畑で 倒れた。",
+              "chinese": "祖父在田裡倒下了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "倒れなかった",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれなかった",
+          "sentence": [
+            {
+              "japanese": "きのうの 台風でも 木は 倒れなかった。",
+              "chinese": "昨天的颱風也沒有把樹吹倒。"
+            },
+            {
+              "japanese": "この 家は 地震でも 倒れなかった。",
+              "chinese": "這房子即使地震也沒有倒。"
+            },
+            {
+              "japanese": "妹は 疲れて いたが 倒れなかった。",
+              "chinese": "妹妹雖然很累，但沒有病倒。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "倒れて",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれて",
+          "sentence": [
+            {
+              "japanese": "木が 倒れて、 道が ふさがった。",
+              "chinese": "樹倒了，路被堵住了。"
+            },
+            {
+              "japanese": "父は 倒れて、 病院へ 行った。",
+              "chinese": "父親倒下，去了醫院。"
+            },
+            {
+              "japanese": "壁が 倒れて、 窓が こわれた。",
+              "chinese": "牆倒了，窗戶破了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "倒れられる",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれられる",
+          "sentence": [
+            {
+              "japanese": "受け身の 練習を して、 後ろに 倒れられる ように なった。",
+              "chinese": "練了護身倒法，變得能夠向後倒。"
+            },
+            {
+              "japanese": "この 厚い マットの 上なら、 安心して 倒れられる。",
+              "chinese": "在這塊厚墊子上，可以安心倒下。"
+            },
+            {
+              "japanese": "畳の 上なら、 思い切って 倒れられる。",
+              "chinese": "在榻榻米上的話，就能放心倒下。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "倒れよう",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれよう",
+          "sentence": [
+            {
+              "japanese": "大きな 木が 倒れようと している。",
+              "chinese": "大樹快要倒了。"
+            },
+            {
+              "japanese": "古い 家が 倒れようと している。",
+              "chinese": "舊房子快要倒了。"
+            },
+            {
+              "japanese": "塀が 倒れようと しているので 近づくな。",
+              "chinese": "圍牆快倒了，不要靠近。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "倒れろ",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれろ",
+          "sentence": [
+            {
+              "japanese": "受け身の 練習では、 力を 抜いて 後ろに 倒れろ と 言われる。",
+              "chinese": "練護身倒法時，會被要求放鬆力氣向後倒。"
+            },
+            {
+              "japanese": "相手に 押されたら、 そのまま 倒れろ。",
+              "chinese": "被對手推的時候，就順勢倒下。"
+            },
+            {
+              "japanese": "もう 支えは いらないから、 そのまま 倒れろ。",
+              "chinese": "已經不需要支撐了，就這樣倒下吧。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "倒れれば",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれれば",
+          "sentence": [
+            {
+              "japanese": "この 木が 倒れれば、 道が ふさがる。",
+              "chinese": "這棵樹倒了，路就會被堵住。"
+            },
+            {
+              "japanese": "壁が 倒れれば、 家も こわれる。",
+              "chinese": "牆倒了，房子也會壞。"
+            },
+            {
+              "japanese": "ビルが 倒れれば、 大変だ。",
+              "chinese": "大樓倒了就不得了。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "倒れられる",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれられる",
+          "sentence": [
+            {
+              "japanese": "祖父は 雪の 日には よく この 坂で 倒れられる。",
+              "chinese": "祖父常在下雪的日子在這坡道上摔倒。"
+            },
+            {
+              "japanese": "お客様が ロビーで 倒れられる と いけないので、 床を 滑りにくく した。",
+              "chinese": "為了避免客人在大廳摔倒，把地板弄得不那麼滑。"
+            },
+            {
+              "japanese": "店の 前で お年寄りに 倒れられる と、 とても 困る。",
+              "chinese": "要是有老人在店門口倒下，會非常傷腦筋。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "倒れさせる",
+          "group": "2",
+          "chinese": "倒塌; 倒下; 病倒",
+          "japanese": "たおれさせる",
+          "sentence": [
+            {
+              "japanese": "地震が 古い 塀を 倒れさせる ことが ある。",
+              "chinese": "地震有時會讓舊圍牆倒塌。"
+            },
+            {
+              "japanese": "暑さが 弱い 犬を 倒れさせる ので、 日陰で 休ませた。",
+              "chinese": "因為酷熱會讓虛弱的狗倒下，所以讓牠在陰涼處休息。"
+            },
+            {
+              "japanese": "監督は 選手を 限界まで 走らせて、 最後には 倒れさせる。",
+              "chinese": "教練讓選手跑到極限，最後甚至讓他倒下。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "焼ける",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やける",
+          "sentence": [
+            {
+              "japanese": "パンが よく 焼ける。",
+              "chinese": "麵包烤得很好。"
+            },
+            {
+              "japanese": "この オーブンでは パンが 焼ける。",
+              "chinese": "用這個烤箱可以烤麵包。"
+            },
+            {
+              "japanese": "肉が いい 色に 焼ける。",
+              "chinese": "肉烤成漂亮的顏色。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "焼けます",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけます",
+          "sentence": [
+            {
+              "japanese": "パンは 十五分で 焼けます。",
+              "chinese": "麵包十五分鐘就烤好。"
+            },
+            {
+              "japanese": "この グリルでは 肉が よく 焼けます。",
+              "chinese": "用這個烤架肉烤得很好。"
+            },
+            {
+              "japanese": "フライパンで 魚が おいしく 焼けます。",
+              "chinese": "用平底鍋魚烤得很香。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "焼けません",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけません",
+          "sentence": [
+            {
+              "japanese": "この オーブンでは パンが 焼けません。",
+              "chinese": "這個烤箱烤不了麵包。"
+            },
+            {
+              "japanese": "火が 弱くて 肉が 焼けません。",
+              "chinese": "火太小，肉烤不熟。"
+            },
+            {
+              "japanese": "今日は 時間が なくて 焼けません。",
+              "chinese": "今天沒時間，烤不了。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "焼けました",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけました",
+          "sentence": [
+            {
+              "japanese": "パンが いい 色に 焼けました。",
+              "chinese": "麵包烤成漂亮的顏色。"
+            },
+            {
+              "japanese": "きのう 魚が よく 焼けました。",
+              "chinese": "昨天的魚烤得很好。"
+            },
+            {
+              "japanese": "ケーキが ふっくら 焼けました。",
+              "chinese": "蛋糕烤得鬆軟。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "焼けませんでした",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけませんでした",
+          "sentence": [
+            {
+              "japanese": "火が 弱くて パンが 焼けませんでした。",
+              "chinese": "火太小，麵包沒有烤好。"
+            },
+            {
+              "japanese": "きのうは 肉が 焼けませんでした。",
+              "chinese": "昨天肉沒有烤熟。"
+            },
+            {
+              "japanese": "オーブンが こわれて ケーキが 焼けませんでした。",
+              "chinese": "烤箱壞了，蛋糕沒有烤成。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "焼けない",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけない",
+          "sentence": [
+            {
+              "japanese": "この オーブンでは パンが 焼けない。",
+              "chinese": "這個烤箱烤不了麵包。"
+            },
+            {
+              "japanese": "火が 弱いと 肉が 焼けない。",
+              "chinese": "火太小肉就烤不熟。"
+            },
+            {
+              "japanese": "古い コンロでは 魚が 焼けない。",
+              "chinese": "舊爐子烤不了魚。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "焼けた",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけた",
+          "sentence": [
+            {
+              "japanese": "パンが こんがり 焼けた。",
+              "chinese": "麵包烤得金黃。"
+            },
+            {
+              "japanese": "火事で 古い 家が 焼けた。",
+              "chinese": "火災把舊房子燒毀了。"
+            },
+            {
+              "japanese": "肉が ちょうど よく 焼けた。",
+              "chinese": "肉烤得恰到好處。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "焼けなかった",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけなかった",
+          "sentence": [
+            {
+              "japanese": "きのうは パンが 焼けなかった。",
+              "chinese": "昨天麵包沒有烤成。"
+            },
+            {
+              "japanese": "火が 弱くて 肉が 焼けなかった。",
+              "chinese": "火太小，肉沒有烤熟。"
+            },
+            {
+              "japanese": "炭が ぬれて 肉が 焼けなかった。",
+              "chinese": "炭濕了，肉沒有烤成。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "焼けて",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけて",
+          "sentence": [
+            {
+              "japanese": "パンが 焼けて、 いい においが する。",
+              "chinese": "麵包烤好了，聞到香味。"
+            },
+            {
+              "japanese": "家が 焼けて、 何も 残らなかった。",
+              "chinese": "房子燒毀了，什麼都沒有留下。"
+            },
+            {
+              "japanese": "肉が 焼けて、 いい 色に なった。",
+              "chinese": "肉烤好了，變成漂亮的顏色。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "焼けられる",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけられる",
+          "sentence": [
+            {
+              "japanese": "この トースターなら、 一度に 4枚 焼けられる。",
+              "chinese": "用這台烤麵包機，一次能烤四片。"
+            },
+            {
+              "japanese": "広い オーブンなら、 ケーキも 肉も 一緒に 焼けられる。",
+              "chinese": "烤箱大的話，蛋糕和肉能一起烤。"
+            },
+            {
+              "japanese": "弱い 火でも、 時間を かければ 魚は 焼けられる。",
+              "chinese": "火小也沒關係，花點時間魚就能烤熟。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "焼けよう",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけよう",
+          "sentence": [
+            {
+              "japanese": "パンが もう 焼けようと している。",
+              "chinese": "麵包快要烤好了。"
+            },
+            {
+              "japanese": "肉が いい 色に 焼けようと している。",
+              "chinese": "肉快烤成漂亮的顏色了。"
+            },
+            {
+              "japanese": "ケーキが 焼けようと している ところだ。",
+              "chinese": "蛋糕正快要烤好。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "焼けろ",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけろ",
+          "sentence": [
+            {
+              "japanese": "さあ、 よく 焼けろ。",
+              "chinese": "來吧，好好烤吧。"
+            },
+            {
+              "japanese": "もっと 強く 焼けろ、 火よ。",
+              "chinese": "燒得更旺吧，火啊。"
+            },
+            {
+              "japanese": "早く 焼けろ、 おなかが すいた。",
+              "chinese": "快點烤好，肚子餓了。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "焼ければ",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やければ",
+          "sentence": [
+            {
+              "japanese": "パンが 焼ければ、 すぐ 出して ください。",
+              "chinese": "麵包烤好就馬上端出來。"
+            },
+            {
+              "japanese": "肉が 焼ければ、 皿に のせます。",
+              "chinese": "肉烤好就放到盤子上。"
+            },
+            {
+              "japanese": "よく 焼ければ、 おいしいです。",
+              "chinese": "烤得好的話很好吃。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "焼けられる",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけられる",
+          "sentence": [
+            {
+              "japanese": "この 大きな 窯なら、 一度に パンが 二十個 焼けられる。",
+              "chinese": "用這個大窯，一次可以烤二十個麵包。"
+            },
+            {
+              "japanese": "炭火は 温度が 高いので、 魚も 短い 時間で 焼けられる。",
+              "chinese": "炭火溫度高，魚也能在短時間內烤好。"
+            },
+            {
+              "japanese": "切り方を 変えれば、 固い 肉でも 柔らかく 焼けられる。",
+              "chinese": "改變切法，硬肉也能烤得柔軟。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "焼けさせる",
+          "group": "2",
+          "chinese": "烤; 燒; 燒毀",
+          "japanese": "やけさせる",
+          "sentence": [
+            {
+              "japanese": "この 窯は パンを ゆっくり 焼けさせる。",
+              "chinese": "這個窯能讓麵包慢慢烤熟。"
+            },
+            {
+              "japanese": "母は 魚を 炭火で 焼けさせる のを 楽しみに して いる。",
+              "chinese": "母親期待用炭火把魚烤熟。"
+            },
+            {
+              "japanese": "強い 日差しが 畑の 草を 焼けさせる。",
+              "chinese": "強烈的陽光把田裡的草曬枯。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "通る",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおる",
+          "sentence": [
+            {
+              "japanese": "この 道を 通る と 駅が ある。",
+              "chinese": "走這條路就會到車站。"
+            },
+            {
+              "japanese": "毎朝 この 橋を 通る。",
+              "chinese": "每天早上走這座橋。"
+            },
+            {
+              "japanese": "大きな トラックが 前を 通る。",
+              "chinese": "大卡車從前面經過。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "通ります",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおります",
+          "sentence": [
+            {
+              "japanese": "毎日 この 道を 通ります。",
+              "chinese": "每天走這條路。"
+            },
+            {
+              "japanese": "バスは 駅の 前を 通ります。",
+              "chinese": "公車經過車站前面。"
+            },
+            {
+              "japanese": "この 電車は 大きな 町を 通ります。",
+              "chinese": "這班電車經過大城市。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "通りません",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおりません",
+          "sentence": [
+            {
+              "japanese": "この バスは 駅の 前を 通りません。",
+              "chinese": "這班公車不經過車站前面。"
+            },
+            {
+              "japanese": "日曜日は トラックが 通りません。",
+              "chinese": "星期天卡車不經過。"
+            },
+            {
+              "japanese": "工事中なので この 道は 通りません。",
+              "chinese": "因為施工，這條路不走。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "通りました",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおりました",
+          "sentence": [
+            {
+              "japanese": "さっき 大きな トラックが 通りました。",
+              "chinese": "剛才大卡車經過了。"
+            },
+            {
+              "japanese": "きのう わたしは この 道を 通りました。",
+              "chinese": "昨天我走了這條路。"
+            },
+            {
+              "japanese": "バスが ちょうど 前を 通りました。",
+              "chinese": "公車剛好從前面經過。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "通りませんでした",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおりませんでした",
+          "sentence": [
+            {
+              "japanese": "きのうは バスが 通りませんでした。",
+              "chinese": "昨天公車沒有經過。"
+            },
+            {
+              "japanese": "この 道は 工事で 通りませんでした。",
+              "chinese": "這條路因為施工沒有走。"
+            },
+            {
+              "japanese": "夜は あまり 車が 通りませんでした。",
+              "chinese": "晚上車子不太經過。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "通らない",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおらない",
+          "sentence": [
+            {
+              "japanese": "この 道は 車が 通らない。",
+              "chinese": "這條路車子不走。"
+            },
+            {
+              "japanese": "日曜日は バスが 通らない。",
+              "chinese": "星期天公車不經過。"
+            },
+            {
+              "japanese": "トラックは この 細い 道を 通らない。",
+              "chinese": "卡車不走這條窄路。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "通った",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおった",
+          "sentence": [
+            {
+              "japanese": "さっき バスが 通った。",
+              "chinese": "剛才公車經過了。"
+            },
+            {
+              "japanese": "わたしは 毎日 この 橋を 通った。",
+              "chinese": "我每天走這座橋。"
+            },
+            {
+              "japanese": "大きな トラックが やっと 通った。",
+              "chinese": "大卡車終於過去了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "通らなかった",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおらなかった",
+          "sentence": [
+            {
+              "japanese": "きのうは バスが 通らなかった。",
+              "chinese": "昨天公車沒有經過。"
+            },
+            {
+              "japanese": "この 道は 工事で 通らなかった。",
+              "chinese": "這條路因為施工沒能走。"
+            },
+            {
+              "japanese": "朝は 車が 一台も 通らなかった。",
+              "chinese": "早上連一台車都沒有經過。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "通って",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおって",
+          "sentence": [
+            {
+              "japanese": "この 道を 通って、 駅へ 行きます。",
+              "chinese": "走這條路去車站。"
+            },
+            {
+              "japanese": "バスが 通って、 ほこりが 立った。",
+              "chinese": "公車經過，揚起了灰塵。"
+            },
+            {
+              "japanese": "橋を 通って、 向こうの 町へ 行った。",
+              "chinese": "走過橋到對面的城鎮去了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "通れる",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおれる",
+          "sentence": [
+            {
+              "japanese": "この 道は 車が 通れる。",
+              "chinese": "這條路車子能走。"
+            },
+            {
+              "japanese": "工事が 終われば トラックも 通れる。",
+              "chinese": "施工結束後卡車也能走。"
+            },
+            {
+              "japanese": "細い 道だが、 自転車は 通れる。",
+              "chinese": "雖然是窄路，腳踏車能走。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "通ろう",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおろう",
+          "sentence": [
+            {
+              "japanese": "この 道を 通ろう。",
+              "chinese": "走這條路吧。"
+            },
+            {
+              "japanese": "バスで なく、 歩いて 橋を 通ろう。",
+              "chinese": "不搭公車，走路過橋吧。"
+            },
+            {
+              "japanese": "近道を 通ろう。",
+              "chinese": "走捷徑吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "通れ",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおれ",
+          "sentence": [
+            {
+              "japanese": "早く 通れ。",
+              "chinese": "快點過去。"
+            },
+            {
+              "japanese": "右の 道を 通れ。",
+              "chinese": "走右邊的路。"
+            },
+            {
+              "japanese": "車は ここを 通れ。",
+              "chinese": "車子走這裡。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "通れば",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおれば",
+          "sentence": [
+            {
+              "japanese": "この 道を 通れば、 駅に 出ます。",
+              "chinese": "走這條路就會到車站。"
+            },
+            {
+              "japanese": "橋を 通れば、 すぐ 公園だ。",
+              "chinese": "過了橋馬上就是公園。"
+            },
+            {
+              "japanese": "大きな 道を 通れば、 迷わない。",
+              "chinese": "走大路就不會迷路。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "通られる",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおられる",
+          "sentence": [
+            {
+              "japanese": "この 細い 道は 毎日 トラックに 通られる ので、 すぐ こわれる。",
+              "chinese": "這條窄路每天有卡車通行，所以很快就壞了。"
+            },
+            {
+              "japanese": "私の 前を 大きな 車に 通られる と、 気が 散る。",
+              "chinese": "有大車從我面前開過，我會分心。"
+            },
+            {
+              "japanese": "先生は 毎朝 この 道を 通られる。",
+              "chinese": "老師每天早上走這條路（敬語）。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "通らせる",
+          "group": "1",
+          "chinese": "通過; 經過; 走（路）",
+          "japanese": "とおらせる",
+          "sentence": [
+            {
+              "japanese": "工事の 間は 車に 裏の 道を 通らせる。",
+              "chinese": "施工期間讓車子走後面的路。"
+            },
+            {
+              "japanese": "先生は 学生に この 橋を 通らせる。",
+              "chinese": "老師讓學生走這座橋。"
+            },
+            {
+              "japanese": "雨の 日は トラックに 別の 道を 通らせる。",
+              "chinese": "下雨天讓卡車走別的路。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "死ぬ",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しぬ",
+          "sentence": [
+            {
+              "japanese": "金魚が 死ぬ。",
+              "chinese": "金魚死了。"
+            },
+            {
+              "japanese": "人も いつか 死ぬ。",
+              "chinese": "人也總有一天會死。"
+            },
+            {
+              "japanese": "水を やらないと 花が 死ぬ。",
+              "chinese": "不澆水的話花會枯死。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "死にます",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しにます",
+          "sentence": [
+            {
+              "japanese": "魚は 水から 出ると 死にます。",
+              "chinese": "魚離開水就會死。"
+            },
+            {
+              "japanese": "この 木は 冬に なると 死にます。",
+              "chinese": "這棵樹一到冬天就會枯死。"
+            },
+            {
+              "japanese": "花に 水を やらないと 死にます。",
+              "chinese": "不給花澆水就會枯死。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "死にません",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しにません",
+          "sentence": [
+            {
+              "japanese": "この 金魚は まだ 死にません。",
+              "chinese": "這條金魚還不會死。"
+            },
+            {
+              "japanese": "水を かえれば 魚は 死にません。",
+              "chinese": "換水的話魚就不會死。"
+            },
+            {
+              "japanese": "強い 木は 少しの 寒さでは 死にません。",
+              "chinese": "強壯的樹不會因為一點寒冷就枯死。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "死にました",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しにました",
+          "sentence": [
+            {
+              "japanese": "きのう 金魚が 死にました。",
+              "chinese": "昨天金魚死了。"
+            },
+            {
+              "japanese": "祖父は 五年前に 死にました。",
+              "chinese": "祖父五年前去世了。"
+            },
+            {
+              "japanese": "台風で 小さな 木が 死にました。",
+              "chinese": "颱風讓小樹枯死了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "死にませんでした",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しにませんでした",
+          "sentence": [
+            {
+              "japanese": "金魚は 死にませんでした。",
+              "chinese": "金魚沒有死。"
+            },
+            {
+              "japanese": "その 花は 冬でも 死にませんでした。",
+              "chinese": "那朵花即使冬天也沒有枯死。"
+            },
+            {
+              "japanese": "水を かえたので 魚は 死にませんでした。",
+              "chinese": "因為換了水，魚沒有死。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "死なない",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しなない",
+          "sentence": [
+            {
+              "japanese": "この 花は 寒さで 死なない。",
+              "chinese": "這朵花不會因為寒冷枯死。"
+            },
+            {
+              "japanese": "金魚は えさを やらなくても すぐには 死なない。",
+              "chinese": "金魚即使不餵食也不會馬上死。"
+            },
+            {
+              "japanese": "強い 木は 台風でも 死なない。",
+              "chinese": "強壯的樹即使颱風也不會枯死。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "死んだ",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しんだ",
+          "sentence": [
+            {
+              "japanese": "金魚が 一匹 死んだ。",
+              "chinese": "死了一條金魚。"
+            },
+            {
+              "japanese": "祖父は 静かに 死んだ。",
+              "chinese": "祖父安靜地去世了。"
+            },
+            {
+              "japanese": "畑の 木が 台風で 死んだ。",
+              "chinese": "田裡的樹被颱風弄枯死了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "死ななかった",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しななかった",
+          "sentence": [
+            {
+              "japanese": "金魚は 死ななかった。",
+              "chinese": "金魚沒有死。"
+            },
+            {
+              "japanese": "あの 花は 冬でも 死ななかった。",
+              "chinese": "那朵花即使冬天也沒有枯死。"
+            },
+            {
+              "japanese": "水を かえたので 魚は 死ななかった。",
+              "chinese": "因為換了水，魚沒有死。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "死んで",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しんで",
+          "sentence": [
+            {
+              "japanese": "魚が 死んで、 水が きたなくなった。",
+              "chinese": "魚死了，水變髒了。"
+            },
+            {
+              "japanese": "祖父は 家族に 見られて 死んで いった。",
+              "chinese": "祖父在家人看護下死去。"
+            },
+            {
+              "japanese": "木が 死んで、 葉が ぜんぶ 落ちた。",
+              "chinese": "樹枯死了，葉子全落了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "死ねる",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しねる",
+          "sentence": [
+            {
+              "japanese": "こんな 高い 所から 落ちたら 死ねる。",
+              "chinese": "從這麼高的地方掉下來會死。"
+            },
+            {
+              "japanese": "この 川は 流れが 速くて、 おぼれたら 死ねる。",
+              "chinese": "這條河水流很急，溺水會死。"
+            },
+            {
+              "japanese": "冬の 山で 道に 迷うと、 寒さで 死ねる。",
+              "chinese": "冬天在山裡迷路，會凍死。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "死のう",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しのう",
+          "sentence": [
+            {
+              "japanese": "あの 木は 死のうと している。",
+              "chinese": "那棵樹快要枯死了。"
+            },
+            {
+              "japanese": "花は 水が なくて 死のうと している。",
+              "chinese": "花因為缺水快要枯死了。"
+            },
+            {
+              "japanese": "金魚が 死のうと している。",
+              "chinese": "金魚快要死了。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "死ね",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しね",
+          "sentence": [
+            {
+              "japanese": "怒った 父は、 思わず 「死ね」と 叫んだ。",
+              "chinese": "生氣的父親不禁喊出「去死」。"
+            },
+            {
+              "japanese": "あんな 人に 死ね と 言われても、 気に しない こと だ。",
+              "chinese": "就算那種人叫你死，也別放在心上。"
+            },
+            {
+              "japanese": "冗談でも 人に 「死ね」と 言っては いけない。",
+              "chinese": "即使是開玩笑，也不能對人說「去死」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "死ねば",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しねば",
+          "sentence": [
+            {
+              "japanese": "この 木が 死ねば、 庭が さびしく なる。",
+              "chinese": "這棵樹要是死了，庭院會變得冷清。"
+            },
+            {
+              "japanese": "金魚が 死ねば、 水そうを きれいに して から、 新しい のを 買おう。",
+              "chinese": "金魚要是死了，就把魚缸清乾淨，再買新的吧。"
+            },
+            {
+              "japanese": "花が 死ねば、 水の やり方を 変えなければ ならない。",
+              "chinese": "花要是死了，就得改變澆水方式。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "死なれる",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しなれる",
+          "sentence": [
+            {
+              "japanese": "祖父に 死なれる と、 家が さびしく なる。",
+              "chinese": "祖父一去世，家裡就冷清了。"
+            },
+            {
+              "japanese": "飼って いた 犬に 死なれる のは つらい。",
+              "chinese": "養的狗死了很難受。"
+            },
+            {
+              "japanese": "友だちに 死なれる 夢を 見た。",
+              "chinese": "夢見朋友死了。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "死なせる",
+          "group": "1",
+          "chinese": "死; 死亡; 枯萎",
+          "japanese": "しなせる",
+          "sentence": [
+            {
+              "japanese": "水を やらないと 花を 死なせる ことに なる。",
+              "chinese": "不澆水的話會把花弄死。"
+            },
+            {
+              "japanese": "寒さが 木を 死なせる ことが ある。",
+              "chinese": "寒冷有時會讓樹枯死。"
+            },
+            {
+              "japanese": "きたない 水は 魚を 死なせる。",
+              "chinese": "髒水會讓魚死。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "びっくりする",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりする",
+          "sentence": [
+            {
+              "japanese": "大きな 音に びっくりする。",
+              "chinese": "被大聲響嚇一跳。"
+            },
+            {
+              "japanese": "人は 急な 音に びっくりする。",
+              "chinese": "人會被突然的聲音嚇到。"
+            },
+            {
+              "japanese": "夜の 道で びっくりする ことが ある。",
+              "chinese": "晚上在路上有時會嚇一跳。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "びっくりします",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりします",
+          "sentence": [
+            {
+              "japanese": "大きな 音が すると びっくりします。",
+              "chinese": "一有大的聲響就會嚇一跳。"
+            },
+            {
+              "japanese": "毎回 その 音に びっくりします。",
+              "chinese": "每次都被那個聲音嚇到。"
+            },
+            {
+              "japanese": "暗い 道を 歩くと びっくりします。",
+              "chinese": "走在暗的路上會嚇一跳。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "びっくりしません",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりしません",
+          "sentence": [
+            {
+              "japanese": "もう 慣れたので びっくりしません。",
+              "chinese": "已經習慣了，不會嚇一跳。"
+            },
+            {
+              "japanese": "小さな 音では びっくりしません。",
+              "chinese": "小小的聲音不會嚇到。"
+            },
+            {
+              "japanese": "この 犬は 雷でも びっくりしません。",
+              "chinese": "這隻狗即使打雷也不吃驚。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "びっくりしました",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりしました",
+          "sentence": [
+            {
+              "japanese": "きのう 大きな 音に びっくりしました。",
+              "chinese": "昨天被大聲響嚇了一跳。"
+            },
+            {
+              "japanese": "ドアが 急に 開いて びっくりしました。",
+              "chinese": "門突然打開，嚇了一跳。"
+            },
+            {
+              "japanese": "その 話を 聞いて びっくりしました。",
+              "chinese": "聽到那件事嚇了一跳。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "びっくりしませんでした",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりしませんでした",
+          "sentence": [
+            {
+              "japanese": "その 音では びっくりしませんでした。",
+              "chinese": "那個聲音並沒有讓我吃驚。"
+            },
+            {
+              "japanese": "前から 知って いたので びっくりしませんでした。",
+              "chinese": "因為早就知道，所以沒有吃驚。"
+            },
+            {
+              "japanese": "犬は 花火でも びっくりしませんでした。",
+              "chinese": "狗即使煙火也沒有嚇到。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "びっくりしない",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりしない",
+          "sentence": [
+            {
+              "japanese": "もう 慣れて びっくりしない。",
+              "chinese": "已經習慣了，不會吃驚。"
+            },
+            {
+              "japanese": "この 猫は 大きな 音でも びっくりしない。",
+              "chinese": "這隻貓即使大聲響也不吃驚。"
+            },
+            {
+              "japanese": "わたしは あまり びっくりしない。",
+              "chinese": "我不太會吃驚。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "びっくりした",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりした",
+          "sentence": [
+            {
+              "japanese": "急な 音に びっくりした。",
+              "chinese": "被突然的聲音嚇了一跳。"
+            },
+            {
+              "japanese": "彼の 顔を 見て びっくりした。",
+              "chinese": "看到他的臉嚇了一跳。"
+            },
+            {
+              "japanese": "みんな その 話に びっくりした。",
+              "chinese": "大家聽到那件事都嚇了一跳。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "びっくりしなかった",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりしなかった",
+          "sentence": [
+            {
+              "japanese": "わたしは その 音に びっくりしなかった。",
+              "chinese": "我沒有被那個聲音嚇到。"
+            },
+            {
+              "japanese": "彼女は 何も びっくりしなかった。",
+              "chinese": "她一點都沒有吃驚。"
+            },
+            {
+              "japanese": "犬は 花火に びっくりしなかった。",
+              "chinese": "狗沒有被煙火嚇到。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "びっくりして",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりして",
+          "sentence": [
+            {
+              "japanese": "びっくりして、 声が 出なかった。",
+              "chinese": "嚇了一跳，發不出聲。"
+            },
+            {
+              "japanese": "彼は びっくりして、 コップを 落とした。",
+              "chinese": "他嚇了一跳，把杯子掉了。"
+            },
+            {
+              "japanese": "みんな びっくりして、 立ちました。",
+              "chinese": "大家都嚇了一跳，站了起來。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "びっくりできる",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりできる",
+          "sentence": [
+            {
+              "japanese": "この 遊園地では 何度でも びっくりできる。",
+              "chinese": "在這個遊樂園可以嚇好幾次。"
+            },
+            {
+              "japanese": "夜の 森を 歩けば、 思わぬ 音に びっくりできる。",
+              "chinese": "晚上走進森林，會被意想不到的聲音嚇到。"
+            },
+            {
+              "japanese": "動物園では めずらしい 動物に びっくりできる。",
+              "chinese": "在動物園可以對稀奇的動物吃驚。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "びっくりしよう",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりしよう",
+          "sentence": [
+            {
+              "japanese": "さあ、 この 音を 聞いて びっくりしよう。",
+              "chinese": "來吧，聽這個聲音嚇一跳吧。"
+            },
+            {
+              "japanese": "みんなで おどろいて びっくりしよう。",
+              "chinese": "大家一起驚訝一下吧。"
+            },
+            {
+              "japanese": "新しい 動物を 見て びっくりしよう。",
+              "chinese": "去看新的動物，吃驚一下吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "びっくりしろ",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりしろ",
+          "sentence": [
+            {
+              "japanese": "さあ、 びっくりしろ。",
+              "chinese": "來吧，嚇一跳吧。"
+            },
+            {
+              "japanese": "この 音を 聞いて びっくりしろ。",
+              "chinese": "聽這個聲音，嚇一跳吧。"
+            },
+            {
+              "japanese": "弟は おどけて 「さあ、 びっくりしろ」と 両手を 広げた。",
+              "chinese": "弟弟誇張地攤開雙手說「來吧，嚇一跳吧」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "びっくりすれば",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりすれば",
+          "sentence": [
+            {
+              "japanese": "わたしが びっくりすれば、 みんなも おどろく。",
+              "chinese": "我一吃驚，大家也會嚇到。"
+            },
+            {
+              "japanese": "犬が びっくりすれば、 すぐ 鳴く。",
+              "chinese": "狗一吃驚就會馬上叫。"
+            },
+            {
+              "japanese": "音が 大きくて びっくりすれば、 心臓が どきどきする。",
+              "chinese": "聲音太大而吃驚的話，心臟會跳得很快。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "びっくりされる",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりされる",
+          "sentence": [
+            {
+              "japanese": "お客様が 大きな 音に びっくりされる と いけないので、 音楽を 小さく した。",
+              "chinese": "怕客人被大聲響嚇到，所以把音樂調小了。"
+            },
+            {
+              "japanese": "先生は 虫が 苦手で、 見る たびに びっくりされる。",
+              "chinese": "老師怕蟲，每次看到都會嚇一跳。"
+            },
+            {
+              "japanese": "大きな 声で 話す ので、 隣の 人に びっくりされる ことが ある。",
+              "chinese": "因為講話太大聲，有時會讓旁邊的人嚇一跳。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "びっくりさせる",
+          "group": "3",
+          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "japanese": "びっくりさせる",
+          "sentence": [
+            {
+              "japanese": "大きな 声を 出して 友だちを びっくりさせる。",
+              "chinese": "大聲喊叫讓朋友嚇一跳。"
+            },
+            {
+              "japanese": "その 音は 犬を びっくりさせる。",
+              "chinese": "那個聲音會讓狗嚇一跳。"
+            },
+            {
+              "japanese": "手品で こどもを びっくりさせる。",
+              "chinese": "用魔術讓孩子吃驚。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "がっかりする",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりする",
+          "sentence": [
+            {
+              "japanese": "テストの 点が 悪くて がっかりする。",
+              "chinese": "考試分數不好而失望。"
+            },
+            {
+              "japanese": "雨で 旅行が 中止に なると がっかりする。",
+              "chinese": "因為下雨旅行取消就會失望。"
+            },
+            {
+              "japanese": "人は 失敗すると がっかりする。",
+              "chinese": "人失敗就會沮喪。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "がっかりします",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりします",
+          "sentence": [
+            {
+              "japanese": "試合に 負けると がっかりします。",
+              "chinese": "比賽輸了就會失望。"
+            },
+            {
+              "japanese": "そんな 話を 聞くと がっかりします。",
+              "chinese": "聽到那種話就會失望。"
+            },
+            {
+              "japanese": "計画が 中止に なると がっかりします。",
+              "chinese": "計畫取消就會失望。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "がっかりしません",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりしません",
+          "sentence": [
+            {
+              "japanese": "負けても がっかりしません。",
+              "chinese": "即使輸了也不失望。"
+            },
+            {
+              "japanese": "小さな ことに がっかりしません。",
+              "chinese": "不會為小事失望。"
+            },
+            {
+              "japanese": "彼は 何が あっても がっかりしません。",
+              "chinese": "他無論發生什麼都不會沮喪。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "がっかりしました",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりしました",
+          "sentence": [
+            {
+              "japanese": "きのう テストの 点を 見て がっかりしました。",
+              "chinese": "昨天看到考試分數很失望。"
+            },
+            {
+              "japanese": "試合に 負けて がっかりしました。",
+              "chinese": "比賽輸了很失望。"
+            },
+            {
+              "japanese": "友だちが 来なくて がっかりしました。",
+              "chinese": "朋友沒來，很失望。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "がっかりしませんでした",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりしませんでした",
+          "sentence": [
+            {
+              "japanese": "負けても がっかりしませんでした。",
+              "chinese": "即使輸了也沒有失望。"
+            },
+            {
+              "japanese": "雨でも がっかりしませんでした。",
+              "chinese": "即使下雨也沒有失望。"
+            },
+            {
+              "japanese": "わたしは その 話に がっかりしませんでした。",
+              "chinese": "我沒有因為那件事失望。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "がっかりしない",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりしない",
+          "sentence": [
+            {
+              "japanese": "一度 失敗しても がっかりしない。",
+              "chinese": "即使失敗一次也不灰心。"
+            },
+            {
+              "japanese": "この チームは 負けても がっかりしない。",
+              "chinese": "這隊即使輸了也不沮喪。"
+            },
+            {
+              "japanese": "母は 小さな ことに がっかりしない。",
+              "chinese": "媽媽不會為小事失望。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "がっかりした",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりした",
+          "sentence": [
+            {
+              "japanese": "テストの 結果を 見て がっかりした。",
+              "chinese": "看到考試結果很失望。"
+            },
+            {
+              "japanese": "みんな その 話に がっかりした。",
+              "chinese": "大家都對那件事失望。"
+            },
+            {
+              "japanese": "旅行が 中止に なって がっかりした。",
+              "chinese": "旅行取消，很失望。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "がっかりしなかった",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりしなかった",
+          "sentence": [
+            {
+              "japanese": "わたしは 負けても がっかりしなかった。",
+              "chinese": "我即使輸了也沒有失望。"
+            },
+            {
+              "japanese": "彼は 何も がっかりしなかった。",
+              "chinese": "他一點都沒有失望。"
+            },
+            {
+              "japanese": "妹は 雨でも がっかりしなかった。",
+              "chinese": "妹妹即使下雨也沒有失望。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "がっかりして",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりして",
+          "sentence": [
+            {
+              "japanese": "がっかりして、 何も 言えなかった。",
+              "chinese": "失望得什麼都說不出來。"
+            },
+            {
+              "japanese": "彼は がっかりして、 家へ 帰った。",
+              "chinese": "他失望地回家了。"
+            },
+            {
+              "japanese": "みんな がっかりして、 下を 向いた。",
+              "chinese": "大家失望地低下頭。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "がっかりできる",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりできる",
+          "sentence": [
+            {
+              "japanese": "こんな 結果では がっかりできる。",
+              "chinese": "這種結果當然可以失望。"
+            },
+            {
+              "japanese": "この 話を 聞けば だれでも がっかりできる。",
+              "chinese": "聽到這件事誰都能失望。"
+            },
+            {
+              "japanese": "雨の 日には がっかりできる こと ばかりだ。",
+              "chinese": "下雨天盡是讓人失望的事。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "がっかりしよう",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりしよう",
+          "sentence": [
+            {
+              "japanese": "さあ、 いっしょに がっかりしよう。",
+              "chinese": "來吧，一起失望吧。"
+            },
+            {
+              "japanese": "結果を 見て がっかりしよう。",
+              "chinese": "看結果失望一下吧。"
+            },
+            {
+              "japanese": "失敗した 日は がっかりしよう。",
+              "chinese": "失敗的日子就沮喪一下吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "がっかりしろ",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりしろ",
+          "sentence": [
+            {
+              "japanese": "さあ、 がっかりしろ。",
+              "chinese": "來吧，失望吧。"
+            },
+            {
+              "japanese": "「がっかりしろ」は 冗談で 使う 形だ。",
+              "chinese": "「がっかりしろ」是開玩笑時用的形式。"
+            },
+            {
+              "japanese": "まだ 終わって いないのに、 がっかりしろ と 言われても 困る。",
+              "chinese": "明明還沒結束，卻被說「失望吧」，實在讓人困擾。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "がっかりすれば",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりすれば",
+          "sentence": [
+            {
+              "japanese": "そんな ことで がっかりすれば、 きりが ない。",
+              "chinese": "為那種事失望的話就沒完沒了。"
+            },
+            {
+              "japanese": "試合に 負けて がっかりすれば、 次に 勝てない。",
+              "chinese": "比賽輸了就失望，下次贏不了。"
+            },
+            {
+              "japanese": "雨が 降る たびに がっかりすれば、 旅行は できない。",
+              "chinese": "每次下雨就失望，就不能旅行了。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "がっかりされる",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりされる",
+          "sentence": [
+            {
+              "japanese": "母は 息子の 成績を 見る たびに がっかりされる。",
+              "chinese": "母親每次看到兒子的成績就會失望。"
+            },
+            {
+              "japanese": "こんな 結果では、 先生に がっかりされる に ちがいない。",
+              "chinese": "這樣的結果，老師一定會失望。"
+            },
+            {
+              "japanese": "期待して いた 分、 親に がっかりされる のは つらい。",
+              "chinese": "因為曾經期待，被父母失望看待是很難受的。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "がっかりさせる",
+          "group": "3",
+          "chinese": "失望; 沮喪; 灰心",
+          "japanese": "がっかりさせる",
+          "sentence": [
+            {
+              "japanese": "その 知らせは みんなを がっかりさせる。",
+              "chinese": "那個消息讓大家失望。"
+            },
+            {
+              "japanese": "雨の 天気は 人を がっかりさせる。",
+              "chinese": "下雨的天氣讓人沮喪。"
+            },
+            {
+              "japanese": "彼の 話は こどもを がっかりさせる。",
+              "chinese": "他的話讓孩子失望。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "安心する",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんする",
+          "sentence": [
+            {
+              "japanese": "無事だと 聞いて 安心する。",
+              "chinese": "聽到平安就安心。"
+            },
+            {
+              "japanese": "家族が そばに いると 安心する。",
+              "chinese": "家人在旁邊就安心。"
+            },
+            {
+              "japanese": "テストが 終わると 安心する。",
+              "chinese": "考試結束就安心。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "安心します",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんします",
+          "sentence": [
+            {
+              "japanese": "連絡が あると 安心します。",
+              "chinese": "有聯絡就安心。"
+            },
+            {
+              "japanese": "子どもが 帰って くると 安心します。",
+              "chinese": "孩子回來就安心。"
+            },
+            {
+              "japanese": "この 薬を 飲むと 安心します。",
+              "chinese": "吃了這個藥就安心。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "安心しません",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんしません",
+          "sentence": [
+            {
+              "japanese": "連絡が ないと 安心しません。",
+              "chinese": "沒有聯絡就不安心。"
+            },
+            {
+              "japanese": "まだ 結果が 出ないので 安心しません。",
+              "chinese": "結果還沒出來，所以不安心。"
+            },
+            {
+              "japanese": "父は 何度 言っても 安心しません。",
+              "chinese": "父親不管說幾次都不放心。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "安心しました",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんしました",
+          "sentence": [
+            {
+              "japanese": "無事だと 聞いて 安心しました。",
+              "chinese": "聽到平安就安心了。"
+            },
+            {
+              "japanese": "みんなが 来て 安心しました。",
+              "chinese": "大家都來了就安心了。"
+            },
+            {
+              "japanese": "テストが 終わって 安心しました。",
+              "chinese": "考試結束就安心了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "安心しませんでした",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんしませんでした",
+          "sentence": [
+            {
+              "japanese": "連絡が なかったので 安心しませんでした。",
+              "chinese": "因為沒有聯絡，所以沒有安心。"
+            },
+            {
+              "japanese": "結果が わからなくて 安心しませんでした。",
+              "chinese": "結果不清楚，所以沒有安心。"
+            },
+            {
+              "japanese": "母は 最後まで 安心しませんでした。",
+              "chinese": "母親到最後都沒有放心。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "安心しない",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんしない",
+          "sentence": [
+            {
+              "japanese": "連絡が 来るまで 安心しない。",
+              "chinese": "聯絡來之前不安心。"
+            },
+            {
+              "japanese": "父は すぐには 安心しない。",
+              "chinese": "父親不會馬上放心。"
+            },
+            {
+              "japanese": "結果を 見るまで 安心しない。",
+              "chinese": "看到結果之前不安心。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "安心した",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんした",
+          "sentence": [
+            {
+              "japanese": "無事だと 聞いて 安心した。",
+              "chinese": "聽到平安就安心了。"
+            },
+            {
+              "japanese": "家族が そろって 安心した。",
+              "chinese": "家人到齊就安心了。"
+            },
+            {
+              "japanese": "試験が 終わって 安心した。",
+              "chinese": "考試結束就安心了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "安心しなかった",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんしなかった",
+          "sentence": [
+            {
+              "japanese": "わたしは 最後まで 安心しなかった。",
+              "chinese": "我到最後都沒有安心。"
+            },
+            {
+              "japanese": "母は 連絡が 来るまで 安心しなかった。",
+              "chinese": "母親到聯絡來之前都沒有放心。"
+            },
+            {
+              "japanese": "結果が いいと わかるまで 安心しなかった。",
+              "chinese": "在知道結果好之前都沒有安心。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "安心して",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんして",
+          "sentence": [
+            {
+              "japanese": "安心して、 ゆっくり 休んだ。",
+              "chinese": "安心地好好休息了。"
+            },
+            {
+              "japanese": "母は 安心して、 笑った。",
+              "chinese": "母親安心地笑了。"
+            },
+            {
+              "japanese": "無事だと 聞いて 安心して、 電話を 切った。",
+              "chinese": "聽到平安就安心，掛了電話。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "安心できる",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんできる",
+          "sentence": [
+            {
+              "japanese": "この 病院なら 安心できる。",
+              "chinese": "這家醫院的話可以安心。"
+            },
+            {
+              "japanese": "家族と いれば 安心できる。",
+              "chinese": "和家人在一就能安心。"
+            },
+            {
+              "japanese": "この 説明を 聞けば 安心できる。",
+              "chinese": "聽到這個說明就能安心。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "安心しよう",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんしよう",
+          "sentence": [
+            {
+              "japanese": "もう 終わったから 安心しよう。",
+              "chinese": "已經結束了，安心吧。"
+            },
+            {
+              "japanese": "無事だと わかったので 安心しよう。",
+              "chinese": "知道平安了，安心吧。"
+            },
+            {
+              "japanese": "結果は いいから、 安心しよう。",
+              "chinese": "結果不錯，安心吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "安心しろ",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんしろ",
+          "sentence": [
+            {
+              "japanese": "もう 大丈夫だ、 安心しろ。",
+              "chinese": "已經沒事了，安心吧。"
+            },
+            {
+              "japanese": "心配 しないで 安心しろ。",
+              "chinese": "別擔心，安心吧。"
+            },
+            {
+              "japanese": "わたしが ついて いるから 安心しろ。",
+              "chinese": "我在你身邊，安心吧。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "安心すれば",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんすれば",
+          "sentence": [
+            {
+              "japanese": "無事だと わかれば、 安心すれば いい。",
+              "chinese": "知道平安的話，安心就好。"
+            },
+            {
+              "japanese": "子どもが 帰って くれば、 安心すれば いい。",
+              "chinese": "孩子回來的話，安心就好。"
+            },
+            {
+              "japanese": "試験が 終われば、 安心すれば いい。",
+              "chinese": "考試結束的話，安心就好。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "安心される",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんされる",
+          "sentence": [
+            {
+              "japanese": "ご家族が 安心される よう に、 写真を 送った。",
+              "chinese": "為了讓家人安心，寄了照片。"
+            },
+            {
+              "japanese": "無事だ という 連絡が 来れば、 母も 安心される でしょう。",
+              "chinese": "若接到平安的消息，母親也會放心吧。"
+            },
+            {
+              "japanese": "毎日 電話を すれば、 親も 安心される だろう。",
+              "chinese": "每天打電話的話，父母也會安心吧。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "安心させる",
+          "group": "3",
+          "chinese": "安心; 放心; 寬心",
+          "japanese": "あんしんさせる",
+          "sentence": [
+            {
+              "japanese": "その 知らせは 家族を 安心させる。",
+              "chinese": "那個消息讓家人安心。"
+            },
+            {
+              "japanese": "先生の 話は 学生を 安心させる。",
+              "chinese": "老師的話讓學生安心。"
+            },
+            {
+              "japanese": "医者の 説明は 母を 安心させる。",
+              "chinese": "醫生的說明讓母親安心。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "遅刻する",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくする",
+          "sentence": [
+            {
+              "japanese": "寝坊すると 遅刻する。",
+              "chinese": "睡過頭就會遲到。"
+            },
+            {
+              "japanese": "電車が 止まると 遅刻する。",
+              "chinese": "電車停駛就會遲到。"
+            },
+            {
+              "japanese": "あの 学生は よく 遅刻する。",
+              "chinese": "那個學生常遲到。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "遅刻します",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくします",
+          "sentence": [
+            {
+              "japanese": "毎朝 バスが 来ないと 遅刻します。",
+              "chinese": "每天早上公車不來就會遲到。"
+            },
+            {
+              "japanese": "雨の 日は よく 遅刻します。",
+              "chinese": "下雨天常遲到。"
+            },
+            {
+              "japanese": "兄は いつも 会議に 遅刻します。",
+              "chinese": "哥哥開會總是遲到。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "遅刻しません",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくしません",
+          "sentence": [
+            {
+              "japanese": "早く 出れば 遅刻しません。",
+              "chinese": "早點出門就不會遲到。"
+            },
+            {
+              "japanese": "わたしは あまり 遅刻しません。",
+              "chinese": "我不太遲到。"
+            },
+            {
+              "japanese": "この 会社の 人は だれも 遅刻しません。",
+              "chinese": "這家公司的人都不遲到。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "遅刻しました",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくしました",
+          "sentence": [
+            {
+              "japanese": "きのう 電車が 遅れて 遅刻しました。",
+              "chinese": "昨天電車誤點，遲到了。"
+            },
+            {
+              "japanese": "今朝 寝坊して 遅刻しました。",
+              "chinese": "今早睡過頭，遲到了。"
+            },
+            {
+              "japanese": "会議に 遅刻しました。",
+              "chinese": "開會遲到了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "遅刻しませんでした",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくしませんでした",
+          "sentence": [
+            {
+              "japanese": "きのうは 遅刻しませんでした。",
+              "chinese": "昨天沒有遲到。"
+            },
+            {
+              "japanese": "早く 家を 出たので 遅刻しませんでした。",
+              "chinese": "因為早出門，所以沒有遲到。"
+            },
+            {
+              "japanese": "だれも 遅刻しませんでした。",
+              "chinese": "誰都沒有遲到。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "遅刻しない",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくしない",
+          "sentence": [
+            {
+              "japanese": "早く 起きれば 遅刻しない。",
+              "chinese": "早點起床就不會遲到。"
+            },
+            {
+              "japanese": "彼は あまり 遅刻しない。",
+              "chinese": "他不太遲到。"
+            },
+            {
+              "japanese": "自転車で 行けば 遅刻しない。",
+              "chinese": "騎腳踏車去的話不會遲到。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "遅刻した",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくした",
+          "sentence": [
+            {
+              "japanese": "今朝 寝坊して 遅刻した。",
+              "chinese": "今早睡過頭，遲到了。"
+            },
+            {
+              "japanese": "電車が 止まって 遅刻した。",
+              "chinese": "電車停駛，遲到了。"
+            },
+            {
+              "japanese": "兄は 会議に 遅刻した。",
+              "chinese": "哥哥開會遲到了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "遅刻しなかった",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくしなかった",
+          "sentence": [
+            {
+              "japanese": "きのうは 遅刻しなかった。",
+              "chinese": "昨天沒有遲到。"
+            },
+            {
+              "japanese": "早く 出たので 遅刻しなかった。",
+              "chinese": "因為早出門，所以沒有遲到。"
+            },
+            {
+              "japanese": "妹は 一度も 遅刻しなかった。",
+              "chinese": "妹妹一次也沒有遲到。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "遅刻して",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくして",
+          "sentence": [
+            {
+              "japanese": "遅刻して、 先生に しかられた。",
+              "chinese": "遲到被老師罵了。"
+            },
+            {
+              "japanese": "寝坊して 遅刻して、 走って 来た。",
+              "chinese": "睡過頭遲到，跑著來的。"
+            },
+            {
+              "japanese": "弟は 遅刻して、 みんなに あやまった。",
+              "chinese": "弟弟遲到，向大家道歉。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "遅刻できる",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくできる",
+          "sentence": [
+            {
+              "japanese": "今日は 会議が ないので、 少し 遅刻できる。",
+              "chinese": "今天沒有會議，可以稍微遲到。"
+            },
+            {
+              "japanese": "この 会社は 時間に ゆるくて、 遅刻できる 日も ある。",
+              "chinese": "這家公司對時間比較寬鬆，也有可以遲到的日子。"
+            },
+            {
+              "japanese": "明日は 上司が 出張で いないので、 遅刻できる。",
+              "chinese": "明天上司出差不在，可以遲到。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "遅刻しよう",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくしよう",
+          "sentence": [
+            {
+              "japanese": "きょうは いっしょに 遅刻しよう。",
+              "chinese": "今天一起遲到吧。"
+            },
+            {
+              "japanese": "もう 間に 合わないから 遅刻しよう。",
+              "chinese": "已經來不及了，就遲到吧。"
+            },
+            {
+              "japanese": "たまには 遅刻しよう。",
+              "chinese": "偶爾遲到一下吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "遅刻しろ",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくしろ",
+          "sentence": [
+            {
+              "japanese": "どうせ 間に 合わないなら、 開き直って 遅刻しろ。",
+              "chinese": "反正趕不上了，乾脆豁出去遲到吧。"
+            },
+            {
+              "japanese": "友だちが 「たまには 遅刻しろ」と 笑って 言った。",
+              "chinese": "朋友笑著說「偶爾也遲到一下吧」。"
+            },
+            {
+              "japanese": "課長は 「遅刻しろ」と 言って、 笑った。",
+              "chinese": "課長說著「遲到吧」笑了。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "遅刻すれば",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくすれば",
+          "sentence": [
+            {
+              "japanese": "毎朝 遅刻すれば、 会社を くびに なる。",
+              "chinese": "每天早上遲到會被公司開除。"
+            },
+            {
+              "japanese": "遅刻すれば、 先生に しかられる。",
+              "chinese": "遲到的話會被老師罵。"
+            },
+            {
+              "japanese": "遅刻すれば、 みんなに 笑われる。",
+              "chinese": "遲到的話會被大家笑。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "遅刻される",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくされる",
+          "sentence": [
+            {
+              "japanese": "部下に 遅刻される と、 会議が 始められない。",
+              "chinese": "部下遲到的話，會議就沒法開始。"
+            },
+            {
+              "japanese": "部長は よく 会議に 遅刻される。",
+              "chinese": "部長常常開會遲到。"
+            },
+            {
+              "japanese": "取引先の 人に 遅刻される のは 困る。",
+              "chinese": "客戶那邊的人遲到就麻煩了。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "遅刻させる",
+          "group": "3",
+          "chinese": "遲到",
+          "japanese": "ちこくさせる",
+          "sentence": [
+            {
+              "japanese": "バスの 遅れが 学生を 遅刻させる。",
+              "chinese": "公車誤點讓學生遲到。"
+            },
+            {
+              "japanese": "寝坊は 兄を 遅刻させる。",
+              "chinese": "睡過頭讓哥哥遲到。"
+            },
+            {
+              "japanese": "電車の 事故が みんなを 遅刻させる。",
+              "chinese": "電車事故讓大家遲到。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "喧嘩する",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかする",
+          "sentence": [
+            {
+              "japanese": "兄弟は よく 喧嘩する。",
+              "chinese": "兄弟常吵架。"
+            },
+            {
+              "japanese": "小さな ことで 喧嘩する。",
+              "chinese": "為小事吵架。"
+            },
+            {
+              "japanese": "犬と 猫が 喧嘩する。",
+              "chinese": "狗和貓吵架。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "喧嘩します",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかします",
+          "sentence": [
+            {
+              "japanese": "弟は よく 兄と 喧嘩します。",
+              "chinese": "弟弟常和哥哥吵架。"
+            },
+            {
+              "japanese": "つまらない ことで 喧嘩します。",
+              "chinese": "為無聊的事吵架。"
+            },
+            {
+              "japanese": "うちの 犬は よく 隣の 犬と 喧嘩します。",
+              "chinese": "我家的狗常和隔壁的狗吵架。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "喧嘩しません",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかしません",
+          "sentence": [
+            {
+              "japanese": "わたしは あまり 喧嘩しません。",
+              "chinese": "我不太吵架。"
+            },
+            {
+              "japanese": "この 兄弟は ぜんぜん 喧嘩しません。",
+              "chinese": "這對兄弟完全不吵架。"
+            },
+            {
+              "japanese": "犬と 猫は 喧嘩しません。",
+              "chinese": "狗和貓不吵架。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "喧嘩しました",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかしました",
+          "sentence": [
+            {
+              "japanese": "きのう 弟と 喧嘩しました。",
+              "chinese": "昨天和弟弟吵架了。"
+            },
+            {
+              "japanese": "駅の 前で 二人が 喧嘩しました。",
+              "chinese": "兩個人在車站前吵架。"
+            },
+            {
+              "japanese": "つまらない ことで 喧嘩しました。",
+              "chinese": "為無聊的事吵架了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "喧嘩しませんでした",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかしませんでした",
+          "sentence": [
+            {
+              "japanese": "きのうは 喧嘩しませんでした。",
+              "chinese": "昨天沒有吵架。"
+            },
+            {
+              "japanese": "兄弟は 一度も 喧嘩しませんでした。",
+              "chinese": "兄弟一次也沒有吵架。"
+            },
+            {
+              "japanese": "犬と 猫は 喧嘩しませんでした。",
+              "chinese": "狗和貓沒有吵架。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "喧嘩しない",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかしない",
+          "sentence": [
+            {
+              "japanese": "この 兄弟は 喧嘩しない。",
+              "chinese": "這對兄弟不吵架。"
+            },
+            {
+              "japanese": "わたしは 人と 喧嘩しない。",
+              "chinese": "我不和別人吵架。"
+            },
+            {
+              "japanese": "あの 二人は もう 喧嘩しない。",
+              "chinese": "那兩個人已經不再吵架。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "喧嘩した",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかした",
+          "sentence": [
+            {
+              "japanese": "きのう 兄と 喧嘩した。",
+              "chinese": "昨天和哥哥吵架了。"
+            },
+            {
+              "japanese": "二人は 駅で 喧嘩した。",
+              "chinese": "兩個人在車站吵架了。"
+            },
+            {
+              "japanese": "犬と 猫が 喧嘩した。",
+              "chinese": "狗和貓吵架了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "喧嘩しなかった",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかしなかった",
+          "sentence": [
+            {
+              "japanese": "きのうは 喧嘩しなかった。",
+              "chinese": "昨天沒有吵架。"
+            },
+            {
+              "japanese": "兄弟は 一度も 喧嘩しなかった。",
+              "chinese": "兄弟一次也沒有吵架。"
+            },
+            {
+              "japanese": "二人は 最後まで 喧嘩しなかった。",
+              "chinese": "兩個人到最後都沒有吵架。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "喧嘩して",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかして",
+          "sentence": [
+            {
+              "japanese": "兄と 喧嘩して、 ひとりで 帰った。",
+              "chinese": "和哥哥吵架，一個人回家了。"
+            },
+            {
+              "japanese": "二人は 喧嘩して、 それから 仲直りした。",
+              "chinese": "兩個人吵架，然後和好了。"
+            },
+            {
+              "japanese": "犬と 猫が 喧嘩して、 部屋が うるさかった。",
+              "chinese": "狗和貓吵架，房間很吵。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "喧嘩できる",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかできる",
+          "sentence": [
+            {
+              "japanese": "本音で 喧嘩できる 友達が 一人 いる。",
+              "chinese": "有一個能坦誠爭吵的朋友。"
+            },
+            {
+              "japanese": "この 二人は 小さい ことでも すぐ 喧嘩できる。",
+              "chinese": "這兩個人連小事都能馬上吵起來。"
+            },
+            {
+              "japanese": "兄弟は 毎日 一緒に いるので、 いつでも 喧嘩できる。",
+              "chinese": "兄弟每天在一起，隨時都能吵架。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "喧嘩しよう",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかしよう",
+          "sentence": [
+            {
+              "japanese": "さあ、 正々堂々と 喧嘩しよう。",
+              "chinese": "來吧，光明正大地吵架吧。"
+            },
+            {
+              "japanese": "言い たい ことが あるなら 喧嘩しよう。",
+              "chinese": "有話想說就吵架吧。"
+            },
+            {
+              "japanese": "二人で 外で 喧嘩しよう。",
+              "chinese": "兩個人在外面吵架吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "喧嘩しろ",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかしろ",
+          "sentence": [
+            {
+              "japanese": "やる なら 喧嘩しろ。",
+              "chinese": "要做的話就吵架吧。"
+            },
+            {
+              "japanese": "「喧嘩しろ」と 言われても 困る。",
+              "chinese": "被說「吵架吧」也很困擾。"
+            },
+            {
+              "japanese": "言い たい なら 喧嘩しろ。",
+              "chinese": "想說的話就吵架吧。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "喧嘩すれば",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかすれば",
+          "sentence": [
+            {
+              "japanese": "喧嘩すれば、 友だちを なくす。",
+              "chinese": "吵架的話會失去朋友。"
+            },
+            {
+              "japanese": "すぐ 喧嘩すれば、 だれも 近づかない。",
+              "chinese": "動不動就吵架，誰都不會靠近。"
+            },
+            {
+              "japanese": "兄弟で 喧嘩すれば、 母が 心配する。",
+              "chinese": "兄弟吵架的話，媽媽會擔心。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "喧嘩される",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかされる",
+          "sentence": [
+            {
+              "japanese": "隣の 部屋の 夫婦に 毎晩 喧嘩される ので、 よく 眠れない。",
+              "chinese": "隔壁房的夫妻每晚吵架，害我睡不好。"
+            },
+            {
+              "japanese": "兄に 喧嘩される と、 いつも 母が 間に 入る。",
+              "chinese": "哥哥來吵架時，媽媽總是會介入調停。"
+            },
+            {
+              "japanese": "二人に 事務所で 喧嘩される と、 仕事が 進まない。",
+              "chinese": "他們兩個在辦公室吵架，工作就無法推進。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "喧嘩させる",
+          "group": "3",
+          "chinese": "吵架; 打架; 爭吵",
+          "japanese": "けんかさせる",
+          "sentence": [
+            {
+              "japanese": "つまらない 言葉が 二人を 喧嘩させる。",
+              "chinese": "無聊的話讓兩個人吵架。"
+            },
+            {
+              "japanese": "お酒が 人を 喧嘩させる ことが ある。",
+              "chinese": "酒有時會讓人吵架。"
+            },
+            {
+              "japanese": "彼の 一言が 兄弟を 喧嘩させる。",
+              "chinese": "他的一句話讓兄弟吵架。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "離婚する",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんする",
+          "sentence": [
+            {
+              "japanese": "二人は 去年 離婚する ことに した。",
+              "chinese": "兩個人決定去年離婚。"
+            },
+            {
+              "japanese": "話し合って 離婚する。",
+              "chinese": "商量後離婚。"
+            },
+            {
+              "japanese": "あの 夫婦は 離婚する そうだ。",
+              "chinese": "聽說那對夫妻要離婚。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "離婚します",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんします",
+          "sentence": [
+            {
+              "japanese": "二人は 来月 離婚します。",
+              "chinese": "兩個人下個月離婚。"
+            },
+            {
+              "japanese": "話し合った 結果、 離婚します。",
+              "chinese": "商量的結果是離婚。"
+            },
+            {
+              "japanese": "母は 父と 離婚します。",
+              "chinese": "母親要和父親離婚。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "離婚しません",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんしません",
+          "sentence": [
+            {
+              "japanese": "二人は 離婚しません。",
+              "chinese": "兩個人不離婚。"
+            },
+            {
+              "japanese": "まだ 離婚しません。",
+              "chinese": "還沒有要離婚。"
+            },
+            {
+              "japanese": "うちの 両親は 離婚しません。",
+              "chinese": "我的父母不會離婚。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "離婚しました",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんしました",
+          "sentence": [
+            {
+              "japanese": "二人は 去年 離婚しました。",
+              "chinese": "兩個人去年離婚了。"
+            },
+            {
+              "japanese": "叔父は 五年前に 離婚しました。",
+              "chinese": "叔叔五年前離婚了。"
+            },
+            {
+              "japanese": "話し合った あとで 離婚しました。",
+              "chinese": "商量之後離婚了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "離婚しませんでした",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんしませんでした",
+          "sentence": [
+            {
+              "japanese": "二人は 最後まで 離婚しませんでした。",
+              "chinese": "兩個人到最後都沒有離婚。"
+            },
+            {
+              "japanese": "両親は 離婚しませんでした。",
+              "chinese": "父母沒有離婚。"
+            },
+            {
+              "japanese": "話し合って、 離婚しませんでした。",
+              "chinese": "商量之後沒有離婚。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "離婚しない",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんしない",
+          "sentence": [
+            {
+              "japanese": "二人は まだ 離婚しない。",
+              "chinese": "兩個人還沒有離婚。"
+            },
+            {
+              "japanese": "うちの 両親は 離婚しない。",
+              "chinese": "我的父母不會離婚。"
+            },
+            {
+              "japanese": "話し合えば 離婚しない。",
+              "chinese": "商量就不會離婚。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "離婚した",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんした",
+          "sentence": [
+            {
+              "japanese": "二人は 去年 離婚した。",
+              "chinese": "兩個人去年離婚了。"
+            },
+            {
+              "japanese": "叔父は 若い ときに 離婚した。",
+              "chinese": "叔叔年輕時離婚了。"
+            },
+            {
+              "japanese": "あの 夫婦は 先月 離婚した。",
+              "chinese": "那對夫妻上個月離婚了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "離婚しなかった",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんしなかった",
+          "sentence": [
+            {
+              "japanese": "二人は 離婚しなかった。",
+              "chinese": "兩個人沒有離婚。"
+            },
+            {
+              "japanese": "両親は 最後まで 離婚しなかった。",
+              "chinese": "父母到最後都沒有離婚。"
+            },
+            {
+              "japanese": "叔父は 離婚しなかった。",
+              "chinese": "叔叔沒有離婚。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "離婚して",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんして",
+          "sentence": [
+            {
+              "japanese": "離婚して、 ひとりで 住んで いる。",
+              "chinese": "離婚後一個人住。"
+            },
+            {
+              "japanese": "二人は 離婚して、 別々に 住んで いる。",
+              "chinese": "兩個人離婚後分開住。"
+            },
+            {
+              "japanese": "母は 父と 離婚して、 実家へ 帰った。",
+              "chinese": "母親和父親離婚，回了娘家。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "離婚できる",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんできる",
+          "sentence": [
+            {
+              "japanese": "日本では、 夫婦が 話し合えば 離婚できる。",
+              "chinese": "在日本，夫妻商量好就能離婚。"
+            },
+            {
+              "japanese": "二人は 気持ちが 冷めたら、 いつでも 離婚できる。",
+              "chinese": "兩個人感情淡了的話，隨時可以離婚。"
+            },
+            {
+              "japanese": "大人なら 自分の 意思で 離婚できる。",
+              "chinese": "成年人的話，可以按自己的意思離婚。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "離婚しよう",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんしよう",
+          "sentence": [
+            {
+              "japanese": "二人で 話して 離婚しよう。",
+              "chinese": "兩個人商量後離婚吧。"
+            },
+            {
+              "japanese": "もう 愛が ないなら 離婚しよう。",
+              "chinese": "已經沒有愛的話就離婚吧。"
+            },
+            {
+              "japanese": "来年 離婚しよう と 決めた。",
+              "chinese": "決定明年離婚。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "離婚しろ",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんしろ",
+          "sentence": [
+            {
+              "japanese": "「離婚しろ」と 父が 言った。",
+              "chinese": "父親說「離婚吧」。"
+            },
+            {
+              "japanese": "そんなに いやなら 離婚しろ。",
+              "chinese": "那麼討厭的話就離婚吧。"
+            },
+            {
+              "japanese": "母は 「離婚しろ」と 一度 言った。",
+              "chinese": "母親說過一次「離婚吧」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "離婚すれば",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんすれば",
+          "sentence": [
+            {
+              "japanese": "離婚すれば、 生活が 変わる。",
+              "chinese": "離婚的話生活會改變。"
+            },
+            {
+              "japanese": "二人が 離婚すれば、 子どもが 悲しむ。",
+              "chinese": "兩個人離婚的話孩子會傷心。"
+            },
+            {
+              "japanese": "離婚すれば、 家を 出なければ ならない。",
+              "chinese": "離婚的話就得離開家。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "離婚される",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんされる",
+          "sentence": [
+            {
+              "japanese": "夫に 離婚される と、 生活が 一気に 変わった。",
+              "chinese": "被丈夫提出離婚後，生活一下子變了。"
+            },
+            {
+              "japanese": "妻に 離婚される 夢を 見て、 朝 とても 不安に なった。",
+              "chinese": "夢見被妻子離婚，早上非常不安。"
+            },
+            {
+              "japanese": "親に 離婚される と、 子どもは とても 不安に なる。",
+              "chinese": "父母離婚的話，孩子會非常不安。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "離婚させる",
+          "group": "3",
+          "chinese": "離婚",
+          "japanese": "りこんさせる",
+          "sentence": [
+            {
+              "japanese": "親は 二人を 離婚させる つもりだ。",
+              "chinese": "父母打算讓兩個人離婚。"
+            },
+            {
+              "japanese": "その 事件が 夫婦を 離婚させる。",
+              "chinese": "那個事件讓夫妻離婚。"
+            },
+            {
+              "japanese": "お金の 問題が 二人を 離婚させる。",
+              "chinese": "金錢問題讓兩個人離婚。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "ぶつかる",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつかる",
+          "sentence": [
+            {
+              "japanese": "車が 電柱に ぶつかる。",
+              "chinese": "車撞上電線桿。"
+            },
+            {
+              "japanese": "ボールが 窓に ぶつかる。",
+              "chinese": "球撞到窗戶。"
+            },
+            {
+              "japanese": "道で 知らない 人に ぶつかる。",
+              "chinese": "在路上撞到不認識的人。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "ぶつかります",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつかります",
+          "sentence": [
+            {
+              "japanese": "トラックが 木に ぶつかります。",
+              "chinese": "卡車撞上樹。"
+            },
+            {
+              "japanese": "自転車が 車に ぶつかります。",
+              "chinese": "腳踏車撞上車子。"
+            },
+            {
+              "japanese": "子どもが 走って 人に ぶつかります。",
+              "chinese": "孩子跑著撞到人。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "ぶつかりません",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつかりません",
+          "sentence": [
+            {
+              "japanese": "この 道は せまいが 車は ぶつかりません。",
+              "chinese": "這條路雖窄，車子不會撞上。"
+            },
+            {
+              "japanese": "気を つけて いれば ぶつかりません。",
+              "chinese": "注意的話就不會撞上。"
+            },
+            {
+              "japanese": "ボールは 窓に ぶつかりません。",
+              "chinese": "球沒有撞到窗戶。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "ぶつかりました",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつかりました",
+          "sentence": [
+            {
+              "japanese": "きのう 車が 電柱に ぶつかりました。",
+              "chinese": "昨天車撞上電線桿。"
+            },
+            {
+              "japanese": "トラックが 門に ぶつかりました。",
+              "chinese": "卡車撞上門。"
+            },
+            {
+              "japanese": "子どもが 人に ぶつかりました。",
+              "chinese": "孩子撞到人。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "ぶつかりませんでした",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつかりませんでした",
+          "sentence": [
+            {
+              "japanese": "車は 電柱に ぶつかりませんでした。",
+              "chinese": "車沒有撞上電線桿。"
+            },
+            {
+              "japanese": "ボールは 窓に ぶつかりませんでした。",
+              "chinese": "球沒有撞到窗戶。"
+            },
+            {
+              "japanese": "だれも 人に ぶつかりませんでした。",
+              "chinese": "沒有人撞到人。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "ぶつからない",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつからない",
+          "sentence": [
+            {
+              "japanese": "この 車は 電柱に ぶつからない。",
+              "chinese": "這輛車不會撞上電線桿。"
+            },
+            {
+              "japanese": "ボールは 窓に ぶつからない。",
+              "chinese": "球不會撞到窗戶。"
+            },
+            {
+              "japanese": "急げば 人に ぶつからない。",
+              "chinese": "快一點的話就不會撞到人。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "ぶつかった",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつかった",
+          "sentence": [
+            {
+              "japanese": "トラックが 電柱に ぶつかった。",
+              "chinese": "卡車撞上了電線桿。"
+            },
+            {
+              "japanese": "ボールが 窓に ぶつかった。",
+              "chinese": "球撞到了窗戶。"
+            },
+            {
+              "japanese": "駅で 知らない 人に ぶつかった。",
+              "chinese": "在車站撞到不認識的人。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "ぶつからなかった",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつからなかった",
+          "sentence": [
+            {
+              "japanese": "車は 電柱に ぶつからなかった。",
+              "chinese": "車沒有撞上電線桿。"
+            },
+            {
+              "japanese": "ボールは 窓に ぶつからなかった。",
+              "chinese": "球沒有撞到窗戶。"
+            },
+            {
+              "japanese": "きのうは だれも ぶつからなかった。",
+              "chinese": "昨天沒有人撞到。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "ぶつかって",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつかって",
+          "sentence": [
+            {
+              "japanese": "自転車が 車に ぶつかって、 倒れた。",
+              "chinese": "腳踏車撞上車子，倒了。"
+            },
+            {
+              "japanese": "ボールが 窓に ぶつかって、 ガラスが 割れた。",
+              "chinese": "球撞到窗戶，玻璃破了。"
+            },
+            {
+              "japanese": "人に ぶつかって、 あやまった。",
+              "chinese": "撞到人，道歉了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "ぶつかれる",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつかれる",
+          "sentence": [
+            {
+              "japanese": "本音で ぶつかれる 相手が いる。",
+              "chinese": "有可以坦誠碰撞、爭辯的對象。"
+            },
+            {
+              "japanese": "子どもは 走って 人に ぶつかれる ので、 目を 離せない。",
+              "chinese": "孩子會跑著撞到人，所以不能不看緊。"
+            },
+            {
+              "japanese": "意見が ぶつかれる のは、 いい 関係の 証拠だ。",
+              "chinese": "意見能相互碰撞，是好關係的證明。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "ぶつかろう",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつかろう",
+          "sentence": [
+            {
+              "japanese": "ボールが 窓に ぶつかろうと している。",
+              "chinese": "球快要撞到窗戶。"
+            },
+            {
+              "japanese": "車が 電柱に ぶつかろうと している。",
+              "chinese": "車快要撞上電線桿。"
+            },
+            {
+              "japanese": "自転車が 人に ぶつかろうと した。",
+              "chinese": "腳踏車差點撞到人。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "ぶつかれ",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつかれ",
+          "sentence": [
+            {
+              "japanese": "相手が 前に 出て きたら、 遠慮 せずに ぶつかれ。",
+              "chinese": "對手上前來時，就別客氣撞上去。"
+            },
+            {
+              "japanese": "もっと 強く ぶつかれ。",
+              "chinese": "撞得更用力吧。"
+            },
+            {
+              "japanese": "練習の ときから 体で ぶつかれ。",
+              "chinese": "從練習時就用身體去衝撞。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "ぶつかれば",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつかれば",
+          "sentence": [
+            {
+              "japanese": "車が 電柱に ぶつかれば、 大変だ。",
+              "chinese": "車撞上電線桿就糟了。"
+            },
+            {
+              "japanese": "ボールが 窓に ぶつかれば、 ガラスが 割れる。",
+              "chinese": "球撞到窗戶的話玻璃會破。"
+            },
+            {
+              "japanese": "走って 人に ぶつかれば、 あやまる。",
+              "chinese": "跑著撞到人的話要道歉。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "ぶつかられる",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつかられる",
+          "sentence": [
+            {
+              "japanese": "後ろから 人に ぶつかられる と、 よろけて しまう。",
+              "chinese": "被人從後面撞到，就會站不穩。"
+            },
+            {
+              "japanese": "道で 人に ぶつかられる と いやだ。",
+              "chinese": "在路上被人撞到很討厭。"
+            },
+            {
+              "japanese": "狭い 道で 自転車に ぶつかられる と、 とても 危ない。",
+              "chinese": "在窄路上被腳踏車撞到，非常危險。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "ぶつからせる",
+          "group": "1",
+          "chinese": "撞上; 碰撞; 碰上",
+          "japanese": "ぶつからせる",
+          "sentence": [
+            {
+              "japanese": "ボールを 壁に ぶつからせる。",
+              "chinese": "讓球撞到牆。"
+            },
+            {
+              "japanese": "車を 電柱に ぶつからせる。",
+              "chinese": "讓車撞上電線桿。"
+            },
+            {
+              "japanese": "いたずらな 子どもを 人に ぶつからせる のは よくない。",
+              "chinese": "讓頑皮的孩子撞到人是不好的。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "並ぶ",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならぶ",
+          "sentence": [
+            {
+              "japanese": "店の 前に 人が 並ぶ。",
+              "chinese": "店前有人排隊。"
+            },
+            {
+              "japanese": "本が 棚に 並ぶ。",
+              "chinese": "書排列在書架上。"
+            },
+            {
+              "japanese": "毎朝 駅に 人が 並ぶ。",
+              "chinese": "每天早上車站有人排隊。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "並びます",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならびます",
+          "sentence": [
+            {
+              "japanese": "朝は 店の 前に 人が 並びます。",
+              "chinese": "早上店前有人排隊。"
+            },
+            {
+              "japanese": "町の 道に 木が 並びます。",
+              "chinese": "鎮上的路旁樹木排列著。"
+            },
+            {
+              "japanese": "切符を 買う 人は ここに 並びます。",
+              "chinese": "買票的人在這裡排隊。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "並びません",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならびません",
+          "sentence": [
+            {
+              "japanese": "今日は あまり 並びません。",
+              "chinese": "今天不太排隊。"
+            },
+            {
+              "japanese": "雨の 日は 人が 並びません。",
+              "chinese": "下雨天沒有人排隊。"
+            },
+            {
+              "japanese": "この 店は いつも 並びません。",
+              "chinese": "這家店總是不排隊。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "並びました",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならびました",
+          "sentence": [
+            {
+              "japanese": "きのう 店の 前に 人が 並びました。",
+              "chinese": "昨天店前有人排隊。"
+            },
+            {
+              "japanese": "新しい 家が 道に 並びました。",
+              "chinese": "新房子在路旁排列起來。"
+            },
+            {
+              "japanese": "朝 早くから 人が 並びました。",
+              "chinese": "一大早人們就排隊了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "並びませんでした",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならびませんでした",
+          "sentence": [
+            {
+              "japanese": "きのうは 人が 並びませんでした。",
+              "chinese": "昨天沒有人排隊。"
+            },
+            {
+              "japanese": "雨で だれも 並びませんでした。",
+              "chinese": "因為下雨沒有人排隊。"
+            },
+            {
+              "japanese": "この 店は 並びませんでした。",
+              "chinese": "這家店沒有排隊。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "並ばない",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならばない",
+          "sentence": [
+            {
+              "japanese": "この 店は いつも 並ばない。",
+              "chinese": "這家店總是不排隊。"
+            },
+            {
+              "japanese": "雨の 日は 人が 並ばない。",
+              "chinese": "下雨天沒有人排隊。"
+            },
+            {
+              "japanese": "朝 早くは まだ 並ばない。",
+              "chinese": "一大早還不會排隊。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "並んだ",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならんだ",
+          "sentence": [
+            {
+              "japanese": "店の 前に 人が 並んだ。",
+              "chinese": "店前有人排隊了。"
+            },
+            {
+              "japanese": "本が 棚に きれいに 並んだ。",
+              "chinese": "書整齊地排列在書架上。"
+            },
+            {
+              "japanese": "駅に 長い 列が 並んだ。",
+              "chinese": "車站排起了長隊。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "並ばなかった",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならばなかった",
+          "sentence": [
+            {
+              "japanese": "きのうは 人が 並ばなかった。",
+              "chinese": "昨天沒有人排隊。"
+            },
+            {
+              "japanese": "雨で だれも 並ばなかった。",
+              "chinese": "因為下雨沒有人排隊。"
+            },
+            {
+              "japanese": "この 店は 並ばなかった。",
+              "chinese": "這家店沒有排隊。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "並んで",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならんで",
+          "sentence": [
+            {
+              "japanese": "店の 前に 並んで、 待った。",
+              "chinese": "在店前排隊等待。"
+            },
+            {
+              "japanese": "木が 道に 並んで いる。",
+              "chinese": "樹木排列在路上。"
+            },
+            {
+              "japanese": "人が 並んで、 電車を 待って いる。",
+              "chinese": "人們排隊等電車。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "並べる",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならべる",
+          "sentence": [
+            {
+              "japanese": "この 店の 前には、 商品を 並べる こと が できる。",
+              "chinese": "可以在這家店前面擺放商品。"
+            },
+            {
+              "japanese": "広い 会場なら、 椅子を 100脚 並べる こと が できる。",
+              "chinese": "會場寬敞的話，可以排一百張椅子。"
+            },
+            {
+              "japanese": "雨の 日でも、 屋根の 下に 机を 並べる こと が できる。",
+              "chinese": "下雨天也能在屋簷下排桌子。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "並ぼう",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならぼう",
+          "sentence": [
+            {
+              "japanese": "早く 行って 並ぼう。",
+              "chinese": "快去排隊吧。"
+            },
+            {
+              "japanese": "みんなで ここに 並ぼう。",
+              "chinese": "大家在這裡排隊吧。"
+            },
+            {
+              "japanese": "店の 前に 並ぼう。",
+              "chinese": "在店前排隊吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "並べ",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならべ",
+          "sentence": [
+            {
+              "japanese": "ここに 並べ。",
+              "chinese": "在這裡排隊。"
+            },
+            {
+              "japanese": "早く 並べ。",
+              "chinese": "快點排隊。"
+            },
+            {
+              "japanese": "右の 列に 並べ。",
+              "chinese": "排到右邊的隊伍。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "並べば",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならべば",
+          "sentence": [
+            {
+              "japanese": "ここに 並べば、 すぐ 買える。",
+              "chinese": "在這裡排隊就能馬上買到。"
+            },
+            {
+              "japanese": "早く 並べば、 席が ある。",
+              "chinese": "早點排隊就有位子。"
+            },
+            {
+              "japanese": "店の 前に 並べば、 いい。",
+              "chinese": "在店前排隊就好。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "並ばれる",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならばれる",
+          "sentence": [
+            {
+              "japanese": "前に 背の 高い 人に 並ばれる と、 何も 見えない。",
+              "chinese": "前面排了高個子的人，就什麼都看不到。"
+            },
+            {
+              "japanese": "切符を 買う とき、 割り込みで 前に 並ばれる と 腹が 立つ。",
+              "chinese": "買票時有人插隊排到前面，會很生氣。"
+            },
+            {
+              "japanese": "窓の 前に 人に 並ばれる と、 景色が 見えない。",
+              "chinese": "有人排到窗前，就看不到景色了。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "並ばせる",
+          "group": "1",
+          "chinese": "排隊; 排列; 並排",
+          "japanese": "ならばせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生を 一列に 並ばせる。",
+              "chinese": "老師讓學生排成一列。"
+            },
+            {
+              "japanese": "母は こどもを 店の 前に 並ばせる。",
+              "chinese": "媽媽讓孩子在店前排隊。"
+            },
+            {
+              "japanese": "店員は お客さんを 中に 並ばせる。",
+              "chinese": "店員讓客人排在裡面。"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

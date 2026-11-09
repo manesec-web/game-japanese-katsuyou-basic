@@ -1,0 +1,4234 @@
+{
+  "lesson_30": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "貼る",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はる",
+          "sentence": [
+            {
+              "japanese": "壁に ポスターを 貼る。",
+              "chinese": "在牆上貼海報。"
+            },
+            {
+              "japanese": "ここに カレンダーを 貼る。",
+              "chinese": "在這裡貼月曆。"
+            },
+            {
+              "japanese": "学生は ノートに 写真を 貼る。",
+              "chinese": "學生在筆記本上貼照片。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "貼ります",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はります",
+          "sentence": [
+            {
+              "japanese": "玄関の ドアに お知らせを 貼ります。",
+              "chinese": "在玄關的門上貼通知。"
+            },
+            {
+              "japanese": "毎年 新しい カレンダーを 壁に 貼ります。",
+              "chinese": "每年都把新月曆貼在牆上。"
+            },
+            {
+              "japanese": "弟は 自分の 部屋に ポスターを 貼ります。",
+              "chinese": "弟弟在自己的房間貼海報。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "貼りません",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はりません",
+          "sentence": [
+            {
+              "japanese": "この 壁には ポスターを 貼りません。",
+              "chinese": "這面牆不貼海報。"
+            },
+            {
+              "japanese": "雨の 日は 外に お知らせを 貼りません。",
+              "chinese": "下雨天不在外面貼通知。"
+            },
+            {
+              "japanese": "私は ノートに シールを 貼りません。",
+              "chinese": "我不在筆記本上貼貼紙。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "貼りました",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はりました",
+          "sentence": [
+            {
+              "japanese": "さっき 廊下に 予定表を 貼りました。",
+              "chinese": "剛才在走廊貼了預定表。"
+            },
+            {
+              "japanese": "先生は 黒板に 紙を 貼りました。",
+              "chinese": "老師在黑板上貼了紙。"
+            },
+            {
+              "japanese": "妹は ドアに かわいい 絵を 貼りました。",
+              "chinese": "妹妹在門上貼了可愛的畫。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "貼りませんでした",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はりませんでした",
+          "sentence": [
+            {
+              "japanese": "今日は まだ ポスターを 貼りませんでした。",
+              "chinese": "今天還沒貼海報。"
+            },
+            {
+              "japanese": "昨日は 忙しくて お知らせを 貼りませんでした。",
+              "chinese": "昨天很忙，沒貼通知。"
+            },
+            {
+              "japanese": "壁が 汚れていたので カレンダーを 貼りませんでした。",
+              "chinese": "因為牆很髒，所以沒貼月曆。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "貼らない",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はらない",
+          "sentence": [
+            {
+              "japanese": "ここには 何も 貼らない。",
+              "chinese": "這裡什麼都不貼。"
+            },
+            {
+              "japanese": "父は 冷蔵庫に メモを 貼らない。",
+              "chinese": "父親不在冰箱上貼便條。"
+            },
+            {
+              "japanese": "大事な 書類は 壁に 貼らない。",
+              "chinese": "重要文件不貼在牆上。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "貼った",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はった",
+          "sentence": [
+            {
+              "japanese": "昨日 部屋に 新しい ポスターを 貼った。",
+              "chinese": "昨天在房間貼了新海報。"
+            },
+            {
+              "japanese": "だれが この 紙を ここに 貼った？",
+              "chinese": "是誰把這張紙貼在這裡的？"
+            },
+            {
+              "japanese": "子どもが 冷蔵庫に 絵を 貼った。",
+              "chinese": "小孩在冰箱上貼了畫。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "貼らなかった",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はらなかった",
+          "sentence": [
+            {
+              "japanese": "時間が なかったので ポスターを 貼らなかった。",
+              "chinese": "因為沒時間，所以沒貼海報。"
+            },
+            {
+              "japanese": "見えない 所には お知らせを 貼らなかった。",
+              "chinese": "看不到的地方就沒貼通知。"
+            },
+            {
+              "japanese": "昨日は だれも 予定表を 貼らなかった。",
+              "chinese": "昨天誰都沒貼預定表。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "貼って",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はって",
+          "sentence": [
+            {
+              "japanese": "ポスターを 壁に 貼って ください。",
+              "chinese": "請把海報貼在牆上。"
+            },
+            {
+              "japanese": "カレンダーを 貼って から 出かけます。",
+              "chinese": "貼好月曆後再出門。"
+            },
+            {
+              "japanese": "写真を ノートに 貼って おきます。",
+              "chinese": "先把照片貼在筆記本上。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "貼れる",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はれる",
+          "sentence": [
+            {
+              "japanese": "この 壁には 大きな ポスターが 貼れる。",
+              "chinese": "這面牆可以貼大張海報。"
+            },
+            {
+              "japanese": "のりが あれば ここに 紙が 貼れる。",
+              "chinese": "有膠水的話這裡就能貼紙。"
+            },
+            {
+              "japanese": "一人でも カレンダーが 貼れる。",
+              "chinese": "一個人也能貼月曆。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "貼ろう",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はろう",
+          "sentence": [
+            {
+              "japanese": "みんなで 壁に ポスターを 貼ろう。",
+              "chinese": "大家一起把海報貼到牆上吧。"
+            },
+            {
+              "japanese": "まず 玄関に 予定表を 貼ろう。",
+              "chinese": "先在玄關貼預定表吧。"
+            },
+            {
+              "japanese": "新しい カレンダーを 貼ろうと して いる。",
+              "chinese": "正要把新月曆貼上去。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "貼れ",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はれ",
+          "sentence": [
+            {
+              "japanese": "そこに まっすぐ 貼れ。",
+              "chinese": "往那裡貼直。"
+            },
+            {
+              "japanese": "店長は 店員に「ポスターを 貼れ」と 言った。",
+              "chinese": "店長對店員說「把海報貼上」。"
+            },
+            {
+              "japanese": "壁に お知らせを 貼れ。",
+              "chinese": "把通知貼在牆上。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "貼れば",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はれば",
+          "sentence": [
+            {
+              "japanese": "この 壁に 貼れば よく 見える。",
+              "chinese": "貼在這面牆上就很顯眼。"
+            },
+            {
+              "japanese": "ドアに 貼れば だれでも 読める。",
+              "chinese": "貼在門上的話誰都看得到。"
+            },
+            {
+              "japanese": "カレンダーを 壁に 貼れば 予定が わかりやすい。",
+              "chinese": "月曆貼在牆上，預定就一目了然。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "貼られる",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はられる",
+          "sentence": [
+            {
+              "japanese": "壁に ポスターが 貼られる。",
+              "chinese": "牆上被貼上海報。"
+            },
+            {
+              "japanese": "教室の 後ろに 予定表が 貼られる。",
+              "chinese": "教室後面被貼上預定表。"
+            },
+            {
+              "japanese": "ドアに 勝手に お知らせを 貼られる と 困る。",
+              "chinese": "門上被隨便貼通知會很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "貼らせる",
+          "group": "1",
+          "chinese": "貼; 黏貼",
+          "japanese": "はらせる",
+          "sentence": [
+            {
+              "japanese": "先生は 生徒に ポスターを 貼らせる。",
+              "chinese": "老師讓學生貼海報。"
+            },
+            {
+              "japanese": "母は 弟に カレンダーを 貼らせる。",
+              "chinese": "媽媽讓弟弟貼月曆。"
+            },
+            {
+              "japanese": "店長は アルバイトの 学生に お知らせを 貼らせる。",
+              "chinese": "店長讓打工的學生貼通知。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "掛ける",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かける",
+          "sentence": [
+            {
+              "japanese": "玄関に 鏡を 掛ける。",
+              "chinese": "在玄關掛鏡子。"
+            },
+            {
+              "japanese": "部屋の 壁に 大きい 絵を 掛ける。",
+              "chinese": "在房間牆上掛大畫。"
+            },
+            {
+              "japanese": "リビングに カレンダーを 掛ける。",
+              "chinese": "在客廳掛月曆。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "掛けます",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけます",
+          "sentence": [
+            {
+              "japanese": "父は 部屋に 新しい 絵を 掛けます。",
+              "chinese": "父親在房間掛新畫。"
+            },
+            {
+              "japanese": "私は 玄関に 花の 絵を 掛けます。",
+              "chinese": "我在玄關掛花的畫。"
+            },
+            {
+              "japanese": "学生は 教室の 壁に 地図を 掛けます。",
+              "chinese": "學生在教室牆上掛地圖。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "掛けません",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけません",
+          "sentence": [
+            {
+              "japanese": "この 壁には 絵を 掛けません。",
+              "chinese": "這面牆不掛畫。"
+            },
+            {
+              "japanese": "まだ カレンダーを 掛けません。",
+              "chinese": "還沒掛月曆。"
+            },
+            {
+              "japanese": "子ども部屋には 時計を 掛けません。",
+              "chinese": "兒童房不掛時鐘。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "掛けました",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけました",
+          "sentence": [
+            {
+              "japanese": "昨日 玄関に 鏡を 掛けました。",
+              "chinese": "昨天在玄關掛了鏡子。"
+            },
+            {
+              "japanese": "母は リビングに 新しい カーテンを 掛けました。",
+              "chinese": "媽媽在客廳掛了新窗簾。"
+            },
+            {
+              "japanese": "先週 部屋に 大きい ポスターを 掛けました。",
+              "chinese": "上週在房間掛了大海報。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "掛けませんでした",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけませんでした",
+          "sentence": [
+            {
+              "japanese": "壁が 弱いので 重い 絵を 掛けませんでした。",
+              "chinese": "因為牆不牢固，所以沒掛重畫。"
+            },
+            {
+              "japanese": "今日は まだ 鏡を 掛けませんでした。",
+              "chinese": "今天還沒掛鏡子。"
+            },
+            {
+              "japanese": "予定が 変わったので カレンダーを 掛けませんでした。",
+              "chinese": "因為預定變了，所以沒掛月曆。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "掛けない",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけない",
+          "sentence": [
+            {
+              "japanese": "ここに 時計を 掛けない。",
+              "chinese": "這裡不掛時鐘。"
+            },
+            {
+              "japanese": "弟は 自分で 絵を 掛けない。",
+              "chinese": "弟弟不自己掛畫。"
+            },
+            {
+              "japanese": "廊下には 何も 掛けない。",
+              "chinese": "走廊上什麼都不掛。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "掛けた",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけた",
+          "sentence": [
+            {
+              "japanese": "先週 玄関に 大きい 鏡を 掛けた。",
+              "chinese": "上週在玄關掛了大鏡子。"
+            },
+            {
+              "japanese": "だれが この 絵を ここに 掛けた？",
+              "chinese": "是誰把這幅畫掛在這裡的？"
+            },
+            {
+              "japanese": "父が リビングに 時計を 掛けた。",
+              "chinese": "父親在客廳掛了時鐘。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "掛けなかった",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけなかった",
+          "sentence": [
+            {
+              "japanese": "忙しかったので 絵を 掛けなかった。",
+              "chinese": "因為很忙，所以沒掛畫。"
+            },
+            {
+              "japanese": "壁に 穴が あくので 鏡を 掛けなかった。",
+              "chinese": "因為牆會破洞，所以沒掛鏡子。"
+            },
+            {
+              "japanese": "昨日は カレンダーを 掛けなかった。",
+              "chinese": "昨天沒掛月曆。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "掛けて",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけて",
+          "sentence": [
+            {
+              "japanese": "玄関に 鏡を 掛けて ください。",
+              "chinese": "請在玄關掛上鏡子。"
+            },
+            {
+              "japanese": "絵を 掛けて から 掃除します。",
+              "chinese": "掛好畫之後再打掃。"
+            },
+            {
+              "japanese": "カレンダーを 壁に 掛けて おきます。",
+              "chinese": "先把月曆掛在牆上。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "掛けられる",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけられる",
+          "sentence": [
+            {
+              "japanese": "この 壁には 重い 絵も 掛けられる。",
+              "chinese": "這面牆連重畫也能掛。"
+            },
+            {
+              "japanese": "一人で 大きい 鏡が 掛けられる。",
+              "chinese": "一個人也能掛大鏡子。"
+            },
+            {
+              "japanese": "この くぎで カレンダーが 掛けられる。",
+              "chinese": "用這根釘子就能掛月曆。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "掛けよう",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけよう",
+          "sentence": [
+            {
+              "japanese": "みんなで 玄関に 鏡を 掛けよう。",
+              "chinese": "大家一起在玄關掛鏡子吧。"
+            },
+            {
+              "japanese": "新しい 絵を 掛けようと して いる。",
+              "chinese": "正要把新畫掛上去。"
+            },
+            {
+              "japanese": "まず カレンダーを 掛けよう。",
+              "chinese": "先掛月曆吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "掛けろ",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけろ",
+          "sentence": [
+            {
+              "japanese": "そこに まっすぐ 掛けろ。",
+              "chinese": "往那裡掛直。"
+            },
+            {
+              "japanese": "店長は 店員に「ポスターを 掛けろ」と 言った。",
+              "chinese": "店長對店員說「把海報掛上」。"
+            },
+            {
+              "japanese": "壁に 時計を 掛けろ。",
+              "chinese": "把時鐘掛在牆上。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "掛ければ",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かければ",
+          "sentence": [
+            {
+              "japanese": "この くぎに 掛ければ 落ちない。",
+              "chinese": "掛在這根釘子上的話就不會掉。"
+            },
+            {
+              "japanese": "玄関に 掛ければ 出かける 時に 見える。",
+              "chinese": "掛在玄關的話出門時就看得到。"
+            },
+            {
+              "japanese": "低い 所に 掛ければ 子どもでも 届く。",
+              "chinese": "掛在低處的話連小孩也搆得到。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "掛けられる",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけられる",
+          "sentence": [
+            {
+              "japanese": "壁に 新しい 絵が 掛けられる。",
+              "chinese": "牆上被掛上新畫。"
+            },
+            {
+              "japanese": "教室に 時計が 掛けられる。",
+              "chinese": "教室裡被掛上時鐘。"
+            },
+            {
+              "japanese": "玄関に 勝手に ポスターを 掛けられる と 困る。",
+              "chinese": "玄關被隨便掛海報會很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "掛けさせる",
+          "group": "2",
+          "chinese": "掛; 掛上",
+          "japanese": "かけさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 教室の 壁に 地図を 掛けさせる。",
+              "chinese": "老師讓學生在教室牆上掛地圖。"
+            },
+            {
+              "japanese": "母は 私に 玄関の 鏡を 掛けさせる。",
+              "chinese": "媽媽讓我掛玄關的鏡子。"
+            },
+            {
+              "japanese": "店長は 店員に ポスターを 掛けさせる。",
+              "chinese": "店長讓店員掛海報。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "飾る",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざる",
+          "sentence": [
+            {
+              "japanese": "部屋に 花を 飾る。",
+              "chinese": "在房間擺花裝飾。"
+            },
+            {
+              "japanese": "三月に ひな人形を 飾る。",
+              "chinese": "三月擺女兒節人偶。"
+            },
+            {
+              "japanese": "壁に 小さい 絵を 飾る。",
+              "chinese": "在牆上裝飾小畫。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "飾ります",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざります",
+          "sentence": [
+            {
+              "japanese": "毎年 三月に ひな人形を 飾ります。",
+              "chinese": "每年三月都擺女兒節人偶。"
+            },
+            {
+              "japanese": "母は リビングに 花を 飾ります。",
+              "chinese": "媽媽在客廳擺花。"
+            },
+            {
+              "japanese": "パーティーの 前に 部屋を 飾ります。",
+              "chinese": "派對前先佈置房間。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "飾りません",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざりません",
+          "sentence": [
+            {
+              "japanese": "今年は ひな人形を 飾りません。",
+              "chinese": "今年不擺女兒節人偶。"
+            },
+            {
+              "japanese": "この 部屋には 花を 飾りません。",
+              "chinese": "這個房間不擺花。"
+            },
+            {
+              "japanese": "一人の 時は 何も 飾りません。",
+              "chinese": "一個人的時候什麼都不佈置。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "飾りました",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざりました",
+          "sentence": [
+            {
+              "japanese": "昨日 玄関に 花を 飾りました。",
+              "chinese": "昨天在玄關擺了花。"
+            },
+            {
+              "japanese": "妹は 自分の 部屋に 人形を 飾りました。",
+              "chinese": "妹妹在自己房間擺了人偶。"
+            },
+            {
+              "japanese": "ミーティングの 前に テーブルを 飾りました。",
+              "chinese": "開會前佈置了桌子。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "飾りませんでした",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざりませんでした",
+          "sentence": [
+            {
+              "japanese": "花が なかったので 何も 飾りませんでした。",
+              "chinese": "因為沒有花，所以什麼都沒擺。"
+            },
+            {
+              "japanese": "今年は ひな人形を 飾りませんでした。",
+              "chinese": "今年沒擺女兒節人偶。"
+            },
+            {
+              "japanese": "忙しくて 部屋を 飾りませんでした。",
+              "chinese": "因為忙，所以沒佈置房間。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "飾らない",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざらない",
+          "sentence": [
+            {
+              "japanese": "うちでは ひな人形を 飾らない。",
+              "chinese": "我們家不擺女兒節人偶。"
+            },
+            {
+              "japanese": "子どもは 高い 所に 人形を 飾らない。",
+              "chinese": "小孩不在高處擺人偶。"
+            },
+            {
+              "japanese": "今年は 花を 飾らない。",
+              "chinese": "今年不擺花。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "飾った",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざった",
+          "sentence": [
+            {
+              "japanese": "先週 部屋に きれいな 花を 飾った。",
+              "chinese": "上週在房間擺了漂亮的花。"
+            },
+            {
+              "japanese": "だれが この 人形を ここに 飾った？",
+              "chinese": "是誰把這個人偶擺在這裡的？"
+            },
+            {
+              "japanese": "母が 玄関に 花を 飾った。",
+              "chinese": "媽媽在玄關擺了花。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "飾らなかった",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざらなかった",
+          "sentence": [
+            {
+              "japanese": "花が 高かったので 飾らなかった。",
+              "chinese": "因為花很貴，所以沒擺。"
+            },
+            {
+              "japanese": "昨日は 何も 飾らなかった。",
+              "chinese": "昨天什麼都沒佈置。"
+            },
+            {
+              "japanese": "時間が なくて 部屋を 飾らなかった。",
+              "chinese": "因為沒時間，所以沒佈置房間。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "飾って",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざって",
+          "sentence": [
+            {
+              "japanese": "玄関に 花を 飾って ください。",
+              "chinese": "請在玄關擺上花。"
+            },
+            {
+              "japanese": "人形を 飾って から 写真を 撮ります。",
+              "chinese": "擺好人偶後再拍照。"
+            },
+            {
+              "japanese": "部屋を 飾って おきます。",
+              "chinese": "先把房間佈置好。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "飾れる",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざれる",
+          "sentence": [
+            {
+              "japanese": "この 棚には 人形が 飾れる。",
+              "chinese": "這個架子可以擺人偶。"
+            },
+            {
+              "japanese": "花瓶が あれば 花が 飾れる。",
+              "chinese": "有花瓶的話就能擺花。"
+            },
+            {
+              "japanese": "一人でも 部屋が 飾れる。",
+              "chinese": "一個人也能佈置房間。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "飾ろう",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざろう",
+          "sentence": [
+            {
+              "japanese": "みんなで 部屋を 飾ろう。",
+              "chinese": "大家一起佈置房間吧。"
+            },
+            {
+              "japanese": "ひな人形を 飾ろうと して いる。",
+              "chinese": "正要把女兒節人偶擺出來。"
+            },
+            {
+              "japanese": "まず 玄関に 花を 飾ろう。",
+              "chinese": "先在玄關擺花吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "飾れ",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざれ",
+          "sentence": [
+            {
+              "japanese": "そこに 人形を 飾れ。",
+              "chinese": "把人偶擺在那裡。"
+            },
+            {
+              "japanese": "先生は 生徒に「花を 飾れ」と 言った。",
+              "chinese": "老師對學生說「把花擺上」。"
+            },
+            {
+              "japanese": "テーブルに 花を 飾れ。",
+              "chinese": "在桌上擺花。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "飾れば",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざれば",
+          "sentence": [
+            {
+              "japanese": "花を 飾れば 部屋が 明るく なる。",
+              "chinese": "擺上花房間就明亮起來。"
+            },
+            {
+              "japanese": "玄関に 飾れば お客さんが 喜ぶ。",
+              "chinese": "擺在玄關的話客人會很高興。"
+            },
+            {
+              "japanese": "ひな人形を 飾れば 春を 感じる。",
+              "chinese": "擺出女兒節人偶就有春天的感覺。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "飾られる",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざられる",
+          "sentence": [
+            {
+              "japanese": "玄関に 花が 飾られる。",
+              "chinese": "玄關被擺上花。"
+            },
+            {
+              "japanese": "パーティーの 会場に 人形が 飾られる。",
+              "chinese": "派對會場被擺上人偶。"
+            },
+            {
+              "japanese": "部屋に 勝手に 物を 飾られる と 困る。",
+              "chinese": "房間被隨便擺東西會很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "飾らせる",
+          "group": "1",
+          "chinese": "裝飾",
+          "japanese": "かざらせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 教室を 飾らせる。",
+              "chinese": "老師讓學生佈置教室。"
+            },
+            {
+              "japanese": "母は 妹に 花を 飾らせる。",
+              "chinese": "媽媽讓妹妹擺花。"
+            },
+            {
+              "japanese": "店長は 店員に テーブルを 飾らせる。",
+              "chinese": "店長讓店員佈置桌子。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "並べる",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべる",
+          "sentence": [
+            {
+              "japanese": "机の 上に 本を 並べる。",
+              "chinese": "把書排在桌上。"
+            },
+            {
+              "japanese": "廊下に いすを 並べる。",
+              "chinese": "在走廊排椅子。"
+            },
+            {
+              "japanese": "店の 前に 商品を 並べる。",
+              "chinese": "在店前擺商品。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "並べます",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべます",
+          "sentence": [
+            {
+              "japanese": "毎朝 店の 前に 商品を 並べます。",
+              "chinese": "每天早上在店前擺商品。"
+            },
+            {
+              "japanese": "母は テーブルに お菓子を 並べます。",
+              "chinese": "媽媽在桌上擺點心。"
+            },
+            {
+              "japanese": "学生は 本を 棚に 並べます。",
+              "chinese": "學生把書排到架子上。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "並べません",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべません",
+          "sentence": [
+            {
+              "japanese": "今日は 商品を 並べません。",
+              "chinese": "今天不擺商品。"
+            },
+            {
+              "japanese": "この 棚には 本を 並べません。",
+              "chinese": "這個架子不排書。"
+            },
+            {
+              "japanese": "雨の 日は 外に いすを 並べません。",
+              "chinese": "下雨天不在外面排椅子。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "並べました",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべました",
+          "sentence": [
+            {
+              "japanese": "ミーティングの 前に いすを 並べました。",
+              "chinese": "開會前排好了椅子。"
+            },
+            {
+              "japanese": "妹は お菓子を きれいに 並べました。",
+              "chinese": "妹妹把點心排得很漂亮。"
+            },
+            {
+              "japanese": "店員は 新しい 商品を 並べました。",
+              "chinese": "店員擺好了新商品。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "並べませんでした",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべませんでした",
+          "sentence": [
+            {
+              "japanese": "時間が なくて いすを 並べませんでした。",
+              "chinese": "因為沒時間，所以沒排椅子。"
+            },
+            {
+              "japanese": "今日は まだ 商品を 並べませんでした。",
+              "chinese": "今天還沒擺商品。"
+            },
+            {
+              "japanese": "雨だったので 外に 本を 並べませんでした。",
+              "chinese": "因為下雨，所以沒在外面排書。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "並べない",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべない",
+          "sentence": [
+            {
+              "japanese": "ここには 商品を 並べない。",
+              "chinese": "這裡不擺商品。"
+            },
+            {
+              "japanese": "私の 部屋では 本を 並べない。",
+              "chinese": "我的房間不排書。"
+            },
+            {
+              "japanese": "弟は 自分で お菓子を 並べない。",
+              "chinese": "弟弟不自己擺點心。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "並べた",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべた",
+          "sentence": [
+            {
+              "japanese": "昨日 本を 棚に 並べた。",
+              "chinese": "昨天把書排到架子上。"
+            },
+            {
+              "japanese": "だれが この いすを ここに 並べた？",
+              "chinese": "是誰把這把椅子排在這裡的？"
+            },
+            {
+              "japanese": "母が テーブルに お菓子を 並べた。",
+              "chinese": "媽媽在桌上擺了點心。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "並べなかった",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべなかった",
+          "sentence": [
+            {
+              "japanese": "お客さんが 少ないので いすを 並べなかった。",
+              "chinese": "因為客人少，所以沒排椅子。"
+            },
+            {
+              "japanese": "昨日は 商品を 並べなかった。",
+              "chinese": "昨天沒擺商品。"
+            },
+            {
+              "japanese": "時間が なくて 本を 並べなかった。",
+              "chinese": "因為沒時間，所以沒排書。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "並べて",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべて",
+          "sentence": [
+            {
+              "japanese": "本を 棚に 並べて ください。",
+              "chinese": "請把書排到架子上。"
+            },
+            {
+              "japanese": "いすを 並べて から 会議を 始めます。",
+              "chinese": "排好椅子後再開始開會。"
+            },
+            {
+              "japanese": "商品を きれいに 並べて おきます。",
+              "chinese": "先把商品排整齊。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "並べられる",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべられる",
+          "sentence": [
+            {
+              "japanese": "この 棚には 本が 二十冊 並べられる。",
+              "chinese": "這個架子可以排二十本書。"
+            },
+            {
+              "japanese": "広い 部屋なら いすが 並べられる。",
+              "chinese": "房間寬的話就能排椅子。"
+            },
+            {
+              "japanese": "一人でも 商品が 並べられる。",
+              "chinese": "一個人也能擺商品。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "並べよう",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべよう",
+          "sentence": [
+            {
+              "japanese": "みんなで いすを 並べよう。",
+              "chinese": "大家一起排椅子吧。"
+            },
+            {
+              "japanese": "新しい 商品を 並べようと して いる。",
+              "chinese": "正要把新商品擺出來。"
+            },
+            {
+              "japanese": "まず 本を 棚に 並べよう。",
+              "chinese": "先把書排到架上吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "並べろ",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべろ",
+          "sentence": [
+            {
+              "japanese": "そこに まっすぐ 並べろ。",
+              "chinese": "往那裡排直。"
+            },
+            {
+              "japanese": "店長は 店員に「商品を 並べろ」と 言った。",
+              "chinese": "店長對店員說「把商品擺好」。"
+            },
+            {
+              "japanese": "いすを きれいに 並べろ。",
+              "chinese": "把椅子排整齊。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "並べれば",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべれば",
+          "sentence": [
+            {
+              "japanese": "きれいに 並べれば よく 売れる。",
+              "chinese": "排得漂亮就賣得好。"
+            },
+            {
+              "japanese": "小さい 物から 並べれば 見やすい。",
+              "chinese": "從小東西開始排的話很容易看。"
+            },
+            {
+              "japanese": "棚に 並べれば 部屋が 広く 見える。",
+              "chinese": "排到架上的話房間看起來會變寬。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "並べられる",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべられる",
+          "sentence": [
+            {
+              "japanese": "店の 前に 商品が 並べられる。",
+              "chinese": "店前被擺上商品。"
+            },
+            {
+              "japanese": "会場に いすが 並べられる。",
+              "chinese": "會場被排上椅子。"
+            },
+            {
+              "japanese": "机の 上に 勝手に 物を 並べられる と 困る。",
+              "chinese": "桌上被隨便擺東西會很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "並べさせる",
+          "group": "2",
+          "chinese": "排列; 擺放",
+          "japanese": "ならべさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 本を 棚に 並べさせる。",
+              "chinese": "老師讓學生把書排到架上。"
+            },
+            {
+              "japanese": "母は 弟に お菓子を 並べさせる。",
+              "chinese": "媽媽讓弟弟擺點心。"
+            },
+            {
+              "japanese": "店長は 店員に 商品を 並べさせる。",
+              "chinese": "店長讓店員擺商品。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "植える",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえる",
+          "sentence": [
+            {
+              "japanese": "庭に 木を 植える。",
+              "chinese": "在庭院種樹。"
+            },
+            {
+              "japanese": "池の 周りに 花を 植える。",
+              "chinese": "在池子周圍種花。"
+            },
+            {
+              "japanese": "春に 庭へ 花を 植える。",
+              "chinese": "春天在庭院種花。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "植えます",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえます",
+          "sentence": [
+            {
+              "japanese": "毎年 庭に チューリップを 植えます。",
+              "chinese": "每年在庭院種鬱金香。"
+            },
+            {
+              "japanese": "父は 庭に 木を 植えます。",
+              "chinese": "父親在庭院種樹。"
+            },
+            {
+              "japanese": "学校の 池の 周りに 花を 植えます。",
+              "chinese": "在學校池子周圍種花。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "植えません",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえません",
+          "sentence": [
+            {
+              "japanese": "今年は 庭に 木を 植えません。",
+              "chinese": "今年不在庭院種樹。"
+            },
+            {
+              "japanese": "この 所には 花を 植えません。",
+              "chinese": "這個地方不種花。"
+            },
+            {
+              "japanese": "冬には 何も 植えません。",
+              "chinese": "冬天什麼都不種。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "植えました",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえました",
+          "sentence": [
+            {
+              "japanese": "先週 庭に 桜の 木を 植えました。",
+              "chinese": "上週在庭院種了櫻花樹。"
+            },
+            {
+              "japanese": "母は 玄関の 前に 花を 植えました。",
+              "chinese": "媽媽在玄關前種了花。"
+            },
+            {
+              "japanese": "子どもたちが 学校に 木を 植えました。",
+              "chinese": "孩子們在學校種了樹。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "植えませんでした",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえませんでした",
+          "sentence": [
+            {
+              "japanese": "雨が 降ったので 木を 植えませんでした。",
+              "chinese": "因為下雨，所以沒種樹。"
+            },
+            {
+              "japanese": "今年は 花を 植えませんでした。",
+              "chinese": "今年沒種花。"
+            },
+            {
+              "japanese": "土が 固くて 何も 植えませんでした。",
+              "chinese": "因為土很硬，所以什麼都沒種。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "植えない",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえない",
+          "sentence": [
+            {
+              "japanese": "冬には 木を 植えない。",
+              "chinese": "冬天不種樹。"
+            },
+            {
+              "japanese": "この 庭には 花を 植えない。",
+              "chinese": "這個庭院不種花。"
+            },
+            {
+              "japanese": "父は 今年は 何も 植えない。",
+              "chinese": "父親今年什麼都不種。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "植えた",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえた",
+          "sentence": [
+            {
+              "japanese": "先月 庭に 小さい 木を 植えた。",
+              "chinese": "上個月在庭院種了小樹。"
+            },
+            {
+              "japanese": "だれが この 花を ここに 植えた？",
+              "chinese": "是誰把這朵花種在這裡的？"
+            },
+            {
+              "japanese": "祖父が 池の そばに 木を 植えた。",
+              "chinese": "祖父在池邊種了樹。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "植えなかった",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえなかった",
+          "sentence": [
+            {
+              "japanese": "土が 悪かったので 木を 植えなかった。",
+              "chinese": "因為土不好，所以沒種樹。"
+            },
+            {
+              "japanese": "今年は 花を 植えなかった。",
+              "chinese": "今年沒種花。"
+            },
+            {
+              "japanese": "場所が ないので 何も 植えなかった。",
+              "chinese": "因為沒地方，所以什麼都沒種。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "植えて",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえて",
+          "sentence": [
+            {
+              "japanese": "庭に 木を 植えて ください。",
+              "chinese": "請在庭院種樹。"
+            },
+            {
+              "japanese": "花を 植えて から 水を やります。",
+              "chinese": "種好花之後再澆水。"
+            },
+            {
+              "japanese": "池の 周りに 花を 植えて おきます。",
+              "chinese": "先在池子周圍種好花。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "植えられる",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえられる",
+          "sentence": [
+            {
+              "japanese": "この 庭には 大きい 木が 植えられる。",
+              "chinese": "這個庭院可以種大樹。"
+            },
+            {
+              "japanese": "春なら 花が 植えられる。",
+              "chinese": "春天的話就能種花。"
+            },
+            {
+              "japanese": "一人でも 木が 植えられる。",
+              "chinese": "一個人也能種樹。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "植えよう",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえよう",
+          "sentence": [
+            {
+              "japanese": "春に なったら 庭に 木を 植えよう。",
+              "chinese": "春天到了就在庭院種樹吧。"
+            },
+            {
+              "japanese": "花を 植えようと して いる。",
+              "chinese": "正要把花種下去。"
+            },
+            {
+              "japanese": "まず 池の 周りに 花を 植えよう。",
+              "chinese": "先在池子周圍種花吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "植えろ",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえろ",
+          "sentence": [
+            {
+              "japanese": "そこに 木を 植えろ。",
+              "chinese": "把樹種在那裡。"
+            },
+            {
+              "japanese": "先生は 生徒に「花を 植えろ」と 言った。",
+              "chinese": "老師對學生說「把花種上」。"
+            },
+            {
+              "japanese": "庭に 桜を 植えろ。",
+              "chinese": "在庭院種櫻花。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "植えれば",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえれば",
+          "sentence": [
+            {
+              "japanese": "春に 植えれば 夏に 花が 咲く。",
+              "chinese": "春天種的話夏天就會開花。"
+            },
+            {
+              "japanese": "日当たりの いい 所に 植えれば よく 育つ。",
+              "chinese": "種在陽光好的地方就會長得好。"
+            },
+            {
+              "japanese": "木を 植えれば 庭が 涼しく なる。",
+              "chinese": "種了樹庭院就會變涼爽。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "植えられる",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえられる",
+          "sentence": [
+            {
+              "japanese": "庭に 若い 木が 植えられる。",
+              "chinese": "庭院被種上小樹。"
+            },
+            {
+              "japanese": "学校の 池の 周りに 花が 植えられる。",
+              "chinese": "學校池子周圍被種上花。"
+            },
+            {
+              "japanese": "勝手に 庭に 木を 植えられる と 困る。",
+              "chinese": "庭院被隨便種樹會很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "植えさせる",
+          "group": "2",
+          "chinese": "種植",
+          "japanese": "うえさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 学校の 庭に 木を 植えさせる。",
+              "chinese": "老師讓學生在學校庭院種樹。"
+            },
+            {
+              "japanese": "父は 私に 花を 植えさせる。",
+              "chinese": "父親讓我種花。"
+            },
+            {
+              "japanese": "祖父は 孫に 木を 植えさせる。",
+              "chinese": "祖父讓孫子種樹。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "戻す",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどす",
+          "sentence": [
+            {
+              "japanese": "読んだ 本は 棚に 戻す。",
+              "chinese": "看過的書要放回架上。"
+            },
+            {
+              "japanese": "使った 物は 元の 所に 戻す。",
+              "chinese": "用過的東西要放回原來的地方。"
+            },
+            {
+              "japanese": "借りた お金を 戻す。",
+              "chinese": "把借的錢還回去。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "戻します",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどします",
+          "sentence": [
+            {
+              "japanese": "読み終わった 本は 棚に 戻します。",
+              "chinese": "看完的書會放回架上。"
+            },
+            {
+              "japanese": "私は 毎晩 いすを 元の 所に 戻します。",
+              "chinese": "我每天晚上都把椅子放回原位。"
+            },
+            {
+              "japanese": "店員は 商品を 棚に 戻します。",
+              "chinese": "店員把商品放回架上。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "戻しません",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどしません",
+          "sentence": [
+            {
+              "japanese": "この 本は まだ 棚に 戻しません。",
+              "chinese": "這本書還沒放回架上。"
+            },
+            {
+              "japanese": "今日は お金を 戻しません。",
+              "chinese": "今天不還錢。"
+            },
+            {
+              "japanese": "汚れた 物は 元の 所に 戻しません。",
+              "chinese": "髒掉的東西不放回原位。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "戻しました",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどしました",
+          "sentence": [
+            {
+              "japanese": "さっき 本を 棚に 戻しました。",
+              "chinese": "剛才把書放回架上了。"
+            },
+            {
+              "japanese": "母は ハサミを 引き出しに 戻しました。",
+              "chinese": "媽媽把剪刀放回抽屜了。"
+            },
+            {
+              "japanese": "弟は 借りた お金を 戻しました。",
+              "chinese": "弟弟把借的錢還了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "戻しませんでした",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどしませんでした",
+          "sentence": [
+            {
+              "japanese": "忙しくて 本を 戻しませんでした。",
+              "chinese": "因為忙，所以沒把書放回去。"
+            },
+            {
+              "japanese": "昨日は お金を 戻しませんでした。",
+              "chinese": "昨天沒還錢。"
+            },
+            {
+              "japanese": "だれも いすを 元の 所に 戻しませんでした。",
+              "chinese": "誰都沒把椅子放回原位。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "戻さない",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどさない",
+          "sentence": [
+            {
+              "japanese": "弟は 本を 棚に 戻さない。",
+              "chinese": "弟弟不把書放回架上。"
+            },
+            {
+              "japanese": "この 店は お金を 戻さない。",
+              "chinese": "這家店不退錢。"
+            },
+            {
+              "japanese": "私は 夜は いすを 戻さない。",
+              "chinese": "我晚上不把椅子放回去。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "戻した",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどした",
+          "sentence": [
+            {
+              "japanese": "さっき 本を 棚に 戻した。",
+              "chinese": "剛才把書放回架上了。"
+            },
+            {
+              "japanese": "だれが この いすを 元の 所に 戻した？",
+              "chinese": "是誰把這把椅子放回原位的？"
+            },
+            {
+              "japanese": "父が ハサミを 引き出しに 戻した。",
+              "chinese": "父親把剪刀放回抽屜了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "戻さなかった",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどさなかった",
+          "sentence": [
+            {
+              "japanese": "時間が なくて 本を 戻さなかった。",
+              "chinese": "因為沒時間，所以沒把書放回去。"
+            },
+            {
+              "japanese": "昨日は お金を 戻さなかった。",
+              "chinese": "昨天沒還錢。"
+            },
+            {
+              "japanese": "弟は いすを 元の 所に 戻さなかった。",
+              "chinese": "弟弟沒把椅子放回原位。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "戻して",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどして",
+          "sentence": [
+            {
+              "japanese": "本を 棚に 戻して ください。",
+              "chinese": "請把書放回架上。"
+            },
+            {
+              "japanese": "使った 物を 戻して から 帰ります。",
+              "chinese": "把用過的東西放回後再回去。"
+            },
+            {
+              "japanese": "ハサミを 引き出しに 戻して おきます。",
+              "chinese": "先把剪刀放回抽屜。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "戻せる",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどせる",
+          "sentence": [
+            {
+              "japanese": "この 本は 明日 戻せる。",
+              "chinese": "這本書明天能還。"
+            },
+            {
+              "japanese": "一人で 重い いすが 戻せる。",
+              "chinese": "一個人也能把重椅子放回去。"
+            },
+            {
+              "japanese": "この いすは 元の 所に 戻せる。",
+              "chinese": "這張椅子可以放回原位。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "戻そう",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどそう",
+          "sentence": [
+            {
+              "japanese": "使った 物は 元の 所に 戻そう。",
+              "chinese": "用過的東西放回原位吧。"
+            },
+            {
+              "japanese": "本を 棚に 戻そうと して いる。",
+              "chinese": "正要把書放回架上。"
+            },
+            {
+              "japanese": "まず ハサミを 引き出しに 戻そう。",
+              "chinese": "先把剪刀放回抽屜吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "戻せ",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどせ",
+          "sentence": [
+            {
+              "japanese": "今すぐ 本を 棚に 戻せ。",
+              "chinese": "現在馬上把書放回架上。"
+            },
+            {
+              "japanese": "先生は 学生に「いすを 戻せ」と 言った。",
+              "chinese": "老師對學生說「把椅子放回去」。"
+            },
+            {
+              "japanese": "使った 物は 元の 所に 戻せ。",
+              "chinese": "用過的東西放回原位。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "戻せば",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどせば",
+          "sentence": [
+            {
+              "japanese": "元の 所に 戻せば すぐ 見つかる。",
+              "chinese": "放回原位的話馬上就能找到。"
+            },
+            {
+              "japanese": "本を 棚に 戻せば 机が きれいに なる。",
+              "chinese": "把書放回架上桌子就整齊了。"
+            },
+            {
+              "japanese": "お金を 戻せば 問題が ない。",
+              "chinese": "把錢還了就沒問題。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "戻される",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどされる",
+          "sentence": [
+            {
+              "japanese": "本は 棚に 戻される。",
+              "chinese": "書被放回架上。"
+            },
+            {
+              "japanese": "借りた 物は 元の 所に 戻される。",
+              "chinese": "借來的東西被放回原位。"
+            },
+            {
+              "japanese": "勝手に 私の 本を 戻される と 困る。",
+              "chinese": "我的書被隨便放回去會很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "戻させる",
+          "group": "1",
+          "chinese": "放回; 歸還",
+          "japanese": "もどさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 本を 棚に 戻させる。",
+              "chinese": "老師讓學生把書放回架上。"
+            },
+            {
+              "japanese": "母は 弟に お金を 戻させる。",
+              "chinese": "媽媽讓弟弟把錢還回去。"
+            },
+            {
+              "japanese": "店長は 店員に 商品を 元の 所に 戻させる。",
+              "chinese": "店長讓店員把商品放回原位。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "纏める",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめる",
+          "sentence": [
+            {
+              "japanese": "会議の 意見を 一つに 纏める。",
+              "chinese": "把會議的意見整合起來。"
+            },
+            {
+              "japanese": "出かける 前に 荷物を 纏める。",
+              "chinese": "出門前整理行李。"
+            },
+            {
+              "japanese": "旅行の 予定を ノートに 纏める。",
+              "chinese": "把旅行的預定整理在筆記本上。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "纏めます",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめます",
+          "sentence": [
+            {
+              "japanese": "明日の ミーティングの 資料を 纏めます。",
+              "chinese": "整理明天會議的資料。"
+            },
+            {
+              "japanese": "私は 毎週 予定を 手帳に 纏めます。",
+              "chinese": "我每週把預定整理在手帳上。"
+            },
+            {
+              "japanese": "部長は みんなの 意見を 纏めます。",
+              "chinese": "部長整合大家的意見。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "纏めません",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめません",
+          "sentence": [
+            {
+              "japanese": "今日は 資料を 纏めません。",
+              "chinese": "今天不整理資料。"
+            },
+            {
+              "japanese": "私の 意見は まだ 纏めません。",
+              "chinese": "我的意見還沒整理好。"
+            },
+            {
+              "japanese": "時間が ないので 荷物を 纏めません。",
+              "chinese": "因為沒時間，所以不整理行李。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "纏めました",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめました",
+          "sentence": [
+            {
+              "japanese": "昨日 講義の ノートを 纏めました。",
+              "chinese": "昨天整理了講義的筆記。"
+            },
+            {
+              "japanese": "母は 旅行の 荷物を 纏めました。",
+              "chinese": "媽媽整理好了旅行的行李。"
+            },
+            {
+              "japanese": "課長が みんなの 意見を 纏めました。",
+              "chinese": "課長整合了大家的意見。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "纏めませんでした",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめませんでした",
+          "sentence": [
+            {
+              "japanese": "忙しくて 資料を 纏めませんでした。",
+              "chinese": "因為忙，所以沒整理資料。"
+            },
+            {
+              "japanese": "昨日は 予定を 纏めませんでした。",
+              "chinese": "昨天沒整理預定。"
+            },
+            {
+              "japanese": "意見が ばらばらで 纏めませんでした。",
+              "chinese": "因為意見分歧，所以沒整合。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "纏めない",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめない",
+          "sentence": [
+            {
+              "japanese": "今日は 資料を 纏めない。",
+              "chinese": "今天不整理資料。"
+            },
+            {
+              "japanese": "私の 意見は まだ 纏めない。",
+              "chinese": "我的意見還沒整理。"
+            },
+            {
+              "japanese": "弟は 荷物を 纏めない。",
+              "chinese": "弟弟不整理行李。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "纏めた",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめた",
+          "sentence": [
+            {
+              "japanese": "先週 講義の ノートを 纏めた。",
+              "chinese": "上週整理了講義的筆記。"
+            },
+            {
+              "japanese": "だれが この 資料を 纏めた？",
+              "chinese": "是誰整理了這份資料？"
+            },
+            {
+              "japanese": "部長が みんなの 意見を 纏めた。",
+              "chinese": "部長整合了大家的意見。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "纏めなかった",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめなかった",
+          "sentence": [
+            {
+              "japanese": "時間が なくて 資料を 纏めなかった。",
+              "chinese": "因為沒時間，所以沒整理資料。"
+            },
+            {
+              "japanese": "昨日は 荷物を 纏めなかった。",
+              "chinese": "昨天沒整理行李。"
+            },
+            {
+              "japanese": "意見が 違って 一つに 纏めなかった。",
+              "chinese": "因為意見不同，所以沒整合成一個。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "纏めて",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめて",
+          "sentence": [
+            {
+              "japanese": "この 資料を 一つに 纏めて ください。",
+              "chinese": "請把這份資料整合成一份。"
+            },
+            {
+              "japanese": "ノートを 纏めて から 寝ます。",
+              "chinese": "整理好筆記後再睡。"
+            },
+            {
+              "japanese": "明日の 予定を 纏めて おきます。",
+              "chinese": "先把明天的預定整理好。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "纏められる",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめられる",
+          "sentence": [
+            {
+              "japanese": "一人で 資料が 纏められる。",
+              "chinese": "一個人也能整理資料。"
+            },
+            {
+              "japanese": "この ノートに 一週間の 予定を 纏められる。",
+              "chinese": "可以把一週的預定整理在這本筆記上。"
+            },
+            {
+              "japanese": "短い 時間で 意見が 纏められる と いい。",
+              "chinese": "能在短時間內整合意見就好了。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "纏めよう",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめよう",
+          "sentence": [
+            {
+              "japanese": "みんなの 意見を 一つに 纏めよう。",
+              "chinese": "把大家的意見整合成一個吧。"
+            },
+            {
+              "japanese": "荷物を 纏めようと して いる。",
+              "chinese": "正要把行李整理好。"
+            },
+            {
+              "japanese": "まず 資料を 纏めよう。",
+              "chinese": "先整理資料吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "纏めろ",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめろ",
+          "sentence": [
+            {
+              "japanese": "出かける 前に 荷物を 纏めろ。",
+              "chinese": "出門前把行李整理好。"
+            },
+            {
+              "japanese": "部長は 私に「資料を 纏めろ」と 言った。",
+              "chinese": "部長對我說「把資料整理好」。"
+            },
+            {
+              "japanese": "意見を 一つに 纏めろ。",
+              "chinese": "把意見整合成一個。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "纏めれば",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめれば",
+          "sentence": [
+            {
+              "japanese": "意見を 纏めれば 会議が 早く 終わる。",
+              "chinese": "整合好意見的話會議就會早點結束。"
+            },
+            {
+              "japanese": "ノートに 纏めれば 復習が 楽だ。",
+              "chinese": "整理在筆記上的話複習就輕鬆。"
+            },
+            {
+              "japanese": "荷物を 纏めれば すぐ 出発できる。",
+              "chinese": "整理好行李就能馬上出發。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "纏められる",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめられる",
+          "sentence": [
+            {
+              "japanese": "部長の 意見が 一つに 纏められる。",
+              "chinese": "部長的意見被整合成一個。"
+            },
+            {
+              "japanese": "資料は 私の 机に 纏められる。",
+              "chinese": "資料被整理到我的桌上。"
+            },
+            {
+              "japanese": "勝手に 私の 荷物を 纏められる と 困る。",
+              "chinese": "我的行李被隨便整理會很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "纏めさせる",
+          "group": "2",
+          "chinese": "整理; 彙整",
+          "japanese": "まとめさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 意見を 一つに 纏めさせる。",
+              "chinese": "老師讓學生把意見整合成一個。"
+            },
+            {
+              "japanese": "部長は 私に 資料を 纏めさせる。",
+              "chinese": "部長讓我整理資料。"
+            },
+            {
+              "japanese": "母は 弟に 荷物を 纏めさせる。",
+              "chinese": "媽媽讓弟弟整理行李。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "片付ける",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづける",
+          "sentence": [
+            {
+              "japanese": "遊んだ 後で 部屋を 片付ける。",
+              "chinese": "玩完後收拾房間。"
+            },
+            {
+              "japanese": "机の 上を 片付ける。",
+              "chinese": "收拾桌上。"
+            },
+            {
+              "japanese": "授業の 前に 教室を 片付ける。",
+              "chinese": "上課前收拾教室。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "片付けます",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけます",
+          "sentence": [
+            {
+              "japanese": "毎晩 寝る 前に 部屋を 片付けます。",
+              "chinese": "每天晚上睡前收拾房間。"
+            },
+            {
+              "japanese": "私は 週末に 引き出しを 片付けます。",
+              "chinese": "我週末整理抽屜。"
+            },
+            {
+              "japanese": "学生は 授業の 後で 教室を 片付けます。",
+              "chinese": "學生下課後收拾教室。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "片付けません",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけません",
+          "sentence": [
+            {
+              "japanese": "今日は 部屋を 片付けません。",
+              "chinese": "今天不收拾房間。"
+            },
+            {
+              "japanese": "弟は 自分の 机を 片付けません。",
+              "chinese": "弟弟不收拾自己的桌子。"
+            },
+            {
+              "japanese": "忙しい 日は 何も 片付けません。",
+              "chinese": "忙的日子什麼都不收拾。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "片付けました",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけました",
+          "sentence": [
+            {
+              "japanese": "さっき 部屋を 片付けました。",
+              "chinese": "剛才收拾好了房間。"
+            },
+            {
+              "japanese": "母は 台所を 片付けました。",
+              "chinese": "媽媽收拾好了廚房。"
+            },
+            {
+              "japanese": "弟は やっと 机を 片付けました。",
+              "chinese": "弟弟終於收拾了桌子。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "片付けませんでした",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけませんでした",
+          "sentence": [
+            {
+              "japanese": "疲れて 部屋を 片付けませんでした。",
+              "chinese": "因為累，所以沒收拾房間。"
+            },
+            {
+              "japanese": "昨日は 引き出しを 片付けませんでした。",
+              "chinese": "昨天沒整理抽屜。"
+            },
+            {
+              "japanese": "客が 来なかったので 何も 片付けませんでした。",
+              "chinese": "因為客人沒來，所以什麼都沒收拾。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "片付けない",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけない",
+          "sentence": [
+            {
+              "japanese": "今日は 部屋を 片付けない。",
+              "chinese": "今天不收拾房間。"
+            },
+            {
+              "japanese": "弟は 机を 片付けない。",
+              "chinese": "弟弟不收拾桌子。"
+            },
+            {
+              "japanese": "私の 物は 勝手に 片付けない。",
+              "chinese": "我的東西不要隨便收拾。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "片付けた",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけた",
+          "sentence": [
+            {
+              "japanese": "昨日 部屋を 片付けた。",
+              "chinese": "昨天收拾了房間。"
+            },
+            {
+              "japanese": "だれが この 机を 片付けた？",
+              "chinese": "是誰收拾了這張桌子？"
+            },
+            {
+              "japanese": "妹が 引き出しを 片付けた。",
+              "chinese": "妹妹整理了抽屜。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "片付けなかった",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけなかった",
+          "sentence": [
+            {
+              "japanese": "忙しくて 部屋を 片付けなかった。",
+              "chinese": "因為忙，所以沒收拾房間。"
+            },
+            {
+              "japanese": "昨日は 机を 片付けなかった。",
+              "chinese": "昨天沒收拾桌子。"
+            },
+            {
+              "japanese": "弟は 何も 片付けなかった。",
+              "chinese": "弟弟什麼都沒收拾。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "片付けて",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけて",
+          "sentence": [
+            {
+              "japanese": "部屋を 片付けて ください。",
+              "chinese": "請收拾房間。"
+            },
+            {
+              "japanese": "机を 片付けて から 出かけます。",
+              "chinese": "收拾好桌子後再出門。"
+            },
+            {
+              "japanese": "引き出しを 片付けて おきます。",
+              "chinese": "先把抽屜整理好。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "片付けられる",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけられる",
+          "sentence": [
+            {
+              "japanese": "一人で 部屋が 片付けられる。",
+              "chinese": "一個人也能收拾房間。"
+            },
+            {
+              "japanese": "この 引き出しは 自分で 片付けられる。",
+              "chinese": "這個抽屜我自己能整理。"
+            },
+            {
+              "japanese": "今日は 時間が あるので 机が 片付けられる。",
+              "chinese": "今天有時間，所以桌子能收拾。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "片付けよう",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけよう",
+          "sentence": [
+            {
+              "japanese": "みんなで 教室を 片付けよう。",
+              "chinese": "大家一起收拾教室吧。"
+            },
+            {
+              "japanese": "部屋を 片付けようと して いる。",
+              "chinese": "正要把房間收拾好。"
+            },
+            {
+              "japanese": "まず 机の 上を 片付けよう。",
+              "chinese": "先收拾桌上吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "片付けろ",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけろ",
+          "sentence": [
+            {
+              "japanese": "遊んだ 後は 部屋を 片付けろ。",
+              "chinese": "玩完後把房間收拾好。"
+            },
+            {
+              "japanese": "母は 弟に「机を 片付けろ」と 言った。",
+              "chinese": "媽媽對弟弟說「把桌子收拾好」。"
+            },
+            {
+              "japanese": "ゴミを ゴミ箱に 入れて 片付けろ。",
+              "chinese": "把垃圾丟進垃圾桶後收拾好。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "片付ければ",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづければ",
+          "sentence": [
+            {
+              "japanese": "毎日 片付ければ 部屋が きれいに なる。",
+              "chinese": "每天收拾的話房間就會變整潔。"
+            },
+            {
+              "japanese": "机を 片付ければ 勉強が できる。",
+              "chinese": "收拾好桌子的話就能讀書。"
+            },
+            {
+              "japanese": "引き出しを 片付ければ 物が すぐ 見つかる。",
+              "chinese": "整理好抽屜的話東西馬上就能找到。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "片付けられる",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけられる",
+          "sentence": [
+            {
+              "japanese": "教室は 学生に 片付けられる。",
+              "chinese": "教室被學生收拾好。"
+            },
+            {
+              "japanese": "私の 机は 母に 片付けられる。",
+              "chinese": "我的桌子被媽媽收拾了。"
+            },
+            {
+              "japanese": "勝手に 私の 物を 片付けられる と 困る。",
+              "chinese": "我的東西被隨便收拾會很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "片付けさせる",
+          "group": "2",
+          "chinese": "收拾; 整理",
+          "japanese": "かたづけさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 教室を 片付けさせる。",
+              "chinese": "老師讓學生收拾教室。"
+            },
+            {
+              "japanese": "母は 弟に 部屋を 片付けさせる。",
+              "chinese": "媽媽讓弟弟收拾房間。"
+            },
+            {
+              "japanese": "店長は 店員に 店の 中を 片付けさせる。",
+              "chinese": "店長讓店員收拾店裡。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "しまう",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまう",
+          "sentence": [
+            {
+              "japanese": "使った 物は 引き出しに しまう。",
+              "chinese": "用過的東西收進抽屜。"
+            },
+            {
+              "japanese": "冬の 服は 箱に しまう。",
+              "chinese": "冬天的衣服收進箱子。"
+            },
+            {
+              "japanese": "お金は かばんの 中に しまう。",
+              "chinese": "錢收進包包裡。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "しまいます",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまいます",
+          "sentence": [
+            {
+              "japanese": "毎晩 本を 棚に しまいます。",
+              "chinese": "每天晚上把書收進書架。"
+            },
+            {
+              "japanese": "私は 冬に なると 厚い 服を しまいます。",
+              "chinese": "我一到冬天就把厚衣服收起來。"
+            },
+            {
+              "japanese": "母は お皿を 戸棚に しまいます。",
+              "chinese": "媽媽把盤子收進櫥櫃。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "しまいません",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまいません",
+          "sentence": [
+            {
+              "japanese": "今日は まだ 本を しまいません。",
+              "chinese": "今天還沒把書收起來。"
+            },
+            {
+              "japanese": "この 引き出しには 服を しまいません。",
+              "chinese": "這個抽屜不收衣服。"
+            },
+            {
+              "japanese": "私は お金を かばんに しまいません。",
+              "chinese": "我不把錢收進包包。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "しまいました",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまいました",
+          "sentence": [
+            {
+              "japanese": "さっき 本を 引き出しに しまいました。",
+              "chinese": "剛才把書收進抽屜了。"
+            },
+            {
+              "japanese": "妹は おもちゃを 箱に しまいました。",
+              "chinese": "妹妹把玩具收進箱子了。"
+            },
+            {
+              "japanese": "父は カメラを かばんに しまいました。",
+              "chinese": "父親把相機收進包包了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "しまいませんでした",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまいませんでした",
+          "sentence": [
+            {
+              "japanese": "忙しくて 服を しまいませんでした。",
+              "chinese": "因為忙，所以沒收衣服。"
+            },
+            {
+              "japanese": "昨日は お金を しまいませんでした。",
+              "chinese": "昨天沒把錢收起來。"
+            },
+            {
+              "japanese": "まだ 使うので 本を しまいませんでした。",
+              "chinese": "因為還要用的，所以沒把書收起來。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "しまわない",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまわない",
+          "sentence": [
+            {
+              "japanese": "今日は 服を しまわない。",
+              "chinese": "今天不收衣服。"
+            },
+            {
+              "japanese": "弟は おもちゃを 箱に しまわない。",
+              "chinese": "弟弟不把玩具收進箱子。"
+            },
+            {
+              "japanese": "この 引き出しには 何も しまわない。",
+              "chinese": "這個抽屜什麼都不收。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "しまった",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまった",
+          "sentence": [
+            {
+              "japanese": "さっき 本を 引き出しに しまった。",
+              "chinese": "剛才把書收進抽屜了。"
+            },
+            {
+              "japanese": "だれが この 服を 箱に しまった？",
+              "chinese": "是誰把這件衣服收進箱子的？"
+            },
+            {
+              "japanese": "母が お皿を しまった。",
+              "chinese": "媽媽把盤子收好了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "しまわなかった",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまわなかった",
+          "sentence": [
+            {
+              "japanese": "時間が なくて 服を しまわなかった。",
+              "chinese": "因為沒時間，所以沒收衣服。"
+            },
+            {
+              "japanese": "昨日は おもちゃを しまわなかった。",
+              "chinese": "昨天沒收玩具。"
+            },
+            {
+              "japanese": "まだ 使うので しまわなかった。",
+              "chinese": "因為還要用的，所以沒收起來。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "しまって",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまって",
+          "sentence": [
+            {
+              "japanese": "服を 引き出しに しまって ください。",
+              "chinese": "請把衣服收進抽屜。"
+            },
+            {
+              "japanese": "おもちゃを しまって から 寝ます。",
+              "chinese": "收好玩具後再睡。"
+            },
+            {
+              "japanese": "お金を かばんに しまって おきます。",
+              "chinese": "先把錢收進包包。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "しまえる",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまえる",
+          "sentence": [
+            {
+              "japanese": "この 箱には 服が 全部 しまえる。",
+              "chinese": "這個箱子能把衣服全收進去。"
+            },
+            {
+              "japanese": "この 引き出しに 本が しまえる。",
+              "chinese": "這個抽屜能收書。"
+            },
+            {
+              "japanese": "一人で 荷物が しまえる。",
+              "chinese": "一個人也能把行李收好。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "しまおう",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまおう",
+          "sentence": [
+            {
+              "japanese": "使った 物は 早く しまおう。",
+              "chinese": "用過的東西快收起來吧。"
+            },
+            {
+              "japanese": "冬の 服を しまおうと して いる。",
+              "chinese": "正要把冬天的衣服收起來。"
+            },
+            {
+              "japanese": "まず 本を 引き出しに しまおう。",
+              "chinese": "先把書收進抽屜吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "しまえ",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまえ",
+          "sentence": [
+            {
+              "japanese": "使ったら すぐ しまえ。",
+              "chinese": "用完馬上收起來。"
+            },
+            {
+              "japanese": "母は 弟に「おもちゃを しまえ」と 言った。",
+              "chinese": "媽媽對弟弟說「把玩具收起來」。"
+            },
+            {
+              "japanese": "お金は かばんに しまえ。",
+              "chinese": "把錢收進包包裡。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "しまえば",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまえば",
+          "sentence": [
+            {
+              "japanese": "引き出しに しまえば 部屋が きれいに なる。",
+              "chinese": "收進抽屜的話房間就整潔了。"
+            },
+            {
+              "japanese": "使った 物を しまえば すぐ 見つかる。",
+              "chinese": "用過的東西收好的話馬上就能找到。"
+            },
+            {
+              "japanese": "冬の 服を しまえば 場所が 広く なる。",
+              "chinese": "把冬天衣服收起來空間就變寬。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "しまわれる",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまわれる",
+          "sentence": [
+            {
+              "japanese": "本は 引き出しに しまわれる。",
+              "chinese": "書被收進抽屜。"
+            },
+            {
+              "japanese": "お皿は 戸棚に しまわれる。",
+              "chinese": "盤子被收進櫥櫃。"
+            },
+            {
+              "japanese": "勝手に 私の 物を しまわれる と 困る。",
+              "chinese": "我的東西被隨便收起來會很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "しまわせる",
+          "group": "1",
+          "chinese": "收起; 收好",
+          "japanese": "しまわせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 本を 引き出しに しまわせる。",
+              "chinese": "老師讓學生把書收進抽屜。"
+            },
+            {
+              "japanese": "母は 弟に おもちゃを しまわせる。",
+              "chinese": "媽媽讓弟弟收玩具。"
+            },
+            {
+              "japanese": "店長は 店員に 商品を 箱に しまわせる。",
+              "chinese": "店長讓店員把商品收進箱子。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "決める",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめる",
+          "sentence": [
+            {
+              "japanese": "旅行の 日を 決める。",
+              "chinese": "決定旅行的日期。"
+            },
+            {
+              "japanese": "ミーティングの 時間を 決める。",
+              "chinese": "決定會議的時間。"
+            },
+            {
+              "japanese": "来月の 予定を 決める。",
+              "chinese": "決定下個月的預定。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "決めます",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめます",
+          "sentence": [
+            {
+              "japanese": "今日 パーティーの 日を 決めます。",
+              "chinese": "今天決定派對的日期。"
+            },
+            {
+              "japanese": "部長は 会議の 時間を 決めます。",
+              "chinese": "部長決定會議的時間。"
+            },
+            {
+              "japanese": "私たちは 来週 旅行の 予定を 決めます。",
+              "chinese": "我們下週決定旅行的預定。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "決めません",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめません",
+          "sentence": [
+            {
+              "japanese": "今日は まだ 日を 決めません。",
+              "chinese": "今天還沒決定日期。"
+            },
+            {
+              "japanese": "私 一人では 決めません。",
+              "chinese": "我一個人不決定。"
+            },
+            {
+              "japanese": "予定が わからないので 決めません。",
+              "chinese": "因為不知道預定，所以不決定。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "決めました",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめました",
+          "sentence": [
+            {
+              "japanese": "さっき ミーティングの 日を 決めました。",
+              "chinese": "剛才決定了會議的日期。"
+            },
+            {
+              "japanese": "課長は 出発の 時間を 決めました。",
+              "chinese": "課長決定了出發的時間。"
+            },
+            {
+              "japanese": "みんなで パーティーの 予定を 決めました。",
+              "chinese": "大家決定了派對的預定。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "決めませんでした",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめませんでした",
+          "sentence": [
+            {
+              "japanese": "意見が 違って 日を 決めませんでした。",
+              "chinese": "因為意見不同，所以沒決定日期。"
+            },
+            {
+              "japanese": "昨日は 予定を 決めませんでした。",
+              "chinese": "昨天沒決定預定。"
+            },
+            {
+              "japanese": "部長が いなかったので 決めませんでした。",
+              "chinese": "因為部長不在，所以沒決定。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "決めない",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめない",
+          "sentence": [
+            {
+              "japanese": "今日は 予定を 決めない。",
+              "chinese": "今天不決定預定。"
+            },
+            {
+              "japanese": "私の 意見が ないと 決めない。",
+              "chinese": "沒有我的意見就不決定。"
+            },
+            {
+              "japanese": "課長は まだ 時間を 決めない。",
+              "chinese": "課長還沒決定時間。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "決めた",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめた",
+          "sentence": [
+            {
+              "japanese": "昨日 旅行の 日を 決めた。",
+              "chinese": "昨天決定了旅行的日期。"
+            },
+            {
+              "japanese": "だれが 会議の 時間を 決めた？",
+              "chinese": "是誰決定了會議的時間？"
+            },
+            {
+              "japanese": "部長が 予定を 決めた。",
+              "chinese": "部長決定了預定。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "決めなかった",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめなかった",
+          "sentence": [
+            {
+              "japanese": "忙しくて 日を 決めなかった。",
+              "chinese": "因為忙，所以沒決定日期。"
+            },
+            {
+              "japanese": "昨日は 時間を 決めなかった。",
+              "chinese": "昨天沒決定時間。"
+            },
+            {
+              "japanese": "意見が まとまらなくて 決めなかった。",
+              "chinese": "因為意見沒整合，所以沒決定。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "決めて",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめて",
+          "sentence": [
+            {
+              "japanese": "旅行の 日を 決めて ください。",
+              "chinese": "請決定旅行的日期。"
+            },
+            {
+              "japanese": "予定を 決めて から 申し込みます。",
+              "chinese": "決定預定後再報名。"
+            },
+            {
+              "japanese": "明日の 時間を 決めて おきます。",
+              "chinese": "先把明天的時間定好。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "決められる",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめられる",
+          "sentence": [
+            {
+              "japanese": "一人で 日にちを 決められる。",
+              "chinese": "一個人也能決定日期。"
+            },
+            {
+              "japanese": "この 予定表で 時間が 決められる。",
+              "chinese": "用這張預定表就能決定時間。"
+            },
+            {
+              "japanese": "明日 までに 予定が 決められる と いい。",
+              "chinese": "能在明天前決定預定就好了。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "決めよう",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめよう",
+          "sentence": [
+            {
+              "japanese": "みんなで 旅行の 日を 決めよう。",
+              "chinese": "大家一起決定旅行的日期吧。"
+            },
+            {
+              "japanese": "予定を 決めようと して いる。",
+              "chinese": "正要把預定定下來。"
+            },
+            {
+              "japanese": "まず 会議の 時間を 決めよう。",
+              "chinese": "先決定會議的時間吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "決めろ",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめろ",
+          "sentence": [
+            {
+              "japanese": "今日中に 日を 決めろ。",
+              "chinese": "今天之內把日期決定好。"
+            },
+            {
+              "japanese": "部長は 私に「時間を 決めろ」と 言った。",
+              "chinese": "部長對我說「把時間定下來」。"
+            },
+            {
+              "japanese": "早く 予定を 決めろ。",
+              "chinese": "快點決定預定。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "決めれば",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめれば",
+          "sentence": [
+            {
+              "japanese": "日を 決めれば 申し込みが できる。",
+              "chinese": "決定日期的話就能報名。"
+            },
+            {
+              "japanese": "予定を 決めれば 準備が 始められる。",
+              "chinese": "決定預定的話就能開始準備。"
+            },
+            {
+              "japanese": "時間を 決めれば みんなに 知らせられる。",
+              "chinese": "決定時間的話就能通知大家。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "決められる",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめられる",
+          "sentence": [
+            {
+              "japanese": "会議の 日は 部長によって 決められる。",
+              "chinese": "會議日期由部長決定。"
+            },
+            {
+              "japanese": "私の 予定は いつも 母に 決められる。",
+              "chinese": "我的預定總是被媽媽決定。"
+            },
+            {
+              "japanese": "出発の 時間は 課長に 決められる。",
+              "chinese": "出發時間被課長決定。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "決めさせる",
+          "group": "2",
+          "chinese": "決定",
+          "japanese": "きめさせる",
+          "sentence": [
+            {
+              "japanese": "部長は 私に 会議の 時間を 決めさせる。",
+              "chinese": "部長讓我決定會議的時間。"
+            },
+            {
+              "japanese": "先生は 学生に 旅行の 日を 決めさせる。",
+              "chinese": "老師讓學生決定旅行的日期。"
+            },
+            {
+              "japanese": "母は 弟に 予定を 決めさせる。",
+              "chinese": "媽媽讓弟弟決定預定。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "知らせる",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせる",
+          "sentence": [
+            {
+              "japanese": "予定の 変更を メールで 知らせる。",
+              "chinese": "用郵件通知預定的變更。"
+            },
+            {
+              "japanese": "明日 結果を 電話で 知らせる。",
+              "chinese": "明天用電話告知結果。"
+            },
+            {
+              "japanese": "パーティーの 日に みんなに 知らせる。",
+              "chinese": "通知大家派對的日期。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "知らせます",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせます",
+          "sentence": [
+            {
+              "japanese": "決まったら すぐ 知らせます。",
+              "chinese": "決定後馬上通知。"
+            },
+            {
+              "japanese": "私が 明日 課長に 知らせます。",
+              "chinese": "我明天通知課長。"
+            },
+            {
+              "japanese": "受付の 人が 時間を 知らせます。",
+              "chinese": "櫃檯的人會告知時間。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "知らせません",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせません",
+          "sentence": [
+            {
+              "japanese": "まだ 決まって いないので 知らせません。",
+              "chinese": "因為還沒決定，所以不通知。"
+            },
+            {
+              "japanese": "今日は 結果を 知らせません。",
+              "chinese": "今天不告知結果。"
+            },
+            {
+              "japanese": "私からは 知らせません。",
+              "chinese": "我不會通知。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "知らせました",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせました",
+          "sentence": [
+            {
+              "japanese": "さっき 予定の 変更を 知らせました。",
+              "chinese": "剛才通知了預定的變更。"
+            },
+            {
+              "japanese": "母は 弟に 時間を 知らせました。",
+              "chinese": "媽媽告知了弟弟時間。"
+            },
+            {
+              "japanese": "課長が みんなに 会議の 日を 知らせました。",
+              "chinese": "課長通知了大家會議的日期。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "知らせませんでした",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせませんでした",
+          "sentence": [
+            {
+              "japanese": "忙しくて 結果を 知らせませんでした。",
+              "chinese": "因為忙，所以沒告知結果。"
+            },
+            {
+              "japanese": "昨日は 変更を 知らせませんでした。",
+              "chinese": "昨天沒通知變更。"
+            },
+            {
+              "japanese": "電話が なかったので 知らせませんでした。",
+              "chinese": "因為沒電話，所以沒通知。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "知らせない",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせない",
+          "sentence": [
+            {
+              "japanese": "今日は まだ 結果を 知らせない。",
+              "chinese": "今天還沒告知結果。"
+            },
+            {
+              "japanese": "私からは 知らせない。",
+              "chinese": "我不會通知。"
+            },
+            {
+              "japanese": "課長は 予定を 知らせない。",
+              "chinese": "課長不通知預定。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "知らせた",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせた",
+          "sentence": [
+            {
+              "japanese": "昨日 予定の 変更を 知らせた。",
+              "chinese": "昨天通知了預定的變更。"
+            },
+            {
+              "japanese": "だれが この ことを 知らせた？",
+              "chinese": "是誰通知這件事的？"
+            },
+            {
+              "japanese": "受付の 人が 時間を 知らせた。",
+              "chinese": "櫃檯的人告知了時間。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "知らせなかった",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせなかった",
+          "sentence": [
+            {
+              "japanese": "忙しくて 結果を 知らせなかった。",
+              "chinese": "因為忙，所以沒告知結果。"
+            },
+            {
+              "japanese": "昨日は 変更を 知らせなかった。",
+              "chinese": "昨天沒通知變更。"
+            },
+            {
+              "japanese": "だれも 私に 知らせなかった。",
+              "chinese": "誰都沒通知我。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "知らせて",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせて",
+          "sentence": [
+            {
+              "japanese": "決まったら 知らせて ください。",
+              "chinese": "決定後請通知我。"
+            },
+            {
+              "japanese": "予定を 知らせて から 出かけます。",
+              "chinese": "通知預定後再出門。"
+            },
+            {
+              "japanese": "明日 時間を 知らせて おきます。",
+              "chinese": "先把明天的時間通知好。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "知らせられる",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせられる",
+          "sentence": [
+            {
+              "japanese": "メールで 結果を 知らせられる。",
+              "chinese": "可以用郵件告知結果。"
+            },
+            {
+              "japanese": "電話が あれば すぐ 知らせられる。",
+              "chinese": "有電話的話就能馬上通知。"
+            },
+            {
+              "japanese": "一人でも みんなに 知らせられる。",
+              "chinese": "一個人也能通知大家。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "知らせよう",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせよう",
+          "sentence": [
+            {
+              "japanese": "決まったら すぐ 知らせよう。",
+              "chinese": "決定後馬上通知吧。"
+            },
+            {
+              "japanese": "変更を 知らせようと して いる。",
+              "chinese": "正要把變更通知出去。"
+            },
+            {
+              "japanese": "まず 課長に 知らせよう。",
+              "chinese": "先通知課長吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "知らせろ",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせろ",
+          "sentence": [
+            {
+              "japanese": "予定が 変わったら すぐ 知らせろ。",
+              "chinese": "預定變了的話馬上通知。"
+            },
+            {
+              "japanese": "部長は 私に「結果を 知らせろ」と 言った。",
+              "chinese": "部長對我說「把結果告知」。"
+            },
+            {
+              "japanese": "みんなに 時間を 知らせろ。",
+              "chinese": "通知大家時間。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "知らせれば",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせれば",
+          "sentence": [
+            {
+              "japanese": "早く 知らせれば みんなが 助かる。",
+              "chinese": "早點通知的話大家就方便了。"
+            },
+            {
+              "japanese": "電話で 知らせれば すぐ わかる。",
+              "chinese": "用電話通知的話馬上就知道。"
+            },
+            {
+              "japanese": "日にちを 知らせれば 準備が できる。",
+              "chinese": "告知日期的話就能準備。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "知らせられる",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせられる",
+          "sentence": [
+            {
+              "japanese": "結果は 電話で 課長に 知らせられる。",
+              "chinese": "結果用電話通知給課長。"
+            },
+            {
+              "japanese": "予定の 変更は みんなに 知らせられる。",
+              "chinese": "預定的變更被通知給大家。"
+            },
+            {
+              "japanese": "私の 予定を 勝手に 知らせられる と 困る。",
+              "chinese": "我的預定被隨便通知出去會很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "知らせさせる",
+          "group": "2",
+          "chinese": "通知; 告知",
+          "japanese": "しらせさせる",
+          "sentence": [
+            {
+              "japanese": "部長は 私に 結果を みんなに 知らせさせる。",
+              "chinese": "部長讓我通知大家結果。"
+            },
+            {
+              "japanese": "先生は 学生に 予定を 知らせさせる。",
+              "chinese": "老師讓學生通知預定。"
+            },
+            {
+              "japanese": "母は 弟に 時間を 知らせさせる。",
+              "chinese": "媽媽讓弟弟告知時間。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "相談する",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんする",
+          "sentence": [
+            {
+              "japanese": "困った 時は 先生に 相談する。",
+              "chinese": "有困難時找老師商量。"
+            },
+            {
+              "japanese": "旅行の ことは 友達と 相談する。",
+              "chinese": "旅行的事和朋友商量。"
+            },
+            {
+              "japanese": "一人で 決めないで 部長に 相談する。",
+              "chinese": "不要自己決定，找部長商量。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "相談します",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんします",
+          "sentence": [
+            {
+              "japanese": "明日 先生に 相談します。",
+              "chinese": "明天找老師商量。"
+            },
+            {
+              "japanese": "私は いつも 母に 相談します。",
+              "chinese": "我總是找媽媽商量。"
+            },
+            {
+              "japanese": "予定の ことを 課長と 相談します。",
+              "chinese": "預定的事和課長商量。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "相談しません",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんしません",
+          "sentence": [
+            {
+              "japanese": "今日は まだ 先生に 相談しません。",
+              "chinese": "今天還沒找老師商量。"
+            },
+            {
+              "japanese": "私 一人では 相談しません。",
+              "chinese": "我一個人不商量。"
+            },
+            {
+              "japanese": "この こと は だれにも 相談しません。",
+              "chinese": "這件事不跟任何人商量。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "相談しました",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんしました",
+          "sentence": [
+            {
+              "japanese": "昨日 先生に 相談しました。",
+              "chinese": "昨天找老師商量了。"
+            },
+            {
+              "japanese": "部長と 会議の ことを 相談しました。",
+              "chinese": "和部長商量了會議的事。"
+            },
+            {
+              "japanese": "友達に 旅行の 予定を 相談しました。",
+              "chinese": "找朋友商量了旅行的預定。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "相談しませんでした",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんしませんでした",
+          "sentence": [
+            {
+              "japanese": "忙しくて 先生に 相談しませんでした。",
+              "chinese": "因為忙，所以沒找老師商量。"
+            },
+            {
+              "japanese": "昨日は だれにも 相談しませんでした。",
+              "chinese": "昨天沒跟任何人商量。"
+            },
+            {
+              "japanese": "自分で 決めたので 相談しませんでした。",
+              "chinese": "因為自己決定了，所以沒商量。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "相談しない",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんしない",
+          "sentence": [
+            {
+              "japanese": "今日は 先生に 相談しない。",
+              "chinese": "今天不找老師商量。"
+            },
+            {
+              "japanese": "この こと は だれにも 相談しない。",
+              "chinese": "這件事不跟任何人商量。"
+            },
+            {
+              "japanese": "弟は 母に 相談しない。",
+              "chinese": "弟弟不找媽媽商量。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "相談した",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんした",
+          "sentence": [
+            {
+              "japanese": "昨日 部長に 相談した。",
+              "chinese": "昨天找部長商量了。"
+            },
+            {
+              "japanese": "この こと は 課長と 相談した。",
+              "chinese": "這件事和課長商量了。"
+            },
+            {
+              "japanese": "先週 先生に 進路を 相談した。",
+              "chinese": "上週找老師商量了未來的方向。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "相談しなかった",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんしなかった",
+          "sentence": [
+            {
+              "japanese": "忙しくて 先生に 相談しなかった。",
+              "chinese": "因為忙，所以沒找老師商量。"
+            },
+            {
+              "japanese": "昨日は だれにも 相談しなかった。",
+              "chinese": "昨天沒跟任何人商量。"
+            },
+            {
+              "japanese": "自分で 決めたので 相談しなかった。",
+              "chinese": "因為自己決定了，所以沒商量。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "相談して",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんして",
+          "sentence": [
+            {
+              "japanese": "決める 前に 先生に 相談して ください。",
+              "chinese": "決定前請先找老師商量。"
+            },
+            {
+              "japanese": "部長と 相談して から 返事を します。",
+              "chinese": "和部長商量後再答覆。"
+            },
+            {
+              "japanese": "明日 母に 相談して おきます。",
+              "chinese": "明天先跟媽媽商量。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "相談できる",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんできる",
+          "sentence": [
+            {
+              "japanese": "いつでも 先生に 相談できる。",
+              "chinese": "隨時都能找老師商量。"
+            },
+            {
+              "japanese": "この こと は 友達と 相談できる。",
+              "chinese": "這件事能和朋友商量。"
+            },
+            {
+              "japanese": "電話で 相談できる ので 便利だ。",
+              "chinese": "因為能用電話商量，所以很方便。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "相談しよう",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんしよう",
+          "sentence": [
+            {
+              "japanese": "まず 先生に 相談しよう。",
+              "chinese": "先找老師商量吧。"
+            },
+            {
+              "japanese": "旅行の ことを 友達と 相談しようと して いる。",
+              "chinese": "正要把旅行的事和朋友商量。"
+            },
+            {
+              "japanese": "部長と 相談しよう。",
+              "chinese": "和部長商量吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "相談しろ",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんしろ",
+          "sentence": [
+            {
+              "japanese": "決める 前に 先生に 相談しろ。",
+              "chinese": "決定前先找老師商量。"
+            },
+            {
+              "japanese": "部長は 私に「課長と 相談しろ」と 言った。",
+              "chinese": "部長對我說「和課長商量」。"
+            },
+            {
+              "japanese": "一人で 決めないで 相談しろ。",
+              "chinese": "不要自己決定，去商量。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "相談すれば",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんすれば",
+          "sentence": [
+            {
+              "japanese": "先生に 相談すれば 安心だ。",
+              "chinese": "找老師商量的話就安心了。"
+            },
+            {
+              "japanese": "友達と 相談すれば いい 考えが 出る。",
+              "chinese": "和朋友商量的話就會有好主意。"
+            },
+            {
+              "japanese": "部長に 相談すれば すぐ 決まる。",
+              "chinese": "找部長商量的話馬上就能決定。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "相談される",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんされる",
+          "sentence": [
+            {
+              "japanese": "私は 友達に よく 相談される。",
+              "chinese": "朋友常來找我商量。"
+            },
+            {
+              "japanese": "先輩は 後輩に 相談される ことが 多い。",
+              "chinese": "前輩常被後輩找去商量。"
+            },
+            {
+              "japanese": "夜 遅くに 相談される と 困る。",
+              "chinese": "半夜被找去商量會很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "相談させる",
+          "group": "3",
+          "chinese": "商量; 諮詢",
+          "japanese": "そうだんさせる",
+          "sentence": [
+            {
+              "japanese": "部長は 私に 課長と 相談させる。",
+              "chinese": "部長讓我和課長商量。"
+            },
+            {
+              "japanese": "先生は 学生に 進路を 相談させる。",
+              "chinese": "老師讓學生商量未來的方向。"
+            },
+            {
+              "japanese": "母は 弟に 先生と 相談させる。",
+              "chinese": "媽媽讓弟弟和老師商量。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "予習する",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうする",
+          "sentence": [
+            {
+              "japanese": "授業の 前に 予習する。",
+              "chinese": "上課前預習。"
+            },
+            {
+              "japanese": "明日の 講義を 予習する。",
+              "chinese": "預習明天的講義。"
+            },
+            {
+              "japanese": "学生は 毎晩 予習する。",
+              "chinese": "學生每天晚上預習。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "予習します",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうします",
+          "sentence": [
+            {
+              "japanese": "毎晩 授業の 前に 予習します。",
+              "chinese": "每天晚上上課前預習。"
+            },
+            {
+              "japanese": "私は 明日の 講義を 予習します。",
+              "chinese": "我預習明天的講義。"
+            },
+            {
+              "japanese": "弟は 学校から 帰って から 予習します。",
+              "chinese": "弟弟從學校回來後預習。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "予習しません",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうしません",
+          "sentence": [
+            {
+              "japanese": "今日は 予習しません。",
+              "chinese": "今天不預習。"
+            },
+            {
+              "japanese": "この 授業では 予習しません。",
+              "chinese": "這堂課不預習。"
+            },
+            {
+              "japanese": "私は ほとんど 予習しません。",
+              "chinese": "我幾乎不預習。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "予習しました",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうしました",
+          "sentence": [
+            {
+              "japanese": "昨日 明日の 授業を 予習しました。",
+              "chinese": "昨天預習了明天的課。"
+            },
+            {
+              "japanese": "学生は 講義の 前に 予習しました。",
+              "chinese": "學生在講義前預習了。"
+            },
+            {
+              "japanese": "妹は 一人で 予習しました。",
+              "chinese": "妹妹一個人預習了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "予習しませんでした",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうしませんでした",
+          "sentence": [
+            {
+              "japanese": "忙しくて 予習しませんでした。",
+              "chinese": "因為忙，所以沒預習。"
+            },
+            {
+              "japanese": "昨日は 予習しませんでした。",
+              "chinese": "昨天沒預習。"
+            },
+            {
+              "japanese": "時間が なくて 講義を 予習しませんでした。",
+              "chinese": "因為沒時間，所以沒預習講義。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "予習しない",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうしない",
+          "sentence": [
+            {
+              "japanese": "今日は 予習しない。",
+              "chinese": "今天不預習。"
+            },
+            {
+              "japanese": "弟は ほとんど 予習しない。",
+              "chinese": "弟弟幾乎不預習。"
+            },
+            {
+              "japanese": "私は 夜は 予習しない。",
+              "chinese": "我晚上不預習。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "予習した",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうした",
+          "sentence": [
+            {
+              "japanese": "昨日 授業を 予習した。",
+              "chinese": "昨天預習了課。"
+            },
+            {
+              "japanese": "だれが この 講義を 予習した？",
+              "chinese": "是誰預習了這堂講義？"
+            },
+            {
+              "japanese": "妹は 一人で 予習した。",
+              "chinese": "妹妹一個人預習了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "予習しなかった",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうしなかった",
+          "sentence": [
+            {
+              "japanese": "忙しくて 予習しなかった。",
+              "chinese": "因為忙，所以沒預習。"
+            },
+            {
+              "japanese": "昨日は 予習しなかった。",
+              "chinese": "昨天沒預習。"
+            },
+            {
+              "japanese": "時間が なくて 講義を 予習しなかった。",
+              "chinese": "因為沒時間，所以沒預習講義。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "予習して",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうして",
+          "sentence": [
+            {
+              "japanese": "授業の 前に 予習して ください。",
+              "chinese": "上課前請先預習。"
+            },
+            {
+              "japanese": "予習して から 質問を します。",
+              "chinese": "預習後再提問。"
+            },
+            {
+              "japanese": "明日の 分を 予習して おきます。",
+              "chinese": "先把明天的份預習好。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "予習できる",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうできる",
+          "sentence": [
+            {
+              "japanese": "この 本で 一人で 予習できる。",
+              "chinese": "用這本書一個人就能預習。"
+            },
+            {
+              "japanese": "時間が あれば 予習できる。",
+              "chinese": "有時間的話就能預習。"
+            },
+            {
+              "japanese": "今日は 夜 予習できる。",
+              "chinese": "今天晚上能預習。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "予習しよう",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうしよう",
+          "sentence": [
+            {
+              "japanese": "授業の 前に 予習しよう。",
+              "chinese": "上課前預習吧。"
+            },
+            {
+              "japanese": "明日の 講義を 予習しようと して いる。",
+              "chinese": "正要把明天的講義預習一下。"
+            },
+            {
+              "japanese": "まず 予習しよう。",
+              "chinese": "先預習吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "予習しろ",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうしろ",
+          "sentence": [
+            {
+              "japanese": "授業の 前に 予習しろ。",
+              "chinese": "上課前先預習。"
+            },
+            {
+              "japanese": "先生は 学生に「予習しろ」と 言った。",
+              "chinese": "老師對學生說「預習」。"
+            },
+            {
+              "japanese": "明日の 分を 予習しろ。",
+              "chinese": "預習明天的份。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "予習すれば",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうすれば",
+          "sentence": [
+            {
+              "japanese": "予習すれば 授業が よく わかる。",
+              "chinese": "預習的話上課就很容易懂。"
+            },
+            {
+              "japanese": "毎日 予習すれば 力が つく。",
+              "chinese": "每天預習的話就會變強。"
+            },
+            {
+              "japanese": "ノートに 予習すれば 復習が 楽だ。",
+              "chinese": "預習在筆記上的話複習就輕鬆。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "予習される",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうされる",
+          "sentence": [
+            {
+              "japanese": "明日の 講義は 学生に 予習される。",
+              "chinese": "明天的講義由學生預習。"
+            },
+            {
+              "japanese": "この 課は 毎年 学生に 予習される。",
+              "chinese": "這一課每年都由學生預習。"
+            },
+            {
+              "japanese": "毎日 予習される のは 大変だ。",
+              "chinese": "每天都要預習很辛苦。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "予習させる",
+          "group": "3",
+          "chinese": "預習",
+          "japanese": "よしゅうさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 明日の 講義を 予習させる。",
+              "chinese": "老師讓學生預習明天的講義。"
+            },
+            {
+              "japanese": "母は 私に 毎日 予習させる。",
+              "chinese": "媽媽讓我每天預習。"
+            },
+            {
+              "japanese": "部長は 新人に 資料を 予習させる。",
+              "chinese": "部長讓新人預習資料。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "復習する",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうする",
+          "sentence": [
+            {
+              "japanese": "授業の 後で 復習する。",
+              "chinese": "下課後複習。"
+            },
+            {
+              "japanese": "毎晩 今日の 授業を 復習する。",
+              "chinese": "每天晚上複習今天的課。"
+            },
+            {
+              "japanese": "試験の 前に もう一度 復習する。",
+              "chinese": "考試前再複習一次。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "復習します",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうします",
+          "sentence": [
+            {
+              "japanese": "毎晩 習った ことを 復習します。",
+              "chinese": "每天晚上複習學過的東西。"
+            },
+            {
+              "japanese": "私は 家に 帰って から 復習します。",
+              "chinese": "我回家後複習。"
+            },
+            {
+              "japanese": "学生は 試験の 前に 復習します。",
+              "chinese": "學生考試前複習。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "復習しません",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうしません",
+          "sentence": [
+            {
+              "japanese": "今日は 復習しません。",
+              "chinese": "今天不複習。"
+            },
+            {
+              "japanese": "私は ほとんど 復習しません。",
+              "chinese": "我幾乎不複習。"
+            },
+            {
+              "japanese": "弟は 授業の 後で 復習しません。",
+              "chinese": "弟弟下課後不複習。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "復習しました",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうしました",
+          "sentence": [
+            {
+              "japanese": "昨日 習った 文法を 復習しました。",
+              "chinese": "昨天複習了學過的文法。"
+            },
+            {
+              "japanese": "学生は 試験の 前に 復習しました。",
+              "chinese": "學生考試前複習了。"
+            },
+            {
+              "japanese": "妹は 一人で 復習しました。",
+              "chinese": "妹妹一個人複習了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "復習しませんでした",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうしませんでした",
+          "sentence": [
+            {
+              "japanese": "忙しくて 復習しませんでした。",
+              "chinese": "因為忙，所以沒複習。"
+            },
+            {
+              "japanese": "昨日は 復習しませんでした。",
+              "chinese": "昨天沒複習。"
+            },
+            {
+              "japanese": "試験が なかったので 復習しませんでした。",
+              "chinese": "因為沒有考試，所以沒複習。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "復習しない",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうしない",
+          "sentence": [
+            {
+              "japanese": "今日は 復習しない。",
+              "chinese": "今天不複習。"
+            },
+            {
+              "japanese": "弟は ほとんど 復習しない。",
+              "chinese": "弟弟幾乎不複習。"
+            },
+            {
+              "japanese": "私は 夜は 復習しない。",
+              "chinese": "我晚上不複習。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "復習した",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうした",
+          "sentence": [
+            {
+              "japanese": "昨日 今日の 授業を 復習した。",
+              "chinese": "昨天複習了今天的課。"
+            },
+            {
+              "japanese": "だれが この 文法を 復習した？",
+              "chinese": "是誰複習了這個文法？"
+            },
+            {
+              "japanese": "妹は 一人で 復習した。",
+              "chinese": "妹妹一個人複習了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "復習しなかった",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうしなかった",
+          "sentence": [
+            {
+              "japanese": "忙しくて 復習しなかった。",
+              "chinese": "因為忙，所以沒複習。"
+            },
+            {
+              "japanese": "昨日は 復習しなかった。",
+              "chinese": "昨天沒複習。"
+            },
+            {
+              "japanese": "時間が なくて 文法を 復習しなかった。",
+              "chinese": "因為沒時間，所以沒複習文法。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "復習して",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうして",
+          "sentence": [
+            {
+              "japanese": "授業の 後で 復習して ください。",
+              "chinese": "下課後請複習。"
+            },
+            {
+              "japanese": "復習して から 寝ます。",
+              "chinese": "複習後再睡。"
+            },
+            {
+              "japanese": "今日の 分を 復習して おきます。",
+              "chinese": "先把今天的份複習好。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "復習できる",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうできる",
+          "sentence": [
+            {
+              "japanese": "この ノートで 一人で 復習できる。",
+              "chinese": "用這本筆記一個人就能複習。"
+            },
+            {
+              "japanese": "時間が あれば 復習できる。",
+              "chinese": "有時間的話就能複習。"
+            },
+            {
+              "japanese": "今日は 夜 復習できる。",
+              "chinese": "今天晚上能複習。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "復習しよう",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうしよう",
+          "sentence": [
+            {
+              "japanese": "試験の 前に 復習しよう。",
+              "chinese": "考試前複習吧。"
+            },
+            {
+              "japanese": "今日の 授業を 復習しようと して いる。",
+              "chinese": "正要把今天的課複習一下。"
+            },
+            {
+              "japanese": "まず 文法を 復習しよう。",
+              "chinese": "先複習文法吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "復習しろ",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうしろ",
+          "sentence": [
+            {
+              "japanese": "授業の 後で 復習しろ。",
+              "chinese": "下課後複習。"
+            },
+            {
+              "japanese": "先生は 学生に「復習しろ」と 言った。",
+              "chinese": "老師對學生說「複習」。"
+            },
+            {
+              "japanese": "今日の 分を 復習しろ。",
+              "chinese": "複習今天的份。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "復習すれば",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうすれば",
+          "sentence": [
+            {
+              "japanese": "復習すれば 試験が 楽に なる。",
+              "chinese": "複習的話考試就輕鬆。"
+            },
+            {
+              "japanese": "毎日 復習すれば 忘れない。",
+              "chinese": "每天複習的話就不會忘。"
+            },
+            {
+              "japanese": "ノートを 見て 復習すれば よく わかる。",
+              "chinese": "看筆記複習的話就很清楚。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "復習される",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうされる",
+          "sentence": [
+            {
+              "japanese": "今日の 授業は 学生に 復習される。",
+              "chinese": "今天的課由學生複習。"
+            },
+            {
+              "japanese": "習った 文法は 家で 復習される。",
+              "chinese": "學過的文法在家複習。"
+            },
+            {
+              "japanese": "毎日 復習される のは 大変だ。",
+              "chinese": "每天都要複習很辛苦。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "復習させる",
+          "group": "3",
+          "chinese": "複習",
+          "japanese": "ふくしゅうさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 今日の 授業を 復習させる。",
+              "chinese": "老師讓學生複習今天的課。"
+            },
+            {
+              "japanese": "母は 私に 毎日 復習させる。",
+              "chinese": "媽媽讓我每天複習。"
+            },
+            {
+              "japanese": "部長は 新人に 資料を 復習させる。",
+              "chinese": "部長讓新人複習資料。"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

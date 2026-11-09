@@ -1,0 +1,1516 @@
+{
+  "lesson_46": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "焼く",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やく",
+          "sentence": [
+            {
+              "japanese": "母は 台所で パンを 焼く。",
+              "chinese": "媽媽在廚房烤麵包。"
+            },
+            {
+              "japanese": "父は 日曜日に 魚を 焼く。",
+              "chinese": "爸爸星期天烤魚。"
+            },
+            {
+              "japanese": "この 店では お客さんの 前で 肉を 焼く。",
+              "chinese": "這家店在客人面前烤肉。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "焼きます",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やきます",
+          "sentence": [
+            {
+              "japanese": "朝ごはんに トーストを 焼きます。",
+              "chinese": "早餐烤吐司。"
+            },
+            {
+              "japanese": "私は よく ケーキを 焼きます。",
+              "chinese": "我常烤蛋糕。"
+            },
+            {
+              "japanese": "今夜は さんまを 焼きます。",
+              "chinese": "今晚烤秋刀魚。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "焼きません",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やきません",
+          "sentence": [
+            {
+              "japanese": "今日は 天気が 悪いので 肉を 焼きません。",
+              "chinese": "今天天氣不好，所以不烤肉。"
+            },
+            {
+              "japanese": "私は 甘い 物は 焼きません。",
+              "chinese": "我不烤甜的東西。"
+            },
+            {
+              "japanese": "この オーブンでは パンを 焼きません。",
+              "chinese": "這個烤箱不烤麵包。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "焼きました",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やきました",
+          "sentence": [
+            {
+              "japanese": "昨日 母が りんごを 焼きました。",
+              "chinese": "昨天媽媽烤了蘋果。"
+            },
+            {
+              "japanese": "パーティーの ために ピザを 焼きました。",
+              "chinese": "為了派對烤了披薩。"
+            },
+            {
+              "japanese": "子どもと 一緒に クッキーを 焼きました。",
+              "chinese": "和孩子一起烤了餅乾。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "焼きませんでした",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やきませんでした",
+          "sentence": [
+            {
+              "japanese": "忙しかったので 魚を 焼きませんでした。",
+              "chinese": "因為很忙，沒有烤魚。"
+            },
+            {
+              "japanese": "ガスレンジが 壊れて パンを 焼きませんでした。",
+              "chinese": "瓦斯爐壞了，所以沒烤麵包。"
+            },
+            {
+              "japanese": "先週は 一度も 肉を 焼きませんでした。",
+              "chinese": "上週一次也沒烤肉。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "焼かない",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やかない",
+          "sentence": [
+            {
+              "japanese": "私は 家では 魚を 焼かない。",
+              "chinese": "我在家不烤魚。"
+            },
+            {
+              "japanese": "この 店は 夜は パンを 焼かない。",
+              "chinese": "這家店晚上不烤麵包。"
+            },
+            {
+              "japanese": "今日は 時間が ないので パンを 焼かない。",
+              "chinese": "今天沒時間，所以不烤麵包。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "焼いた",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やいた",
+          "sentence": [
+            {
+              "japanese": "母が 焼いた パンは とても おいしい。",
+              "chinese": "媽媽烤的麵包很好吃。"
+            },
+            {
+              "japanese": "昨日 焼いた 魚を 全部 食べた。",
+              "chinese": "把昨天烤的魚全吃完了。"
+            },
+            {
+              "japanese": "祖父は 庭で 芋を 焼いた。",
+              "chinese": "祖父在院子裡烤了番薯。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "焼かなかった",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やかなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 忙しくて パンを 焼かなかった。",
+              "chinese": "昨天很忙，沒烤麵包。"
+            },
+            {
+              "japanese": "雨だったので 外で 肉を 焼かなかった。",
+              "chinese": "因為下雨，沒在外面烤肉。"
+            },
+            {
+              "japanese": "私は 子どもの ころ 魚を 焼かなかった。",
+              "chinese": "我小時候不烤魚。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "焼いて",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やいて",
+          "sentence": [
+            {
+              "japanese": "魚を 焼いて 食べましょう。",
+              "chinese": "把魚烤一烤來吃吧。"
+            },
+            {
+              "japanese": "母は パンを 焼いて バターを 塗った。",
+              "chinese": "媽媽烤了麵包，塗上奶油。"
+            },
+            {
+              "japanese": "肉を 焼いて ください。",
+              "chinese": "請把肉烤一下。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "焼ける",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やける",
+          "sentence": [
+            {
+              "japanese": "この オーブンなら パンが 焼ける。",
+              "chinese": "用這個烤箱就能烤麵包。"
+            },
+            {
+              "japanese": "今日は 天気が いいから 外で 肉が 焼ける。",
+              "chinese": "今天天氣好，可以在外面烤肉。"
+            },
+            {
+              "japanese": "私でも 簡単に ケーキが 焼ける。",
+              "chinese": "連我都能輕鬆烤蛋糕。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "焼こう",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やこう",
+          "sentence": [
+            {
+              "japanese": "みんなで 肉を 焼こう。",
+              "chinese": "大家一起烤肉吧。"
+            },
+            {
+              "japanese": "雨が 止んだら 魚を 焼こう。",
+              "chinese": "雨停了就烤魚吧。"
+            },
+            {
+              "japanese": "明日の 朝 パンを 焼こう。",
+              "chinese": "明天早上烤麵包吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "焼け",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やけ",
+          "sentence": [
+            {
+              "japanese": "店長は「早く 肉を 焼け」と 部下に 言った。",
+              "chinese": "店長對部下說「快點烤肉」。"
+            },
+            {
+              "japanese": "「パンを 焼け。」と 母は 兄に 言った。",
+              "chinese": "媽媽對哥哥說「烤麵包」。"
+            },
+            {
+              "japanese": "料理の 先生は 生徒に「魚を 焼け」と 指示した。",
+              "chinese": "烹飪老師指示學生「烤魚」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "焼けば",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やけば",
+          "sentence": [
+            {
+              "japanese": "パンを 焼けば いい 匂いが する。",
+              "chinese": "一烤麵包就會有很香的氣味。"
+            },
+            {
+              "japanese": "肉を 焼けば 子どもたちが 喜ぶ。",
+              "chinese": "烤了肉孩子們就會很高興。"
+            },
+            {
+              "japanese": "魚を 焼けば すぐに 食べられる。",
+              "chinese": "把魚烤了就能馬上吃。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "焼かれる",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やかれる",
+          "sentence": [
+            {
+              "japanese": "さんまは 炭火で 焼かれる。",
+              "chinese": "秋刀魚在炭火上被烤。"
+            },
+            {
+              "japanese": "パンは 毎朝 ここで 焼かれる。",
+              "chinese": "麵包每天早上在這裡被烤。"
+            },
+            {
+              "japanese": "祭りの 日には 大きな 魚が 焼かれる。",
+              "chinese": "祭典當天會烤大魚。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "焼かせる",
+          "group": "1",
+          "chinese": "烤; 燒; 烘烤",
+          "japanese": "やかせる",
+          "sentence": [
+            {
+              "japanese": "母は 子どもに パンを 焼かせる。",
+              "chinese": "媽媽讓孩子烤麵包。"
+            },
+            {
+              "japanese": "店長は 新人に 肉を 焼かせる。",
+              "chinese": "店長讓新人烤肉。"
+            },
+            {
+              "japanese": "日曜日には 父が 私に 魚を 焼かせる。",
+              "chinese": "星期天爸爸會讓我烤魚。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "渡す",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたす",
+          "sentence": [
+            {
+              "japanese": "受付で 申込書を 渡す。",
+              "chinese": "在櫃台交報名表。"
+            },
+            {
+              "japanese": "母に 手紙を 渡す。",
+              "chinese": "把信交給媽媽。"
+            },
+            {
+              "japanese": "先生に お土産を 渡す。",
+              "chinese": "把伴手禮交給老師。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "渡します",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたします",
+          "sentence": [
+            {
+              "japanese": "明日 社長に 書類を 渡します。",
+              "chinese": "明天把文件交給社長。"
+            },
+            {
+              "japanese": "駅で 友だちに 切符を 渡します。",
+              "chinese": "在車站把票交給朋友。"
+            },
+            {
+              "japanese": "この お金を 店の 人に 渡します。",
+              "chinese": "把這筆錢交給店員。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "渡しません",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたしません",
+          "sentence": [
+            {
+              "japanese": "まだ 本人に 書類を 渡しません。",
+              "chinese": "還不交給本人文件。"
+            },
+            {
+              "japanese": "私は 知らない 人に お金を 渡しません。",
+              "chinese": "我不把錢交給不認識的人。"
+            },
+            {
+              "japanese": "今日は 部長に 報告書を 渡しません。",
+              "chinese": "今天不把報告書交給部長。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "渡しました",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたしました",
+          "sentence": [
+            {
+              "japanese": "昨日 先生に 宿題を 渡しました。",
+              "chinese": "昨天把作業交給老師了。"
+            },
+            {
+              "japanese": "母に 宅配便の 荷物を 渡しました。",
+              "chinese": "把宅配的包裹交給媽媽了。"
+            },
+            {
+              "japanese": "会議で 全員に 資料を 渡しました。",
+              "chinese": "在會議上把資料發給所有人了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "渡しませんでした",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたしませんでした",
+          "sentence": [
+            {
+              "japanese": "忙しかったので 部長に 書類を 渡しませんでした。",
+              "chinese": "因為很忙，沒把文件交給部長。"
+            },
+            {
+              "japanese": "準備が できなくて 客に 商品を 渡しませんでした。",
+              "chinese": "因為沒準備好，沒把商品交給客人。"
+            },
+            {
+              "japanese": "先週は 兄に 鍵を 渡しませんでした。",
+              "chinese": "上週沒把鑰匙交給哥哥。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "渡さない",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたさない",
+          "sentence": [
+            {
+              "japanese": "大事な 書類は だれにも 渡さない。",
+              "chinese": "重要文件不交給任何人。"
+            },
+            {
+              "japanese": "私は 知らない 人に 鍵を 渡さない。",
+              "chinese": "我不把鑰匙交給不認識的人。"
+            },
+            {
+              "japanese": "この 店は おつりを 手で 渡さない。",
+              "chinese": "這家店不用手遞找零。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "渡した",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたした",
+          "sentence": [
+            {
+              "japanese": "友だちに 渡した 本は とても 面白かった。",
+              "chinese": "交給朋友的書很有趣。"
+            },
+            {
+              "japanese": "先生は 生徒に 渡した プリントを もう一度 説明した。",
+              "chinese": "老師又說明了一次發給學生的講義。"
+            },
+            {
+              "japanese": "父は 私に 渡した お金で 本を 買った。",
+              "chinese": "爸爸用交給我的錢買了書。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "渡さなかった",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたさなかった",
+          "sentence": [
+            {
+              "japanese": "母は 私に お小遣いを 渡さなかった。",
+              "chinese": "媽媽沒給我零用錢。"
+            },
+            {
+              "japanese": "店の 人は レシートを 渡さなかった。",
+              "chinese": "店員沒給收據。"
+            },
+            {
+              "japanese": "昨日は だれにも 資料を 渡さなかった。",
+              "chinese": "昨天沒把資料交給任何人。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "渡して",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたして",
+          "sentence": [
+            {
+              "japanese": "この 書類を 受付に 渡して ください。",
+              "chinese": "請把這份文件交給櫃台。"
+            },
+            {
+              "japanese": "母に 手紙を 渡して から 帰った。",
+              "chinese": "把信交給媽媽之後就回去了。"
+            },
+            {
+              "japanese": "兄は 私に 鍵を 渡して 出かけた。",
+              "chinese": "哥哥把鑰匙交給我後出門了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "渡せる",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたせる",
+          "sentence": [
+            {
+              "japanese": "明日なら あなたに 書類を 渡せる。",
+              "chinese": "明天的話就能把文件交給你。"
+            },
+            {
+              "japanese": "私は 一人で 全員に 資料を 渡せる。",
+              "chinese": "我可以一個人把資料發給所有人。"
+            },
+            {
+              "japanese": "この 荷物は 今日中に お客さんに 渡せる。",
+              "chinese": "這個包裹今天之內可以交給客人。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "渡そう",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたそう",
+          "sentence": [
+            {
+              "japanese": "会議の 前に 部長に 資料を 渡そう。",
+              "chinese": "開會前把資料交給部長吧。"
+            },
+            {
+              "japanese": "友だちに お土産を 渡そう。",
+              "chinese": "把伴手禮交給朋友吧。"
+            },
+            {
+              "japanese": "早く 先生に 報告書を 渡そう。",
+              "chinese": "快點把報告書交給老師吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "渡せ",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたせ",
+          "sentence": [
+            {
+              "japanese": "部長は 部下に「早く 書類を 渡せ」と 言った。",
+              "chinese": "部長對部下說「快點把文件交出去」。"
+            },
+            {
+              "japanese": "「お客さんに 商品を 渡せ。」と 店長は 言った。",
+              "chinese": "店長說「把商品交給客人」。"
+            },
+            {
+              "japanese": "先生は 係の 生徒に「全員に プリントを 渡せ」と 指示した。",
+              "chinese": "老師指示負責的學生「把講義發給所有人」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "渡せば",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたせば",
+          "sentence": [
+            {
+              "japanese": "この 書類を 受付に 渡せば、手続きが 終わる。",
+              "chinese": "把這份文件交給櫃台，手續就完成了。"
+            },
+            {
+              "japanese": "友だちに 地図を 渡せば、一人で 行ける。",
+              "chinese": "把地圖交給朋友，他就能一個人去。"
+            },
+            {
+              "japanese": "お金を 先に 渡せば、店の 人が 準備する。",
+              "chinese": "先付錢的話，店員就會準備。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "渡される",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたされる",
+          "sentence": [
+            {
+              "japanese": "申込書は 受付で 渡される。",
+              "chinese": "報名表在櫃台發放。"
+            },
+            {
+              "japanese": "資料は 会議の 前に 全員に 渡される。",
+              "chinese": "資料在開會前發給所有人。"
+            },
+            {
+              "japanese": "荷物は 明日の 朝、家に 渡される。",
+              "chinese": "包裹明天早上送到家裡。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "渡させる",
+          "group": "1",
+          "chinese": "交給; 遞交; 渡",
+          "japanese": "わたさせる",
+          "sentence": [
+            {
+              "japanese": "部長は 私に お客さんへ 書類を 渡させる。",
+              "chinese": "部長讓我交給客人文件。"
+            },
+            {
+              "japanese": "母は 弟に 手紙を 渡させる。",
+              "chinese": "媽媽讓弟弟送信。"
+            },
+            {
+              "japanese": "先生は 係の 生徒に プリントを 渡させる。",
+              "chinese": "老師讓負責的學生發講義。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "帰って来る",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってくる",
+          "sentence": [
+            {
+              "japanese": "父は 毎晩 八時に 帰って来る。",
+              "chinese": "爸爸每天晚上八點回來。"
+            },
+            {
+              "japanese": "兄は 春休みに 国へ 帰って来る。",
+              "chinese": "哥哥春假時回國來。"
+            },
+            {
+              "japanese": "母は 買い物の 後で 帰って来る。",
+              "chinese": "媽媽買完東西後回來。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "帰って来ます",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってきます",
+          "sentence": [
+            {
+              "japanese": "父は 今日は 早く 帰って来ます。",
+              "chinese": "爸爸今天會早點回來。"
+            },
+            {
+              "japanese": "妹は 夏休みに 家へ 帰って来ます。",
+              "chinese": "妹妹暑假會回家來。"
+            },
+            {
+              "japanese": "出張の 社長は 金曜日に 帰って来ます。",
+              "chinese": "出差的社長星期五回來。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "帰って来ません",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってきません",
+          "sentence": [
+            {
+              "japanese": "父は 今夜は 帰って来ません。",
+              "chinese": "爸爸今晚不回來。"
+            },
+            {
+              "japanese": "弟は まだ 帰って来ません。",
+              "chinese": "弟弟還沒回來。"
+            },
+            {
+              "japanese": "雨の 日は 兄は 早く 帰って来ません。",
+              "chinese": "下雨天哥哥不會早回來。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "帰って来ました",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってきました",
+          "sentence": [
+            {
+              "japanese": "父は さっき 帰って来ました。",
+              "chinese": "爸爸剛才回來了。"
+            },
+            {
+              "japanese": "妹が 一週間 ぶりに 帰って来ました。",
+              "chinese": "妹妹隔了一週回來了。"
+            },
+            {
+              "japanese": "母は 夕方 買い物から 帰って来ました。",
+              "chinese": "媽媽傍晚買東西回來了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "帰って来ませんでした",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってきませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日 父は 帰って来ませんでした。",
+              "chinese": "昨天爸爸沒回來。"
+            },
+            {
+              "japanese": "兄は 金曜日には 帰って来ませんでした。",
+              "chinese": "哥哥星期五沒回來。"
+            },
+            {
+              "japanese": "大雨で 友だちは 帰って来ませんでした。",
+              "chinese": "因為大雨，朋友沒回來。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "帰って来ない",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってこない",
+          "sentence": [
+            {
+              "japanese": "今日は 父が 帰って来ない。",
+              "chinese": "今天爸爸不回來。"
+            },
+            {
+              "japanese": "弟は 遊びに 行って まだ 帰って来ない。",
+              "chinese": "弟弟去玩，還沒回來。"
+            },
+            {
+              "japanese": "兄は 今週は 国へ 帰って来ない。",
+              "chinese": "哥哥這週不回國來。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "帰って来た",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってきた",
+          "sentence": [
+            {
+              "japanese": "母が 帰って来た のは 十時だった。",
+              "chinese": "媽媽回來時是十點。"
+            },
+            {
+              "japanese": "やっと 父が 帰って来た。",
+              "chinese": "爸爸終於回來了。"
+            },
+            {
+              "japanese": "昨夜 遅く 兄が 帰って来た。",
+              "chinese": "昨晚哥哥很晚才回來。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "帰って来なかった",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってこなかった",
+          "sentence": [
+            {
+              "japanese": "父は 昨夜 帰って来なかった。",
+              "chinese": "爸爸昨晚沒回來。"
+            },
+            {
+              "japanese": "妹は 旅行から 帰って来なかった。",
+              "chinese": "妹妹旅行沒回來。"
+            },
+            {
+              "japanese": "だれも 部屋に 帰って来なかった。",
+              "chinese": "沒有人回房間來。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "帰って来て",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってきて",
+          "sentence": [
+            {
+              "japanese": "母が 帰って来て、すぐに ご飯を 作った。",
+              "chinese": "媽媽回來後馬上做了飯。"
+            },
+            {
+              "japanese": "父は 帰って来て から お風呂に 入る。",
+              "chinese": "爸爸回來後才洗澡。"
+            },
+            {
+              "japanese": "兄が 帰って来て、家族は 安心した。",
+              "chinese": "哥哥回來，家人就安心了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "帰って来られる",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってこられる",
+          "sentence": [
+            {
+              "japanese": "明日は 早く 帰って来られる。",
+              "chinese": "明天可以早點回來。"
+            },
+            {
+              "japanese": "仕事が 終われば 六時に 帰って来られる。",
+              "chinese": "工作結束的話六點就能回來。"
+            },
+            {
+              "japanese": "電車が 動けば 夜でも 帰って来られる。",
+              "chinese": "電車有開的話，晚上也能回來。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "帰って来よう",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってこよう",
+          "sentence": [
+            {
+              "japanese": "今日は 早く 帰って来よう。",
+              "chinese": "今天早點回來吧。"
+            },
+            {
+              "japanese": "みんなで 一緒に 帰って来よう。",
+              "chinese": "大家一起回來吧。"
+            },
+            {
+              "japanese": "仕事が 終わったら すぐ 帰って来よう。",
+              "chinese": "工作結束就馬上回來吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "帰って来い",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってこい",
+          "sentence": [
+            {
+              "japanese": "部長は 部下に「すぐ 帰って来い」と 言った。",
+              "chinese": "部長對部下說「馬上回來」。"
+            },
+            {
+              "japanese": "「暗く なる 前に 帰って来い。」と 母は 言った。",
+              "chinese": "媽媽說「天黑前回來」。"
+            },
+            {
+              "japanese": "監督は 選手に「今 すぐ 帰って来い」と 怒った。",
+              "chinese": "教練生氣地對選手說「現在馬上回來」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "帰って来れば",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってくれば",
+          "sentence": [
+            {
+              "japanese": "父が 帰って来れば、出かけよう。",
+              "chinese": "爸爸回來的話就出門吧。"
+            },
+            {
+              "japanese": "妹が 帰って来れば、一緒に ご飯を 食べる。",
+              "chinese": "妹妹回來的話就一起吃飯。"
+            },
+            {
+              "japanese": "早く 帰って来れば、まだ 間に 合う。",
+              "chinese": "早點回來的話還來得及。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "帰って来られる",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってこられる",
+          "sentence": [
+            {
+              "japanese": "妹は もう 一人で 帰って来られる。",
+              "chinese": "妹妹已經能一個人回來了。"
+            },
+            {
+              "japanese": "駅が 近いので 歩いて 帰って来られる。",
+              "chinese": "因為車站很近，可以走路回來。"
+            },
+            {
+              "japanese": "家族に 先に 帰って来られる と 困る。",
+              "chinese": "家人先回來的話我會很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "帰って来させる",
+          "group": "0",
+          "chinese": "回來; 返回",
+          "japanese": "かえってこさせる",
+          "sentence": [
+            {
+              "japanese": "母は 弟を 早く 帰って来させる。",
+              "chinese": "媽媽讓弟弟早點回來。"
+            },
+            {
+              "japanese": "部長は 社員を 週末に 帰って来させる。",
+              "chinese": "部長讓職員週末回來。"
+            },
+            {
+              "japanese": "先生は 生徒を 早く 帰って来させる ことにした。",
+              "chinese": "老師決定讓學生早點回來。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "出る",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でる",
+          "sentence": [
+            {
+              "japanese": "兄は 毎朝 七時に 家を 出る。",
+              "chinese": "哥哥每天早上七點出門。"
+            },
+            {
+              "japanese": "今日は どこから バスが 出る？",
+              "chinese": "今天巴士從哪裡發車？"
+            },
+            {
+              "japanese": "この 部屋の 窓から 光が 出る。",
+              "chinese": "光從這個房間的窗戶透出來。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "出ます",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でます",
+          "sentence": [
+            {
+              "japanese": "バスは 駅の 前から 出ます。",
+              "chinese": "巴士從車站前面發車。"
+            },
+            {
+              "japanese": "母は 買い物に 出ます。",
+              "chinese": "媽媽出門買東西。"
+            },
+            {
+              "japanese": "この 大学から 毎年 多くの 学生が 出ます。",
+              "chinese": "這所大學每年有很多學生畢業。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "出ません",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でません",
+          "sentence": [
+            {
+              "japanese": "今日は この 電車は 出ません。",
+              "chinese": "今天這班電車不開。"
+            },
+            {
+              "japanese": "雨なので 外に 出ません。",
+              "chinese": "因為下雨，不出門。"
+            },
+            {
+              "japanese": "父は 今夜は 出ません。",
+              "chinese": "爸爸今晚不出門。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "出ました",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でました",
+          "sentence": [
+            {
+              "japanese": "バスは もう 出ました。",
+              "chinese": "巴士已經開走了。"
+            },
+            {
+              "japanese": "母は 三十分 前に 家を 出ました。",
+              "chinese": "媽媽三十分鐘前出門了。"
+            },
+            {
+              "japanese": "試合の 前に 選手たちは グラウンドに 出ました。",
+              "chinese": "比賽前選手們出到球場上。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "出ませんでした",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は バスが 出ませんでした。",
+              "chinese": "昨天巴士沒開。"
+            },
+            {
+              "japanese": "私は 一日 家を 出ませんでした。",
+              "chinese": "我一整天沒出門。"
+            },
+            {
+              "japanese": "兄は 会議に 出ませんでした。",
+              "chinese": "哥哥沒出席會議。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "出ない",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でない",
+          "sentence": [
+            {
+              "japanese": "日曜日は この バスは 出ない。",
+              "chinese": "星期天這班巴士不開。"
+            },
+            {
+              "japanese": "雨の 日は 子どもたちは 外に 出ない。",
+              "chinese": "下雨天孩子們不出門。"
+            },
+            {
+              "japanese": "部長は 今日は 会社に 出ない。",
+              "chinese": "部長今天不去公司。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "出た",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でた",
+          "sentence": [
+            {
+              "japanese": "バスが 出た あとで、私たちは 駅に 着いた。",
+              "chinese": "巴士開走後，我們才到車站。"
+            },
+            {
+              "japanese": "母が 出た のは 朝 早かった。",
+              "chinese": "媽媽出門時是早上很早。"
+            },
+            {
+              "japanese": "試験の 結果が 出た。",
+              "chinese": "考試結果出來了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "出なかった",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は バスが 出なかった。",
+              "chinese": "昨天巴士沒開。"
+            },
+            {
+              "japanese": "父は 今朝 家を 出なかった。",
+              "chinese": "爸爸今早沒出門。"
+            },
+            {
+              "japanese": "雨で 外に 出なかった。",
+              "chinese": "因為下雨，沒出門。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "出て",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でて",
+          "sentence": [
+            {
+              "japanese": "家を 出て、まっすぐ 駅へ 行った。",
+              "chinese": "出門後直接去車站。"
+            },
+            {
+              "japanese": "部屋を 出て ください。",
+              "chinese": "請離開房間。"
+            },
+            {
+              "japanese": "母は 台所を 出て、客の 所へ 行った。",
+              "chinese": "媽媽離開廚房，去客人那裡。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "出られる",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でられる",
+          "sentence": [
+            {
+              "japanese": "家族が 見て いる から 安心して 家を 出られる。",
+              "chinese": "因為家人在看著，能安心出門。"
+            },
+            {
+              "japanese": "この ビルは 非常口から 出られる。",
+              "chinese": "這棟大樓可以從逃生口出去。"
+            },
+            {
+              "japanese": "仕事が 早く 終わったので 六時に 出られる。",
+              "chinese": "工作早結束，所以六點能出門。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "出よう",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でよう",
+          "sentence": [
+            {
+              "japanese": "暗く なる 前に 家を 出よう。",
+              "chinese": "趁天還沒黑出門吧。"
+            },
+            {
+              "japanese": "雨が 止んだら 外に 出よう。",
+              "chinese": "雨停了就出門吧。"
+            },
+            {
+              "japanese": "七時の バスに 乗る ために 早く 出よう。",
+              "chinese": "為了搭七點的巴士，早點出門吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "出ろ",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でろ",
+          "sentence": [
+            {
+              "japanese": "監督は 選手に「今 すぐ グラウンドに 出ろ」と 言った。",
+              "chinese": "教練對選手說「現在馬上到球場」。"
+            },
+            {
+              "japanese": "「部屋から 出ろ。」と 警官は 言った。",
+              "chinese": "警官說「離開房間」。"
+            },
+            {
+              "japanese": "先生は 生徒に「教室から 出ろ」と 指示した。",
+              "chinese": "老師指示學生「離開教室」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "出れば",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でれば",
+          "sentence": [
+            {
+              "japanese": "今 家を 出れば、九時の 電車に 間に 合う。",
+              "chinese": "現在出門的話，趕得上九點的電車。"
+            },
+            {
+              "japanese": "駅を 出れば、すぐに 大きな 公園が ある。",
+              "chinese": "出了車站，馬上就有大公園。"
+            },
+            {
+              "japanese": "この 門を 出れば、海が 見える。",
+              "chinese": "出了這道門就能看見海。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "出られる",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でられる",
+          "sentence": [
+            {
+              "japanese": "弟に 先に 家を 出られる と、母は いつも 心配する。",
+              "chinese": "弟弟先出門的話，媽媽總是很擔心。"
+            },
+            {
+              "japanese": "兄に 勝手に 部屋を 出られる と 困る。",
+              "chinese": "哥哥擅自離開房間的話我會很困擾。"
+            },
+            {
+              "japanese": "子どもに 夜 一人で 出られる のは 心配だ。",
+              "chinese": "孩子晚上一個人出門令人擔心。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "出させる",
+          "group": "2",
+          "chinese": "出去; 出來; 出發; 出席",
+          "japanese": "でさせる",
+          "sentence": [
+            {
+              "japanese": "母は 弟を 買い物に 出させる。",
+              "chinese": "媽媽讓弟弟去買東西。"
+            },
+            {
+              "japanese": "先生は 生徒を 教室の 外に 出させる。",
+              "chinese": "老師讓學生到教室外面。"
+            },
+            {
+              "japanese": "部長は 社員を 出張に 出させる。",
+              "chinese": "部長讓職員去出差。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "向かう",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかう",
+          "sentence": [
+            {
+              "japanese": "タクシーは 駅の 前で 止まって、ホテルへ 向かう。",
+              "chinese": "計程車在車站前停下，前往飯店。"
+            },
+            {
+              "japanese": "私たちは 今 空港に 向かう。",
+              "chinese": "我們現在正前往機場。"
+            },
+            {
+              "japanese": "船は ゆっくり 港に 向かう。",
+              "chinese": "船慢慢駛向港口。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "向かいます",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかいます",
+          "sentence": [
+            {
+              "japanese": "これから お客さんの 所へ 向かいます。",
+              "chinese": "現在要前往客人那裡。"
+            },
+            {
+              "japanese": "父は 今 会社に 向かいます。",
+              "chinese": "爸爸現在正要去公司。"
+            },
+            {
+              "japanese": "バスは 大学に 向かいます。",
+              "chinese": "巴士開往大學。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "向かいません",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかいません",
+          "sentence": [
+            {
+              "japanese": "今日は その 方向に 向かいません。",
+              "chinese": "今天不往那個方向去。"
+            },
+            {
+              "japanese": "私は まだ 家に 向かいません。",
+              "chinese": "我還沒要回家。"
+            },
+            {
+              "japanese": "この 電車は 海に 向かいません。",
+              "chinese": "這班電車不往海邊開。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "向かいました",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかいました",
+          "sentence": [
+            {
+              "japanese": "父は 朝 早く 会社に 向かいました。",
+              "chinese": "爸爸一早前往公司了。"
+            },
+            {
+              "japanese": "私たちは すぐに 現場に 向かいました。",
+              "chinese": "我們馬上前往現場了。"
+            },
+            {
+              "japanese": "タクシーは 病院に 向かいました。",
+              "chinese": "計程車開往醫院了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "向かいませんでした",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかいませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 会社に 向かいませんでした。",
+              "chinese": "昨天沒去公司。"
+            },
+            {
+              "japanese": "雨で 私たちは 山に 向かいませんでした。",
+              "chinese": "因為下雨，我們沒往山上去。"
+            },
+            {
+              "japanese": "船は 港に 向かいませんでした。",
+              "chinese": "船沒有駛向港口。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "向かわない",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかわない",
+          "sentence": [
+            {
+              "japanese": "今日は 学校に 向かわない。",
+              "chinese": "今天不去學校。"
+            },
+            {
+              "japanese": "兄は まだ 駅に 向かわない。",
+              "chinese": "哥哥還沒往車站去。"
+            },
+            {
+              "japanese": "この バスは 病院に 向かわない。",
+              "chinese": "這班巴士不往醫院。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "向かった",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかった",
+          "sentence": [
+            {
+              "japanese": "母は 市場に 向かった。",
+              "chinese": "媽媽往市場去了。"
+            },
+            {
+              "japanese": "警官は 現場に 向かった。",
+              "chinese": "警官前往現場了。"
+            },
+            {
+              "japanese": "私たちは 海に 向かった。",
+              "chinese": "我們往海邊去了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "向かわなかった",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかわなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 会社に 向かわなかった。",
+              "chinese": "昨天沒去公司。"
+            },
+            {
+              "japanese": "弟は 学校に 向かわなかった。",
+              "chinese": "弟弟沒去學校。"
+            },
+            {
+              "japanese": "タクシーは 空港に 向かわなかった。",
+              "chinese": "計程車沒開往機場。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "向かって",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかって",
+          "sentence": [
+            {
+              "japanese": "駅に 向かって 歩いて ください。",
+              "chinese": "請往車站走。"
+            },
+            {
+              "japanese": "私たちは 山に 向かって 進んだ。",
+              "chinese": "我們朝山的方向前進。"
+            },
+            {
+              "japanese": "鳥が 南に 向かって 飛んで 行った。",
+              "chinese": "鳥朝南方飛去了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "向かえる",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかえる",
+          "sentence": [
+            {
+              "japanese": "明日は 八時に 会社に 向かえる。",
+              "chinese": "明天八點能去公司。"
+            },
+            {
+              "japanese": "この 道を 行けば 駅に 向かえる。",
+              "chinese": "走這條路就能往車站去。"
+            },
+            {
+              "japanese": "一人で 病院に 向かえる ように なった。",
+              "chinese": "已經能一個人去醫院了。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "向かおう",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかおう",
+          "sentence": [
+            {
+              "japanese": "そろそろ 駅に 向かおう。",
+              "chinese": "差不多該往車站去了。"
+            },
+            {
+              "japanese": "みんなで 現場に 向かおう。",
+              "chinese": "大家一起前往現場吧。"
+            },
+            {
+              "japanese": "雨が 止んだら 港に 向かおう。",
+              "chinese": "雨停了就往港口去吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "向かえ",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかえ",
+          "sentence": [
+            {
+              "japanese": "部長は 部下に「すぐ 現場に 向かえ」と 言った。",
+              "chinese": "部長對部下說「馬上前往現場」。"
+            },
+            {
+              "japanese": "「早く 駅に 向かえ。」と 先生は 言った。",
+              "chinese": "老師說「快點往車站去」。"
+            },
+            {
+              "japanese": "監督は 選手に「ゴールに 向かえ」と 叫んだ。",
+              "chinese": "教練對選手大喊「朝球門去」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "向かえば",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかえば",
+          "sentence": [
+            {
+              "japanese": "この 道を 向かえば、駅に 着く。",
+              "chinese": "往這條路走就會到車站。"
+            },
+            {
+              "japanese": "まっすぐ 海に 向かえば、港が 見える。",
+              "chinese": "一直往海邊走就能看見港口。"
+            },
+            {
+              "japanese": "朝 早く 会社に 向かえば、電車が 空いて いる。",
+              "chinese": "早上早點去公司，電車就比較空。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "向かわれる",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかわれる",
+          "sentence": [
+            {
+              "japanese": "客に じっと 向かわれる と、少し 緊張する。",
+              "chinese": "被客人一直盯著看，會有點緊張。"
+            },
+            {
+              "japanese": "犬に 向かわれる と、子どもは 泣いて しまう。",
+              "chinese": "狗一朝向孩子，孩子就哭了。"
+            },
+            {
+              "japanese": "社長は 毎朝 八時に 会社に 向かわれる。",
+              "chinese": "社長每天早上八點前往公司。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "向かわせる",
+          "group": "1",
+          "chinese": "前往; 朝向; 走向",
+          "japanese": "むかわせる",
+          "sentence": [
+            {
+              "japanese": "部長は 私を 現場に 向かわせる。",
+              "chinese": "部長讓我前往現場。"
+            },
+            {
+              "japanese": "母は 弟を 駅に 向かわせる。",
+              "chinese": "媽媽讓弟弟去車站。"
+            },
+            {
+              "japanese": "先生は 生徒たちを 体育館に 向かわせる。",
+              "chinese": "老師讓學生們去體育館。"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

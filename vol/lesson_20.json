@@ -1,0 +1,1516 @@
+{
+  "lesson_20": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "要る",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いる",
+          "sentence": [
+            {
+              "japanese": "海外へ 行くには ビザが 要る。",
+              "chinese": "出國需要簽證。"
+            },
+            {
+              "japanese": "この 仕事には 経験が 要る。",
+              "chinese": "這份工作需要經驗。"
+            },
+            {
+              "japanese": "申し込みには お金が 要る。",
+              "chinese": "報名需要費用。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "要ります",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いります",
+          "sentence": [
+            {
+              "japanese": "ビザが 要りますか。",
+              "chinese": "需要簽證嗎？"
+            },
+            {
+              "japanese": "来月の 旅行には お金が 要ります。",
+              "chinese": "下個月的旅行需要錢。"
+            },
+            {
+              "japanese": "この 書類には サインが 要ります。",
+              "chinese": "這份文件需要簽名。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "要りません",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いりません",
+          "sentence": [
+            {
+              "japanese": "ビザは 要りません。",
+              "chinese": "不需要簽證。"
+            },
+            {
+              "japanese": "今日は お金が 要りません。",
+              "chinese": "今天不需要錢。"
+            },
+            {
+              "japanese": "この 仕事には 経験が 要りません。",
+              "chinese": "這份工作不需要經驗。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "要りました",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いりました",
+          "sentence": [
+            {
+              "japanese": "昨日の 手続きには お金が 要りました。",
+              "chinese": "昨天的手續需要錢。"
+            },
+            {
+              "japanese": "先月の 旅行には ビザが 要りました。",
+              "chinese": "上個月的旅行需要簽證。"
+            },
+            {
+              "japanese": "引っ越しには 時間が 要りました。",
+              "chinese": "搬家需要時間。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "要りませんでした",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いりませんでした",
+          "sentence": [
+            {
+              "japanese": "先週の 手続きには お金が 要りませんでした。",
+              "chinese": "上週的手續不需要錢。"
+            },
+            {
+              "japanese": "前の 旅行には ビザが 要りませんでした。",
+              "chinese": "之前的旅行不需要簽證。"
+            },
+            {
+              "japanese": "この 申し込みには 写真が 要りませんでした。",
+              "chinese": "這次報名不需要照片。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "要らない",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いらない",
+          "sentence": [
+            {
+              "japanese": "ビザは 要らない。",
+              "chinese": "不需要簽證。"
+            },
+            {
+              "japanese": "明日の 会議には 資料が 要らない。",
+              "chinese": "明天的會議不需要資料。"
+            },
+            {
+              "japanese": "この 仕事には 経験が 要らない。",
+              "chinese": "這份工作不需要經驗。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "要った",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いった",
+          "sentence": [
+            {
+              "japanese": "昨日の 手続きには お金が 要った。",
+              "chinese": "昨天的手續需要錢。"
+            },
+            {
+              "japanese": "先月の 旅行には ビザが 要った。",
+              "chinese": "上個月的旅行需要簽證。"
+            },
+            {
+              "japanese": "引っ越しには 時間が 要った。",
+              "chinese": "搬家需要時間。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "要らなかった",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いらなかった",
+          "sentence": [
+            {
+              "japanese": "昨日の 手続きには お金が 要らなかった。",
+              "chinese": "昨天的手續不需要錢。"
+            },
+            {
+              "japanese": "先月の 旅行には ビザが 要らなかった。",
+              "chinese": "上個月的旅行不需要簽證。"
+            },
+            {
+              "japanese": "この 申し込みには 写真が 要らなかった。",
+              "chinese": "這次報名不需要照片。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "要って",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いって",
+          "sentence": [
+            {
+              "japanese": "ビザが 要って、旅行を やめた。",
+              "chinese": "因為需要簽證，放棄了旅行。"
+            },
+            {
+              "japanese": "お金が 要って、アルバイトを 始めた。",
+              "chinese": "因為需要錢，開始打工。"
+            },
+            {
+              "japanese": "経験が 要って、研修に 参加した。",
+              "chinese": "因為需要經驗，參加了研修。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "要れる",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いれる",
+          "sentence": [
+            {
+              "japanese": "この 国では ビザが 要れる と 聞いた。",
+              "chinese": "聽說這個國家可能需要簽證。"
+            },
+            {
+              "japanese": "経験が 要れる 仕事は 多い。",
+              "chinese": "可能需要經驗的工作很多。"
+            },
+            {
+              "japanese": "お金が 要れる ときは 言って ください。",
+              "chinese": "需要錢的時候請告訴我。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "要ろう",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いろう",
+          "sentence": [
+            {
+              "japanese": "新しい 事業には 多額の 資金が 要ろうと して いる。",
+              "chinese": "新事業似乎即將需要大筆資金。"
+            },
+            {
+              "japanese": "冬に 向けて、もっと 暖かい 服が 要ろうと して いる。",
+              "chinese": "隨著入冬，似乎會需要更保暖的衣服。"
+            },
+            {
+              "japanese": "工事が 進めば、さらに 人手が 要ろうと して いる。",
+              "chinese": "工程若推進，似乎還會需要更多人手。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "要れ",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いれ",
+          "sentence": [
+            {
+              "japanese": "店長は 新人に 「何か 要れ！」と 声を かけた。",
+              "chinese": "店長對新人喊：「需要什麼就說！」"
+            },
+            {
+              "japanese": "「お金が 要れ」と 母は 台所から 叫んだ。",
+              "chinese": "母親從廚房喊：「需要錢吧。」"
+            },
+            {
+              "japanese": "受付の 人は 「印鑑が 要れ」と 大声で 呼んだ。",
+              "chinese": "櫃台的人大聲喊：「需要印章！」"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "要れば",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いれば",
+          "sentence": [
+            {
+              "japanese": "ビザが 要れば、先に 申し込んで ください。",
+              "chinese": "如果需要簽證，請先申請。"
+            },
+            {
+              "japanese": "お金が 要れば、私が 出します。",
+              "chinese": "如果需要錢，我來出。"
+            },
+            {
+              "japanese": "経験が 要れば、研修を 受けます。",
+              "chinese": "如果需要經驗，就去接受研修。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "要られる",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いられる",
+          "sentence": [
+            {
+              "japanese": "この 工場では、経験より 体力が 要られる。",
+              "chinese": "這家工廠要求的不是經驗而是體力。"
+            },
+            {
+              "japanese": "面接では、落ち着いた 態度が 要られる。",
+              "chinese": "面試時要求沉著的態度。"
+            },
+            {
+              "japanese": "小さな 店ほど、細かい 気配りが 要られる。",
+              "chinese": "越是小店，越要求細心的關照。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "要らせる",
+          "group": "0",
+          "chinese": "要; 需要",
+          "japanese": "いらせる",
+          "sentence": [
+            {
+              "japanese": "新しい 制度は、学生に 高価な パソコンを 要らせる。",
+              "chinese": "新制度讓學生必須需要昂貴的電腦。"
+            },
+            {
+              "japanese": "円安が 輸入品の 値段を 上げ、店に 多くの 現金を 要らせる ように なった。",
+              "chinese": "日圓貶值推高進口品價格，讓店家需要更多現金。"
+            },
+            {
+              "japanese": "会社は 研修を 増やし、社員に 新しい 資格を 要らせる。",
+              "chinese": "公司增加研修，讓員工必須取得新的資格。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "調べる",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべる",
+          "sentence": [
+            {
+              "japanese": "駅で 電車の 時間を 調べる。",
+              "chinese": "在車站查電車時間。"
+            },
+            {
+              "japanese": "辞書で 言葉の 意味を 調べる。",
+              "chinese": "用字典查詞義。"
+            },
+            {
+              "japanese": "ネットで 店の 場所を 調べる。",
+              "chinese": "上網查店的位置。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "調べます",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべます",
+          "sentence": [
+            {
+              "japanese": "明日の 天気を 調べます。",
+              "chinese": "調查明天的天氣。"
+            },
+            {
+              "japanese": "図書館で 資料を 調べます。",
+              "chinese": "在圖書館查資料。"
+            },
+            {
+              "japanese": "先生に 聞く 前に、自分で 調べます。",
+              "chinese": "問老師之前先自己查。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "調べません",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべません",
+          "sentence": [
+            {
+              "japanese": "今日は 天気を 調べません。",
+              "chinese": "今天不查天氣。"
+            },
+            {
+              "japanese": "その 資料は 一度も 調べません。",
+              "chinese": "那份資料一次也沒查。"
+            },
+            {
+              "japanese": "私の 国では この 漢字を 調べません。",
+              "chinese": "在我們國家不查這個漢字。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "調べました",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべました",
+          "sentence": [
+            {
+              "japanese": "昨日 電車の 時間を 調べました。",
+              "chinese": "昨天查了電車時間。"
+            },
+            {
+              "japanese": "辞書で 新しい 言葉を 調べました。",
+              "chinese": "用字典查了新詞。"
+            },
+            {
+              "japanese": "出発 前に ホテルの 場所を 調べました。",
+              "chinese": "出發前查了旅館位置。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "調べませんでした",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 天気を 調べませんでした。",
+              "chinese": "昨天沒查天氣。"
+            },
+            {
+              "japanese": "この 言葉は 辞書で 調べませんでした。",
+              "chinese": "這個詞沒用字典查。"
+            },
+            {
+              "japanese": "先週は 旅行の 料金を 調べませんでした。",
+              "chinese": "上週沒查旅行費用。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "調べない",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべない",
+          "sentence": [
+            {
+              "japanese": "天気は 毎日 調べない。",
+              "chinese": "天氣不是每天查。"
+            },
+            {
+              "japanese": "この 言葉は 辞書で 調べない。",
+              "chinese": "這個詞不用字典查。"
+            },
+            {
+              "japanese": "弟は 自分で 調べない。",
+              "chinese": "弟弟不自己查。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "調べた",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべた",
+          "sentence": [
+            {
+              "japanese": "昨日 店の 電話番号を 調べた。",
+              "chinese": "昨天查了店的電話號碼。"
+            },
+            {
+              "japanese": "辞書で その 言葉を 調べた。",
+              "chinese": "用字典查了那個詞。"
+            },
+            {
+              "japanese": "週末に 電車の 道を 調べた。",
+              "chinese": "週末查了電車路線。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "調べなかった",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 天気を 調べなかった。",
+              "chinese": "昨天沒查天氣。"
+            },
+            {
+              "japanese": "その 言葉は 辞書で 調べなかった。",
+              "chinese": "那個詞沒用字典查。"
+            },
+            {
+              "japanese": "兄は 旅行の 料金を 調べなかった。",
+              "chinese": "哥哥沒查旅行費用。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "調べて",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべて",
+          "sentence": [
+            {
+              "japanese": "地図を 調べて、店へ 行った。",
+              "chinese": "查了地圖後去了店裡。"
+            },
+            {
+              "japanese": "辞書で 調べて、答えを 書いた。",
+              "chinese": "用字典查了之後寫了答案。"
+            },
+            {
+              "japanese": "電話番号を 調べて、すぐ 電話した。",
+              "chinese": "查了電話號碼後馬上打了電話。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "調べられる",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべられる",
+          "sentence": [
+            {
+              "japanese": "スマホで 電車の 時間が 調べられる。",
+              "chinese": "用手機可以查到電車時間。"
+            },
+            {
+              "japanese": "この 辞書なら 古い 言葉も 調べられる。",
+              "chinese": "用這本字典連古語也能查。"
+            },
+            {
+              "japanese": "図書館で 資料が 調べられる。",
+              "chinese": "在圖書館可以查資料。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "調べよう",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべよう",
+          "sentence": [
+            {
+              "japanese": "明日 店の 場所を 調べよう。",
+              "chinese": "明天來查店的位置吧。"
+            },
+            {
+              "japanese": "一緒に 辞書で 調べよう。",
+              "chinese": "一起用字典查吧。"
+            },
+            {
+              "japanese": "まず 電車の 時間を 調べよう。",
+              "chinese": "先查電車時間吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "調べろ",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべろ",
+          "sentence": [
+            {
+              "japanese": "部長に「すぐ 調べろ」と 言われた。",
+              "chinese": "部長對我說「馬上查」。"
+            },
+            {
+              "japanese": "先生は 学生に「辞書で 調べろ」と 言った。",
+              "chinese": "老師對學生說「用字典查」。"
+            },
+            {
+              "japanese": "課長は 私に「料金を 調べろ」と 命じた。",
+              "chinese": "課長命令我「查費用」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "調べれば",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべれば",
+          "sentence": [
+            {
+              "japanese": "辞書を 調べれば、意味が 分かる。",
+              "chinese": "查字典就懂意思。"
+            },
+            {
+              "japanese": "ネットで 調べれば、場所が すぐ 分かる。",
+              "chinese": "上網查就馬上知道位置。"
+            },
+            {
+              "japanese": "電話番号を 調べれば、連絡できる。",
+              "chinese": "查電話號碼就能聯絡。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "調べられる",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべられる",
+          "sentence": [
+            {
+              "japanese": "事故の 原因が 警察に 調べられる。",
+              "chinese": "事故原因被警察調查。"
+            },
+            {
+              "japanese": "私の 部屋が 係の 人に 調べられる。",
+              "chinese": "我的房間被負責人檢查。"
+            },
+            {
+              "japanese": "会社の お金が 会計士に 調べられる。",
+              "chinese": "公司的錢被會計師查核。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "調べさせる",
+          "group": "2",
+          "chinese": "調查; 查; 查閱",
+          "japanese": "しらべさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 言葉の 意味を 調べさせる。",
+              "chinese": "老師讓學生查詞義。"
+            },
+            {
+              "japanese": "部長は 新人に 電車の 時間を 調べさせる。",
+              "chinese": "部長讓新人查電車時間。"
+            },
+            {
+              "japanese": "母は 子供に 店の 場所を 調べさせる。",
+              "chinese": "母親讓孩子查店的位置。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "直す",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおす",
+          "sentence": [
+            {
+              "japanese": "壊れた 時計を 直す。",
+              "chinese": "修理壞掉的手錶。"
+            },
+            {
+              "japanese": "作文の 間違いを 直す。",
+              "chinese": "改正作文的錯誤。"
+            },
+            {
+              "japanese": "自転車の タイヤを 直す。",
+              "chinese": "修理腳踏車的輪胎。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "直します",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおします",
+          "sentence": [
+            {
+              "japanese": "明日 時計を 直します。",
+              "chinese": "明天修理手錶。"
+            },
+            {
+              "japanese": "レポートの 間違いを 直します。",
+              "chinese": "改正報告的錯誤。"
+            },
+            {
+              "japanese": "父が 自転車を 直します。",
+              "chinese": "父親修理腳踏車。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "直しません",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおしません",
+          "sentence": [
+            {
+              "japanese": "この 時計は もう 直しません。",
+              "chinese": "這隻手錶不再修了。"
+            },
+            {
+              "japanese": "その 作文は 直しません。",
+              "chinese": "那篇作文不改。"
+            },
+            {
+              "japanese": "古い テレビは 直しません。",
+              "chinese": "舊電視不修了。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "直しました",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおしました",
+          "sentence": [
+            {
+              "japanese": "昨日 壊れた 時計を 直しました。",
+              "chinese": "昨天修好了壞掉的手錶。"
+            },
+            {
+              "japanese": "先生が 作文を 直しました。",
+              "chinese": "老師改了作文。"
+            },
+            {
+              "japanese": "日曜日に 自転車を 直しました。",
+              "chinese": "星期天修了腳踏車。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "直しませんでした",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおしませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 時計を 直しませんでした。",
+              "chinese": "昨天沒修手錶。"
+            },
+            {
+              "japanese": "その 作文は 直しませんでした。",
+              "chinese": "那篇作文沒改。"
+            },
+            {
+              "japanese": "先週は 自転車を 直しませんでした。",
+              "chinese": "上週沒修腳踏車。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "直さない",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおさない",
+          "sentence": [
+            {
+              "japanese": "この 時計は もう 直さない。",
+              "chinese": "這隻手錶不再修。"
+            },
+            {
+              "japanese": "兄は 作文を 直さない。",
+              "chinese": "哥哥不改作文。"
+            },
+            {
+              "japanese": "古い ラジオは 直さない。",
+              "chinese": "舊收音機不修。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "直した",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおした",
+          "sentence": [
+            {
+              "japanese": "昨日 時計を 直した。",
+              "chinese": "昨天修了手錶。"
+            },
+            {
+              "japanese": "母が シャツの ボタンを 直した。",
+              "chinese": "母親修了襯衫的扣子。"
+            },
+            {
+              "japanese": "先週 自転車を 直した。",
+              "chinese": "上週修了腳踏車。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "直さなかった",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおさなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 時計を 直さなかった。",
+              "chinese": "昨天沒修手錶。"
+            },
+            {
+              "japanese": "妹は 作文を 直さなかった。",
+              "chinese": "妹妹沒改作文。"
+            },
+            {
+              "japanese": "先週は テレビを 直さなかった。",
+              "chinese": "上週沒修電視。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "直して",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおして",
+          "sentence": [
+            {
+              "japanese": "時計を 直して、また 使って いる。",
+              "chinese": "修好手錶後又繼續用。"
+            },
+            {
+              "japanese": "間違いを 直して、先生に 出した。",
+              "chinese": "改正錯誤後交給老師。"
+            },
+            {
+              "japanese": "自転車を 直して、駅まで 行った。",
+              "chinese": "修好腳踏車後騎到車站。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "直せる",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおせる",
+          "sentence": [
+            {
+              "japanese": "この 時計は 私にも 直せる。",
+              "chinese": "這隻手錶我也能修。"
+            },
+            {
+              "japanese": "一人で 作文を 直せる。",
+              "chinese": "能自己改正作文。"
+            },
+            {
+              "japanese": "この くらいの 傷なら 直せる。",
+              "chinese": "這種程度的損傷能修好。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "直そう",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおそう",
+          "sentence": [
+            {
+              "japanese": "日曜日に 時計を 直そう。",
+              "chinese": "星期天來修手錶吧。"
+            },
+            {
+              "japanese": "作文の 間違いを 直そう。",
+              "chinese": "來改正作文的錯誤吧。"
+            },
+            {
+              "japanese": "古い 自転車を 直そう。",
+              "chinese": "來修舊腳踏車吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "直せ",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおせ",
+          "sentence": [
+            {
+              "japanese": "部長に「すぐ 直せ」と 言われた。",
+              "chinese": "部長對我說「馬上修好」。"
+            },
+            {
+              "japanese": "先生は 学生に「間違いを 直せ」と 言った。",
+              "chinese": "老師對學生說「改正錯誤」。"
+            },
+            {
+              "japanese": "コーチは 私に「フォームを 直せ」と 言った。",
+              "chinese": "教練對我說「改正姿勢」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "直せば",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおせば",
+          "sentence": [
+            {
+              "japanese": "時計を 直せば、また 使える。",
+              "chinese": "修好手錶就能再用。"
+            },
+            {
+              "japanese": "間違いを 直せば、点数が 上がる。",
+              "chinese": "改正錯誤分數就會提高。"
+            },
+            {
+              "japanese": "自転車を 直せば、通勤に 使える。",
+              "chinese": "修好腳踏車就能用來通勤。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "直される",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおされる",
+          "sentence": [
+            {
+              "japanese": "私の 時計は 兄に 直される。",
+              "chinese": "我的手錶被哥哥修好。"
+            },
+            {
+              "japanese": "作文が 先生に 直される。",
+              "chinese": "作文被老師改。"
+            },
+            {
+              "japanese": "古い 家が 職人に 直される。",
+              "chinese": "老房子被工匠修好。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "直させる",
+          "group": "1",
+          "chinese": "修理; 改正; 修改",
+          "japanese": "なおさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 作文を 直させる。",
+              "chinese": "老師讓學生改正作文。"
+            },
+            {
+              "japanese": "父は 私に 自転車を 直させる。",
+              "chinese": "父親讓我修腳踏車。"
+            },
+            {
+              "japanese": "部長は 新人に 時計を 直させる。",
+              "chinese": "部長讓新人修手錶。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "修理する",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりする",
+          "sentence": [
+            {
+              "japanese": "壊れた 車を 修理する。",
+              "chinese": "修理壞掉的車。"
+            },
+            {
+              "japanese": "店の エアコンを 修理する。",
+              "chinese": "修理店裡的冷氣。"
+            },
+            {
+              "japanese": "自分で 時計を 修理する。",
+              "chinese": "自己修理手錶。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "修理します",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりします",
+          "sentence": [
+            {
+              "japanese": "明日 車を 修理します。",
+              "chinese": "明天修理車子。"
+            },
+            {
+              "japanese": "業者が エアコンを 修理します。",
+              "chinese": "業者修理冷氣。"
+            },
+            {
+              "japanese": "父が 古い 時計を 修理します。",
+              "chinese": "父親修理舊手錶。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "修理しません",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりしません",
+          "sentence": [
+            {
+              "japanese": "この 車は もう 修理しません。",
+              "chinese": "這輛車不再修了。"
+            },
+            {
+              "japanese": "古い エアコンは 修理しません。",
+              "chinese": "舊冷氣不修了。"
+            },
+            {
+              "japanese": "日曜日は 修理しません。",
+              "chinese": "星期天不修理。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "修理しました",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりしました",
+          "sentence": [
+            {
+              "japanese": "昨日 車を 修理しました。",
+              "chinese": "昨天修了車子。"
+            },
+            {
+              "japanese": "先週 店の エアコンを 修理しました。",
+              "chinese": "上週修了店裡的冷氣。"
+            },
+            {
+              "japanese": "兄が 時計を 修理しました。",
+              "chinese": "哥哥修了手錶。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "修理しませんでした",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりしませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 車を 修理しませんでした。",
+              "chinese": "昨天沒修車子。"
+            },
+            {
+              "japanese": "先週は エアコンを 修理しませんでした。",
+              "chinese": "上週沒修冷氣。"
+            },
+            {
+              "japanese": "その 時計は 修理しませんでした。",
+              "chinese": "那隻手錶沒修。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "修理しない",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりしない",
+          "sentence": [
+            {
+              "japanese": "この 車は もう 修理しない。",
+              "chinese": "這輛車不再修。"
+            },
+            {
+              "japanese": "弟は エアコンを 修理しない。",
+              "chinese": "弟弟不修冷氣。"
+            },
+            {
+              "japanese": "古い 時計は 修理しない。",
+              "chinese": "舊手錶不修。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "修理した",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりした",
+          "sentence": [
+            {
+              "japanese": "昨日 車を 修理した。",
+              "chinese": "昨天修了車子。"
+            },
+            {
+              "japanese": "先月 店の エアコンを 修理した。",
+              "chinese": "上個月修了店裡的冷氣。"
+            },
+            {
+              "japanese": "父が 古い 時計を 修理した。",
+              "chinese": "父親修了舊手錶。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "修理しなかった",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりしなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 車を 修理しなかった。",
+              "chinese": "昨天沒修車子。"
+            },
+            {
+              "japanese": "先月は エアコンを 修理しなかった。",
+              "chinese": "上個月沒修冷氣。"
+            },
+            {
+              "japanese": "兄は 時計を 修理しなかった。",
+              "chinese": "哥哥沒修手錶。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "修理して",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりして",
+          "sentence": [
+            {
+              "japanese": "車を 修理して、また 乗って いる。",
+              "chinese": "修好車後又繼續開。"
+            },
+            {
+              "japanese": "エアコンを 修理して、部屋を 冷やした。",
+              "chinese": "修好冷氣後讓房間變涼。"
+            },
+            {
+              "japanese": "時計を 修理して、母に あげた。",
+              "chinese": "修好手錶後送給母親。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "修理できる",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりできる",
+          "sentence": [
+            {
+              "japanese": "この 車は 自分で 修理できる。",
+              "chinese": "這輛車自己能修。"
+            },
+            {
+              "japanese": "古い エアコンでも 修理できる。",
+              "chinese": "舊冷氣也能修。"
+            },
+            {
+              "japanese": "この 店では 時計も 修理できる。",
+              "chinese": "這家店也能修手錶。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "修理しよう",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりしよう",
+          "sentence": [
+            {
+              "japanese": "日曜日に 車を 修理しよう。",
+              "chinese": "星期天來修車吧。"
+            },
+            {
+              "japanese": "みんなで エアコンを 修理しよう。",
+              "chinese": "大家一起修冷氣吧。"
+            },
+            {
+              "japanese": "古い 時計を 修理しよう。",
+              "chinese": "來修舊手錶吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "修理しろ",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりしろ",
+          "sentence": [
+            {
+              "japanese": "部長に「すぐ 修理しろ」と 言われた。",
+              "chinese": "部長對我說「馬上修好」。"
+            },
+            {
+              "japanese": "社長は 業者に「今日 修理しろ」と 言った。",
+              "chinese": "社長對業者說「今天修好」。"
+            },
+            {
+              "japanese": "課長は 私に「車を 修理しろ」と 命じた。",
+              "chinese": "課長命令我「修車」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "修理すれば",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりすれば",
+          "sentence": [
+            {
+              "japanese": "車を 修理すれば、まだ 乗れる。",
+              "chinese": "修好車就還能開。"
+            },
+            {
+              "japanese": "エアコンを 修理すれば、涼しく なる。",
+              "chinese": "修好冷氣就會變涼。"
+            },
+            {
+              "japanese": "時計を 修理すれば、また 使える。",
+              "chinese": "修好手錶就能再用。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "修理される",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりされる",
+          "sentence": [
+            {
+              "japanese": "私の 車は 父に 修理される。",
+              "chinese": "我的車被父親修好。"
+            },
+            {
+              "japanese": "店の エアコンが 業者に 修理される。",
+              "chinese": "店裡的冷氣被業者修理。"
+            },
+            {
+              "japanese": "古い 時計が 職人に 修理される。",
+              "chinese": "舊手錶被工匠修好。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "修理させる",
+          "group": "3",
+          "chinese": "修理",
+          "japanese": "しゅうりさせる",
+          "sentence": [
+            {
+              "japanese": "父は 私に 車を 修理させる。",
+              "chinese": "父親讓我修車。"
+            },
+            {
+              "japanese": "店長は 店員に エアコンを 修理させる。",
+              "chinese": "店長讓店員修冷氣。"
+            },
+            {
+              "japanese": "先生は 学生に 時計を 修理させる。",
+              "chinese": "老師讓學生修手錶。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "電話する",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわする",
+          "sentence": [
+            {
+              "japanese": "夜 友だちに 電話する。",
+              "chinese": "晚上打電話給朋友。"
+            },
+            {
+              "japanese": "明日 会社に 電話する。",
+              "chinese": "明天打電話給公司。"
+            },
+            {
+              "japanese": "家に 着いたら 電話する。",
+              "chinese": "到家後打電話。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "電話します",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわします",
+          "sentence": [
+            {
+              "japanese": "今から 母に 電話します。",
+              "chinese": "現在打電話給母親。"
+            },
+            {
+              "japanese": "後で 先生に 電話します。",
+              "chinese": "稍後打電話給老師。"
+            },
+            {
+              "japanese": "駅に 着いたら 電話します。",
+              "chinese": "到車站就打電話。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "電話しません",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわしません",
+          "sentence": [
+            {
+              "japanese": "今日は もう 電話しません。",
+              "chinese": "今天不再打電話。"
+            },
+            {
+              "japanese": "夜は 友だちに 電話しません。",
+              "chinese": "晚上不打電話給朋友。"
+            },
+            {
+              "japanese": "会社には 電話しません。",
+              "chinese": "不打電話給公司。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "電話しました",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわしました",
+          "sentence": [
+            {
+              "japanese": "昨日 母に 電話しました。",
+              "chinese": "昨天打電話給母親。"
+            },
+            {
+              "japanese": "朝 会社に 電話しました。",
+              "chinese": "早上打電話給公司。"
+            },
+            {
+              "japanese": "駅に 着いて すぐ 電話しました。",
+              "chinese": "到車站後馬上打了電話。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "電話しませんでした",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわしませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 母に 電話しませんでした。",
+              "chinese": "昨天沒打電話給母親。"
+            },
+            {
+              "japanese": "夜は 友だちに 電話しませんでした。",
+              "chinese": "晚上沒打電話給朋友。"
+            },
+            {
+              "japanese": "会社には 電話しませんでした。",
+              "chinese": "沒打電話給公司。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "電話しない",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわしない",
+          "sentence": [
+            {
+              "japanese": "夜 遅くは 電話しない。",
+              "chinese": "晚上太晚不打電話。"
+            },
+            {
+              "japanese": "弟は 友だちに 電話しない。",
+              "chinese": "弟弟不打電話給朋友。"
+            },
+            {
+              "japanese": "用事が なければ 電話しない。",
+              "chinese": "沒事就不打電話。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "電話した",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわした",
+          "sentence": [
+            {
+              "japanese": "昨日 友だちに 電話した。",
+              "chinese": "昨天打電話給朋友。"
+            },
+            {
+              "japanese": "朝 会社に 電話した。",
+              "chinese": "早上打電話給公司。"
+            },
+            {
+              "japanese": "家に 着いて すぐ 電話した。",
+              "chinese": "到家後馬上打了電話。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "電話しなかった",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわしなかった",
+          "sentence": [
+            {
+              "japanese": "昨日は 母に 電話しなかった。",
+              "chinese": "昨天沒打電話給母親。"
+            },
+            {
+              "japanese": "夜は 会社に 電話しなかった。",
+              "chinese": "晚上沒打電話給公司。"
+            },
+            {
+              "japanese": "忙しくて 友だちに 電話しなかった。",
+              "chinese": "因為忙沒打電話給朋友。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "電話して",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわして",
+          "sentence": [
+            {
+              "japanese": "友だちに 電話して、予定を 聞いた。",
+              "chinese": "打電話給朋友問了預定。"
+            },
+            {
+              "japanese": "会社に 電話して、休みを 取った。",
+              "chinese": "打電話給公司請了假。"
+            },
+            {
+              "japanese": "母に 電話して、無事を 知らせた。",
+              "chinese": "打電話給母親報平安。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "電話できる",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわできる",
+          "sentence": [
+            {
+              "japanese": "ここから 電話できる。",
+              "chinese": "從這裡可以打電話。"
+            },
+            {
+              "japanese": "夜なら 会社に 電話できる。",
+              "chinese": "晚上的話可以打電話給公司。"
+            },
+            {
+              "japanese": "公衆電話が あれば 電話できる。",
+              "chinese": "有公用電話就能打電話。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "電話しよう",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわしよう",
+          "sentence": [
+            {
+              "japanese": "今 母に 電話しよう。",
+              "chinese": "現在打給母親吧。"
+            },
+            {
+              "japanese": "後で 友だちに 電話しよう。",
+              "chinese": "稍後打給朋友吧。"
+            },
+            {
+              "japanese": "明日の 朝 会社に 電話しよう。",
+              "chinese": "明天早上打給公司吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "電話しろ",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわしろ",
+          "sentence": [
+            {
+              "japanese": "部長に「すぐ 電話しろ」と 言われた。",
+              "chinese": "部長對我說「馬上打電話」。"
+            },
+            {
+              "japanese": "課長は 私に「客に 電話しろ」と 命じた。",
+              "chinese": "課長命令我「打電話給客戶」。"
+            },
+            {
+              "japanese": "先生は 私に「家に 電話しろ」と 言った。",
+              "chinese": "老師對我說「打電話回家」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "電話すれば",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわすれば",
+          "sentence": [
+            {
+              "japanese": "母に 電話すれば、安心する。",
+              "chinese": "打給母親她就安心。"
+            },
+            {
+              "japanese": "会社に 電話すれば、分かる。",
+              "chinese": "打給公司就知道了。"
+            },
+            {
+              "japanese": "すぐ 電話すれば、まだ 間に合う。",
+              "chinese": "馬上打電話還來得及。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "電話される",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわされる",
+          "sentence": [
+            {
+              "japanese": "夜中に 友だちに 電話される。",
+              "chinese": "半夜被朋友打電話來。"
+            },
+            {
+              "japanese": "毎日 客に 電話される。",
+              "chinese": "每天被客人打電話來。"
+            },
+            {
+              "japanese": "朝 早く 母に 電話される。",
+              "chinese": "一大早被母親打電話來。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "電話させる",
+          "group": "3",
+          "chinese": "打電話",
+          "japanese": "でんわさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 家に 電話させる。",
+              "chinese": "老師讓學生打電話回家。"
+            },
+            {
+              "japanese": "部長は 新人に 客に 電話させる。",
+              "chinese": "部長讓新人打電話給客戶。"
+            },
+            {
+              "japanese": "母は 子供に おばあさんに 電話させる。",
+              "chinese": "母親讓孩子打電話給奶奶。"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

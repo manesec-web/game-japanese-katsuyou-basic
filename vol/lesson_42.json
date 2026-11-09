@@ -1,0 +1,1214 @@
+{
+  "lesson_42": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "包む",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつむ",
+          "sentence": [
+            {
+              "japanese": "母は 贈り物を きれいな 紙で 包む。",
+              "chinese": "母親用漂亮的紙包禮物。"
+            },
+            {
+              "japanese": "この 店では 商品を 無料で 包む。",
+              "chinese": "這家店免費包裝商品。"
+            },
+            {
+              "japanese": "彼女は いつも 丁寧に 花を 包む。",
+              "chinese": "她總是很仔細地包花。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "包みます",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつみます",
+          "sentence": [
+            {
+              "japanese": "店員が プレゼントを 包みます。",
+              "chinese": "店員包裝禮物。"
+            },
+            {
+              "japanese": "私は 弁当を 布で 包みます。",
+              "chinese": "我用布包便當。"
+            },
+            {
+              "japanese": "毎朝 子供の おやつを 包みます。",
+              "chinese": "每天早上包小孩的點心。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "包みません",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつみません",
+          "sentence": [
+            {
+              "japanese": "環境の ために 紙では 包みません。",
+              "chinese": "為了環保不用紙包。"
+            },
+            {
+              "japanese": "今日は まだ 贈り物を 包みません。",
+              "chinese": "今天還沒包禮物。"
+            },
+            {
+              "japanese": "布が 足りないので 包みません。",
+              "chinese": "布不夠所以不包。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "包みました",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつみました",
+          "sentence": [
+            {
+              "japanese": "駅で 買った お土産を 包みました。",
+              "chinese": "把在車站買的伴手禮包好了。"
+            },
+            {
+              "japanese": "店員が ケーキを 紙で 包みました。",
+              "chinese": "店員用紙包了蛋糕。"
+            },
+            {
+              "japanese": "昨日 母が 弁当を 包みました。",
+              "chinese": "昨天母親包了便當。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "包みませんでした",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつみませんでした",
+          "sentence": [
+            {
+              "japanese": "時間が なかったので 包みませんでした。",
+              "chinese": "因為沒時間所以沒有包。"
+            },
+            {
+              "japanese": "あの 店は 贈り物を 包みませんでした。",
+              "chinese": "那家店沒有包禮物。"
+            },
+            {
+              "japanese": "私は まだ 荷物を 包みませんでした。",
+              "chinese": "我還沒包行李。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "包まない",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつまない",
+          "sentence": [
+            {
+              "japanese": "紙が もったいないので 包まない。",
+              "chinese": "紙很浪費所以不包。"
+            },
+            {
+              "japanese": "彼は お菓子を 包まないで そのまま 食べる。",
+              "chinese": "他不包點心就直接吃。"
+            },
+            {
+              "japanese": "子供は まだ 自分で 包まない。",
+              "chinese": "小孩還不會自己包。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "包んだ",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつんだ",
+          "sentence": [
+            {
+              "japanese": "母が おにぎりを のりで 包んだ。",
+              "chinese": "母親用海苔包了飯糰。"
+            },
+            {
+              "japanese": "昨日 買った 花を 紙で 包んだ。",
+              "chinese": "把昨天買的花用紙包了。"
+            },
+            {
+              "japanese": "店員が お土産を きれいに 包んだ。",
+              "chinese": "店員把伴手禮包得很漂亮。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "包まなかった",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつまなかった",
+          "sentence": [
+            {
+              "japanese": "急いで いたので 包まなかった。",
+              "chinese": "因為趕時間所以沒包。"
+            },
+            {
+              "japanese": "彼は プレゼントを 包まなかった。",
+              "chinese": "他沒包禮物。"
+            },
+            {
+              "japanese": "あの 店は 紙で 包まなかった。",
+              "chinese": "那家店沒用紙包。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "包んで",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつんで",
+          "sentence": [
+            {
+              "japanese": "花を 紙で 包んで 渡してください。",
+              "chinese": "請把花用紙包起來交給我。"
+            },
+            {
+              "japanese": "彼女は 赤ちゃんを 毛布で 包んで 抱いた。",
+              "chinese": "她用毯子包住嬰兒抱起來。"
+            },
+            {
+              "japanese": "お弁当を 包んで 持って 行きます。",
+              "chinese": "把便當包起來帶走。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "包める",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつめる",
+          "sentence": [
+            {
+              "japanese": "私でも この 大きさの 荷物は 包める。",
+              "chinese": "連我也能包這種大小的行李。"
+            },
+            {
+              "japanese": "紙が 足りれば 全部 包める。",
+              "chinese": "紙夠的話全部都能包。"
+            },
+            {
+              "japanese": "この 布なら、 お弁当を 包める。",
+              "chinese": "這塊布的話，能包便當。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "包もう",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつもう",
+          "sentence": [
+            {
+              "japanese": "雨が 降る 前に 荷物を 包もう。",
+              "chinese": "在下雨前把行李包好吧。"
+            },
+            {
+              "japanese": "みんなで 贈り物を 包もう。",
+              "chinese": "大家一起包禮物吧。"
+            },
+            {
+              "japanese": "きれいな 紙で 花を 包もう。",
+              "chinese": "用漂亮的紙包花吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "包め",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつめ",
+          "sentence": [
+            {
+              "japanese": "店長、この 贈り物を すぐ 包め。",
+              "chinese": "店長，把這個禮物馬上包起來。"
+            },
+            {
+              "japanese": "部長は 部下に 書類を 包めと 言った。",
+              "chinese": "部長對部下說把文件包起來。"
+            },
+            {
+              "japanese": "先輩は 後輩に 早く 包めと 命じた。",
+              "chinese": "前輩命令後輩快點包。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "包めば",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつめば",
+          "sentence": [
+            {
+              "japanese": "この 紙で 包めば きれいに 見える。",
+              "chinese": "用這張紙包的話看起來很漂亮。"
+            },
+            {
+              "japanese": "自分で 包めば お金が かからない。",
+              "chinese": "自己包的話不花錢。"
+            },
+            {
+              "japanese": "布で 包めば 環境に やさしい。",
+              "chinese": "用布包的話對環境友善。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "包まれる",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつまれる",
+          "sentence": [
+            {
+              "japanese": "贈り物は 店員に 包まれる。",
+              "chinese": "禮物由店員包裝。"
+            },
+            {
+              "japanese": "この 店では 商品が 丁寧に 包まれる。",
+              "chinese": "這家店的商品被仔細包裝。"
+            },
+            {
+              "japanese": "おにぎりは のりに 包まれる。",
+              "chinese": "飯糰被海苔包住。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "包ませる",
+          "group": "1",
+          "chinese": "包; 裹; 包裝",
+          "japanese": "つつませる",
+          "sentence": [
+            {
+              "japanese": "母は 子供に おにぎりを 包ませる。",
+              "chinese": "母親讓小孩包飯糰。"
+            },
+            {
+              "japanese": "店長は 新人に 贈り物を 包ませる。",
+              "chinese": "店長讓新人包禮物。"
+            },
+            {
+              "japanese": "先生は 生徒に 花を 包ませる。",
+              "chinese": "老師讓學生包花。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "沸かす",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかす",
+          "sentence": [
+            {
+              "japanese": "お湯を 沸かす には 時間が かかる。",
+              "chinese": "燒開水需要時間。"
+            },
+            {
+              "japanese": "母は 毎朝 やかんで お湯を 沸かす。",
+              "chinese": "母親每天早上用壺燒開水。"
+            },
+            {
+              "japanese": "キャンプで 水を 沸かす。",
+              "chinese": "在露營時燒開水。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "沸かします",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかします",
+          "sentence": [
+            {
+              "japanese": "お茶の ために お湯を 沸かします。",
+              "chinese": "為了泡茶燒開水。"
+            },
+            {
+              "japanese": "私は 毎日 やかんで 水を 沸かします。",
+              "chinese": "我每天用壺燒水。"
+            },
+            {
+              "japanese": "客が 来る 前に お湯を 沸かします。",
+              "chinese": "客人來之前先燒開水。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "沸かしません",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかしません",
+          "sentence": [
+            {
+              "japanese": "電気代が 高いので あまり 沸かしません。",
+              "chinese": "電費很貴所以不太燒開水。"
+            },
+            {
+              "japanese": "夏は 熱い お湯を 沸かしません。",
+              "chinese": "夏天不燒熱開水。"
+            },
+            {
+              "japanese": "今日は お茶を 飲まないので お湯を 沸かしません。",
+              "chinese": "今天不喝茶所以不燒開水。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "沸かしました",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかしました",
+          "sentence": [
+            {
+              "japanese": "朝 お湯を 沸かしました。",
+              "chinese": "早上燒了開水。"
+            },
+            {
+              "japanese": "母が スープの ために 水を 沸かしました。",
+              "chinese": "母親為了湯燒了水。"
+            },
+            {
+              "japanese": "昨日 やかんで お湯を 沸かしました。",
+              "chinese": "昨天用壺燒了開水。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "沸かしませんでした",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかしませんでした",
+          "sentence": [
+            {
+              "japanese": "ガスが 止まって いて お湯を 沸かしませんでした。",
+              "chinese": "因為瓦斯停了所以沒燒開水。"
+            },
+            {
+              "japanese": "昨日は 忙しくて 水を 沸かしませんでした。",
+              "chinese": "昨天很忙所以沒燒水。"
+            },
+            {
+              "japanese": "まだ お湯を 沸かしませんでした。",
+              "chinese": "還沒燒開水。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "沸かさない",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかさない",
+          "sentence": [
+            {
+              "japanese": "この 水は 沸かさないで そのまま 飲む。",
+              "chinese": "這水不燒開就直接喝。"
+            },
+            {
+              "japanese": "電気が ないので お湯を 沸かさない。",
+              "chinese": "沒有電所以不燒開水。"
+            },
+            {
+              "japanese": "夏は わざわざ お湯を 沸かさない。",
+              "chinese": "夏天不特意燒開水。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "沸かした",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかした",
+          "sentence": [
+            {
+              "japanese": "今朝 お湯を 沸かした。",
+              "chinese": "今早燒了開水。"
+            },
+            {
+              "japanese": "母が 赤ちゃんの ミルクの ために 水を 沸かした。",
+              "chinese": "母親為了嬰兒的牛奶燒了水。"
+            },
+            {
+              "japanese": "キャンプで 川の 水を 沸かした。",
+              "chinese": "在露營時把河水燒開了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "沸かさなかった",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかさなかった",
+          "sentence": [
+            {
+              "japanese": "時間が なくて お湯を 沸かさなかった。",
+              "chinese": "因為沒時間所以沒燒開水。"
+            },
+            {
+              "japanese": "昨日は 水を 沸かさなかった。",
+              "chinese": "昨天沒燒水。"
+            },
+            {
+              "japanese": "彼は お茶を 飲まないので お湯を 沸かさなかった。",
+              "chinese": "他不喝茶所以沒燒開水。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "沸かして",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかして",
+          "sentence": [
+            {
+              "japanese": "お湯を 沸かして お茶を 入れます。",
+              "chinese": "燒開水泡茶。"
+            },
+            {
+              "japanese": "水を 沸かして から 麺を 入れる。",
+              "chinese": "水燒開後放麵。"
+            },
+            {
+              "japanese": "お湯を 沸かして タオルを 温めた。",
+              "chinese": "燒開水把毛巾加熱。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "沸かせる",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかせる",
+          "sentence": [
+            {
+              "japanese": "この やかんで お湯を 沸かせる。",
+              "chinese": "用這個壺能燒開水。"
+            },
+            {
+              "japanese": "ガスが あれば 水を 沸かせる。",
+              "chinese": "有瓦斯的話就能燒水。"
+            },
+            {
+              "japanese": "小さな 鍋でも お湯を 沸かせる。",
+              "chinese": "小鍋也能燒開水。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "沸かそう",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかそう",
+          "sentence": [
+            {
+              "japanese": "寒いので お湯を 沸かそう。",
+              "chinese": "很冷所以燒開水吧。"
+            },
+            {
+              "japanese": "みんなで お茶の お湯を 沸かそう。",
+              "chinese": "大家一起燒泡茶的開水吧。"
+            },
+            {
+              "japanese": "スープを 作る 前に 水を 沸かそう。",
+              "chinese": "做湯之前先燒水吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "沸かせ",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかせ",
+          "sentence": [
+            {
+              "japanese": "店長、早く お湯を 沸かせ。",
+              "chinese": "店長，快點燒開水。"
+            },
+            {
+              "japanese": "部長は 部下に お湯を 沸かせと 指示した。",
+              "chinese": "部長指示部下燒開水。"
+            },
+            {
+              "japanese": "先輩は 後輩に 早く お湯を 沸かせと 命じた。",
+              "chinese": "前輩命令後輩快點燒開水。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "沸かせば",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかせば",
+          "sentence": [
+            {
+              "japanese": "お湯を 沸かせば お茶が 飲める。",
+              "chinese": "燒開水的話就能喝茶。"
+            },
+            {
+              "japanese": "水を 沸かせば 安全に 飲める。",
+              "chinese": "水燒開的話就能安心喝。"
+            },
+            {
+              "japanese": "強火で 沸かせば 早く 沸く。",
+              "chinese": "用大火燒的話很快就滾。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "沸かされる",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかされる",
+          "sentence": [
+            {
+              "japanese": "お湯は 母に 沸かされる。",
+              "chinese": "開水由母親燒。"
+            },
+            {
+              "japanese": "この 店では お湯が 毎日 沸かされる。",
+              "chinese": "這家店每天燒開水。"
+            },
+            {
+              "japanese": "スープの 水は 店員に 沸かされる。",
+              "chinese": "湯的水由店員燒開。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "沸かさせる",
+          "group": "1",
+          "chinese": "燒開; 煮沸; 使沸騰",
+          "japanese": "わかさせる",
+          "sentence": [
+            {
+              "japanese": "母は 子供に お湯を 沸かさせる。",
+              "chinese": "母親讓小孩燒開水。"
+            },
+            {
+              "japanese": "店長は 新人に 水を 沸かさせる。",
+              "chinese": "店長讓新人燒水。"
+            },
+            {
+              "japanese": "先生は 生徒に 実験で お湯を 沸かさせる。",
+              "chinese": "老師讓學生在實驗中燒開水。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "混ぜる",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜる",
+          "sentence": [
+            {
+              "japanese": "卵と 牛乳を よく 混ぜる。",
+              "chinese": "把蛋和牛奶充分攪拌。"
+            },
+            {
+              "japanese": "母は 野菜を 混ぜる。",
+              "chinese": "母親把蔬菜拌在一起。"
+            },
+            {
+              "japanese": "セメントと 砂を 混ぜる。",
+              "chinese": "把水泥和沙子混合。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "混ぜます",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜます",
+          "sentence": [
+            {
+              "japanese": "ボウルで 小麦粉と 水を 混ぜます。",
+              "chinese": "在碗裡混合麵粉和水。"
+            },
+            {
+              "japanese": "コーヒーに ミルクを 混ぜます。",
+              "chinese": "在咖啡裡加牛奶混合。"
+            },
+            {
+              "japanese": "店員が 材料を 混ぜます。",
+              "chinese": "店員攪拌材料。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "混ぜません",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜません",
+          "sentence": [
+            {
+              "japanese": "苦いので 砂糖を 混ぜません。",
+              "chinese": "因為會苦所以不加糖。"
+            },
+            {
+              "japanese": "この 料理には 肉を 混ぜません。",
+              "chinese": "這道菜不加肉。"
+            },
+            {
+              "japanese": "私は 赤と 青を 混ぜません。",
+              "chinese": "我不把紅和藍混在一起。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "混ぜました",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜました",
+          "sentence": [
+            {
+              "japanese": "ケーキの 材料を 混ぜました。",
+              "chinese": "攪拌了蛋糕的材料。"
+            },
+            {
+              "japanese": "母が サラダを 混ぜました。",
+              "chinese": "母親拌了沙拉。"
+            },
+            {
+              "japanese": "昨日 セメントを 混ぜました。",
+              "chinese": "昨天混合了水泥。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "混ぜませんでした",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜませんでした",
+          "sentence": [
+            {
+              "japanese": "卵を 混ぜませんでしたから ケーキが うまく できなかった。",
+              "chinese": "因為沒拌蛋所以蛋糕沒做好。"
+            },
+            {
+              "japanese": "時間が なくて 材料を 混ぜませんでした。",
+              "chinese": "因為沒時間所以沒拌材料。"
+            },
+            {
+              "japanese": "あの 店は 野菜を 混ぜませんでした。",
+              "chinese": "那家店沒拌蔬菜。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "混ぜない",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜない",
+          "sentence": [
+            {
+              "japanese": "この 料理には 砂糖を 混ぜない。",
+              "chinese": "這道菜不加糖。"
+            },
+            {
+              "japanese": "水を 混ぜないと 粉が 固まる。",
+              "chinese": "不加水攪拌的話粉會結塊。"
+            },
+            {
+              "japanese": "彼は いつも 野菜を 混ぜない。",
+              "chinese": "他總是不拌蔬菜。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "混ぜた",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜた",
+          "sentence": [
+            {
+              "japanese": "卵と 牛乳を よく 混ぜた。",
+              "chinese": "把蛋和牛奶充分攪拌了。"
+            },
+            {
+              "japanese": "母が ケーキの 材料を 混ぜた。",
+              "chinese": "母親拌了蛋糕的材料。"
+            },
+            {
+              "japanese": "セメントに 砂を 混ぜた。",
+              "chinese": "在水泥裡混入沙子。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "混ぜなかった",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜなかった",
+          "sentence": [
+            {
+              "japanese": "砂糖を 混ぜなかったので 苦い。",
+              "chinese": "因為沒加糖所以很苦。"
+            },
+            {
+              "japanese": "昨日は 材料を 混ぜなかった。",
+              "chinese": "昨天沒拌材料。"
+            },
+            {
+              "japanese": "彼は 野菜を 混ぜなかった。",
+              "chinese": "他沒拌蔬菜。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "混ぜて",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜて",
+          "sentence": [
+            {
+              "japanese": "卵を 混ぜて から 焼く。",
+              "chinese": "拌蛋之後再烤。"
+            },
+            {
+              "japanese": "材料を 混ぜて ケーキを 作る。",
+              "chinese": "拌材料做蛋糕。"
+            },
+            {
+              "japanese": "牛乳を 混ぜて スープを 作った。",
+              "chinese": "加牛奶拌成湯。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "混ぜられる",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜられる",
+          "sentence": [
+            {
+              "japanese": "この ボウルで 全部 混ぜられる。",
+              "chinese": "用這個碗能全部拌在一起。"
+            },
+            {
+              "japanese": "機械が あれば 一度に 混ぜられる。",
+              "chinese": "有機器的話能一次攪拌。"
+            },
+            {
+              "japanese": "私でも サラダを 混ぜられる。",
+              "chinese": "連我也能拌沙拉。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "混ぜよう",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜよう",
+          "sentence": [
+            {
+              "japanese": "ケーキを 作る ために 材料を 混ぜよう。",
+              "chinese": "為了做蛋糕把材料拌一拌吧。"
+            },
+            {
+              "japanese": "みんなで サラダを 混ぜよう。",
+              "chinese": "大家一起拌沙拉吧。"
+            },
+            {
+              "japanese": "二つの 色を 混ぜよう。",
+              "chinese": "把兩種顏色混合吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "混ぜろ",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜろ",
+          "sentence": [
+            {
+              "japanese": "店長、この 材料を もっと よく 混ぜろ。",
+              "chinese": "店長，把這個材料拌得更均勻。"
+            },
+            {
+              "japanese": "先輩は 後輩に 材料を 混ぜろと 命じた。",
+              "chinese": "前輩命令後輩拌材料。"
+            },
+            {
+              "japanese": "店長は 新人に 卵を 混ぜろと 指示した。",
+              "chinese": "店長指示新人拌蛋。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "混ぜれば",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜれば",
+          "sentence": [
+            {
+              "japanese": "よく 混ぜれば 味が よくなる。",
+              "chinese": "好好攪拌的話味道會變好。"
+            },
+            {
+              "japanese": "卵を 混ぜれば ケーキが ふわふわに なる。",
+              "chinese": "拌入蛋的話蛋糕會變得蓬鬆。"
+            },
+            {
+              "japanese": "水を 混ぜれば 柔らかく なる。",
+              "chinese": "加水的話會變軟。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "混ぜられる",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜられる",
+          "sentence": [
+            {
+              "japanese": "材料は 店員に 混ぜられる。",
+              "chinese": "材料由店員攪拌。"
+            },
+            {
+              "japanese": "この 店では サラダが 毎日 混ぜられる。",
+              "chinese": "這家店每天拌沙拉。"
+            },
+            {
+              "japanese": "セメントは 機械で 混ぜられる。",
+              "chinese": "水泥用機器攪拌。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "混ぜさせる",
+          "group": "2",
+          "chinese": "混合; 攪拌; 摻",
+          "japanese": "まぜさせる",
+          "sentence": [
+            {
+              "japanese": "母は 子供に 材料を 混ぜさせる。",
+              "chinese": "母親讓小孩拌材料。"
+            },
+            {
+              "japanese": "店長は 新人に サラダを 混ぜさせる。",
+              "chinese": "店長讓新人拌沙拉。"
+            },
+            {
+              "japanese": "先生は 生徒に 色を 混ぜさせる。",
+              "chinese": "老師讓學生混合顏色。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "計算する",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんする",
+          "sentence": [
+            {
+              "japanese": "電卓で 計算する のは 簡単だ。",
+              "chinese": "用計算機計算很簡單。"
+            },
+            {
+              "japanese": "私は 毎日 家計を 計算する。",
+              "chinese": "我每天計算家計。"
+            },
+            {
+              "japanese": "彼は 頭で 計算する。",
+              "chinese": "他用頭腦計算。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "計算します",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんします",
+          "sentence": [
+            {
+              "japanese": "店員が お金を 計算します。",
+              "chinese": "店員計算金額。"
+            },
+            {
+              "japanese": "私は 毎晩 家計を 計算します。",
+              "chinese": "我每天晚上計算家計。"
+            },
+            {
+              "japanese": "電卓で 計算します。",
+              "chinese": "用計算機計算。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "計算しません",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんしません",
+          "sentence": [
+            {
+              "japanese": "私は 暗算で 計算しません。",
+              "chinese": "我不用心算計算。"
+            },
+            {
+              "japanese": "今日は まだ 計算しません。",
+              "chinese": "今天還沒計算。"
+            },
+            {
+              "japanese": "彼は 電卓で 計算しません。",
+              "chinese": "他不用計算機計算。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "計算しました",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんしました",
+          "sentence": [
+            {
+              "japanese": "昨日 家計を 計算しました。",
+              "chinese": "昨天計算了家計。"
+            },
+            {
+              "japanese": "店員が おつりを 計算しました。",
+              "chinese": "店員計算了找零。"
+            },
+            {
+              "japanese": "電卓で 計算しました。",
+              "chinese": "用計算機計算了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "計算しませんでした",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんしませんでした",
+          "sentence": [
+            {
+              "japanese": "忙しかったので 計算しませんでした。",
+              "chinese": "因為很忙所以沒計算。"
+            },
+            {
+              "japanese": "昨日は 家計を 計算しませんでした。",
+              "chinese": "昨天沒計算家計。"
+            },
+            {
+              "japanese": "彼は 最後まで 計算しませんでした。",
+              "chinese": "他到最後都沒計算。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "計算しない",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんしない",
+          "sentence": [
+            {
+              "japanese": "私は 暗算で 計算しない。",
+              "chinese": "我不用心算計算。"
+            },
+            {
+              "japanese": "電卓が ないと 計算しない。",
+              "chinese": "沒有計算機就不計算。"
+            },
+            {
+              "japanese": "彼は いつも 頭で 計算しない。",
+              "chinese": "他總是不用頭腦計算。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "計算した",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんした",
+          "sentence": [
+            {
+              "japanese": "昨日 家計を 計算した。",
+              "chinese": "昨天計算了家計。"
+            },
+            {
+              "japanese": "店員が おつりを 計算した。",
+              "chinese": "店員計算了找零。"
+            },
+            {
+              "japanese": "彼は 電卓で 計算した。",
+              "chinese": "他用計算機計算了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "計算しなかった",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんしなかった",
+          "sentence": [
+            {
+              "japanese": "時間が なかったので 計算しなかった。",
+              "chinese": "因為沒時間所以沒計算。"
+            },
+            {
+              "japanese": "昨日は 家計を 計算しなかった。",
+              "chinese": "昨天沒計算家計。"
+            },
+            {
+              "japanese": "彼は 最後まで 計算しなかった。",
+              "chinese": "他到最後都沒計算。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "計算して",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんして",
+          "sentence": [
+            {
+              "japanese": "電卓で 計算して から 書く。",
+              "chinese": "用計算機算完之後再寫。"
+            },
+            {
+              "japanese": "家計を 計算して 節約する。",
+              "chinese": "計算家計來節約。"
+            },
+            {
+              "japanese": "おつりを 計算して 客に 渡した。",
+              "chinese": "算好找零交給客人。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "計算できる",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんできる",
+          "sentence": [
+            {
+              "japanese": "この 電卓で 計算できる。",
+              "chinese": "用這個計算機能計算。"
+            },
+            {
+              "japanese": "私は 暗算で 計算できる。",
+              "chinese": "我能用心算計算。"
+            },
+            {
+              "japanese": "子供でも 簡単に 計算できる。",
+              "chinese": "連小孩也能輕鬆計算。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "計算しよう",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんしよう",
+          "sentence": [
+            {
+              "japanese": "家計を 計算しよう。",
+              "chinese": "來計算家計吧。"
+            },
+            {
+              "japanese": "みんなで 費用を 計算しよう。",
+              "chinese": "大家一起計算費用吧。"
+            },
+            {
+              "japanese": "電卓で 計算しよう。",
+              "chinese": "用計算機計算吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "計算しろ",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんしろ",
+          "sentence": [
+            {
+              "japanese": "部長、この 費用を すぐ 計算しろ。",
+              "chinese": "部長，把這個費用馬上算出來。"
+            },
+            {
+              "japanese": "先生は 生徒に 問題を 計算しろと 指示した。",
+              "chinese": "老師指示學生計算題目。"
+            },
+            {
+              "japanese": "先輩は 後輩に 早く 計算しろと 命じた。",
+              "chinese": "前輩命令後輩快點計算。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "計算すれば",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんすれば",
+          "sentence": [
+            {
+              "japanese": "電卓で 計算すれば すぐ 分かる。",
+              "chinese": "用計算機算的話馬上就懂。"
+            },
+            {
+              "japanese": "家計を 計算すれば 無駄が 分かる。",
+              "chinese": "計算家計的話就知道浪費在哪。"
+            },
+            {
+              "japanese": "もう 一度 計算すれば 正しい 答えが 出る。",
+              "chinese": "再算一次的話就能得出正確答案。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "計算される",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんされる",
+          "sentence": [
+            {
+              "japanese": "費用は 会計係に 計算される。",
+              "chinese": "費用由會計計算。"
+            },
+            {
+              "japanese": "この 店では おつりが レジで 計算される。",
+              "chinese": "這家店的找零由收銀機計算。"
+            },
+            {
+              "japanese": "家計は 毎月 母に 計算される。",
+              "chinese": "家計每個月由母親計算。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "計算させる",
+          "group": "3",
+          "chinese": "計算; 運算",
+          "japanese": "けいさんさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 生徒に 問題を 計算させる。",
+              "chinese": "老師讓學生計算題目。"
+            },
+            {
+              "japanese": "部長は 部下に 費用を 計算させる。",
+              "chinese": "部長讓部下計算費用。"
+            },
+            {
+              "japanese": "母は 子供に おつりを 計算させる。",
+              "chinese": "母親讓小孩計算找零。"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

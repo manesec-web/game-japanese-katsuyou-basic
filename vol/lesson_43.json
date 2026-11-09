@@ -1,0 +1,2422 @@
+{
+  "lesson_43": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "増える",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえる",
+          "sentence": [
+            {
+              "japanese": "最近 この 町の 人口は 増える 一方だ。",
+              "chinese": "最近這個鎮的人口不斷增加。"
+            },
+            {
+              "japanese": "円安に なると 輸出が 増える。",
+              "chinese": "日圓貶值的話，出口會增加。"
+            },
+            {
+              "japanese": "留学生の 数は 毎年 増える そうだ。",
+              "chinese": "聽說留學生人數每年增加。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "増えます",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえます",
+          "sentence": [
+            {
+              "japanese": "今月は 輸出が 増えます。",
+              "chinese": "這個月出口增加。"
+            },
+            {
+              "japanese": "この 町の 人口は 少しずつ 増えます。",
+              "chinese": "這個鎮的人口一點一點增加。"
+            },
+            {
+              "japanese": "暖かく なると 虫も 増えます。",
+              "chinese": "天氣變暖，蟲子也會增加。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "増えません",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえません",
+          "sentence": [
+            {
+              "japanese": "今年は 輸出が あまり 増えません。",
+              "chinese": "今年出口不太增加。"
+            },
+            {
+              "japanese": "この 町の 人口は もう 増えません。",
+              "chinese": "這個鎮的人口已經不再增加了。"
+            },
+            {
+              "japanese": "値段が 高いので 買う 人は 増えません。",
+              "chinese": "因為價格貴，買的人不會增加。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "増えました",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえました",
+          "sentence": [
+            {
+              "japanese": "先月は 輸出が 大きく 増えました。",
+              "chinese": "上個月出口大幅增加。"
+            },
+            {
+              "japanese": "新しい 店が できて 客が 増えました。",
+              "chinese": "新店開張後客人增加了。"
+            },
+            {
+              "japanese": "今年は 留学生が 増えました。",
+              "chinese": "今年留學生增加了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "増えませんでした",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえませんでした",
+          "sentence": [
+            {
+              "japanese": "去年は 輸出が 増えませんでした。",
+              "chinese": "去年出口沒有增加。"
+            },
+            {
+              "japanese": "雨が 少なくて 花は 増えませんでした。",
+              "chinese": "雨少，花沒有增多。"
+            },
+            {
+              "japanese": "人が 来なくて 売り上げは 増えませんでした。",
+              "chinese": "沒人來，營業額沒有增加。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "増えない",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえない",
+          "sentence": [
+            {
+              "japanese": "人口が 増えない と 町は さびしく なる。",
+              "chinese": "人口不增加的話，城鎮會變得冷清。"
+            },
+            {
+              "japanese": "輸出が 増えない ので 会社は 困って いる。",
+              "chinese": "因為出口不增加，公司很困擾。"
+            },
+            {
+              "japanese": "この 村では 子どもが 増えない。",
+              "chinese": "這個村子小孩不增加。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "増えた",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえた",
+          "sentence": [
+            {
+              "japanese": "去年より 輸出が 増えた。",
+              "chinese": "比去年出口增加了。"
+            },
+            {
+              "japanese": "店が 人気に なって 客が 増えた。",
+              "chinese": "店受歡迎了，客人增加了。"
+            },
+            {
+              "japanese": "引っ越して から 友だちが 増えた。",
+              "chinese": "搬家後朋友變多了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "増えなかった",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえなかった",
+          "sentence": [
+            {
+              "japanese": "先月は 輸出が 増えなかった。",
+              "chinese": "上個月出口沒有增加。"
+            },
+            {
+              "japanese": "値段が 高くて 売り上げは 増えなかった。",
+              "chinese": "價格貴，營業額沒有增加。"
+            },
+            {
+              "japanese": "今年は 客が 増えなかった。",
+              "chinese": "今年客人沒有增加。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "増えて",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえて",
+          "sentence": [
+            {
+              "japanese": "人口が 増えて 家が 足りなく なった。",
+              "chinese": "人口增加，房子不夠了。"
+            },
+            {
+              "japanese": "輸出が 増えて 工場は 忙しい。",
+              "chinese": "出口增加，工廠很忙。"
+            },
+            {
+              "japanese": "留学生が 増えて 町が にぎやかに なった。",
+              "chinese": "留學生增加，城鎮熱鬧起來了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "増えられる",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえられる",
+          "sentence": [
+            {
+              "japanese": "円が 安ければ 輸出が 増えられる はずだ。",
+              "chinese": "日圓便宜的話，出口應該能增加。"
+            },
+            {
+              "japanese": "留学生の 数は まだ 増えられる。",
+              "chinese": "留學生人數還能增加。"
+            },
+            {
+              "japanese": "人口が 増えられる 町は 元気だ。",
+              "chinese": "人口能增長的城鎮有活力。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "増えよう",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえよう",
+          "sentence": [
+            {
+              "japanese": "輸出が 増えよう と して いる。",
+              "chinese": "出口正趨於增加。"
+            },
+            {
+              "japanese": "人口が 増えよう と して いる 町だ。",
+              "chinese": "這是人口正趨於增加的城鎮。"
+            },
+            {
+              "japanese": "子どもが 増えよう と しても 家が ない。",
+              "chinese": "就算小孩要增加，也沒有房子。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "増えろ",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえろ",
+          "sentence": [
+            {
+              "japanese": "部長は「輸出が もっと 増えろ」と 言った。",
+              "chinese": "部長說「出口要再增加」。"
+            },
+            {
+              "japanese": "「人口が 増えろ、増えろ」と 町の 人は 言う。",
+              "chinese": "鎮上的人說「人口增加吧、增加吧」。"
+            },
+            {
+              "japanese": "店長は「お客さんが 増えろ」と 毎日 願って いる。",
+              "chinese": "店長每天祈願「客人增加吧」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "増えれば",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえれば",
+          "sentence": [
+            {
+              "japanese": "輸出が 増えれば 会社は 助かる。",
+              "chinese": "出口增加的話，公司就得救了。"
+            },
+            {
+              "japanese": "人口が 増えれば 店も 増える。",
+              "chinese": "人口增加的話，店也會增加。"
+            },
+            {
+              "japanese": "留学生が 増えれば 町は もっと にぎやかに なる。",
+              "chinese": "留學生增加的話，城鎮會更熱鬧。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "増えられる",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえられる",
+          "sentence": [
+            {
+              "japanese": "輸出が 増えられる のは 円が 安い からだ。",
+              "chinese": "出口會增加是因為日圓便宜。"
+            },
+            {
+              "japanese": "人口が 増えられる 町では 家の 値段も 上がる。",
+              "chinese": "在人口會增加的城鎮，房價也會上漲。"
+            },
+            {
+              "japanese": "町の 人口が 増えられる ように 学校を 作った。",
+              "chinese": "為了讓鎮上人口增加，建了學校。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "増えさせる",
+          "group": "2",
+          "chinese": "增加; 增多",
+          "japanese": "ふえさせる",
+          "sentence": [
+            {
+              "japanese": "円安は 輸出を 増えさせる。",
+              "chinese": "日圓貶值使出口增加。"
+            },
+            {
+              "japanese": "新しい 道路が 観光客を 増えさせる。",
+              "chinese": "新道路使觀光客增加。"
+            },
+            {
+              "japanese": "安い 値段が 買う 人を 増えさせる。",
+              "chinese": "便宜的價格使買的人增加。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "減る",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へる",
+          "sentence": [
+            {
+              "japanese": "円高に なると 輸出が 減る。",
+              "chinese": "日圓升值的話，出口會減少。"
+            },
+            {
+              "japanese": "ダイエットを して 体重が 減る のは うれしい。",
+              "chinese": "減肥讓體重減少很高興。"
+            },
+            {
+              "japanese": "この 町では 子どもが 年々 減る。",
+              "chinese": "這個鎮的小孩逐年減少。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "減ります",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へります",
+          "sentence": [
+            {
+              "japanese": "今月は 輸出が 減ります。",
+              "chinese": "這個月出口會減少。"
+            },
+            {
+              "japanese": "寒く なると 買い物の 人が 減ります。",
+              "chinese": "天氣變冷，購物的人會減少。"
+            },
+            {
+              "japanese": "車を 使うと ガソリンが 減ります。",
+              "chinese": "用車的話汽油會減少。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "減りません",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へりません",
+          "sentence": [
+            {
+              "japanese": "今年は 輸出が ほとんど 減りません。",
+              "chinese": "今年出口幾乎不減少。"
+            },
+            {
+              "japanese": "値段が 下がっても 客は 減りません。",
+              "chinese": "就算降價，客人也不會減少。"
+            },
+            {
+              "japanese": "毎日 少しずつ 食べれば 体重は 減りません。",
+              "chinese": "每天只吃一點的話體重不會減少。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "減りました",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へりました",
+          "sentence": [
+            {
+              "japanese": "先月は 輸出が 少し 減りました。",
+              "chinese": "上個月出口稍微減少了。"
+            },
+            {
+              "japanese": "仕事が 終わって 人が 減りました。",
+              "chinese": "工作結束，人變少了。"
+            },
+            {
+              "japanese": "ガソリンの 値段が 上がって 車が 減りました。",
+              "chinese": "汽油漲價，車變少了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "減りませんでした",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へりませんでした",
+          "sentence": [
+            {
+              "japanese": "去年は 輸出が 減りませんでした。",
+              "chinese": "去年出口沒有減少。"
+            },
+            {
+              "japanese": "努力したのに 体重は 減りませんでした。",
+              "chinese": "明明努力了，體重卻沒有減少。"
+            },
+            {
+              "japanese": "客は 減りませんでした が 売り上げは 下がりました。",
+              "chinese": "客人沒減少，但營業額下降了。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "減らない",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へらない",
+          "sentence": [
+            {
+              "japanese": "輸出が 減らない のは 円安の せいだ。",
+              "chinese": "出口不減少是因為日圓貶值。"
+            },
+            {
+              "japanese": "水を 飲んでも 体重は 減らない。",
+              "chinese": "就算喝水體重也不會減少。"
+            },
+            {
+              "japanese": "この 町の 人口は なかなか 減らない。",
+              "chinese": "這個鎮的人口怎麼也不減少。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "減った",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へった",
+          "sentence": [
+            {
+              "japanese": "今月は 輸出が 減った。",
+              "chinese": "這個月出口減少了。"
+            },
+            {
+              "japanese": "節約した ので 電気代が 減った。",
+              "chinese": "因為節約了，電費減少了。"
+            },
+            {
+              "japanese": "夜に なって 道の 人が 減った。",
+              "chinese": "到了晚上路上的人變少了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "減らなかった",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へらなかった",
+          "sentence": [
+            {
+              "japanese": "先月の 輸出は 減らなかった。",
+              "chinese": "上個月的出口沒有減少。"
+            },
+            {
+              "japanese": "たくさん 歩いた のに 体重は 減らなかった。",
+              "chinese": "走了很多，體重卻沒減少。"
+            },
+            {
+              "japanese": "雨の 日は 客が 減らなかった。",
+              "chinese": "下雨天客人沒有減少。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "減って",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へって",
+          "sentence": [
+            {
+              "japanese": "人口が 減って 学校が 閉まった。",
+              "chinese": "人口減少，學校關閉了。"
+            },
+            {
+              "japanese": "ガソリンが 減って 車が 止まった。",
+              "chinese": "汽油減少，車停了。"
+            },
+            {
+              "japanese": "寒く なって 公園の 人が 減って きた。",
+              "chinese": "天氣變冷，公園的人變少了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "減れる",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へれる",
+          "sentence": [
+            {
+              "japanese": "この 薬を 飲めば 体重が 減れる そうだ。",
+              "chinese": "聽說吃這個藥體重就能減少。"
+            },
+            {
+              "japanese": "毎日 走れば 脂肪は 減れる。",
+              "chinese": "每天跑步就能減少脂肪。"
+            },
+            {
+              "japanese": "円が 高ければ 輸出が 減れる だろう。",
+              "chinese": "日圓貴的話，出口應該能減少。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "減ろう",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へろう",
+          "sentence": [
+            {
+              "japanese": "体重は なかなか 減ろう と しない。",
+              "chinese": "體重怎麼也不肯減少。"
+            },
+            {
+              "japanese": "輸出が 減ろう と して いる。",
+              "chinese": "出口正趨於減少。"
+            },
+            {
+              "japanese": "人口が 減ろう と して いる 町で 働いて いる。",
+              "chinese": "在人口正趨減少的城鎮工作。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "減れ",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へれ",
+          "sentence": [
+            {
+              "japanese": "「早く 減れ！」と 彼は 体重計を にらんだ。",
+              "chinese": "「快點減少！」他瞪著體重計。"
+            },
+            {
+              "japanese": "「痛みよ、 減れ」と 祖父は 歯を 食いしばった。",
+              "chinese": "「痛楚啊，消失吧」祖父咬緊牙關。"
+            },
+            {
+              "japanese": "「ごみの 量が 減れ」と 町長は 演説で 叫んだ。",
+              "chinese": "鎮長在演說中大喊「垃圾量減少吧」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "減れば",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へれば",
+          "sentence": [
+            {
+              "japanese": "輸出が 減れば 会社の 利益も 減る。",
+              "chinese": "出口減少的話，公司利潤也會減少。"
+            },
+            {
+              "japanese": "体重が 減れば 服が 大きく なる。",
+              "chinese": "體重減少的話衣服就變大了。"
+            },
+            {
+              "japanese": "人が 減れば 町は 静かに なる。",
+              "chinese": "人減少的話城鎮會變安靜。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "減られる",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へられる",
+          "sentence": [
+            {
+              "japanese": "お客に 減られる と、 店の 売り上げが すぐ 落ちる。",
+              "chinese": "客人一減少，店裡的營業額馬上就下滑。"
+            },
+            {
+              "japanese": "ライバル店が できて、 うちは 客に 減られる ばかりだ。",
+              "chinese": "競爭對手的店開張後，我們店的客人不斷流失。"
+            },
+            {
+              "japanese": "工場が 閉まって、 この 町は 住人に 減られる 一方だ。",
+              "chinese": "工廠關閉後，這個城鎮的居民不斷減少。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "減らせる",
+          "group": "0",
+          "chinese": "減少; 變少",
+          "japanese": "へらせる",
+          "sentence": [
+            {
+              "japanese": "長い 工事が この 店の 客を 減らせる らしい。",
+              "chinese": "漫長的工程似乎讓這家店的客人減少。"
+            },
+            {
+              "japanese": "市の 新しい 税が 小さな 店を 減らせる かも しれない。",
+              "chinese": "市裡的新稅也許會讓小店減少。"
+            },
+            {
+              "japanese": "台風が 観光客を 減らせる 年も ある。",
+              "chinese": "有些年颱風會讓觀光客減少。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "上がる",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがる",
+          "sentence": [
+            {
+              "japanese": "今年は 野菜の 値段が 上がる そうだ。",
+              "chinese": "聽說今年蔬菜價格會上漲。"
+            },
+            {
+              "japanese": "円安に なると 輸入品の 値段が 上がる。",
+              "chinese": "日圓貶值的話進口品價格會上漲。"
+            },
+            {
+              "japanese": "夏に なると 気温が 上がる。",
+              "chinese": "到了夏天氣溫會上升。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "上がります",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがります",
+          "sentence": [
+            {
+              "japanese": "来月から 家賃が 上がります。",
+              "chinese": "下個月起房租會漲。"
+            },
+            {
+              "japanese": "ガソリンの 値段が 上がります。",
+              "chinese": "汽油價格上漲。"
+            },
+            {
+              "japanese": "この 町では 土地の 値段が 上がります。",
+              "chinese": "這個鎮的地價在上漲。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "上がりません",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがりません",
+          "sentence": [
+            {
+              "japanese": "今年は 値段が あまり 上がりません。",
+              "chinese": "今年價格不太上漲。"
+            },
+            {
+              "japanese": "給料は 上がりません が 仕事は 増えます。",
+              "chinese": "薪水不漲，但工作增加。"
+            },
+            {
+              "japanese": "円が 高い ので 輸入品は 上がりません。",
+              "chinese": "因為日圓貴，進口品不漲價。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "上がりました",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがりました",
+          "sentence": [
+            {
+              "japanese": "先月 ガソリンの 値段が 上がりました。",
+              "chinese": "上個月汽油漲價了。"
+            },
+            {
+              "japanese": "人気が 出て 野菜の 値段が 上がりました。",
+              "chinese": "受歡迎之後，蔬菜價格漲了。"
+            },
+            {
+              "japanese": "手術の あと 血圧が 上がりました。",
+              "chinese": "手術後血壓上升了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "上がりませんでした",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがりませんでした",
+          "sentence": [
+            {
+              "japanese": "先月は 値段が 上がりませんでした。",
+              "chinese": "上個月價格沒有上漲。"
+            },
+            {
+              "japanese": "円高で 輸入品は 上がりませんでした。",
+              "chinese": "因日圓升值，進口品沒漲價。"
+            },
+            {
+              "japanese": "努力したのに 給料は 上がりませんでした。",
+              "chinese": "明明努力了，薪水卻沒漲。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "上がらない",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがらない",
+          "sentence": [
+            {
+              "japanese": "値段が 上がらない と 農家は 困る。",
+              "chinese": "價格不上漲的話農家很困擾。"
+            },
+            {
+              "japanese": "この 店の 値段は 上がらない。",
+              "chinese": "這家店的價格不漲。"
+            },
+            {
+              "japanese": "円が 強い ので 輸入品は 上がらない。",
+              "chinese": "因為日圓強，進口品不漲價。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "上がった",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがった",
+          "sentence": [
+            {
+              "japanese": "昨日 ガソリンの 値段が 上がった。",
+              "chinese": "昨天汽油漲價了。"
+            },
+            {
+              "japanese": "人気の 店で 野菜の 値段が 上がった。",
+              "chinese": "因為店受歡迎，蔬菜價格漲了。"
+            },
+            {
+              "japanese": "夏に なって 気温が 上がった。",
+              "chinese": "到了夏天氣溫上升了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "上がらなかった",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがらなかった",
+          "sentence": [
+            {
+              "japanese": "先月は 値段が 上がらなかった。",
+              "chinese": "上個月價格沒有上漲。"
+            },
+            {
+              "japanese": "円高の せいで 輸入品は 上がらなかった。",
+              "chinese": "因為日圓升值，進口品沒漲價。"
+            },
+            {
+              "japanese": "給料は 上がらなかった が ボーナスは 増えた。",
+              "chinese": "薪水沒漲，但獎金增加了。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "上がって",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがって",
+          "sentence": [
+            {
+              "japanese": "値段が 上がって 買う 人が 減った。",
+              "chinese": "價格上漲，買的人減少了。"
+            },
+            {
+              "japanese": "ガソリンが 上がって 車を 使わない 人が 増えた。",
+              "chinese": "汽油漲價，不用車的人增加了。"
+            },
+            {
+              "japanese": "気温が 上がって 雪が とけた。",
+              "chinese": "氣溫上升，雪融化了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "上がれる",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがれる",
+          "sentence": [
+            {
+              "japanese": "この 山は ケーブルカーで 上がれる。",
+              "chinese": "這座山可以搭纜車上去。"
+            },
+            {
+              "japanese": "この 階段は 急だが、 手すりが あれば 上がれる。",
+              "chinese": "這樓梯很陡，但有扶手就能上去。"
+            },
+            {
+              "japanese": "エレベーターが なくても、 五階までは 歩いて 上がれる。",
+              "chinese": "就算沒有電梯，也能走到五樓。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "上がろう",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがろう",
+          "sentence": [
+            {
+              "japanese": "値段が 上がろう と して いる。",
+              "chinese": "價格正趨於上漲。"
+            },
+            {
+              "japanese": "給料が 上がろう と しても 物価も 上がる。",
+              "chinese": "就算薪水要漲，物價也跟著漲。"
+            },
+            {
+              "japanese": "円安で 輸入品の 値段が 上がろう と して いる。",
+              "chinese": "因日圓貶值，進口品價格正趨於上漲。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "上がれ",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがれ",
+          "sentence": [
+            {
+              "japanese": "「早く 二階へ 上がれ！」と 母が 叫んだ。",
+              "chinese": "「快點上二樓！」母親大喊。"
+            },
+            {
+              "japanese": "「屋根に 上がれ、 そこで 待て」と 父は 言った。",
+              "chinese": "「爬上屋頂，在那裡等著」父親說。"
+            },
+            {
+              "japanese": "係員は 「はしごを 上がれ」と 作業員に 指示した。",
+              "chinese": "負責人指示作業員「爬上梯子」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "上がれば",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがれば",
+          "sentence": [
+            {
+              "japanese": "値段が 上がれば 農家は 助かる。",
+              "chinese": "價格上漲的話農家就得救了。"
+            },
+            {
+              "japanese": "給料が 上がれば 旅行に 行ける。",
+              "chinese": "薪水漲的話就能去旅行。"
+            },
+            {
+              "japanese": "気温が 上がれば アイスクリームが 売れる。",
+              "chinese": "氣溫上升的話冰淇淋就賣得好。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "上がられる",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがられる",
+          "sentence": [
+            {
+              "japanese": "野菜の 値段に 上がられる と、 買う 気が なくなる。",
+              "chinese": "菜價一漲，就沒心情買了。"
+            },
+            {
+              "japanese": "家賃に 毎年 上がられる ので、 引っ越しを 考えて いる。",
+              "chinese": "房租每年都漲，所以正在考慮搬家。"
+            },
+            {
+              "japanese": "米の 値段に 上がられる と、 店の 弁当も 高く なる。",
+              "chinese": "米價一漲，店裡的便當也變貴。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "上がらせる",
+          "group": "1",
+          "chinese": "上漲; 上升; 提高",
+          "japanese": "あがらせる",
+          "sentence": [
+            {
+              "japanese": "店員は お客さんを 二階の 売り場に 上がらせる。",
+              "chinese": "店員讓客人上二樓的賣場。"
+            },
+            {
+              "japanese": "父は 弟を 屋根に 上がらせる つもりだ。",
+              "chinese": "父親打算讓弟弟爬上屋頂。"
+            },
+            {
+              "japanese": "景気の 回復が 株価を 上がらせる だろう。",
+              "chinese": "景氣復甦應該會讓股價上升。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "下がる",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがる",
+          "sentence": [
+            {
+              "japanese": "円高に なると 輸入品の 値段が 下がる。",
+              "chinese": "日圓升值的話進口品價格會下降。"
+            },
+            {
+              "japanese": "秋に なると 気温が 下がる。",
+              "chinese": "到了秋天氣溫會下降。"
+            },
+            {
+              "japanese": "新しい 店が できて 野菜の 値段が 下がる。",
+              "chinese": "新店開張，蔬菜價格下降。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "下がります",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがります",
+          "sentence": [
+            {
+              "japanese": "円が 高く なって 輸入品が 下がります。",
+              "chinese": "日圓變貴，進口品降價。"
+            },
+            {
+              "japanese": "夜に なると 気温が 下がります。",
+              "chinese": "到了晚上氣溫會下降。"
+            },
+            {
+              "japanese": "今月は ガソリンの 値段が 下がります。",
+              "chinese": "這個月汽油價格下降。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "下がりません",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがりません",
+          "sentence": [
+            {
+              "japanese": "今年は 値段が なかなか 下がりません。",
+              "chinese": "今年價格怎麼也不下降。"
+            },
+            {
+              "japanese": "円が 安い ので 輸入品は 下がりません。",
+              "chinese": "因為日圓便宜，進口品不降價。"
+            },
+            {
+              "japanese": "血圧は 薬を 飲んでも 下がりません。",
+              "chinese": "血壓就算吃藥也不下降。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "下がりました",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがりました",
+          "sentence": [
+            {
+              "japanese": "先月 ガソリンの 値段が 下がりました。",
+              "chinese": "上個月汽油降價了。"
+            },
+            {
+              "japanese": "秋に なって 気温が 下がりました。",
+              "chinese": "到了秋天氣溫下降了。"
+            },
+            {
+              "japanese": "新しい 店が できて 野菜が 下がりました。",
+              "chinese": "新店開張，蔬菜降價了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "下がりませんでした",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがりませんでした",
+          "sentence": [
+            {
+              "japanese": "先月は 値段が 下がりませんでした。",
+              "chinese": "上個月價格沒有下降。"
+            },
+            {
+              "japanese": "円安で 輸入品は 下がりませんでした。",
+              "chinese": "因日圓貶值，進口品沒降價。"
+            },
+            {
+              "japanese": "努力したのに 血圧は 下がりませんでした。",
+              "chinese": "明明努力了，血壓卻沒下降。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "下がらない",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがらない",
+          "sentence": [
+            {
+              "japanese": "値段が 下がらない ので 買えない。",
+              "chinese": "價格不下降，買不起。"
+            },
+            {
+              "japanese": "円が 安い ので 輸入品は 下がらない。",
+              "chinese": "因為日圓便宜，進口品不降價。"
+            },
+            {
+              "japanese": "この 薬を 飲んでも 血圧は 下がらない。",
+              "chinese": "就算吃這個藥血壓也不下降。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "下がった",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがった",
+          "sentence": [
+            {
+              "japanese": "昨日 ガソリンの 値段が 下がった。",
+              "chinese": "昨天汽油降價了。"
+            },
+            {
+              "japanese": "雨が 降って 気温が 下がった。",
+              "chinese": "下雨氣溫下降了。"
+            },
+            {
+              "japanese": "値段が 下がった ので 車を 買った。",
+              "chinese": "因為價格降了，買了車。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "下がらなかった",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがらなかった",
+          "sentence": [
+            {
+              "japanese": "先月は 値段が 下がらなかった。",
+              "chinese": "上個月價格沒有下降。"
+            },
+            {
+              "japanese": "円安の せいで 輸入品は 下がらなかった。",
+              "chinese": "因為日圓貶值，進口品沒降價。"
+            },
+            {
+              "japanese": "血圧は 下がらなかった が 体重は 減った。",
+              "chinese": "血壓沒下降，但體重減少了。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "下がって",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがって",
+          "sentence": [
+            {
+              "japanese": "値段が 下がって 客が 増えた。",
+              "chinese": "價格下降，客人增加了。"
+            },
+            {
+              "japanese": "気温が 下がって 雪が 降った。",
+              "chinese": "氣溫下降，下雪了。"
+            },
+            {
+              "japanese": "円が 下がって 輸入品が 安く なった。",
+              "chinese": "日圓下跌，進口品變便宜了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "下がれる",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがれる",
+          "sentence": [
+            {
+              "japanese": "競争が 増えれば 値段は 下がれる だろう。",
+              "chinese": "競爭增加的話價格應該能下降。"
+            },
+            {
+              "japanese": "薬を 飲めば 血圧が 下がれる そうだ。",
+              "chinese": "聽說吃藥血壓就能下降。"
+            },
+            {
+              "japanese": "円高なら 輸入品の 値段が 下がれる。",
+              "chinese": "日圓升值的話進口品價格能下降。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "下がろう",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがろう",
+          "sentence": [
+            {
+              "japanese": "値段が 下がろう と して いる。",
+              "chinese": "價格正趨於下降。"
+            },
+            {
+              "japanese": "気温が 下がろう と して いる ので 暖房を つけた。",
+              "chinese": "氣溫正趨於下降，所以開了暖氣。"
+            },
+            {
+              "japanese": "血圧は なかなか 下がろう と しない。",
+              "chinese": "血壓怎麼也不肯下降。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "下がれ",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがれ",
+          "sentence": [
+            {
+              "japanese": "「一歩 下がれ！」と 警官が 叫んだ。",
+              "chinese": "「退後一步！」警官大喊。"
+            },
+            {
+              "japanese": "「ここから 下がれ、 危ないぞ」と 父は 言った。",
+              "chinese": "「離開這裡，很危險」父親說。"
+            },
+            {
+              "japanese": "係員は 「白線から 下がれ」と 客に 叫んだ。",
+              "chinese": "工作人員對客人喊「退到白線後面」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "下がれば",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがれば",
+          "sentence": [
+            {
+              "japanese": "値段が 下がれば 買う 人が 増える。",
+              "chinese": "價格下降的話買的人會增加。"
+            },
+            {
+              "japanese": "気温が 下がれば 雪に なる。",
+              "chinese": "氣溫下降的話會下雪。"
+            },
+            {
+              "japanese": "血圧が 下がれば 薬を 止められる。",
+              "chinese": "血壓下降的話就能停藥。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "下がられる",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがられる",
+          "sentence": [
+            {
+              "japanese": "夜に 気温に 下がられる と、 風邪を ひきやすい。",
+              "chinese": "晚上氣溫一下降，就容易感冒。"
+            },
+            {
+              "japanese": "給料に 下がられる と、 生活が 苦しく なる。",
+              "chinese": "薪水被調降，生活就變得辛苦。"
+            },
+            {
+              "japanese": "エアコンの 設定で 室温に 下がられる ので、 夜中に 目が 覚める。",
+              "chinese": "因為冷氣設定室溫下降，半夜會醒來。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "下がらせる",
+          "group": "1",
+          "chinese": "下降; 下跌; 降低",
+          "japanese": "さがらせる",
+          "sentence": [
+            {
+              "japanese": "景気の 悪化が 給料を 下がらせる らしい。",
+              "chinese": "景氣惡化似乎使薪水下降。"
+            },
+            {
+              "japanese": "店員は お客さんを 地下の 売り場に 下がらせる。",
+              "chinese": "店員讓客人下到地下賣場。"
+            },
+            {
+              "japanese": "新しい 薬が 血圧を 下がらせる そうだ。",
+              "chinese": "據說新藥能讓血壓下降。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "切れる",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれる",
+          "sentence": [
+            {
+              "japanese": "この ひもは 古くて すぐ 切れる。",
+              "chinese": "這條繩子舊了，馬上就斷。"
+            },
+            {
+              "japanese": "電話の 電池が 切れる と 使えない。",
+              "chinese": "手機電池沒電就不能用。"
+            },
+            {
+              "japanese": "長い 間 使うと ひもが 切れる。",
+              "chinese": "用久了繩子會斷。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "切れます",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれます",
+          "sentence": [
+            {
+              "japanese": "この ひもは もう すぐ 切れます。",
+              "chinese": "這條繩子馬上就要斷了。"
+            },
+            {
+              "japanese": "古い 電池は すぐ 切れます。",
+              "chinese": "舊電池馬上就沒電。"
+            },
+            {
+              "japanese": "強く 引くと ロープが 切れます。",
+              "chinese": "用力拉的話繩子會斷。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "切れません",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれません",
+          "sentence": [
+            {
+              "japanese": "この ひもは まだ 切れません。",
+              "chinese": "這條繩子還不會斷。"
+            },
+            {
+              "japanese": "新しい 電池は なかなか 切れません。",
+              "chinese": "新電池怎麼也不會沒電。"
+            },
+            {
+              "japanese": "太い 糸は 簡単には 切れません。",
+              "chinese": "粗線不容易斷。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "切れました",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれました",
+          "sentence": [
+            {
+              "japanese": "さっき ひもが 切れました。",
+              "chinese": "剛剛繩子斷了。"
+            },
+            {
+              "japanese": "電話の 電池が 切れました。",
+              "chinese": "手機電池沒電了。"
+            },
+            {
+              "japanese": "古い ロープが 切れました。",
+              "chinese": "舊繩子斷了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "切れませんでした",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日 ひもは 切れませんでした。",
+              "chinese": "昨天繩子沒有斷。"
+            },
+            {
+              "japanese": "電池は まだ 切れませんでした。",
+              "chinese": "電池還沒沒電。"
+            },
+            {
+              "japanese": "強い 糸なので 切れませんでした。",
+              "chinese": "因為是結實的線，沒有斷。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "切れない",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれない",
+          "sentence": [
+            {
+              "japanese": "この ひもは まだ 切れない。",
+              "chinese": "這條繩子還沒斷。"
+            },
+            {
+              "japanese": "電池が 切れない ので 安心だ。",
+              "chinese": "電池沒用完，所以安心。"
+            },
+            {
+              "japanese": "太い ひもは 手で 切れない。",
+              "chinese": "粗繩子用手弄不斷。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "切れた",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれた",
+          "sentence": [
+            {
+              "japanese": "朝 ひもが 切れた。",
+              "chinese": "早上繩子斷了。"
+            },
+            {
+              "japanese": "電話の 電池が 切れた。",
+              "chinese": "手機電池沒電了。"
+            },
+            {
+              "japanese": "古い 糸が 切れた ので 新しい のを 買った。",
+              "chinese": "舊線斷了，所以買了新的。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "切れなかった",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれなかった",
+          "sentence": [
+            {
+              "japanese": "昨日 ひもは 切れなかった。",
+              "chinese": "昨天繩子沒有斷。"
+            },
+            {
+              "japanese": "電池は 切れなかった ので まだ 使える。",
+              "chinese": "電池沒用完，所以還能用。"
+            },
+            {
+              "japanese": "強い ロープは 切れなかった。",
+              "chinese": "結實的繩子沒有斷。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "切れて",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれて",
+          "sentence": [
+            {
+              "japanese": "ひもが 切れて 荷物が 落ちた。",
+              "chinese": "繩子斷了，行李掉了。"
+            },
+            {
+              "japanese": "電池が 切れて 電話が 使えない。",
+              "chinese": "電池沒電，手機不能用。"
+            },
+            {
+              "japanese": "糸が 切れて ボタンが とれた。",
+              "chinese": "線斷了，鈕扣掉了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "切れられる",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれられる",
+          "sentence": [
+            {
+              "japanese": "この ひもは ナイフで 切れられる。",
+              "chinese": "這條繩子用刀能切斷。"
+            },
+            {
+              "japanese": "この 糸は はさみで 切れられる。",
+              "chinese": "這條線用剪刀能剪斷。"
+            },
+            {
+              "japanese": "細い ひもなら 手で 切れられる。",
+              "chinese": "細繩子的話用手就能弄斷。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "切れよう",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれよう",
+          "sentence": [
+            {
+              "japanese": "ひもが 切れよう と して いる。",
+              "chinese": "繩子正快要斷了。"
+            },
+            {
+              "japanese": "電池が 切れよう と して いる ので 充電した。",
+              "chinese": "電池快沒電了，所以充了電。"
+            },
+            {
+              "japanese": "古い ロープは 切れよう と して いる。",
+              "chinese": "舊繩子正快要斷了。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "切れろ",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれろ",
+          "sentence": [
+            {
+              "japanese": "「早く 切れろ」と 男は ひもを 引っ張った。",
+              "chinese": "男人用力拉繩子喊「快斷吧」。"
+            },
+            {
+              "japanese": "監督は「ひもが 切れろ」と 叫んだ。",
+              "chinese": "教練喊「繩子斷吧」。"
+            },
+            {
+              "japanese": "「切れろ、切れろ」と 子どもは 糸を 引いた。",
+              "chinese": "孩子拉線喊「斷吧、斷吧」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "切れれば",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれれば",
+          "sentence": [
+            {
+              "japanese": "ひもが 切れれば 荷物が 落ちる。",
+              "chinese": "繩子斷的話行李會掉。"
+            },
+            {
+              "japanese": "電池が 切れれば 電話が 使えない。",
+              "chinese": "電池沒電的話手機不能用。"
+            },
+            {
+              "japanese": "この 糸が 切れれば 新しい のを 使おう。",
+              "chinese": "這條線斷了的話就用新的吧。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "切れられる",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれられる",
+          "sentence": [
+            {
+              "japanese": "ひもが 切れられる と 荷物が 落ちる。",
+              "chinese": "繩子被弄斷，行李就掉。"
+            },
+            {
+              "japanese": "電池が 切れられる のは 困る。",
+              "chinese": "電池被用完很困擾。"
+            },
+            {
+              "japanese": "大事な 糸が 切れられる と 直せない。",
+              "chinese": "重要的線被弄斷就修不好。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "切れさせる",
+          "group": "2",
+          "chinese": "斷掉; 折斷; 用盡",
+          "japanese": "きれさせる",
+          "sentence": [
+            {
+              "japanese": "強い 風が ひもを 切れさせる。",
+              "chinese": "強風使繩子斷。"
+            },
+            {
+              "japanese": "古い 電池が 電話を 切れさせる。",
+              "chinese": "舊電池使手機沒電。"
+            },
+            {
+              "japanese": "鋭い 石が 糸を 切れさせる。",
+              "chinese": "銳利的石頭使線斷。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "とれる",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれる",
+          "sentence": [
+            {
+              "japanese": "この コートは ボタンが すぐ とれる。",
+              "chinese": "這件大衣鈕扣馬上就掉。"
+            },
+            {
+              "japanese": "古い かばんは 取っ手が とれる。",
+              "chinese": "舊包的手把會掉。"
+            },
+            {
+              "japanese": "強い 風で 看板が とれる。",
+              "chinese": "強風把招牌吹掉。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "とれます",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれます",
+          "sentence": [
+            {
+              "japanese": "この ボタンは すぐ とれます。",
+              "chinese": "這顆鈕扣馬上就掉。"
+            },
+            {
+              "japanese": "古い かばんの 取っ手が とれます。",
+              "chinese": "舊包的手把會掉。"
+            },
+            {
+              "japanese": "シールは 水で とれます。",
+              "chinese": "貼紙用水就能撕掉。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "とれません",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれません",
+          "sentence": [
+            {
+              "japanese": "この ボタンは なかなか とれません。",
+              "chinese": "這顆鈕扣怎麼也不掉。"
+            },
+            {
+              "japanese": "強い 接着剤で とれません。",
+              "chinese": "用了強力膠，弄不掉。"
+            },
+            {
+              "japanese": "古い シールは 水でも とれません。",
+              "chinese": "舊貼紙就算用水也撕不掉。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "とれました",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれました",
+          "sentence": [
+            {
+              "japanese": "さっき ボタンが とれました。",
+              "chinese": "剛剛鈕扣掉了。"
+            },
+            {
+              "japanese": "洗ったら シールが とれました。",
+              "chinese": "洗了之後貼紙掉了。"
+            },
+            {
+              "japanese": "かばんの 取っ手が とれました。",
+              "chinese": "包的手把掉了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "とれませんでした",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日 ボタンは とれませんでした。",
+              "chinese": "昨天鈕扣沒有掉。"
+            },
+            {
+              "japanese": "シールは 水で とれませんでした。",
+              "chinese": "貼紙用水沒撕掉。"
+            },
+            {
+              "japanese": "取っ手は とれませんでした が 糸が 切れました。",
+              "chinese": "手把沒掉，但線斷了。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "とれない",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれない",
+          "sentence": [
+            {
+              "japanese": "この ボタンは まだ とれない。",
+              "chinese": "這顆鈕扣還沒掉。"
+            },
+            {
+              "japanese": "強い シールは 水で とれない。",
+              "chinese": "強力貼紙用水撕不掉。"
+            },
+            {
+              "japanese": "ネジが とれない ので 困った。",
+              "chinese": "螺絲弄不下來，很困擾。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "とれた",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれた",
+          "sentence": [
+            {
+              "japanese": "朝 ボタンが とれた。",
+              "chinese": "早上鈕扣掉了。"
+            },
+            {
+              "japanese": "洗濯の あと シールが とれた。",
+              "chinese": "洗過之後貼紙掉了。"
+            },
+            {
+              "japanese": "古い かばんの 取っ手が とれた。",
+              "chinese": "舊包的手把掉了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "とれなかった",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれなかった",
+          "sentence": [
+            {
+              "japanese": "昨日 ボタンは とれなかった。",
+              "chinese": "昨天鈕扣沒有掉。"
+            },
+            {
+              "japanese": "シールは とれなかった ので 水を 使った。",
+              "chinese": "貼紙弄不掉，所以用了水。"
+            },
+            {
+              "japanese": "ネジは とれなかった。",
+              "chinese": "螺絲沒有鬆開。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "とれて",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれて",
+          "sentence": [
+            {
+              "japanese": "ボタンが とれて コートが 開いた。",
+              "chinese": "鈕扣掉了，大衣敞開了。"
+            },
+            {
+              "japanese": "シールが とれて 文字が 見えた。",
+              "chinese": "貼紙掉了，看得見字了。"
+            },
+            {
+              "japanese": "取っ手が とれて 荷物が 持てない。",
+              "chinese": "手把掉了，拿不了行李。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "とれられる",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれられる",
+          "sentence": [
+            {
+              "japanese": "この ボタンは 手で とれられる。",
+              "chinese": "這顆鈕扣用手就能拔掉。"
+            },
+            {
+              "japanese": "シールは 水で とれられる。",
+              "chinese": "貼紙用水就能撕掉。"
+            },
+            {
+              "japanese": "ネジは ドライバーで とれられる。",
+              "chinese": "螺絲用螺絲起子就能拆下。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "とれよう",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれよう",
+          "sentence": [
+            {
+              "japanese": "ボタンが とれよう と して いる。",
+              "chinese": "鈕扣正快要掉。"
+            },
+            {
+              "japanese": "シールが とれよう と して いる ので 洗った。",
+              "chinese": "貼紙快掉了，所以洗了。"
+            },
+            {
+              "japanese": "取っ手が とれよう と して いる。",
+              "chinese": "手把正快要掉。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "とれろ",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれろ",
+          "sentence": [
+            {
+              "japanese": "「早く とれろ」と 子どもは ボタンを 引いた。",
+              "chinese": "孩子拉鈕扣喊「快掉吧」。"
+            },
+            {
+              "japanese": "「とれろ、とれろ」と 彼は シールを こすった。",
+              "chinese": "他搓貼紙說「掉吧、掉吧」。"
+            },
+            {
+              "japanese": "店の 人は「早く とれろ」と ネジを 回した。",
+              "chinese": "店員轉螺絲說「快鬆開吧」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "とれれば",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれれば",
+          "sentence": [
+            {
+              "japanese": "ボタンが とれれば 新しい のを つける。",
+              "chinese": "鈕扣掉了的話就裝新的。"
+            },
+            {
+              "japanese": "シールが とれれば 文字が 読める。",
+              "chinese": "貼紙掉了的話就能讀字。"
+            },
+            {
+              "japanese": "ネジが とれれば 中が 見える。",
+              "chinese": "螺絲拆下的話就能看裡面。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "とれられる",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれられる",
+          "sentence": [
+            {
+              "japanese": "ボタンが とれられる と コートが 使えない。",
+              "chinese": "鈕扣被拔掉，大衣就不能穿。"
+            },
+            {
+              "japanese": "シールが とれられる のは いやだ。",
+              "chinese": "貼紙被撕掉很討厭。"
+            },
+            {
+              "japanese": "大事な ネジが とれられる と 直せない。",
+              "chinese": "重要的螺絲被拆掉就修不好。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "とれさせる",
+          "group": "2",
+          "chinese": "掉下來; 脫落; 鬆開",
+          "japanese": "とれさせる",
+          "sentence": [
+            {
+              "japanese": "強い 風が ボタンを とれさせる。",
+              "chinese": "強風使鈕扣掉落。"
+            },
+            {
+              "japanese": "水が シールを とれさせる。",
+              "chinese": "水使貼紙脫落。"
+            },
+            {
+              "japanese": "古い 糸が ボタンを とれさせる。",
+              "chinese": "舊線使鈕扣掉落。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "落ちる",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちる",
+          "sentence": [
+            {
+              "japanese": "荷物が 落ちる と 危ない。",
+              "chinese": "行李掉落很危險。"
+            },
+            {
+              "japanese": "強い 風で 木の 葉が 落ちる。",
+              "chinese": "強風把樹葉吹落。"
+            },
+            {
+              "japanese": "机の 上から 本が 落ちる。",
+              "chinese": "書從桌上掉落。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "落ちます",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちます",
+          "sentence": [
+            {
+              "japanese": "この 棚は 荷物が 落ちます。",
+              "chinese": "這個架子上的行李會掉。"
+            },
+            {
+              "japanese": "秋に なると 葉が 落ちます。",
+              "chinese": "到了秋天葉子會落。"
+            },
+            {
+              "japanese": "電車の 中で かばんが 落ちます。",
+              "chinese": "在電車裡包包會掉。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "落ちません",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちません",
+          "sentence": [
+            {
+              "japanese": "この 荷物は 落ちません。",
+              "chinese": "這個行李不會掉。"
+            },
+            {
+              "japanese": "強い 風でも 葉は 落ちません。",
+              "chinese": "就算強風葉子也不落。"
+            },
+            {
+              "japanese": "机の 上に 置けば 落ちません。",
+              "chinese": "放在桌上的話不會掉。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "落ちました",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちました",
+          "sentence": [
+            {
+              "japanese": "さっき 荷物が 落ちました。",
+              "chinese": "剛剛行李掉了。"
+            },
+            {
+              "japanese": "風で 木の 葉が 落ちました。",
+              "chinese": "風把樹葉吹落了。"
+            },
+            {
+              "japanese": "電車の 中で かばんが 落ちました。",
+              "chinese": "在電車裡包包掉了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "落ちませんでした",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日 荷物は 落ちませんでした。",
+              "chinese": "昨天行李沒有掉。"
+            },
+            {
+              "japanese": "風が 弱くて 葉は 落ちませんでした。",
+              "chinese": "風弱，葉子沒有落。"
+            },
+            {
+              "japanese": "しっかり 置いた ので 落ちませんでした。",
+              "chinese": "放得很穩，所以沒有掉。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "落ちない",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちない",
+          "sentence": [
+            {
+              "japanese": "この 荷物は 落ちない ように ひもで 結んだ。",
+              "chinese": "為了讓行李不掉，用繩子綁住了。"
+            },
+            {
+              "japanese": "風が 弱い ので 葉は 落ちない。",
+              "chinese": "風弱，葉子不落。"
+            },
+            {
+              "japanese": "机の 上なら 落ちない。",
+              "chinese": "在桌上的話不會掉。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "落ちた",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちた",
+          "sentence": [
+            {
+              "japanese": "朝 荷物が 落ちた。",
+              "chinese": "早上行李掉了。"
+            },
+            {
+              "japanese": "風で 葉が 落ちた。",
+              "chinese": "風把葉子吹落了。"
+            },
+            {
+              "japanese": "棚から 本が 落ちた。",
+              "chinese": "書從架上掉了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "落ちなかった",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちなかった",
+          "sentence": [
+            {
+              "japanese": "昨日 荷物は 落ちなかった。",
+              "chinese": "昨天行李沒有掉。"
+            },
+            {
+              "japanese": "風が 弱くて 葉は 落ちなかった。",
+              "chinese": "風弱，葉子沒有落。"
+            },
+            {
+              "japanese": "ひもで 結んだ ので 落ちなかった。",
+              "chinese": "因為用繩子綁了，所以沒掉。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "落ちて",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちて",
+          "sentence": [
+            {
+              "japanese": "荷物が 落ちて 床が 壊れた。",
+              "chinese": "行李掉落，地板壞了。"
+            },
+            {
+              "japanese": "葉が 落ちて 道が 黄色く なった。",
+              "chinese": "葉子落下，路變黃了。"
+            },
+            {
+              "japanese": "本が 落ちて 音が した。",
+              "chinese": "書掉了，發出聲音。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "落ちられる",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちられる",
+          "sentence": [
+            {
+              "japanese": "この 荷物は 棚から 落ちられる くらい 軽い。",
+              "chinese": "這個行李輕得能從架上掉下來。"
+            },
+            {
+              "japanese": "机の 上は 物が 落ちられる から 危ない。",
+              "chinese": "桌上東西容易掉，很危險。"
+            },
+            {
+              "japanese": "子どもは 椅子から 落ちられる 高さだ。",
+              "chinese": "那是孩子能從椅子上掉下來的高度。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "落ちよう",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちよう",
+          "sentence": [
+            {
+              "japanese": "荷物が 落ちよう と して いる。",
+              "chinese": "行李正快要掉。"
+            },
+            {
+              "japanese": "葉が 落ちよう と して いる。",
+              "chinese": "葉子正快要落。"
+            },
+            {
+              "japanese": "本が 落ちよう と して いる ので 押さえた。",
+              "chinese": "書快掉了，所以按住。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "落ちろ",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちろ",
+          "sentence": [
+            {
+              "japanese": "「落ちろ」と 男は 荷物を 押した。",
+              "chinese": "男人推行李喊「掉吧」。"
+            },
+            {
+              "japanese": "「早く 落ちろ」と 子どもは 葉を ゆすった。",
+              "chinese": "孩子搖葉子喊「快落吧」。"
+            },
+            {
+              "japanese": "「落ちろ、落ちろ」と 彼は 木を 揺らした。",
+              "chinese": "他搖樹說「落吧、落吧」。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "落ちれば",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちれば",
+          "sentence": [
+            {
+              "japanese": "荷物が 落ちれば 壊れる。",
+              "chinese": "行李掉的話會壞。"
+            },
+            {
+              "japanese": "葉が 落ちれば 秋だ。",
+              "chinese": "葉子落了就是秋天。"
+            },
+            {
+              "japanese": "本が 落ちれば 音が する。",
+              "chinese": "書掉了的話會發出聲音。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "落ちられる",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちられる",
+          "sentence": [
+            {
+              "japanese": "棚の 荷物に 落ちられる と、 けがを する 危険が ある。",
+              "chinese": "架子上的東西掉落，有受傷的危險。"
+            },
+            {
+              "japanese": "夜中に 庭の 木から 枝に 落ちられる と、 窓が 割れる。",
+              "chinese": "半夜樹枝掉下來，窗戶就會破。"
+            },
+            {
+              "japanese": "山で 石に 落ちられる と、 道が 通れなく なる。",
+              "chinese": "山上的石頭掉落，道路就無法通行。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "落ちさせる",
+          "group": "2",
+          "chinese": "掉落; 落下",
+          "japanese": "おちさせる",
+          "sentence": [
+            {
+              "japanese": "強い 風が 荷物を 落ちさせる。",
+              "chinese": "強風使行李掉落。"
+            },
+            {
+              "japanese": "子どもが 木を 揺らして 葉を 落ちさせる。",
+              "chinese": "孩子搖樹使葉子落下。"
+            },
+            {
+              "japanese": "地震が 本を 落ちさせる。",
+              "chinese": "地震使書掉落。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "なくなる",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくなる",
+          "sentence": [
+            {
+              "japanese": "車で 遠くまで 行くと ガソリンが なくなる。",
+              "chinese": "開車跑遠汽油就會用完。"
+            },
+            {
+              "japanese": "冷蔵庫の 牛乳が なくなる。",
+              "chinese": "冰箱裡的牛奶沒了。"
+            },
+            {
+              "japanese": "使う うちに お金が なくなる。",
+              "chinese": "用著用著錢就沒了。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "なくなります",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくなります",
+          "sentence": [
+            {
+              "japanese": "この 車は ガソリンが なくなります。",
+              "chinese": "這輛車汽油會用完。"
+            },
+            {
+              "japanese": "月末に なると お金が なくなります。",
+              "chinese": "到了月底錢就沒了。"
+            },
+            {
+              "japanese": "冬は 野菜が なくなります。",
+              "chinese": "冬天蔬菜會沒有。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "なくなりません",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくなりません",
+          "sentence": [
+            {
+              "japanese": "まだ ガソリンは なくなりません。",
+              "chinese": "汽油還沒用完。"
+            },
+            {
+              "japanese": "たくさん 買った ので 食べ物は なくなりません。",
+              "chinese": "買了很多，食物不會沒有。"
+            },
+            {
+              "japanese": "この 電池は まだ なくなりません。",
+              "chinese": "這顆電池還沒用完。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "なくなりました",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくなりました",
+          "sentence": [
+            {
+              "japanese": "さっき ガソリンが なくなりました。",
+              "chinese": "剛剛汽油用完了。"
+            },
+            {
+              "japanese": "月の 始めに お金が なくなりました。",
+              "chinese": "月初錢就沒了。"
+            },
+            {
+              "japanese": "人気の 野菜は すぐ なくなりました。",
+              "chinese": "受歡迎的蔬菜馬上就沒了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "なくなりませんでした",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくなりませんでした",
+          "sentence": [
+            {
+              "japanese": "ガソリンは まだ なくなりませんでした。",
+              "chinese": "汽油還沒用完。"
+            },
+            {
+              "japanese": "たくさん 買った ので 水は なくなりませんでした。",
+              "chinese": "買了很多，水沒有用完。"
+            },
+            {
+              "japanese": "節約した ので お金は なくなりませんでした。",
+              "chinese": "因為節約了，錢沒有用完。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "なくならない",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくならない",
+          "sentence": [
+            {
+              "japanese": "まだ ガソリンは なくならない。",
+              "chinese": "汽油還沒用完。"
+            },
+            {
+              "japanese": "お金が なくならない ように 節約する。",
+              "chinese": "為了不讓錢用完而節約。"
+            },
+            {
+              "japanese": "冬でも 野菜は なくならない。",
+              "chinese": "就算冬天蔬菜也不會沒有。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "なくなった",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくなった",
+          "sentence": [
+            {
+              "japanese": "昨日 ガソリンが なくなった。",
+              "chinese": "昨天汽油用完了。"
+            },
+            {
+              "japanese": "お金が なくなった ので 銀行へ 行った。",
+              "chinese": "錢沒了，所以去了銀行。"
+            },
+            {
+              "japanese": "パンが なくなった ので 買いに 行く。",
+              "chinese": "麵包沒了，所以去買。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "なくならなかった",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくならなかった",
+          "sentence": [
+            {
+              "japanese": "昨日 ガソリンは なくならなかった。",
+              "chinese": "昨天汽油沒有用完。"
+            },
+            {
+              "japanese": "節約した ので お金は なくならなかった。",
+              "chinese": "因為節約了，錢沒有用完。"
+            },
+            {
+              "japanese": "水は なくならなかった ので 安心した。",
+              "chinese": "水沒有用完，所以安心了。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "なくなって",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくなって",
+          "sentence": [
+            {
+              "japanese": "ガソリンが なくなって 車が 止まった。",
+              "chinese": "汽油用完，車停了。"
+            },
+            {
+              "japanese": "お金が なくなって 買えなかった。",
+              "chinese": "錢沒了，買不了。"
+            },
+            {
+              "japanese": "パンが なくなって 家族が 困った。",
+              "chinese": "麵包沒了，家人很困擾。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "なくなれる",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくなれる",
+          "sentence": [
+            {
+              "japanese": "長い 旅なら ガソリンが なくなれる。",
+              "chinese": "長途旅行的話汽油能用完。"
+            },
+            {
+              "japanese": "使えば お金は すぐ なくなれる。",
+              "chinese": "用的話錢馬上就能用完。"
+            },
+            {
+              "japanese": "電池は 一日で なくなれる。",
+              "chinese": "電池一天就能用完。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "なくなろう",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくなろう",
+          "sentence": [
+            {
+              "japanese": "ガソリンが なくなろう と して いる。",
+              "chinese": "汽油正快要沒有。"
+            },
+            {
+              "japanese": "お金が なくなろう と して いる ので 節約した。",
+              "chinese": "錢快沒了，所以節約了。"
+            },
+            {
+              "japanese": "水が なくなろう と して いる。",
+              "chinese": "水正快要沒有。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "なくなれ",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくなれ",
+          "sentence": [
+            {
+              "japanese": "「早く なくなれ！」と 子どもは 苦い 薬を にらんだ。",
+              "chinese": "「快點消失！」孩子瞪著苦藥。"
+            },
+            {
+              "japanese": "「この 痛みが なくなれ」と 母は つぶやいた。",
+              "chinese": "「這股痛楚消失吧」母親喃喃自語。"
+            },
+            {
+              "japanese": "「心配が なくなれ」と 父は 何度も 言った。",
+              "chinese": "「擔心的事消失吧」父親說了好幾次。"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "なくなれば",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくなれば",
+          "sentence": [
+            {
+              "japanese": "ガソリンが なくなれば 車が 走れない。",
+              "chinese": "汽油沒了車就跑不了。"
+            },
+            {
+              "japanese": "お金が なくなれば 困る。",
+              "chinese": "錢沒了就困擾。"
+            },
+            {
+              "japanese": "パンが なくなれば 買いに 行く。",
+              "chinese": "麵包沒了就去買。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "なくなられる",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくなられる",
+          "sentence": [
+            {
+              "japanese": "定期券に なくなられる と、 電車に 乗れない。",
+              "chinese": "定期票一不見，就搭不了電車。"
+            },
+            {
+              "japanese": "台所の 米に なくなられる と、 夕飯を 作れない。",
+              "chinese": "廚房的米一用完，就做不成晚飯。"
+            },
+            {
+              "japanese": "ガソリンに なくなられる と、 途中で 車が 止まる。",
+              "chinese": "汽油一用完，車子就在半路停住。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "なくならせる",
+          "group": "1",
+          "chinese": "沒有了; 用完; 消失",
+          "japanese": "なくならせる",
+          "sentence": [
+            {
+              "japanese": "区は 再開発で 古い 家を なくならせる 計画だ。",
+              "chinese": "區公所計畫透過再開發讓老房子消失。"
+            },
+            {
+              "japanese": "台風が 畑の 作物を なくならせる ことが ある。",
+              "chinese": "颱風有時會毀掉田裡的作物。"
+            },
+            {
+              "japanese": "父は 長年の 借金を なくならせる ため、 必死で 働いた。",
+              "chinese": "父親為了消掉長年的債務，拼命工作。"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

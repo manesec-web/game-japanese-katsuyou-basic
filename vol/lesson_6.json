@@ -1,0 +1,3328 @@
+{
+  "lesson_6": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "食べる",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべる",
+          "sentence": [
+            {
+              "japanese": "毎晩 家族と ごはんを 食べる。",
+              "chinese": "每天晚上和家人一起吃飯。"
+            },
+            {
+              "japanese": "子どもは 野菜を 食べる。",
+              "chinese": "小孩子吃蔬菜。"
+            },
+            {
+              "japanese": "朝は パンを 食べる。",
+              "chinese": "早上吃麵包。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "食べます",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべます",
+          "sentence": [
+            {
+              "japanese": "毎朝 パンを 食べます。",
+              "chinese": "每天早上吃麵包。"
+            },
+            {
+              "japanese": "昼ごはんは 教室で 食べます。",
+              "chinese": "午飯在教室吃。"
+            },
+            {
+              "japanese": "今夜は 魚を 食べます。",
+              "chinese": "今晚吃魚。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "食べません",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべません",
+          "sentence": [
+            {
+              "japanese": "私は 肉を 食べません。",
+              "chinese": "我不吃肉。"
+            },
+            {
+              "japanese": "朝ごはんは 食べません。",
+              "chinese": "不吃早餐。"
+            },
+            {
+              "japanese": "子どもは ピーマンを 食べません。",
+              "chinese": "小孩子不吃青椒。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "食べました",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべました",
+          "sentence": [
+            {
+              "japanese": "さっき 卵を 食べました。",
+              "chinese": "剛才吃了蛋。"
+            },
+            {
+              "japanese": "昨日は レストランで 食べました。",
+              "chinese": "昨天在餐廳吃了飯。"
+            },
+            {
+              "japanese": "もう 昼ごはんを 食べました。",
+              "chinese": "已經吃過午飯了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "食べませんでした",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべませんでした",
+          "sentence": [
+            {
+              "japanese": "今朝は 何も 食べませんでした。",
+              "chinese": "今天早上什麼都沒吃。"
+            },
+            {
+              "japanese": "昨日は 肉を 食べませんでした。",
+              "chinese": "昨天沒吃肉。"
+            },
+            {
+              "japanese": "時間が なくて 朝ごはんを 食べませんでした。",
+              "chinese": "因為沒時間，沒吃早餐。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "食べない",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべない",
+          "sentence": [
+            {
+              "japanese": "今日は あまり 食べない。",
+              "chinese": "今天不太吃。"
+            },
+            {
+              "japanese": "私は 魚を 食べない。",
+              "chinese": "我不吃魚。"
+            },
+            {
+              "japanese": "子どもは にんじんを 食べない。",
+              "chinese": "小孩子不吃胡蘿蔔。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "食べた",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべた",
+          "sentence": [
+            {
+              "japanese": "昨日 友達と すしを 食べた。",
+              "chinese": "昨天和朋友吃了壽司。"
+            },
+            {
+              "japanese": "もう 晩ごはんを 食べた。",
+              "chinese": "已經吃過晚飯了。"
+            },
+            {
+              "japanese": "学校で パンを 食べた。",
+              "chinese": "在學校吃了麵包。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "食べなかった",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべなかった",
+          "sentence": [
+            {
+              "japanese": "今朝は パンを 食べなかった。",
+              "chinese": "今天早上沒吃麵包。"
+            },
+            {
+              "japanese": "昨日は 何も 食べなかった。",
+              "chinese": "昨天什麼都沒吃。"
+            },
+            {
+              "japanese": "忙しくて 昼ごはんを 食べなかった。",
+              "chinese": "因為忙，沒吃午飯。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "食べて",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべて",
+          "sentence": [
+            {
+              "japanese": "朝ごはんを 食べて 学校へ 行きます。",
+              "chinese": "吃早餐後去學校。"
+            },
+            {
+              "japanese": "パンを 食べて 出かけます。",
+              "chinese": "吃麵包後出門。"
+            },
+            {
+              "japanese": "すしを 食べて 元気に なりました。",
+              "chinese": "吃了壽司後精神變好了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "食べられる",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべられる",
+          "sentence": [
+            {
+              "japanese": "この きのこは 食べられる。",
+              "chinese": "這個香菇可以吃。"
+            },
+            {
+              "japanese": "子どもは もう 一人で 食べられる。",
+              "chinese": "小孩子已經能自己吃了。"
+            },
+            {
+              "japanese": "この 店では 魚が 食べられる。",
+              "chinese": "在這家店可以吃到魚。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "食べよう",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべよう",
+          "sentence": [
+            {
+              "japanese": "いっしょに 昼ごはんを 食べよう。",
+              "chinese": "一起吃午飯吧。"
+            },
+            {
+              "japanese": "今日は すしを 食べよう。",
+              "chinese": "今天吃壽司吧。"
+            },
+            {
+              "japanese": "早く 食べよう。",
+              "chinese": "快點吃吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "食べろ",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべろ",
+          "sentence": [
+            {
+              "japanese": "早く 食べろ。",
+              "chinese": "快點吃！"
+            },
+            {
+              "japanese": "野菜も 食べろ。",
+              "chinese": "蔬菜也要吃！"
+            },
+            {
+              "japanese": "残さず 食べろ。",
+              "chinese": "不要剩，全部吃掉！"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "食べれば",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべれば",
+          "sentence": [
+            {
+              "japanese": "朝ごはんを 食べれば 元気に なります。",
+              "chinese": "吃早餐就會有精神。"
+            },
+            {
+              "japanese": "野菜を 食べれば 体に いいです。",
+              "chinese": "吃蔬菜對身體好。"
+            },
+            {
+              "japanese": "ゆっくり 食べれば おなかが いっぱいに なります。",
+              "chinese": "慢慢吃就會吃飽。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "食べられる",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべられる",
+          "sentence": [
+            {
+              "japanese": "魚は 猫に 食べられる。",
+              "chinese": "魚被貓吃掉了。"
+            },
+            {
+              "japanese": "私の ケーキは よく 弟に 食べられる。",
+              "chinese": "我的蛋糕常被弟弟吃掉。"
+            },
+            {
+              "japanese": "残した ごはんは 犬に 食べられる。",
+              "chinese": "剩下的飯被狗吃掉。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "食べさせる",
+          "group": "2",
+          "chinese": "吃; 進食",
+          "japanese": "たべさせる",
+          "sentence": [
+            {
+              "japanese": "母は 毎日 子どもに 野菜を 食べさせる。",
+              "chinese": "媽媽每天讓孩子吃蔬菜。"
+            },
+            {
+              "japanese": "兄は 犬に ごはんを 食べさせる。",
+              "chinese": "哥哥餵狗吃飯。"
+            },
+            {
+              "japanese": "先生は 生徒に パンを 食べさせる。",
+              "chinese": "老師讓學生吃麵包。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "飲む",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のむ",
+          "sentence": [
+            {
+              "japanese": "毎朝 水を 飲む。",
+              "chinese": "每天早上喝水。"
+            },
+            {
+              "japanese": "暑い 日は お茶を 飲む。",
+              "chinese": "熱天喝茶。"
+            },
+            {
+              "japanese": "夜は 牛乳を 飲む。",
+              "chinese": "晚上喝牛奶。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "飲みます",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のみます",
+          "sentence": [
+            {
+              "japanese": "朝ごはんの とき 牛乳を 飲みます。",
+              "chinese": "吃早餐時喝牛奶。"
+            },
+            {
+              "japanese": "毎日 水を たくさん 飲みます。",
+              "chinese": "每天喝很多水。"
+            },
+            {
+              "japanese": "父は 晩に お茶を 飲みます。",
+              "chinese": "父親晚上喝茶。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "飲みません",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のみません",
+          "sentence": [
+            {
+              "japanese": "私は ビールを 飲みません。",
+              "chinese": "我不喝啤酒。"
+            },
+            {
+              "japanese": "朝は コーヒーを 飲みません。",
+              "chinese": "早上不喝咖啡。"
+            },
+            {
+              "japanese": "子どもは お酒を 飲みません。",
+              "chinese": "小孩子不喝酒。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "飲みました",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のみました",
+          "sentence": [
+            {
+              "japanese": "さっき ジュースを 飲みました。",
+              "chinese": "剛才喝了果汁。"
+            },
+            {
+              "japanese": "昨日 友達と お茶を 飲みました。",
+              "chinese": "昨天和朋友喝了茶。"
+            },
+            {
+              "japanese": "もう 薬を 飲みました。",
+              "chinese": "已經吃了藥。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "飲みませんでした",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のみませんでした",
+          "sentence": [
+            {
+              "japanese": "今朝は 水を 飲みませんでした。",
+              "chinese": "今天早上沒喝水。"
+            },
+            {
+              "japanese": "昨日は お酒を 飲みませんでした。",
+              "chinese": "昨天沒喝酒。"
+            },
+            {
+              "japanese": "昼に 何も 飲みませんでした。",
+              "chinese": "中午什麼都沒喝。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "飲まない",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のまない",
+          "sentence": [
+            {
+              "japanese": "私は お酒を 飲まない。",
+              "chinese": "我不喝酒。"
+            },
+            {
+              "japanese": "この 子は まだ お茶を 飲まない。",
+              "chinese": "這孩子還不喝茶。"
+            },
+            {
+              "japanese": "暑くても あまり 水を 飲まない。",
+              "chinese": "即使熱也不太喝水。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "飲んだ",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のんだ",
+          "sentence": [
+            {
+              "japanese": "昨日 ビールを 飲んだ。",
+              "chinese": "昨天喝了啤酒。"
+            },
+            {
+              "japanese": "のどが かわいて 水を 飲んだ。",
+              "chinese": "口渴就喝了水。"
+            },
+            {
+              "japanese": "朝 牛乳を 飲んだ。",
+              "chinese": "早上喝了牛奶。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "飲まなかった",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のまなかった",
+          "sentence": [
+            {
+              "japanese": "今日は 水を 飲まなかった。",
+              "chinese": "今天沒喝水。"
+            },
+            {
+              "japanese": "昨日は お酒を 飲まなかった。",
+              "chinese": "昨天沒喝酒。"
+            },
+            {
+              "japanese": "忙しくて お茶を 飲まなかった。",
+              "chinese": "因為忙，沒喝茶。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "飲んで",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のんで",
+          "sentence": [
+            {
+              "japanese": "薬を 飲んで 寝ます。",
+              "chinese": "吃藥後睡覺。"
+            },
+            {
+              "japanese": "お茶を 飲んで 休みます。",
+              "chinese": "喝茶休息一下。"
+            },
+            {
+              "japanese": "水を 飲んで 出かけます。",
+              "chinese": "喝水後出門。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "飲める",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のめる",
+          "sentence": [
+            {
+              "japanese": "この 水は 飲める。",
+              "chinese": "這水可以喝。"
+            },
+            {
+              "japanese": "子どもは もう お茶が 飲める。",
+              "chinese": "小孩子已經能喝茶了。"
+            },
+            {
+              "japanese": "ここで ジュースが 飲める。",
+              "chinese": "在這裡可以喝到果汁。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "飲もう",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のもう",
+          "sentence": [
+            {
+              "japanese": "いっしょに お茶を 飲もう。",
+              "chinese": "一起喝茶吧。"
+            },
+            {
+              "japanese": "少し 休んで 水を 飲もう。",
+              "chinese": "休息一下喝水吧。"
+            },
+            {
+              "japanese": "今日は ビールを 飲もう。",
+              "chinese": "今天喝啤酒吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "飲め",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のめ",
+          "sentence": [
+            {
+              "japanese": "この 薬を 飲め。",
+              "chinese": "把這藥喝了！"
+            },
+            {
+              "japanese": "水を もっと 飲め。",
+              "chinese": "多喝點水！"
+            },
+            {
+              "japanese": "早く 飲め。",
+              "chinese": "快點喝！"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "飲めば",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のめば",
+          "sentence": [
+            {
+              "japanese": "この 薬を 飲めば 元気に なります。",
+              "chinese": "喝了這藥就會好起來。"
+            },
+            {
+              "japanese": "水を 飲めば のどが 楽に なります。",
+              "chinese": "喝水喉嚨就會舒服。"
+            },
+            {
+              "japanese": "お茶を 飲めば 落ち着きます。",
+              "chinese": "喝茶就會平靜下來。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "飲まれる",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のまれる",
+          "sentence": [
+            {
+              "japanese": "私の ジュースは 弟に 飲まれる。",
+              "chinese": "我的果汁被弟弟喝了。"
+            },
+            {
+              "japanese": "冷蔵庫の 牛乳は いつも 兄に 飲まれる。",
+              "chinese": "冰箱裡的牛奶總是被哥哥喝掉。"
+            },
+            {
+              "japanese": "この 水は 毎朝 犬に 飲まれる。",
+              "chinese": "這水每天早上被狗喝掉。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "飲ませる",
+          "group": "1",
+          "chinese": "喝; 飲; 服用",
+          "japanese": "のませる",
+          "sentence": [
+            {
+              "japanese": "母は 子どもに 薬を 飲ませる。",
+              "chinese": "媽媽讓孩子吃藥。"
+            },
+            {
+              "japanese": "医者は 患者に 水を 飲ませる。",
+              "chinese": "醫生讓病人喝水。"
+            },
+            {
+              "japanese": "父は 犬に 水を 飲ませる。",
+              "chinese": "父親給狗喝水。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "吸う",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すう",
+          "sentence": [
+            {
+              "japanese": "父は たばこを 吸う。",
+              "chinese": "父親抽菸。"
+            },
+            {
+              "japanese": "外で たばこを 吸う。",
+              "chinese": "在外面抽菸。"
+            },
+            {
+              "japanese": "兄は よく たばこを 吸う。",
+              "chinese": "哥哥常抽菸。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "吸います",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すいます",
+          "sentence": [
+            {
+              "japanese": "父は 食後に たばこを 吸います。",
+              "chinese": "父親飯後抽菸。"
+            },
+            {
+              "japanese": "あの 人は 庭で たばこを 吸います。",
+              "chinese": "那個人在院子裡抽菸。"
+            },
+            {
+              "japanese": "兄は 一日に 何本も 吸います。",
+              "chinese": "哥哥一天抽好幾根。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "吸いません",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すいません",
+          "sentence": [
+            {
+              "japanese": "私は たばこを 吸いません。",
+              "chinese": "我不抽菸。"
+            },
+            {
+              "japanese": "母は たばこを 吸いません。",
+              "chinese": "母親不抽菸。"
+            },
+            {
+              "japanese": "客は ここで たばこを 吸いません。",
+              "chinese": "客人不在這裡抽菸。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "吸いました",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すいました",
+          "sentence": [
+            {
+              "japanese": "父は さっき たばこを 吸いました。",
+              "chinese": "父親剛才抽了菸。"
+            },
+            {
+              "japanese": "兄は 外で 一本 吸いました。",
+              "chinese": "哥哥在外面抽了一根。"
+            },
+            {
+              "japanese": "あの 人は ベンチで たばこを 吸いました。",
+              "chinese": "那個人在長椅上抽了菸。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "吸いませんでした",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すいませんでした",
+          "sentence": [
+            {
+              "japanese": "今日は たばこを 吸いませんでした。",
+              "chinese": "今天沒抽菸。"
+            },
+            {
+              "japanese": "父は 昨日 一本も 吸いませんでした。",
+              "chinese": "父親昨天一根也沒抽。"
+            },
+            {
+              "japanese": "客は ここで たばこを 吸いませんでした。",
+              "chinese": "客人沒在這裡抽菸。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "吸わない",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すわない",
+          "sentence": [
+            {
+              "japanese": "私は たばこを 吸わない。",
+              "chinese": "我不抽菸。"
+            },
+            {
+              "japanese": "この 部屋では たばこを 吸わない。",
+              "chinese": "在這個房間不抽菸。"
+            },
+            {
+              "japanese": "母は ぜんぜん 吸わない。",
+              "chinese": "母親完全不抽。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "吸った",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すった",
+          "sentence": [
+            {
+              "japanese": "父は 外で たばこを 吸った。",
+              "chinese": "父親在外面抽了菸。"
+            },
+            {
+              "japanese": "兄は さっき 一本 吸った。",
+              "chinese": "哥哥剛才抽了一根。"
+            },
+            {
+              "japanese": "休みの 日は 庭で 吸った。",
+              "chinese": "假日時在院子裡抽了菸。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "吸わなかった",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すわなかった",
+          "sentence": [
+            {
+              "japanese": "今日は たばこを 吸わなかった。",
+              "chinese": "今天沒抽菸。"
+            },
+            {
+              "japanese": "父は 昨日 一本も 吸わなかった。",
+              "chinese": "父親昨天一根也沒抽。"
+            },
+            {
+              "japanese": "忙しくて 吸わなかった。",
+              "chinese": "太忙了，沒抽。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "吸って",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すって",
+          "sentence": [
+            {
+              "japanese": "父は ベランダで たばこを 吸って います。",
+              "chinese": "父親在陽台上抽菸。"
+            },
+            {
+              "japanese": "外で 吸ってから 入って ください。",
+              "chinese": "請在外面抽完再進來。"
+            },
+            {
+              "japanese": "たばこを 吸って 休みます。",
+              "chinese": "抽菸休息一下。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "吸える",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すえる",
+          "sentence": [
+            {
+              "japanese": "ここでは たばこが 吸える。",
+              "chinese": "這裡可以抽菸。"
+            },
+            {
+              "japanese": "外なら たばこが 吸える。",
+              "chinese": "在外面的話可以抽菸。"
+            },
+            {
+              "japanese": "大人だけ たばこが 吸える。",
+              "chinese": "只有大人可以抽菸。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "吸おう",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すおう",
+          "sentence": [
+            {
+              "japanese": "外で たばこを 吸おう。",
+              "chinese": "到外面抽菸吧。"
+            },
+            {
+              "japanese": "休んでから 一本 吸おう。",
+              "chinese": "休息後抽一根吧。"
+            },
+            {
+              "japanese": "ベランダで 吸おう。",
+              "chinese": "在陽台抽吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "吸え",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すえ",
+          "sentence": [
+            {
+              "japanese": "外で 吸え。",
+              "chinese": "到外面抽！"
+            },
+            {
+              "japanese": "早く 吸え。",
+              "chinese": "快點抽！"
+            },
+            {
+              "japanese": "一本だけ 吸え。",
+              "chinese": "只抽一根！"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "吸えば",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すえば",
+          "sentence": [
+            {
+              "japanese": "たばこを 吸えば 体に 悪いです。",
+              "chinese": "抽菸對身體不好。"
+            },
+            {
+              "japanese": "外で 吸えば だれも 文句を 言いません。",
+              "chinese": "在外面抽的話沒人會抱怨。"
+            },
+            {
+              "japanese": "そんなに 吸えば せきが 出ます。",
+              "chinese": "抽那麼多會咳嗽。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "吸われる",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すわれる",
+          "sentence": [
+            {
+              "japanese": "毎晩 隣の 部屋で たばこを 吸われる。",
+              "chinese": "每天晚上隔壁房間有人抽菸，很困擾。"
+            },
+            {
+              "japanese": "父に たばこを 吸われる。",
+              "chinese": "父親抽菸，讓我受不了。"
+            },
+            {
+              "japanese": "ベランダで たばこを 吸われる。",
+              "chinese": "有人在陽台抽菸，很困擾。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "吸わせる",
+          "group": "1",
+          "chinese": "抽（菸）; 吸（菸）",
+          "japanese": "すわせる",
+          "sentence": [
+            {
+              "japanese": "父は 客に たばこを 吸わせる。",
+              "chinese": "父親讓客人抽菸。"
+            },
+            {
+              "japanese": "兄は 友達に たばこを 吸わせる。",
+              "chinese": "哥哥讓朋友抽菸。"
+            },
+            {
+              "japanese": "店は 客に そこで たばこを 吸わせる。",
+              "chinese": "店家讓客人在那裡抽菸。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "見る",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みる",
+          "sentence": [
+            {
+              "japanese": "毎日 テレビを 見る。",
+              "chinese": "每天看電視。"
+            },
+            {
+              "japanese": "夜は 星を 見る。",
+              "chinese": "晚上看星星。"
+            },
+            {
+              "japanese": "週末に 映画を 見る。",
+              "chinese": "週末看電影。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "見ます",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みます",
+          "sentence": [
+            {
+              "japanese": "家で テレビを 見ます。",
+              "chinese": "在家看電視。"
+            },
+            {
+              "japanese": "子どもたちは アニメを 見ます。",
+              "chinese": "孩子們看動畫。"
+            },
+            {
+              "japanese": "父は 毎晩 ニュースを 見ます。",
+              "chinese": "父親每晚看新聞。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "見ません",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みません",
+          "sentence": [
+            {
+              "japanese": "私は あまり テレビを 見ません。",
+              "chinese": "我不太看電視。"
+            },
+            {
+              "japanese": "母は サッカーを 見ません。",
+              "chinese": "母親不看足球。"
+            },
+            {
+              "japanese": "夜は テレビを 見ません。",
+              "chinese": "晚上不看電視。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "見ました",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みました",
+          "sentence": [
+            {
+              "japanese": "昨日 映画を 見ました。",
+              "chinese": "昨天看了電影。"
+            },
+            {
+              "japanese": "さっき 写真を 見ました。",
+              "chinese": "剛才看了照片。"
+            },
+            {
+              "japanese": "もう その ビデオを 見ました。",
+              "chinese": "已經看了那卷錄影帶。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "見ませんでした",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は テレビを 見ませんでした。",
+              "chinese": "昨天沒看電視。"
+            },
+            {
+              "japanese": "忙しくて 映画を 見ませんでした。",
+              "chinese": "因為忙，沒看電影。"
+            },
+            {
+              "japanese": "私は その 試合を 見ませんでした。",
+              "chinese": "我沒看那場比賽。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "見ない",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みない",
+          "sentence": [
+            {
+              "japanese": "今日は テレビを 見ない。",
+              "chinese": "今天不看電視。"
+            },
+            {
+              "japanese": "弟は アニメを 見ない。",
+              "chinese": "弟弟不看動畫。"
+            },
+            {
+              "japanese": "私は ホラーを 見ない。",
+              "chinese": "我不看恐怖片。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "見た",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みた",
+          "sentence": [
+            {
+              "japanese": "昨日 古い 映画を 見た。",
+              "chinese": "昨天看了老電影。"
+            },
+            {
+              "japanese": "庭で 花を 見た。",
+              "chinese": "在院子裡看了花。"
+            },
+            {
+              "japanese": "学校で 写真を 見た。",
+              "chinese": "在學校看了照片。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "見なかった",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みなかった",
+          "sentence": [
+            {
+              "japanese": "今日は テレビを 見なかった。",
+              "chinese": "今天沒看電視。"
+            },
+            {
+              "japanese": "昨日は 試合を 見なかった。",
+              "chinese": "昨天沒看比賽。"
+            },
+            {
+              "japanese": "時間が なくて 映画を 見なかった。",
+              "chinese": "因為沒時間，沒看電影。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "見て",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みて",
+          "sentence": [
+            {
+              "japanese": "テレビを 見て 笑いました。",
+              "chinese": "看著電視笑了。"
+            },
+            {
+              "japanese": "写真を 見て 思い出しました。",
+              "chinese": "看了照片想起來了。"
+            },
+            {
+              "japanese": "外を 見て ください。",
+              "chinese": "請看看外面。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "見られる",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みられる",
+          "sentence": [
+            {
+              "japanese": "ここから 山が 見られる。",
+              "chinese": "從這裡可以看到山。"
+            },
+            {
+              "japanese": "この 店では 古い 映画が 見られる。",
+              "chinese": "在這家店可以看老電影。"
+            },
+            {
+              "japanese": "夜は 星が よく 見られる。",
+              "chinese": "晚上星星看得很清楚。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "見よう",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みよう",
+          "sentence": [
+            {
+              "japanese": "いっしょに 映画を 見よう。",
+              "chinese": "一起看電影吧。"
+            },
+            {
+              "japanese": "テレビの ニュースを 見よう。",
+              "chinese": "看電視新聞吧。"
+            },
+            {
+              "japanese": "この 写真を 見よう。",
+              "chinese": "看這張照片吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "見ろ",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みろ",
+          "sentence": [
+            {
+              "japanese": "よく 見ろ。",
+              "chinese": "仔細看！"
+            },
+            {
+              "japanese": "前を 見ろ。",
+              "chinese": "看前面！"
+            },
+            {
+              "japanese": "この 写真を 見ろ。",
+              "chinese": "看這張照片！"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "見れば",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みれば",
+          "sentence": [
+            {
+              "japanese": "この 写真を 見れば わかります。",
+              "chinese": "看這張照片就明白了。"
+            },
+            {
+              "japanese": "テレビを 見れば 天気が わかります。",
+              "chinese": "看電視就知道天氣。"
+            },
+            {
+              "japanese": "外を 見れば 雨が ふって います。",
+              "chinese": "看外面正在下雨。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "見られる",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みられる",
+          "sentence": [
+            {
+              "japanese": "私の 日記は 妹に 見られる。",
+              "chinese": "我的日記被妹妹看了。"
+            },
+            {
+              "japanese": "この 庭は 外から よく 見られる。",
+              "chinese": "這個院子從外面常被看到。"
+            },
+            {
+              "japanese": "あの 家は 通りから 見られる。",
+              "chinese": "那棟房子從街上可以看到。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "見させる",
+          "group": "2",
+          "chinese": "看; 觀看; 觀賞",
+          "japanese": "みさせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 映画を 見させる。",
+              "chinese": "老師讓學生看電影。"
+            },
+            {
+              "japanese": "母は 子どもに テレビを 見させる。",
+              "chinese": "媽媽讓孩子看電視。"
+            },
+            {
+              "japanese": "部長は 部下に レポートを 見させる。",
+              "chinese": "部長讓部屬看報告。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "聞く",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "きく",
+          "sentence": [
+            {
+              "japanese": "毎朝 ラジオを 聞く。",
+              "chinese": "每天早上聽收音機。"
+            },
+            {
+              "japanese": "音楽を 聞く。",
+              "chinese": "聽音樂。"
+            },
+            {
+              "japanese": "わからない ときは 先生に 聞く。",
+              "chinese": "不懂的時候問老師。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "聞きます",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "ききます",
+          "sentence": [
+            {
+              "japanese": "電車で 音楽を 聞きます。",
+              "chinese": "在電車上聽音樂。"
+            },
+            {
+              "japanese": "毎晩 ラジオを 聞きます。",
+              "chinese": "每天晚上聽收音機。"
+            },
+            {
+              "japanese": "妹は よく 歌を 聞きます。",
+              "chinese": "妹妹常聽歌。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "聞きません",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "ききません",
+          "sentence": [
+            {
+              "japanese": "私は ラジオを 聞きません。",
+              "chinese": "我不聽收音機。"
+            },
+            {
+              "japanese": "父は クラシックを 聞きません。",
+              "chinese": "父親不聽古典樂。"
+            },
+            {
+              "japanese": "この 部屋では 音楽を 聞きません。",
+              "chinese": "在這個房間不聽音樂。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "聞きました",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "ききました",
+          "sentence": [
+            {
+              "japanese": "昨日 その 話を 聞きました。",
+              "chinese": "昨天聽了那件事。"
+            },
+            {
+              "japanese": "朝 ラジオを 聞きました。",
+              "chinese": "早上聽了收音機。"
+            },
+            {
+              "japanese": "先生に もう 聞きました。",
+              "chinese": "已經問過老師了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "聞きませんでした",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "ききませんでした",
+          "sentence": [
+            {
+              "japanese": "私は その ニュースを 聞きませんでした。",
+              "chinese": "我沒聽到那個新聞。"
+            },
+            {
+              "japanese": "昨日は 音楽を 聞きませんでした。",
+              "chinese": "昨天沒聽音樂。"
+            },
+            {
+              "japanese": "だれも 先生に 聞きませんでした。",
+              "chinese": "沒有人問老師。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "聞かない",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "きかない",
+          "sentence": [
+            {
+              "japanese": "今日は ラジオを 聞かない。",
+              "chinese": "今天不聽收音機。"
+            },
+            {
+              "japanese": "弟は 私の 話を 聞かない。",
+              "chinese": "弟弟不聽我說話。"
+            },
+            {
+              "japanese": "あまり 音楽を 聞かない。",
+              "chinese": "不太聽音樂。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "聞いた",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "きいた",
+          "sentence": [
+            {
+              "japanese": "昨日 いい 音楽を 聞いた。",
+              "chinese": "昨天聽了好音樂。"
+            },
+            {
+              "japanese": "先生に 聞いた。",
+              "chinese": "問了老師。"
+            },
+            {
+              "japanese": "友達の 話を 聞いた。",
+              "chinese": "聽了朋友的話。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "聞かなかった",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "きかなかった",
+          "sentence": [
+            {
+              "japanese": "今日は ラジオを 聞かなかった。",
+              "chinese": "今天沒聽收音機。"
+            },
+            {
+              "japanese": "私は その 話を 聞かなかった。",
+              "chinese": "我沒聽那件事。"
+            },
+            {
+              "japanese": "忙しくて 音楽を 聞かなかった。",
+              "chinese": "因為忙，沒聽音樂。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "聞いて",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "きいて",
+          "sentence": [
+            {
+              "japanese": "音楽を 聞いて 休みます。",
+              "chinese": "聽音樂休息。"
+            },
+            {
+              "japanese": "先生の 話を 聞いて ください。",
+              "chinese": "請聽老師說。"
+            },
+            {
+              "japanese": "ラジオを 聞いて 勉強します。",
+              "chinese": "一邊聽收音機一邊學習。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "聞ける",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "きける",
+          "sentence": [
+            {
+              "japanese": "ここで 音楽が 聞ける。",
+              "chinese": "在這裡可以聽音樂。"
+            },
+            {
+              "japanese": "この ラジオで 英語が 聞ける。",
+              "chinese": "用這台收音機可以聽英語。"
+            },
+            {
+              "japanese": "静かなら 小さい 音も 聞ける。",
+              "chinese": "安靜的話連小聲音也聽得到。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "聞こう",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "きこう",
+          "sentence": [
+            {
+              "japanese": "いっしょに 音楽を 聞こう。",
+              "chinese": "一起聽音樂吧。"
+            },
+            {
+              "japanese": "まず 先生に 聞こう。",
+              "chinese": "先問老師吧。"
+            },
+            {
+              "japanese": "ラジオを 聞こう。",
+              "chinese": "聽收音機吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "聞け",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "きけ",
+          "sentence": [
+            {
+              "japanese": "よく 聞け。",
+              "chinese": "仔細聽！"
+            },
+            {
+              "japanese": "先生の 話を 聞け。",
+              "chinese": "聽老師的話！"
+            },
+            {
+              "japanese": "静かに 聞け。",
+              "chinese": "安靜地聽！"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "聞けば",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "きけば",
+          "sentence": [
+            {
+              "japanese": "先生に 聞けば わかります。",
+              "chinese": "問老師就明白了。"
+            },
+            {
+              "japanese": "ラジオを 聞けば 天気が わかります。",
+              "chinese": "聽收音機就知道天氣。"
+            },
+            {
+              "japanese": "この CDを 聞けば 元気に なります。",
+              "chinese": "聽這張 CD 就會有精神。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "聞かれる",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "きかれる",
+          "sentence": [
+            {
+              "japanese": "私は 先生に 名前を 聞かれる。",
+              "chinese": "我被老師問了名字。"
+            },
+            {
+              "japanese": "駅で 知らない 人に 道を 聞かれる。",
+              "chinese": "在車站被陌生人問路。"
+            },
+            {
+              "japanese": "毎日 同じ 質問を 聞かれる。",
+              "chinese": "每天被問同樣的問題。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "聞かせる",
+          "group": "1",
+          "chinese": "聽; 問",
+          "japanese": "きかせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に テープを 聞かせる。",
+              "chinese": "老師讓學生聽錄音帶。"
+            },
+            {
+              "japanese": "母は 子どもに 音楽を 聞かせる。",
+              "chinese": "媽媽讓孩子聽音樂。"
+            },
+            {
+              "japanese": "父は 私に ラジオを 聞かせる。",
+              "chinese": "父親讓我聽收音機。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "読む",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よむ",
+          "sentence": [
+            {
+              "japanese": "毎晩 本を 読む。",
+              "chinese": "每天晚上讀書。"
+            },
+            {
+              "japanese": "電車で 新聞を 読む。",
+              "chinese": "在電車上看報紙。"
+            },
+            {
+              "japanese": "子どもは 絵本を 読む。",
+              "chinese": "小孩子看繪本。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "読みます",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よみます",
+          "sentence": [
+            {
+              "japanese": "図書館で 本を 読みます。",
+              "chinese": "在圖書館看書。"
+            },
+            {
+              "japanese": "父は 毎朝 新聞を 読みます。",
+              "chinese": "父親每天早上看報紙。"
+            },
+            {
+              "japanese": "学生は 日本語の 本を 読みます。",
+              "chinese": "學生讀日文書。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "読みません",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よみません",
+          "sentence": [
+            {
+              "japanese": "私は あまり 本を 読みません。",
+              "chinese": "我不太看書。"
+            },
+            {
+              "japanese": "母は 新聞を 読みません。",
+              "chinese": "母親不看報紙。"
+            },
+            {
+              "japanese": "夜は 何も 読みません。",
+              "chinese": "晚上什麼都不讀。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "読みました",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よみました",
+          "sentence": [
+            {
+              "japanese": "昨日 その 本を 読みました。",
+              "chinese": "昨天讀了那本書。"
+            },
+            {
+              "japanese": "朝 新聞を 読みました。",
+              "chinese": "早上看了報紙。"
+            },
+            {
+              "japanese": "もう 手紙を 読みました。",
+              "chinese": "已經讀了信。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "読みませんでした",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よみませんでした",
+          "sentence": [
+            {
+              "japanese": "昨日は 本を 読みませんでした。",
+              "chinese": "昨天沒看書。"
+            },
+            {
+              "japanese": "私は その 手紙を 読みませんでした。",
+              "chinese": "我沒讀那封信。"
+            },
+            {
+              "japanese": "忙しくて 新聞を 読みませんでした。",
+              "chinese": "因為忙，沒看報紙。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "読まない",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よまない",
+          "sentence": [
+            {
+              "japanese": "今日は 本を 読まない。",
+              "chinese": "今天不看書。"
+            },
+            {
+              "japanese": "弟は 新聞を 読まない。",
+              "chinese": "弟弟不看報紙。"
+            },
+            {
+              "japanese": "夜は あまり 読まない。",
+              "chinese": "晚上不太讀。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "読んだ",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よんだ",
+          "sentence": [
+            {
+              "japanese": "昨日 友達の 手紙を 読んだ。",
+              "chinese": "昨天讀了朋友的信。"
+            },
+            {
+              "japanese": "学校で 新聞を 読んだ。",
+              "chinese": "在學校看了報紙。"
+            },
+            {
+              "japanese": "もう その 本を 読んだ。",
+              "chinese": "已經讀了那本書。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "読まなかった",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よまなかった",
+          "sentence": [
+            {
+              "japanese": "今朝は 新聞を 読まなかった。",
+              "chinese": "今天早上沒看報紙。"
+            },
+            {
+              "japanese": "昨日は 本を 読まなかった。",
+              "chinese": "昨天沒看書。"
+            },
+            {
+              "japanese": "時間が なくて 手紙を 読まなかった。",
+              "chinese": "因為沒時間，沒讀信。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "読んで",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よんで",
+          "sentence": [
+            {
+              "japanese": "本を 読んで 寝ます。",
+              "chinese": "看書後睡覺。"
+            },
+            {
+              "japanese": "新聞を 読んで 出かけます。",
+              "chinese": "看完報紙出門。"
+            },
+            {
+              "japanese": "手紙を 読んで 泣きました。",
+              "chinese": "讀了信就哭了。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "読める",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よめる",
+          "sentence": [
+            {
+              "japanese": "私は もう この 本が 読める。",
+              "chinese": "我已經能讀這本書了。"
+            },
+            {
+              "japanese": "子どもは ひらがなが 読める。",
+              "chinese": "小孩子會讀平假名。"
+            },
+            {
+              "japanese": "ここで 古い 新聞が 読める。",
+              "chinese": "在這裡可以讀到舊報紙。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "読もう",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よもう",
+          "sentence": [
+            {
+              "japanese": "いっしょに 本を 読もう。",
+              "chinese": "一起讀書吧。"
+            },
+            {
+              "japanese": "寝る 前に 少し 読もう。",
+              "chinese": "睡前讀一點吧。"
+            },
+            {
+              "japanese": "新聞を 読もう。",
+              "chinese": "看報紙吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "読め",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よめ",
+          "sentence": [
+            {
+              "japanese": "もっと 本を 読め。",
+              "chinese": "多讀點書！"
+            },
+            {
+              "japanese": "この 手紙を 読め。",
+              "chinese": "讀這封信！"
+            },
+            {
+              "japanese": "大きな 声で 読め。",
+              "chinese": "大聲讀！"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "読めば",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よめば",
+          "sentence": [
+            {
+              "japanese": "この 本を 読めば わかります。",
+              "chinese": "讀這本書就明白了。"
+            },
+            {
+              "japanese": "毎日 読めば 漢字を 覚えます。",
+              "chinese": "每天讀就能記住漢字。"
+            },
+            {
+              "japanese": "新聞を 読めば ニュースが わかります。",
+              "chinese": "看報紙就知道新聞。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "読まれる",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よまれる",
+          "sentence": [
+            {
+              "japanese": "この 本は 多くの 人に 読まれる。",
+              "chinese": "這本書被很多人閱讀。"
+            },
+            {
+              "japanese": "その 手紙は 家族に 読まれる。",
+              "chinese": "那封信被家人讀了。"
+            },
+            {
+              "japanese": "毎朝 この 新聞が 読まれる。",
+              "chinese": "每天早上這份報紙被閱讀。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "読ませる",
+          "group": "1",
+          "chinese": "閱讀; 讀",
+          "japanese": "よませる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 本を 読ませる。",
+              "chinese": "老師讓學生讀書。"
+            },
+            {
+              "japanese": "母は 子どもに 手紙を 読ませる。",
+              "chinese": "媽媽讓孩子讀信。"
+            },
+            {
+              "japanese": "父は 私に 新聞を 読ませる。",
+              "chinese": "父親讓我看報紙。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "書く",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かく",
+          "sentence": [
+            {
+              "japanese": "毎日 日記を 書く。",
+              "chinese": "每天寫日記。"
+            },
+            {
+              "japanese": "母に 手紙を 書く。",
+              "chinese": "寫信給母親。"
+            },
+            {
+              "japanese": "学生は レポートを 書く。",
+              "chinese": "學生寫報告。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "書きます",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かきます",
+          "sentence": [
+            {
+              "japanese": "ノートに 漢字を 書きます。",
+              "chinese": "在筆記本上寫漢字。"
+            },
+            {
+              "japanese": "先生に 手紙を 書きます。",
+              "chinese": "寫信給老師。"
+            },
+            {
+              "japanese": "毎晩 日記を 書きます。",
+              "chinese": "每天晚上寫日記。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "書きません",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かきません",
+          "sentence": [
+            {
+              "japanese": "私は 日記を 書きません。",
+              "chinese": "我不寫日記。"
+            },
+            {
+              "japanese": "今日は 手紙を 書きません。",
+              "chinese": "今天不寫信。"
+            },
+            {
+              "japanese": "弟は 漢字を 書きません。",
+              "chinese": "弟弟不寫漢字。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "書きました",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かきました",
+          "sentence": [
+            {
+              "japanese": "昨日 友達に 手紙を 書きました。",
+              "chinese": "昨天寫信給朋友。"
+            },
+            {
+              "japanese": "もう レポートを 書きました。",
+              "chinese": "已經寫了報告。"
+            },
+            {
+              "japanese": "黒板に 名前を 書きました。",
+              "chinese": "在黑板上寫了名字。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "書きませんでした",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かきませんでした",
+          "sentence": [
+            {
+              "japanese": "今日は 日記を 書きませんでした。",
+              "chinese": "今天沒寫日記。"
+            },
+            {
+              "japanese": "私は その 手紙を 書きませんでした。",
+              "chinese": "我沒寫那封信。"
+            },
+            {
+              "japanese": "忙しくて レポートを 書きませんでした。",
+              "chinese": "因為忙，沒寫報告。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "書かない",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かかない",
+          "sentence": [
+            {
+              "japanese": "今日は 手紙を 書かない。",
+              "chinese": "今天不寫信。"
+            },
+            {
+              "japanese": "弟は 日記を 書かない。",
+              "chinese": "弟弟不寫日記。"
+            },
+            {
+              "japanese": "夜は 何も 書かない。",
+              "chinese": "晚上什麼都不寫。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "書いた",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かいた",
+          "sentence": [
+            {
+              "japanese": "昨日 母に 手紙を 書いた。",
+              "chinese": "昨天寫信給母親。"
+            },
+            {
+              "japanese": "学校で レポートを 書いた。",
+              "chinese": "在學校寫了報告。"
+            },
+            {
+              "japanese": "ノートに 名前を 書いた。",
+              "chinese": "在筆記本上寫了名字。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "書かなかった",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かかなかった",
+          "sentence": [
+            {
+              "japanese": "今朝は 日記を 書かなかった。",
+              "chinese": "今天早上沒寫日記。"
+            },
+            {
+              "japanese": "昨日は 手紙を 書かなかった。",
+              "chinese": "昨天沒寫信。"
+            },
+            {
+              "japanese": "時間が なくて レポートを 書かなかった。",
+              "chinese": "因為沒時間，沒寫報告。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "書いて",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かいて",
+          "sentence": [
+            {
+              "japanese": "手紙を 書いて 出しました。",
+              "chinese": "寫了信寄出去。"
+            },
+            {
+              "japanese": "名前を 書いて ください。",
+              "chinese": "請寫名字。"
+            },
+            {
+              "japanese": "日記を 書いて 寝ます。",
+              "chinese": "寫完日記睡覺。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "書ける",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かける",
+          "sentence": [
+            {
+              "japanese": "私は もう 漢字が 書ける。",
+              "chinese": "我已經會寫漢字了。"
+            },
+            {
+              "japanese": "この ペンで きれいに 書ける。",
+              "chinese": "用這枝筆可以寫得漂亮。"
+            },
+            {
+              "japanese": "子どもは ひらがなが 書ける。",
+              "chinese": "小孩子會寫平假名。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "書こう",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かこう",
+          "sentence": [
+            {
+              "japanese": "いっしょに 手紙を 書こう。",
+              "chinese": "一起寫信吧。"
+            },
+            {
+              "japanese": "今日は 日記を 書こう。",
+              "chinese": "今天寫日記吧。"
+            },
+            {
+              "japanese": "レポートを 書こう。",
+              "chinese": "寫報告吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "書け",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かけ",
+          "sentence": [
+            {
+              "japanese": "名前を 書け。",
+              "chinese": "寫名字！"
+            },
+            {
+              "japanese": "もっと 大きく 書け。",
+              "chinese": "寫大一點！"
+            },
+            {
+              "japanese": "この 紙に 書け。",
+              "chinese": "寫在這張紙上！"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "書けば",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かけば",
+          "sentence": [
+            {
+              "japanese": "毎日 書けば 上手に なります。",
+              "chinese": "每天寫就會變好。"
+            },
+            {
+              "japanese": "手紙を 書けば 母が 喜びます。",
+              "chinese": "寫信母親會高興。"
+            },
+            {
+              "japanese": "ここに 名前を 書けば いいです。",
+              "chinese": "在這裡寫名字就好。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "書かれる",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かかれる",
+          "sentence": [
+            {
+              "japanese": "この 手紙は 先生に 書かれる。",
+              "chinese": "這封信是老師寫的。"
+            },
+            {
+              "japanese": "その レポートは 学生に 書かれる。",
+              "chinese": "那份報告由學生寫。"
+            },
+            {
+              "japanese": "毎年 新しい 本が 書かれる。",
+              "chinese": "每年都有新書被寫出來。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "書かせる",
+          "group": "1",
+          "chinese": "寫; 書寫; 撰寫",
+          "japanese": "かかせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に レポートを 書かせる。",
+              "chinese": "老師讓學生寫報告。"
+            },
+            {
+              "japanese": "母は 子どもに 手紙を 書かせる。",
+              "chinese": "媽媽讓孩子寫信。"
+            },
+            {
+              "japanese": "父は 私に 日記を 書かせる。",
+              "chinese": "父親讓我寫日記。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "買う",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かう",
+          "sentence": [
+            {
+              "japanese": "スーパーで 野菜を 買う。",
+              "chinese": "在超市買蔬菜。"
+            },
+            {
+              "japanese": "新しい 本を 買う。",
+              "chinese": "買新書。"
+            },
+            {
+              "japanese": "母は パンを 買う。",
+              "chinese": "母親買麵包。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "買います",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かいます",
+          "sentence": [
+            {
+              "japanese": "駅の 店で お茶を 買います。",
+              "chinese": "在車站的店買茶。"
+            },
+            {
+              "japanese": "毎朝 パンを 買います。",
+              "chinese": "每天早上買麵包。"
+            },
+            {
+              "japanese": "父は 新聞を 買います。",
+              "chinese": "父親買報紙。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "買いません",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かいません",
+          "sentence": [
+            {
+              "japanese": "今日は 肉を 買いません。",
+              "chinese": "今天不買肉。"
+            },
+            {
+              "japanese": "私は ビールを 買いません。",
+              "chinese": "我不買啤酒。"
+            },
+            {
+              "japanese": "母は 果物を 買いません。",
+              "chinese": "母親不買水果。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "買いました",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かいました",
+          "sentence": [
+            {
+              "japanese": "昨日 新しい CDを 買いました。",
+              "chinese": "昨天買了新的 CD。"
+            },
+            {
+              "japanese": "スーパーで 魚を 買いました。",
+              "chinese": "在超市買了魚。"
+            },
+            {
+              "japanese": "もう 野菜を 買いました。",
+              "chinese": "已經買了蔬菜。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "買いませんでした",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かいませんでした",
+          "sentence": [
+            {
+              "japanese": "今日は 何も 買いませんでした。",
+              "chinese": "今天什麼都沒買。"
+            },
+            {
+              "japanese": "私は その 本を 買いませんでした。",
+              "chinese": "我沒買那本書。"
+            },
+            {
+              "japanese": "雨だった ので パンを 買いませんでした。",
+              "chinese": "因為下雨，沒買麵包。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "買わない",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かわない",
+          "sentence": [
+            {
+              "japanese": "今日は 肉を 買わない。",
+              "chinese": "今天不買肉。"
+            },
+            {
+              "japanese": "弟は おやつを 買わない。",
+              "chinese": "弟弟不買零食。"
+            },
+            {
+              "japanese": "あまり 高い 物は 買わない。",
+              "chinese": "不太買貴的東西。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "買った",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かった",
+          "sentence": [
+            {
+              "japanese": "昨日 新しい かばんを 買った。",
+              "chinese": "昨天買了新包包。"
+            },
+            {
+              "japanese": "スーパーで 卵を 買った。",
+              "chinese": "在超市買了蛋。"
+            },
+            {
+              "japanese": "母は 花を 買った。",
+              "chinese": "母親買了花。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "買わなかった",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かわなかった",
+          "sentence": [
+            {
+              "japanese": "今日は 何も 買わなかった。",
+              "chinese": "今天什麼都沒買。"
+            },
+            {
+              "japanese": "私は その 本を 買わなかった。",
+              "chinese": "我沒買那本書。"
+            },
+            {
+              "japanese": "店が 休みで パンを 買わなかった。",
+              "chinese": "因為店休息，沒買麵包。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "買って",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かって",
+          "sentence": [
+            {
+              "japanese": "パンを 買って 帰ります。",
+              "chinese": "買麵包後回家。"
+            },
+            {
+              "japanese": "野菜を 買って 料理します。",
+              "chinese": "買蔬菜做菜。"
+            },
+            {
+              "japanese": "お茶を 買って きました。",
+              "chinese": "買了茶回來。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "買える",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かえる",
+          "sentence": [
+            {
+              "japanese": "この 店で 野菜が 買える。",
+              "chinese": "在這家店可以買到蔬菜。"
+            },
+            {
+              "japanese": "千円で 本が 買える。",
+              "chinese": "一千日圓就能買書。"
+            },
+            {
+              "japanese": "駅の 店でも パンが 買える。",
+              "chinese": "在車站的店也能買到麵包。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "買おう",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かおう",
+          "sentence": [
+            {
+              "japanese": "いっしょに お茶を 買おう。",
+              "chinese": "一起買茶吧。"
+            },
+            {
+              "japanese": "今日は 果物を 買おう。",
+              "chinese": "今天買水果吧。"
+            },
+            {
+              "japanese": "新しい 本を 買おう。",
+              "chinese": "買新書吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "買え",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かえ",
+          "sentence": [
+            {
+              "japanese": "パンを 買え。",
+              "chinese": "去買麵包！"
+            },
+            {
+              "japanese": "早く 買え。",
+              "chinese": "快點買！"
+            },
+            {
+              "japanese": "この 店で 野菜を 買え。",
+              "chinese": "在這家店買蔬菜！"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "買えば",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かえば",
+          "sentence": [
+            {
+              "japanese": "この 店で 買えば 安いです。",
+              "chinese": "在這家店買比較便宜。"
+            },
+            {
+              "japanese": "野菜を 買えば 料理が できます。",
+              "chinese": "買了蔬菜就能做菜。"
+            },
+            {
+              "japanese": "駅の 店で 買えば 便利です。",
+              "chinese": "在車站的店買很方便。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "買われる",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かわれる",
+          "sentence": [
+            {
+              "japanese": "この パンは 毎朝 学生に 買われる。",
+              "chinese": "這麵包每天早上被學生買走。"
+            },
+            {
+              "japanese": "その 本は 若い 人に よく 買われる。",
+              "chinese": "那本書常被年輕人買。"
+            },
+            {
+              "japanese": "あの 花は 母に 買われる。",
+              "chinese": "那些花被母親買走。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "買わせる",
+          "group": "1",
+          "chinese": "買; 購買",
+          "japanese": "かわせる",
+          "sentence": [
+            {
+              "japanese": "母は 子どもに パンを 買わせる。",
+              "chinese": "媽媽讓孩子買麵包。"
+            },
+            {
+              "japanese": "先生は 学生に ノートを 買わせる。",
+              "chinese": "老師讓學生買筆記本。"
+            },
+            {
+              "japanese": "父は 私に 新聞を 買わせる。",
+              "chinese": "父親讓我去買報紙。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "撮る",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とる",
+          "sentence": [
+            {
+              "japanese": "ここで 写真を 撮る。",
+              "chinese": "在這裡拍照。"
+            },
+            {
+              "japanese": "家族の 写真を 撮る。",
+              "chinese": "拍家人的照片。"
+            },
+            {
+              "japanese": "父は よく 写真を 撮る。",
+              "chinese": "父親常拍照。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "撮ります",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とります",
+          "sentence": [
+            {
+              "japanese": "公園で 写真を 撮ります。",
+              "chinese": "在公園拍照。"
+            },
+            {
+              "japanese": "友達と いっしょに 写真を 撮ります。",
+              "chinese": "和朋友一起拍照。"
+            },
+            {
+              "japanese": "兄は カメラで 花を 撮ります。",
+              "chinese": "哥哥用相機拍花。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "撮りません",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とりません",
+          "sentence": [
+            {
+              "japanese": "私は あまり 写真を 撮りません。",
+              "chinese": "我不太拍照。"
+            },
+            {
+              "japanese": "今日は ここで 撮りません。",
+              "chinese": "今天不在這裡拍。"
+            },
+            {
+              "japanese": "妹は 写真を 撮りません。",
+              "chinese": "妹妹不拍照。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "撮りました",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とりました",
+          "sentence": [
+            {
+              "japanese": "昨日 庭で 写真を 撮りました。",
+              "chinese": "昨天在院子拍了照。"
+            },
+            {
+              "japanese": "もう 家族の 写真を 撮りました。",
+              "chinese": "已經拍了家人的照片。"
+            },
+            {
+              "japanese": "旅行で たくさん 撮りました。",
+              "chinese": "旅行時拍了很多。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "撮りませんでした",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とりませんでした",
+          "sentence": [
+            {
+              "japanese": "今日は 写真を 撮りませんでした。",
+              "chinese": "今天沒拍照。"
+            },
+            {
+              "japanese": "雨で 何も 撮りませんでした。",
+              "chinese": "因為下雨，什麼都沒拍。"
+            },
+            {
+              "japanese": "私は その 写真を 撮りませんでした。",
+              "chinese": "我沒拍那張照片。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "撮らない",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とらない",
+          "sentence": [
+            {
+              "japanese": "今日は 写真を 撮らない。",
+              "chinese": "今天不拍照。"
+            },
+            {
+              "japanese": "弟は あまり 撮らない。",
+              "chinese": "弟弟不太拍。"
+            },
+            {
+              "japanese": "ここでは 撮らない。",
+              "chinese": "這裡不拍。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "撮った",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とった",
+          "sentence": [
+            {
+              "japanese": "昨日 山で 写真を 撮った。",
+              "chinese": "昨天在山裡拍了照。"
+            },
+            {
+              "japanese": "友達の 写真を 撮った。",
+              "chinese": "拍了朋友的照片。"
+            },
+            {
+              "japanese": "父は 花を 撮った。",
+              "chinese": "父親拍了花。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "撮らなかった",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とらなかった",
+          "sentence": [
+            {
+              "japanese": "今日は 写真を 撮らなかった。",
+              "chinese": "今天沒拍照。"
+            },
+            {
+              "japanese": "私は その 写真を 撮らなかった。",
+              "chinese": "我沒拍那張照片。"
+            },
+            {
+              "japanese": "カメラが なくて 撮らなかった。",
+              "chinese": "因為沒有相機，沒拍。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "撮って",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とって",
+          "sentence": [
+            {
+              "japanese": "写真を 撮って 送ります。",
+              "chinese": "拍好照片寄過去。"
+            },
+            {
+              "japanese": "ここで 撮って ください。",
+              "chinese": "請在這裡拍。"
+            },
+            {
+              "japanese": "花を 撮って 見せます。",
+              "chinese": "拍花給你看。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "撮れる",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とれる",
+          "sentence": [
+            {
+              "japanese": "ここから きれいな 写真が 撮れる。",
+              "chinese": "從這裡可以拍到漂亮的照片。"
+            },
+            {
+              "japanese": "この カメラで 遠くも 撮れる。",
+              "chinese": "用這台相機連遠處也能拍。"
+            },
+            {
+              "japanese": "夜でも 写真が 撮れる。",
+              "chinese": "晚上也能拍照。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "撮ろう",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とろう",
+          "sentence": [
+            {
+              "japanese": "いっしょに 写真を 撮ろう。",
+              "chinese": "一起拍照吧。"
+            },
+            {
+              "japanese": "庭で 写真を 撮ろう。",
+              "chinese": "在院子拍照吧。"
+            },
+            {
+              "japanese": "みんなで 撮ろう。",
+              "chinese": "大家一起拍吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "撮れ",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とれ",
+          "sentence": [
+            {
+              "japanese": "もっと 近くで 撮れ。",
+              "chinese": "靠近一點拍！"
+            },
+            {
+              "japanese": "早く 撮れ。",
+              "chinese": "快點拍！"
+            },
+            {
+              "japanese": "この 花を 撮れ。",
+              "chinese": "拍這朵花！"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "撮れば",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とれば",
+          "sentence": [
+            {
+              "japanese": "この カメラで 撮れば きれいです。",
+              "chinese": "用這台相機拍就很漂亮。"
+            },
+            {
+              "japanese": "近くで 撮れば 大きく 見えます。",
+              "chinese": "靠近拍看起來就大。"
+            },
+            {
+              "japanese": "明るい ところで 撮れば よく 写ります。",
+              "chinese": "在明亮的地方拍就清楚。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "撮られる",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とられる",
+          "sentence": [
+            {
+              "japanese": "私は 友達に 写真を 撮られる。",
+              "chinese": "我被朋友拍了照。"
+            },
+            {
+              "japanese": "父は 子どもに 写真を 撮られる。",
+              "chinese": "父親被孩子拍了照。"
+            },
+            {
+              "japanese": "有名人は いつも 人に 撮られる。",
+              "chinese": "名人總是被拍。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "撮らせる",
+          "group": "1",
+          "chinese": "拍（照）; 攝影",
+          "japanese": "とらせる",
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 写真を 撮らせる。",
+              "chinese": "老師讓學生拍照。"
+            },
+            {
+              "japanese": "母は 私に 家族の 写真を 撮らせる。",
+              "chinese": "媽媽讓我拍家人的照片。"
+            },
+            {
+              "japanese": "兄は 弟に 写真を 撮らせる。",
+              "chinese": "哥哥讓弟弟拍照。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "する",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "する",
+          "sentence": [
+            {
+              "japanese": "日曜日は テニスを する。",
+              "chinese": "星期天打網球。"
+            },
+            {
+              "japanese": "宿題を する。",
+              "chinese": "做作業。"
+            },
+            {
+              "japanese": "母は 毎日 料理を する。",
+              "chinese": "母親每天做菜。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "します",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "します",
+          "sentence": [
+            {
+              "japanese": "今から 宿題を します。",
+              "chinese": "現在開始做作業。"
+            },
+            {
+              "japanese": "週末に サッカーを します。",
+              "chinese": "週末踢足球。"
+            },
+            {
+              "japanese": "父は 庭の 仕事を します。",
+              "chinese": "父親做院子的工作。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "しません",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "しません",
+          "sentence": [
+            {
+              "japanese": "私は テニスを しません。",
+              "chinese": "我不打網球。"
+            },
+            {
+              "japanese": "今日は 宿題を しません。",
+              "chinese": "今天不做作業。"
+            },
+            {
+              "japanese": "弟は まだ 練習を しません。",
+              "chinese": "弟弟還沒練習。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "しました",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "しました",
+          "sentence": [
+            {
+              "japanese": "昨日 宿題を しました。",
+              "chinese": "昨天做了作業。"
+            },
+            {
+              "japanese": "もう レポートを しました。",
+              "chinese": "已經做了報告。"
+            },
+            {
+              "japanese": "先週 花見を しました。",
+              "chinese": "上週去賞花了。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "しませんでした",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "しませんでした",
+          "sentence": [
+            {
+              "japanese": "今日は 宿題を しませんでした。",
+              "chinese": "今天沒做作業。"
+            },
+            {
+              "japanese": "雨で テニスを しませんでした。",
+              "chinese": "因為下雨，沒打網球。"
+            },
+            {
+              "japanese": "私は その 仕事を しませんでした。",
+              "chinese": "我沒做那項工作。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "しない",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "しない",
+          "sentence": [
+            {
+              "japanese": "今日は 宿題を しない。",
+              "chinese": "今天不做作業。"
+            },
+            {
+              "japanese": "弟は テニスを しない。",
+              "chinese": "弟弟不打網球。"
+            },
+            {
+              "japanese": "日曜日は 何も しない。",
+              "chinese": "星期天什麼都不做。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "した",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "した",
+          "sentence": [
+            {
+              "japanese": "昨日 サッカーを した。",
+              "chinese": "昨天踢了足球。"
+            },
+            {
+              "japanese": "もう 宿題を した。",
+              "chinese": "已經做了作業。"
+            },
+            {
+              "japanese": "母は 花見を した。",
+              "chinese": "母親去賞花了。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "しなかった",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "しなかった",
+          "sentence": [
+            {
+              "japanese": "今日は 宿題を しなかった。",
+              "chinese": "今天沒做作業。"
+            },
+            {
+              "japanese": "私は テニスを しなかった。",
+              "chinese": "我沒打網球。"
+            },
+            {
+              "japanese": "忙しくて 何も しなかった。",
+              "chinese": "因為忙，什麼都沒做。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "して",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "して",
+          "sentence": [
+            {
+              "japanese": "宿題を して 遊びます。",
+              "chinese": "做完作業就玩。"
+            },
+            {
+              "japanese": "テニスを して 帰りました。",
+              "chinese": "打完網球回家。"
+            },
+            {
+              "japanese": "宿題を して ください。",
+              "chinese": "請做作業。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "できる",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "できる",
+          "sentence": [
+            {
+              "japanese": "私は テニスが できる。",
+              "chinese": "我會打網球。"
+            },
+            {
+              "japanese": "この 公園では 花見が できる。",
+              "chinese": "在這座公園可以賞花。"
+            },
+            {
+              "japanese": "弟は もう 料理が できる。",
+              "chinese": "弟弟已經會做菜。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "しよう",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "しよう",
+          "sentence": [
+            {
+              "japanese": "いっしょに 宿題を しよう。",
+              "chinese": "一起做作業吧。"
+            },
+            {
+              "japanese": "週末は テニスを しよう。",
+              "chinese": "週末打網球吧。"
+            },
+            {
+              "japanese": "今日は 何を しよう。",
+              "chinese": "今天要做什麼呢。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "しろ",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "しろ",
+          "sentence": [
+            {
+              "japanese": "宿題を しろ。",
+              "chinese": "做作業！"
+            },
+            {
+              "japanese": "早く しろ。",
+              "chinese": "快點做！"
+            },
+            {
+              "japanese": "掃除を しろ。",
+              "chinese": "打掃！"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "すれば",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "すれば",
+          "sentence": [
+            {
+              "japanese": "宿題を すれば 先生が 喜びます。",
+              "chinese": "做了作業老師會高興。"
+            },
+            {
+              "japanese": "毎日 練習すれば 上手に なります。",
+              "chinese": "每天練習就會變好。"
+            },
+            {
+              "japanese": "そう すれば 大丈夫です。",
+              "chinese": "那樣做就沒問題。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "される",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "される",
+          "sentence": [
+            {
+              "japanese": "その 仕事は 兄に される。",
+              "chinese": "那項工作由哥哥做。"
+            },
+            {
+              "japanese": "毎朝 庭の 掃除が される。",
+              "chinese": "每天早上院子被打掃。"
+            },
+            {
+              "japanese": "私は 毎日 部長に 残業を される。",
+              "chinese": "我每天被部長要求加班。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "させる",
+          "group": "0",
+          "chinese": "做; 幹",
+          "japanese": "させる",
+          "sentence": [
+            {
+              "japanese": "母は 子どもに 宿題を させる。",
+              "chinese": "媽媽讓孩子做作業。"
+            },
+            {
+              "japanese": "先生は 学生に 掃除を させる。",
+              "chinese": "老師讓學生打掃。"
+            },
+            {
+              "japanese": "父は 私に テニスを させる。",
+              "chinese": "父親讓我打網球。"
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "会う",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あう",
+          "sentence": [
+            {
+              "japanese": "駅で 友達に 会う。",
+              "chinese": "在車站遇見朋友。"
+            },
+            {
+              "japanese": "週末に 母に 会う。",
+              "chinese": "週末見母親。"
+            },
+            {
+              "japanese": "毎日 先生に 会う。",
+              "chinese": "每天見到老師。"
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "会います",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あいます",
+          "sentence": [
+            {
+              "japanese": "明日 駅で 友達に 会います。",
+              "chinese": "明天在車站見朋友。"
+            },
+            {
+              "japanese": "日曜日に 家族に 会います。",
+              "chinese": "星期天見家人。"
+            },
+            {
+              "japanese": "私は よく 彼に 会います。",
+              "chinese": "我常見到他。"
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "会いません",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あいません",
+          "sentence": [
+            {
+              "japanese": "今日は だれにも 会いません。",
+              "chinese": "今天不見任何人。"
+            },
+            {
+              "japanese": "私は その 人に 会いません。",
+              "chinese": "我不見那個人。"
+            },
+            {
+              "japanese": "日曜日は 友達に 会いません。",
+              "chinese": "星期天不見朋友。"
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "会いました",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あいました",
+          "sentence": [
+            {
+              "japanese": "昨日 駅で 先生に 会いました。",
+              "chinese": "昨天在車站遇到老師。"
+            },
+            {
+              "japanese": "もう 友達に 会いました。",
+              "chinese": "已經見了朋友。"
+            },
+            {
+              "japanese": "朝 公園で 母に 会いました。",
+              "chinese": "早上在公園遇到母親。"
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "会いませんでした",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あいませんでした",
+          "sentence": [
+            {
+              "japanese": "今日は だれにも 会いませんでした。",
+              "chinese": "今天沒見到任何人。"
+            },
+            {
+              "japanese": "私は その 人に 会いませんでした。",
+              "chinese": "我沒見那個人。"
+            },
+            {
+              "japanese": "雨で 友達に 会いませんでした。",
+              "chinese": "因為下雨，沒見朋友。"
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "会わない",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あわない",
+          "sentence": [
+            {
+              "japanese": "今日は だれにも 会わない。",
+              "chinese": "今天不見任何人。"
+            },
+            {
+              "japanese": "弟は その 人に 会わない。",
+              "chinese": "弟弟不見那個人。"
+            },
+            {
+              "japanese": "忙しくて 友達に 会わない。",
+              "chinese": "忙得沒法見朋友。"
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "会った",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あった",
+          "sentence": [
+            {
+              "japanese": "昨日 駅で 友達に 会った。",
+              "chinese": "昨天在車站遇到朋友。"
+            },
+            {
+              "japanese": "先週 先生に 会った。",
+              "chinese": "上週見了老師。"
+            },
+            {
+              "japanese": "公園で 母に 会った。",
+              "chinese": "在公園遇到母親。"
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "会わなかった",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あわなかった",
+          "sentence": [
+            {
+              "japanese": "今日は だれにも 会わなかった。",
+              "chinese": "今天沒見到任何人。"
+            },
+            {
+              "japanese": "私は その 人に 会わなかった。",
+              "chinese": "我沒見那個人。"
+            },
+            {
+              "japanese": "時間が なくて 友達に 会わなかった。",
+              "chinese": "因為沒時間，沒見朋友。"
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "会って",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あって",
+          "sentence": [
+            {
+              "japanese": "友達に 会って 話しました。",
+              "chinese": "見了朋友聊了天。"
+            },
+            {
+              "japanese": "先生に 会って 相談します。",
+              "chinese": "見老師商量。"
+            },
+            {
+              "japanese": "母に 会って 帰ります。",
+              "chinese": "見完母親就回去。"
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "会える",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あえる",
+          "sentence": [
+            {
+              "japanese": "明日は 友達に 会える。",
+              "chinese": "明天能見到朋友。"
+            },
+            {
+              "japanese": "ここで 先生に 会える。",
+              "chinese": "在這裡能見到老師。"
+            },
+            {
+              "japanese": "夜なら 彼に 会える。",
+              "chinese": "晚上的話能見到他。"
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "会おう",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あおう",
+          "sentence": [
+            {
+              "japanese": "駅で 友達に 会おう。",
+              "chinese": "在車站見朋友吧。"
+            },
+            {
+              "japanese": "明日 先生に 会おう。",
+              "chinese": "明天見老師吧。"
+            },
+            {
+              "japanese": "久しぶりに 母に 会おう。",
+              "chinese": "好久沒見，去見母親吧。"
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "会え",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あえ",
+          "sentence": [
+            {
+              "japanese": "早く 友達に 会え。",
+              "chinese": "快去見朋友！"
+            },
+            {
+              "japanese": "明日 先生に 会え。",
+              "chinese": "明天去見老師！"
+            },
+            {
+              "japanese": "一人で 会え。",
+              "chinese": "自己去見！"
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "会えば",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あえば",
+          "sentence": [
+            {
+              "japanese": "友達に 会えば 元気に なります。",
+              "chinese": "見到朋友就會有精神。"
+            },
+            {
+              "japanese": "先生に 会えば わかります。",
+              "chinese": "見了老師就明白。"
+            },
+            {
+              "japanese": "駅で 会えば いっしょに 行けます。",
+              "chinese": "在車站見面的話可以一起去。"
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "会われる",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あわれる",
+          "sentence": [
+            {
+              "japanese": "父が 社長に 会われる 日は 忙しいです。",
+              "chinese": "父親見社長的日子很忙。"
+            },
+            {
+              "japanese": "先生が 客に 会われる 部屋は こちらです。",
+              "chinese": "老師見客人的房間是這裡。"
+            },
+            {
+              "japanese": "部長が 友達に 会われる 前に 電話します。",
+              "chinese": "部長見朋友前會先打電話。"
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "会わせる",
+          "group": "1",
+          "chinese": "遇見; 碰見; 見面",
+          "japanese": "あわせる",
+          "sentence": [
+            {
+              "japanese": "母は 私を 友達に 会わせる。",
+              "chinese": "媽媽讓我和朋友見面。"
+            },
+            {
+              "japanese": "先生は 学生を 社長に 会わせる。",
+              "chinese": "老師讓學生見社長。"
+            },
+            {
+              "japanese": "父は 子どもを 先生に 会わせる。",
+              "chinese": "父親讓孩子見老師。"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

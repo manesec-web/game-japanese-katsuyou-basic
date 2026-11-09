@@ -1,0 +1,26 @@
+{
+  "name": "game-japanese-katsuyou-basic",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/write-sha256.mjs --check",
+    "dev": "vite",
+    "prebuild": "node scripts/write-sha256.mjs --check",
+    "build": "vite build",
+    "preview": "vite preview",
+    "pretest": "node scripts/write-sha256.mjs --check",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.0",
+    "fake-indexeddb": "^6.2.8",
+    "playwright-core": "^1.65.0",
+    "vite": "^7.0.0",
+    "vitest": "^3.0.0"
+  }
+}
