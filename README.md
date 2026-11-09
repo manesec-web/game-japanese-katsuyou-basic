@@ -228,5 +228,6 @@ Firefox 尚未實機驗證。
 - 送出 issue：<https://github.com/manesec-web/game-japanese-katsuyou-basic/issues>
 - 或來信：<mane@manesec.com>
 
-字典資料出自《大家的日本語》，僅供學習使用。本倉庫目前未附授權條款
-（`LICENSE`）；如需轉載或再利用，請先開 issue 詢問。
+字典資料出自《大家的日本語》，僅供學習使用。
+
+Build with love by Mane.
