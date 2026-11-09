@@ -50,7 +50,7 @@ function enter(mode) {
             <li>
               <a
                 class="sheet-link sheet-issue"
-                href="https://github.com/manesec-web/game-japanese-katsuyou-basic/issues/"
+                href="https://github.com/manesec-web/game-japanese-katsuyou-basic/issues/new"
                 target="_blank"
                 rel="noopener noreferrer"
               >提交ISSUE</a
@@ -65,7 +65,7 @@ function enter(mode) {
           </ol>
         </div>
 
-        <p class="sheet-thanks">🥺 どうもありがとうございました。</p>
+        <p class="sheet-thanks">🥺 どうもありがとうございます。</p>
 
         <button class="button ghost" type="button" @click="sheetOpen = false">關閉</button>
       </div>

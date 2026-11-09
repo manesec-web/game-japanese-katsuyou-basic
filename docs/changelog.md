@@ -462,3 +462,67 @@ Dated, newest last. Each entry: what changed, why, and what was verified.
   class pill, and both pills share one row. The old unscoped `.tag--group`
   count was scoped to `.card-face`, because both card faces are always in the
   DOM.
+
+## 2026-11-09 (documentation refresh)
+
+- Added `README.md`: product overview, the three modes, every user-facing
+  behaviour, quick start, npm scripts, project tree, dictionary schema and
+  the 15 forms, architecture summary, test/build commands with current counts,
+  browser support, deployment notes, document index, and reporting channels.
+- `docs/architecture.md`: the file map now lists the files that actually exist
+  (`src/dict/quiz.js` instead of the never-created `src/dict/keyboard.js`,
+  `src/storage/idb.js` instead of OPFS, plus `src/study/`, `src/ui/`,
+  `src/commands/index.js`, `src/engine/errors.js`, `src/engine/settle.js`
+  and `scripts/browser-check.mjs`). Removed the nonexistent `public/` entry.
+  Added the full error-code list (`library-missing`, `library-invalid`,
+  `lesson-empty`, `invalid-settings`, `no-items`, `quiz-no-item`),
+  documented the browser suite, and corrected the geometry summary
+  (settings rows 52px, quiz keys 48px, 返回主頁 60px).
+- `docs/progress.md`: rewritten around the current state. It no longer claims
+  "no commits" (the repo is at `933c30b`) and no longer attributes the
+  `載入失敗（lesson 1）` failure to OPFS: since revision 7 the cause on a
+  plain-HTTP non-localhost origin is the missing `crypto.subtle`. Adds the
+  verified commands, a one-line history of T1–T8 and revisions 2–9, and the
+  list of unverified paths.
+- `docs/roadmap.md`: records revisions 5–9 (previously only in the changelog
+  and progress notes), states that everything is done, and names publishing
+  `output/` as the only remaining step.
+- `docs/spec.md`: corrected the stale sizing sentence — settings rows are 52px
+  (they hold a switch), quiz keys are 48px, and 返回主頁 is 60px.
+- `docs/serving.md`: added a build self-check block and a GitHub Pages note
+  (that file was then rewritten for the subpath base; see the entry below).
+- `src/views/HomeView.vue`: the About sheet's copy now matches `docs/spec.md`
+  (`提交ISSUE` opens `/issues/new`, thanks line `🥺 どうもありがとうございます。`).
+  No behaviour changed; this closes two copy drifts that had gone unrecorded.
+- Verified after the edits: `npm test` 20 files / 191 tests; `npm run
+  build` with 50 files in `output/dict/`; `node scripts/browser-check.mjs`
+  259 checks passing (260 on a rerun; the seeded keyboard filler moves the
+  total by one).
+
+### GitHub Pages subpath base
+
+- `vite.config.js`: `base` changed from `'./'` to `'/game-japanese-katsuyou-basic/'`
+  (trailing slash kept) so the build targets the repository's Pages project
+  path. The dev dictionary middleware now strips that prefix before matching
+  `/dict/lesson_N.json`, so it answers both under the subpath and at the root.
+- `scripts/browser-check.mjs`: `BASE` is `http://localhost:PORT` plus the same
+  subpath, and a new check asserts `document.baseURI` ends with it.
+- Docs: `docs/serving.md` (dev/preview URLs, the Python recipe now mounts
+  `output/` at the subpath, `file://` no longer works, Pages publishing steps),
+  `docs/architecture.md` (dev/build/runtime paths and the file-map base value),
+  `docs/spec.md` (the Build section), `AGENTS.md` (layout note + dict-serving
+  line), `README.md` (dev, deploy and local-serving copy).
+- Why: the site is deployed as a GitHub Pages **project** site, which serves
+  the repository under `/game-japanese-katsuyou-basic/`; the previous relative
+  base happened to work, but nothing pinned the prefix. The Pages URL itself
+  was still 404 at the time of this entry, so the prefix is verified through
+  `vite preview` and the browser harness, not on a live `github.io` origin.
+- Verified: `npm test` 20 files / 191 tests; `npm run build` writes
+  `output/index.html` with both asset refs prefixed
+  (`/game-japanese-katsuyou-basic/assets/…`) and 50 files in `output/dict/`;
+  live dev run on :5330 (`/` → 302 to the subpath, `/game-japanese-katsuyou-basic/`
+  → 200, `…/dict/lesson_1.json` → 200 `application/json` with 38 bytes ==
+  `vol/lesson_1.json`, `…/dict/lesson_99.json` → 404);
+  `node scripts/browser-check.mjs --screenshots` passes 260 checks (0 FAIL).
+- Not verified: a real `https://<user>.github.io/…` origin, and no Pages
+  workflow was added (deployment stays manual, by the user's choice).

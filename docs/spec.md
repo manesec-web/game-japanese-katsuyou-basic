@@ -279,7 +279,7 @@ The wireframes say which pieces exist. Do not copy their colors or boxes.
 
 - The page background is a slow gradient from indigo to warm amber, with a faint grain. The column is warm off-white, large radius, light shadow. At viewport widths of 550px or less the column drops its radius, shadow and side margins, fills the browser, and the background becomes the plain column colour.
 - Use the system stack: `Hiragino Sans`, `Noto Sans TC`, `Noto Sans JP`, `sans-serif`. Do not download a CJK webfont.
-- The word is large. The reading is small and sits above the kanji. Controls are 36px tall with a 10px radius, so they read as buttons rather than pills: that covers `.button`, the lesson and form chips, the 到 chips, the 選擇 buttons and the settings rows. The quiz keyboard keys keep 44px or more for typing. The home screen's three entries are 60px, and the picker's 開始 and the reader and card footer controls are 50px.
+- The word is large. The reading is small and sits above the kanji. Controls are 36px tall with a 10px radius, so they read as buttons rather than pills: that covers `.button`, the lesson and form chips, the 到 chips, the 選擇 buttons. Settings rows are 52px so each row can hold its switch comfortably. The quiz keyboard keys are 48px for typing. The home screen's three entries are 60px, the picker's 開始 and the reader and card footer controls are 50px, and 返回主頁 on the completion screens is 60px.
 - Every screen's top bar — the back arrow and the title — is pinned to the top of the viewport, on the column colour, above the scrolling content. This is the same treatment the dictionary reader has.
 - On every screen except home, the extra bottom height is gone: content ends 10px above the bottom of the column, and screens with a pinned footer carry their own bottom space instead, so the gap is the same whether the footer is pinned mid-page or resting at the end. The reader's 上一個 / 下一個, the card controls, settings and quiz all keep 10px. The picker's 開始 is the one exception at 20px, because that is where the primary action on that screen sits: its fade band stays above the button and 20px of solid column colour sits under it.
 - A pressed button scales down slightly. Pinned footers keep a transparent fade, but the fade band sits above the controls so the buttons stay solid and fully visible. The reader pages with a flat horizontal slide that follows the finger: no rotation, no tilt, no fade and no depth, so the incoming page is pushed in from the edge instead of cross-dissolving. Screen changes take about 220ms. A card follows the gesture, then springs back or leaves. A right-to-left swipe slides the outgoing card out to the left and brings the next card in from the right edge; a left-to-right swipe mirrors it. A tapped card turns over in 3D (`rotateY`, about 300ms). 回答正確 and 回答錯誤 slide in from the top and leave after about 1.6 seconds. A revealed answer stays on the question itself. The toast is not the only place that answer exists.
@@ -302,6 +302,13 @@ A missing field uses the default above. Invalid JSON resets the whole object to 
 
 ## Build
 
-`npm run build` writes to `output/`. `base` is `./`, so a GitHub project page on a subpath still opens.
+`npm run build` writes to `output/`. `base` is `/game-japanese-katsuyou-basic/`
+(the repository name), so the build runs as a GitHub Pages project site under
+that subpath. `npm run dev` and `npm run preview` serve the same subpath
+(`/` redirects to it). Renaming the repository means changing that one constant
+in `vite.config.js` plus `SITE_BASE` in `scripts/browser-check.mjs`. Asset and
+dictionary URLs are prefixed with the base; `dict/lesson_N.json` is resolved
+against `document.baseURI`, so it follows the base automatically.
 
-Do not commit `output/`. Publish that directory as the GitHub Pages site root.
+Do not commit `output/`. Publish the contents of that directory at the root of
+the Pages branch or folder; Pages adds the repository subpath itself.

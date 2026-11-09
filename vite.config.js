@@ -7,7 +7,21 @@ import vue from '@vitejs/plugin-vue'
 const rootDir = path.dirname(fileURLToPath(import.meta.url))
 const volDir = path.join(rootDir, 'vol')
 const LESSON_FILES = Array.from({ length: 50 }, (_, i) => `lesson_${i + 1}.json`)
+
+// GitHub Pages serves the repo as a project site, so the site lives under this
+// path instead of the server root. The trailing slash matters: Vite needs it to
+// resolve asset URLs under the subpath.
+const BASE = '/game-japanese-katsuyou-basic/'
+
 const DICT_URL = /^\/dict\/(lesson_\d+\.json)$/
+
+// Vite strips the base before plugin middleware in some paths and keeps it in
+// others, so accept the dictionary URL with or without the subpath in front.
+function dictPathname(url) {
+  const pathname = (url || '').split('?')[0]
+  if (pathname.startsWith(BASE)) return pathname.slice(BASE.length - 1)
+  return pathname
+}
 
 // Serve vol/*.json at /dict/lesson_N.json in dev, and copy them into
 // output/dict/ on build. The dictionary stays in vol/ as the source of truth.
@@ -16,8 +30,7 @@ function dictionaryPlugin() {
     name: 'katsuyou-dictionary',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        const pathname = (req.url || '').split('?')[0]
-        const match = DICT_URL.exec(pathname)
+        const match = DICT_URL.exec(dictPathname(req.url))
         if (!match) return next()
         const file = path.join(volDir, match[1])
         if (!fs.existsSync(file)) {
@@ -45,7 +58,7 @@ function dictionaryPlugin() {
 }
 
 export default defineConfig({
-  base: './',
+  base: BASE,
   plugins: [vue(), dictionaryPlugin()],
   build: {
     outDir: 'output',

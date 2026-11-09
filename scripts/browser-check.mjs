@@ -9,7 +9,12 @@ import { CONFETTI_EMOJI, PRACTICE_EMOJI, SCORE_BANDS } from '../src/study/result
 import { groupLabel } from '../src/dict/forms.js'
 
 const PORT = Number(process.env.PORT || 5199)
-const BASE = `http://localhost:${PORT}/`
+
+// GitHub Pages serves this repository as a project site, so the site and its
+// assets live under this subpath. `vite preview` honours the same base, so the
+// walk-through must start there and not at the server root.
+const SITE_BASE = '/game-japanese-katsuyou-basic/'
+const BASE = `http://localhost:${PORT}${SITE_BASE}`
 const EXE =
   process.env.CHROMIUM_PATH ||
   '/home/mane/.cache/ms-playwright/chromium-1208/chrome-linux64/chrome'
@@ -185,6 +190,12 @@ try {
 
   await page.goto(BASE, { waitUntil: 'load' })
   await page.waitForSelector('.progress', { timeout: 10000 })
+  const servedBase = await page.evaluate(() => document.baseURI)
+  check(
+    'the site is served under the Pages subpath',
+    servedBase.endsWith(SITE_BASE),
+    servedBase,
+  )
   check('loading text is "Loading ..."', (await page.locator('.loading-text').textContent()).trim() === 'Loading ...')
   const progressStart = await page.evaluate(() => {
     const fill = document.querySelector('.progress-fill')

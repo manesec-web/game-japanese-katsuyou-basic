@@ -40,10 +40,12 @@ Every user-visible action is a command:
 An async `run` (only `app.boot` so far) returns a Promise of the same
 envelope, so callers can always `await dispatch(...)` or use the sync result.
 
-Error codes in use: `unknown-command`, `invalid-params`, `missing-param`,
-`command-disabled`, `command-failed`, `boot-failed`. A command may throw an
-Error carrying a string `code` and optional `details`; dispatch converts it
-into that error shape instead of `command-failed`.
+Error codes in use: dispatch-level `unknown-command`, `invalid-params`,
+`missing-param`, `command-disabled`, `command-failed`; command-level
+`boot-failed`, `library-missing`, `library-invalid`, `lesson-empty`,
+`invalid-settings`, `no-items`, `quiz-no-item`. A command may throw
+`CommandError` (or any Error carrying a string `code` and optional `details`);
+dispatch converts it into that error shape instead of `command-failed`.
 
 Rules:
 
@@ -92,27 +94,48 @@ unless the spec says so.
 vol/                          dictionary source, lesson_1..50.json (read-only)
 docs/spec.md                  product behaviour
 docs/architecture.md          this file
+docs/serving.md               local serving and boot-failure troubleshooting
 docs/roadmap.md               task board and resume instructions
 docs/progress.md              current state, commands run, next step
 docs/changelog.md             dated change log
+README.md                     user-facing overview, setup, test and deploy notes
 scripts/write-sha256.mjs      hashes vol/*.json into src/data/dict-manifest.json
+scripts/browser-check.mjs     headless Chromium walk-through of the built site
 src/main.js                   app entry: creates store, boots, mounts Vue
+src/App.vue                   screen switch + shared shell
 src/engine/registry.js        command registry + dispatch
-src/engine/session.js         createSession() and pure state helpers
+src/engine/settle.js          sync/async result envelope helper
+src/engine/errors.js          CommandError (code/message/details)
+src/engine/session.js         createSession(): plain state
+src/commands/index.js         assembles all specs with injected dependencies
 src/commands/*.js             one module per feature, each exports specs()
 src/dict/forms.js             the 15 form ids and on-screen names, in order
 src/dict/hash.js              SHA-256 (Web Crypto wrapper)
-src/dict/keyboard.js          quiz keyboard generation (pure)
+src/dict/boot.js              per-lesson verify/download/cache rule
+src/dict/lessons.js           lesson summary + selection rules (全選)
+src/dict/library.js           verified dictionary loaded into memory
+src/dict/quiz.js              keyboard generation, grading, reveal rules (pure)
 src/dict/ruby.js              kanji / reading alignment for <ruby>
+src/dict/settings.js          defaults, validation, patches, start hints
 src/data/dict-manifest.json   generated manifest, committed
 src/storage/idb.js            IndexedDB dictionary cache (read/write/remove)
+src/storage/settings.js       localStorage settings load/save
+src/study/items.js            verb × form item lists (pure)
+src/study/shuffle.js          seeded shuffle (pure)
+src/study/reader-forms.js     reader block order and first-block flags
+src/study/highlight.js        paint the studied form inside its sentences
+src/study/card-tags.js        card face/back tag composition
+src/study/results.js          run tally, score bands, completion emoji
 src/ui/store.js               reactive session + send()
+src/ui/bootstrap.js           boot → library → settings → home (also retry)
+src/ui/swipe.js               drag threshold and spring-back (pure)
+src/ui/motion.js              prefers-reduced-motion probe
+src/ui/typing.js              IME-safe field edits (pure)
 src/views/*.vue               screens (thin)
-src/components/*.vue         shared UI pieces (thin)
-src/styles/app.css            design tokens and layout
+src/components/*.vue          shared UI pieces (thin: RubyWord, CompletePanel)
+src/styles/app.css            design tokens, layout, motion, breakpoints
 index.html
-vite.config.js                outDir "output", base "./", dict serving/copy
-public/                       static assets; dictionary is not copied here
+vite.config.js                outDir "output", base "/game-japanese-katsuyou-basic/", dict serving/copy
 output/                       build output, gitignored
 ```
 
@@ -140,29 +163,43 @@ is written only after a download hashes correctly. If both downloads
 mismatch, boot stops, records `session.boot.error = { lesson, file, message }`
 and leaves `boot.done` false. `boot.checked` counts verified lessons only.
 
-- Dev: Vite middleware serves `vol/lesson_N.json` at `/dict/lesson_N.json`.
+- Dev: Vite middleware serves `vol/lesson_N.json` at
+  `/game-japanese-katsuyou-basic/dict/lesson_N.json`, accepting the URL with or
+  without the base prefix.
 - Build: a Vite plugin copies all 50 lesson files to `output/dict/`.
-- Runtime: fetch `/dict/lesson_N.json` (relative, so subpath hosting works),
-  verify SHA-256 against the bundled manifest, store the bytes in the
-  IndexedDB database `katsuyou-dict`, object store `lessons`, keyed by file name.
+- Runtime: fetch `dict/lesson_N.json`, resolved against the page URL with
+  `document.baseURI`, so it follows whatever `base` the build used
+  (`/game-japanese-katsuyou-basic/` for GitHub Pages). Then verify SHA-256
+  against the bundled manifest and store the bytes in the IndexedDB database
+  `katsuyou-dict`, object store `lessons`, keyed by file name.
 
 ## Testing
 
-- Vitest under Node for engine, commands, hashing, keyboard, grading, ruby.
-- Browser APIs (IndexedDB, fetch) are injected so tests use fakes; the
-  adapter itself is tested with `fake-indexeddb`, and no browser runs
-  in CI.
-- UI checks are manual browser walk-throughs and are recorded in
-  `docs/progress.md`.
+- Vitest under Node for engine, commands, hashing, boot, settings, item
+  lists, keyboard, grading, ruby, swipe resolution, result tallies: 20 files,
+  191 tests.
+- Browser APIs (IndexedDB, fetch) are injected so tests use fakes; the IDB
+  adapter itself is tested with `fake-indexeddb`. No browser is needed for
+  `npm test`.
+- `scripts/browser-check.mjs` starts `vite preview` and drives headless
+  Chromium at 390×844 (plus 550/551/800/900 width probes) through loading,
+  home, all three pickers, reader, three settings screens, cards, quiz and
+  completion, including IndexedDB reuse, reduced motion and the 550px
+  breakpoint. It is a separate command, not part of `npm test`.
 
 ## Styling and motion
 
-Tokens in `src/styles/app.css`: indigo→amber gradient background, warm
-off-white `min(100%, 480px)` column with large radius and light shadow, system
-CJK font stack, 48px minimum button height, ~220ms screen transitions,
-1.6s answer toasts, drag-follow / spring-back for swipes, and a
-`prefers-reduced-motion: reduce` branch that freezes the gradient, switches
-items directly, and fades between screens.
+Tokens in `src/styles/app.css`: indigo→amber gradient background with a faint
+grain, warm off-white `min(100%, 480px)` column with 28px radius and light
+shadow, system CJK font stack (`Hiragino Sans`, `Noto Sans TC`, `Noto Sans JP`),
+36px × 10px-radius controls (chips and settings rows), 44px+ quiz keys, 60px
+home entries, 50px picker/reader/card footer controls and 60px 返回主頁, ~220ms
+screen transitions, ~300ms `rotateY` card flip, 160ms/180ms card leave and
+enter, 1.6s answer toasts, drag-follow / spring-back for swipes, and a
+`prefers-reduced-motion: reduce` branch that freezes the gradient, changes
+items and cards directly, makes flips instant, and fades between screens.
+At ≤550px the column is full-bleed and the gradient is replaced by the column
+colour.
 
 ## Final implementation notes
 
