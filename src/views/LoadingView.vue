@@ -1,8 +1,12 @@
 <script setup>
-import { computed, inject } from 'vue'
+import { computed, inject, ref } from 'vue'
 import { bootstrap } from '../ui/bootstrap.js'
+import SiteHead from '../components/SiteHead.vue'
+import BuildFooter from '../components/BuildFooter.vue'
+import AboutSheet from '../components/AboutSheet.vue'
 
 const store = inject('store')
+const sheetOpen = ref(false)
 const boot = computed(() => store.session.boot)
 const percent = computed(() => {
   if (!boot.value.total) return 0
@@ -16,38 +20,62 @@ function retry() {
 
 <template>
   <section class="loading">
-    <p class="loading-text">Loading ...</p>
-    <div
-      class="progress"
-      role="progressbar"
-      aria-label="Loading"
-      aria-valuemin="0"
-      aria-valuemax="100"
-      :aria-valuenow="percent"
-    >
-      <div class="progress-fill" :style="{ width: `${percent}%` }"></div>
+    <div class="loading-head">
+      <SiteHead />
     </div>
-    <div v-if="boot.error" class="loading-error">
-      <p class="error-text">載入失敗（lesson {{ boot.error.lesson }}）</p>
-      <p v-if="boot.error.message" class="error-detail">{{ boot.error.message }}</p>
-      <button class="button primary" type="button" @click="retry">重試</button>
+
+    <div class="loading-body">
+      <p class="loading-text">Loading ...</p>
+      <div
+        class="progress"
+        role="progressbar"
+        aria-label="Loading"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        :aria-valuenow="percent"
+      >
+        <div class="progress-fill" :style="{ width: `${percent}%` }"></div>
+      </div>
+      <div v-if="boot.error" class="loading-error">
+        <p class="error-text">載入失敗（lesson {{ boot.error.lesson }}）</p>
+        <p v-if="boot.error.message" class="error-detail">{{ boot.error.message }}</p>
+        <button class="button primary" type="button" @click="retry">重試</button>
+      </div>
     </div>
+
+    <BuildFooter @open="sheetOpen = true" />
+    <AboutSheet :open="sheetOpen" @close="sheetOpen = false" />
   </section>
 </template>
 
 <style scoped>
+/* The loading screen carries the same head and credit line as the home screen,
+   so the first paint already looks like the site. The head and the footer stay
+   put while boot runs, and while an error offers retry. */
 .loading {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100dvh - 64px);
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+  gap: 24px;
+}
+
+.loading-head {
+  margin-top: 12vh;
+}
+
+.loading-body {
+  display: flex;
+  flex-direction: column;
   gap: 18px;
-  min-height: 60vh;
-  justify-content: center;
 }
 
 .loading-text {
   margin: 0;
   font-size: 20px;
   letter-spacing: 0.06em;
+  text-align: center;
 }
 
 .progress {
@@ -83,5 +111,12 @@ function retry() {
   line-height: 1.5;
   color: var(--ink-soft);
   word-break: break-word;
+}
+
+@media (max-width: 550px) {
+  /* Full-bleed column, matching the home screen. */
+  .loading {
+    min-height: calc(100dvh - 20px);
+  }
 }
 </style>

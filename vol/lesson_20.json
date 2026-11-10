@@ -7,18 +7,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "海外へ 行くには ビザが 要る。",
-              "chinese": "出國需要簽證。"
+              "chinese": "出國需要簽證。",
+              "note": null
             },
             {
               "japanese": "この 仕事には 経験が 要る。",
-              "chinese": "這份工作需要經驗。"
+              "chinese": "這份工作需要經驗。",
+              "note": null
             },
             {
               "japanese": "申し込みには お金が 要る。",
-              "chinese": "報名需要費用。"
+              "chinese": "報名需要費用。",
+              "note": null
             }
           ]
         },
@@ -27,18 +32,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いります",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "ビザが 要りますか。",
-              "chinese": "需要簽證嗎？"
+              "chinese": "需要簽證嗎？",
+              "note": null
             },
             {
               "japanese": "来月の 旅行には お金が 要ります。",
-              "chinese": "下個月的旅行需要錢。"
+              "chinese": "下個月的旅行需要錢。",
+              "note": null
             },
             {
               "japanese": "この 書類には サインが 要ります。",
-              "chinese": "這份文件需要簽名。"
+              "chinese": "這份文件需要簽名。",
+              "note": null
             }
           ]
         },
@@ -47,18 +57,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いりません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "ビザは 要りません。",
-              "chinese": "不需要簽證。"
+              "chinese": "不需要簽證。",
+              "note": null
             },
             {
               "japanese": "今日は お金が 要りません。",
-              "chinese": "今天不需要錢。"
+              "chinese": "今天不需要錢。",
+              "note": null
             },
             {
               "japanese": "この 仕事には 経験が 要りません。",
-              "chinese": "這份工作不需要經驗。"
+              "chinese": "這份工作不需要經驗。",
+              "note": null
             }
           ]
         },
@@ -67,18 +82,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いりました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日の 手続きには お金が 要りました。",
-              "chinese": "昨天的手續需要錢。"
+              "chinese": "昨天的手續需要錢。",
+              "note": null
             },
             {
               "japanese": "先月の 旅行には ビザが 要りました。",
-              "chinese": "上個月的旅行需要簽證。"
+              "chinese": "上個月的旅行需要簽證。",
+              "note": null
             },
             {
               "japanese": "引っ越しには 時間が 要りました。",
-              "chinese": "搬家需要時間。"
+              "chinese": "搬家需要時間。",
+              "note": null
             }
           ]
         },
@@ -87,18 +107,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いりませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先週の 手続きには お金が 要りませんでした。",
-              "chinese": "上週的手續不需要錢。"
+              "chinese": "上週的手續不需要錢。",
+              "note": null
             },
             {
               "japanese": "前の 旅行には ビザが 要りませんでした。",
-              "chinese": "之前的旅行不需要簽證。"
+              "chinese": "之前的旅行不需要簽證。",
+              "note": null
             },
             {
               "japanese": "この 申し込みには 写真が 要りませんでした。",
-              "chinese": "這次報名不需要照片。"
+              "chinese": "這次報名不需要照片。",
+              "note": null
             }
           ]
         },
@@ -107,18 +132,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いらない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "ビザは 要らない。",
-              "chinese": "不需要簽證。"
+              "chinese": "不需要簽證。",
+              "note": null
             },
             {
               "japanese": "明日の 会議には 資料が 要らない。",
-              "chinese": "明天的會議不需要資料。"
+              "chinese": "明天的會議不需要資料。",
+              "note": null
             },
             {
               "japanese": "この 仕事には 経験が 要らない。",
-              "chinese": "這份工作不需要經驗。"
+              "chinese": "這份工作不需要經驗。",
+              "note": null
             }
           ]
         },
@@ -127,18 +157,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日の 手続きには お金が 要った。",
-              "chinese": "昨天的手續需要錢。"
+              "chinese": "昨天的手續需要錢。",
+              "note": null
             },
             {
               "japanese": "先月の 旅行には ビザが 要った。",
-              "chinese": "上個月的旅行需要簽證。"
+              "chinese": "上個月的旅行需要簽證。",
+              "note": null
             },
             {
               "japanese": "引っ越しには 時間が 要った。",
-              "chinese": "搬家需要時間。"
+              "chinese": "搬家需要時間。",
+              "note": null
             }
           ]
         },
@@ -147,18 +182,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いらなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日の 手続きには お金が 要らなかった。",
-              "chinese": "昨天的手續不需要錢。"
+              "chinese": "昨天的手續不需要錢。",
+              "note": null
             },
             {
               "japanese": "先月の 旅行には ビザが 要らなかった。",
-              "chinese": "上個月的旅行不需要簽證。"
+              "chinese": "上個月的旅行不需要簽證。",
+              "note": null
             },
             {
               "japanese": "この 申し込みには 写真が 要らなかった。",
-              "chinese": "這次報名不需要照片。"
+              "chinese": "這次報名不需要照片。",
+              "note": null
             }
           ]
         },
@@ -167,18 +207,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いって",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "ビザが 要って、旅行を やめた。",
-              "chinese": "因為需要簽證，放棄了旅行。"
+              "chinese": "因為需要簽證，放棄了旅行。",
+              "note": null
             },
             {
               "japanese": "お金が 要って、アルバイトを 始めた。",
-              "chinese": "因為需要錢，開始打工。"
+              "chinese": "因為需要錢，開始打工。",
+              "note": null
             },
             {
               "japanese": "経験が 要って、研修に 参加した。",
-              "chinese": "因為需要經驗，參加了研修。"
+              "chinese": "因為需要經驗，參加了研修。",
+              "note": null
             }
           ]
         },
@@ -187,38 +232,32 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いれる",
-          "sentence": [
-            {
-              "japanese": "この 国では ビザが 要れる と 聞いた。",
-              "chinese": "聽說這個國家可能需要簽證。"
-            },
-            {
-              "japanese": "経験が 要れる 仕事は 多い。",
-              "chinese": "可能需要經驗的工作很多。"
-            },
-            {
-              "japanese": "お金が 要れる ときは 言って ください。",
-              "chinese": "需要錢的時候請告訴我。"
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「要る」是無意志動詞，「要れる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
         },
         "volitional-form": {
           "vol": "要ろう",
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いろう",
+          "note": "字典有但是不常用：「要ろう」日常不用",
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "新しい 事業には 多額の 資金が 要ろうと して いる。",
-              "chinese": "新事業似乎即將需要大筆資金。"
+              "chinese": "新事業似乎即將需要大筆資金。",
+              "note": null
             },
             {
               "japanese": "冬に 向けて、もっと 暖かい 服が 要ろうと して いる。",
-              "chinese": "隨著入冬，似乎會需要更保暖的衣服。"
+              "chinese": "隨著入冬，似乎會需要更保暖的衣服。",
+              "note": null
             },
             {
               "japanese": "工事が 進めば、さらに 人手が 要ろうと して いる。",
-              "chinese": "工程若推進，似乎還會需要更多人手。"
+              "chinese": "工程若推進，似乎還會需要更多人手。",
+              "note": null
             }
           ]
         },
@@ -227,18 +266,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いれ",
+          "note": "字典有但是不常用：「要れ」日常不用",
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "店長は 新人に 「何か 要れ！」と 声を かけた。",
-              "chinese": "店長對新人喊：「需要什麼就說！」"
+              "chinese": "店長對新人喊：「需要什麼就說！」",
+              "note": null
             },
             {
               "japanese": "「お金が 要れ」と 母は 台所から 叫んだ。",
-              "chinese": "母親從廚房喊：「需要錢吧。」"
+              "chinese": "母親從廚房喊：「需要錢吧。」",
+              "note": null
             },
             {
               "japanese": "受付の 人は 「印鑑が 要れ」と 大声で 呼んだ。",
-              "chinese": "櫃台的人大聲喊：「需要印章！」"
+              "chinese": "櫃台的人大聲喊：「需要印章！」",
+              "note": null
             }
           ]
         },
@@ -247,18 +291,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "ビザが 要れば、先に 申し込んで ください。",
-              "chinese": "如果需要簽證，請先申請。"
+              "chinese": "如果需要簽證，請先申請。",
+              "note": null
             },
             {
               "japanese": "お金が 要れば、私が 出します。",
-              "chinese": "如果需要錢，我來出。"
+              "chinese": "如果需要錢，我來出。",
+              "note": null
             },
             {
               "japanese": "経験が 要れば、研修を 受けます。",
-              "chinese": "如果需要經驗，就去接受研修。"
+              "chinese": "如果需要經驗，就去接受研修。",
+              "note": null
             }
           ]
         },
@@ -267,18 +316,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いられる",
+          "note": "字典有但是不常用：「要られる」日常不用",
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 工場では、経験より 体力が 要られる。",
-              "chinese": "這家工廠要求的不是經驗而是體力。"
+              "chinese": "這家工廠要求的不是經驗而是體力。",
+              "note": null
             },
             {
               "japanese": "面接では、落ち着いた 態度が 要られる。",
-              "chinese": "面試時要求沉著的態度。"
+              "chinese": "面試時要求沉著的態度。",
+              "note": null
             },
             {
               "japanese": "小さな 店ほど、細かい 気配りが 要られる。",
-              "chinese": "越是小店，越要求細心的關照。"
+              "chinese": "越是小店，越要求細心的關照。",
+              "note": null
             }
           ]
         },
@@ -287,18 +341,23 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いらせる",
+          "note": "字典有但是不常用：「要らせる」日常不用",
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "新しい 制度は、学生に 高価な パソコンを 要らせる。",
-              "chinese": "新制度讓學生必須需要昂貴的電腦。"
+              "chinese": "新制度讓學生必須需要昂貴的電腦。",
+              "note": null
             },
             {
               "japanese": "円安が 輸入品の 値段を 上げ、店に 多くの 現金を 要らせる ように なった。",
-              "chinese": "日圓貶值推高進口品價格，讓店家需要更多現金。"
+              "chinese": "日圓貶值推高進口品價格，讓店家需要更多現金。",
+              "note": null
             },
             {
               "japanese": "会社は 研修を 増やし、社員に 新しい 資格を 要らせる。",
-              "chinese": "公司增加研修，讓員工必須取得新的資格。"
+              "chinese": "公司增加研修，讓員工必須取得新的資格。",
+              "note": null
             }
           ]
         }
@@ -309,18 +368,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "駅で 電車の 時間を 調べる。",
-              "chinese": "在車站查電車時間。"
+              "chinese": "在車站查電車時間。",
+              "note": null
             },
             {
               "japanese": "辞書で 言葉の 意味を 調べる。",
-              "chinese": "用字典查詞義。"
+              "chinese": "用字典查詞義。",
+              "note": null
             },
             {
               "japanese": "ネットで 店の 場所を 調べる。",
-              "chinese": "上網查店的位置。"
+              "chinese": "上網查店的位置。",
+              "note": null
             }
           ]
         },
@@ -329,18 +393,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべます",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日の 天気を 調べます。",
-              "chinese": "調查明天的天氣。"
+              "chinese": "調查明天的天氣。",
+              "note": null
             },
             {
               "japanese": "図書館で 資料を 調べます。",
-              "chinese": "在圖書館查資料。"
+              "chinese": "在圖書館查資料。",
+              "note": null
             },
             {
               "japanese": "先生に 聞く 前に、自分で 調べます。",
-              "chinese": "問老師之前先自己查。"
+              "chinese": "問老師之前先自己查。",
+              "note": null
             }
           ]
         },
@@ -349,18 +418,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 天気を 調べません。",
-              "chinese": "今天不查天氣。"
+              "chinese": "今天不查天氣。",
+              "note": null
             },
             {
               "japanese": "その 資料は 一度も 調べません。",
-              "chinese": "那份資料一次也沒查。"
+              "chinese": "那份資料一次也沒查。",
+              "note": null
             },
             {
               "japanese": "私の 国では この 漢字を 調べません。",
-              "chinese": "在我們國家不查這個漢字。"
+              "chinese": "在我們國家不查這個漢字。",
+              "note": null
             }
           ]
         },
@@ -369,18 +443,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 電車の 時間を 調べました。",
-              "chinese": "昨天查了電車時間。"
+              "chinese": "昨天查了電車時間。",
+              "note": null
             },
             {
               "japanese": "辞書で 新しい 言葉を 調べました。",
-              "chinese": "用字典查了新詞。"
+              "chinese": "用字典查了新詞。",
+              "note": null
             },
             {
               "japanese": "出発 前に ホテルの 場所を 調べました。",
-              "chinese": "出發前查了旅館位置。"
+              "chinese": "出發前查了旅館位置。",
+              "note": null
             }
           ]
         },
@@ -389,18 +468,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 天気を 調べませんでした。",
-              "chinese": "昨天沒查天氣。"
+              "chinese": "昨天沒查天氣。",
+              "note": null
             },
             {
               "japanese": "この 言葉は 辞書で 調べませんでした。",
-              "chinese": "這個詞沒用字典查。"
+              "chinese": "這個詞沒用字典查。",
+              "note": null
             },
             {
               "japanese": "先週は 旅行の 料金を 調べませんでした。",
-              "chinese": "上週沒查旅行費用。"
+              "chinese": "上週沒查旅行費用。",
+              "note": null
             }
           ]
         },
@@ -409,18 +493,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "天気は 毎日 調べない。",
-              "chinese": "天氣不是每天查。"
+              "chinese": "天氣不是每天查。",
+              "note": null
             },
             {
               "japanese": "この 言葉は 辞書で 調べない。",
-              "chinese": "這個詞不用字典查。"
+              "chinese": "這個詞不用字典查。",
+              "note": null
             },
             {
               "japanese": "弟は 自分で 調べない。",
-              "chinese": "弟弟不自己查。"
+              "chinese": "弟弟不自己查。",
+              "note": null
             }
           ]
         },
@@ -429,18 +518,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべた",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 店の 電話番号を 調べた。",
-              "chinese": "昨天查了店的電話號碼。"
+              "chinese": "昨天查了店的電話號碼。",
+              "note": null
             },
             {
               "japanese": "辞書で その 言葉を 調べた。",
-              "chinese": "用字典查了那個詞。"
+              "chinese": "用字典查了那個詞。",
+              "note": null
             },
             {
               "japanese": "週末に 電車の 道を 調べた。",
-              "chinese": "週末查了電車路線。"
+              "chinese": "週末查了電車路線。",
+              "note": null
             }
           ]
         },
@@ -449,18 +543,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 天気を 調べなかった。",
-              "chinese": "昨天沒查天氣。"
+              "chinese": "昨天沒查天氣。",
+              "note": null
             },
             {
               "japanese": "その 言葉は 辞書で 調べなかった。",
-              "chinese": "那個詞沒用字典查。"
+              "chinese": "那個詞沒用字典查。",
+              "note": null
             },
             {
               "japanese": "兄は 旅行の 料金を 調べなかった。",
-              "chinese": "哥哥沒查旅行費用。"
+              "chinese": "哥哥沒查旅行費用。",
+              "note": null
             }
           ]
         },
@@ -469,18 +568,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべて",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "地図を 調べて、店へ 行った。",
-              "chinese": "查了地圖後去了店裡。"
+              "chinese": "查了地圖後去了店裡。",
+              "note": null
             },
             {
               "japanese": "辞書で 調べて、答えを 書いた。",
-              "chinese": "用字典查了之後寫了答案。"
+              "chinese": "用字典查了之後寫了答案。",
+              "note": null
             },
             {
               "japanese": "電話番号を 調べて、すぐ 電話した。",
-              "chinese": "查了電話號碼後馬上打了電話。"
+              "chinese": "查了電話號碼後馬上打了電話。",
+              "note": null
             }
           ]
         },
@@ -489,18 +593,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "スマホで 電車の 時間が 調べられる。",
-              "chinese": "用手機可以查到電車時間。"
+              "chinese": "用手機可以查到電車時間。",
+              "note": null
             },
             {
               "japanese": "この 辞書なら 古い 言葉も 調べられる。",
-              "chinese": "用這本字典連古語也能查。"
+              "chinese": "用這本字典連古語也能查。",
+              "note": null
             },
             {
               "japanese": "図書館で 資料が 調べられる。",
-              "chinese": "在圖書館可以查資料。"
+              "chinese": "在圖書館可以查資料。",
+              "note": null
             }
           ]
         },
@@ -509,18 +618,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべよう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日 店の 場所を 調べよう。",
-              "chinese": "明天來查店的位置吧。"
+              "chinese": "明天來查店的位置吧。",
+              "note": null
             },
             {
               "japanese": "一緒に 辞書で 調べよう。",
-              "chinese": "一起用字典查吧。"
+              "chinese": "一起用字典查吧。",
+              "note": null
             },
             {
               "japanese": "まず 電車の 時間を 調べよう。",
-              "chinese": "先查電車時間吧。"
+              "chinese": "先查電車時間吧。",
+              "note": null
             }
           ]
         },
@@ -529,18 +643,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべろ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "部長に「すぐ 調べろ」と 言われた。",
-              "chinese": "部長對我說「馬上查」。"
+              "chinese": "部長對我說「馬上查」。",
+              "note": null
             },
             {
               "japanese": "先生は 学生に「辞書で 調べろ」と 言った。",
-              "chinese": "老師對學生說「用字典查」。"
+              "chinese": "老師對學生說「用字典查」。",
+              "note": null
             },
             {
               "japanese": "課長は 私に「料金を 調べろ」と 命じた。",
-              "chinese": "課長命令我「查費用」。"
+              "chinese": "課長命令我「查費用」。",
+              "note": null
             }
           ]
         },
@@ -549,18 +668,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "辞書を 調べれば、意味が 分かる。",
-              "chinese": "查字典就懂意思。"
+              "chinese": "查字典就懂意思。",
+              "note": null
             },
             {
               "japanese": "ネットで 調べれば、場所が すぐ 分かる。",
-              "chinese": "上網查就馬上知道位置。"
+              "chinese": "上網查就馬上知道位置。",
+              "note": null
             },
             {
               "japanese": "電話番号を 調べれば、連絡できる。",
-              "chinese": "查電話號碼就能聯絡。"
+              "chinese": "查電話號碼就能聯絡。",
+              "note": null
             }
           ]
         },
@@ -569,18 +693,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "事故の 原因が 警察に 調べられる。",
-              "chinese": "事故原因被警察調查。"
+              "chinese": "事故原因被警察調查。",
+              "note": null
             },
             {
               "japanese": "私の 部屋が 係の 人に 調べられる。",
-              "chinese": "我的房間被負責人檢查。"
+              "chinese": "我的房間被負責人檢查。",
+              "note": null
             },
             {
               "japanese": "会社の お金が 会計士に 調べられる。",
-              "chinese": "公司的錢被會計師查核。"
+              "chinese": "公司的錢被會計師查核。",
+              "note": null
             }
           ]
         },
@@ -589,18 +718,23 @@
           "group": "2",
           "chinese": "調查; 查; 查閱",
           "japanese": "しらべさせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先生は 学生に 言葉の 意味を 調べさせる。",
-              "chinese": "老師讓學生查詞義。"
+              "chinese": "老師讓學生查詞義。",
+              "note": null
             },
             {
               "japanese": "部長は 新人に 電車の 時間を 調べさせる。",
-              "chinese": "部長讓新人查電車時間。"
+              "chinese": "部長讓新人查電車時間。",
+              "note": null
             },
             {
               "japanese": "母は 子供に 店の 場所を 調べさせる。",
-              "chinese": "母親讓孩子查店的位置。"
+              "chinese": "母親讓孩子查店的位置。",
+              "note": null
             }
           ]
         }
@@ -611,18 +745,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおす",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "壊れた 時計を 直す。",
-              "chinese": "修理壞掉的手錶。"
+              "chinese": "修理壞掉的手錶。",
+              "note": null
             },
             {
               "japanese": "作文の 間違いを 直す。",
-              "chinese": "改正作文的錯誤。"
+              "chinese": "改正作文的錯誤。",
+              "note": null
             },
             {
               "japanese": "自転車の タイヤを 直す。",
-              "chinese": "修理腳踏車的輪胎。"
+              "chinese": "修理腳踏車的輪胎。",
+              "note": null
             }
           ]
         },
@@ -631,18 +770,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおします",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日 時計を 直します。",
-              "chinese": "明天修理手錶。"
+              "chinese": "明天修理手錶。",
+              "note": null
             },
             {
               "japanese": "レポートの 間違いを 直します。",
-              "chinese": "改正報告的錯誤。"
+              "chinese": "改正報告的錯誤。",
+              "note": null
             },
             {
               "japanese": "父が 自転車を 直します。",
-              "chinese": "父親修理腳踏車。"
+              "chinese": "父親修理腳踏車。",
+              "note": null
             }
           ]
         },
@@ -651,18 +795,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおしません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 時計は もう 直しません。",
-              "chinese": "這隻手錶不再修了。"
+              "chinese": "這隻手錶不再修了。",
+              "note": null
             },
             {
               "japanese": "その 作文は 直しません。",
-              "chinese": "那篇作文不改。"
+              "chinese": "那篇作文不改。",
+              "note": null
             },
             {
               "japanese": "古い テレビは 直しません。",
-              "chinese": "舊電視不修了。"
+              "chinese": "舊電視不修了。",
+              "note": null
             }
           ]
         },
@@ -671,18 +820,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおしました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 壊れた 時計を 直しました。",
-              "chinese": "昨天修好了壞掉的手錶。"
+              "chinese": "昨天修好了壞掉的手錶。",
+              "note": null
             },
             {
               "japanese": "先生が 作文を 直しました。",
-              "chinese": "老師改了作文。"
+              "chinese": "老師改了作文。",
+              "note": null
             },
             {
               "japanese": "日曜日に 自転車を 直しました。",
-              "chinese": "星期天修了腳踏車。"
+              "chinese": "星期天修了腳踏車。",
+              "note": null
             }
           ]
         },
@@ -691,18 +845,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおしませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 時計を 直しませんでした。",
-              "chinese": "昨天沒修手錶。"
+              "chinese": "昨天沒修手錶。",
+              "note": null
             },
             {
               "japanese": "その 作文は 直しませんでした。",
-              "chinese": "那篇作文沒改。"
+              "chinese": "那篇作文沒改。",
+              "note": null
             },
             {
               "japanese": "先週は 自転車を 直しませんでした。",
-              "chinese": "上週沒修腳踏車。"
+              "chinese": "上週沒修腳踏車。",
+              "note": null
             }
           ]
         },
@@ -711,18 +870,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおさない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 時計は もう 直さない。",
-              "chinese": "這隻手錶不再修。"
+              "chinese": "這隻手錶不再修。",
+              "note": null
             },
             {
               "japanese": "兄は 作文を 直さない。",
-              "chinese": "哥哥不改作文。"
+              "chinese": "哥哥不改作文。",
+              "note": null
             },
             {
               "japanese": "古い ラジオは 直さない。",
-              "chinese": "舊收音機不修。"
+              "chinese": "舊收音機不修。",
+              "note": null
             }
           ]
         },
@@ -731,18 +895,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 時計を 直した。",
-              "chinese": "昨天修了手錶。"
+              "chinese": "昨天修了手錶。",
+              "note": null
             },
             {
               "japanese": "母が シャツの ボタンを 直した。",
-              "chinese": "母親修了襯衫的扣子。"
+              "chinese": "母親修了襯衫的扣子。",
+              "note": null
             },
             {
               "japanese": "先週 自転車を 直した。",
-              "chinese": "上週修了腳踏車。"
+              "chinese": "上週修了腳踏車。",
+              "note": null
             }
           ]
         },
@@ -751,18 +920,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおさなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 時計を 直さなかった。",
-              "chinese": "昨天沒修手錶。"
+              "chinese": "昨天沒修手錶。",
+              "note": null
             },
             {
               "japanese": "妹は 作文を 直さなかった。",
-              "chinese": "妹妹沒改作文。"
+              "chinese": "妹妹沒改作文。",
+              "note": null
             },
             {
               "japanese": "先週は テレビを 直さなかった。",
-              "chinese": "上週沒修電視。"
+              "chinese": "上週沒修電視。",
+              "note": null
             }
           ]
         },
@@ -771,18 +945,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおして",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "時計を 直して、また 使って いる。",
-              "chinese": "修好手錶後又繼續用。"
+              "chinese": "修好手錶後又繼續用。",
+              "note": null
             },
             {
               "japanese": "間違いを 直して、先生に 出した。",
-              "chinese": "改正錯誤後交給老師。"
+              "chinese": "改正錯誤後交給老師。",
+              "note": null
             },
             {
               "japanese": "自転車を 直して、駅まで 行った。",
-              "chinese": "修好腳踏車後騎到車站。"
+              "chinese": "修好腳踏車後騎到車站。",
+              "note": null
             }
           ]
         },
@@ -791,18 +970,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 時計は 私にも 直せる。",
-              "chinese": "這隻手錶我也能修。"
+              "chinese": "這隻手錶我也能修。",
+              "note": null
             },
             {
               "japanese": "一人で 作文を 直せる。",
-              "chinese": "能自己改正作文。"
+              "chinese": "能自己改正作文。",
+              "note": null
             },
             {
               "japanese": "この くらいの 傷なら 直せる。",
-              "chinese": "這種程度的損傷能修好。"
+              "chinese": "這種程度的損傷能修好。",
+              "note": null
             }
           ]
         },
@@ -811,18 +995,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおそう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "日曜日に 時計を 直そう。",
-              "chinese": "星期天來修手錶吧。"
+              "chinese": "星期天來修手錶吧。",
+              "note": null
             },
             {
               "japanese": "作文の 間違いを 直そう。",
-              "chinese": "來改正作文的錯誤吧。"
+              "chinese": "來改正作文的錯誤吧。",
+              "note": null
             },
             {
               "japanese": "古い 自転車を 直そう。",
-              "chinese": "來修舊腳踏車吧。"
+              "chinese": "來修舊腳踏車吧。",
+              "note": null
             }
           ]
         },
@@ -831,18 +1020,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおせ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "部長に「すぐ 直せ」と 言われた。",
-              "chinese": "部長對我說「馬上修好」。"
+              "chinese": "部長對我說「馬上修好」。",
+              "note": null
             },
             {
               "japanese": "先生は 学生に「間違いを 直せ」と 言った。",
-              "chinese": "老師對學生說「改正錯誤」。"
+              "chinese": "老師對學生說「改正錯誤」。",
+              "note": null
             },
             {
               "japanese": "コーチは 私に「フォームを 直せ」と 言った。",
-              "chinese": "教練對我說「改正姿勢」。"
+              "chinese": "教練對我說「改正姿勢」。",
+              "note": null
             }
           ]
         },
@@ -851,18 +1045,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおせば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "時計を 直せば、また 使える。",
-              "chinese": "修好手錶就能再用。"
+              "chinese": "修好手錶就能再用。",
+              "note": null
             },
             {
               "japanese": "間違いを 直せば、点数が 上がる。",
-              "chinese": "改正錯誤分數就會提高。"
+              "chinese": "改正錯誤分數就會提高。",
+              "note": null
             },
             {
               "japanese": "自転車を 直せば、通勤に 使える。",
-              "chinese": "修好腳踏車就能用來通勤。"
+              "chinese": "修好腳踏車就能用來通勤。",
+              "note": null
             }
           ]
         },
@@ -871,18 +1070,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおされる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "私の 時計は 兄に 直される。",
-              "chinese": "我的手錶被哥哥修好。"
+              "chinese": "我的手錶被哥哥修好。",
+              "note": null
             },
             {
               "japanese": "作文が 先生に 直される。",
-              "chinese": "作文被老師改。"
+              "chinese": "作文被老師改。",
+              "note": null
             },
             {
               "japanese": "古い 家が 職人に 直される。",
-              "chinese": "老房子被工匠修好。"
+              "chinese": "老房子被工匠修好。",
+              "note": null
             }
           ]
         },
@@ -891,18 +1095,23 @@
           "group": "1",
           "chinese": "修理; 改正; 修改",
           "japanese": "なおさせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先生は 学生に 作文を 直させる。",
-              "chinese": "老師讓學生改正作文。"
+              "chinese": "老師讓學生改正作文。",
+              "note": null
             },
             {
               "japanese": "父は 私に 自転車を 直させる。",
-              "chinese": "父親讓我修腳踏車。"
+              "chinese": "父親讓我修腳踏車。",
+              "note": null
             },
             {
               "japanese": "部長は 新人に 時計を 直させる。",
-              "chinese": "部長讓新人修手錶。"
+              "chinese": "部長讓新人修手錶。",
+              "note": null
             }
           ]
         }
@@ -913,18 +1122,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりする",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "壊れた 車を 修理する。",
-              "chinese": "修理壞掉的車。"
+              "chinese": "修理壞掉的車。",
+              "note": null
             },
             {
               "japanese": "店の エアコンを 修理する。",
-              "chinese": "修理店裡的冷氣。"
+              "chinese": "修理店裡的冷氣。",
+              "note": null
             },
             {
               "japanese": "自分で 時計を 修理する。",
-              "chinese": "自己修理手錶。"
+              "chinese": "自己修理手錶。",
+              "note": null
             }
           ]
         },
@@ -933,18 +1147,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりします",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日 車を 修理します。",
-              "chinese": "明天修理車子。"
+              "chinese": "明天修理車子。",
+              "note": null
             },
             {
               "japanese": "業者が エアコンを 修理します。",
-              "chinese": "業者修理冷氣。"
+              "chinese": "業者修理冷氣。",
+              "note": null
             },
             {
               "japanese": "父が 古い 時計を 修理します。",
-              "chinese": "父親修理舊手錶。"
+              "chinese": "父親修理舊手錶。",
+              "note": null
             }
           ]
         },
@@ -953,18 +1172,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりしません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 車は もう 修理しません。",
-              "chinese": "這輛車不再修了。"
+              "chinese": "這輛車不再修了。",
+              "note": null
             },
             {
               "japanese": "古い エアコンは 修理しません。",
-              "chinese": "舊冷氣不修了。"
+              "chinese": "舊冷氣不修了。",
+              "note": null
             },
             {
               "japanese": "日曜日は 修理しません。",
-              "chinese": "星期天不修理。"
+              "chinese": "星期天不修理。",
+              "note": null
             }
           ]
         },
@@ -973,18 +1197,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりしました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 車を 修理しました。",
-              "chinese": "昨天修了車子。"
+              "chinese": "昨天修了車子。",
+              "note": null
             },
             {
               "japanese": "先週 店の エアコンを 修理しました。",
-              "chinese": "上週修了店裡的冷氣。"
+              "chinese": "上週修了店裡的冷氣。",
+              "note": null
             },
             {
               "japanese": "兄が 時計を 修理しました。",
-              "chinese": "哥哥修了手錶。"
+              "chinese": "哥哥修了手錶。",
+              "note": null
             }
           ]
         },
@@ -993,18 +1222,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりしませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 車を 修理しませんでした。",
-              "chinese": "昨天沒修車子。"
+              "chinese": "昨天沒修車子。",
+              "note": null
             },
             {
               "japanese": "先週は エアコンを 修理しませんでした。",
-              "chinese": "上週沒修冷氣。"
+              "chinese": "上週沒修冷氣。",
+              "note": null
             },
             {
               "japanese": "その 時計は 修理しませんでした。",
-              "chinese": "那隻手錶沒修。"
+              "chinese": "那隻手錶沒修。",
+              "note": null
             }
           ]
         },
@@ -1013,18 +1247,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりしない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 車は もう 修理しない。",
-              "chinese": "這輛車不再修。"
+              "chinese": "這輛車不再修。",
+              "note": null
             },
             {
               "japanese": "弟は エアコンを 修理しない。",
-              "chinese": "弟弟不修冷氣。"
+              "chinese": "弟弟不修冷氣。",
+              "note": null
             },
             {
               "japanese": "古い 時計は 修理しない。",
-              "chinese": "舊手錶不修。"
+              "chinese": "舊手錶不修。",
+              "note": null
             }
           ]
         },
@@ -1033,18 +1272,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 車を 修理した。",
-              "chinese": "昨天修了車子。"
+              "chinese": "昨天修了車子。",
+              "note": null
             },
             {
               "japanese": "先月 店の エアコンを 修理した。",
-              "chinese": "上個月修了店裡的冷氣。"
+              "chinese": "上個月修了店裡的冷氣。",
+              "note": null
             },
             {
               "japanese": "父が 古い 時計を 修理した。",
-              "chinese": "父親修了舊手錶。"
+              "chinese": "父親修了舊手錶。",
+              "note": null
             }
           ]
         },
@@ -1053,18 +1297,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりしなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 車を 修理しなかった。",
-              "chinese": "昨天沒修車子。"
+              "chinese": "昨天沒修車子。",
+              "note": null
             },
             {
               "japanese": "先月は エアコンを 修理しなかった。",
-              "chinese": "上個月沒修冷氣。"
+              "chinese": "上個月沒修冷氣。",
+              "note": null
             },
             {
               "japanese": "兄は 時計を 修理しなかった。",
-              "chinese": "哥哥沒修手錶。"
+              "chinese": "哥哥沒修手錶。",
+              "note": null
             }
           ]
         },
@@ -1073,18 +1322,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりして",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "車を 修理して、また 乗って いる。",
-              "chinese": "修好車後又繼續開。"
+              "chinese": "修好車後又繼續開。",
+              "note": null
             },
             {
               "japanese": "エアコンを 修理して、部屋を 冷やした。",
-              "chinese": "修好冷氣後讓房間變涼。"
+              "chinese": "修好冷氣後讓房間變涼。",
+              "note": null
             },
             {
               "japanese": "時計を 修理して、母に あげた。",
-              "chinese": "修好手錶後送給母親。"
+              "chinese": "修好手錶後送給母親。",
+              "note": null
             }
           ]
         },
@@ -1093,18 +1347,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりできる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 車は 自分で 修理できる。",
-              "chinese": "這輛車自己能修。"
+              "chinese": "這輛車自己能修。",
+              "note": null
             },
             {
               "japanese": "古い エアコンでも 修理できる。",
-              "chinese": "舊冷氣也能修。"
+              "chinese": "舊冷氣也能修。",
+              "note": null
             },
             {
               "japanese": "この 店では 時計も 修理できる。",
-              "chinese": "這家店也能修手錶。"
+              "chinese": "這家店也能修手錶。",
+              "note": null
             }
           ]
         },
@@ -1113,18 +1372,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりしよう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "日曜日に 車を 修理しよう。",
-              "chinese": "星期天來修車吧。"
+              "chinese": "星期天來修車吧。",
+              "note": null
             },
             {
               "japanese": "みんなで エアコンを 修理しよう。",
-              "chinese": "大家一起修冷氣吧。"
+              "chinese": "大家一起修冷氣吧。",
+              "note": null
             },
             {
               "japanese": "古い 時計を 修理しよう。",
-              "chinese": "來修舊手錶吧。"
+              "chinese": "來修舊手錶吧。",
+              "note": null
             }
           ]
         },
@@ -1133,18 +1397,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりしろ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "部長に「すぐ 修理しろ」と 言われた。",
-              "chinese": "部長對我說「馬上修好」。"
+              "chinese": "部長對我說「馬上修好」。",
+              "note": null
             },
             {
               "japanese": "社長は 業者に「今日 修理しろ」と 言った。",
-              "chinese": "社長對業者說「今天修好」。"
+              "chinese": "社長對業者說「今天修好」。",
+              "note": null
             },
             {
               "japanese": "課長は 私に「車を 修理しろ」と 命じた。",
-              "chinese": "課長命令我「修車」。"
+              "chinese": "課長命令我「修車」。",
+              "note": null
             }
           ]
         },
@@ -1153,18 +1422,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりすれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "車を 修理すれば、まだ 乗れる。",
-              "chinese": "修好車就還能開。"
+              "chinese": "修好車就還能開。",
+              "note": null
             },
             {
               "japanese": "エアコンを 修理すれば、涼しく なる。",
-              "chinese": "修好冷氣就會變涼。"
+              "chinese": "修好冷氣就會變涼。",
+              "note": null
             },
             {
               "japanese": "時計を 修理すれば、また 使える。",
-              "chinese": "修好手錶就能再用。"
+              "chinese": "修好手錶就能再用。",
+              "note": null
             }
           ]
         },
@@ -1173,18 +1447,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりされる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "私の 車は 父に 修理される。",
-              "chinese": "我的車被父親修好。"
+              "chinese": "我的車被父親修好。",
+              "note": null
             },
             {
               "japanese": "店の エアコンが 業者に 修理される。",
-              "chinese": "店裡的冷氣被業者修理。"
+              "chinese": "店裡的冷氣被業者修理。",
+              "note": null
             },
             {
               "japanese": "古い 時計が 職人に 修理される。",
-              "chinese": "舊手錶被工匠修好。"
+              "chinese": "舊手錶被工匠修好。",
+              "note": null
             }
           ]
         },
@@ -1193,18 +1472,23 @@
           "group": "3",
           "chinese": "修理",
           "japanese": "しゅうりさせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "父は 私に 車を 修理させる。",
-              "chinese": "父親讓我修車。"
+              "chinese": "父親讓我修車。",
+              "note": null
             },
             {
               "japanese": "店長は 店員に エアコンを 修理させる。",
-              "chinese": "店長讓店員修冷氣。"
+              "chinese": "店長讓店員修冷氣。",
+              "note": null
             },
             {
               "japanese": "先生は 学生に 時計を 修理させる。",
-              "chinese": "老師讓學生修手錶。"
+              "chinese": "老師讓學生修手錶。",
+              "note": null
             }
           ]
         }
@@ -1215,18 +1499,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわする",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "夜 友だちに 電話する。",
-              "chinese": "晚上打電話給朋友。"
+              "chinese": "晚上打電話給朋友。",
+              "note": null
             },
             {
               "japanese": "明日 会社に 電話する。",
-              "chinese": "明天打電話給公司。"
+              "chinese": "明天打電話給公司。",
+              "note": null
             },
             {
               "japanese": "家に 着いたら 電話する。",
-              "chinese": "到家後打電話。"
+              "chinese": "到家後打電話。",
+              "note": null
             }
           ]
         },
@@ -1235,18 +1524,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわします",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今から 母に 電話します。",
-              "chinese": "現在打電話給母親。"
+              "chinese": "現在打電話給母親。",
+              "note": null
             },
             {
               "japanese": "後で 先生に 電話します。",
-              "chinese": "稍後打電話給老師。"
+              "chinese": "稍後打電話給老師。",
+              "note": null
             },
             {
               "japanese": "駅に 着いたら 電話します。",
-              "chinese": "到車站就打電話。"
+              "chinese": "到車站就打電話。",
+              "note": null
             }
           ]
         },
@@ -1255,18 +1549,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわしません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は もう 電話しません。",
-              "chinese": "今天不再打電話。"
+              "chinese": "今天不再打電話。",
+              "note": null
             },
             {
               "japanese": "夜は 友だちに 電話しません。",
-              "chinese": "晚上不打電話給朋友。"
+              "chinese": "晚上不打電話給朋友。",
+              "note": null
             },
             {
               "japanese": "会社には 電話しません。",
-              "chinese": "不打電話給公司。"
+              "chinese": "不打電話給公司。",
+              "note": null
             }
           ]
         },
@@ -1275,18 +1574,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわしました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 母に 電話しました。",
-              "chinese": "昨天打電話給母親。"
+              "chinese": "昨天打電話給母親。",
+              "note": null
             },
             {
               "japanese": "朝 会社に 電話しました。",
-              "chinese": "早上打電話給公司。"
+              "chinese": "早上打電話給公司。",
+              "note": null
             },
             {
               "japanese": "駅に 着いて すぐ 電話しました。",
-              "chinese": "到車站後馬上打了電話。"
+              "chinese": "到車站後馬上打了電話。",
+              "note": null
             }
           ]
         },
@@ -1295,18 +1599,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわしませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 母に 電話しませんでした。",
-              "chinese": "昨天沒打電話給母親。"
+              "chinese": "昨天沒打電話給母親。",
+              "note": null
             },
             {
               "japanese": "夜は 友だちに 電話しませんでした。",
-              "chinese": "晚上沒打電話給朋友。"
+              "chinese": "晚上沒打電話給朋友。",
+              "note": null
             },
             {
               "japanese": "会社には 電話しませんでした。",
-              "chinese": "沒打電話給公司。"
+              "chinese": "沒打電話給公司。",
+              "note": null
             }
           ]
         },
@@ -1315,18 +1624,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわしない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "夜 遅くは 電話しない。",
-              "chinese": "晚上太晚不打電話。"
+              "chinese": "晚上太晚不打電話。",
+              "note": null
             },
             {
               "japanese": "弟は 友だちに 電話しない。",
-              "chinese": "弟弟不打電話給朋友。"
+              "chinese": "弟弟不打電話給朋友。",
+              "note": null
             },
             {
               "japanese": "用事が なければ 電話しない。",
-              "chinese": "沒事就不打電話。"
+              "chinese": "沒事就不打電話。",
+              "note": null
             }
           ]
         },
@@ -1335,18 +1649,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 友だちに 電話した。",
-              "chinese": "昨天打電話給朋友。"
+              "chinese": "昨天打電話給朋友。",
+              "note": null
             },
             {
               "japanese": "朝 会社に 電話した。",
-              "chinese": "早上打電話給公司。"
+              "chinese": "早上打電話給公司。",
+              "note": null
             },
             {
               "japanese": "家に 着いて すぐ 電話した。",
-              "chinese": "到家後馬上打了電話。"
+              "chinese": "到家後馬上打了電話。",
+              "note": null
             }
           ]
         },
@@ -1355,18 +1674,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわしなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 母に 電話しなかった。",
-              "chinese": "昨天沒打電話給母親。"
+              "chinese": "昨天沒打電話給母親。",
+              "note": null
             },
             {
               "japanese": "夜は 会社に 電話しなかった。",
-              "chinese": "晚上沒打電話給公司。"
+              "chinese": "晚上沒打電話給公司。",
+              "note": null
             },
             {
               "japanese": "忙しくて 友だちに 電話しなかった。",
-              "chinese": "因為忙沒打電話給朋友。"
+              "chinese": "因為忙沒打電話給朋友。",
+              "note": null
             }
           ]
         },
@@ -1375,18 +1699,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわして",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "友だちに 電話して、予定を 聞いた。",
-              "chinese": "打電話給朋友問了預定。"
+              "chinese": "打電話給朋友問了預定。",
+              "note": null
             },
             {
               "japanese": "会社に 電話して、休みを 取った。",
-              "chinese": "打電話給公司請了假。"
+              "chinese": "打電話給公司請了假。",
+              "note": null
             },
             {
               "japanese": "母に 電話して、無事を 知らせた。",
-              "chinese": "打電話給母親報平安。"
+              "chinese": "打電話給母親報平安。",
+              "note": null
             }
           ]
         },
@@ -1395,18 +1724,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわできる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "ここから 電話できる。",
-              "chinese": "從這裡可以打電話。"
+              "chinese": "從這裡可以打電話。",
+              "note": null
             },
             {
               "japanese": "夜なら 会社に 電話できる。",
-              "chinese": "晚上的話可以打電話給公司。"
+              "chinese": "晚上的話可以打電話給公司。",
+              "note": null
             },
             {
               "japanese": "公衆電話が あれば 電話できる。",
-              "chinese": "有公用電話就能打電話。"
+              "chinese": "有公用電話就能打電話。",
+              "note": null
             }
           ]
         },
@@ -1415,18 +1749,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわしよう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今 母に 電話しよう。",
-              "chinese": "現在打給母親吧。"
+              "chinese": "現在打給母親吧。",
+              "note": null
             },
             {
               "japanese": "後で 友だちに 電話しよう。",
-              "chinese": "稍後打給朋友吧。"
+              "chinese": "稍後打給朋友吧。",
+              "note": null
             },
             {
               "japanese": "明日の 朝 会社に 電話しよう。",
-              "chinese": "明天早上打給公司吧。"
+              "chinese": "明天早上打給公司吧。",
+              "note": null
             }
           ]
         },
@@ -1435,18 +1774,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわしろ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "部長に「すぐ 電話しろ」と 言われた。",
-              "chinese": "部長對我說「馬上打電話」。"
+              "chinese": "部長對我說「馬上打電話」。",
+              "note": null
             },
             {
               "japanese": "課長は 私に「客に 電話しろ」と 命じた。",
-              "chinese": "課長命令我「打電話給客戶」。"
+              "chinese": "課長命令我「打電話給客戶」。",
+              "note": null
             },
             {
               "japanese": "先生は 私に「家に 電話しろ」と 言った。",
-              "chinese": "老師對我說「打電話回家」。"
+              "chinese": "老師對我說「打電話回家」。",
+              "note": null
             }
           ]
         },
@@ -1455,18 +1799,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわすれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "母に 電話すれば、安心する。",
-              "chinese": "打給母親她就安心。"
+              "chinese": "打給母親她就安心。",
+              "note": null
             },
             {
               "japanese": "会社に 電話すれば、分かる。",
-              "chinese": "打給公司就知道了。"
+              "chinese": "打給公司就知道了。",
+              "note": null
             },
             {
               "japanese": "すぐ 電話すれば、まだ 間に合う。",
-              "chinese": "馬上打電話還來得及。"
+              "chinese": "馬上打電話還來得及。",
+              "note": null
             }
           ]
         },
@@ -1475,18 +1824,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわされる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "夜中に 友だちに 電話される。",
-              "chinese": "半夜被朋友打電話來。"
+              "chinese": "半夜被朋友打電話來。",
+              "note": null
             },
             {
               "japanese": "毎日 客に 電話される。",
-              "chinese": "每天被客人打電話來。"
+              "chinese": "每天被客人打電話來。",
+              "note": null
             },
             {
               "japanese": "朝 早く 母に 電話される。",
-              "chinese": "一大早被母親打電話來。"
+              "chinese": "一大早被母親打電話來。",
+              "note": null
             }
           ]
         },
@@ -1495,18 +1849,23 @@
           "group": "3",
           "chinese": "打電話",
           "japanese": "でんわさせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先生は 学生に 家に 電話させる。",
-              "chinese": "老師讓學生打電話回家。"
+              "chinese": "老師讓學生打電話回家。",
+              "note": null
             },
             {
               "japanese": "部長は 新人に 客に 電話させる。",
-              "chinese": "部長讓新人打電話給客戶。"
+              "chinese": "部長讓新人打電話給客戶。",
+              "note": null
             },
             {
               "japanese": "母は 子供に おばあさんに 電話させる。",
-              "chinese": "母親讓孩子打電話給奶奶。"
+              "chinese": "母親讓孩子打電話給奶奶。",
+              "note": null
             }
           ]
         }

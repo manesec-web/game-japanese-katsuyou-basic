@@ -7,18 +7,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いく",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日 学校へ 行く。",
-              "chinese": "明天去學校。"
+              "chinese": "明天去學校。",
+              "note": null
             },
             {
               "japanese": "日曜日は 父と スーパーへ 行く。",
-              "chinese": "星期天和爸爸去超市。"
+              "chinese": "星期天和爸爸去超市。",
+              "note": null
             },
             {
               "japanese": "夏休みに 一人で 京都へ 行く。",
-              "chinese": "暑假期間一個人去京都。"
+              "chinese": "暑假期間一個人去京都。",
+              "note": null
             }
           ]
         },
@@ -27,18 +32,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いきます",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "毎朝 八時に 学校へ 行きます。",
-              "chinese": "每天早上八點去學校。"
+              "chinese": "每天早上八點去學校。",
+              "note": null
             },
             {
               "japanese": "来週 新幹線で 大阪へ 行きます。",
-              "chinese": "下週搭新幹線去大阪。"
+              "chinese": "下週搭新幹線去大阪。",
+              "note": null
             },
             {
               "japanese": "彼は 自転車で 駅まで 行きます。",
-              "chinese": "他騎自行車到車站。"
+              "chinese": "他騎自行車到車站。",
+              "note": null
             }
           ]
         },
@@ -47,18 +57,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いきません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 雨なので 外へ 行きません。",
-              "chinese": "今天下雨所以不出門。"
+              "chinese": "今天下雨所以不出門。",
+              "note": null
             },
             {
               "japanese": "母は 一人で 旅行に 行きません。",
-              "chinese": "媽媽不會一個人去旅行。"
+              "chinese": "媽媽不會一個人去旅行。",
+              "note": null
             },
             {
               "japanese": "明日は 学校へ 行きません。",
-              "chinese": "明天不去學校。"
+              "chinese": "明天不去學校。",
+              "note": null
             }
           ]
         },
@@ -67,18 +82,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いきました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 友達と 映画に 行きました。",
-              "chinese": "昨天和朋友去看電影。"
+              "chinese": "昨天和朋友去看電影。",
+              "note": null
             },
             {
               "japanese": "先週 家族で 海へ 行きました。",
-              "chinese": "上週和家人去了海邊。"
+              "chinese": "上週和家人去了海邊。",
+              "note": null
             },
             {
               "japanese": "彼女は タクシーで 駅へ 行きました。",
-              "chinese": "她搭計程車去了車站。"
+              "chinese": "她搭計程車去了車站。",
+              "note": null
             }
           ]
         },
@@ -87,18 +107,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いきませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 忙しかったので どこも 行きませんでした。",
-              "chinese": "昨天很忙所以哪裡都沒去。"
+              "chinese": "昨天很忙所以哪裡都沒去。",
+              "note": null
             },
             {
               "japanese": "先月は 一度も 旅行に 行きませんでした。",
-              "chinese": "上個月一次也沒去旅行。"
+              "chinese": "上個月一次也沒去旅行。",
+              "note": null
             },
             {
               "japanese": "子供の とき 一人で 遠くへ 行きませんでした。",
-              "chinese": "小時候沒有獨自去遠方。"
+              "chinese": "小時候沒有獨自去遠方。",
+              "note": null
             }
           ]
         },
@@ -107,18 +132,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いかない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は もう 学校へ 行かない。",
-              "chinese": "今天已經不去學校了。"
+              "chinese": "今天已經不去學校了。",
+              "note": null
             },
             {
               "japanese": "雨の 日は 公園へ 行かない。",
-              "chinese": "下雨天不去公園。"
+              "chinese": "下雨天不去公園。",
+              "note": null
             },
             {
               "japanese": "彼は お金が ないから 旅行に 行かない。",
-              "chinese": "他因為沒錢所以不去旅行。"
+              "chinese": "他因為沒錢所以不去旅行。",
+              "note": null
             }
           ]
         },
@@ -127,18 +157,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "きのう 駅まで 歩いて 行った。",
-              "chinese": "昨天走路去了車站。"
+              "chinese": "昨天走路去了車站。",
+              "note": null
             },
             {
               "japanese": "去年 北海道へ 行った。",
-              "chinese": "去年去了北海道。"
+              "chinese": "去年去了北海道。",
+              "note": null
             },
             {
               "japanese": "弟は 友達と 海へ 行った。",
-              "chinese": "弟弟和朋友去了海邊。"
+              "chinese": "弟弟和朋友去了海邊。",
+              "note": null
             }
           ]
         },
@@ -147,18 +182,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いかなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 時間が なくて 行かなかった。",
-              "chinese": "昨天沒時間所以沒去。"
+              "chinese": "昨天沒時間所以沒去。",
+              "note": null
             },
             {
               "japanese": "夏休みに 一度も 海へ 行かなかった。",
-              "chinese": "暑假期間一次也沒去海邊。"
+              "chinese": "暑假期間一次也沒去海邊。",
+              "note": null
             },
             {
               "japanese": "彼は 病気で 学校へ 行かなかった。",
-              "chinese": "他生病了所以沒去學校。"
+              "chinese": "他生病了所以沒去學校。",
+              "note": null
             }
           ]
         },
@@ -167,18 +207,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いって",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先に 駅へ 行って、切符を 買います。",
-              "chinese": "先去車站買票。"
+              "chinese": "先去車站買票。",
+              "note": null
             },
             {
               "japanese": "夏に 家族で 京都へ 行って、お寺を 見ました。",
-              "chinese": "夏天和家人去京都看了寺廟。"
+              "chinese": "夏天和家人去京都看了寺廟。",
+              "note": null
             },
             {
               "japanese": "明日 学校へ 行って、先生に 会います。",
-              "chinese": "明天去學校見老師。"
+              "chinese": "明天去學校見老師。",
+              "note": null
             }
           ]
         },
@@ -187,18 +232,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いける",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日は 休みだから どこへでも 行ける。",
-              "chinese": "明天放假所以哪裡都能去。"
+              "chinese": "明天放假所以哪裡都能去。",
+              "note": null
             },
             {
               "japanese": "この バスで 駅まで 行ける。",
-              "chinese": "搭這班公車能到車站。"
+              "chinese": "搭這班公車能到車站。",
+              "note": null
             },
             {
               "japanese": "お金が あれば 旅行に 行ける。",
-              "chinese": "有錢的話就能去旅行。"
+              "chinese": "有錢的話就能去旅行。",
+              "note": null
             }
           ]
         },
@@ -207,18 +257,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いこう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "一緒に 駅まで 行こう。",
-              "chinese": "一起走到車站吧。"
+              "chinese": "一起走到車站吧。",
+              "note": null
             },
             {
               "japanese": "夏休みに みんなで 海へ 行こう。",
-              "chinese": "暑假期間大家一起去海邊吧。"
+              "chinese": "暑假期間大家一起去海邊吧。",
+              "note": null
             },
             {
               "japanese": "今度の 日曜日に スーパーへ 行こう。",
-              "chinese": "這個星期天去超市吧。"
+              "chinese": "這個星期天去超市吧。",
+              "note": null
             }
           ]
         },
@@ -227,18 +282,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いけ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "早く 学校へ 行け。",
-              "chinese": "快去學校！"
+              "chinese": "快去學校！",
+              "note": null
             },
             {
               "japanese": "今すぐ 駅へ 行け。",
-              "chinese": "現在馬上到車站去！"
+              "chinese": "現在馬上到車站去！",
+              "note": null
             },
             {
               "japanese": "傘を 持って 行け。",
-              "chinese": "帶傘去！"
+              "chinese": "帶傘去！",
+              "note": null
             }
           ]
         },
@@ -247,18 +307,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いけば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "駅へ 行けば 切符が 買える。",
-              "chinese": "去車站就能買票。"
+              "chinese": "去車站就能買票。",
+              "note": null
             },
             {
               "japanese": "毎日 練習に 行けば 上手に なる。",
-              "chinese": "每天去練習就會變厲害。"
+              "chinese": "每天去練習就會變厲害。",
+              "note": null
             },
             {
               "japanese": "バスで 行けば 安いです。",
-              "chinese": "搭公車去的話比較便宜。"
+              "chinese": "搭公車去的話比較便宜。",
+              "note": null
             }
           ]
         },
@@ -267,18 +332,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いかれる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "毎週 弟に 先に 駅へ 行かれる。",
-              "chinese": "每週弟弟都搶先跑去車站，讓我很困擾。"
+              "chinese": "每週弟弟都搶先跑去車站，讓我很困擾。",
+              "note": null
             },
             {
               "japanese": "私は 妹に 勝手に 旅行に 行かれる。",
-              "chinese": "妹妹老是擅自跑去旅行，我很困擾。"
+              "chinese": "妹妹老是擅自跑去旅行，我很困擾。",
+              "note": null
             },
             {
               "japanese": "父に 私の 車で どこかへ 行かれる。",
-              "chinese": "爸爸老是開我的車去別的地方。"
+              "chinese": "爸爸老是開我的車去別的地方。",
+              "note": null
             }
           ]
         },
@@ -287,18 +357,23 @@
           "group": "0",
           "chinese": "去; 前往",
           "japanese": "いかせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "母は 弟を 一人で 買い物に 行かせる。",
-              "chinese": "媽媽讓弟弟一個人去買東西。"
+              "chinese": "媽媽讓弟弟一個人去買東西。",
+              "note": null
             },
             {
               "japanese": "先生は 生徒を 毎日 図書館へ 行かせる。",
-              "chinese": "老師讓學生每天去圖書館。"
+              "chinese": "老師讓學生每天去圖書館。",
+              "note": null
             },
             {
               "japanese": "父は 私を 留学に 行かせる つもりだ。",
-              "chinese": "爸爸打算讓我去留學。"
+              "chinese": "爸爸打算讓我去留學。",
+              "note": null
             }
           ]
         }
@@ -309,18 +384,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "くる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日 友達が 家に 来る。",
-              "chinese": "明天朋友要來家裡。"
+              "chinese": "明天朋友要來家裡。",
+              "note": null
             },
             {
               "japanese": "冬に 家族が 国から 来る。",
-              "chinese": "冬天家人從故鄉來。"
+              "chinese": "冬天家人從故鄉來。",
+              "note": null
             },
             {
               "japanese": "バスが すぐ 来る。",
-              "chinese": "公車馬上就來。"
+              "chinese": "公車馬上就來。",
+              "note": null
             }
           ]
         },
@@ -329,18 +409,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "きます",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "毎週 月曜日に 先生が 来ます。",
-              "chinese": "每週一老師會來。"
+              "chinese": "每週一老師會來。",
+              "note": null
             },
             {
               "japanese": "来月 母が 東京へ 来ます。",
-              "chinese": "下個月媽媽要來東京。"
+              "chinese": "下個月媽媽要來東京。",
+              "note": null
             },
             {
               "japanese": "電車が 三時に 来ます。",
-              "chinese": "電車三點到。"
+              "chinese": "電車三點到。",
+              "note": null
             }
           ]
         },
@@ -349,18 +434,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "きません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 誰も 来ません。",
-              "chinese": "今天誰都不會來。"
+              "chinese": "今天誰都不會來。",
+              "note": null
             },
             {
               "japanese": "雨なので 友達は 来ません。",
-              "chinese": "因為下雨朋友不來了。"
+              "chinese": "因為下雨朋友不來了。",
+              "note": null
             },
             {
               "japanese": "彼は もう ここへ 来ません。",
-              "chinese": "他不會再來這裡了。"
+              "chinese": "他不會再來這裡了。",
+              "note": null
             }
           ]
         },
@@ -369,18 +459,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "きました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 叔父が 大阪から 来ました。",
-              "chinese": "昨天叔叔從大阪來了。"
+              "chinese": "昨天叔叔從大阪來了。",
+              "note": null
             },
             {
               "japanese": "さっき 宅配便が 来ました。",
-              "chinese": "剛才快遞來了。"
+              "chinese": "剛才快遞來了。",
+              "note": null
             },
             {
               "japanese": "先週 友達が 遊びに 来ました。",
-              "chinese": "上週朋友來玩。"
+              "chinese": "上週朋友來玩。",
+              "note": null
             }
           ]
         },
@@ -389,18 +484,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "きませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 誰も 来ませんでした。",
-              "chinese": "昨天誰都沒來。"
+              "chinese": "昨天誰都沒來。",
+              "note": null
             },
             {
               "japanese": "約束の 時間に 友達は 来ませんでした。",
-              "chinese": "約定的時間朋友沒來。"
+              "chinese": "約定的時間朋友沒來。",
+              "note": null
             },
             {
               "japanese": "先週は 一度も 来ませんでした。",
-              "chinese": "上週一次也沒來。"
+              "chinese": "上週一次也沒來。",
+              "note": null
             }
           ]
         },
@@ -409,18 +509,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "こない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日は 誰も 来ない。",
-              "chinese": "明天誰都不會來。"
+              "chinese": "明天誰都不會來。",
+              "note": null
             },
             {
               "japanese": "彼女は もう 来ない。",
-              "chinese": "她不會再來了。"
+              "chinese": "她不會再來了。",
+              "note": null
             },
             {
               "japanese": "雨の 日は 客が 来ない。",
-              "chinese": "下雨天客人不來。"
+              "chinese": "下雨天客人不來。",
+              "note": null
             }
           ]
         },
@@ -429,18 +534,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "きた",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今朝 手紙が 来た。",
-              "chinese": "今早信來了。"
+              "chinese": "今早信來了。",
+              "note": null
             },
             {
               "japanese": "バスが やっと 来た。",
-              "chinese": "公車終於來了。"
+              "chinese": "公車終於來了。",
+              "note": null
             },
             {
               "japanese": "去年 兄が 日本へ 来た。",
-              "chinese": "去年哥哥來日本了。"
+              "chinese": "去年哥哥來日本了。",
+              "note": null
             }
           ]
         },
@@ -449,18 +559,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "こなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 誰も 来なかった。",
-              "chinese": "昨天誰都沒來。"
+              "chinese": "昨天誰都沒來。",
+              "note": null
             },
             {
               "japanese": "友達は 約束の 日に 来なかった。",
-              "chinese": "朋友在約定的那天沒來。"
+              "chinese": "朋友在約定的那天沒來。",
+              "note": null
             },
             {
               "japanese": "その 日は バスが 来なかった。",
-              "chinese": "那天公車沒來。"
+              "chinese": "那天公車沒來。",
+              "note": null
             }
           ]
         },
@@ -469,18 +584,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "きて",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "友達が 家に 来て、一緒に 料理を した。",
-              "chinese": "朋友來家裡，一起做了菜。"
+              "chinese": "朋友來家裡，一起做了菜。",
+              "note": null
             },
             {
               "japanese": "先生が 来て、授業が 始まった。",
-              "chinese": "老師來了，課就開始了。"
+              "chinese": "老師來了，課就開始了。",
+              "note": null
             },
             {
               "japanese": "母が 来て くれた。",
-              "chinese": "媽媽來了，幫了我。"
+              "chinese": "媽媽來了，幫了我。",
+              "note": null
             }
           ]
         },
@@ -489,18 +609,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "こられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日は 仕事が 休みなので 来られる。",
-              "chinese": "明天工作放假所以能來。"
+              "chinese": "明天工作放假所以能來。",
+              "note": null
             },
             {
               "japanese": "この 道なら 車で 来られる。",
-              "chinese": "走這條路的話能開車來。"
+              "chinese": "走這條路的話能開車來。",
+              "note": null
             },
             {
               "japanese": "彼は 一人で 来られる。",
-              "chinese": "他能一個人來。"
+              "chinese": "他能一個人來。",
+              "note": null
             }
           ]
         },
@@ -509,18 +634,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "こよう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "あしたは みんなで ここに 来よう。",
-              "chinese": "明天大家來這裡吧。"
+              "chinese": "明天大家來這裡吧。",
+              "note": null
             },
             {
               "japanese": "明日の パーティーに 来よう。",
-              "chinese": "明天的派對來吧。"
+              "chinese": "明天的派對來吧。",
+              "note": null
             },
             {
               "japanese": "春に また 京都へ 来よう。",
-              "chinese": "春天再來京都吧。"
+              "chinese": "春天再來京都吧。",
+              "note": null
             }
           ]
         },
@@ -529,18 +659,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "こい",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "早く こっちへ 来い。",
-              "chinese": "快到這邊來！"
+              "chinese": "快到這邊來！",
+              "note": null
             },
             {
               "japanese": "今すぐ 事務所へ 来い。",
-              "chinese": "現在馬上到辦公室來！"
+              "chinese": "現在馬上到辦公室來！",
+              "note": null
             },
             {
               "japanese": "一人で 来い。",
-              "chinese": "自己一個人來！"
+              "chinese": "自己一個人來！",
+              "note": null
             }
           ]
         },
@@ -549,18 +684,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "くれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日 来れば、案内して あげます。",
-              "chinese": "明天來的話，我帶你去。"
+              "chinese": "明天來的話，我帶你去。",
+              "note": null
             },
             {
               "japanese": "春に 来れば、桜が きれいです。",
-              "chinese": "春天來的話，櫻花很美。"
+              "chinese": "春天來的話，櫻花很美。",
+              "note": null
             },
             {
               "japanese": "電車で 来れば、安いです。",
-              "chinese": "搭電車來的話比較便宜。"
+              "chinese": "搭電車來的話比較便宜。",
+              "note": null
             }
           ]
         },
@@ -569,18 +709,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "こられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "忙しい 時に 客に 来られる。",
-              "chinese": "忙碌的時候客人來，很困擾。"
+              "chinese": "忙碌的時候客人來，很困擾。",
+              "note": null
             },
             {
               "japanese": "夜遅く 友達に 来られる と、困る。",
-              "chinese": "朋友很晚來的話，很傷腦筋。"
+              "chinese": "朋友很晚來的話，很傷腦筋。",
+              "note": null
             },
             {
               "japanese": "休みの 日に 業者に 来られる。",
-              "chinese": "假日業者跑來，很麻煩。"
+              "chinese": "假日業者跑來，很麻煩。",
+              "note": null
             }
           ]
         },
@@ -589,18 +734,23 @@
           "group": "0",
           "chinese": "來; 到來",
           "japanese": "こさせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先生は 学生を 八時に 来させる。",
-              "chinese": "老師讓學生八點來。"
+              "chinese": "老師讓學生八點來。",
+              "note": null
             },
             {
               "japanese": "父は 客を 家に 来させる。",
-              "chinese": "爸爸讓客人來家裡。"
+              "chinese": "爸爸讓客人來家裡。",
+              "note": null
             },
             {
               "japanese": "会社は 社員を 土曜日に 来させる。",
-              "chinese": "公司讓員工星期六來。"
+              "chinese": "公司讓員工星期六來。",
+              "note": null
             }
           ]
         }
@@ -611,18 +761,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 早く 家に 帰る。",
-              "chinese": "今天早點回家。"
+              "chinese": "今天早點回家。",
+              "note": null
             },
             {
               "japanese": "夏休みに 国へ 帰る。",
-              "chinese": "暑假期間回國。"
+              "chinese": "暑假期間回國。",
+              "note": null
             },
             {
               "japanese": "兄は 来月 故郷へ 帰る。",
-              "chinese": "哥哥下個月回故鄉。"
+              "chinese": "哥哥下個月回故鄉。",
+              "note": null
             }
           ]
         },
@@ -631,18 +786,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえります",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "毎日 七時に 家へ 帰ります。",
-              "chinese": "每天七點回家。"
+              "chinese": "每天七點回家。",
+              "note": null
             },
             {
               "japanese": "金曜日に 国へ 帰ります。",
-              "chinese": "星期五回國。"
+              "chinese": "星期五回國。",
+              "note": null
             },
             {
               "japanese": "父は 電車で 駅から 帰ります。",
-              "chinese": "爸爸從車站搭電車回家。"
+              "chinese": "爸爸從車站搭電車回家。",
+              "note": null
             }
           ]
         },
@@ -651,18 +811,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえりません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 残業なので 帰りません。",
-              "chinese": "今天加班所以不回家。"
+              "chinese": "今天加班所以不回家。",
+              "note": null
             },
             {
               "japanese": "雨が ひどいので 帰りません。",
-              "chinese": "雨太大所以不回去。"
+              "chinese": "雨太大所以不回去。",
+              "note": null
             },
             {
               "japanese": "彼は 今夜 家に 帰りません。",
-              "chinese": "他今晚不回家。"
+              "chinese": "他今晚不回家。",
+              "note": null
             }
           ]
         },
@@ -671,18 +836,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえりました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 九時に 家へ 帰りました。",
-              "chinese": "昨天九點回家了。"
+              "chinese": "昨天九點回家了。",
+              "note": null
             },
             {
               "japanese": "先週 家族は 国へ 帰りました。",
-              "chinese": "上週家人回國了。"
+              "chinese": "上週家人回國了。",
+              "note": null
             },
             {
               "japanese": "彼女は 早く 駅から 帰りました。",
-              "chinese": "她很早從車站回去了。"
+              "chinese": "她很早從車站回去了。",
+              "note": null
             }
           ]
         },
@@ -691,18 +861,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえりませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 忙しくて 帰りませんでした。",
-              "chinese": "昨天很忙所以沒回去。"
+              "chinese": "昨天很忙所以沒回去。",
+              "note": null
             },
             {
               "japanese": "先月は 一度も 国へ 帰りませんでした。",
-              "chinese": "上個月一次也沒回國。"
+              "chinese": "上個月一次也沒回國。",
+              "note": null
             },
             {
               "japanese": "夜 遅かったので 家に 帰りませんでした。",
-              "chinese": "因為太晚所以沒回家。"
+              "chinese": "因為太晚所以沒回家。",
+              "note": null
             }
           ]
         },
@@ -711,18 +886,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえらない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は まだ 帰らない。",
-              "chinese": "今天還不回去。"
+              "chinese": "今天還不回去。",
+              "note": null
             },
             {
               "japanese": "雨が やむまで 帰らない。",
-              "chinese": "雨停之前不回去。"
+              "chinese": "雨停之前不回去。",
+              "note": null
             },
             {
               "japanese": "彼は 金曜日に 国へ 帰らない。",
-              "chinese": "他星期五不回國。"
+              "chinese": "他星期五不回國。",
+              "note": null
             }
           ]
         },
@@ -731,18 +911,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "さっき 父が 家に 帰った。",
-              "chinese": "剛才爸爸回家了。"
+              "chinese": "剛才爸爸回家了。",
+              "note": null
             },
             {
               "japanese": "去年 妹は 国へ 帰った。",
-              "chinese": "去年妹妹回國了。"
+              "chinese": "去年妹妹回國了。",
+              "note": null
             },
             {
               "japanese": "パーティーの あと 一人で 帰った。",
-              "chinese": "派對之後一個人回去了。"
+              "chinese": "派對之後一個人回去了。",
+              "note": null
             }
           ]
         },
@@ -751,18 +936,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえらなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 友達が 家に 帰らなかった。",
-              "chinese": "昨天朋友沒回家。"
+              "chinese": "昨天朋友沒回家。",
+              "note": null
             },
             {
               "japanese": "先週は 国へ 帰らなかった。",
-              "chinese": "上週沒回國。"
+              "chinese": "上週沒回國。",
+              "note": null
             },
             {
               "japanese": "雨の 日は 早く 帰らなかった。",
-              "chinese": "下雨天沒有早點回去。"
+              "chinese": "下雨天沒有早點回去。",
+              "note": null
             }
           ]
         },
@@ -771,18 +961,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえって",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "家に 帰って、すぐ 寝た。",
-              "chinese": "回家後馬上睡了。"
+              "chinese": "回家後馬上睡了。",
+              "note": null
             },
             {
               "japanese": "国へ 帰って、家族に 会いたい。",
-              "chinese": "想回國見家人。"
+              "chinese": "想回國見家人。",
+              "note": null
             },
             {
               "japanese": "一度 家に 帰って、また 出かけた。",
-              "chinese": "先回了一次家，又出門了。"
+              "chinese": "先回了一次家，又出門了。",
+              "note": null
             }
           ]
         },
@@ -791,18 +986,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえれる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 早く 帰れる。",
-              "chinese": "今天能早點回家。"
+              "chinese": "今天能早點回家。",
+              "note": null
             },
             {
               "japanese": "終電が あるから 家に 帰れる。",
-              "chinese": "有末班車所以能回家。"
+              "chinese": "有末班車所以能回家。",
+              "note": null
             },
             {
               "japanese": "明日は 休みだから 国へ 帰れる。",
-              "chinese": "明天放假所以能回國。"
+              "chinese": "明天放假所以能回國。",
+              "note": null
             }
           ]
         },
@@ -811,18 +1011,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえろう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "そろそろ 家へ 帰ろう。",
-              "chinese": "差不多該回家了。"
+              "chinese": "差不多該回家了。",
+              "note": null
             },
             {
               "japanese": "夏休みに 国へ 帰ろう。",
-              "chinese": "暑假期間回國吧。"
+              "chinese": "暑假期間回國吧。",
+              "note": null
             },
             {
               "japanese": "みんなで 駅から 帰ろう。",
-              "chinese": "大家從車站回去吧。"
+              "chinese": "大家從車站回去吧。",
+              "note": null
             }
           ]
         },
@@ -831,18 +1036,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえれ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "もう 遅い、早く 家へ 帰れ。",
-              "chinese": "已經很晚了，快回家！"
+              "chinese": "已經很晚了，快回家！",
+              "note": null
             },
             {
               "japanese": "今日は もう 帰れ。",
-              "chinese": "今天就回去吧。"
+              "chinese": "今天就回去吧。",
+              "note": null
             },
             {
               "japanese": "一人で 国へ 帰れ。",
-              "chinese": "自己回國去！"
+              "chinese": "自己回國去！",
+              "note": null
             }
           ]
         },
@@ -851,18 +1061,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "家に 帰れば、母が 待って いる。",
-              "chinese": "回家的話，媽媽在等。"
+              "chinese": "回家的話，媽媽在等。",
+              "note": null
             },
             {
               "japanese": "国へ 帰れば、家族に 会える。",
-              "chinese": "回國就能見到家人。"
+              "chinese": "回國就能見到家人。",
+              "note": null
             },
             {
               "japanese": "今 帰れば、終電に 間に 合う。",
-              "chinese": "現在回去的話趕得上末班車。"
+              "chinese": "現在回去的話趕得上末班車。",
+              "note": null
             }
           ]
         },
@@ -871,18 +1086,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "弟に 先に 家に 帰られる と、一人で 寂しい。",
-              "chinese": "弟弟先回家的話，我一個人很寂寞。"
+              "chinese": "弟弟先回家的話，我一個人很寂寞。",
+              "note": null
             },
             {
               "japanese": "客に 早く 帰られると、店は 静かに なる。",
-              "chinese": "客人早早回去的話，店裡就安靜下來。"
+              "chinese": "客人早早回去的話，店裡就安靜下來。",
+              "note": null
             },
             {
               "japanese": "一緒に 来た 人に 先に 帰られる と、道が 分からない。",
-              "chinese": "一起來的人先回去的話，我就不認得路了。"
+              "chinese": "一起來的人先回去的話，我就不認得路了。",
+              "note": null
             }
           ]
         },
@@ -891,18 +1111,23 @@
           "group": "0",
           "chinese": "回家; 回去",
           "japanese": "かえらせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先生は 生徒を 五時に 帰らせる。",
-              "chinese": "老師讓學生五點回家。"
+              "chinese": "老師讓學生五點回家。",
+              "note": null
             },
             {
               "japanese": "母は 弟を 早く 家に 帰らせる。",
-              "chinese": "媽媽讓弟弟早點回家。"
+              "chinese": "媽媽讓弟弟早點回家。",
+              "note": null
             },
             {
               "japanese": "会社は 社員を 金曜日に 国へ 帰らせる。",
-              "chinese": "公司讓員工星期五回國。"
+              "chinese": "公司讓員工星期五回國。",
+              "note": null
             }
           ]
         }

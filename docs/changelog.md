@@ -526,3 +526,264 @@ Dated, newest last. Each entry: what changed, why, and what was verified.
   `node scripts/browser-check.mjs --screenshots` passes 260 checks (0 FAIL).
 - Not verified: a real `https://<user>.github.io/…` origin, and no Pages
   workflow was added (deployment stays manual, by the user's choice).
+
+## 2026-11-11 (mobile chrome: zoom lock and calmer paging)
+
+Reported by the user: on a phone in Chrome a double tap zooms the page, and the
+card turn and page turn animations rebound so hard they feel unpleasant.
+
+### Where the rebound actually comes from (measured, before the fix)
+
+Tool: `node scripts/motion-probe.mjs` (new). It drives the built site in
+headless Chromium (390×844, `isMobile`, `hasTouch`), samples `transform`
+frame by frame with `requestAnimationFrame` and prints the position trace.
+
+Reader, 120px drag released past the 72px threshold (single element reused,
+so one trace shows leave → handover → enter):
+
+```
+14ms:-120  64ms:-236  114ms:-322  164ms:-348 | 214ms:+293  264ms:140
+314ms:52   364ms:12   414ms:0
+```
+
+Card, same gesture (leave target is −112% = −437px):
+
+```
+15ms:-120  65ms:-261  115ms:-366  165ms:-399 | 215ms:+300  265ms:143
+315ms:53   365ms:13   415ms:0
+```
+
+Three separate defects, not a matter of taste — and note the widths: the reader
+page is 350px and the card is 358px, not the 390px viewport, so
+`translateX(-100%)` is −350px and −358px.
+
+1. **The turn stops dead at the edge and then bursts in.** Every phase used
+   `ease` (slow-fast-slow), so the exit decelerated to a near stop as it left:
+   `−343` at 148ms → `−348` at 165ms, about **294px/s**. The entry then started
+   at its fastest, about **2634px/s**. That is a **9.2x** jump in speed across
+   the handover, with a gap in between where nothing moves at the edges. The
+   eye reads stop-and-burst as a rebound against the hand, and nothing actually
+   moves backwards.
+2. **The two halves ran for different times.** Exit 170ms, entry 240ms,
+   measured over the same distance, so even without the curve mismatch the pace
+   changed at the handover.
+3. **The flip was a snap with a long tail.** `.card-inner` ran `rotateY` 0→180°
+   in 300ms with `ease` and `perspective: 1200px`: 0 → 40° → 104° → 144° → 166°
+   → 177° → 180° at 50ms intervals, so the turn lurched through its first half
+   and then crawled, while the 1200px perspective exaggerated the card edges.
+
+Released below the threshold, both screens sprang back from the released offset
+to 0 in 200ms with `ease` (`60 → 36 → 12 → 2 → 0`, a 197ms settle at a
+680px/s peak) — an elastic return after the finger had already lifted.
+
+There is no overshoot anywhere (no cubic-bezier with a control point past 1) and
+nothing moves backwards on screen, so the discomfort is the stop-and-burst handover and the front-loaded flip, not a literal bounce
+past the resting point.
+
+One wrong reading to record, because it shaped the first attempt: the probe
+initially reported a bogus `−90°` on the flip's opening frame. `getComputedStyle`
+returns a flattened 2-D `matrix()` at the start and end of a 3-D turn, and the
+probe was parsing it as `matrix3d`. The probe now parses both shapes, and the
+"half the turn in 41ms" claim above is the corrected reading.
+
+### Zoom
+
+`index.html` shipped `width=device-width, initial-scale=1, viewport-fit=cover`
+with no scale ceiling, and only the two gesture surfaces declared
+`touch-action: pan-y`. Pinch zoom is reproducible in headless Chromium (CDP
+`Input.dispatchTouchEvent` takes `visualViewport.scale` from 1 to 5 on an
+unrestricted page). Chrome's *double tap* zoom is Android-only and cannot be
+reproduced in headless Chromium at all: two quick taps leave `scale` at 1 even
+on a page with no restrictions, so that half of the report is documented as
+measured, not reproduced.
+
+### Zoom lock
+
+- `index.html`: the viewport is now
+  `width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,
+  viewport-fit=cover`. Both ceiling forms are present because Chrome Android
+  has historically ignored `user-scalable=no` on its own.
+- `src/styles/app.css`: `html, body` declare `touch-action: manipulation`, so a
+  double tap cannot become a zoom gesture on the screens that declare no
+  touch-action of their own (home, picker, settings, quiz, the bars). The
+  gesture surfaces keep their narrower `pan-y`, which is what lets them own the
+  horizontal swipe.
+- The user chose to lock pinch as well, so the page is a fixed-size phone
+  screen. Chrome's "force enable zoom" accessibility override still wins over
+  any page, which is why the page cannot be described as fully zoom-proof.
+- Verified: `node scripts/browser-check.mjs` — the new negative control pinches
+  a page with no restrictions and scales 1 → 5, then the app is pinched and
+  double tapped on all seven screens (`loading`, `home`, `picker`,
+  `dictionary`, `cards`, `quiz`, `settings`) and holds `scale: 1`, the same
+  `innerWidth` and the same `clientWidth`, staying on the same screen. 294
+  checks, 0 FAIL. Removing the ceiling from the served HTML with a route
+  rewrite puts the zoom straight back: home pinch `1 → 5`, so the check is not
+  vacuous.
+- Not verified: a real phone. Chrome's double tap zoom is Android-only and
+  never fires in headless Chromium (two quick CDP taps leave `scale` at 1 even
+  on an unrestricted page), so the double tap is covered by the two
+  declarative causes plus the pinch that shares them.
+
+### Calmer paging
+
+What changed, in the two views and the stylesheet:
+
+- **The phases end on their own DOM event, not on a timer.** `ReaderView.vue`
+  and `CardView.vue` used `LEAVE_MS = 170` / `ENTER_MS = 240` and swapped the
+  item on a `setTimeout`. The timer started before the browser began the
+  transition, so the swap could fire while the item was still moving. The swap
+  now runs on the `transitionend` of the exit (and the enter phase ends on its
+  `animationend`), with a 600ms fallback only as a safety net. The CSS owns
+  every duration and the JS no longer has to agree with it.
+- **The exit accelerates and the entry decelerates.** New tokens in
+  `src/styles/app.css`: `--ease-exit: cubic-bezier(0.4, 0, 1, 1)` (Material's
+  accelerate) and `--ease-slide: cubic-bezier(0.4, 0.3, 0.5, 1)` (a
+  decelerating settle). Both halves are near their fastest as the item crosses
+  the edge, so the pace carries across the swap instead of stopping and
+  restarting. Measured after the change:
+
+  | | exit into the swap | entry out of it | ratio |
+  |---|---|---|---|
+  | reader page | 2055–2079px/s | 2043–2068px/s | 1.01x |
+  | card | 2127–2164px/s | 2102–2127px/s | 1.00–1.02x |
+
+  against 9.2x before. The exit is 170ms and the entry 190ms (was 240ms).
+- **Releasing below the threshold settles in 140ms**, decelerating into rest
+  (`60 → 36 → 8 → 0`, a 147–164ms settle), where it was 200ms with `ease`.
+- **The card turn is one shorter turn.** `rotateY` 240ms with
+  `--ease-turn: cubic-bezier(0.4, 0, 0.2, 1)` and `perspective: 1600px` (was
+  300ms, `ease`, 1200px). The angle now goes 0 → 27° → 116° → 161° → 177° → 180°
+  at 50ms intervals and reaches 180° at about 240ms instead of 300ms.
+- **The moving element gets `will-change: transform` for the duration of the
+  turn**, so a phone repaints the card/page instead of dropping frames mid-slide.
+- A press during the still-running entry now drops the animation and makes the
+  move on the next frame. Changing the transform in the same frame as the
+  animation is removed leaves the browser nothing to interpolate, so the exit
+  transition never started and the turn stalled until the fallback fired. The
+  walk-through caught this.
+
+What did not change: the 72px threshold, one-to-one drag-follow, the leave and
+enter directions, the clip that keeps the page from widening, the 「starts on
+its face」 rule, and the `prefers-reduced-motion: reduce` branches (instant
+swap, no slide, no flip transition).
+
+Verified: `node scripts/browser-check.mjs` 316 checks, 0 FAIL, including new
+frame-by-frame assertions on both screens — nothing moves backwards while it
+is on screen, nothing overshoots its resting point, the swap happens at least
+90% of a width off screen, the exit/entry speeds stay within 1.6x of each
+other, a 55px drag settles inside 160ms (reader) / 180ms (cards), the flip
+never passes 180° or turns back on itself, and the flip is at most 260ms.
+
+These assertions are not vacuous: with the two views temporarily reverted to
+the old code, the walk-through fails with `short drag settles back within
+160ms 197ms`, `the pace holds across the swap exit 286 px/s, entry 2634 px/s
+(9.19x)`, `card turn: the pace holds ... (1.85x)` and `the swap happens fully
+off screen` false.
+
+## 2026-11-11 (drawn scrollbar, centred 從 label, last-card finish)
+
+Three reports from the user, all on the phone layout:
+
+### The page draws its own scrollbar
+
+- `src/ui/scrollbar.js` (new, pure): `SCROLLBAR` constants (4px wide, 3px
+  inset, 16px track inset top and bottom, 28px minimum thumb, 1s fade delay),
+  `trackHeight`, `thumbMetrics` (thumb length and offset from scroll position,
+  viewport and content height) and `rightInset` (how far the thumb sits from
+  the window's right edge: the column's margin on a wide screen, the inset on
+  the full-bleed phone layout). `src/ui/scrollbar.test.js` covers fits-on-one-
+  screen (no thumb), proportional length, top/middle/bottom offsets, clamping
+  after overscroll, the minimum thumb, and the right inset at 390px and 900px.
+- `src/components/PageScrollBar.vue` (new, thin): one `scroll` listener
+  throttled with `requestAnimationFrame`, one `resize` listener, and a
+  `ResizeObserver` on `.column` (its height changes with the screen, with a
+  dropdown opening and with a different lesson count). It renders
+  `pointer-events: none`, `position: fixed`, `aria-hidden`, and asks the pure
+  module for every number.
+- `src/styles/app.css`: `html { scrollbar-width: none }` plus
+  `html::-webkit-scrollbar, body::-webkit-scrollbar { display: none }` hides
+  the browser bar. Those selectors are deliberately narrow: the two inner
+  dropdown lists are scroll containers of their own, and
+  `scrollbar-width` inherits, so `PickerView`'s and `SettingsView`'s
+  `.form-list` set `scrollbar-width: auto` to keep their native bars.
+- Verified in `scripts/browser-check.mjs` (18 new checks on its own page):
+  native bar hidden, dropdown keeps a native bar, nothing drawn on a page that
+  fits, 4px wide, length within 2px of `track × viewport/content`, 3px from
+  the column edge, first frame at 16px, `pointer-events: none` (the element
+  under the thumb is the column, not the thumb), the thumb only appears on
+  scroll, follows the page, reaches the track's end at the bottom, is gone
+  1.3s after the page stops, still sits on the column edge at 900px wide,
+  and under reduced motion `transition-duration` is `0s` while the thumb
+  still shows.
+
+### 從 is centred on the form control
+
+- `src/views/PickerView.vue`: `.field` was `align-items: flex-start` and
+  `.field-label` carried `padding-top: 14px`. Measured at 390×844, the label
+  box centre was 610.6px against the control's 612px, and because the padding
+  lived inside the label box the glyph itself sat about 5.6px *below* the
+  control's centre line. `.field` now centres the row and the padding is gone:
+  label centre 612px, control centre 612px, delta 0.0px. The 到 / 全選 header
+  row already measured 0 and is untouched.
+- Verified: three checks in each of the card picker and the quiz picker
+  (centre within 1px, the glyph box inside the control's height, and the row
+  centring rather than padding). Reverting `PickerView.vue` to the old rules
+  fails them with `-1.4px (610.6 vs 612)` and `flex-start / padding-top 14px`.
+
+### Swiping off the last card finishes the run
+
+- The last card's 完成 button already ended the run, but a right-to-left swipe
+  on it called `card.next`, which clamps at the end: the card slid out and the
+  *same* card slid back in, so the run looked unfinished. `CardView.vue` now
+  ends the run when the exit of a `next` move happens on the last card: the
+  card plays its usual leave, then `study.finish` replaces it with the
+  completion panel instead of entering a new card. The footer button goes
+  through the same `moveCard` path, so the button and the swipe cannot drift
+  apart, and the `prefers-reduced-motion` branch applies the same rule.
+- Verified (19 new checks on their own page, lesson 5 = 3 cards): the first
+  card ignores a right-hand swipe; a `next` swipe on card 1 and card 2 only
+  advances and never completes; reaching card 3 does not complete by itself
+  and its control reads 完成; a `next` swipe on card 3 shows the completion
+  panel, hides the card and the controls, keeps the `恭喜，你已經做完了練習。`
+  copy, offers 返回主頁, and leaves no `card--enter/leave-*` class behind; reduced
+  motion behaves the same. Removing the last-card rule while keeping the
+  button path fails with `swiping off the last card finishes the run
+  title 練習（3/3）` plus the panel checks.
+
+## 2026-11-10
+
+### vol/ linguistic review: 15 conjugations kept, usage notes added
+
+- Reviewed every conjugation in `vol/lesson_1..50.json` (386 verbs x 15 forms)
+  for grammatical correctness and daily usage. Every verb still carries all
+  15 forms; nothing was removed. 271 form entries that are wrong or unused in
+  daily Japanese now carry a `note` field explaining why:
+  - potentials that are really a different verb (`\u7247\u4ed8\u304f\u2192\u7247\u4ed8\u3051\u308b`,
+    `\u7d9a\u304f\u2192\u7d9a\u3051\u308b`, `\u5c4a\u304f\u2192\u5c4a\u3051\u308b`, `\u53f6\u3046\u2192\u53f6\u3048\u308b`,
+    `\u6e1b\u308b\u2192\u6e1b\u3089\u305b\u308b`, ...): `\u300cX\u300d\u662f\u932f\u7684：\u9019\u662f\u53e6\u4e00\u500b\u52d5\u8a5e...`;
+  - potentials of non-volitional verbs (`\u308f\u304b\u308c\u308b`, `\u3067\u304d\u3089\u308c\u308b`,
+    `\u898b\u3048\u3089\u308c\u308b`, `\u8981\u308c\u308b`, the `-\u3089\u308c\u3089\u308c\u308b` batch of L29/L43,
+    ...): `\u300c\u52d5\u8a5e\u300d\u662f\u7121\u610f\u5fd7\u52d5\u8a5e\uff0c\u9019\u500b\u53ef\u80fd\u5f62\u65e5\u5e38\u4e0d\u7528`;
+  - dictionary-attested but uncommon (`\u9055\u3048\u308b`, `\u77e5\u308c\u308b`, `\u3067\u304d\u3088\u3046`,
+    `\u8db3\u308a\u3088\u3046`): `\u5b57\u5178\u88e1\u6709\u300cX\u300d\uff0c\u4f46\u662f\u65e5\u5e38\u4e0d\u7528`;
+  - honorific shapes stored under the passive (`\u3042\u3089\u308c\u308b`,
+    `\u304f\u308c\u3089\u308c\u308b`, `\u6b8b\u3089\u308c\u308b`, ...): `\u662f\u5c0a\u656c\u7528\u6cd5\uff0c\u4e0d\u662f\u53d7\u8eab\u5f62`;
+  - forced volitional/imperative/causative shapes (`\u9055\u304a\u3046`,
+    `\u8981\u308d\u3046`, `\u898b\u3048\u308d`, `\u3067\u304d\u308d`, `\u6d88\u3048\u3055\u305b\u308b`, ...):
+    `\u300cX\u300d\u65e5\u5e38\u4e0d\u7528`.
+- Attested-but-formal shapes stay without a note (`\u3042\u308d\u3046`, `\u3042\u308c`,
+  `\u308f\u304b\u308c`, `\u6d88\u3048\u308d`, `\u6b62\u307e\u308c`, `\u3042\u308a\u3048\u308b`, `\u306a\u308c\u308b`,
+  `\u601d\u3048\u308b`, `\u9593\u306b\u5408\u3048\u308b`, `\u4e0a\u304c\u308c\u308b`, `\u6ed1\u308c\u308b`,
+  `\u592a\u308c\u308b`, `\u5931\u6557\u3067\u304d\u308b`, `\u6e1b\u3089\u308c\u308b`, `\u6163\u308c\u3089\u308c\u308b`, ...).
+- Kanji fixes: L28 `\u54ac\u3080` (\u54ac\u3080) -> `\u564e\u3080` (\u564e\u3080) and L30
+  `\u7e8f\u3081\u308b` -> `\u307e\u3068\u3081\u308b` across all forms and sentences.
+- Rewrote 13 ungrammatical example sentences on kept forms
+  (`\u88ab\u3089\u308c\u308b` direct passive, `\u9045\u308c\u3089\u308c\u308b` / `\u5012\u308c\u3089\u308c\u308b`
+  indirect passives, `\u4e0a\u304c\u3089\u305b\u308b`, `\u306a\u308c\u308b`).
+- No UI change: the `note` field is data only; every view renders exactly as
+  before. `src/study/items.js` and the test files are untouched.
+- Verified: `node scripts/check-conjugation.mjs` -> only the 63 intentional
+  same-verb-re-taught duplicates, all 15 forms present per verb (5790 form
+  entries); `npm test` 208/208; `npm run build` ok with `output/dict/` = 50
+  files; `node scripts/write-sha256.mjs --check` ok;
+  `node scripts/browser-check.mjs` -> 379 checks passed.

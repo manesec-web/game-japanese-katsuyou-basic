@@ -3,11 +3,14 @@
 This file is for the next AI that enters the repo. Do the tasks in order. The product is a static site for learning Japanese verb conjugation: Vue source, build output in `output/`, published with GitHub Pages.
 
 Current state: T1–T8 are complete, along with the follow-up revisions recorded
-in `docs/roadmap.md` and `docs/changelog.md`. The site builds into `output/`
-and has not been published to GitHub Pages yet. Day-to-day status, verified
-commands and known limitations live in `docs/progress.md`; `README.md` is the
-user-facing overview. The tasks below stay as the original build plan and as
-the acceptance checklist — do not reopen them without a spec change.
+in `docs/roadmap.md` and `docs/changelog.md`. Revision 13 added the loading-screen
+head and credit line and the first-card resistance in 翻卡學習. The site builds
+into `output/` and has not been published to GitHub Pages yet. Day-to-day status,
+verified commands and known limitations live in `docs/progress.md`; `README.md`
+is the user-facing overview. The tasks below stay as the original build plan and
+as the acceptance checklist — do not reopen them without a spec change. Three
+future items sit in `docs/roadmap.md` as a backlog (朗讀功能, 優化下載文件,
+優化UI): none is implemented, and each needs a spec entry first.
 
 Behavior lives in `docs/spec.md`. Read the matching section before you build that piece. If the spec does not cover a product behavior, stop and ask. Do not invent a rule.
 
@@ -114,7 +117,7 @@ Checks:
 
 ### T3 Loading and home
 
-The `loading` screen shows a progress bar and the text `Loading ...`. Progress is `boot.checked / boot.total`. Opening the site runs `app.boot`. Success goes to `home`. On failure the bar stops, the screen offers retry, and retry runs `app.boot` again.
+The `loading` screen shows the site head (大家の日本語 / 轉型練習 / 涵蓋初級 1 – 50 課的單詞), a progress bar and the text `Loading ...`, and the footer line `Build with ❤ by Mane` alone (the `🥺 如果有 BUG 記得告訴我！` line stays on home); the credit opens the same About sheet. Progress is `boot.checked / boot.total`. Opening the site runs `app.boot`. Success goes to `home`. On failure the bar stops, the screen offers retry, and retry runs `app.boot` again; the head and the footer are still there.
 
 `home` has three buttons: 字典, 翻卡學習, 測驗. Each opens `picker` in that mode. The footer line is `Build with ❤ by Mane`. Activating it shows a small sheet with a link to `https://github.com/manesec-web/game-japanese-katsuyou-basic`, opened in a new tab.
 
@@ -144,7 +147,7 @@ The face shows the source form. The back shows the target form and the Chinese g
 
 While 一開始顯示幾類動詞 is on, the face shows the verb class.
 
-Checks: a test shows that changing cards returns to the face. In a browser, a tap reveals the answer and a swipe right opens the next card.
+Checks: a test shows that changing cards returns to the face. In a browser, a tap reveals the answer and a swipe right opens the next card. The first card resists a backward (right-hand) drag: it follows at a third of the finger, capped at 40px, and springs back without changing the card; the reader's first word and the last-card finish are unchanged.
 
 ### T7 Quiz
 

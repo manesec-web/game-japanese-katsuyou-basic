@@ -7,6 +7,7 @@ import ReaderView from './views/ReaderView.vue'
 import CardView from './views/CardView.vue'
 import QuizView from './views/QuizView.vue'
 import SettingsView from './views/SettingsView.vue'
+import PageScrollBar from './components/PageScrollBar.vue'
 
 const store = inject('store')
 
@@ -33,5 +34,6 @@ const current = computed(() => views[store.session.screen] ?? null)
         </section>
       </transition>
     </main>
+    <PageScrollBar />
   </div>
 </template>

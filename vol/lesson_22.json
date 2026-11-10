@@ -7,18 +7,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "寒いから セーターを 着る。",
-              "chinese": "因為冷，穿毛衣。"
+              "chinese": "因為冷，穿毛衣。",
+              "note": null
             },
             {
               "japanese": "明日は スーツを 着る。",
-              "chinese": "明天穿西裝。"
+              "chinese": "明天穿西裝。",
+              "note": null
             },
             {
               "japanese": "冬は 厚い コートを 着る。",
-              "chinese": "冬天穿厚大衣。"
+              "chinese": "冬天穿厚大衣。",
+              "note": null
             }
           ]
         },
@@ -27,18 +32,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きます",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 白い シャツを 着ます。",
-              "chinese": "今天穿白襯衫。"
+              "chinese": "今天穿白襯衫。",
+              "note": null
             },
             {
               "japanese": "パーティーに 黒い スーツを 着ます。",
-              "chinese": "穿黑西裝去派對。"
+              "chinese": "穿黑西裝去派對。",
+              "note": null
             },
             {
               "japanese": "寒いので セーターを 着ます。",
-              "chinese": "因為冷，穿毛衣。"
+              "chinese": "因為冷，穿毛衣。",
+              "note": null
             }
           ]
         },
@@ -47,18 +57,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は コートを 着ません。",
-              "chinese": "今天不穿大衣。"
+              "chinese": "今天不穿大衣。",
+              "note": null
             },
             {
               "japanese": "暑いから セーターを 着ません。",
-              "chinese": "因為熱，不穿毛衣。"
+              "chinese": "因為熱，不穿毛衣。",
+              "note": null
             },
             {
               "japanese": "この 服は もう 着ません。",
-              "chinese": "這件衣服已經不再穿了。"
+              "chinese": "這件衣服已經不再穿了。",
+              "note": null
             }
           ]
         },
@@ -67,18 +82,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 新しい スーツを 着ました。",
-              "chinese": "昨天穿了新西裝。"
+              "chinese": "昨天穿了新西裝。",
+              "note": null
             },
             {
               "japanese": "旅行に 厚い コートを 着ました。",
-              "chinese": "旅行時穿了厚大衣。"
+              "chinese": "旅行時穿了厚大衣。",
+              "note": null
             },
             {
               "japanese": "弟は 赤い シャツを 着ました。",
-              "chinese": "弟弟穿了紅襯衫。"
+              "chinese": "弟弟穿了紅襯衫。",
+              "note": null
             }
           ]
         },
@@ -87,18 +107,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は コートを 着ませんでした。",
-              "chinese": "昨天沒穿大衣。"
+              "chinese": "昨天沒穿大衣。",
+              "note": null
             },
             {
               "japanese": "暑かったので セーターを 着ませんでした。",
-              "chinese": "因為很熱，沒穿毛衣。"
+              "chinese": "因為很熱，沒穿毛衣。",
+              "note": null
             },
             {
               "japanese": "式には スーツを 着ませんでした。",
-              "chinese": "典禮上沒穿西裝。"
+              "chinese": "典禮上沒穿西裝。",
+              "note": null
             }
           ]
         },
@@ -107,18 +132,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "寒くても コートを 着ない。",
-              "chinese": "即使冷也不穿大衣。"
+              "chinese": "即使冷也不穿大衣。",
+              "note": null
             },
             {
               "japanese": "家では セーターを 着ない。",
-              "chinese": "在家不穿毛衣。"
+              "chinese": "在家不穿毛衣。",
+              "note": null
             },
             {
               "japanese": "彼は あまり スーツを 着ない。",
-              "chinese": "他不太穿西裝。"
+              "chinese": "他不太穿西裝。",
+              "note": null
             }
           ]
         },
@@ -127,18 +157,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きた",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今朝は 白い シャツを 着た。",
-              "chinese": "今早穿了白襯衫。"
+              "chinese": "今早穿了白襯衫。",
+              "note": null
             },
             {
               "japanese": "母は 新しい セーターを 着た。",
-              "chinese": "媽媽穿了新毛衣。"
+              "chinese": "媽媽穿了新毛衣。",
+              "note": null
             },
             {
               "japanese": "寒かったので コートを 着た。",
-              "chinese": "因為冷，穿了外套。"
+              "chinese": "因為冷，穿了外套。",
+              "note": null
             }
           ]
         },
@@ -147,18 +182,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は コートを 着なかった。",
-              "chinese": "昨天沒穿大衣。"
+              "chinese": "昨天沒穿大衣。",
+              "note": null
             },
             {
               "japanese": "暑い 日は セーターを 着なかった。",
-              "chinese": "熱天沒穿毛衣。"
+              "chinese": "熱天沒穿毛衣。",
+              "note": null
             },
             {
               "japanese": "彼は スーツを 着なかった。",
-              "chinese": "他沒穿西裝。"
+              "chinese": "他沒穿西裝。",
+              "note": null
             }
           ]
         },
@@ -167,18 +207,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きて",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "コートを 着て、外へ 出た。",
-              "chinese": "穿上大衣出門。"
+              "chinese": "穿上大衣出門。",
+              "note": null
             },
             {
               "japanese": "スーツを 着て、面接に 行った。",
-              "chinese": "穿西裝去面試。"
+              "chinese": "穿西裝去面試。",
+              "note": null
             },
             {
               "japanese": "セーターを 着て、待って いた。",
-              "chinese": "穿著毛衣等待。"
+              "chinese": "穿著毛衣等待。",
+              "note": null
             }
           ]
         },
@@ -187,18 +232,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この コートは まだ 着られる。",
-              "chinese": "這件大衣還能穿。"
+              "chinese": "這件大衣還能穿。",
+              "note": null
             },
             {
               "japanese": "小さな 子どもでも 着られる。",
-              "chinese": "連小孩也能穿。"
+              "chinese": "連小孩也能穿。",
+              "note": null
             },
             {
               "japanese": "洗えば また 着られる。",
-              "chinese": "洗了的話還能再穿。"
+              "chinese": "洗了的話還能再穿。",
+              "note": null
             }
           ]
         },
@@ -207,18 +257,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きよう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日は 新しい シャツを 着よう。",
-              "chinese": "明天穿新襯衫吧。"
+              "chinese": "明天穿新襯衫吧。",
+              "note": null
             },
             {
               "japanese": "寒いから 厚い コートを 着よう。",
-              "chinese": "因為冷，穿厚大衣吧。"
+              "chinese": "因為冷，穿厚大衣吧。",
+              "note": null
             },
             {
               "japanese": "式には 黒い スーツを 着よう。",
-              "chinese": "典禮就穿黑西裝吧。"
+              "chinese": "典禮就穿黑西裝吧。",
+              "note": null
             }
           ]
         },
@@ -227,18 +282,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きろ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "早く コートを 着ろ。",
-              "chinese": "快穿上大衣。"
+              "chinese": "快穿上大衣。",
+              "note": null
             },
             {
               "japanese": "外は 寒い、セーターを 着ろ。",
-              "chinese": "外面冷，穿毛衣。"
+              "chinese": "外面冷，穿毛衣。",
+              "note": null
             },
             {
               "japanese": "その スーツを 着ろ。",
-              "chinese": "穿那套西裝。"
+              "chinese": "穿那套西裝。",
+              "note": null
             }
           ]
         },
@@ -247,18 +307,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "コートを 着れば、寒く ない。",
-              "chinese": "穿上大衣就不冷。"
+              "chinese": "穿上大衣就不冷。",
+              "note": null
             },
             {
               "japanese": "セーターを 着れば、風邪を ひかない。",
-              "chinese": "穿毛衣就不會感冒。"
+              "chinese": "穿毛衣就不會感冒。",
+              "note": null
             },
             {
               "japanese": "スーツを 着れば、もっと 格好いい。",
-              "chinese": "穿西裝會更帥。"
+              "chinese": "穿西裝會更帥。",
+              "note": null
             }
           ]
         },
@@ -267,18 +332,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "弟は 母に セーターを 着られる。",
-              "chinese": "弟弟被媽媽硬穿上毛衣。"
+              "chinese": "弟弟被媽媽硬穿上毛衣。",
+              "note": null
             },
             {
               "japanese": "私は 友だちに 変な シャツを 着られる。",
-              "chinese": "我被朋友硬穿上怪襯衫。"
+              "chinese": "我被朋友硬穿上怪襯衫。",
+              "note": null
             },
             {
               "japanese": "子どもは 先生に コートを 着られる。",
-              "chinese": "孩子被老師硬穿上大衣。"
+              "chinese": "孩子被老師硬穿上大衣。",
+              "note": null
             }
           ]
         },
@@ -287,18 +357,23 @@
           "group": "2",
           "chinese": "穿〔襯衫等〕; 穿（上衣）",
           "japanese": "きさせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "母は 子どもに コートを 着させる。",
-              "chinese": "媽媽讓孩子穿大衣。"
+              "chinese": "媽媽讓孩子穿大衣。",
+              "note": null
             },
             {
               "japanese": "先生は 生徒に 制服を 着させる。",
-              "chinese": "老師讓學生穿制服。"
+              "chinese": "老師讓學生穿制服。",
+              "note": null
             },
             {
               "japanese": "寒い 日は 犬にも セーターを 着させる。",
-              "chinese": "冷天也讓狗穿毛衣。"
+              "chinese": "冷天也讓狗穿毛衣。",
+              "note": null
             }
           ]
         }
@@ -309,18 +384,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はく",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "毎朝 スニーカーを 履く。",
-              "chinese": "每天早上穿運動鞋。"
+              "chinese": "每天早上穿運動鞋。",
+              "note": null
             },
             {
               "japanese": "今日は 黒い 靴を 履く。",
-              "chinese": "今天穿黑鞋。"
+              "chinese": "今天穿黑鞋。",
+              "note": null
             },
             {
               "japanese": "夏は 薄い ズボンを 履く。",
-              "chinese": "夏天穿薄褲子。"
+              "chinese": "夏天穿薄褲子。",
+              "note": null
             }
           ]
         },
@@ -329,18 +409,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はきます",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "雨の 日は 長い 靴を 履きます。",
-              "chinese": "下雨天穿長靴。"
+              "chinese": "下雨天穿長靴。",
+              "note": null
             },
             {
               "japanese": "弟は いつも スニーカーを 履きます。",
-              "chinese": "弟弟總是穿運動鞋。"
+              "chinese": "弟弟總是穿運動鞋。",
+              "note": null
             },
             {
               "japanese": "作業の 時は 安全な 靴を 履きます。",
-              "chinese": "工作時穿安全的鞋。"
+              "chinese": "工作時穿安全的鞋。",
+              "note": null
             }
           ]
         },
@@ -349,18 +434,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はきません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "家の 中では 靴を 履きません。",
-              "chinese": "在家裡不穿鞋。"
+              "chinese": "在家裡不穿鞋。",
+              "note": null
             },
             {
               "japanese": "夏は ブーツを 履きません。",
-              "chinese": "夏天不穿靴子。"
+              "chinese": "夏天不穿靴子。",
+              "note": null
             },
             {
               "japanese": "今日は サンダルを 履きません。",
-              "chinese": "今天不穿涼鞋。"
+              "chinese": "今天不穿涼鞋。",
+              "note": null
             }
           ]
         },
@@ -369,18 +459,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はきました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 新しい 靴を 履きました。",
-              "chinese": "昨天穿了新鞋。"
+              "chinese": "昨天穿了新鞋。",
+              "note": null
             },
             {
               "japanese": "山へ 行く 時は 登山靴を 履きました。",
-              "chinese": "上山時穿了登山鞋。"
+              "chinese": "上山時穿了登山鞋。",
+              "note": null
             },
             {
               "japanese": "妹は 赤い サンダルを 履きました。",
-              "chinese": "妹妹穿了紅涼鞋。"
+              "chinese": "妹妹穿了紅涼鞋。",
+              "note": null
             }
           ]
         },
@@ -389,18 +484,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はきませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 靴を 履きませんでした。",
-              "chinese": "昨天沒穿鞋。"
+              "chinese": "昨天沒穿鞋。",
+              "note": null
             },
             {
               "japanese": "雨だったので スニーカーを 履きませんでした。",
-              "chinese": "因為下雨，沒穿運動鞋。"
+              "chinese": "因為下雨，沒穿運動鞋。",
+              "note": null
             },
             {
               "japanese": "式には ブーツを 履きませんでした。",
-              "chinese": "典禮上沒穿靴子。"
+              "chinese": "典禮上沒穿靴子。",
+              "note": null
             }
           ]
         },
@@ -409,18 +509,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はかない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "夏は 厚い 靴を 履かない。",
-              "chinese": "夏天不穿厚鞋。"
+              "chinese": "夏天不穿厚鞋。",
+              "note": null
             },
             {
               "japanese": "彼は あまり ブーツを 履かない。",
-              "chinese": "他不太穿靴子。"
+              "chinese": "他不太穿靴子。",
+              "note": null
             },
             {
               "japanese": "家では 靴下を 履かない。",
-              "chinese": "在家不穿襪子。"
+              "chinese": "在家不穿襪子。",
+              "note": null
             }
           ]
         },
@@ -429,18 +534,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はいた",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今朝は 黒い 靴を 履いた。",
-              "chinese": "今早穿了黑鞋。"
+              "chinese": "今早穿了黑鞋。",
+              "note": null
             },
             {
               "japanese": "父は 新しい スニーカーを 履いた。",
-              "chinese": "爸爸穿了新運動鞋。"
+              "chinese": "爸爸穿了新運動鞋。",
+              "note": null
             },
             {
               "japanese": "寒いので 厚い 靴下を 履いた。",
-              "chinese": "因為冷，穿了厚襪子。"
+              "chinese": "因為冷，穿了厚襪子。",
+              "note": null
             }
           ]
         },
@@ -449,18 +559,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はかなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は サンダルを 履かなかった。",
-              "chinese": "昨天沒穿涼鞋。"
+              "chinese": "昨天沒穿涼鞋。",
+              "note": null
             },
             {
               "japanese": "暑い 日は ブーツを 履かなかった。",
-              "chinese": "熱天沒穿靴子。"
+              "chinese": "熱天沒穿靴子。",
+              "note": null
             },
             {
               "japanese": "彼は 靴下を 履かなかった。",
-              "chinese": "他沒穿襪子。"
+              "chinese": "他沒穿襪子。",
+              "note": null
             }
           ]
         },
@@ -469,18 +584,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はいて",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "靴を 履いて、外へ 出た。",
-              "chinese": "穿上鞋出門。"
+              "chinese": "穿上鞋出門。",
+              "note": null
             },
             {
               "japanese": "スニーカーを 履いて、走った。",
-              "chinese": "穿運動鞋跑了步。"
+              "chinese": "穿運動鞋跑了步。",
+              "note": null
             },
             {
               "japanese": "妹は 赤い 靴を 履いて、踊った。",
-              "chinese": "妹妹穿紅鞋跳舞。"
+              "chinese": "妹妹穿紅鞋跳舞。",
+              "note": null
             }
           ]
         },
@@ -489,18 +609,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はける",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 靴は まだ 履ける。",
-              "chinese": "這雙鞋還能穿。"
+              "chinese": "這雙鞋還能穿。",
+              "note": null
             },
             {
               "japanese": "子どもでも 履ける サイズだ。",
-              "chinese": "是小孩也能穿的尺寸。"
+              "chinese": "是小孩也能穿的尺寸。",
+              "note": null
             },
             {
               "japanese": "雨の 日でも 履ける。",
-              "chinese": "下雨天也能穿。"
+              "chinese": "下雨天也能穿。",
+              "note": null
             }
           ]
         },
@@ -509,18 +634,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はこう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日は 新しい 靴を 履こう。",
-              "chinese": "明天穿新鞋吧。"
+              "chinese": "明天穿新鞋吧。",
+              "note": null
             },
             {
               "japanese": "散歩に スニーカーを 履こう。",
-              "chinese": "散步就穿運動鞋吧。"
+              "chinese": "散步就穿運動鞋吧。",
+              "note": null
             },
             {
               "japanese": "夏だから サンダルを 履こう。",
-              "chinese": "因為是夏天，穿涼鞋吧。"
+              "chinese": "因為是夏天，穿涼鞋吧。",
+              "note": null
             }
           ]
         },
@@ -529,18 +659,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はけ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "早く 靴を 履け。",
-              "chinese": "快穿鞋。"
+              "chinese": "快穿鞋。",
+              "note": null
             },
             {
               "japanese": "外は 寒い、靴下を 履け。",
-              "chinese": "外面冷，穿襪子。"
+              "chinese": "外面冷，穿襪子。",
+              "note": null
             },
             {
               "japanese": "その スニーカーを 履け。",
-              "chinese": "穿那雙運動鞋。"
+              "chinese": "穿那雙運動鞋。",
+              "note": null
             }
           ]
         },
@@ -549,18 +684,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はけば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "靴を 履けば、足が 汚れない。",
-              "chinese": "穿鞋腳就不會弄髒。"
+              "chinese": "穿鞋腳就不會弄髒。",
+              "note": null
             },
             {
               "japanese": "スニーカーを 履けば、速く 走れる。",
-              "chinese": "穿運動鞋就能跑更快。"
+              "chinese": "穿運動鞋就能跑更快。",
+              "note": null
             },
             {
               "japanese": "厚い 靴下を 履けば、暖かい。",
-              "chinese": "穿厚襪子就暖和。"
+              "chinese": "穿厚襪子就暖和。",
+              "note": null
             }
           ]
         },
@@ -569,18 +709,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はかれる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "弟は 母に 靴を 履かれる。",
-              "chinese": "弟弟被媽媽硬穿上鞋。"
+              "chinese": "弟弟被媽媽硬穿上鞋。",
+              "note": null
             },
             {
               "japanese": "私は 友だちに 変な 靴を 履かれる。",
-              "chinese": "我被朋友硬穿上怪鞋。"
+              "chinese": "我被朋友硬穿上怪鞋。",
+              "note": null
             },
             {
               "japanese": "子どもは 先生に ブーツを 履かれる。",
-              "chinese": "孩子被老師硬穿上靴子。"
+              "chinese": "孩子被老師硬穿上靴子。",
+              "note": null
             }
           ]
         },
@@ -589,18 +734,23 @@
           "group": "1",
           "chinese": "穿〔鞋，褲子〕",
           "japanese": "はかせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "母は 子どもに 靴を 履かせる。",
-              "chinese": "媽媽讓孩子穿鞋。"
+              "chinese": "媽媽讓孩子穿鞋。",
+              "note": null
             },
             {
               "japanese": "保育園では 園児に 上靴を 履かせる。",
-              "chinese": "幼兒園讓小朋友穿室內鞋。"
+              "chinese": "幼兒園讓小朋友穿室內鞋。",
+              "note": null
             },
             {
               "japanese": "犬にも 小さな 靴を 履かせる。",
-              "chinese": "也讓狗穿小鞋。"
+              "chinese": "也讓狗穿小鞋。",
+              "note": null
             }
           ]
         }
@@ -611,18 +761,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "外は 寒いから 帽子を 被る。",
-              "chinese": "因為外面冷，戴帽子。"
+              "chinese": "因為外面冷，戴帽子。",
+              "note": null
             },
             {
               "japanese": "夏は 麦わら帽子を 被る。",
-              "chinese": "夏天戴草帽。"
+              "chinese": "夏天戴草帽。",
+              "note": null
             },
             {
               "japanese": "父は いつも 古い 帽子を 被る。",
-              "chinese": "爸爸總是戴舊帽子。"
+              "chinese": "爸爸總是戴舊帽子。",
+              "note": null
             }
           ]
         },
@@ -631,18 +786,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶります",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 赤い 帽子を 被ります。",
-              "chinese": "今天戴紅帽子。"
+              "chinese": "今天戴紅帽子。",
+              "note": null
             },
             {
               "japanese": "日差しが 強いので 帽子を 被ります。",
-              "chinese": "因為陽光強，戴帽子。"
+              "chinese": "因為陽光強，戴帽子。",
+              "note": null
             },
             {
               "japanese": "弟は 野球帽を 被ります。",
-              "chinese": "弟弟戴棒球帽。"
+              "chinese": "弟弟戴棒球帽。",
+              "note": null
             }
           ]
         },
@@ -651,18 +811,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶりません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "室内では 帽子を 被りません。",
-              "chinese": "室內不戴帽子。"
+              "chinese": "室內不戴帽子。",
+              "note": null
             },
             {
               "japanese": "今日は 帽子を 被りません。",
-              "chinese": "今天不戴帽子。"
+              "chinese": "今天不戴帽子。",
+              "note": null
             },
             {
               "japanese": "彼は あまり 帽子を 被りません。",
-              "chinese": "他不太戴帽子。"
+              "chinese": "他不太戴帽子。",
+              "note": null
             }
           ]
         },
@@ -671,18 +836,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶりました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 新しい 帽子を 被りました。",
-              "chinese": "昨天戴了新帽子。"
+              "chinese": "昨天戴了新帽子。",
+              "note": null
             },
             {
               "japanese": "海へ 行く 時は 麦わら帽子を 被りました。",
-              "chinese": "去海邊時戴了草帽。"
+              "chinese": "去海邊時戴了草帽。",
+              "note": null
             },
             {
               "japanese": "妹は 白い 帽子を 被りました。",
-              "chinese": "妹妹戴了白帽子。"
+              "chinese": "妹妹戴了白帽子。",
+              "note": null
             }
           ]
         },
@@ -691,18 +861,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶりませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 帽子を 被りませんでした。",
-              "chinese": "今天沒戴帽子。"
+              "chinese": "今天沒戴帽子。",
+              "note": null
             },
             {
               "japanese": "風が なかったので 帽子を 被りませんでした。",
-              "chinese": "因為沒風，沒戴帽子。"
+              "chinese": "因為沒風，沒戴帽子。",
+              "note": null
             },
             {
               "japanese": "彼は 野球帽を 被りませんでした。",
-              "chinese": "他沒戴棒球帽。"
+              "chinese": "他沒戴棒球帽。",
+              "note": null
             }
           ]
         },
@@ -711,18 +886,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶらない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "家では 帽子を 被らない。",
-              "chinese": "在家不戴帽子。"
+              "chinese": "在家不戴帽子。",
+              "note": null
             },
             {
               "japanese": "冬でも 帽子を 被らない。",
-              "chinese": "冬天也不戴帽子。"
+              "chinese": "冬天也不戴帽子。",
+              "note": null
             },
             {
               "japanese": "彼女は 黒い 帽子を 被らない。",
-              "chinese": "她不戴黑帽子。"
+              "chinese": "她不戴黑帽子。",
+              "note": null
             }
           ]
         },
@@ -731,18 +911,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今朝は 厚い 帽子を 被った。",
-              "chinese": "今早戴了厚帽子。"
+              "chinese": "今早戴了厚帽子。",
+              "note": null
             },
             {
               "japanese": "祖父は 古い 帽子を 被った。",
-              "chinese": "祖父戴了舊帽子。"
+              "chinese": "祖父戴了舊帽子。",
+              "note": null
             },
             {
               "japanese": "雪の 日は 帽子を 被った。",
-              "chinese": "下雪天戴了帽子。"
+              "chinese": "下雪天戴了帽子。",
+              "note": null
             }
           ]
         },
@@ -751,18 +936,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶらなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 帽子を 被らなかった。",
-              "chinese": "昨天沒戴帽子。"
+              "chinese": "昨天沒戴帽子。",
+              "note": null
             },
             {
               "japanese": "暑い 日は 帽子を 被らなかった。",
-              "chinese": "熱天沒戴帽子。"
+              "chinese": "熱天沒戴帽子。",
+              "note": null
             },
             {
               "japanese": "彼は 麦わら帽子を 被らなかった。",
-              "chinese": "他沒戴草帽。"
+              "chinese": "他沒戴草帽。",
+              "note": null
             }
           ]
         },
@@ -771,18 +961,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶって",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "帽子を 被って、出かけた。",
-              "chinese": "戴上帽子出門。"
+              "chinese": "戴上帽子出門。",
+              "note": null
             },
             {
               "japanese": "麦わら帽子を 被って、畑へ 行った。",
-              "chinese": "戴草帽去田裡。"
+              "chinese": "戴草帽去田裡。",
+              "note": null
             },
             {
               "japanese": "弟は 野球帽を 被って、遊んで いる。",
-              "chinese": "弟弟戴著棒球帽玩。"
+              "chinese": "弟弟戴著棒球帽玩。",
+              "note": null
             }
           ]
         },
@@ -791,18 +986,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶれる",
+          "note": "字典有但是不常用：「かぶれる」是「かぶる」的可能形，易與「かぶれる（染上習癖）」混淆",
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 帽子は まだ 被れる。",
-              "chinese": "這頂帽子還能戴。"
+              "chinese": "這頂帽子還能戴。",
+              "note": null
             },
             {
               "japanese": "子どもでも 被れる 帽子だ。",
-              "chinese": "是小孩也能戴的帽子。"
+              "chinese": "是小孩也能戴的帽子。",
+              "note": null
             },
             {
               "japanese": "紐が ある ので、風の 強い 日でも 被れる。",
-              "chinese": "因為有帶子，風大的日子也能戴。"
+              "chinese": "因為有帶子，風大的日子也能戴。",
+              "note": null
             }
           ]
         },
@@ -811,18 +1011,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶろう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日は 新しい 帽子を 被ろう。",
-              "chinese": "明天戴新帽子吧。"
+              "chinese": "明天戴新帽子吧。",
+              "note": null
             },
             {
               "japanese": "日差しが 強いから 帽子を 被ろう。",
-              "chinese": "陽光強，戴帽子吧。"
+              "chinese": "陽光強，戴帽子吧。",
+              "note": null
             },
             {
               "japanese": "海では 麦わら帽子を 被ろう。",
-              "chinese": "在海邊就戴草帽吧。"
+              "chinese": "在海邊就戴草帽吧。",
+              "note": null
             }
           ]
         },
@@ -831,18 +1036,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶれ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "外は 暑い、帽子を 被れ。",
-              "chinese": "外面熱，戴帽子。"
+              "chinese": "外面熱，戴帽子。",
+              "note": null
             },
             {
               "japanese": "早く 帽子を 被れ。",
-              "chinese": "快戴帽子。"
+              "chinese": "快戴帽子。",
+              "note": null
             },
             {
               "japanese": "その 野球帽を 被れ。",
-              "chinese": "戴那頂棒球帽。"
+              "chinese": "戴那頂棒球帽。",
+              "note": null
             }
           ]
         },
@@ -851,18 +1061,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "帽子を 被れば、日焼け しない。",
-              "chinese": "戴帽子就不會曬傷。"
+              "chinese": "戴帽子就不會曬傷。",
+              "note": null
             },
             {
               "japanese": "麦わら帽子を 被れば、涼しい。",
-              "chinese": "戴草帽就涼快。"
+              "chinese": "戴草帽就涼快。",
+              "note": null
             },
             {
               "japanese": "厚い 帽子を 被れば、暖かい。",
-              "chinese": "戴厚帽子就暖和。"
+              "chinese": "戴厚帽子就暖和。",
+              "note": null
             }
           ]
         },
@@ -871,18 +1086,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
-              "japanese": "弟は 母に 帽子を 被られる。",
-              "chinese": "弟弟被媽媽硬戴上帽子。"
+              "japanese": "弟に 新しい 帽子を 被られるのは 困る。",
+              "chinese": "新帽子被弟弟拿去戴，很困擾。",
+              "note": null
             },
             {
-              "japanese": "私は 友だちに 変な 帽子を 被られる。",
-              "chinese": "我被朋友硬戴上怪帽子。"
+              "japanese": "母に 私の 帽子を 被られる と、ちょっと 困る。",
+              "chinese": "媽媽戴走我的帽子的話，有點困擾。",
+              "note": null
             },
             {
-              "japanese": "子どもは 先生に 帽子を 被られる。",
-              "chinese": "孩子被老師硬戴上帽子。"
+              "japanese": "私の 帽子を 兄に 被られるのは 嫌だ。",
+              "chinese": "不想讓哥哥拿去戴我的帽子。",
+              "note": null
             }
           ]
         },
@@ -891,18 +1111,23 @@
           "group": "1",
           "chinese": "戴〔帽子等〕",
           "japanese": "かぶらせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "母は 子どもに 帽子を 被らせる。",
-              "chinese": "媽媽讓孩子戴帽子。"
+              "chinese": "媽媽讓孩子戴帽子。",
+              "note": null
             },
             {
               "japanese": "先生は 生徒に 帽子を 被らせる。",
-              "chinese": "老師讓學生戴帽子。"
+              "chinese": "老師讓學生戴帽子。",
+              "note": null
             },
             {
               "japanese": "日差しの 強い 日は 犬にも 帽子を 被らせる。",
-              "chinese": "陽光強的日子也讓狗戴帽子。"
+              "chinese": "陽光強的日子也讓狗戴帽子。",
+              "note": null
             }
           ]
         }
@@ -913,18 +1138,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かける",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "父は いつも 眼鏡を 掛ける。",
-              "chinese": "爸爸總是戴眼鏡。"
+              "chinese": "爸爸總是戴眼鏡。",
+              "note": null
             },
             {
               "japanese": "本を 読む 時は 眼鏡を 掛ける。",
-              "chinese": "看書時戴眼鏡。"
+              "chinese": "看書時戴眼鏡。",
+              "note": null
             },
             {
               "japanese": "外では サングラスを 掛ける。",
-              "chinese": "在外面戴太陽眼鏡。"
+              "chinese": "在外面戴太陽眼鏡。",
+              "note": null
             }
           ]
         },
@@ -933,18 +1163,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけます",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 新しい 眼鏡を 掛けます。",
-              "chinese": "今天戴新眼鏡。"
+              "chinese": "今天戴新眼鏡。",
+              "note": null
             },
             {
               "japanese": "運転する 時は 眼鏡を 掛けます。",
-              "chinese": "開車時戴眼鏡。"
+              "chinese": "開車時戴眼鏡。",
+              "note": null
             },
             {
               "japanese": "母は 細い 眼鏡を 掛けます。",
-              "chinese": "媽媽戴細框眼鏡。"
+              "chinese": "媽媽戴細框眼鏡。",
+              "note": null
             }
           ]
         },
@@ -953,18 +1188,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "家では 眼鏡を 掛けません。",
-              "chinese": "在家不戴眼鏡。"
+              "chinese": "在家不戴眼鏡。",
+              "note": null
             },
             {
               "japanese": "今日は サングラスを 掛けません。",
-              "chinese": "今天不戴太陽眼鏡。"
+              "chinese": "今天不戴太陽眼鏡。",
+              "note": null
             },
             {
               "japanese": "彼は あまり 眼鏡を 掛けません。",
-              "chinese": "他不太戴眼鏡。"
+              "chinese": "他不太戴眼鏡。",
+              "note": null
             }
           ]
         },
@@ -973,18 +1213,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 黒い 眼鏡を 掛けました。",
-              "chinese": "昨天戴了黑眼鏡。"
+              "chinese": "昨天戴了黑眼鏡。",
+              "note": null
             },
             {
               "japanese": "海では サングラスを 掛けました。",
-              "chinese": "在海邊戴了太陽眼鏡。"
+              "chinese": "在海邊戴了太陽眼鏡。",
+              "note": null
             },
             {
               "japanese": "妹は 丸い 眼鏡を 掛けました。",
-              "chinese": "妹妹戴了圓眼鏡。"
+              "chinese": "妹妹戴了圓眼鏡。",
+              "note": null
             }
           ]
         },
@@ -993,18 +1238,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 眼鏡を 掛けませんでした。",
-              "chinese": "今天沒戴眼鏡。"
+              "chinese": "今天沒戴眼鏡。",
+              "note": null
             },
             {
               "japanese": "曇って いたので サングラスを 掛けませんでした。",
-              "chinese": "因為陰天，沒戴太陽眼鏡。"
+              "chinese": "因為陰天，沒戴太陽眼鏡。",
+              "note": null
             },
             {
               "japanese": "彼は 眼鏡を 掛けませんでした。",
-              "chinese": "他沒戴眼鏡。"
+              "chinese": "他沒戴眼鏡。",
+              "note": null
             }
           ]
         },
@@ -1013,18 +1263,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "家では 眼鏡を 掛けない。",
-              "chinese": "在家不戴眼鏡。"
+              "chinese": "在家不戴眼鏡。",
+              "note": null
             },
             {
               "japanese": "夜は サングラスを 掛けない。",
-              "chinese": "晚上不戴太陽眼鏡。"
+              "chinese": "晚上不戴太陽眼鏡。",
+              "note": null
             },
             {
               "japanese": "彼女は 眼鏡を 掛けない。",
-              "chinese": "她不戴眼鏡。"
+              "chinese": "她不戴眼鏡。",
+              "note": null
             }
           ]
         },
@@ -1033,18 +1288,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけた",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今朝は 眼鏡を 掛けた。",
-              "chinese": "今早戴了眼鏡。"
+              "chinese": "今早戴了眼鏡。",
+              "note": null
             },
             {
               "japanese": "祖父は 古い 眼鏡を 掛けた。",
-              "chinese": "祖父戴了舊眼鏡。"
+              "chinese": "祖父戴了舊眼鏡。",
+              "note": null
             },
             {
               "japanese": "日差しが 強いので サングラスを 掛けた。",
-              "chinese": "因為陽光強，戴了太陽眼鏡。"
+              "chinese": "因為陽光強，戴了太陽眼鏡。",
+              "note": null
             }
           ]
         },
@@ -1053,18 +1313,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 眼鏡を 掛けなかった。",
-              "chinese": "昨天沒戴眼鏡。"
+              "chinese": "昨天沒戴眼鏡。",
+              "note": null
             },
             {
               "japanese": "室内だったので サングラスを 掛けなかった。",
-              "chinese": "因為在室內，沒戴太陽眼鏡。"
+              "chinese": "因為在室內，沒戴太陽眼鏡。",
+              "note": null
             },
             {
               "japanese": "彼は 眼鏡を 掛けなかった。",
-              "chinese": "他沒戴眼鏡。"
+              "chinese": "他沒戴眼鏡。",
+              "note": null
             }
           ]
         },
@@ -1073,18 +1338,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけて",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "眼鏡を 掛けて、本を 読んだ。",
-              "chinese": "戴上眼鏡看書。"
+              "chinese": "戴上眼鏡看書。",
+              "note": null
             },
             {
               "japanese": "サングラスを 掛けて、海へ 行った。",
-              "chinese": "戴太陽眼鏡去海邊。"
+              "chinese": "戴太陽眼鏡去海邊。",
+              "note": null
             },
             {
               "japanese": "父は 眼鏡を 掛けて、新聞を 読んで いる。",
-              "chinese": "爸爸戴著眼鏡看報紙。"
+              "chinese": "爸爸戴著眼鏡看報紙。",
+              "note": null
             }
           ]
         },
@@ -1093,18 +1363,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 眼鏡は まだ 掛けられる。",
-              "chinese": "這副眼鏡還能戴。"
+              "chinese": "這副眼鏡還能戴。",
+              "note": null
             },
             {
               "japanese": "度が 合えば 掛けられる。",
-              "chinese": "度數合適就能戴。"
+              "chinese": "度數合適就能戴。",
+              "note": null
             },
             {
               "japanese": "子どもでも 掛けられる 眼鏡だ。",
-              "chinese": "是小孩也能戴的眼鏡。"
+              "chinese": "是小孩也能戴的眼鏡。",
+              "note": null
             }
           ]
         },
@@ -1113,18 +1388,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけよう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日は 新しい 眼鏡を 掛けよう。",
-              "chinese": "明天戴新眼鏡吧。"
+              "chinese": "明天戴新眼鏡吧。",
+              "note": null
             },
             {
               "japanese": "海では サングラスを 掛けよう。",
-              "chinese": "在海邊就戴太陽眼鏡吧。"
+              "chinese": "在海邊就戴太陽眼鏡吧。",
+              "note": null
             },
             {
               "japanese": "運転の 時は 眼鏡を 掛けよう。",
-              "chinese": "開車時就戴眼鏡吧。"
+              "chinese": "開車時就戴眼鏡吧。",
+              "note": null
             }
           ]
         },
@@ -1133,18 +1413,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけろ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "早く 眼鏡を 掛けろ。",
-              "chinese": "快戴眼鏡。"
+              "chinese": "快戴眼鏡。",
+              "note": null
             },
             {
               "japanese": "外は 明るい、サングラスを 掛けろ。",
-              "chinese": "外面亮，戴太陽眼鏡。"
+              "chinese": "外面亮，戴太陽眼鏡。",
+              "note": null
             },
             {
               "japanese": "その 眼鏡を 掛けろ。",
-              "chinese": "戴那副眼鏡。"
+              "chinese": "戴那副眼鏡。",
+              "note": null
             }
           ]
         },
@@ -1153,18 +1438,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かければ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "眼鏡を 掛ければ、よく 見える。",
-              "chinese": "戴眼鏡就看得清楚。"
+              "chinese": "戴眼鏡就看得清楚。",
+              "note": null
             },
             {
               "japanese": "サングラスを 掛ければ、まぶしく ない。",
-              "chinese": "戴太陽眼鏡就不刺眼。"
+              "chinese": "戴太陽眼鏡就不刺眼。",
+              "note": null
             },
             {
               "japanese": "眼鏡を 掛ければ、安心だ。",
-              "chinese": "戴眼鏡就安心。"
+              "chinese": "戴眼鏡就安心。",
+              "note": null
             }
           ]
         },
@@ -1173,18 +1463,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "弟は 母に 眼鏡を 掛けられる。",
-              "chinese": "弟弟被媽媽硬戴上眼鏡。"
+              "chinese": "弟弟被媽媽硬戴上眼鏡。",
+              "note": null
             },
             {
               "japanese": "私は 友だちに 変な 眼鏡を 掛けられる。",
-              "chinese": "我被朋友硬戴上怪眼鏡。"
+              "chinese": "我被朋友硬戴上怪眼鏡。",
+              "note": null
             },
             {
               "japanese": "子どもは 先生に サングラスを 掛けられる。",
-              "chinese": "孩子被老師硬戴上太陽眼鏡。"
+              "chinese": "孩子被老師硬戴上太陽眼鏡。",
+              "note": null
             }
           ]
         },
@@ -1193,18 +1488,23 @@
           "group": "2",
           "chinese": "戴〔眼鏡〕; 掛；戴上",
           "japanese": "かけさせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "母は 子どもに 眼鏡を 掛けさせる。",
-              "chinese": "媽媽讓孩子戴眼鏡。"
+              "chinese": "媽媽讓孩子戴眼鏡。",
+              "note": null
             },
             {
               "japanese": "先生は 生徒に 眼鏡を 掛けさせる。",
-              "chinese": "老師讓學生戴眼鏡。"
+              "chinese": "老師讓學生戴眼鏡。",
+              "note": null
             },
             {
               "japanese": "医者は 患者に サングラスを 掛けさせる。",
-              "chinese": "醫生讓病人戴太陽眼鏡。"
+              "chinese": "醫生讓病人戴太陽眼鏡。",
+              "note": null
             }
           ]
         }
@@ -1215,18 +1515,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "赤ちゃんが 病院で 生まれる。",
-              "chinese": "嬰兒在醫院出生。"
+              "chinese": "嬰兒在醫院出生。",
+              "note": null
             },
             {
               "japanese": "新しい 命が ここで 生まれる。",
-              "chinese": "新生命在這裡誕生。"
+              "chinese": "新生命在這裡誕生。",
+              "note": null
             },
             {
               "japanese": "この 町で 多くの 子どもが 生まれる。",
-              "chinese": "這城鎮有許多孩子出生。"
+              "chinese": "這城鎮有許多孩子出生。",
+              "note": null
             }
           ]
         },
@@ -1235,18 +1540,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれます",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "赤ちゃんは この 病院で 生まれます。",
-              "chinese": "嬰兒在這家醫院出生。"
+              "chinese": "嬰兒在這家醫院出生。",
+              "note": null
             },
             {
               "japanese": "新しい 命が 春に 生まれます。",
-              "chinese": "新生命在春天誕生。"
+              "chinese": "新生命在春天誕生。",
+              "note": null
             },
             {
               "japanese": "毎年 多くの 子どもが ここで 生まれます。",
-              "chinese": "每年許多孩子在這裡出生。"
+              "chinese": "每年許多孩子在這裡出生。",
+              "note": null
             }
           ]
         },
@@ -1255,18 +1565,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 鳥は 寒い 国では 生まれません。",
-              "chinese": "這種鳥在寒冷的國家不會出生。"
+              "chinese": "這種鳥在寒冷的國家不會出生。",
+              "note": null
             },
             {
               "japanese": "卵が なければ 生まれません。",
-              "chinese": "沒有卵就不會誕生。"
+              "chinese": "沒有卵就不會誕生。",
+              "note": null
             },
             {
               "japanese": "ここでは 赤ちゃんは 生まれません。",
-              "chinese": "這裡不會有嬰兒出生。"
+              "chinese": "這裡不會有嬰兒出生。",
+              "note": null
             }
           ]
         },
@@ -1275,18 +1590,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 赤ちゃんが 生まれました。",
-              "chinese": "昨天嬰兒出生了。"
+              "chinese": "昨天嬰兒出生了。",
+              "note": null
             },
             {
               "japanese": "妹は 大阪で 生まれました。",
-              "chinese": "妹妹在大阪出生。"
+              "chinese": "妹妹在大阪出生。",
+              "note": null
             },
             {
               "japanese": "新しい 命が この 家で 生まれました。",
-              "chinese": "新生命在這家中誕生。"
+              "chinese": "新生命在這家中誕生。",
+              "note": null
             }
           ]
         },
@@ -1295,18 +1615,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "その 日は まだ 生まれませんでした。",
-              "chinese": "那天還沒有出生。"
+              "chinese": "那天還沒有出生。",
+              "note": null
             },
             {
               "japanese": "私は この 病院では 生まれませんでした。",
-              "chinese": "我並不是在這家醫院出生。"
+              "chinese": "我並不是在這家醫院出生。",
+              "note": null
             },
             {
               "japanese": "今年は 子犬が 生まれませんでした。",
-              "chinese": "今年小狗沒有出生。"
+              "chinese": "今年小狗沒有出生。",
+              "note": null
             }
           ]
         },
@@ -1315,18 +1640,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "冬には 生まれない。",
-              "chinese": "冬天不會出生。"
+              "chinese": "冬天不會出生。",
+              "note": null
             },
             {
               "japanese": "この 環境では 生まれない。",
-              "chinese": "在這種環境不會誕生。"
+              "chinese": "在這種環境不會誕生。",
+              "note": null
             },
             {
               "japanese": "子どもは ここでは 生まれない。",
-              "chinese": "孩子不會在這裡出生。"
+              "chinese": "孩子不會在這裡出生。",
+              "note": null
             }
           ]
         },
@@ -1335,18 +1665,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれた",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先月 赤ちゃんが 生まれた。",
-              "chinese": "上個月嬰兒出生了。"
+              "chinese": "上個月嬰兒出生了。",
+              "note": null
             },
             {
               "japanese": "私は 小さな 町で 生まれた。",
-              "chinese": "我在小鎮出生。"
+              "chinese": "我在小鎮出生。",
+              "note": null
             },
             {
               "japanese": "新しい 命が 生まれた。",
-              "chinese": "新生命誕生了。"
+              "chinese": "新生命誕生了。",
+              "note": null
             }
           ]
         },
@@ -1355,18 +1690,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "その 年は 子どもが 生まれなかった。",
-              "chinese": "那年孩子沒有出生。"
+              "chinese": "那年孩子沒有出生。",
+              "note": null
             },
             {
               "japanese": "私は ここで 生まれなかった。",
-              "chinese": "我不是在這裡出生。"
+              "chinese": "我不是在這裡出生。",
+              "note": null
             },
             {
               "japanese": "冬には 子犬が 生まれなかった。",
-              "chinese": "冬天小狗沒有出生。"
+              "chinese": "冬天小狗沒有出生。",
+              "note": null
             }
           ]
         },
@@ -1375,18 +1715,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれて",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "赤ちゃんが 生まれて、家族は 喜んだ。",
-              "chinese": "嬰兒出生，家人很高興。"
+              "chinese": "嬰兒出生，家人很高興。",
+              "note": null
             },
             {
               "japanese": "妹が 生まれて、家が 明るく なった。",
-              "chinese": "妹妹出生後，家裡變得開朗。"
+              "chinese": "妹妹出生後，家裡變得開朗。",
+              "note": null
             },
             {
               "japanese": "新しい 命が 生まれて、町が 元気に なった。",
-              "chinese": "新生命誕生，城鎮變得有活力。"
+              "chinese": "新生命誕生，城鎮變得有活力。",
+              "note": null
             }
           ]
         },
@@ -1395,38 +1740,32 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれられる",
-          "sentence": [
-            {
-              "japanese": "この 病院なら 安心して 生まれられる。",
-              "chinese": "在這家醫院就能安心出生。"
-            },
-            {
-              "japanese": "この 町で 生まれられる 人は 少ない。",
-              "chinese": "能在這城鎮出生的人很少。"
-            },
-            {
-              "japanese": "外国で 生まれられる 赤ちゃんも いる。",
-              "chinese": "也有能在國外出生的嬰兒。"
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「生まれる」是無意志動詞，「生まれられる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
         },
         "volitional-form": {
           "vol": "生まれよう",
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれよう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "新しい 命が 生まれようと して いる。",
-              "chinese": "新生命正要誕生。"
+              "chinese": "新生命正要誕生。",
+              "note": null
             },
             {
               "japanese": "新しい 時代が 生まれようと して いる。",
-              "chinese": "新時代正要誕生。"
+              "chinese": "新時代正要誕生。",
+              "note": null
             },
             {
               "japanese": "次の 世代が 生まれようと して いる。",
-              "chinese": "下一代正要誕生。"
+              "chinese": "下一代正要誕生。",
+              "note": null
             }
           ]
         },
@@ -1435,18 +1774,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれろ",
+          "note": "字典有但是不常用：「生まれろ」日常不用",
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "「早く 生まれろ！」と 父親は 産院の 廊下で 叫んだ。",
-              "chinese": "父親在產房走廊喊：「快點出生啊！」"
+              "chinese": "父親在產房走廊喊：「快點出生啊！」",
+              "note": null
             },
             {
               "japanese": "「元気に 生まれろ」と 姉は お腹に 声を かけた。",
-              "chinese": "姊姊對著肚子說：「要健康地出生喔。」"
+              "chinese": "姊姊對著肚子說：「要健康地出生喔。」",
+              "note": null
             },
             {
               "japanese": "「無事に 生まれろ」と 祈りながら、彼は 待合室で 待った。",
-              "chinese": "他一邊祈禱「平安出生」，一邊在候診室等待。"
+              "chinese": "他一邊祈禱「平安出生」，一邊在候診室等待。",
+              "note": null
             }
           ]
         },
@@ -1455,18 +1799,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "ここで 生まれれば、国籍が 変わる。",
-              "chinese": "在這裡出生的話，國籍就會改變。"
+              "chinese": "在這裡出生的話，國籍就會改變。",
+              "note": null
             },
             {
               "japanese": "春に 生まれれば、暖かい。",
-              "chinese": "在春天出生的話就暖和。"
+              "chinese": "在春天出生的話就暖和。",
+              "note": null
             },
             {
               "japanese": "この 町で 生まれれば、誇りに 思える。",
-              "chinese": "在這城鎮出生的話就會感到自豪。"
+              "chinese": "在這城鎮出生的話就會感到自豪。",
+              "note": null
             }
           ]
         },
@@ -1475,18 +1824,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれられる",
+          "note": "字典有但是不常用：「生まれられる」日常不用",
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 町では、外国人の 両親から 多くの 子どもが 生まれられる。",
-              "chinese": "在這座城鎮，許多孩子由外籍父母生下。"
+              "chinese": "在這座城鎮，許多孩子由外籍父母生下。",
+              "note": null
             },
             {
               "japanese": "同じ 家に 二人の 赤ちゃんが 生まれられる ことは 珍しい。",
-              "chinese": "同一個家庭有兩個嬰兒出生很罕見。"
+              "chinese": "同一個家庭有兩個嬰兒出生很罕見。",
+              "note": null
             },
             {
               "japanese": "この 島では、毎年 たくさんの 亀が 生まれられる。",
-              "chinese": "這座島上每年有許多海龜出生。"
+              "chinese": "這座島上每年有許多海龜出生。",
+              "note": null
             }
           ]
         },
@@ -1495,18 +1849,23 @@
           "group": "2",
           "chinese": "出生; 誕生",
           "japanese": "うまれさせる",
+          "note": "字典有但是不常用：「生まれさせる」日常不用",
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "その 出会いは、新しい 音楽を 生まれさせる。",
-              "chinese": "那次相遇催生了新的音樂。"
+              "chinese": "那次相遇催生了新的音樂。",
+              "note": null
             },
             {
               "japanese": "努力と 偶然が、大ヒットを 生まれさせる。",
-              "chinese": "努力與偶然催生了大熱門。"
+              "chinese": "努力與偶然催生了大熱門。",
+              "note": null
             },
             {
               "japanese": "戦後の 混乱が、多くの 名作を 生まれさせる。",
-              "chinese": "戰後的混亂催生了許多名作。"
+              "chinese": "戰後的混亂催生了許多名作。",
+              "note": null
             }
           ]
         }

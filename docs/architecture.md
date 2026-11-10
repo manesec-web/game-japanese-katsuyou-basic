@@ -101,6 +101,7 @@ docs/changelog.md             dated change log
 README.md                     user-facing overview, setup, test and deploy notes
 scripts/write-sha256.mjs      hashes vol/*.json into src/data/dict-manifest.json
 scripts/browser-check.mjs     headless Chromium walk-through of the built site
+scripts/motion-probe.mjs      frame-by-frame motion traces (informational)
 src/main.js                   app entry: creates store, boots, mounts Vue
 src/App.vue                   screen switch + shared shell
 src/engine/registry.js        command registry + dispatch
@@ -128,11 +129,14 @@ src/study/card-tags.js        card face/back tag composition
 src/study/results.js          run tally, score bands, completion emoji
 src/ui/store.js               reactive session + send()
 src/ui/bootstrap.js           boot → library → settings → home (also retry)
-src/ui/swipe.js               drag threshold and spring-back (pure)
+src/ui/scrollbar.js           page scrollbar geometry (pure)
+src/ui/swipe.js               drag threshold, spring-back and the first-card
+                              resistance (pure)
 src/ui/motion.js              prefers-reduced-motion probe
 src/ui/typing.js              IME-safe field edits (pure)
 src/views/*.vue               screens (thin)
-src/components/*.vue          shared UI pieces (thin: RubyWord, CompletePanel)
+src/components/*.vue          shared UI pieces (thin: SiteHead, BuildFooter,
+                              AboutSheet, RubyWord, CompletePanel, PageScrollBar)
 src/styles/app.css            design tokens, layout, motion, breakpoints
 index.html
 vite.config.js                outDir "output", base "/game-japanese-katsuyou-basic/", dict serving/copy
@@ -176,16 +180,18 @@ and leaves `boot.done` false. `boot.checked` counts verified lessons only.
 ## Testing
 
 - Vitest under Node for engine, commands, hashing, boot, settings, item
-  lists, keyboard, grading, ruby, swipe resolution, result tallies: 20 files,
-  191 tests.
+  lists, keyboard, grading, ruby, swipe resolution, result tallies: 21 files,
+  209 tests.
 - Browser APIs (IndexedDB, fetch) are injected so tests use fakes; the IDB
   adapter itself is tested with `fake-indexeddb`. No browser is needed for
   `npm test`.
 - `scripts/browser-check.mjs` starts `vite preview` and drives headless
   Chromium at 390×844 (plus 550/551/800/900 width probes) through loading,
   home, all three pickers, reader, three settings screens, cards, quiz and
-  completion, including IndexedDB reuse, reduced motion and the 550px
-  breakpoint. It is a separate command, not part of `npm test`.
+  completion, including IndexedDB reuse, the loading head and credit line, the
+  first-card resistance, reduced motion and the 550px breakpoint. It is a
+  separate command, not part of `npm test`. The run is 379 checks on the final
+  pass (378–379: the seeded quiz item decides how many kana-key assertions run).
 
 ## Styling and motion
 
@@ -194,8 +200,9 @@ grain, warm off-white `min(100%, 480px)` column with 28px radius and light
 shadow, system CJK font stack (`Hiragino Sans`, `Noto Sans TC`, `Noto Sans JP`),
 36px × 10px-radius controls (chips and settings rows), 44px+ quiz keys, 60px
 home entries, 50px picker/reader/card footer controls and 60px 返回主頁, ~220ms
-screen transitions, ~300ms `rotateY` card flip, 160ms/180ms card leave and
-enter, 1.6s answer toasts, drag-follow / spring-back for swipes, and a
+screen transitions, a 240ms `rotateY` card flip, a 170ms accelerating exit and
+190ms decelerating entry for paging, a 140ms spring-back for a release under
+the threshold, 1.6s answer toasts, drag-follow for swipes, and a
 `prefers-reduced-motion: reduce` branch that freezes the gradient, changes
 items and cards directly, makes flips instant, and fades between screens.
 At ≤550px the column is full-bleed and the gradient is replaced by the column
@@ -209,6 +216,22 @@ colour.
 - The library lives in `src/dict/library.js` (module-level data passed to
   commands/stores as a dependency), not inside the reactive session. The
   session keeps only the small `lessons` summary the picker renders.
+- Paging phases are driven by the DOM, not by timers: the exit ends on
+  `transitionend` and the entry on `animationend`, with a 600ms fallback, so the
+  CSS owns every duration. Three easings are tokens in `src/styles/app.css`:
+  `--ease-exit` (accelerating, so the pace carries into the swap),
+  `--ease-slide` (decelerating settle, used for the entry and the spring-back)
+  and `--ease-turn` (the 3D flip). Speed either side of the swap is asserted
+  within 1.6x by `scripts/browser-check.mjs`; `scripts/motion-probe.mjs` prints
+  the frame-by-frame trace when a number needs re-measuring.
+- The page scrollbar is drawn, not native: `src/ui/scrollbar.js` holds the
+  geometry (pure and unit tested) and `src/components/PageScrollBar.vue` wires
+  `scroll`/`resize`/`ResizeObserver` to it. `app.css` hides the browser bar on
+  `html`/`body` only, and the two inner `.form-list` dropdowns set
+  `scrollbar-width: auto` because `scrollbar-width` inherits.
+- The viewport pins the scale (`maximum-scale=1, user-scalable=no`) and
+  `html`/`body` set `touch-action: manipulation`, so a double tap and a pinch
+  both leave the page at scale 1; the gesture surfaces override with `pan-y`.
 - Gesture wiring stays in the views, but thresholds/spring-back resolution
   are pure (`src/ui/swipe.js`), answer normalization/grading and keyboard
   generation are pure (`src/dict/quiz.js`), typing diffs are pure
@@ -218,3 +241,14 @@ colour.
   the stylesheet freezes the gradient, and screen changes keep a short fade.
 - Settings and lesson selections persist under `katsuyou-settings`; every
   command that changes them saves immediately through the injected storage.
+- The head and the credit line are components, not per-screen markup:
+  `src/components/SiteHead.vue` (the three lines, on home and on loading) and
+  `src/components/BuildFooter.vue` (the credit line, with the bug line only on
+  home). `src/components/AboutSheet.vue` is the shared sheet, so both screens
+  open the same panel. Each view keeps its own `sheetOpen` ref; there is no
+  `about` command because the sheet was already view state.
+- The first card's wall is pure logic: `cardDrag` and `cardDirectionAt` in
+  `src/ui/swipe.js` decide the damped offset (a third of the finger, capped at
+  40px) and return no direction when `session.index === 0` and the drag goes
+  right. `CardView.vue` only applies them, and the existing 140ms `.card`
+  transition plays the spring-back.

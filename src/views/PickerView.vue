@@ -293,7 +293,10 @@ function back() {
 
 .field {
   display: flex;
-  align-items: flex-start;
+  /* The label centres against the 36px form control beside it. It used to be
+     nudged down with padding, which left the glyph sitting below the control's
+     centre instead of on it. */
+  align-items: center;
   gap: 10px;
   margin-top: 24px;
 }
@@ -304,7 +307,6 @@ function back() {
   text-transform: uppercase;
   color: var(--muted);
   flex: 0 0 28px;
-  padding-top: 14px;
 }
 
 .field-body {
@@ -341,6 +343,9 @@ function back() {
   background: var(--surface);
   max-height: 320px;
   overflow-y: auto;
+  /* The page hides its own scrollbar; this list is a scroll container of its
+     own, so it opts back in and keeps the native bar. */
+  scrollbar-width: auto;
 }
 
 .form-option {

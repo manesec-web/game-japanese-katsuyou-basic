@@ -82,11 +82,13 @@ describe('sentenceParts', () => {
 
 // The rule above only holds if the data keeps the form's own word inside its
 // example sentences. This walks every lesson and fails if a form loses it.
+// Forms flagged `error_usage` are kept for conjugation practice only; they
+// deliberately have no example sentences, so the sentence rule skips them.
 describe('vol/ sentences contain the form word', () => {
   const volDir = path.resolve(process.cwd(), 'vol')
   const lessons = Array.from({ length: 50 }, (_, i) => `lesson_${i + 1}.json`)
 
-  it('holds for every form of every verb', () => {
+  it('holds for every usable form of every verb', () => {
     let forms = 0
     let sentences = 0
     for (const file of lessons) {
@@ -95,6 +97,13 @@ describe('vol/ sentences contain the form word', () => {
       for (const verb of payload.vols) {
         for (const [formId, data] of Object.entries(verb)) {
           forms += 1
+          if (data.error_usage === true) {
+            expect(data.sentence ?? [], `${file} ${formId} ${data.vol}`).toEqual([])
+            expect(data.note, `${file} ${formId} ${data.vol}`).toBeTruthy()
+            continue
+          }
+          expect(data.sentence?.length ?? 0, `${file} ${formId} ${data.vol}`).toBeGreaterThanOrEqual(3)
+          expect(data.sentence?.length ?? 0, `${file} ${formId} ${data.vol}`).toBeLessThanOrEqual(5)
           const hits = (data.sentence ?? []).filter((line) =>
             highlightSegments(line.japanese, data.vol).some((part) => part.highlight),
           )
@@ -104,6 +113,6 @@ describe('vol/ sentences contain the form word', () => {
       }
     }
     expect(forms).toBe(5790)
-    expect(sentences).toBeGreaterThan(forms)
+    expect(sentences).toBeGreaterThan(0)
   })
 })

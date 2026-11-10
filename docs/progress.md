@@ -1,23 +1,29 @@
 # Progress
 
-Last updated: 2026-11-09.
+Last updated: 2026-11-11.
 
-**Status: complete.** T1–T8 are done and revisions 2–10 have landed and been
+**Status: complete.** T1–T8 are done and revisions 2–13 have landed and been
 verified. The site is not published yet; the remaining step is to deploy
-`output/` to GitHub Pages.
+`output/` to GitHub Pages. Revision 13 added the loading-screen head and credit
+line and the first-card resistance in 翻卡學習.
 
 ## Current state
 
 - Vue 3.5 + Vite 7.3 + Vitest 3 static app. Verified with Node v26.4.0 and
   npm 11.18.0; Vite 7 requires Node `^20.19.0` or `>=22.12.0`.
-- `npm test`: 20 files, **191 tests passing**. `pretest` verifies the 50-lesson
+- `npm test`: 21 files, **209 tests passing**. `pretest` verifies the 50-lesson
   SHA-256 manifest first.
 - `npm run build`: `output/index.html`, `output/assets/` (one JS + one CSS
   bundle) and `output/dict/` with exactly **50** lesson files. `output/` is
   gitignored.
-- `node scripts/browser-check.mjs`: **259 checks passing** (headless Chromium,
-  390×844 with 550/551/800/900 width probes). The count can move by one because
-  the quiz keyboard filler is seeded.
+- `node scripts/browser-check.mjs`: **379 checks passing on the final run**
+  (378–379; headless Chromium, 390×844 with 550/551/800/900 width probes, plus
+  a touch context for the zoom lock and frame-by-frame motion assertions). The
+  count can move by one because the seeded quiz item decides how many kana-key
+  assertions run.
+- `node scripts/motion-probe.mjs`: prints the frame-by-frame position trace for
+  the paging turns, the spring-back and the flip. Used to measure the motion
+  before and after a change; not part of the pass/fail gate.
 - Git: branch `main`, tracking `github/main`; history starts at commit
   `933c30b` (`init`). The GitHub Pages URL returned 404 when this document
   was refreshed, so the site has not been published yet.
@@ -27,10 +33,11 @@ verified. The site is not published yet; the remaining step is to deploy
 ## Verification as of this refresh
 
 ```bash
-npm test                                # 20 files, 191 tests passed
+npm test                                # 21 files, 209 tests passed
 npm run build                           # manifest ok: 50 lessons; built in <1s
 ls output/dict | wc -l                  # 50
-node scripts/browser-check.mjs          # browser check passed (259 checks)
+node scripts/browser-check.mjs          # browser check passed (379 checks)
+node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 node scripts/write-sha256.mjs --check   # manifest ok: 50 lessons
 ```
 
@@ -74,10 +81,39 @@ in [`docs/changelog.md`](docs/changelog.md). Task acceptance evidence is in
   class, regardless of the class switch.
 - **Revision 10**: `base` pinned to `/game-japanese-katsuyou-basic/` for a
   GitHub Pages project site; dev/preview/harness/docs all follow the subpath.
+- **Revision 12**: the page draws its own 4px scrollbar (native bar hidden,
+  inner dropdowns keep theirs, shown on scroll and gone about a second after
+  it stops); the picker's 從 label is centred on the 36px form control instead
+  of being nudged down with padding; and a right-to-left swipe on the last
+  card finishes the run, exactly like 完成.
+- **Revision 11**: mobile Chrome comfort. The viewport pins the scale
+  (`maximum-scale=1, user-scalable=no`) and `html`/`body` add
+  `touch-action: manipulation`, so neither a double tap nor a pinch zooms. Paging
+  and card turns now end their phases on `transitionend`/`animationend` instead
+  of guessed timers, the exit accelerates and the entry decelerates (exit/entry
+  speed within 1.02x of each other, was 9.2x), the spring-back is 140ms, and the
+  flip is a single 240ms turn at `perspective: 1600px`.
+
+- **Revision 13**: the loading screen carries the site head
+  (`大家の日本語` / `轉型練習` / `涵蓋初級 1 – 50 課的單詞`) and the credit line
+  `Build with ❤ by Mane` (which opens the About sheet) but not the bug line;
+  the first card in 翻卡學習 resists a right-hand drag (a third of the finger,
+  capped at 40px, then a 140ms spring-back) instead of sitting still; and the
+  roadmap gained a backlog (朗讀功能, 優化下載文件, 優化UI).
 
 ## Known limitations and unverified paths
 
 - Real iOS/Android devices and Safari/Firefox were not tested; only Chromium.
+- **Double-tap zoom was not reproduced.** Chrome's double tap zoom is Android-only
+  and never fires in headless Chromium: two quick taps leave `visualViewport.scale`
+  at 1 even on a page with no zoom restrictions. Pinch *is* reproducible there
+  (scale 1 → 5), and it is the automated evidence; the double tap is covered by
+  the viewport meta and `touch-action: manipulation`, which the harness asserts
+  directly. Confirmation on a real phone is still owed by the user.
+- **The page is deliberately fixed-scale.** Pinch zoom is disabled by the
+  viewport meta at the user's request, so the site cannot be magnified except
+  through the browser's own accessibility override. That is a product decision,
+  not an oversight.
 - A real system IME was not exercised; composition handling is covered by pure
   `typingEdits` tests.
 - GitHub Pages subpath deployment: `base` is pinned to

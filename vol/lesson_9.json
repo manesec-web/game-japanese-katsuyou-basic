@@ -7,18 +7,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 言葉の 意味が わかる。",
-              "chinese": "我懂這個詞的意思。"
+              "chinese": "我懂這個詞的意思。",
+              "note": null
             },
             {
               "japanese": "田中さんは 中国語が わかる。",
-              "chinese": "田中先生懂中文。"
+              "chinese": "田中先生懂中文。",
+              "note": null
             },
             {
               "japanese": "ゆっくり 話せば、だいたい わかる。",
-              "chinese": "說慢一點的話，大致上就懂。"
+              "chinese": "說慢一點的話，大致上就懂。",
+              "note": null
             }
           ]
         },
@@ -27,18 +32,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかります",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先生の 説明が よく わかります。",
-              "chinese": "老師的說明我聽得很明白。"
+              "chinese": "老師的說明我聽得很明白。",
+              "note": null
             },
             {
               "japanese": "この 漢字の 読みが わかります。",
-              "chinese": "我知道這個漢字的讀法。"
+              "chinese": "我知道這個漢字的讀法。",
+              "note": null
             },
             {
               "japanese": "私は 少し フランス語が わかります。",
-              "chinese": "我懂一點法語。"
+              "chinese": "我懂一點法語。",
+              "note": null
             }
           ]
         },
@@ -47,18 +57,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかりません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "すみません、意味が わかりません。",
-              "chinese": "抱歉，我不明白意思。"
+              "chinese": "抱歉，我不明白意思。",
+              "note": null
             },
             {
               "japanese": "この 問題の 答えが わかりません。",
-              "chinese": "我不知道這道題的答案。"
+              "chinese": "我不知道這道題的答案。",
+              "note": null
             },
             {
               "japanese": "私は ドイツ語が わかりません。",
-              "chinese": "我不懂德語。"
+              "chinese": "我不懂德語。",
+              "note": null
             }
           ]
         },
@@ -67,18 +82,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかりました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "やっと 理由が わかりました。",
-              "chinese": "我終於明白原因了。"
+              "chinese": "我終於明白原因了。",
+              "note": null
             },
             {
               "japanese": "先生の 話が よく わかりました。",
-              "chinese": "老師的話我完全聽懂了。"
+              "chinese": "老師的話我完全聽懂了。",
+              "note": null
             },
             {
               "japanese": "今の 説明で わかりました。",
-              "chinese": "剛才的說明我懂了。"
+              "chinese": "剛才的說明我懂了。",
+              "note": null
             }
           ]
         },
@@ -87,18 +107,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかりませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日の 授業は よく わかりませんでした。",
-              "chinese": "昨天的課我沒怎麼聽懂。"
+              "chinese": "昨天的課我沒怎麼聽懂。",
+              "note": null
             },
             {
               "japanese": "その 言葉の 意味が わかりませんでした。",
-              "chinese": "我不明白那個詞的意思。"
+              "chinese": "我不明白那個詞的意思。",
+              "note": null
             },
             {
               "japanese": "初めは ルールが わかりませんでした。",
-              "chinese": "一開始我不懂規則。"
+              "chinese": "一開始我不懂規則。",
+              "note": null
             }
           ]
         },
@@ -107,18 +132,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わからない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "漢字が わからない とき、辞書を 使います。",
-              "chinese": "不懂漢字時，就用字典。"
+              "chinese": "不懂漢字時，就用字典。",
+              "note": null
             },
             {
               "japanese": "彼は まだ 答えが わからない。",
-              "chinese": "他還不知道答案。"
+              "chinese": "他還不知道答案。",
+              "note": null
             },
             {
               "japanese": "私には その 気持ちが わからない。",
-              "chinese": "我不理解那種心情。"
+              "chinese": "我不理解那種心情。",
+              "note": null
             }
           ]
         },
@@ -127,18 +157,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "なるほど、わかった。",
-              "chinese": "原來如此，我明白了。"
+              "chinese": "原來如此，我明白了。",
+              "note": null
             },
             {
               "japanese": "話を 聞いて、やっと わかった。",
-              "chinese": "聽完之後，我終於明白了。"
+              "chinese": "聽完之後，我終於明白了。",
+              "note": null
             },
             {
               "japanese": "みんな わかった？",
-              "chinese": "大家都懂了嗎？"
+              "chinese": "大家都懂了嗎？",
+              "note": null
             }
           ]
         },
@@ -147,18 +182,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わからなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "子どもの ころは 意味が わからなかった。",
-              "chinese": "小時候我不懂那意思。"
+              "chinese": "小時候我不懂那意思。",
+              "note": null
             },
             {
               "japanese": "昨日は なぜか わからなかった。",
-              "chinese": "昨天不知為何就是不明白。"
+              "chinese": "昨天不知為何就是不明白。",
+              "note": null
             },
             {
               "japanese": "私も 最初は わからなかった。",
-              "chinese": "我一開始也不懂。"
+              "chinese": "我一開始也不懂。",
+              "note": null
             }
           ]
         },
@@ -167,18 +207,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかって",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "わかって いても、なかなか できません。",
-              "chinese": "雖然明白，卻怎麼也做不到。"
+              "chinese": "雖然明白，卻怎麼也做不到。",
+              "note": null
             },
             {
               "japanese": "理由が わかって、安心しました。",
-              "chinese": "知道原因後，我放心了。"
+              "chinese": "知道原因後，我放心了。",
+              "note": null
             },
             {
               "japanese": "彼は 全部 わかって います。",
-              "chinese": "他全都明白。"
+              "chinese": "他全都明白。",
+              "note": null
             }
           ]
         },
@@ -187,38 +232,32 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかれる",
-          "sentence": [
-            {
-              "japanese": "この 説明なら 子どもにも わかれる。",
-              "chinese": "這種說明的話，小孩也能懂。"
-            },
-            {
-              "japanese": "ゆっくり 話して くれれば、私にも わかれる。",
-              "chinese": "慢慢說的話，我也能懂。"
-            },
-            {
-              "japanese": "絵が あれば、意味が わかれる。",
-              "chinese": "有圖的話就能明白意思。"
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「わかれる」是錯的：「わかる」本身已表示可能（「分かれる」是另一個動詞）",
+          "error_usage": true,
+          "sentence": []
         },
         "volitional-form": {
           "vol": "わかろう",
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかろう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "相手の 気持ちを わかろうと 努力した。",
-              "chinese": "我努力去理解對方的心情。"
+              "chinese": "我努力去理解對方的心情。",
+              "note": null
             },
             {
               "japanese": "もっと 深く わかろうと 思う。",
-              "chinese": "我想更深入地去理解。"
+              "chinese": "我想更深入地去理解。",
+              "note": null
             },
             {
               "japanese": "彼らは 互いに わかろうと しなかった。",
-              "chinese": "他們不試著去理解彼此。"
+              "chinese": "他們不試著去理解彼此。",
+              "note": null
             }
           ]
         },
@@ -227,18 +266,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかれ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "いいか、相手の 気持ちが わかれ！",
-              "chinese": "聽好，要懂對方的心情！"
+              "chinese": "聽好，要懂對方的心情！",
+              "note": null
             },
             {
               "japanese": "まず 自分の 立場が わかれ と 父は 息子に 言った。",
-              "chinese": "父親對兒子說「先搞清楚自己的立場」。"
+              "chinese": "父親對兒子說「先搞清楚自己的立場」。",
+              "note": null
             },
             {
               "japanese": "一度 言ったら わかれ！",
-              "chinese": "說一次就要懂！"
+              "chinese": "說一次就要懂！",
+              "note": null
             }
           ]
         },
@@ -247,18 +291,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "理由が わかれば、安心します。",
-              "chinese": "知道原因的話，我就放心了。"
+              "chinese": "知道原因的話，我就放心了。",
+              "note": null
             },
             {
               "japanese": "日本語が わかれば、生活が 楽に なります。",
-              "chinese": "懂日語的話，生活會輕鬆些。"
+              "chinese": "懂日語的話，生活會輕鬆些。",
+              "note": null
             },
             {
               "japanese": "彼の 話が わかれば、次に 進みます。",
-              "chinese": "聽懂他的話就繼續下一步。"
+              "chinese": "聽懂他的話就繼續下一步。",
+              "note": null
             }
           ]
         },
@@ -267,18 +316,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "親に 心の 中を わかられる のは 恥ずかしい。",
-              "chinese": "被父母看透心思很丟臉。"
+              "chinese": "被父母看透心思很丟臉。",
+              "note": null
             },
             {
               "japanese": "私の 考えが 彼に わかられる と、計画が だめに なる。",
-              "chinese": "我的想法若被他看穿，計畫就泡湯了。"
+              "chinese": "我的想法若被他看穿，計畫就泡湯了。",
+              "note": null
             },
             {
               "japanese": "弱い ところを わかられる のが 怖い。",
-              "chinese": "害怕弱點被看穿。"
+              "chinese": "害怕弱點被看穿。",
+              "note": null
             }
           ]
         },
@@ -287,18 +341,23 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わからせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先生は いつも 図を 使って 学生に 文法を わからせる。",
-              "chinese": "老師總是用圖讓學生明白文法。"
+              "chinese": "老師總是用圖讓學生明白文法。",
+              "note": null
             },
             {
               "japanese": "彼は 実験を 通して 子どもに 科学の 面白さを わからせる。",
-              "chinese": "他透過實驗讓孩子明白科學的樂趣。"
+              "chinese": "他透過實驗讓孩子明白科學的樂趣。",
+              "note": null
             },
             {
               "japanese": "何度も 説明して、全員に わからせる つもりだ。",
-              "chinese": "我打算說明好幾次，讓全員都明白。"
+              "chinese": "我打算說明好幾次，讓全員都明白。",
+              "note": null
             }
           ]
         }
@@ -309,18 +368,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "ある",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "机の 上に 辞書が ある。",
-              "chinese": "桌上有字典。"
+              "chinese": "桌上有字典。",
+              "note": null
             },
             {
               "japanese": "駅の 近くに 大きい スーパーが ある。",
-              "chinese": "車站附近有大超市。"
+              "chinese": "車站附近有大超市。",
+              "note": null
             },
             {
               "japanese": "明日は コンサートが ある。",
-              "chinese": "明天有音樂會。"
+              "chinese": "明天有音樂會。",
+              "note": null
             }
           ]
         },
@@ -329,18 +393,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "あります",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "冷蔵庫に 飲み物が あります。",
-              "chinese": "冰箱裡有飲料。"
+              "chinese": "冰箱裡有飲料。",
+              "note": null
             },
             {
               "japanese": "この 町には 古い お寺が あります。",
-              "chinese": "這個城鎮有古老的寺廟。"
+              "chinese": "這個城鎮有古老的寺廟。",
+              "note": null
             },
             {
               "japanese": "カラオケの チケットが あります。",
-              "chinese": "有卡拉OK的票。"
+              "chinese": "有卡拉OK的票。",
+              "note": null
             }
           ]
         },
@@ -349,18 +418,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "ありません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 時間が ありません。",
-              "chinese": "今天沒有時間。"
+              "chinese": "今天沒有時間。",
+              "note": null
             },
             {
               "japanese": "この 部屋には テレビが ありません。",
-              "chinese": "這個房間沒有電視。"
+              "chinese": "這個房間沒有電視。",
+              "note": null
             },
             {
               "japanese": "あいにく チケットが ありません。",
-              "chinese": "很遺憾，沒有票。"
+              "chinese": "很遺憾，沒有票。",
+              "note": null
             }
           ]
         },
@@ -369,18 +443,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "ありました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は テストが ありました。",
-              "chinese": "昨天有考試。"
+              "chinese": "昨天有考試。",
+              "note": null
             },
             {
               "japanese": "さっき 田中さんから 電話が ありました。",
-              "chinese": "剛才田中先生打了電話來。"
+              "chinese": "剛才田中先生打了電話來。",
+              "note": null
             },
             {
               "japanese": "先週 この ホールで 歌舞伎が ありました。",
-              "chinese": "上週這個會場有歌舞伎演出。"
+              "chinese": "上週這個會場有歌舞伎演出。",
+              "note": null
             }
           ]
         },
@@ -389,18 +468,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "ありませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 用事が ありませんでした。",
-              "chinese": "昨天沒有事情要辦。"
+              "chinese": "昨天沒有事情要辦。",
+              "note": null
             },
             {
               "japanese": "その 店には ジャズの CDが ありませんでした。",
-              "chinese": "那家店沒有爵士樂的CD。"
+              "chinese": "那家店沒有爵士樂的CD。",
+              "note": null
             },
             {
               "japanese": "先月は 連休が ありませんでした。",
-              "chinese": "上個月沒有連假。"
+              "chinese": "上個月沒有連假。",
+              "note": null
             }
           ]
         },
@@ -409,18 +493,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "ない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 予定が ない。",
-              "chinese": "今天沒有預定。"
+              "chinese": "今天沒有預定。",
+              "note": null
             },
             {
               "japanese": "財布に 細かい お金が ない。",
-              "chinese": "錢包裡沒有零錢。"
+              "chinese": "錢包裡沒有零錢。",
+              "note": null
             },
             {
               "japanese": "ここには 映画館が ない。",
-              "chinese": "這裡沒有電影院。"
+              "chinese": "這裡沒有電影院。",
+              "note": null
             }
           ]
         },
@@ -429,18 +518,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "あった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先週 近くで お祭りが あった。",
-              "chinese": "上週附近有祭典。"
+              "chinese": "上週附近有祭典。",
+              "note": null
             },
             {
               "japanese": "昨日 友だちから 手紙が あった。",
-              "chinese": "昨天有朋友的信來。"
+              "chinese": "昨天有朋友的信來。",
+              "note": null
             },
             {
               "japanese": "昔 この 場所に 学校が あった。",
-              "chinese": "以前這個地方有學校。"
+              "chinese": "以前這個地方有學校。",
+              "note": null
             }
           ]
         },
@@ -449,18 +543,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "なかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 何も 用事が なかった。",
-              "chinese": "昨天完全沒有事要辦。"
+              "chinese": "昨天完全沒有事要辦。",
+              "note": null
             },
             {
               "japanese": "子どもの ころ、家に パソコンが なかった。",
-              "chinese": "小時候家裡沒有電腦。"
+              "chinese": "小時候家裡沒有電腦。",
+              "note": null
             },
             {
               "japanese": "その 日は 時間が なかった。",
-              "chinese": "那天沒有時間。"
+              "chinese": "那天沒有時間。",
+              "note": null
             }
           ]
         },
@@ -469,18 +568,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "あって",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "時間が あって、ゆっくり 話せました。",
-              "chinese": "因為有時間，所以能慢慢聊。"
+              "chinese": "因為有時間，所以能慢慢聊。",
+              "note": null
             },
             {
               "japanese": "近くに 駅が あって、便利です。",
-              "chinese": "附近有車站，很方便。"
+              "chinese": "附近有車站，很方便。",
+              "note": null
             },
             {
               "japanese": "チケットが あって、コンサートに 行けました。",
-              "chinese": "因為有票，所以能去音樂會。"
+              "chinese": "因為有票，所以能去音樂會。",
+              "note": null
             }
           ]
         },
@@ -489,18 +593,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "ありえる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "そんな 失敗も ありえる。",
-              "chinese": "那樣的失敗也是有可能的。"
+              "chinese": "那樣的失敗也是有可能的。",
+              "note": null
             },
             {
               "japanese": "彼が 遅れる ことは 十分 ありえる。",
-              "chinese": "他遲到是完全有可能的。"
+              "chinese": "他遲到是完全有可能的。",
+              "note": null
             },
             {
               "japanese": "雨なら 中止も ありえる。",
-              "chinese": "下雨的話也有可能取消。"
+              "chinese": "下雨的話也有可能取消。",
+              "note": null
             }
           ]
         },
@@ -509,18 +618,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "あろう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "あしたは きっと いい 天気で あろう。",
-              "chinese": "明天一定會是好天氣吧。"
+              "chinese": "明天一定會是好天氣吧。",
+              "note": null
             },
             {
               "japanese": "この 先 どんな 問題が あろうと、頑張る。",
-              "chinese": "今後不管有什麼問題，都會努力。"
+              "chinese": "今後不管有什麼問題，都會努力。",
+              "note": null
             },
             {
               "japanese": "どんなに 寒くても、春は 必ず 来る であろう。",
-              "chinese": "不管多冷，春天一定會來吧。"
+              "chinese": "不管多冷，春天一定會來吧。",
+              "note": null
             }
           ]
         },
@@ -529,18 +643,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "あれ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "どうか 世界が 平和で あれと 祈る。",
-              "chinese": "祈禱世界和平。"
+              "chinese": "祈禱世界和平。",
+              "note": null
             },
             {
               "japanese": "「元気で あれ」と 手紙に 書いた。",
-              "chinese": "在信裡寫了「要健康啊」。"
+              "chinese": "在信裡寫了「要健康啊」。",
+              "note": null
             },
             {
               "japanese": "どうか 無事で あれ。",
-              "chinese": "願一切平安。"
+              "chinese": "願一切平安。",
+              "note": null
             }
           ]
         },
@@ -549,18 +668,23 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "あれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "時間が あれば、映画を 見ます。",
-              "chinese": "有時間的話就看電影。"
+              "chinese": "有時間的話就看電影。",
+              "note": null
             },
             {
               "japanese": "お金が あれば、この チケットを 買います。",
-              "chinese": "有錢的話就買這張票。"
+              "chinese": "有錢的話就買這張票。",
+              "note": null
             },
             {
               "japanese": "質問が あれば、教えて ください。",
-              "chinese": "有問題的話請告訴我。"
+              "chinese": "有問題的話請告訴我。",
+              "note": null
             }
           ]
         },
@@ -569,40 +693,18 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "あられる",
-          "sentence": [
-            {
-              "japanese": "部長は まだ 事務所に あられる。",
-              "chinese": "部長還在辦公室。"
-            },
-            {
-              "japanese": "先生は 明日まで 京都に あられる そうです。",
-              "chinese": "聽說老師會在京都待到明天。"
-            },
-            {
-              "japanese": "お客さまは 今 二階の 部屋に あられる。",
-              "chinese": "客人現在在二樓的房間。"
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「あられる」是尊敬用法，不是受身形；日常不用",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "あらせる",
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "あらせる",
-          "sentence": [
-            {
-              "japanese": "神は この 地に 豊かな 実りを あらせる。",
-              "chinese": "神讓這片土地有豐收。"
-            },
-            {
-              "japanese": "春は 野に 美しい 花を あらせる。",
-              "chinese": "春天讓原野開滿美麗的花。"
-            },
-            {
-              "japanese": "王は 国中に 平和を あらせる と 誓った。",
-              "chinese": "國王發誓要讓全國有和平。"
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「あらせる」日常不用",
+          "error_usage": true,
+          "sentence": []
         }
       }
     ]

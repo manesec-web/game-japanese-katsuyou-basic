@@ -46,7 +46,10 @@ Do NOT run `python3 -m http.server` in the repository root:
 
 Boot checks lesson 1 first, so a problem before any dictionary work shows up
 there. The loading screen now prints the underlying reason under the lesson
-number. Common causes:
+number. The site head and the `Build with ❤ by Mane` credit line stay on screen
+during that failure; only the progress area changes, so a screenshot of the
+failure still shows the site name and the About sheet is still reachable. Common
+causes:
 
 1. **Wrong directory served.** `output/dict/lesson_1.json` must return 200 under
    the subpath. Check with

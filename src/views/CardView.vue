@@ -4,19 +4,26 @@ import RubyWord from '../components/RubyWord.vue'
 import CompletePanel from '../components/CompletePanel.vue'
 import { formName } from '../dict/forms.js'
 import { backTags, frontTags } from '../study/card-tags.js'
-import { cardDirection, clampDrag } from '../ui/swipe.js'
+import { cardDirectionAt, cardDrag } from '../ui/swipe.js'
 import { prefersReducedMotion } from '../ui/motion.js'
 
 const store = inject('store')
 const session = store.session
 const offset = ref(0)
 const dragging = ref(false)
+// Which direction the outgoing card is travelling, or null when it is still.
 const leaving = ref(null)
-// Which side the incoming card slides in from: 'next' enters from the left
-// (travelling left to right), 'prev' mirrors it.
+// Which side the incoming card slides in from: 'next' enters from the right
+// (travelling right to left), 'prev' mirrors it.
 const enterFrom = ref(null)
-const LEAVE_MS = 170
-const ENTER_MS = 240
+
+// The phases end on their own DOM event, not on a timer that guesses how long
+// the CSS takes. A timer shorter than the transition cuts the outgoing card
+// off mid-slide and the new card then appears at the opposite edge, which is
+// what made the turn feel like a rebound. These two values are only a safety
+// net for an event that never arrives.
+const LEAVE_FALLBACK_MS = 600
+const ENTER_FALLBACK_MS = 600
 
 // Paging is a flat slide, so the card never turns while it travels. A card the
 // reader had flipped to its answer slides out showing that answer instead of
@@ -56,17 +63,20 @@ function onMove(event) {
   if (pointer.axis !== 'x') return
   pointer.lastDx = dx
   if (prefersReducedMotion()) return
-  offset.value = clampDrag(dx)
+  // The first card has nothing behind it: a right-hand drag there is damped to
+  // a third of the finger and capped, so the card pulls against the edge and
+  // then springs back instead of leaving.
+  offset.value = cardDrag(dx, { atFirst: onFirstCard.value })
 }
 
 function onUp() {
   if (!pointer) return
   const axis = pointer.axis
-  const dx = prefersReducedMotion() ? pointer.lastDx : offset.value
-  const direction = axis === 'x' ? cardDirection(dx) : null
+  // The raw finger travel names the direction: damping only shortens the
+  // follow, and a damped first card is blocked before the threshold matters.
+  const direction = axis === 'x' ? cardDirectionAt(pointer.lastDx, { atFirst: onFirstCard.value }) : null
   pointer = null
   dragging.value = false
-
   if (direction) {
     moveCard(direction)
     return
@@ -75,54 +85,109 @@ function onUp() {
   if (axis === null) store.send('card.flip')
 }
 
-function moveCard(direction) {
-  const commit = () => {
-    offset.value = 0
-    leaving.value = null
-    if (direction === 'next') store.send('card.next')
-    else store.send('card.prev')
-    enterFrom.value = direction
-    clearTimeout(enterTimer)
-    enterTimer = setTimeout(() => {
-      enterFrom.value = null
-      enterTimer = null
-    }, ENTER_MS)
-    leaveTimer = null
-  }
+const onLastCard = computed(() => session.index >= session.items.length - 1)
+// The first card has no card behind it, so its backward drag resists.
+const onFirstCard = computed(() => session.index === 0)
 
-  if (prefersReducedMotion()) {
-    commit()
+// The outgoing card reaches the edge, then the item swaps while nothing is
+// on screen, then the new card enters from the other edge at the same pace.
+// Leaving the last card is the end of the run: the panel takes the card's place
+// instead of the same card sliding back in.
+function finishLeave() {
+  const direction = leaving.value
+  if (!direction) return
+  clearTimeout(leaveTimer)
+  leaveTimer = null
+  offset.value = 0
+  leaving.value = null
+  if (direction === 'next' && onLastCard.value) {
+    store.send('study.finish')
     return
   }
+  if (direction === 'next') store.send('card.next')
+  else store.send('card.prev')
+  enterFrom.value = direction
+  clearTimeout(enterTimer)
+  enterTimer = setTimeout(endEnter, ENTER_FALLBACK_MS)
+}
 
-  // One phase at a time: a press while the new card is still entering finishes
-  // the enter instead of running the leave transition and the enter animation
-  // on the same element at once.
+function endEnter() {
   clearTimeout(enterTimer)
   enterTimer = null
   enterFrom.value = null
+}
+
+function onCardTransitionEnd(event) {
+  // The card's own transform only; the inner flip bubbles from a child.
+  if (event.target !== event.currentTarget) return
+  if (event.propertyName !== 'transform') return
+  finishLeave()
+}
+
+function onCardAnimationEnd(event) {
+  if (event.target !== event.currentTarget) return
+  if (!enterFrom.value) return
+  endEnter()
+}
+
+// One move can be waiting for a frame: the newest press wins.
+let queuedMove = null
+let queuedFrame = false
+
+function moveCard(direction) {
+  if (prefersReducedMotion()) {
+    // No motion to wait for: change the card at once.
+    offset.value = 0
+    leaving.value = null
+    enterFrom.value = null
+    clearTimeout(leaveTimer)
+    clearTimeout(enterTimer)
+    leaveTimer = null
+    enterTimer = null
+    if (direction === 'next' && onLastCard.value) store.send('study.finish')
+    else if (direction === 'next') store.send('card.next')
+    else store.send('card.prev')
+    return
+  }
+
+  // One phase at a time. A press while the new card is still entering drops the
+  // enter animation first and makes the move on the next frame: changing the
+  // transform in the same frame as the animation is removed leaves the browser
+  // with nothing to interpolate, so the leave transition never starts. Two
+  // presses in one frame keep the newest direction instead of both running.
+  if (enterFrom.value || queuedFrame) {
+    endEnter()
+    queuedMove = direction
+    if (!queuedFrame) {
+      queuedFrame = true
+      requestAnimationFrame(() => {
+        queuedFrame = false
+        const next = queuedMove
+        queuedMove = null
+        if (next) moveCard(next)
+      })
+    }
+    return
+  }
 
   // Let the card follow through and leave, then swap in the next card.
   leaving.value = direction
   clearTimeout(leaveTimer)
-  leaveTimer = setTimeout(commit, LEAVE_MS)
+  leaveTimer = setTimeout(finishLeave, LEAVE_FALLBACK_MS)
 }
 
 onBeforeUnmount(() => {
+  queuedMove = null
+  queuedFrame = false
   clearTimeout(leaveTimer)
   clearTimeout(enterTimer)
 })
 
-const onLastCard = computed(() => session.index >= session.items.length - 1)
-
-// The last card ends the run: the right-hand control becomes 完成. Every other
-// press runs the page-turn motion, exactly like a swipe.
+// The last card ends the run: the right-hand control becomes 完成. Pressing it
+// runs the same turn as a swipe, and the turn itself ends the run on the last
+// card, so both ways out of a card run behave identically.
 function nextOrFinish() {
   if (leaving.value) return
-  if (onLastCard.value) {
-    store.send('study.finish')
-    return
-  }
   moveCard('next')
 }
 
@@ -170,6 +235,8 @@ function openSettings() {
           'card--enter-prev': enterFrom === 'prev',
         }"
         :style="leaving ? null : { transform: `translateX(${offset}px)` }"
+        @transitionend="onCardTransitionEnd"
+        @animationend="onCardAnimationEnd"
       >
         <div class="card-inner">
           <div class="card-side card-face" :aria-hidden="session.flipped ? 'true' : undefined">
@@ -292,8 +359,10 @@ function openSettings() {
   position: relative;
   width: 100%;
   min-height: 340px;
-  perspective: 1200px;
-  transition: transform 200ms ease;
+  perspective: 1600px;
+  /* A release below the threshold returns in a short decelerating step, so
+     the card settles instead of springing back at the hand. */
+  transition: transform 140ms var(--ease-slide);
   cursor: pointer;
 }
 
@@ -302,7 +371,9 @@ function openSettings() {
   width: 100%;
   min-height: 340px;
   transform-style: preserve-3d;
-  transition: transform 300ms ease;
+  /* One turn, decelerating: the card no longer snaps through the first half
+     and then crawls through the second. */
+  transition: transform 240ms var(--ease-turn);
 }
 
 .card--flipped .card-inner {
@@ -346,23 +417,35 @@ function openSettings() {
 }
 
 /* Leaving: the old card is pushed fully off the screen in the direction of
-   travel, keeping the side the reader was looking at. */
+   travel, keeping the side the reader was looking at. The phase ends on the
+   transition itself (see onCardTransitionEnd), so this duration and the JS
+   fallback never have to agree. */
 .card--leave-next {
-  transform: translateX(-112%) !important;
-  transition: transform 170ms ease;
+  transform: translateX(-100%) !important;
+  transition: transform 170ms var(--ease-exit);
 }
 
 .card--leave-prev {
-  transform: translateX(112%) !important;
-  transition: transform 170ms ease;
+  transform: translateX(100%) !important;
+  transition: transform 170ms var(--ease-exit);
 }
 
 .card--enter-next {
-  animation: card-enter-next 240ms ease;
+  animation: card-enter-next 190ms var(--ease-slide);
 }
 
 .card--enter-prev {
-  animation: card-enter-prev 240ms ease;
+  animation: card-enter-prev 190ms var(--ease-slide);
+}
+
+/* The moving phases stay on their own layer, so a phone repaints the card
+   instead of dropping frames mid-slide. */
+.card--dragging,
+.card--leave-next,
+.card--leave-prev,
+.card--enter-next,
+.card--enter-prev {
+  will-change: transform;
 }
 
 /* Swiping right-to-left brings the next card in from the right edge and moves

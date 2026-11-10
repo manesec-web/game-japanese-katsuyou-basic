@@ -7,18 +7,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろす",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "ここで 荷物を 降ろす。",
-              "chinese": "在這裡卸下行李。"
+              "chinese": "在這裡卸下行李。",
+              "note": null
             },
             {
               "japanese": "毎朝 トラックから 荷物を 降ろす。",
-              "chinese": "每天早上從卡車卸貨。"
+              "chinese": "每天早上從卡車卸貨。",
+              "note": null
             },
             {
               "japanese": "駅の 前で お客さんを 降ろす。",
-              "chinese": "在車站前讓客人下車。"
+              "chinese": "在車站前讓客人下車。",
+              "note": null
             }
           ]
         },
@@ -27,18 +32,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろします",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今から 車から 荷物を 降ろします。",
-              "chinese": "現在要從車上卸下行李。"
+              "chinese": "現在要從車上卸下行李。",
+              "note": null
             },
             {
               "japanese": "次の 交差点で 降ろします。",
-              "chinese": "在下一個十字路口讓您下車。"
+              "chinese": "在下一個十字路口讓您下車。",
+              "note": null
             },
             {
               "japanese": "2階から 机を 降ろします。",
-              "chinese": "把桌子從二樓搬下來。"
+              "chinese": "把桌子從二樓搬下來。",
+              "note": null
             }
           ]
         },
@@ -47,18 +57,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろしません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "雨なので 今日は 荷物を 降ろしません。",
-              "chinese": "因為下雨，今天不卸貨。"
+              "chinese": "因為下雨，今天不卸貨。",
+              "note": null
             },
             {
               "japanese": "この 車は ここでは お客さんを 降ろしません。",
-              "chinese": "這輛車不在這裡讓客人下車。"
+              "chinese": "這輛車不在這裡讓客人下車。",
+              "note": null
             },
             {
               "japanese": "私は 一人では ピアノを 降ろしません。",
-              "chinese": "我一個人不會搬鋼琴下來。"
+              "chinese": "我一個人不會搬鋼琴下來。",
+              "note": null
             }
           ]
         },
@@ -67,18 +82,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろしました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "さっき 車から いすを 降ろしました。",
-              "chinese": "剛才把椅子從車上搬下來了。"
+              "chinese": "剛才把椅子從車上搬下來了。",
+              "note": null
             },
             {
               "japanese": "弟が 2階から 箱を 降ろしました。",
-              "chinese": "弟弟把箱子從二樓搬下來了。"
+              "chinese": "弟弟把箱子從二樓搬下來了。",
+              "note": null
             },
             {
               "japanese": "バスは 学校の 前で 生徒を 降ろしました。",
-              "chinese": "公車在學校前讓學生下車了。"
+              "chinese": "公車在學校前讓學生下車了。",
+              "note": null
             }
           ]
         },
@@ -87,18 +107,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろしませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "忙しかったので 荷物を 降ろしませんでした。",
-              "chinese": "因為很忙，沒有卸貨。"
+              "chinese": "因為很忙，沒有卸貨。",
+              "note": null
             },
             {
               "japanese": "昨日は トラックから 何も 降ろしませんでした。",
-              "chinese": "昨天沒有從卡車上卸下任何東西。"
+              "chinese": "昨天沒有從卡車上卸下任何東西。",
+              "note": null
             },
             {
               "japanese": "運転手は ここで お客さんを 降ろしませんでした。",
-              "chinese": "司機沒有在這裡讓客人下車。"
+              "chinese": "司機沒有在這裡讓客人下車。",
+              "note": null
             }
           ]
         },
@@ -107,18 +132,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろさない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "雨の 日は 荷物を 降ろさない。",
-              "chinese": "下雨天不卸貨。"
+              "chinese": "下雨天不卸貨。",
+              "note": null
             },
             {
               "japanese": "この 車は 途中で 人を 降ろさない。",
-              "chinese": "這輛車不會在半路讓乘客下車。"
+              "chinese": "這輛車不會在半路讓乘客下車。",
+              "note": null
             },
             {
               "japanese": "私は 重い 物を 一人で 降ろさない。",
-              "chinese": "我不會一個人搬重物下來。"
+              "chinese": "我不會一個人搬重物下來。",
+              "note": null
             }
           ]
         },
@@ -127,18 +157,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "朝 早く トラックから 荷物を 降ろした。",
-              "chinese": "一早從卡車卸下了貨物。"
+              "chinese": "一早從卡車卸下了貨物。",
+              "note": null
             },
             {
               "japanese": "駅の 近くで 友だちを 降ろした。",
-              "chinese": "在車站附近讓朋友下車了。"
+              "chinese": "在車站附近讓朋友下車了。",
+              "note": null
             },
             {
               "japanese": "昨日 父が 2階から 古い 机を 降ろした。",
-              "chinese": "昨天爸爸把舊桌子從二樓搬下來了。"
+              "chinese": "昨天爸爸把舊桌子從二樓搬下來了。",
+              "note": null
             }
           ]
         },
@@ -147,18 +182,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろさなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "台風の 日は 荷物を 降ろさなかった。",
-              "chinese": "颱風天沒有卸貨。"
+              "chinese": "颱風天沒有卸貨。",
+              "note": null
             },
             {
               "japanese": "私は 昨日 車から 何も 降ろさなかった。",
-              "chinese": "我昨天沒有從車上搬下任何東西。"
+              "chinese": "我昨天沒有從車上搬下任何東西。",
+              "note": null
             },
             {
               "japanese": "バスは ここで お客さんを 降ろさなかった。",
-              "chinese": "公車沒有在這裡讓客人下車。"
+              "chinese": "公車沒有在這裡讓客人下車。",
+              "note": null
             }
           ]
         },
@@ -167,18 +207,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろして",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "荷物を 降ろして、店の 中へ 運んで ください。",
-              "chinese": "請把行李卸下來，搬進店裡。"
+              "chinese": "請把行李卸下來，搬進店裡。",
+              "note": null
             },
             {
               "japanese": "車から いすを 降ろして、ここに 置いて ください。",
-              "chinese": "請把椅子從車上搬下來，放在這裡。"
+              "chinese": "請把椅子從車上搬下來，放在這裡。",
+              "note": null
             },
             {
               "japanese": "お客さんを 駅の 前で 降ろして、また 戻ります。",
-              "chinese": "讓客人在車站前下車後，再回來。"
+              "chinese": "讓客人在車站前下車後，再回來。",
+              "note": null
             }
           ]
         },
@@ -187,18 +232,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 車は 大きい 荷物も 降ろせる。",
-              "chinese": "這輛車連大件行李也卸得下來。"
+              "chinese": "這輛車連大件行李也卸得下來。",
+              "note": null
             },
             {
               "japanese": "私でも この 箱は 一人で 降ろせる。",
-              "chinese": "連我一個人也能把這個箱子搬下來。"
+              "chinese": "連我一個人也能把這個箱子搬下來。",
+              "note": null
             },
             {
               "japanese": "若い 人なら 2階から ピアノを 降ろせる。",
-              "chinese": "年輕人的話，能從二樓把鋼琴搬下來。"
+              "chinese": "年輕人的話，能從二樓把鋼琴搬下來。",
+              "note": null
             }
           ]
         },
@@ -207,18 +257,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろそう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "みんなで トラックから 荷物を 降ろそう。",
-              "chinese": "大家來把貨物從卡車上卸下來吧。"
+              "chinese": "大家來把貨物從卡車上卸下來吧。",
+              "note": null
             },
             {
               "japanese": "次の 駅で 降ろそう。",
-              "chinese": "在下一個車站讓他下車吧。"
+              "chinese": "在下一個車站讓他下車吧。",
+              "note": null
             },
             {
               "japanese": "重いから 二人で 降ろそう。",
-              "chinese": "太重了，兩個人一起搬下來吧。"
+              "chinese": "太重了，兩個人一起搬下來吧。",
+              "note": null
             }
           ]
         },
@@ -227,18 +282,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろせ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "早く 荷物を 降ろせ。",
-              "chinese": "快點把貨卸下來。"
+              "chinese": "快點把貨卸下來。",
+              "note": null
             },
             {
               "japanese": "ここで 止まって、お客さんを 降ろせ。",
-              "chinese": "停在這裡，讓客人下車。"
+              "chinese": "停在這裡，讓客人下車。",
+              "note": null
             },
             {
               "japanese": "その 箱を 2階から 降ろせ。",
-              "chinese": "把那個箱子從二樓搬下來。"
+              "chinese": "把那個箱子從二樓搬下來。",
+              "note": null
             }
           ]
         },
@@ -247,18 +307,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろせば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "荷物を 降ろせば、車の 中が 広く なる。",
-              "chinese": "把行李卸下來的話，車裡就會變寬敞。"
+              "chinese": "把行李卸下來的話，車裡就會變寬敞。",
+              "note": null
             },
             {
               "japanese": "ここで 降ろせば、駅まで 歩いて 5分です。",
-              "chinese": "在這裡下車的話，走到車站只要五分鐘。"
+              "chinese": "在這裡下車的話，走到車站只要五分鐘。",
+              "note": null
             },
             {
               "japanese": "お客さんを 先に 降ろせば、次の 客が 乗れる。",
-              "chinese": "先讓客人下車的話，下一位客人就能上車。"
+              "chinese": "先讓客人下車的話，下一位客人就能上車。",
+              "note": null
             }
           ]
         },
@@ -267,18 +332,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろされる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "重い 荷物は いつも 私に 降ろされる。",
-              "chinese": "重行李總是被派給我卸下來。"
+              "chinese": "重行李總是被派給我卸下來。",
+              "note": null
             },
             {
               "japanese": "お客さんは 駅の 前で 運転手に 降ろされる。",
-              "chinese": "客人被司機在車站前放下車。"
+              "chinese": "客人被司機在車站前放下車。",
+              "note": null
             },
             {
               "japanese": "倉庫の 荷物は 毎週 若い 社員に 降ろされる。",
-              "chinese": "倉庫的貨物每週都被年輕社員卸下來。"
+              "chinese": "倉庫的貨物每週都被年輕社員卸下來。",
+              "note": null
             }
           ]
         },
@@ -287,18 +357,23 @@
           "group": "1",
           "chinese": "放下; 卸下; 讓…下車",
           "japanese": "おろさせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "店長は 新人に トラックから 荷物を 降ろさせる。",
-              "chinese": "店長讓新人在卡車上卸貨。"
+              "chinese": "店長讓新人在卡車上卸貨。",
+              "note": null
             },
             {
               "japanese": "母は 弟に 2階から いすを 降ろさせる。",
-              "chinese": "媽媽讓弟弟把椅子從二樓搬下來。"
+              "chinese": "媽媽讓弟弟把椅子從二樓搬下來。",
+              "note": null
             },
             {
               "japanese": "運転手は 助手に お客さんの 荷物を 降ろさせる。",
-              "chinese": "司機讓助手把客人的行李搬下來。"
+              "chinese": "司機讓助手把客人的行李搬下來。",
+              "note": null
             }
           ]
         }
@@ -309,18 +384,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどける",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日 この 荷物を 届ける。",
-              "chinese": "明天送這件行李。"
+              "chinese": "明天送這件行李。",
+              "note": null
             },
             {
               "japanese": "弟は 毎日 新聞を 届ける。",
-              "chinese": "弟弟每天送報。"
+              "chinese": "弟弟每天送報。",
+              "note": null
             },
             {
               "japanese": "駅まで 傘を 届ける。",
-              "chinese": "把傘送到車站。"
+              "chinese": "把傘送到車站。",
+              "note": null
             }
           ]
         },
@@ -329,18 +409,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけます",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "これから お客さんの 家に 荷物を 届けます。",
-              "chinese": "現在要把行李送到客人家。"
+              "chinese": "現在要把行李送到客人家。",
+              "note": null
             },
             {
               "japanese": "毎朝 8時に 新聞を 届けます。",
-              "chinese": "每天早上八點送報。"
+              "chinese": "每天早上八點送報。",
+              "note": null
             },
             {
               "japanese": "忘れ物を 学校に 届けます。",
-              "chinese": "把失物送到學校。"
+              "chinese": "把失物送到學校。",
+              "note": null
             }
           ]
         },
@@ -349,18 +434,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "日曜日は 荷物を 届けません。",
-              "chinese": "星期天不送貨。"
+              "chinese": "星期天不送貨。",
+              "note": null
             },
             {
               "japanese": "この 住所には 郵便を 届けません。",
-              "chinese": "這個地址不送郵件。"
+              "chinese": "這個地址不送郵件。",
+              "note": null
             },
             {
               "japanese": "今日は 雪なので 新聞を 届けません。",
-              "chinese": "今天下雪，所以不送報。"
+              "chinese": "今天下雪，所以不送報。",
+              "note": null
             }
           ]
         },
@@ -369,18 +459,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 手紙を 届けました。",
-              "chinese": "昨天把信送到了。"
+              "chinese": "昨天把信送到了。",
+              "note": null
             },
             {
               "japanese": "朝 早く 荷物を 届けました。",
-              "chinese": "一大早把行李送到了。"
+              "chinese": "一大早把行李送到了。",
+              "note": null
             },
             {
               "japanese": "先生に 忘れ物を 届けました。",
-              "chinese": "把失物交給了老師。"
+              "chinese": "把失物交給了老師。",
+              "note": null
             }
           ]
         },
@@ -389,18 +484,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "住所が 分からなかったので 荷物を 届けませんでした。",
-              "chinese": "因為不知道地址，沒有送行李。"
+              "chinese": "因為不知道地址，沒有送行李。",
+              "note": null
             },
             {
               "japanese": "昨日は 郵便を 届けませんでした。",
-              "chinese": "昨天沒有送郵件。"
+              "chinese": "昨天沒有送郵件。",
+              "note": null
             },
             {
               "japanese": "雨で 新聞を 届けませんでした。",
-              "chinese": "因為下雨，沒有送報。"
+              "chinese": "因為下雨，沒有送報。",
+              "note": null
             }
           ]
         },
@@ -409,18 +509,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "私は 日曜日には 荷物を 届けない。",
-              "chinese": "我星期天不送貨。"
+              "chinese": "我星期天不送貨。",
+              "note": null
             },
             {
               "japanese": "この 店は 遠い 所へは 届けない。",
-              "chinese": "這家店不送到遠的地方。"
+              "chinese": "這家店不送到遠的地方。",
+              "note": null
             },
             {
               "japanese": "自転車では 遠くまで 届けない。",
-              "chinese": "用腳踏車送不到遠處。"
+              "chinese": "用腳踏車送不到遠處。",
+              "note": null
             }
           ]
         },
@@ -429,18 +534,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけた",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今朝 郵便屋が 手紙を 届けた。",
-              "chinese": "今天早上郵差把信送到了。"
+              "chinese": "今天早上郵差把信送到了。",
+              "note": null
             },
             {
               "japanese": "兄が 駅まで 傘を 届けた。",
-              "chinese": "哥哥把傘送到了車站。"
+              "chinese": "哥哥把傘送到了車站。",
+              "note": null
             },
             {
               "japanese": "夕方までに 荷物を 届けた。",
-              "chinese": "在傍晚之前把行李送到了。"
+              "chinese": "在傍晚之前把行李送到了。",
+              "note": null
             }
           ]
         },
@@ -449,18 +559,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "台風で 荷物を 届けなかった。",
-              "chinese": "因為颱風，沒有送貨。"
+              "chinese": "因為颱風，沒有送貨。",
+              "note": null
             },
             {
               "japanese": "昨日は 新聞を 届けなかった。",
-              "chinese": "昨天沒有送報。"
+              "chinese": "昨天沒有送報。",
+              "note": null
             },
             {
               "japanese": "住所が 間違って いたので 手紙を 届けなかった。",
-              "chinese": "因為地址寫錯了，沒有送信。"
+              "chinese": "因為地址寫錯了，沒有送信。",
+              "note": null
             }
           ]
         },
@@ -469,18 +584,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけて",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 荷物を 3階まで 届けて ください。",
-              "chinese": "請把這件行李送到三樓。"
+              "chinese": "請把這件行李送到三樓。",
+              "note": null
             },
             {
               "japanese": "忘れ物を 交番に 届けて ください。",
-              "chinese": "請把失物送到派出所。"
+              "chinese": "請把失物送到派出所。",
+              "note": null
             },
             {
               "japanese": "手紙を 届けて、すぐ 帰ります。",
-              "chinese": "把信送到後就馬上回來。"
+              "chinese": "把信送到後就馬上回來。",
+              "note": null
             }
           ]
         },
@@ -489,18 +609,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 自転車で 荷物は 届けられる。",
-              "chinese": "用這輛腳踏車能把行李送到。"
+              "chinese": "用這輛腳踏車能把行李送到。",
+              "note": null
             },
             {
               "japanese": "一日で 全部の 手紙を 届けられる。",
-              "chinese": "一天就能送完所有的信。"
+              "chinese": "一天就能送完所有的信。",
+              "note": null
             },
             {
               "japanese": "私一人でも この 荷物を 届けられる。",
-              "chinese": "即使我一個人也能送這件行李。"
+              "chinese": "即使我一個人也能送這件行李。",
+              "note": null
             }
           ]
         },
@@ -509,18 +634,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけよう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "雨が 止んだら 荷物を 届けよう。",
-              "chinese": "雨停的話就送行李吧。"
+              "chinese": "雨停的話就送行李吧。",
+              "note": null
             },
             {
               "japanese": "昼ごはんの 前に 手紙を 届けよう。",
-              "chinese": "午飯前把信送去吧。"
+              "chinese": "午飯前把信送去吧。",
+              "note": null
             },
             {
               "japanese": "みんなで 新聞を 届けよう。",
-              "chinese": "大家一起去送報吧。"
+              "chinese": "大家一起去送報吧。",
+              "note": null
             }
           ]
         },
@@ -529,18 +659,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけろ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 荷物を すぐ 届けろ。",
-              "chinese": "馬上把這件行李送去。"
+              "chinese": "馬上把這件行李送去。",
+              "note": null
             },
             {
               "japanese": "忘れ物を 早く 届けろ。",
-              "chinese": "快點把失物送去。"
+              "chinese": "快點把失物送去。",
+              "note": null
             },
             {
               "japanese": "3時までに 手紙を 届けろ。",
-              "chinese": "在三點前把信送到。"
+              "chinese": "在三點前把信送到。",
+              "note": null
             }
           ]
         },
@@ -549,18 +684,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどければ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今 届ければ、夕方には 着く。",
-              "chinese": "現在送去的話，傍晚就會到。"
+              "chinese": "現在送去的話，傍晚就會到。",
+              "note": null
             },
             {
               "japanese": "忘れ物を 届ければ、生徒は 喜ぶ。",
-              "chinese": "把失物送去的話，學生會很高興。"
+              "chinese": "把失物送去的話，學生會很高興。",
+              "note": null
             },
             {
               "japanese": "毎日 届ければ、お客さんが 増える。",
-              "chinese": "每天送的話，客人會增加。"
+              "chinese": "每天送的話，客人會增加。",
+              "note": null
             }
           ]
         },
@@ -569,18 +709,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "荷物は 毎朝 郵便屋に 届けられる。",
-              "chinese": "行李每天早上由郵差送來。"
+              "chinese": "行李每天早上由郵差送來。",
+              "note": null
             },
             {
               "japanese": "手紙は 秘書に 届けられる。",
-              "chinese": "信件由秘書送達。"
+              "chinese": "信件由秘書送達。",
+              "note": null
             },
             {
               "japanese": "花は 母の 日に 家に 届けられる。",
-              "chinese": "花在母親節被送到家裡。"
+              "chinese": "花在母親節被送到家裡。",
+              "note": null
             }
           ]
         },
@@ -589,18 +734,23 @@
           "group": "2",
           "chinese": "送到; 送達; 遞交",
           "japanese": "とどけさせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "部長は 新人に 書類を 届けさせる。",
-              "chinese": "部長讓新人送文件。"
+              "chinese": "部長讓新人送文件。",
+              "note": null
             },
             {
               "japanese": "先生は 生徒に 忘れ物を 届けさせる。",
-              "chinese": "老師讓學生把失物送去。"
+              "chinese": "老師讓學生把失物送去。",
+              "note": null
             },
             {
               "japanese": "私は 弟に 新聞を 届けさせる。",
-              "chinese": "我讓弟弟去送報。"
+              "chinese": "我讓弟弟去送報。",
+              "note": null
             }
           ]
         }
@@ -611,18 +761,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをする",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "祖母は 毎日 花の世話をする。",
-              "chinese": "祖母每天照顧花。"
+              "chinese": "祖母每天照顧花。",
+              "note": null
             },
             {
               "japanese": "妹は 犬の世話をする。",
-              "chinese": "妹妹照顧狗。"
+              "chinese": "妹妹照顧狗。",
+              "note": null
             },
             {
               "japanese": "隣の 人は 一人で お年寄りの世話をする。",
-              "chinese": "鄰居一個人照顧老人。"
+              "chinese": "鄰居一個人照顧老人。",
+              "note": null
             }
           ]
         },
@@ -631,18 +786,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをします",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "母は 毎日 庭の 木の世話をします。",
-              "chinese": "媽媽每天照顧院子裡的樹。"
+              "chinese": "媽媽每天照顧院子裡的樹。",
+              "note": null
             },
             {
               "japanese": "私は 休みの 日には 子どもの世話をします。",
-              "chinese": "我休假的日子會照顧孩子。"
+              "chinese": "我休假的日子會照顧孩子。",
+              "note": null
             },
             {
               "japanese": "兄は ペットの世話をします。",
-              "chinese": "哥哥照顧寵物。"
+              "chinese": "哥哥照顧寵物。",
+              "note": null
             }
           ]
         },
@@ -651,18 +811,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをしません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "父は 花の世話をしません。",
-              "chinese": "爸爸不照顧花。"
+              "chinese": "爸爸不照顧花。",
+              "note": null
             },
             {
               "japanese": "平日は 犬の世話をしません。",
-              "chinese": "平日不照顧狗。"
+              "chinese": "平日不照顧狗。",
+              "note": null
             },
             {
               "japanese": "私は 人の 世話をしません。",
-              "chinese": "我不照顧別人。"
+              "chinese": "我不照顧別人。",
+              "note": null
             }
           ]
         },
@@ -671,18 +836,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをしました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 一日 祖母の世話をしました。",
-              "chinese": "昨天一整天照顧了祖母。"
+              "chinese": "昨天一整天照顧了祖母。",
+              "note": null
             },
             {
               "japanese": "子どもの 時、妹の世話をしました。",
-              "chinese": "小時候照顧了妹妹。"
+              "chinese": "小時候照顧了妹妹。",
+              "note": null
             },
             {
               "japanese": "旅行の 間、友だちの 犬の世話をしました。",
-              "chinese": "旅行期間照顧了朋友的狗。"
+              "chinese": "旅行期間照顧了朋友的狗。",
+              "note": null
             }
           ]
         },
@@ -691,18 +861,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをしませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "忙しかったので 花の世話をしませんでした。",
-              "chinese": "因為很忙，沒有照顧花。"
+              "chinese": "因為很忙，沒有照顧花。",
+              "note": null
             },
             {
               "japanese": "先週は 犬の世話をしませんでした。",
-              "chinese": "上週沒有照顧狗。"
+              "chinese": "上週沒有照顧狗。",
+              "note": null
             },
             {
               "japanese": "私は 昨日 祖母の世話をしませんでした。",
-              "chinese": "我昨天沒有照顧祖母。"
+              "chinese": "我昨天沒有照顧祖母。",
+              "note": null
             }
           ]
         },
@@ -711,18 +886,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをしない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "父は あまり 花の世話をしない。",
-              "chinese": "爸爸不太照顧花。"
+              "chinese": "爸爸不太照顧花。",
+              "note": null
             },
             {
               "japanese": "夜は 犬の世話をしない。",
-              "chinese": "晚上不照顧狗。"
+              "chinese": "晚上不照顧狗。",
+              "note": null
             },
             {
               "japanese": "兄は 魚の世話をしない。",
-              "chinese": "哥哥不照顧魚。"
+              "chinese": "哥哥不照顧魚。",
+              "note": null
             }
           ]
         },
@@ -731,18 +911,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "子どもの 時、私は よく 金魚の世話をした。",
-              "chinese": "小時候我常照顧金魚。"
+              "chinese": "小時候我常照顧金魚。",
+              "note": null
             },
             {
               "japanese": "先月 祖母の世話をした。",
-              "chinese": "上個月照顧了祖母。"
+              "chinese": "上個月照顧了祖母。",
+              "note": null
             },
             {
               "japanese": "日曜日に 友だちの 猫の世話をした。",
-              "chinese": "星期天照顧了朋友的貓。"
+              "chinese": "星期天照顧了朋友的貓。",
+              "note": null
             }
           ]
         },
@@ -751,18 +936,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをしなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は 忙しくて 花の世話をしなかった。",
-              "chinese": "昨天很忙，沒有照顧花。"
+              "chinese": "昨天很忙，沒有照顧花。",
+              "note": null
             },
             {
               "japanese": "子どもの 時は 犬の世話をしなかった。",
-              "chinese": "小時候沒有照顧狗。"
+              "chinese": "小時候沒有照顧狗。",
+              "note": null
             },
             {
               "japanese": "旅行の 間、私は 祖母の世話をしなかった。",
-              "chinese": "旅行期間我沒有照顧祖母。"
+              "chinese": "旅行期間我沒有照顧祖母。",
+              "note": null
             }
           ]
         },
@@ -771,18 +961,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをして",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "毎日 花の世話をして、元気に なりました。",
-              "chinese": "每天照顧花，變得有精神了。"
+              "chinese": "每天照顧花，變得有精神了。",
+              "note": null
             },
             {
               "japanese": "犬の世話をして、少し 疲れました。",
-              "chinese": "照顧狗，有點累了。"
+              "chinese": "照顧狗，有點累了。",
+              "note": null
             },
             {
               "japanese": "祖母の世話をして、夜 早く 寝ました。",
-              "chinese": "照顧祖母後，晚上很早就睡了。"
+              "chinese": "照顧祖母後，晚上很早就睡了。",
+              "note": null
             }
           ]
         },
@@ -791,38 +986,32 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわができる",
-          "sentence": [
-            {
-              "japanese": "私は 一人で 犬の世話ができる。",
-              "chinese": "我一個人能照顧狗。"
-            },
-            {
-              "japanese": "この 病院では お年寄りの世話ができる。",
-              "chinese": "這家醫院能照顧老人。"
-            },
-            {
-              "japanese": "週末なら 花の世話ができる。",
-              "chinese": "週末的話能照顧花。"
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「世話ができる」不是「世話をする」的可能形",
+          "error_usage": true,
+          "sentence": []
         },
         "volitional-form": {
           "vol": "世話をしよう",
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをしよう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 私が 花の世話をしよう。",
-              "chinese": "今天我來照顧花吧。"
+              "chinese": "今天我來照顧花吧。",
+              "note": null
             },
             {
               "japanese": "休みの 日は 犬の世話をしよう。",
-              "chinese": "休假的日子來照顧狗吧。"
+              "chinese": "休假的日子來照顧狗吧。",
+              "note": null
             },
             {
               "japanese": "みんなで 庭の世話をしよう。",
-              "chinese": "大家一起來照顧院子吧。"
+              "chinese": "大家一起來照顧院子吧。",
+              "note": null
             }
           ]
         },
@@ -831,18 +1020,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをしろ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "毎日 花の世話をしろ。",
-              "chinese": "每天照顧花。"
+              "chinese": "每天照顧花。",
+              "note": null
             },
             {
               "japanese": "出かける 前に 犬の世話をしろ。",
-              "chinese": "出門前照顧狗。"
+              "chinese": "出門前照顧狗。",
+              "note": null
             },
             {
               "japanese": "祖母の 家で しっかり 世話をしろ。",
-              "chinese": "在祖母家好好照顧。"
+              "chinese": "在祖母家好好照顧。",
+              "note": null
             }
           ]
         },
@@ -851,18 +1045,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをすれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "毎日 花の世話をすれば、きれいに 咲く。",
-              "chinese": "每天照顧花的話，就會開得很美。"
+              "chinese": "每天照顧花的話，就會開得很美。",
+              "note": null
             },
             {
               "japanese": "犬の世話をすれば、犬も なつく。",
-              "chinese": "照顧狗的話，狗也會親近你。"
+              "chinese": "照顧狗的話，狗也會親近你。",
+              "note": null
             },
             {
               "japanese": "お年寄りの世話をすれば、自分も 学べる。",
-              "chinese": "照顧老人的話，自己也能學到東西。"
+              "chinese": "照顧老人的話，自己也能學到東西。",
+              "note": null
             }
           ]
         },
@@ -871,18 +1070,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをされる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "子どもは いつも 祖母に 世話をされる。",
-              "chinese": "孩子總是由祖母照顧。"
+              "chinese": "孩子總是由祖母照顧。",
+              "note": null
             },
             {
               "japanese": "私は 入院中 看護師に 世話をされる。",
-              "chinese": "我住院期間由護士照顧。"
+              "chinese": "我住院期間由護士照顧。",
+              "note": null
             },
             {
               "japanese": "犬は 妹に 世話をされる。",
-              "chinese": "狗由妹妹照顧。"
+              "chinese": "狗由妹妹照顧。",
+              "note": null
             }
           ]
         },
@@ -891,18 +1095,23 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわをさせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "母は 私に 花の世話をさせる。",
-              "chinese": "媽媽讓我照顧花。"
+              "chinese": "媽媽讓我照顧花。",
+              "note": null
             },
             {
               "japanese": "先生は 生徒に 学校の 花壇の世話をさせる。",
-              "chinese": "老師讓學生照顧學校的花壇。"
+              "chinese": "老師讓學生照顧學校的花壇。",
+              "note": null
             },
             {
               "japanese": "父は 弟に 犬の世話をさせる。",
-              "chinese": "爸爸讓弟弟照顧狗。"
+              "chinese": "爸爸讓弟弟照顧狗。",
+              "note": null
             }
           ]
         }
@@ -913,18 +1122,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしむ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "休みの 日は 音楽を 楽しむ。",
-              "chinese": "休假的日子享受音樂。"
+              "chinese": "休假的日子享受音樂。",
+              "note": null
             },
             {
               "japanese": "家族と 旅行を 楽しむ。",
-              "chinese": "和家人享受旅行。"
+              "chinese": "和家人享受旅行。",
+              "note": null
             },
             {
               "japanese": "週末は ゆっくり 読書を 楽しむ。",
-              "chinese": "週末慢慢享受讀書。"
+              "chinese": "週末慢慢享受讀書。",
+              "note": null
             }
           ]
         },
@@ -933,18 +1147,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしみます",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "来週の 旅行を 楽しみます。",
-              "chinese": "期待下週的旅行。"
+              "chinese": "期待下週的旅行。",
+              "note": null
             },
             {
               "japanese": "毎晩 音楽を 楽しみます。",
-              "chinese": "每天晚上享受音樂。"
+              "chinese": "每天晚上享受音樂。",
+              "note": null
             },
             {
               "japanese": "夏休みに 海で 泳ぐのを 楽しみます。",
-              "chinese": "期待暑假在海裡游泳。"
+              "chinese": "期待暑假在海裡游泳。",
+              "note": null
             }
           ]
         },
@@ -953,18 +1172,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしみません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "雨の 日は 外の 遊びを 楽しみません。",
-              "chinese": "下雨天不享受戶外玩樂。"
+              "chinese": "下雨天不享受戶外玩樂。",
+              "note": null
             },
             {
               "japanese": "私は あまり ゲームを 楽しみません。",
-              "chinese": "我不太享受遊戲。"
+              "chinese": "我不太享受遊戲。",
+              "note": null
             },
             {
               "japanese": "父は 買い物を 楽しみません。",
-              "chinese": "爸爸不享受購物。"
+              "chinese": "爸爸不享受購物。",
+              "note": null
             }
           ]
         },
@@ -973,18 +1197,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしみました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 コンサートを 楽しみました。",
-              "chinese": "昨天享受了演唱會。"
+              "chinese": "昨天享受了演唱會。",
+              "note": null
             },
             {
               "japanese": "家族で パーティーを 楽しみました。",
-              "chinese": "和家人享受了派對。"
+              "chinese": "和家人享受了派對。",
+              "note": null
             },
             {
               "japanese": "旅行で 温泉を 楽しみました。",
-              "chinese": "旅行時享受了溫泉。"
+              "chinese": "旅行時享受了溫泉。",
+              "note": null
             }
           ]
         },
@@ -993,18 +1222,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしみませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "試験の 前は 旅行を 楽しみませんでした。",
-              "chinese": "考試前沒有享受旅行。"
+              "chinese": "考試前沒有享受旅行。",
+              "note": null
             },
             {
               "japanese": "天気が 悪くて 海を 楽しみませんでした。",
-              "chinese": "天氣不好，沒有享受海邊。"
+              "chinese": "天氣不好，沒有享受海邊。",
+              "note": null
             },
             {
               "japanese": "昨日は 忙しくて 音楽を 楽しみませんでした。",
-              "chinese": "昨天很忙，沒有享受音樂。"
+              "chinese": "昨天很忙，沒有享受音樂。",
+              "note": null
             }
           ]
         },
@@ -1013,18 +1247,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしまない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "私は 一人で ゲームを 楽しまない。",
-              "chinese": "我不一個人享受遊戲。"
+              "chinese": "我不一個人享受遊戲。",
+              "note": null
             },
             {
               "japanese": "雨の 日は 散歩を 楽しまない。",
-              "chinese": "下雨天不享受散步。"
+              "chinese": "下雨天不享受散步。",
+              "note": null
             },
             {
               "japanese": "弟は あまり 本を 楽しまない。",
-              "chinese": "弟弟不太享受讀書。"
+              "chinese": "弟弟不太享受讀書。",
+              "note": null
             }
           ]
         },
@@ -1033,18 +1272,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしんだ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先週 家族で 温泉を 楽しんだ。",
-              "chinese": "上週和家人享受了溫泉。"
+              "chinese": "上週和家人享受了溫泉。",
+              "note": null
             },
             {
               "japanese": "子どもの 時、よく 川で 泳ぐのを 楽しんだ。",
-              "chinese": "小時候常享受在河裡游泳。"
+              "chinese": "小時候常享受在河裡游泳。",
+              "note": null
             },
             {
               "japanese": "昨日の 夜 音楽を 楽しんだ。",
-              "chinese": "昨晚享受了音樂。"
+              "chinese": "昨晚享受了音樂。",
+              "note": null
             }
           ]
         },
@@ -1053,18 +1297,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしまなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "病気の 間は 旅行を 楽しまなかった。",
-              "chinese": "生病期間沒有享受旅行。"
+              "chinese": "生病期間沒有享受旅行。",
+              "note": null
             },
             {
               "japanese": "去年の 夏は 海を 楽しまなかった。",
-              "chinese": "去年夏天沒有享受海邊。"
+              "chinese": "去年夏天沒有享受海邊。",
+              "note": null
             },
             {
               "japanese": "私は 子どもの 時 ゲームを 楽しまなかった。",
-              "chinese": "我小時候沒有享受遊戲。"
+              "chinese": "我小時候沒有享受遊戲。",
+              "note": null
             }
           ]
         },
@@ -1073,18 +1322,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしんで",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "みんなで 音楽を 楽しんで、夜 遅くまで 起きて いた。",
-              "chinese": "大家一起享受音樂，熬夜到很晚。"
+              "chinese": "大家一起享受音樂，熬夜到很晚。",
+              "note": null
             },
             {
               "japanese": "家族と 旅行を 楽しんで、写真を たくさん 撮った。",
-              "chinese": "和家人享受旅行，拍了很多照片。"
+              "chinese": "和家人享受旅行，拍了很多照片。",
+              "note": null
             },
             {
               "japanese": "子どもたちは 公園で 遊ぶのを 楽しんで いる。",
-              "chinese": "孩子們正在享受在公園玩耍。"
+              "chinese": "孩子們正在享受在公園玩耍。",
+              "note": null
             }
           ]
         },
@@ -1093,18 +1347,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしめる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 町では 四季を 楽しめる。",
-              "chinese": "在這個城鎮能享受四季。"
+              "chinese": "在這個城鎮能享受四季。",
+              "note": null
             },
             {
               "japanese": "一人でも 音楽を 楽しめる。",
-              "chinese": "一個人也能享受音樂。"
+              "chinese": "一個人也能享受音樂。",
+              "note": null
             },
             {
               "japanese": "安い 値段で 温泉を 楽しめる。",
-              "chinese": "用便宜的價格就能享受溫泉。"
+              "chinese": "用便宜的價格就能享受溫泉。",
+              "note": null
             }
           ]
         },
@@ -1113,18 +1372,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしもう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今度の 休みは 山で 紅葉を 楽しもう。",
-              "chinese": "下次休假去山上享受紅葉吧。"
+              "chinese": "下次休假去山上享受紅葉吧。",
+              "note": null
             },
             {
               "japanese": "みんなで 音楽を 楽しもう。",
-              "chinese": "大家一起享受音樂吧。"
+              "chinese": "大家一起享受音樂吧。",
+              "note": null
             },
             {
               "japanese": "週末は 家族と 海を 楽しもう。",
-              "chinese": "週末和家人享受海邊吧。"
+              "chinese": "週末和家人享受海邊吧。",
+              "note": null
             }
           ]
         },
@@ -1133,18 +1397,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしめ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "若い 時は もっと 旅行を 楽しめ。",
-              "chinese": "年輕時要多享受旅行。"
+              "chinese": "年輕時要多享受旅行。",
+              "note": null
             },
             {
               "japanese": "休みの 日は ゆっくり 音楽を 楽しめ。",
-              "chinese": "休假的日子就好好享受音樂。"
+              "chinese": "休假的日子就好好享受音樂。",
+              "note": null
             },
             {
               "japanese": "たまには 家族との 時間を 楽しめ。",
-              "chinese": "偶爾也享受和家人相處的時間。"
+              "chinese": "偶爾也享受和家人相處的時間。",
+              "note": null
             }
           ]
         },
@@ -1153,18 +1422,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしめば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "音楽を 楽しめば、毎日が 明るく なる。",
-              "chinese": "享受音樂的話，每天都會變得開朗。"
+              "chinese": "享受音樂的話，每天都會變得開朗。",
+              "note": null
             },
             {
               "japanese": "旅行を 楽しめば、いい 思い出が 残る。",
-              "chinese": "享受旅行的話，會留下美好的回憶。"
+              "chinese": "享受旅行的話，會留下美好的回憶。",
+              "note": null
             },
             {
               "japanese": "仕事も 楽しめば、長く 続けられる。",
-              "chinese": "工作也能享受的話，就能長久持續。"
+              "chinese": "工作也能享受的話，就能長久持續。",
+              "note": null
             }
           ]
         },
@@ -1173,18 +1447,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしまれる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 祭りは 多くの 人に 楽しまれる。",
-              "chinese": "這個祭典被許多人享受。"
+              "chinese": "這個祭典被許多人享受。",
+              "note": null
             },
             {
               "japanese": "音楽は いつも 家族に 楽しまれる。",
-              "chinese": "音樂總是被家人享受。"
+              "chinese": "音樂總是被家人享受。",
+              "note": null
             },
             {
               "japanese": "温泉は お年寄りに 楽しまれる。",
-              "chinese": "溫泉被老人們享受。"
+              "chinese": "溫泉被老人們享受。",
+              "note": null
             }
           ]
         },
@@ -1193,18 +1472,23 @@
           "group": "1",
           "chinese": "享受; 期待; 以…為樂",
           "japanese": "たのしませる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先生は 子どもたちに 歌を 楽しませる。",
-              "chinese": "老師讓孩子們享受唱歌。"
+              "chinese": "老師讓孩子們享受唱歌。",
+              "note": null
             },
             {
               "japanese": "母は 客に 料理を 楽しませる。",
-              "chinese": "媽媽讓客人享受料理。"
+              "chinese": "媽媽讓客人享受料理。",
+              "note": null
             },
             {
               "japanese": "旅館は お客さんに 温泉を 楽しませる。",
-              "chinese": "旅館讓客人享受溫泉。"
+              "chinese": "旅館讓客人享受溫泉。",
+              "note": null
             }
           ]
         }
@@ -1215,18 +1499,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろす",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "銀行で お金を 下ろす。",
-              "chinese": "在銀行提錢。"
+              "chinese": "在銀行提錢。",
+              "note": null
             },
             {
               "japanese": "棚から 大きい 箱を 下ろす。",
-              "chinese": "從架子上拿下大箱子。"
+              "chinese": "從架子上拿下大箱子。",
+              "note": null
             },
             {
               "japanese": "毎週 金曜日に ATMで お金を 下ろす。",
-              "chinese": "每週五在ATM提錢。"
+              "chinese": "每週五在ATM提錢。",
+              "note": null
             }
           ]
         },
@@ -1235,18 +1524,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろします",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "これから 銀行へ 行って、お金を 下ろします。",
-              "chinese": "現在要去銀行提錢。"
+              "chinese": "現在要去銀行提錢。",
+              "note": null
             },
             {
               "japanese": "重い 荷物を 棚から 下ろします。",
-              "chinese": "把重行李從架子上拿下來。"
+              "chinese": "把重行李從架子上拿下來。",
+              "note": null
             },
             {
               "japanese": "毎月 10日に 給料を 下ろします。",
-              "chinese": "每月十號提領薪水。"
+              "chinese": "每月十號提領薪水。",
+              "note": null
             }
           ]
         },
@@ -1255,18 +1549,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろしません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今月は お金を 下ろしません。",
-              "chinese": "這個月不領錢。"
+              "chinese": "這個月不領錢。",
+              "note": null
             },
             {
               "japanese": "この 棚は 高いので、一人では 下ろしません。",
-              "chinese": "這個架子很高，一個人不會拿下來。"
+              "chinese": "這個架子很高，一個人不會拿下來。",
+              "note": null
             },
             {
               "japanese": "私は まだ 貯金を 下ろしません。",
-              "chinese": "我還沒動用存款。"
+              "chinese": "我還沒動用存款。",
+              "note": null
             }
           ]
         },
@@ -1275,18 +1574,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろしました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 銀行で 3万円 下ろしました。",
-              "chinese": "昨天在銀行提了三萬日圓。"
+              "chinese": "昨天在銀行提了三萬日圓。",
+              "note": null
             },
             {
               "japanese": "さっき 棚から 古い テレビを 下ろしました。",
-              "chinese": "剛才把舊電視從架子上拿下來了。"
+              "chinese": "剛才把舊電視從架子上拿下來了。",
+              "note": null
             },
             {
               "japanese": "母は 今日 お金を 下ろしました。",
-              "chinese": "媽媽今天提了錢。"
+              "chinese": "媽媽今天提了錢。",
+              "note": null
             }
           ]
         },
@@ -1295,18 +1599,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろしませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 銀行が 休みだったので、お金を 下ろしませんでした。",
-              "chinese": "今天銀行休息，所以沒有提錢。"
+              "chinese": "今天銀行休息，所以沒有提錢。",
+              "note": null
             },
             {
               "japanese": "雨の 日は 荷物を 下ろしませんでした。",
-              "chinese": "下雨天沒有把行李拿下來。"
+              "chinese": "下雨天沒有把行李拿下來。",
+              "note": null
             },
             {
               "japanese": "昨日は 出費が 少なくて、お金を 下ろしませんでした。",
-              "chinese": "昨天花費少，沒有提錢。"
+              "chinese": "昨天花費少，沒有提錢。",
+              "note": null
             }
           ]
         },
@@ -1315,18 +1624,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろさない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今月は あまり お金を 下ろさない。",
-              "chinese": "這個月不太領錢。"
+              "chinese": "這個月不太領錢。",
+              "note": null
             },
             {
               "japanese": "一人では 重い 物を 下ろさない。",
-              "chinese": "不會一個人拿重的東西下來。"
+              "chinese": "不會一個人拿重的東西下來。",
+              "note": null
             },
             {
               "japanese": "父は 給料の 日まで お金を 下ろさない。",
-              "chinese": "爸爸到發薪日之前都不提錢。"
+              "chinese": "爸爸到發薪日之前都不提錢。",
+              "note": null
             }
           ]
         },
@@ -1335,18 +1649,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今朝 銀行で お金を 下ろした。",
-              "chinese": "今天早上在銀行提了錢。"
+              "chinese": "今天早上在銀行提了錢。",
+              "note": null
             },
             {
               "japanese": "弟が 棚から 箱を 下ろした。",
-              "chinese": "弟弟把箱子從架子上拿下來了。"
+              "chinese": "弟弟把箱子從架子上拿下來了。",
+              "note": null
             },
             {
               "japanese": "お金が なかったので、コンビニの ATMで 下ろした。",
-              "chinese": "因為沒錢，在便利商店的ATM提了錢。"
+              "chinese": "因為沒錢，在便利商店的ATM提了錢。",
+              "note": null
             }
           ]
         },
@@ -1355,18 +1674,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろさなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は お金を 下ろさなかった。",
-              "chinese": "昨天沒有提錢。"
+              "chinese": "昨天沒有提錢。",
+              "note": null
             },
             {
               "japanese": "重いので、私は その 箱を 下ろさなかった。",
-              "chinese": "因為很重，我沒有把那個箱子拿下來。"
+              "chinese": "因為很重，我沒有把那個箱子拿下來。",
+              "note": null
             },
             {
               "japanese": "今月は 一度も 貯金を 下ろさなかった。",
-              "chinese": "這個月一次也沒動用存款。"
+              "chinese": "這個月一次也沒動用存款。",
+              "note": null
             }
           ]
         },
@@ -1375,18 +1699,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろして",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "お金を 下ろして、家族に 送った。",
-              "chinese": "提了錢後寄給家人。"
+              "chinese": "提了錢後寄給家人。",
+              "note": null
             },
             {
               "japanese": "棚から 荷物を 下ろして、床に 置いた。",
-              "chinese": "把行李從架子上拿下來放在地板上。"
+              "chinese": "把行李從架子上拿下來放在地板上。",
+              "note": null
             },
             {
               "japanese": "銀行で お金を 下ろしてから、買い物に 行った。",
-              "chinese": "在銀行提錢後去買東西。"
+              "chinese": "在銀行提錢後去買東西。",
+              "note": null
             }
           ]
         },
@@ -1395,18 +1724,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この ATMでは 1日に 10万円まで 下ろせる。",
-              "chinese": "這台ATM一天最多能提十萬日圓。"
+              "chinese": "這台ATM一天最多能提十萬日圓。",
+              "note": null
             },
             {
               "japanese": "私でも この 箱は 棚から 下ろせる。",
-              "chinese": "連我也能把這個箱子從架子上拿下來。"
+              "chinese": "連我也能把這個箱子從架子上拿下來。",
+              "note": null
             },
             {
               "japanese": "カードが あれば、コンビニでも お金を 下ろせる。",
-              "chinese": "有卡片的話，在便利商店也能提錢。"
+              "chinese": "有卡片的話，在便利商店也能提錢。",
+              "note": null
             }
           ]
         },
@@ -1415,18 +1749,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろそう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昼休みに 銀行へ 行って、お金を 下ろそう。",
-              "chinese": "午休去銀行提錢吧。"
+              "chinese": "午休去銀行提錢吧。",
+              "note": null
             },
             {
               "japanese": "二人で この 机を 棚から 下ろそう。",
-              "chinese": "兩個人把這張桌子從架子上拿下來吧。"
+              "chinese": "兩個人把這張桌子從架子上拿下來吧。",
+              "note": null
             },
             {
               "japanese": "旅行の 前に 少し お金を 下ろそう。",
-              "chinese": "旅行前先提一點錢吧。"
+              "chinese": "旅行前先提一點錢吧。",
+              "note": null
             }
           ]
         },
@@ -1435,18 +1774,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろせ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "店長は 店員に「棚から 箱を 下ろせ」と 言った。",
-              "chinese": "店長對店員說「把箱子從架子上拿下來」。"
+              "chinese": "店長對店員說「把箱子從架子上拿下來」。",
+              "note": null
             },
             {
               "japanese": "母は 私に「銀行で お金を 下ろせ」と 頼んだ。",
-              "chinese": "媽媽拜託我「去銀行提錢」。"
+              "chinese": "媽媽拜託我「去銀行提錢」。",
+              "note": null
             },
             {
               "japanese": "係の 人は「その 荷物を 下ろせ」と 叫んだ。",
-              "chinese": "工作人員大喊「把那個行李拿下來」。"
+              "chinese": "工作人員大喊「把那個行李拿下來」。",
+              "note": null
             }
           ]
         },
@@ -1455,18 +1799,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろせば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "お金を 下ろせば、すぐ 払える。",
-              "chinese": "提了錢就能馬上付。"
+              "chinese": "提了錢就能馬上付。",
+              "note": null
             },
             {
               "japanese": "棚から 荷物を 下ろせば、部屋が 広く なる。",
-              "chinese": "把行李從架子上拿下來，房間就變寬敞。"
+              "chinese": "把行李從架子上拿下來，房間就變寬敞。",
+              "note": null
             },
             {
               "japanese": "足りない ときは、駅の ATMで 下ろせば いい。",
-              "chinese": "不夠的時候，在車站的ATM提錢就好。"
+              "chinese": "不夠的時候，在車站的ATM提錢就好。",
+              "note": null
             }
           ]
         },
@@ -1475,18 +1824,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろされる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "その 箱は 兄に 棚から 下ろされる。",
-              "chinese": "那個箱子由哥哥從架子上拿下來。"
+              "chinese": "那個箱子由哥哥從架子上拿下來。",
+              "note": null
             },
             {
               "japanese": "貯金は 少しずつ 母に 下ろされる。",
-              "chinese": "存款一點一點被媽媽提領。"
+              "chinese": "存款一點一點被媽媽提領。",
+              "note": null
             },
             {
               "japanese": "古い 荷物は 毎年 倉庫から 下ろされる。",
-              "chinese": "舊貨物每年從倉庫被搬下來。"
+              "chinese": "舊貨物每年從倉庫被搬下來。",
+              "note": null
             }
           ]
         },
@@ -1495,18 +1849,23 @@
           "group": "1",
           "chinese": "放下; 拿下; 提取（存款）",
           "japanese": "おろさせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "店長は 新人に 棚の 箱を 下ろさせる。",
-              "chinese": "店長讓新人把架子上的箱子拿下來。"
+              "chinese": "店長讓新人把架子上的箱子拿下來。",
+              "note": null
             },
             {
               "japanese": "父は 弟に 銀行で お金を 下ろさせる。",
-              "chinese": "爸爸讓弟弟去銀行提錢。"
+              "chinese": "爸爸讓弟弟去銀行提錢。",
+              "note": null
             },
             {
               "japanese": "母は 娘に 重い 荷物を 下ろさせる。",
-              "chinese": "媽媽讓女兒把重行李拿下來。"
+              "chinese": "媽媽讓女兒把重行李拿下來。",
+              "note": null
             }
           ]
         }
@@ -1517,18 +1876,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "だす",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "毎晩 寝る 前に ゴミを 出す。",
-              "chinese": "每天晚上睡前把垃圾拿出去。"
+              "chinese": "每天晚上睡前把垃圾拿出去。",
+              "note": null
             },
             {
               "japanese": "母は 台所から お茶を 出す。",
-              "chinese": "媽媽從廚房端出茶來。"
+              "chinese": "媽媽從廚房端出茶來。",
+              "note": null
             },
             {
               "japanese": "彼は ポケットから 財布を 出す。",
-              "chinese": "他從口袋拿出錢包。"
+              "chinese": "他從口袋拿出錢包。",
+              "note": null
             }
           ]
         },
@@ -1537,18 +1901,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "だします",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日の 朝 手紙を ポストに 出します。",
-              "chinese": "明天早上把信寄到郵筒。"
+              "chinese": "明天早上把信寄到郵筒。",
+              "note": null
             },
             {
               "japanese": "受付の 人は 申込書を 出します。",
-              "chinese": "櫃台的人交出報名表。"
+              "chinese": "櫃台的人交出報名表。",
+              "note": null
             },
             {
               "japanese": "店員が 温かい お茶を 出します。",
-              "chinese": "店員端出熱茶。"
+              "chinese": "店員端出熱茶。",
+              "note": null
             }
           ]
         },
@@ -1557,18 +1926,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "だしません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 雨なので ゴミを 出しません。",
-              "chinese": "今天下雨，所以不拿垃圾出去。"
+              "chinese": "今天下雨，所以不拿垃圾出去。",
+              "note": null
             },
             {
               "japanese": "この 店は 領収書を 出しません。",
-              "chinese": "這家店不開收據。"
+              "chinese": "這家店不開收據。",
+              "note": null
             },
             {
               "japanese": "父は 給料の 半分も 出しません。",
-              "chinese": "父親連薪水的一半也不拿出來。"
+              "chinese": "父親連薪水的一半也不拿出來。",
+              "note": null
             }
           ]
         },
@@ -1577,18 +1951,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "だしました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 郵便局で 荷物を 出しました。",
-              "chinese": "昨天在郵局寄了包裹。"
+              "chinese": "昨天在郵局寄了包裹。",
+              "note": null
             },
             {
               "japanese": "娘は 学校の 展覧会に 絵を 出しました。",
-              "chinese": "女兒把畫交到學校的展覽會。"
+              "chinese": "女兒把畫交到學校的展覽會。",
+              "note": null
             },
             {
               "japanese": "店長は お詫びの 品を 出しました。",
-              "chinese": "店長拿出了道歉的禮品。"
+              "chinese": "店長拿出了道歉的禮品。",
+              "note": null
             }
           ]
         },
@@ -1597,18 +1976,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "だしませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先週は 忙しくて ゴミを 出しませんでした。",
-              "chinese": "上週很忙，所以沒有拿垃圾出去。"
+              "chinese": "上週很忙，所以沒有拿垃圾出去。",
+              "note": null
             },
             {
               "japanese": "あの 店は 去年 新商品を 出しませんでした。",
-              "chinese": "那家店去年沒有推出新商品。"
+              "chinese": "那家店去年沒有推出新商品。",
+              "note": null
             },
             {
               "japanese": "母は 私に 小遣いを 出しませんでした。",
-              "chinese": "媽媽沒有給我零用錢。"
+              "chinese": "媽媽沒有給我零用錢。",
+              "note": null
             }
           ]
         },
@@ -1617,18 +2001,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "ださない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日は 祝日なので ゴミを 出さない。",
-              "chinese": "明天是假日，所以不拿垃圾出去。"
+              "chinese": "明天是假日，所以不拿垃圾出去。",
+              "note": null
             },
             {
               "japanese": "弟は いつも 自分から 意見を 出さない。",
-              "chinese": "弟弟總是不主動提出意見。"
+              "chinese": "弟弟總是不主動提出意見。",
+              "note": null
             },
             {
               "japanese": "この 自動販売機は お釣りを 出さない。",
-              "chinese": "這台自動販賣機不找零。"
+              "chinese": "這台自動販賣機不找零。",
+              "note": null
             }
           ]
         },
@@ -1637,18 +2026,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "だした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今朝 私は 燃える ゴミを 出した。",
-              "chinese": "今天早上我把可燃垃圾拿出去了。"
+              "chinese": "今天早上我把可燃垃圾拿出去了。",
+              "note": null
             },
             {
               "japanese": "先月 友だちに 招待状を 出した。",
-              "chinese": "上個月寄了邀請函給朋友。"
+              "chinese": "上個月寄了邀請函給朋友。",
+              "note": null
             },
             {
               "japanese": "課長は 会議で 良い 意見を 出した。",
-              "chinese": "課長在會議上提出了好意見。"
+              "chinese": "課長在會議上提出了好意見。",
+              "note": null
             }
           ]
         },
@@ -1657,18 +2051,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "ださなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "朝 寝坊して ゴミを 出さなかった。",
-              "chinese": "早上睡過頭，沒有拿垃圾出去。"
+              "chinese": "早上睡過頭，沒有拿垃圾出去。",
+              "note": null
             },
             {
               "japanese": "妹は 試験の 前 なのに 宿題を 出さなかった。",
-              "chinese": "妹妹明明快要考試，卻沒有交作業。"
+              "chinese": "妹妹明明快要考試，卻沒有交作業。",
+              "note": null
             },
             {
               "japanese": "値段が 高くて 客は お金を 出さなかった。",
-              "chinese": "因為價錢太貴，客人不願拿出錢來。"
+              "chinese": "因為價錢太貴，客人不願拿出錢來。",
+              "note": null
             }
           ]
         },
@@ -1677,18 +2076,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "だして",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "朝 ゴミを 出して から 会社へ 行った。",
-              "chinese": "早上拿出垃圾後去了公司。"
+              "chinese": "早上拿出垃圾後去了公司。",
+              "note": null
             },
             {
               "japanese": "財布を 出して から、お金を 払った。",
-              "chinese": "拿出錢包後付了錢。"
+              "chinese": "拿出錢包後付了錢。",
+              "note": null
             },
             {
               "japanese": "彼は 熱を 出して、学校を 休んだ。",
-              "chinese": "他發燒，所以向學校請假。"
+              "chinese": "他發燒，所以向學校請假。",
+              "note": null
             }
           ]
         },
@@ -1697,18 +2101,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "だせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "私 一人では そんな お金を 出せる はずが ない。",
-              "chinese": "我一個人不可能拿出那麼多錢。"
+              "chinese": "我一個人不可能拿出那麼多錢。",
+              "note": null
             },
             {
               "japanese": "あなたは いつ 手紙を 出せる の ですか。",
-              "chinese": "你什麼時候能寄信呢？"
+              "chinese": "你什麼時候能寄信呢？",
+              "note": null
             },
             {
               "japanese": "この 店は いつでも 温かい 料理を 出せる。",
-              "chinese": "這家店隨時都能端出熱騰騰的菜。"
+              "chinese": "這家店隨時都能端出熱騰騰的菜。",
+              "note": null
             }
           ]
         },
@@ -1717,18 +2126,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "だそう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日の 朝 手紙を 出そう。",
-              "chinese": "明天早上寄信吧。"
+              "chinese": "明天早上寄信吧。",
+              "note": null
             },
             {
               "japanese": "部屋を 片付けて ゴミを 出そう。",
-              "chinese": "整理房間後把垃圾拿出去吧。"
+              "chinese": "整理房間後把垃圾拿出去吧。",
+              "note": null
             },
             {
               "japanese": "みんなで お金を 出そう。",
-              "chinese": "大家一起出錢吧。"
+              "chinese": "大家一起出錢吧。",
+              "note": null
             }
           ]
         },
@@ -1737,18 +2151,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "だせ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "早く 手紙を 出せ。",
-              "chinese": "快點把信寄出去。"
+              "chinese": "快點把信寄出去。",
+              "note": null
             },
             {
               "japanese": "店に 着いたら まず 名刺を 出せ。",
-              "chinese": "到了店裡先拿出名片。"
+              "chinese": "到了店裡先拿出名片。",
+              "note": null
             },
             {
               "japanese": "机の 上から その 書類を 出せ。",
-              "chinese": "把那份文件從桌上拿出來。"
+              "chinese": "把那份文件從桌上拿出來。",
+              "note": null
             }
           ]
         },
@@ -1757,18 +2176,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "だせば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "毎日 少しずつ お金を 出せば、旅行に 行ける。",
-              "chinese": "每天一點一點地出錢，就能去旅行。"
+              "chinese": "每天一點一點地出錢，就能去旅行。",
+              "note": null
             },
             {
               "japanese": "手紙を 出せば、来週 返事が 来る。",
-              "chinese": "寄了信，下週就會收到回信。"
+              "chinese": "寄了信，下週就會收到回信。",
+              "note": null
             },
             {
               "japanese": "ゴミを 出せば、部屋が 広く なる。",
-              "chinese": "把垃圾拿出去，房間就會變寬敞。"
+              "chinese": "把垃圾拿出去，房間就會變寬敞。",
+              "note": null
             }
           ]
         },
@@ -1777,18 +2201,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "だされる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "会議で 彼の 意見が 出される。",
-              "chinese": "會議上他的意見被提出來。"
+              "chinese": "會議上他的意見被提出來。",
+              "note": null
             },
             {
               "japanese": "店から 毎日 新しい 商品が 出される。",
-              "chinese": "店裡每天都有新商品推出。"
+              "chinese": "店裡每天都有新商品推出。",
+              "note": null
             },
             {
               "japanese": "先生に 宿題を 出される のは 嫌だ。",
-              "chinese": "討厭被老師出作業。"
+              "chinese": "討厭被老師出作業。",
+              "note": null
             }
           ]
         },
@@ -1797,18 +2226,23 @@
           "group": "1",
           "chinese": "拿出; 寄出; 發出; 顯露",
           "japanese": "ださせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "父は 弟に 部屋の ゴミを 出させる。",
-              "chinese": "爸爸讓弟弟把房間的垃圾拿出去。"
+              "chinese": "爸爸讓弟弟把房間的垃圾拿出去。",
+              "note": null
             },
             {
               "japanese": "先生は 学生に 作文を 出させる。",
-              "chinese": "老師讓學生交作文。"
+              "chinese": "老師讓學生交作文。",
+              "note": null
             },
             {
               "japanese": "社長は 社員に 新しい 企画を 出させる。",
-              "chinese": "社長讓員工提出新企劃。"
+              "chinese": "社長讓員工提出新企劃。",
+              "note": null
             }
           ]
         }

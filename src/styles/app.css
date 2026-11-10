@@ -14,6 +14,19 @@
   --muted: #8b86a0;
   --radius: 28px;
   --shadow: 0 18px 40px rgba(20, 16, 50, 0.22);
+  /* Decelerating: the entrance of a turn and the return of a release that
+     never crossed the threshold. Its speed at the start is set close to the
+     speed an exit carries into the handover, so the pace does not change
+     across the swap, and it never overshoots its end point. */
+  --ease-slide: cubic-bezier(0.4, 0.3, 0.5, 1);
+  /* An exit accelerates and an entry decelerates, so both halves are at their
+     fastest as the item crosses the edge. A decelerating exit followed by an
+     accelerating entry stops dead at the edge and then bursts in again; that
+     stop-and-burst is what made the turn read as a rebound. */
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  /* The card turn starts easier than a slide: a flip is caused by a tap, not
+     by a finger that already has speed. */
+  --ease-turn: cubic-bezier(0.4, 0, 0.2, 1);
   font-family: 'Hiragino Sans', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -27,11 +40,32 @@ html,
 body {
   margin: 0;
   min-height: 100%;
+  /* The page is a fixed-size phone screen: the viewport meta pins the scale
+     and `manipulation` stops Chrome from reading a double tap as a zoom
+     gesture on any surface that declares nothing of its own. It also drops
+     the old 300ms wait before a tap becomes a click. Pinch is handled by the
+     meta, so the gesture surfaces can keep their own `pan-y`. */
+  touch-action: manipulation;
   /* Paging animations slide inside their own clipped container. The page
      itself never scrolls sideways. `clip` is used rather than `hidden`
      because `hidden` would make this a scroll container and break the sticky
      top bars. */
   overflow-x: clip;
+}
+
+/* The page's own scrollbar is replaced by the drawn one in
+   `src/components/PageScrollBar.vue`. Both spellings are needed: `scrollbar-width`
+   for Firefox and the `::-webkit-scrollbar` pseudo-element for Chrome/Safari.
+   The two inner dropdown lists opt back in, so they keep a native bar. */
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 body {

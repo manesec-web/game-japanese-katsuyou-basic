@@ -2,8 +2,11 @@
 
 ![Vue 3](https://img.shields.io/badge/Vue-3-42b883?logo=vue.js&logoColor=white)
 ![Vite 7](https://img.shields.io/badge/Vite-7-646cff?logo=vite&logoColor=white)
-![Vitest](https://img.shields.io/badge/tests-191%20passing-2ea44f)
+![Vitest](https://img.shields.io/badge/tests-209%20passing-2ea44f)
 ![Static site](https://img.shields.io/badge/deploy-static%20site-4a3f9f)
+
+> 朗讀功能、下載流程優化與 UI 優化列在 [`docs/roadmap.md`](docs/roadmap.md) 的
+> backlog（尚未實作，實作前先寫進 `docs/spec.md`）。
 
 手機優先的日語動詞轉型（活用）練習網站。涵蓋《大家的日本語》初級 1–50 課、
 386 個單詞、15 種變化形，提供三種學習方式：**字典**、**翻卡學習**、**測驗**。
@@ -30,6 +33,18 @@ SHA-256 校驗後快取於 IndexedDB，重新開啟時只重新驗證、不重�
   寫入 IndexedDB；再次開啟只重新計算雜湊，不重複下載。
 - **手機優先的版面**：≤550px 時介面滿版、背景收斂為單色；>550px 時內容置中於
   480px 卡片欄並顯示漸層背景。翻頁是水平平移，卡片翻轉為 `rotateY`。
+- **自繪滾動軸**：頁面隱藏瀏覽器原生 Y 軸，改在卡片欄右緣畫一條 4px 圓角細條，
+  只在捲動時淡入、停止約 1 秒淡出；內部下拉選單仍用原生軸。
+- **翻卡完成**：在最後一張往左滑就等於按「完成」，直接顯示完成面板。
+- **翻卡邊界**：第一張往右拖有阻尼，卡片跟手指走約 1/3（上限 40px），放手後
+  約 140ms 回位，不會切到「不存在的前一張」；最後一張往左滑才是完成。字典閱讀
+  的第一個單詞維持不動。
+- **載入頁**：顯示站名三行標題（`大家の日本語`／`轉型練習`／`涵蓋初級 1 – 50 課的單詞`）
+  與 `Loading ...` 進度條；底部只有 `Build with ❤ by Mane`（可開啟 About 面板），
+  沒有 BUG 回報那一行。載入失敗（`載入失敗（lesson N）`）時標題與底部都還在。
+- **手機上手感穩定**：頁面固定在原始比例，雙擊與兩指都不會放大；翻頁與翻卡
+  的進出場速度相接（離開加速、進場減速），交接時兩邊都已完全離屏，不會在邊緣
+  停住再彈進來；未達 72px 的拖曳約 140ms 回位，不再長時間回彈。
 - **無障礙與動效偏好**：尊重 `prefers-reduced-motion: reduce`（背景靜止、翻頁與
   翻卡即時完成、畫面切換改為短淡入）。
 - **空課程處理**：第 1、3、8、12 課沒有單詞，選單中顯示為灰色且不可選取。
@@ -63,7 +78,7 @@ npm run preview    # 預覽建置結果（http://localhost:4173/game-japanese-ka
 | `npm run dev` | 啟動 Vite 開發伺服器（附字典中介層） |
 | `npm run build` | 建置靜態網站到 `output/`，並複製 50 個課程檔到 `output/dict/` |
 | `npm run preview` | 以 Vite 預覽 `output/` |
-| `npm test` | 執行 Vitest 單元測試（20 個檔案、191 個測試） |
+| `npm test` | 執行 Vitest 單元測試（21 個檔案、209 個測試） |
 | `npm run test:watch` | 監看模式 |
 | `node scripts/write-sha256.mjs` | 重新產生 `src/data/dict-manifest.json` |
 | `node scripts/write-sha256.mjs --check` | 校驗 manifest 與 `vol/` 位元組是否一致（不一致則非 0 結束） |
@@ -92,7 +107,7 @@ src/study/                  題目清單、亂序、例句標示、結算
 src/storage/                IndexedDB 字典快取、localStorage 設定
 src/ui/                     store 轉接、boot、手勢、動效偏好、輸入法編輯
 src/views/                 各畫面（樣板與樣式，不放規則）
-src/components/             共用元件（ruby 單詞、完成面板）
+src/components/             共用元件（站名標題、Build with 頁腳、About 面板、ruby 單詞、完成面板、滾動軸）
 src/styles/app.css          設計變數與版面
 src/data/dict-manifest.json 產生的 manifest（已提交）
 output/                     建置輸出（不提交）
@@ -176,15 +191,15 @@ output/                     建置輸出（不提交）
 ## 測試與驗證
 
 ```bash
-npm test                                # 20 檔 / 191 個單元測試
+npm test                                # 21 檔 / 209 個單元測試
 npm run build                           # output/index.html + output/dict/（50 檔）
 node scripts/write-sha256.mjs --check   # manifest 一致
-node scripts/browser-check.mjs          # 259–260 項端到端檢查（390×844 為主；鍵盤亂數
-                                        # 種子會讓總數上下浮動 1 項）
+node scripts/browser-check.mjs          # 379 項端到端檢查（390×844 為主；測驗題目
+                                        # 由亂數種子決定，假名按鍵檢查數會上下浮動 1 項）
 ```
 
-端到端檢查涵蓋：載入（正常／失敗／重試）、首頁、三種模式的選課、字典閱讀、
-設定、翻卡、測驗、完成畫面、減少動效、550px 斷點、桌面不啟用手勢翻頁、
+端到端檢查涵蓋：載入（正常／失敗／重試、標題與 Build with 底部）、首頁、三種模式的選課、字典閱讀、
+設定、翻卡（含第一張的阻尼回彈）、測驗、完成畫面、減少動效、550px 斷點、桌面不啟用手勢翻頁、
 IndexedDB 快取與重新載入重用。
 
 未涵蓋：真實 iOS／Android 裝置、真實輸入法（合成事件以純函式測試）、

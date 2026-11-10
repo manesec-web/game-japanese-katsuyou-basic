@@ -251,6 +251,9 @@ function toggle(field) {
   background: var(--surface);
   max-height: 320px;
   overflow-y: auto;
+  /* The page hides its own scrollbar; this list is a scroll container of its
+     own, so it opts back in and keeps the native bar. */
+  scrollbar-width: auto;
 }
 
 .form-option {

@@ -14,11 +14,13 @@ const dragging = ref(false)
 let pointer = null
 
 // Page-turn phases. `leaving` slides the current word out, then the command
-// runs, then `entering` brings the new word in from the opposite edge.
+// runs, then `entering` brings the new word in from the opposite edge. The
+// phases end on the transition and animation themselves, so the timings live in
+// one place (the CSS) and the two halves cannot drift apart. The numbers here
+// are only a safety net for an event that never arrives.
 const leaving = ref(null)
 const entering = ref(null)
-const LEAVE_MS = 170
-const ENTER_MS = 240
+const PHASE_FALLBACK_MS = 600
 let leaveTimer = null
 let enterTimer = null
 
@@ -58,16 +60,40 @@ function go(direction) {
     return
   }
   leaving.value = direction
-  leaveTimer = setTimeout(() => {
-    store.send(direction === 'next' ? 'dict.next' : 'dict.prev')
-    leaving.value = null
-    entering.value = direction
-    enterTimer = setTimeout(() => {
-      entering.value = null
-      enterTimer = null
-    }, ENTER_MS)
-    leaveTimer = null
-  }, LEAVE_MS)
+  clearTimeout(leaveTimer)
+  leaveTimer = setTimeout(finishLeave, PHASE_FALLBACK_MS)
+}
+
+// The outgoing page has reached the edge: swap the word while nothing is on
+// screen, then play the enter animation from the far edge.
+function finishLeave() {
+  const direction = leaving.value
+  if (!direction) return
+  clearTimeout(leaveTimer)
+  leaveTimer = null
+  store.send(direction === 'next' ? 'dict.next' : 'dict.prev')
+  leaving.value = null
+  entering.value = direction
+  clearTimeout(enterTimer)
+  enterTimer = setTimeout(endEnter, PHASE_FALLBACK_MS)
+}
+
+function endEnter() {
+  clearTimeout(enterTimer)
+  enterTimer = null
+  entering.value = null
+}
+
+function onPageTransitionEnd(event) {
+  if (event.target !== event.currentTarget) return
+  if (event.propertyName !== 'transform') return
+  finishLeave()
+}
+
+function onPageAnimationEnd(event) {
+  if (event.target !== event.currentTarget) return
+  if (!entering.value) return
+  endEnter()
 }
 
 onBeforeUnmount(() => {
@@ -147,6 +173,8 @@ function openSettings() {
           'reader-page--enter-prev': entering === 'prev',
         }"
         :style="dragStyle"
+        @transitionend="onPageTransitionEnd"
+        @animationend="onPageAnimationEnd"
       >
         <section
           v-for="entry in formEntries"
@@ -265,32 +293,47 @@ function openSettings() {
 }
 
 .reader-page {
-  transition: transform 200ms ease;
+  /* A release below the threshold returns in a short decelerating step, so the
+     page settles instead of springing back at the hand. */
+  transition: transform 140ms var(--ease-slide);
 }
 
 .reader-page--dragging {
   transition: none;
 }
 
-/* Leaving: the old word slides out in the direction of travel, flat and fully,
-   like a page being pushed off the screen. */
+/* Leaving: the old word slides out in the direction of travel, flat and
+   fully, like a page being pushed off the screen. The phase ends on the
+   transition itself (see onPageTransitionEnd), so this duration and the JS
+   fallback never have to agree. */
 .reader-page--leave-next {
   transform: translateX(-100%);
-  transition: transform 170ms ease;
+  transition: transform 170ms var(--ease-exit);
 }
 
 .reader-page--leave-prev {
   transform: translateX(100%);
-  transition: transform 170ms ease;
+  transition: transform 170ms var(--ease-exit);
 }
 
-/* Entering: the new word is pushed in from the edge the swipe came from. */
+/* Entering: the new word is pushed in from the edge the swipe came from, at
+   the same pace the old one left. */
 .reader-page--enter-next {
-  animation: page-enter-next 240ms ease;
+  animation: page-enter-next 190ms var(--ease-slide);
 }
 
 .reader-page--enter-prev {
-  animation: page-enter-prev 240ms ease;
+  animation: page-enter-prev 190ms var(--ease-slide);
+}
+
+/* The moving phases stay on their own layer, so a phone repaints the page
+   instead of dropping frames mid-slide. */
+.reader-page--dragging,
+.reader-page--leave-next,
+.reader-page--leave-prev,
+.reader-page--enter-next,
+.reader-page--enter-prev {
+  will-change: transform;
 }
 
 @keyframes page-enter-next {

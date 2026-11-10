@@ -71,6 +71,37 @@ async function drag(page, dx, dy = 0, selector = '.reader-body') {
   await wait(300)
 }
 
+// Press, drag, sample the card's transform while the finger is still down,
+// then release and sample again once the release has settled. Used for the
+// first-card wall, where the card must follow a little and then spring back.
+async function dragHeld(page, dx, selector = '.card-stage') {
+  const box = await page.locator(selector).boundingBox()
+  const viewport = page.viewportSize()
+  const cx = box.x + box.width / 2
+  const cy = Math.max(90, Math.min(box.y + Math.min(box.height / 2, 240), viewport.height - 120))
+  const transformOf = () =>
+    page.locator('.card').evaluate((el) => getComputedStyle(el).transform)
+  await page.mouse.move(cx, cy)
+  await page.mouse.down()
+  await page.mouse.move(cx + dx / 2, cy, { steps: 5 })
+  await page.mouse.move(cx + dx, cy, { steps: 5 })
+  await wait(40)
+  const held = await transformOf()
+  await page.mouse.up()
+  await wait(300)
+  const rested = await transformOf()
+  return { held, rested }
+}
+
+// matrix(a, b, c, d, e, f) or matrix3d(...); translateX is e / m41.
+function translateXOf(transform) {
+  if (!transform || transform === 'none') return 0
+  const values = transform.match(/^matrix(3d)?\((.+)\)$/)
+  if (!values) return 0
+  const parts = values[2].split(',').map((value) => parseFloat(value))
+  return parts.length === 16 ? parts[12] : parts[4]
+}
+
 // Swipe, then sample the page-turn state ~60ms after the finger lifts, while
 // the outgoing page is still sliding. Returns the phase classes and transform.
 async function dragSampled(page, dx, selector = '.reader-body') {
@@ -167,6 +198,257 @@ async function readerTitle(page) {
   return (await page.locator('.bar-title').textContent()).trim()
 }
 
+// The 從 label has to sit on the form control's centre line: its glyph, not
+// just the padded box, is what the eye lines up against the control.
+async function labelAlignment(page) {
+  return page.evaluate(() => {
+    const label = document.querySelector('.field .field-label')
+    const select = document.querySelector('.form-select')
+    if (!label || !select) return null
+    const labelRect = label.getBoundingClientRect()
+    const selectRect = select.getBoundingClientRect()
+    return {
+      labelCenter: Math.round((labelRect.top + labelRect.height / 2) * 10) / 10,
+      selectCenter: Math.round((selectRect.top + selectRect.height / 2) * 10) / 10,
+      delta: Math.round((labelRect.top + labelRect.height / 2 - (selectRect.top + selectRect.height / 2)) * 10) / 10,
+      labelHeight: Math.round(labelRect.height * 10) / 10,
+      labelPaddingTop: getComputedStyle(label).paddingTop,
+      alignItems: getComputedStyle(label.parentElement).alignItems,
+      insideControl:
+        labelRect.top >= selectRect.top - 0.5 && labelRect.bottom <= selectRect.bottom + 0.5,
+    }
+  })
+}
+
+function checkLabelAlignment(mode, align) {
+  check(
+    `${mode}: the 從 label is centred on the form control`,
+    align !== null && Math.abs(align.delta) <= 1,
+    align ? `${align.delta}px (${align.labelCenter} vs ${align.selectCenter})` : 'no label',
+  )
+  check(
+    `${mode}: the 從 glyph sits inside the control's height`,
+    align !== null && align.insideControl,
+    align ? `label ${align.labelHeight}px` : 'no label',
+  )
+  check(
+    `${mode}: the row centres the label instead of padding it`,
+    align !== null && align.alignItems === 'center' && align.labelPaddingTop === '0px',
+    align ? `${align.alignItems} / padding-top ${align.labelPaddingTop}` : 'no label',
+  )
+}
+
+// --- Motion traces ---------------------------------------------------------
+// One CSS value per animation frame, sampled from inside the page, so the
+// paging motion can be judged as a curve rather than a single snapshot.
+async function startTrace(page, selector, kind = 'x') {
+  await page.evaluate(
+    ([sel, mode]) => {
+      const el = document.querySelector(sel)
+      const read = () => {
+        const m = getComputedStyle(el).transform
+        if (!m || m === 'none') return 0
+        const p = m.slice(m.startsWith('matrix3d') ? 9 : 7, -1).split(',').map(Number)
+        if (mode === 'angle') {
+          if (!m.startsWith('matrix3d')) return p[0] < 0 ? 180 : 0
+          return Math.abs(Math.atan2(-p[2], p[0]) * 180 / Math.PI)
+        }
+        return m.startsWith('matrix3d') ? p[12] : p[4]
+      }
+      window.__trace = []
+      const t0 = performance.now()
+      const loop = () => {
+        window.__trace.push([performance.now() - t0, read()])
+        if (performance.now() - t0 < 700) requestAnimationFrame(loop)
+      }
+      requestAnimationFrame(loop)
+    },
+    [selector, kind],
+  )
+}
+
+// Drags, starts sampling while the finger is still down, releases, and waits
+// long enough for both halves of the turn to finish.
+async function swipeTrace(page, dx, gestureSelector, movedSelector) {
+  const box = await page.locator(gestureSelector).boundingBox()
+  const viewport = page.viewportSize()
+  const cx = box.x + box.width / 2
+  const cy = Math.max(90, Math.min(box.y + Math.min(box.height / 2, 240), viewport.height - 120))
+  await page.mouse.move(cx, cy)
+  await page.mouse.down()
+  await page.mouse.move(cx + dx / 2, cy, { steps: 5 })
+  await page.mouse.move(cx + dx, cy, { steps: 5 })
+  await startTrace(page, movedSelector)
+  await page.mouse.up()
+  await wait(700)
+  return page.evaluate(() => window.__trace)
+}
+
+// What the traces above are checked for. `travel` is the direction the item
+// moves on screen: a next swipe goes left.
+function traceVerdict(trace, direction) {
+  const travel = direction === 'next' ? -1 : 1
+  const width = Math.max(...trace.map(([, value]) => Math.abs(value)))
+  const visible = (value) => Math.abs(value) < width - 1
+  const speedAt = (i) => {
+    const [t0, a] = trace[i - 1]
+    const [t1, b] = trace[i]
+    return Math.abs(b - a) / Math.max(0.001, (t1 - t0) / 1000)
+  }
+  let backwards = 0
+  let seamAt = -1
+  let seamClean = null
+  for (let i = 1; i < trace.length; i += 1) {
+    const [, a] = trace[i - 1]
+    const [, b] = trace[i]
+    if (visible(a) && visible(b) && (b - a) * travel < -1.5) backwards += 1
+    if (Math.abs(b - a) > width * 0.5 && Math.sign(a) !== Math.sign(b)) {
+      seamAt = i
+      // At a 60fps sample the last frame before the swap can be up to one frame
+      // short of the edge, so "off screen" is judged as a share of the width.
+      seamClean = Math.abs(a) >= width * 0.9 && Math.abs(b) >= width * 0.9
+    }
+  }
+  // Overshoot is a frame that arrives at rest and then moves again: whatever
+  // travels past the resting point has to stay there.
+  const restAt = trace.findIndex(([, value]) => Math.abs(value) <= 1.5)
+  const overshoot =
+    restAt > 0 ? trace.slice(restAt + 1).filter(([, value]) => Math.abs(value) > 1.5).length : 0
+  let beforeAt = -1
+  let afterAt = -1
+  for (let i = 1; i < (seamAt < 0 ? trace.length : seamAt); i += 1) {
+    if (visible(trace[i - 1][1]) && visible(trace[i][1])) beforeAt = i
+  }
+  if (seamAt > 0) {
+    for (let i = seamAt + 1; i < trace.length; i += 1) {
+      if (afterAt < 0 && visible(trace[i - 1][1]) && visible(trace[i][1])) afterAt = i
+    }
+  }
+  const exitSpeed = beforeAt > 0 ? speedAt(beforeAt) : 0
+  const entrySpeed = afterAt > 0 ? speedAt(afterAt) : 0
+  const ratio =
+    exitSpeed > 0 && entrySpeed > 0
+      ? Math.max(exitSpeed, entrySpeed) / Math.min(exitSpeed, entrySpeed)
+      : Infinity
+  const settle = trace.find(([, value]) => Math.abs(value) <= 0.5)
+  return {
+    width,
+    backwards,
+    overshoot,
+    seamAt,
+    seamClean,
+    exitSpeed: Math.round(exitSpeed),
+    entrySpeed: Math.round(entrySpeed),
+    ratio: Math.round(ratio * 100) / 100,
+    settleMs: settle ? Math.round(settle[0]) : null,
+    end: Math.round(trace.at(-1)[1]),
+    frames: trace.length,
+  }
+}
+
+// The checks every turn has to pass: nothing moves back against the hand while
+// it is on screen, nothing overshoots its resting point, the swap happens
+// entirely off screen, and the pace does not change across the swap.
+function checkTurn(label, verdict, settleLimit) {
+  check(`${label}: nothing slides back while it is on screen`, verdict.backwards === 0, JSON.stringify(verdict))
+  check(`${label}: the turn does not overshoot`, verdict.overshoot === 0, JSON.stringify(verdict))
+  check(`${label}: the swap happens fully off screen`, verdict.seamClean === true, JSON.stringify(verdict))
+  check(
+    `${label}: the pace holds across the swap`,
+    verdict.ratio <= 1.6,
+    `exit ${verdict.exitSpeed} px/s, entry ${verdict.entrySpeed} px/s (${verdict.ratio}x)`,
+  )
+}
+
+// A release below the threshold never swaps anything: it has to come back to
+// rest quickly and without passing the resting point.
+function checkSettle(label, verdict, settleLimit) {
+  check(`${label}: the release does not overshoot rest`, verdict.overshoot === 0, JSON.stringify(verdict))
+  check(
+    `${label}: a short drag settles back within ${settleLimit}ms`,
+    verdict.settleMs !== null && verdict.settleMs <= settleLimit && verdict.end === 0,
+    `${verdict.settleMs}ms, end ${verdict.end}px`,
+  )
+}
+
+// --- Zoom lock -------------------------------------------------------------
+// The phone page must not scale, by double tap or by pinch. Pinch zoom is
+// reproducible in headless Chromium through raw CDP touch events (it takes
+// `visualViewport.scale` from 1 to 5 on a page that allows scaling), so the
+// lock is verifiable. Chrome's double tap zoom is an Android-only gesture that
+// headless Chromium never performs, so the two declarative causes (the viewport
+// meta and `touch-action`) are asserted directly as well.
+const UNRESTRICTED_PAGE =
+  'data:text/html,' +
+  encodeURIComponent(
+    '<meta name="viewport" content="width=device-width, initial-scale=1">' +
+      '<p style="font-size:40px">hello hello hello hello</p>',
+  )
+
+const touchPoint = (x, y, id) => ({ x, y, id, radiusX: 12, radiusY: 12, force: 1 })
+
+async function pinchAt(cdp, cx, cy) {
+  await cdp.send('Input.dispatchTouchEvent', {
+    type: 'touchStart',
+    touchPoints: [touchPoint(cx - 45, cy, 0), touchPoint(cx + 45, cy, 1)],
+  })
+  for (let step = 1; step <= 6; step += 1) {
+    await cdp.send('Input.dispatchTouchEvent', {
+      type: 'touchMove',
+      touchPoints: [touchPoint(cx - 45 - step * 12, cy, 0), touchPoint(cx + 45 + step * 12, cy, 1)],
+    })
+    await wait(40)
+  }
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] })
+  await wait(400)
+}
+
+async function tapTwice(page, x, y) {
+  for (let tap = 0; tap < 2; tap += 1) {
+    await page.touchscreen.tap(x, y)
+    await wait(90)
+  }
+  await wait(400)
+}
+
+async function zoomState(page) {
+  return page.evaluate(() => ({
+    scale: Math.round(window.visualViewport.scale * 1000) / 1000,
+    innerWidth: window.innerWidth,
+    docWidth: document.documentElement.clientWidth,
+  }))
+}
+
+async function zoomLocked(page, cdp, label, cx, cy, expectScreen) {
+  const before = await zoomState(page)
+  await pinchAt(cdp, cx, cy)
+  const afterPinch = await zoomState(page)
+  check(
+    `${label}: pinch does not zoom the page`,
+    afterPinch.scale === 1,
+    `scale ${before.scale} -> ${afterPinch.scale}`,
+  )
+  check(
+    `${label}: pinch does not widen the layout`,
+    afterPinch.innerWidth === before.innerWidth && afterPinch.docWidth === before.docWidth,
+    JSON.stringify(afterPinch),
+  )
+  await tapTwice(page, cx, cy)
+  const afterTap = await zoomState(page)
+  check(
+    `${label}: a double tap does not zoom the page`,
+    afterTap.scale === 1 && afterTap.innerWidth === before.innerWidth,
+    `scale ${afterTap.scale} width ${afterTap.innerWidth}`,
+  )
+  if (expectScreen) {
+    check(
+      `${label}: still on the same screen after the gestures`,
+      (await page.locator(expectScreen).count()) === 1,
+      expectScreen,
+    )
+  }
+}
+
 const server = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort'], {
   stdio: ['ignore', 'pipe', 'pipe'],
 })
@@ -197,6 +479,26 @@ try {
     servedBase,
   )
   check('loading text is "Loading ..."', (await page.locator('.loading-text').textContent()).trim() === 'Loading ...')
+  // The first paint already names the site: head plus the build credit, and
+  // the credit is the only footer line on this screen.
+  check(
+    'loading shows the site title',
+    (await page.locator('.loading .site-title').textContent()).trim() === '大家の日本語',
+    await page.locator('.loading .site-title').textContent(),
+  )
+  check(
+    'loading shows the subtitle',
+    (await page.locator('.loading .site-subtitle').textContent()).trim() === '轉型練習',
+  )
+  check(
+    'loading shows the description',
+    (await page.locator('.loading .site-lede').textContent()).trim() === '涵蓋初級 1 – 50 課的單詞',
+  )
+  check(
+    'loading shows the build credit',
+    (await page.locator('.loading .footer-link').textContent()).trim() === 'Build with ❤ by Mane',
+  )
+  check('loading has no bug line', (await page.locator('.loading .footer-feedback').count()) === 0)
   const progressStart = await page.evaluate(() => {
     const fill = document.querySelector('.progress-fill')
     return fill ? parseFloat(fill.style.width || '0') : 0
@@ -256,6 +558,57 @@ try {
   check('boot failure names the lesson', errorText.includes('lesson 1'), errorText)
   check('boot failure shows a retry button', (await failPage.locator('.loading-error .button').count()) === 1)
   check('boot failure stops the progress bar', (await failPage.locator('.progress-fill').evaluate((el) => parseFloat(el.style.width || '0'))) < 100)
+  // The head and the credit line stay on the failure screen too.
+  check(
+    'a failed boot keeps the site title',
+    (await failPage.locator('.loading .site-title').textContent()).trim() === '大家の日本語',
+  )
+  check('a failed boot keeps the build credit', (await failPage.locator('.loading .footer-link').count()) === 1)
+  // Geometry: the head stays on top, the credit sits under the progress area, and
+  // everything fits the 390×844 viewport without a sideways scroll.
+  const loadLayout = await failPage.evaluate(() => {
+    const box = (selector) => {
+      const el = document.querySelector(selector)
+      if (!el) return null
+      const rect = el.getBoundingClientRect()
+      return { top: rect.top, bottom: rect.bottom, height: rect.height }
+    }
+    return {
+      title: box('.loading .site-title'),
+      lede: box('.loading .site-lede'),
+      text: box('.loading-text'),
+      progress: box('.progress'),
+      footer: box('.loading .footer-link'),
+      viewport: window.innerHeight,
+      width: document.documentElement.scrollWidth,
+      innerWidth: window.innerWidth,
+    }
+  })
+  check(
+    'the loading head sits above the progress line',
+    loadLayout.lede.bottom < loadLayout.text.top,
+    JSON.stringify(loadLayout),
+  )
+  check(
+    'the loading credit sits below the progress bar',
+    loadLayout.progress.bottom < loadLayout.footer.top,
+    JSON.stringify(loadLayout),
+  )
+  check(
+    'the loading credit stays inside the viewport',
+    loadLayout.footer.bottom <= loadLayout.viewport + 1,
+    `${loadLayout.footer.bottom} vs ${loadLayout.viewport}`,
+  )
+  check(
+    'the loading screen does not scroll sideways',
+    loadLayout.width <= loadLayout.innerWidth,
+    `${loadLayout.width} vs ${loadLayout.innerWidth}`,
+  )
+  await failPage.locator('.loading .footer-link').click()
+  check('the loading credit opens the About sheet', (await failPage.locator('.sheet').count()) === 1)
+  check('the loading sheet carries the repository link', (await failPage.locator('.sheet-repo').count()) === 1)
+  await failPage.locator('.sheet .button').click()
+  check('the About sheet closes', (await failPage.locator('.sheet').count()) === 0)
   await failPage.locator('.loading-error .button').click()
   await failPage.waitForSelector('.home-actions', { timeout: 30000 })
   check('retry re-runs boot and reaches home', true)
@@ -436,6 +789,7 @@ try {
   await page.locator('.home-actions button', { hasText: '翻卡學習' }).click()
   await page.waitForSelector('.form-select', { timeout: 5000 })
   check('card picker shows 從 and 到', (await page.locator('.form-chips').count()) === 1)
+  checkLabelAlignment('card picker', await labelAlignment(page))
   check('到 header row exists', (await page.locator('.targets-head').count()) === 1)
   check('到 header labels the row', (await page.locator('.targets-head .field-label').textContent()).trim() === '到')
   check('到 header holds 全選', (await page.locator('.targets-head .text-button', { hasText: '全選' }).count()) === 1)
@@ -665,6 +1019,18 @@ try {
   check('a left-to-right swipe goes back', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
   check('going back animates the other way', backward.classes.includes('reader-page--leave-prev'), backward.classes)
 
+  // The turn judged as a curve: release, sample every frame, then check that
+  // nothing travels backwards on screen, nothing overshoots, the swap happens
+  // off screen, and the pace carries across it.
+  const readerSpring = traceVerdict(await swipeTrace(page, 55, '.reader-body', '.reader-page'), 'next')
+  checkSettle('dictionary', readerSpring, 160)
+  check('a 55px drag keeps the word', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  const readerTurn = traceVerdict(await swipeTrace(page, -120, '.reader-body', '.reader-page'), 'next')
+  check('the traced swipe advances', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
+  checkTurn('dictionary page turn', readerTurn, 160)
+  await drag(page, 120)
+  check('the traced swipe went back to the first word', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+
   // Above 550px the reader keeps text selectable and pages only by button.
   await page.setViewportSize({ width: 900, height: 900 })
   const wideBefore = await readerTitle(page)
@@ -788,6 +1154,26 @@ try {
   check('a tap flips the card state', await cardFlipped(page))
   await wait(280)
   check('the flip finishes on the back', await cardFlipped(page))
+
+  // The turn as a curve: the rotation has to rise to 180° without passing it
+  // and without any frame moving backwards.
+  await page.locator('.card-stage').click()
+  await wait(350)
+  check('a second tap returns to the face before the trace', !(await cardFlipped(page)))
+  await startTrace(page, '.card-inner', 'angle')
+  await page.locator('.card-stage').click()
+  await wait(600)
+  const flipAngles = (await page.evaluate(() => window.__trace)).map(([, angle]) => angle)
+  const flipPeak = Math.max(...flipAngles)
+  let flipBack = 0
+  for (let i = 1; i < flipAngles.length; i += 1) {
+    if (flipAngles[i] < flipAngles[i - 1] - 1.5) flipBack += 1
+  }
+  check('the flip never runs past 180°', flipPeak <= 181, `${Math.round(flipPeak)}°`)
+  check('the flip never turns back on itself', flipBack === 0, `${flipBack} frames went backwards`)
+  const flipTurnMs = await page.locator('.card-inner').evaluate((el) => getComputedStyle(el).transitionDuration)
+  check('the flip is a single short turn', parseFloat(flipTurnMs) * 1000 <= 260, flipTurnMs)
+  await wait(200)
   check(
     'the answer carries the asked form as a tag',
     (await page.locator('.card-back .tag--form').textContent()).trim() === '字典形',
@@ -826,6 +1212,16 @@ try {
     (await page.locator('.bar-title').textContent()).trim() === '練習（1/3）',
     (await page.locator('.bar-title').textContent()).trim(),
   )
+
+  // The same curve check as the reader, on the card.
+  const cardSpring = traceVerdict(await swipeTrace(page, 55, '.card-stage', '.card'), 'next')
+  checkSettle('cards', cardSpring, 180)
+  check('a 55px card drag keeps the card', (await page.locator('.bar-title').textContent()).trim() === '練習（1/3）')
+  const cardTurn = traceVerdict(await swipeTrace(page, -120, '.card-stage', '.card'), 'next')
+  check('the traced card swipe advances', (await page.locator('.bar-title').textContent()).trim() === '練習（2/3）')
+  checkTurn('card turn', cardTurn, 200)
+  await drag(page, 120, 0, '.card-stage')
+  check('the traced card swipe came back', (await page.locator('.bar-title').textContent()).trim() === '練習（1/3）')
 
   // 下一張 / 上一張 run the same leave-then-enter motion as a swipe.
   await page.locator('.card-controls .control').nth(1).click()
@@ -1081,6 +1477,7 @@ try {
   await page.locator('.home-actions button', { hasText: '測驗' }).click()
   await page.waitForSelector('.chip-grid', { timeout: 5000 })
   await page.locator('.chip', { hasText: '第5課' }).click()
+  checkLabelAlignment('quiz picker', await labelAlignment(page))
   await page.locator('.form-select').click()
   await page.locator('.form-option', { hasText: /^ます形$/ }).click()
   await page.locator('.picker-start').click()
@@ -1480,6 +1877,349 @@ try {
   await wait(60)
   check('reduced motion flips instantly', await cardFlipped(page))
   check('reduced motion removes the flip transition', flipDuration === '0s', flipDuration)
+  // The last card ends the run on a swipe, not only on the button. Its own page
+  // keeps the card run here independent of the walk-through's card section.
+  const cardPage = await browser.newPage({ viewport: { width: 390, height: 844 } })
+  await cardPage.goto(BASE, { waitUntil: 'load' })
+  await cardPage.waitForSelector('.home-actions', { timeout: 60000 })
+
+  const startCardRun = async () => {
+    await cardPage.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+    await cardPage.waitForSelector('.chip-grid', { timeout: 5000 })
+    const chip = cardPage.locator('.chip', { hasText: '第5課' })
+    if (!((await chip.getAttribute('class')) || '').includes('chip--on')) await chip.click()
+    await cardPage.locator('.picker-start').click()
+    await cardPage.waitForSelector('.card-stage', { timeout: 5000 })
+  }
+  const cardTitle = async () => (await cardPage.locator('.bar-title').textContent()).trim()
+
+  await startCardRun()
+  check('the swipe finish run starts on the first card', (await cardTitle()) === '練習（1/3）', await cardTitle())
+
+  // The first card has nothing behind it: a right-hand drag pulls the card
+  // against the edge at a third of the finger, then the release springs it
+  // back. The card never changes.
+  const wall = await dragHeld(cardPage, 60)
+  const wallX = translateXOf(wall.held)
+  check(
+    'the first card follows the drag at a third of the finger',
+    wallX > 12 && wallX < 30 && wallX < 60 / 2,
+    `${wallX}px for a 60px drag`,
+  )
+  check('the first card springs back to rest', Math.abs(translateXOf(wall.rested)) < 1, wall.rested)
+
+  const wallFar = await dragHeld(cardPage, 180)
+  const wallFarX = translateXOf(wallFar.held)
+  check(
+    'resistance caps the follow at 40px',
+    wallFarX > 35 && wallFarX <= 40.5,
+    `${wallFarX}px for a 180px drag`,
+  )
+  check('a long drag also springs back to rest', Math.abs(translateXOf(wallFar.rested)) < 1, wallFar.rested)
+  check('swiping right on the first card stays put', (await cardTitle()) === '練習（1/3）', await cardTitle())
+  check('a stayed card is not a finished run', (await cardPage.locator('.complete').count()) === 0)
+
+  // A card that is not the last one still just advances.
+  await drag(cardPage, -120, 0, '.card-stage')
+  check('swiping off the first card reaches the second', (await cardTitle()) === '練習（2/3）', await cardTitle())
+  check('the second card does not end the run', (await cardPage.locator('.complete').count()) === 0)
+
+  // Reaching the last card is not the end by itself.
+  await drag(cardPage, -120, 0, '.card-stage')
+  check('swiping again reaches the last card', (await cardTitle()) === '練習（3/3）', await cardTitle())
+  check(
+    'reaching the last card does not finish the run by itself',
+    (await cardPage.locator('.complete').count()) === 0,
+  )
+  check(
+    'the last card offers 完成',
+    (await cardPage.locator('.card-controls .control').nth(1).textContent()).trim() === '完成',
+    (await cardPage.locator('.card-controls .control').nth(1).textContent()).trim(),
+  )
+
+  // Swiping off the last card is 完成.
+  await drag(cardPage, -120, 0, '.card-stage')
+  await wait(600)
+  check(
+    'swiping off the last card finishes the run',
+    (await cardPage.locator('.complete').count()) === 1,
+    `title ${await cardTitle()}`,
+  )
+  check('a finished card run hides the card', (await cardPage.locator('.card-stage').count()) === 0)
+  check('a finished card run hides the controls', (await cardPage.locator('.card-controls').count()) === 0)
+  check(
+    'the swipe finish shows the same congrats copy',
+    (await cardPage.locator('.complete-title').textContent()).trim() === '恭喜，你已經做完了練習。',
+    (await cardPage.locator('.complete-title').textContent()).trim(),
+  )
+  check('the swipe finish offers 返回主頁', (await cardPage.locator('.complete-home').count()) === 1)
+  check(
+    'the finished card does not slide the same card back in',
+    (await cardPage.locator('.card--enter-next, .card--enter-prev, .card--leave-next, .card--leave-prev').count()) === 0,
+  )
+
+  // Reduced motion: no slide to wait for, but the same rule applies.
+  await cardPage.emulateMedia({ reducedMotion: 'reduce' })
+  await cardPage.locator('.complete-home').click()
+  await cardPage.waitForSelector('.home-actions', { timeout: 5000 })
+  await startCardRun()
+  await drag(cardPage, 120, 0, '.card-stage')
+  check('reduced motion leaves the first card still', (await cardTitle()) === '練習（1/3）', await cardTitle())
+  check(
+    'reduced motion does not move the first card at all',
+    translateXOf(await cardPage.locator('.card').evaluate((el) => getComputedStyle(el).transform)) === 0,
+  )
+  await drag(cardPage, -120, 0, '.card-stage')
+  check('reduced motion still advances a card', (await cardTitle()) === '練習（2/3）', await cardTitle())
+  await drag(cardPage, -120, 0, '.card-stage')
+  check('reduced motion reaches the last card', (await cardTitle()) === '練習（3/3）', await cardTitle())
+  await drag(cardPage, -120, 0, '.card-stage')
+  await wait(600)
+  check(
+    'reduced motion finishes on the last card too',
+    (await cardPage.locator('.complete').count()) === 1,
+    `title ${await cardTitle()}`,
+  )
+  check(
+    'reduced motion does not finish one card early',
+    (await cardPage.locator('.complete-title').textContent()).trim() === '恭喜，你已經做完了練習。',
+  )
+  await cardPage.emulateMedia({ reducedMotion: null })
+  await cardPage.close()
+
+  // The page's own scrollbar is hidden and drawn by the app instead. A fresh
+  // page keeps this block independent of the rest of the walk-through.
+  const barPage = await browser.newPage({ viewport: { width: 390, height: 844 } })
+  await barPage.goto(BASE, { waitUntil: 'load' })
+  await barPage.waitForSelector('.home-actions', { timeout: 60000 })
+  check(
+    'the browser page scrollbar is hidden',
+    (await barPage.evaluate(() => getComputedStyle(document.documentElement).scrollbarWidth)) === 'none',
+    await barPage.evaluate(() => getComputedStyle(document.documentElement).scrollbarWidth),
+  )
+  // The window is not a scroll container here, so nothing should be drawn yet.
+  check(
+    'nothing is drawn on a page that fits',
+    (await barPage.locator('.page-scrollbar').count()) === 0,
+  )
+  // A dropdown list is its own scroll container and keeps the native bar.
+  await barPage.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await barPage.waitForSelector('.form-select', { timeout: 5000 })
+  await barPage.locator('.form-select').click()
+  const listBar = await barPage
+    .locator('.form-list')
+    .evaluate((el) => getComputedStyle(el).scrollbarWidth)
+  check('the form dropdown keeps its native scrollbar', listBar === 'auto', listBar)
+  await barPage.locator('.icon-button[aria-label="返回"]').click()
+  await barPage.waitForSelector('.home-actions', { timeout: 5000 })
+
+  await barPage.locator('.home-actions button', { hasText: '字典' }).click()
+  await barPage.waitForSelector('.chip-grid', { timeout: 5000 })
+  await barPage.locator('.text-button', { hasText: '全選' }).first().click()
+  await barPage.locator('.picker-start').click()
+  await barPage.waitForSelector('.reader-body', { timeout: 5000 })
+  await wait(300)
+
+  const barRead = () => barPage.evaluate(() => {
+    const el = document.querySelector('.page-scrollbar')
+    if (!el) return { present: false }
+    const style = getComputedStyle(el)
+    const rect = el.getBoundingClientRect()
+    return {
+      present: true,
+      on: (el.getAttribute('class') || '').includes('page-scrollbar--on'),
+      opacity: Number(style.opacity),
+      width: Math.round(rect.width * 10) / 10,
+      height: Math.round(rect.height * 10) / 10,
+      top: Math.round(rect.top * 10) / 10,
+      right: Math.round((window.innerWidth - rect.right) * 10) / 10,
+      pointer: style.pointerEvents,
+      transition: style.transitionDuration,
+    }
+  })
+
+  const pageMetrics = await barPage.evaluate(() => ({
+    content: document.documentElement.scrollHeight,
+    viewport: window.innerHeight,
+  }))
+  check('the reader page scrolls', pageMetrics.content > pageMetrics.viewport + 1, JSON.stringify(pageMetrics))
+  const barAtRest = await barRead()
+  check('the thumb is measured but hidden before the page moves', barAtRest.present && !barAtRest.on && barAtRest.opacity === 0, JSON.stringify(barAtRest))
+  check('the thumb is 4px wide', barAtRest.width === 4, String(barAtRest.width))
+  const wantedHeight = 812 * (pageMetrics.viewport / pageMetrics.content)
+  check(
+    'the thumb is as long as the share of the page on screen',
+    Math.abs(barAtRest.height - wantedHeight) <= 2,
+    `${barAtRest.height} vs ${Math.round(wantedHeight * 10) / 10}`,
+  )
+  check('the thumb hugs the column edge', barAtRest.right === 3, String(barAtRest.right))
+  check('the thumb starts one edge inset down', barAtRest.top === 16, String(barAtRest.top))
+  check('the thumb never swallows a tap', barAtRest.pointer === 'none', barAtRest.pointer)
+
+  await barPage.evaluate(() => window.scrollTo({ top: 300 }))
+  await wait(200)
+  const barShown = await barRead()
+  check('a scroll reveals the thumb', barShown.on && barShown.opacity === 1, JSON.stringify(barShown))
+  check(
+    'the thumb follows the page',
+    Math.abs(barShown.top - barAtRest.top) > 20 && barShown.top > barAtRest.top,
+    `${barAtRest.top} -> ${barShown.top}`,
+  )
+
+  await barPage.evaluate(() => window.scrollTo({ top: 1e9 }))
+  await wait(200)
+  const barBottom = await barRead()
+  check(
+    'at the bottom the thumb reaches the end of the track',
+    Math.abs(barBottom.top + barBottom.height - (pageMetrics.viewport - 16)) <= 2,
+    `bottom ${Math.round(barBottom.top + barBottom.height)} vs ${pageMetrics.viewport - 16}`,
+  )
+  await wait(1300)
+  const barFaded = await barRead()
+  check('the thumb leaves once the page is still', !barFaded.on && barFaded.opacity === 0, JSON.stringify(barFaded))
+
+  // The drawn thumb sits at the column's right edge, not the window's.
+  await barPage.setViewportSize({ width: 900, height: 900 })
+  await barPage.evaluate(() => window.scrollTo({ top: 400 }))
+  await wait(250)
+  const barWide = await barPage.evaluate(() => {
+    const el = document.querySelector('.page-scrollbar')
+    const column = document.querySelector('.column').getBoundingClientRect()
+    const rect = el.getBoundingClientRect()
+    return {
+      gap: Math.round(column.right - rect.right),
+      right: Math.round(window.innerWidth - rect.right),
+      on: (el.getAttribute('class') || '').includes('page-scrollbar--on'),
+    }
+  })
+  check(
+    'on a wide screen the thumb sits on the column edge',
+    barWide.gap === 3 && barWide.right > 100,
+    JSON.stringify(barWide),
+  )
+  check('the wide thumb is still shown after the resize scroll', barWide.on)
+
+  // Reduced motion: the thumb still appears and leaves, it just does not fade.
+  await barPage.setViewportSize({ width: 390, height: 844 })
+  await barPage.emulateMedia({ reducedMotion: 'reduce' })
+  await barPage.evaluate(() => window.scrollTo({ top: 500 }))
+  await wait(250)
+  const barReduced = await barRead()
+  check('reduced motion removes the thumb fade', barReduced.transition === '0s', barReduced.transition)
+  check('reduced motion still shows the thumb while moving', barReduced.on, JSON.stringify(barReduced))
+  await barPage.emulateMedia({ reducedMotion: null })
+
+  // The thumb is a scroll hint only: it must not cover a footer control.
+  const footerTap = await barPage.evaluate(() => {
+    const el = document.querySelector('.page-scrollbar')
+    el.classList.add('page-scrollbar--on')
+    const rect = el.getBoundingClientRect()
+    const at = document.elementFromPoint(rect.left + rect.width / 2, rect.top + 4)
+    el.classList.remove('page-scrollbar--on')
+    return at ? at.className || at.tagName : 'none'
+  })
+  check('the thumb is not the top element under the finger', footerTap !== 'page-scrollbar', String(footerTap))
+  await barPage.close()
+
+  // Zoom lock on every screen, in a phone-shaped context with touch.
+  const zoomContext = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    deviceScaleFactor: 3,
+    isMobile: true,
+    hasTouch: true,
+  })
+  const zoomPage = await zoomContext.newPage()
+  const zoomCdp = await zoomContext.newCDPSession(zoomPage)
+
+  // Negative control: the gesture really is live, so a passing check below
+  // means the lock works and not that the pinch did nothing at all.
+  await zoomPage.goto(UNRESTRICTED_PAGE)
+  const freeBefore = (await zoomState(zoomPage)).scale
+  await pinchAt(zoomCdp, 195, 300)
+  const freeAfter = (await zoomState(zoomPage)).scale
+  check(
+    'the pinch probe can actually zoom an unrestricted page',
+    freeAfter > freeBefore,
+    `scale ${freeBefore} -> ${freeAfter}`,
+  )
+
+  // The loading screen needs a stall: hold lesson 1 back long enough to pinch.
+  await zoomPage.route('**/dict/lesson_1.json', async (route) => {
+    await wait(2600)
+    await route.continue()
+  })
+  await zoomPage.goto(BASE, { waitUntil: 'load' })
+  await zoomPage.waitForSelector('.progress', { timeout: 10000 })
+  const viewportMeta = await zoomPage.evaluate(
+    () => document.querySelector('meta[name="viewport"]')?.getAttribute('content') ?? '',
+  )
+  check('the viewport meta locks the scale', /maximum-scale=1/.test(viewportMeta), viewportMeta)
+  check('the viewport meta drops user scaling', /user-scalable=no/.test(viewportMeta), viewportMeta)
+  const rootTouch = await zoomPage.evaluate(() => getComputedStyle(document.documentElement).touchAction)
+  const bodyTouch = await zoomPage.evaluate(() => getComputedStyle(document.body).touchAction)
+  check('the page declares touch-action: manipulation', rootTouch === 'manipulation' && bodyTouch === 'manipulation', `${rootTouch} / ${bodyTouch}`)
+  await zoomLocked(zoomPage, zoomCdp, 'loading', 195, 360, '.progress')
+  await zoomPage.waitForSelector('.home-actions', { timeout: 30000 })
+  await zoomPage.unroute('**/dict/lesson_1.json')
+
+  await zoomLocked(zoomPage, zoomCdp, 'home', 195, 40, '.home-actions')
+
+  // A tap has to reach the handler without Chrome's old 300ms wait.
+  const tapDelay = await zoomPage.evaluate(() => {
+    const button = document.querySelector('.home-actions button')
+    window.__tapStart = null
+    window.__tapDelay = null
+    button.addEventListener('pointerdown', () => {
+      window.__tapStart = performance.now()
+    })
+    button.addEventListener('click', () => {
+      window.__tapDelay = performance.now() - window.__tapStart
+    })
+    return true
+  })
+  const dictButton = await zoomPage.locator('.home-actions button', { hasText: '字典' }).boundingBox()
+  await zoomPage.touchscreen.tap(dictButton.x + dictButton.width / 2, dictButton.y + dictButton.height / 2)
+  await zoomPage.waitForSelector('.chip-grid', { timeout: 5000 })
+  const tapLatency = await zoomPage.evaluate(() => window.__tapDelay)
+  check('a tap is not held back by a 300ms wait', tapLatency !== null && tapLatency < 250, `${Math.round(tapLatency)}ms (${tapDelay})`)
+
+  await zoomLocked(zoomPage, zoomCdp, 'picker', 195, 40, '.chip-grid')
+  if (!((await zoomPage.locator('.chip', { hasText: '第5課' }).getAttribute('class')) || '').includes('chip--on')) {
+    await zoomPage.locator('.chip', { hasText: '第5課' }).click()
+  }
+  await zoomPage.locator('.picker-start').click()
+  await zoomPage.waitForSelector('.reader-body', { timeout: 5000 })
+  await zoomLocked(zoomPage, zoomCdp, 'dictionary', 195, 40, '.reader-body')
+
+  await zoomPage.locator('.icon-button[aria-label="返回"]').click()
+  await zoomPage.waitForSelector('.chip-grid', { timeout: 5000 })
+  await zoomPage.locator('.icon-button[aria-label="返回"]').click()
+  await zoomPage.waitForSelector('.home-actions', { timeout: 5000 })
+  await zoomPage.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await zoomPage.waitForSelector('.chip-grid', { timeout: 5000 })
+  const cardZoomChip = zoomPage.locator('.chip', { hasText: '第5課' })
+  if (!((await cardZoomChip.getAttribute('class')) || '').includes('chip--on')) await cardZoomChip.click()
+  await zoomPage.locator('.picker-start').click()
+  await zoomPage.waitForSelector('.card-stage', { timeout: 5000 })
+  await zoomLocked(zoomPage, zoomCdp, 'cards', 195, 40, '.card-stage')
+
+  await zoomPage.locator('.icon-button[aria-label="返回"]').click()
+  await zoomPage.waitForSelector('.chip-grid', { timeout: 5000 })
+  await zoomPage.locator('.icon-button[aria-label="返回"]').click()
+  await zoomPage.waitForSelector('.home-actions', { timeout: 5000 })
+  await zoomPage.locator('.home-actions button', { hasText: '測驗' }).click()
+  await zoomPage.waitForSelector('.chip-grid', { timeout: 5000 })
+  const quizZoomChip = zoomPage.locator('.chip', { hasText: '第5課' })
+  if (!((await quizZoomChip.getAttribute('class')) || '').includes('chip--on')) await quizZoomChip.click()
+  await zoomPage.locator('.picker-start').click()
+  await zoomPage.waitForSelector('.quiz-body', { timeout: 5000 })
+  await zoomLocked(zoomPage, zoomCdp, 'quiz', 195, 40, '.keyboard')
+
+  await zoomPage.locator('.icon-button[aria-label="設定"]').click()
+  await zoomPage.waitForSelector('.settings', { timeout: 5000 })
+  await zoomLocked(zoomPage, zoomCdp, 'settings', 195, 40, '.settings')
+  await zoomContext.close()
+
 } catch (error) {
   failures.push(`error: ${error.message}`)
   if (serverLog) failures.push(`server log:\n${serverLog.slice(-2000)}`)

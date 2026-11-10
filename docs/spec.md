@@ -93,6 +93,20 @@ A reload starts at `loading` again. When the dictionary is already in IndexedDB,
 
 The column is `min(100%, 480px)`, centered horizontally. At viewport widths of 550px or less the column is full-bleed: it fills the browser, with no side margins, radius, or shadow, and the gradient background and grain are dropped so the column colour is the whole page. Above 550px the column keeps its frame and the background is visible; that frame is also the signal that the page is in desktop mode.
 
+### Loading
+
+The loading screen carries the same three-line head as the home screen: the large
+title `大家の日本語`, the medium subtitle `轉型練習`, and the line
+`涵蓋初級 1 – 50 課的單詞`. The `Loading ...` line and the progress bar sit under
+that head.
+
+Its footer is the credit line `Build with ❤ by Mane` alone; the loading screen
+does not carry the `🥺 如果有 BUG 記得告訴我！` line. The credit opens the same
+About sheet as the home footer.
+
+The head and the footer stay on screen while boot runs and while a failure offers
+retry; only the progress area changes.
+
 ### Home
 
 The head is three lines above the entries: the large title `大家の日本語`, the medium subtitle `轉型練習` under it, and the line `涵蓋初級 1 – 50 課的單詞` under that.
@@ -124,7 +138,7 @@ Dictionary mode ends there, with 開始 below.
 
 Card mode and quiz mode add a 變形 block.
 
-- 從 is a single choice. The default is `masu-form`. The control is one button that opens a list of the 15 names.
+- 從 is a single choice. The default is `masu-form`. The control is one button that opens a list of the 15 names. The 從 label and that button share one centre line: the label is centred against the 36px control, never nudged up or down with padding, so the glyph sits halfway down the control's height.
 - 到 is a multiple choice. The default is `dictionary-form` only. The buttons wrap. A header row sits above the chips: 到 on the left and 全選 on the right. 全選 selects every form except 從. If those forms are already all selected, the next press leaves only `dictionary-form`, or `masu-form` when 從 is already the dictionary form.
 - Changing 從 to a form that is selected in 到 removes that target immediately.
 - While no lesson is selected, the footer shows `請至少選擇一門課程才可以開始` above 開始, in every mode. This line comes first: a run with no vocabulary cannot start, so it replaces the 轉型 line below.
@@ -149,7 +163,7 @@ The body lists every one of the 15 forms, in the canonical order of the table ab
 
 All 15 blocks share one format: the same padding, a hairline separator between blocks, and no tinted panel, accent border, radius or inset margins. The block for the current 預設顯示形式 is simply the first block; the others follow in the canonical order. A word opens at the top of the page. There is no separate 字典形 section at the bottom.
 
-At 550px or less, swipe right-to-left for the next word and swipe left-to-right for the previous word: the page follows the hand, so the next word is pushed in from the right edge. The word follows the finger or the pointer. A horizontal move past 72px changes the word. A shorter move springs back. The first item does not move backward. The last item does not move forward. Vertical movement stays page scroll.
+At 550px or less, swipe right-to-left for the next word and swipe left-to-right for the previous word: the page follows the hand, so the next word is pushed in from the right edge. The word follows the finger or the pointer. A horizontal move past 72px changes the word. A shorter move settles back to rest in about 140ms and does not pass its resting point. The first item does not move backward. The last item does not move forward. Vertical movement stays page scroll.
 
 Paging is a flat horizontal slide, the way a phone moves between its own screens: the word follows the finger in a straight horizontal line with no rotation, no tilt, no fade and no depth. The outgoing page slides fully out in the direction of travel and the new word is pushed in from the opposite edge, both staying flat on the plane. The same motion runs when the footer controls are pressed. Under `prefers-reduced-motion: reduce` the word changes at once, with no slide. Card mode pages the same way: right-to-left is the next card.
 
@@ -174,11 +188,15 @@ Face:
 - The group tag while 一開始顯示幾類動詞 is on. Default on.
 - A line `變成` plus the target form’s name, for example `變成字典形`.
 
-A tap flips the card with a 3D page-turn (`rotateY`, about 300ms). The back shows the target `vol`, its reading, and `chinese`, plus two tags: the target form’s name, for example `字典形`, then the verb-class tag, for example `2類動詞`, in that order. Both answer tags are always there: they ignore 一開始顯示幾類動詞 and 顯示平假名注音, so the class is named on the answer even when the switch is off. Another tap flips back to the face.
+A tap flips the card with a 3D page-turn (`rotateY`, about 240ms, decelerating, no overshoot past 180°). The back shows the target `vol`, its reading, and `chinese`, plus two tags: the target form’s name, for example `字典形`, then the verb-class tag, for example `2類動詞`, in that order. Both answer tags are always there: they ignore 一開始顯示幾類動詞 and 顯示平假名注音, so the class is named on the answer even when the switch is off. Another tap flips back to the face.
 
 The card list is shuffled once when 開始 is pressed; 上一張 and 下一張 then walk that frozen order rather than the lesson and form order. Swipe right-to-left for the next card, the same way the dictionary pages: the card follows the hand and the next one is pushed in from the right edge. Swipe left-to-right for the previous card. The threshold matches the dictionary. A new card opens on its face. Pressing 上一張 or 下一張 runs the same motion as a swipe — the old card slides out to the left for the next card and the new one slides in from the right, mirroring for 上一張 — rather than swapping instantly; under reduced motion the swap is immediate.
 
 The right-hand footer control reads 下一張 › until the last card; on the last card it reads 完成. Pressing 完成 ends the run and shows the completion screen below.
+
+Swipe right-to-left on the last card and the run ends the same way: the card plays its usual exit, and the completion screen takes its place instead of the same card sliding back in. Arriving on the last card does not end the run by itself, and the arrow keys stay where they are: there is nothing after the last card, so a right-to-left swipe on it finishes rather than bouncing back.
+
+The first card has nothing behind it, so its backward drag resists: dragging left to right pulls the card along at a third of the finger travel, never past 40px, and the release springs it back to rest in about 140ms. The drag never names a direction and never changes the card. Under `prefers-reduced-motion: reduce` the first card does not move at all. The dictionary reader's first word is unchanged.
 
 ### Card settings
 
@@ -277,12 +295,16 @@ When the reading switch is off, render `vol` with no ruby.
 
 The wireframes say which pieces exist. Do not copy their colors or boxes.
 
+- The page is a fixed-scale phone screen. Its viewport meta pins the scale (`maximum-scale=1, user-scalable=no`) and `html`/`body` declare `touch-action: manipulation`, so neither a double tap nor a pinch changes the scale, and a tap is not held back waiting for a possible second tap. The gesture surfaces keep `touch-action: pan-y` so a horizontal drag belongs to the swipe. Screen readers keep their browser zoom override; nothing in the page fights it.
+- The browser's own vertical scrollbar is hidden and the page draws its own: a 4px rounded thumb against the column's right edge, sized to the share of the page that is on screen and moving with it. It is a hint, not a control: it never covers a tap, it is not drawn when the page already fits, and it is not drawn on top of a screen that does not scroll. It appears while the page moves and fades out about a second after it stops. The two inner dropdown lists (從 and the settings form list) are their own scroll containers and keep the native bar. Under `prefers-reduced-motion: reduce` the thumb still appears and leaves, without the fade.
 - The page background is a slow gradient from indigo to warm amber, with a faint grain. The column is warm off-white, large radius, light shadow. At viewport widths of 550px or less the column drops its radius, shadow and side margins, fills the browser, and the background becomes the plain column colour.
 - Use the system stack: `Hiragino Sans`, `Noto Sans TC`, `Noto Sans JP`, `sans-serif`. Do not download a CJK webfont.
 - The word is large. The reading is small and sits above the kanji. Controls are 36px tall with a 10px radius, so they read as buttons rather than pills: that covers `.button`, the lesson and form chips, the 到 chips, the 選擇 buttons. Settings rows are 52px so each row can hold its switch comfortably. The quiz keyboard keys are 48px for typing. The home screen's three entries are 60px, the picker's 開始 and the reader and card footer controls are 50px, and 返回主頁 on the completion screens is 60px.
 - Every screen's top bar — the back arrow and the title — is pinned to the top of the viewport, on the column colour, above the scrolling content. This is the same treatment the dictionary reader has.
 - On every screen except home, the extra bottom height is gone: content ends 10px above the bottom of the column, and screens with a pinned footer carry their own bottom space instead, so the gap is the same whether the footer is pinned mid-page or resting at the end. The reader's 上一個 / 下一個, the card controls, settings and quiz all keep 10px. The picker's 開始 is the one exception at 20px, because that is where the primary action on that screen sits: its fade band stays above the button and 20px of solid column colour sits under it.
-- A pressed button scales down slightly. Pinned footers keep a transparent fade, but the fade band sits above the controls so the buttons stay solid and fully visible. The reader pages with a flat horizontal slide that follows the finger: no rotation, no tilt, no fade and no depth, so the incoming page is pushed in from the edge instead of cross-dissolving. Screen changes take about 220ms. A card follows the gesture, then springs back or leaves. A right-to-left swipe slides the outgoing card out to the left and brings the next card in from the right edge; a left-to-right swipe mirrors it. A tapped card turns over in 3D (`rotateY`, about 300ms). 回答正確 and 回答錯誤 slide in from the top and leave after about 1.6 seconds. A revealed answer stays on the question itself. The toast is not the only place that answer exists.
+- A pressed button scales down slightly. Pinned footers keep a transparent fade, but the fade band sits above the controls so the buttons stay solid and fully visible. The reader pages with a flat horizontal slide that follows the finger: no rotation, no tilt, no fade and no depth, so the incoming page is pushed in from the edge instead of cross-dissolving. Screen changes take about 220ms. A card follows the gesture, then either settles back to rest in about 140ms or leaves. On the first card the follow is damped to a third of the finger and capped at 40px, so the card pulls against the edge and settles back instead of leaving. A right-to-left swipe slides the outgoing card out to the left and brings the next card in from the right edge; a left-to-right swipe mirrors it. A tapped card turns over in 3D (`rotateY`, about 240ms).
+- A page turn and a card turn are one motion, not two: the outgoing item accelerates off the edge (about 170ms) and the incoming one arrives at the same speed and decelerates into place (about 190ms). The swap itself happens while both are a full width off screen, so the pace never stops or restarts at the edge, and nothing overshoots its resting point or travels backwards while it is on screen. Movement that has been interrupted is finished rather than stacked: a press during the incoming slide drops that slide first.
+- 回答正確 and 回答錯誤 slide in from the top and leave after about 1.6 seconds. A revealed answer stays on the question itself. The toast is not the only place that answer exists.
 - The page never scrolls sideways: no horizontal scrollbar appears in any screen. Paging motion is clipped by its own container, so a card that travels past the column edge is cut off rather than widening the page.
 - Under `prefers-reduced-motion: reduce`, the gradient is still, a swipe changes the item directly, card flips are instant, and screen changes are a short fade.
 

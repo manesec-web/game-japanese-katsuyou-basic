@@ -29,6 +29,30 @@ export function clampDrag(dx, max = SWIPE_MAX) {
   return Math.max(-max, Math.min(max, dx))
 }
 
+// The first card has nothing behind it. It still follows the finger a little,
+// with resistance, so the gesture reads as a wall rather than a dead screen:
+// the offset grows at a third of the drag and stops well short of the threshold.
+// The last card is not damped, because leaving it finishes the run.
+export const EDGE_RESIST_RATIO = 1 / 3
+export const EDGE_RESIST_MAX = 40
+
+export function resistDrag(dx, ratio = EDGE_RESIST_RATIO, max = EDGE_RESIST_MAX) {
+  return Math.max(-max, Math.min(max, dx * ratio))
+}
+
+// What a card follows during a drag, and where that drag points. `atFirst`
+// is the first-card wall: a right-hand drag there is damped and names no
+// direction, so the card springs back instead of changing.
+export function cardDrag(dx, { atFirst = false, max = SWIPE_MAX } = {}) {
+  if (atFirst && dx > 0) return resistDrag(dx)
+  return clampDrag(dx, max)
+}
+
+export function cardDirectionAt(dx, { atFirst = false } = {}) {
+  if (atFirst && dx > 0) return null
+  return cardDirection(dx)
+}
+
 // Gesture paging belongs to the phone layout. Above this width the reader is a
 // desktop column where selecting and copying text matters more than swiping,
 // so only the 上一個 / 下一個 controls change the word.

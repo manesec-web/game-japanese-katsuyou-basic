@@ -7,18 +7,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "犬が 庭に いる。",
-              "chinese": "狗在院子裡。"
+              "chinese": "狗在院子裡。",
+              "note": null
             },
             {
               "japanese": "教室に 学生が いる。",
-              "chinese": "教室裡有學生。"
+              "chinese": "教室裡有學生。",
+              "note": null
             },
             {
               "japanese": "母は まだ 台所に いる。",
-              "chinese": "媽媽還在廚房。"
+              "chinese": "媽媽還在廚房。",
+              "note": null
             }
           ]
         },
@@ -27,18 +32,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "います",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "子どもが 二人 います。",
-              "chinese": "有兩個孩子。"
+              "chinese": "有兩個孩子。",
+              "note": null
             },
             {
               "japanese": "田中さんは 日本に います。",
-              "chinese": "田中先生在日本。"
+              "chinese": "田中先生在日本。",
+              "note": null
             },
             {
               "japanese": "部屋に 猫が います。",
-              "chinese": "房間裡有貓。"
+              "chinese": "房間裡有貓。",
+              "note": null
             }
           ]
         },
@@ -47,18 +57,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 家に いません。",
-              "chinese": "今天不在家。"
+              "chinese": "今天不在家。",
+              "note": null
             },
             {
               "japanese": "弟は 学校に いません。",
-              "chinese": "弟弟不在學校。"
+              "chinese": "弟弟不在學校。",
+              "note": null
             },
             {
               "japanese": "課長は もう 事務所に いません。",
-              "chinese": "課長已經不在辦公室了。"
+              "chinese": "課長已經不在辦公室了。",
+              "note": null
             }
           ]
         },
@@ -67,18 +82,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 会社に いました。",
-              "chinese": "昨天在公司。"
+              "chinese": "昨天在公司。",
+              "note": null
             },
             {
               "japanese": "さっき 彼は 図書館に いました。",
-              "chinese": "剛才他在圖書館。"
+              "chinese": "剛才他在圖書館。",
+              "note": null
             },
             {
               "japanese": "子どもは 公園に いました。",
-              "chinese": "孩子們在公園。"
+              "chinese": "孩子們在公園。",
+              "note": null
             }
           ]
         },
@@ -87,18 +107,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 家に いませんでした。",
-              "chinese": "昨天不在家。"
+              "chinese": "昨天不在家。",
+              "note": null
             },
             {
               "japanese": "日曜日は 事務所に いませんでした。",
-              "chinese": "星期天不在辦公室。"
+              "chinese": "星期天不在辦公室。",
+              "note": null
             },
             {
               "japanese": "友だちは そこに いませんでした。",
-              "chinese": "朋友不在那裡。"
+              "chinese": "朋友不在那裡。",
+              "note": null
             }
           ]
         },
@@ -107,18 +132,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 家には 誰も いない。",
-              "chinese": "這個家裡一個人也沒有。"
+              "chinese": "這個家裡一個人也沒有。",
+              "note": null
             },
             {
               "japanese": "今日は 犬が いない。",
-              "chinese": "今天狗不在。"
+              "chinese": "今天狗不在。",
+              "note": null
             },
             {
               "japanese": "教室に 先生は いない。",
-              "chinese": "教室裡沒有老師。"
+              "chinese": "教室裡沒有老師。",
+              "note": null
             }
           ]
         },
@@ -127,18 +157,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いた",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "朝 母は 台所に いた。",
-              "chinese": "早上媽媽在廚房。"
+              "chinese": "早上媽媽在廚房。",
+              "note": null
             },
             {
               "japanese": "子どもは ずっと 庭に いた。",
-              "chinese": "孩子一直在院子裡。"
+              "chinese": "孩子一直在院子裡。",
+              "note": null
             },
             {
               "japanese": "昨日 先生は 教室に いた。",
-              "chinese": "昨天老師在教室。"
+              "chinese": "昨天老師在教室。",
+              "note": null
             }
           ]
         },
@@ -147,18 +182,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日 妹は 家に いなかった。",
-              "chinese": "昨天妹妹不在家。"
+              "chinese": "昨天妹妹不在家。",
+              "note": null
             },
             {
               "japanese": "その 時 誰も いなかった。",
-              "chinese": "那時一個人也沒有。"
+              "chinese": "那時一個人也沒有。",
+              "note": null
             },
             {
               "japanese": "先週 犬は ここに いなかった。",
-              "chinese": "上週狗不在這裡。"
+              "chinese": "上週狗不在這裡。",
+              "note": null
             }
           ]
         },
@@ -167,18 +207,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いて",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "弟は 部屋に いて、テレビを 見ている。",
-              "chinese": "弟弟在房間裡看電視。"
+              "chinese": "弟弟在房間裡看電視。",
+              "note": null
             },
             {
               "japanese": "父は 庭に いて、花に 水を やっている。",
-              "chinese": "父親在院子裡，正在給花澆水。"
+              "chinese": "父親在院子裡，正在給花澆水。",
+              "note": null
             },
             {
               "japanese": "友だちは 駅に いて、電車を 待っていた。",
-              "chinese": "朋友在車站等電車。"
+              "chinese": "朋友在車站等電車。",
+              "note": null
             }
           ]
         },
@@ -187,18 +232,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "子どもたちは 夕方まで 公園に いられる。",
-              "chinese": "孩子們可以在公園待到傍晚。"
+              "chinese": "孩子們可以在公園待到傍晚。",
+              "note": null
             },
             {
               "japanese": "静かだから、長く いられる。",
-              "chinese": "因為安靜，可以待很久。"
+              "chinese": "因為安靜，可以待很久。",
+              "note": null
             },
             {
               "japanese": "一人で いられる。",
-              "chinese": "一個人待得住。"
+              "chinese": "一個人待得住。",
+              "note": null
             }
           ]
         },
@@ -207,18 +257,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いよう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "寒いから、今日は 家に いよう。",
-              "chinese": "因為很冷，今天就待在家裡吧。"
+              "chinese": "因為很冷，今天就待在家裡吧。",
+              "note": null
             },
             {
               "japanese": "今日は ここに いよう。",
-              "chinese": "今天就待在這裡吧。"
+              "chinese": "今天就待在這裡吧。",
+              "note": null
             },
             {
               "japanese": "涼しい 所に いよう。",
-              "chinese": "就待在涼快的地方吧。"
+              "chinese": "就待在涼快的地方吧。",
+              "note": null
             }
           ]
         },
@@ -227,18 +282,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いろ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "日が 暮れるまで 家に いろ。",
-              "chinese": "在天黑之前待在家裡。"
+              "chinese": "在天黑之前待在家裡。",
+              "note": null
             },
             {
               "japanese": "夕食まで 部屋に いろ。",
-              "chinese": "晚飯前待在自己房裡。"
+              "chinese": "晚飯前待在自己房裡。",
+              "note": null
             },
             {
               "japanese": "ここで 待って いろ。",
-              "chinese": "在這裡等著。"
+              "chinese": "在這裡等著。",
+              "note": null
             }
           ]
         },
@@ -247,18 +307,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "彼が いれば、安心だ。",
-              "chinese": "他在的話就安心了。"
+              "chinese": "他在的話就安心了。",
+              "note": null
             },
             {
               "japanese": "犬が いれば、寂しくない。",
-              "chinese": "有狗在的話就不寂寞。"
+              "chinese": "有狗在的話就不寂寞。",
+              "note": null
             },
             {
               "japanese": "先生が そばに いれば、聞ける。",
-              "chinese": "老師在旁邊的話就能問。"
+              "chinese": "老師在旁邊的話就能問。",
+              "note": null
             }
           ]
         },
@@ -267,18 +332,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いられる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "いつも 弟に そばに いられる。",
-              "chinese": "弟弟老是在我旁邊待著。"
+              "chinese": "弟弟老是在我旁邊待著。",
+              "note": null
             },
             {
               "japanese": "先輩に となりに いられるのは 嫌だ。",
-              "chinese": "不喜歡前輩一直坐在旁邊。"
+              "chinese": "不喜歡前輩一直坐在旁邊。",
+              "note": null
             },
             {
               "japanese": "毎日 母に 後ろに いられる ので、落ち着かない。",
-              "chinese": "每天媽媽都在我後面，讓我靜不下心。"
+              "chinese": "每天媽媽都在我後面，讓我靜不下心。",
+              "note": null
             }
           ]
         },
@@ -287,18 +357,23 @@
           "group": "2",
           "chinese": "在; 有（人或動物）",
           "japanese": "いさせる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "子どもを 庭に いさせる。",
-              "chinese": "讓孩子在院子裡待著。"
+              "chinese": "讓孩子在院子裡待著。",
+              "note": null
             },
             {
               "japanese": "弟を 部屋に いさせる。",
-              "chinese": "讓弟弟待在房間裡。"
+              "chinese": "讓弟弟待在房間裡。",
+              "note": null
             },
             {
               "japanese": "犬を 外に いさせる。",
-              "chinese": "讓狗待在外面。"
+              "chinese": "讓狗待在外面。",
+              "note": null
             }
           ]
         }
@@ -309,18 +384,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "この 本は 三千円 かかる。",
-              "chinese": "這本書要三千圓。"
+              "chinese": "這本書要三千圓。",
+              "note": null
             },
             {
               "japanese": "駅まで 三十分 かかる。",
-              "chinese": "到車站要三十分鐘。"
+              "chinese": "到車站要三十分鐘。",
+              "note": null
             },
             {
               "japanese": "修理に お金が かかる。",
-              "chinese": "修理要花錢。"
+              "chinese": "修理要花錢。",
+              "note": null
             }
           ]
         },
@@ -329,18 +409,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかります",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "切手は 八十円 かかります。",
-              "chinese": "郵票要八十圓。"
+              "chinese": "郵票要八十圓。",
+              "note": null
             },
             {
               "japanese": "会社まで 一時間 かかります。",
-              "chinese": "到公司要一小時。"
+              "chinese": "到公司要一小時。",
+              "note": null
             },
             {
               "japanese": "昼ご飯は 千円 かかります。",
-              "chinese": "午飯要一千圓。"
+              "chinese": "午飯要一千圓。",
+              "note": null
             }
           ]
         },
@@ -349,18 +434,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかりません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "バスでは お金が かかりません。",
-              "chinese": "搭公車不花錢。"
+              "chinese": "搭公車不花錢。",
+              "note": null
             },
             {
               "japanese": "今日は 時間が かかりません。",
-              "chinese": "今天不花時間。"
+              "chinese": "今天不花時間。",
+              "note": null
             },
             {
               "japanese": "この 道は 費用が かかりません。",
-              "chinese": "這條路不花費用。"
+              "chinese": "這條路不花費用。",
+              "note": null
             }
           ]
         },
@@ -369,18 +459,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかりました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "ゆうべの 電話は 千円 かかりました。",
-              "chinese": "昨晚的電話花了一千圓。"
+              "chinese": "昨晚的電話花了一千圓。",
+              "note": null
             },
             {
               "japanese": "手紙は 三日 かかりました。",
-              "chinese": "信花了三天。"
+              "chinese": "信花了三天。",
+              "note": null
             },
             {
               "japanese": "修理は 二時間 かかりました。",
-              "chinese": "修理花了兩小時。"
+              "chinese": "修理花了兩小時。",
+              "note": null
             }
           ]
         },
@@ -389,18 +484,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかりませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "船便は 一週間 かかりませんでした。",
-              "chinese": "船運沒花一星期。"
+              "chinese": "船運沒花一星期。",
+              "note": null
             },
             {
               "japanese": "今日は お金が かかりませんでした。",
-              "chinese": "今天沒花錢。"
+              "chinese": "今天沒花錢。",
+              "note": null
             },
             {
               "japanese": "この 仕事は 半日 かかりませんでした。",
-              "chinese": "這件工作沒花半天。"
+              "chinese": "這件工作沒花半天。",
+              "note": null
             }
           ]
         },
@@ -409,18 +509,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かからない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "安い 店では 千円も かからない。",
-              "chinese": "在便宜的店連一千圓都不用。"
+              "chinese": "在便宜的店連一千圓都不用。",
+              "note": null
             },
             {
               "japanese": "この 仕事は 一日 かからない。",
-              "chinese": "這件工作不用一天。"
+              "chinese": "這件工作不用一天。",
+              "note": null
             },
             {
               "japanese": "今日は 時間が かからない。",
-              "chinese": "今天不花時間。"
+              "chinese": "今天不花時間。",
+              "note": null
             }
           ]
         },
@@ -429,18 +534,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "切手は 八十円 かかった。",
-              "chinese": "郵票花了八十圓。"
+              "chinese": "郵票花了八十圓。",
+              "note": null
             },
             {
               "japanese": "駅まで 一時間 かかった。",
-              "chinese": "到車站花了一小時。"
+              "chinese": "到車站花了一小時。",
+              "note": null
             },
             {
               "japanese": "先月の 電気代は 五千円 かかった。",
-              "chinese": "上個月的電費花了五千圓。"
+              "chinese": "上個月的電費花了五千圓。",
+              "note": null
             }
           ]
         },
@@ -449,18 +559,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かからなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "昨日は お金が かからなかった。",
-              "chinese": "昨天沒花錢。"
+              "chinese": "昨天沒花錢。",
+              "note": null
             },
             {
               "japanese": "この 手紙は 二日 かからなかった。",
-              "chinese": "這封信沒花兩天。"
+              "chinese": "這封信沒花兩天。",
+              "note": null
             },
             {
               "japanese": "昼ご飯は 千円 かからなかった。",
-              "chinese": "午飯沒花到一千圓。"
+              "chinese": "午飯沒花到一千圓。",
+              "note": null
             }
           ]
         },
@@ -469,18 +584,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかって",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "時間が かかって、電車に 乗れなかった。",
-              "chinese": "花了時間，沒趕上電車。"
+              "chinese": "花了時間，沒趕上電車。",
+              "note": null
             },
             {
               "japanese": "お金が かかって、買えなかった。",
-              "chinese": "花了錢，結果沒買成。"
+              "chinese": "花了錢，結果沒買成。",
+              "note": null
             },
             {
               "japanese": "道が こんで いて、一時間 かかって 着いた。",
-              "chinese": "路上塞車，花了一小時才到。"
+              "chinese": "路上塞車，花了一小時才到。",
+              "note": null
             }
           ]
         },
@@ -489,38 +609,32 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかれる",
-          "sentence": [
-            {
-              "japanese": "この 旅行は 十万円で かかれる。",
-              "chinese": "這趟旅行十萬圓就夠了。"
-            },
-            {
-              "japanese": "駅まで 一時間で かかれる。",
-              "chinese": "到車站一小時就夠。"
-            },
-            {
-              "japanese": "安い 材料で かかれる。",
-              "chinese": "用便宜的材料就花得起。"
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「かかる」是無意志動詞，「かかれる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
         },
         "volitional-form": {
           "vol": "かかろう",
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかろう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "お金が かかろうと、買う。",
-              "chinese": "就算要花錢也要買。"
+              "chinese": "就算要花錢也要買。",
+              "note": null
             },
             {
               "japanese": "時間が かかろうと、終わらせる。",
-              "chinese": "就算要花時間也要做完。"
+              "chinese": "就算要花時間也要做完。",
+              "note": null
             },
             {
               "japanese": "どんなに お金が かかろうと、必要だ。",
-              "chinese": "不管要花多少錢，都是必要的。"
+              "chinese": "不管要花多少錢，都是必要的。",
+              "note": null
             }
           ]
         },
@@ -529,18 +643,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかれ",
+          "note": "字典有但是不常用：「かかれ」日常不用",
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "説明書に 「十分に 時間が かかれ」と 書いて ある。",
-              "chinese": "說明書上寫著「要多花點時間」。"
+              "chinese": "說明書上寫著「要多花點時間」。",
+              "note": null
             },
             {
               "japanese": "上司は この 仕事に 時間が かかれ と 命じた。",
-              "chinese": "上司命令這件工作要多花時間。"
+              "chinese": "上司命令這件工作要多花時間。",
+              "note": null
             },
             {
               "japanese": "会議で 「もっと 時間が かかれ」と 意見が 出た。",
-              "chinese": "會上有人提出「應該多花點時間」。"
+              "chinese": "會上有人提出「應該多花點時間」。",
+              "note": null
             }
           ]
         },
@@ -549,18 +668,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかれば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "時間が かかれば かかるほど、いい 仕事に なる。",
-              "chinese": "花的時間越多，工作成果越好。"
+              "chinese": "花的時間越多，工作成果越好。",
+              "note": null
             },
             {
               "japanese": "お金が かかれば かかるほど、品物が いい。",
-              "chinese": "花的錢越多，東西越好。"
+              "chinese": "花的錢越多，東西越好。",
+              "note": null
             },
             {
               "japanese": "少し 時間が かかれば、しっかり した 物が できる。",
-              "chinese": "稍微花點時間，就能做出結實的東西。"
+              "chinese": "稍微花點時間，就能做出結實的東西。",
+              "note": null
             }
           ]
         },
@@ -569,18 +693,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかられる",
+          "note": "字典有但是不常用：「かかられる」日常不用",
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "毎月 高い 家賃を かかられる と、暮らしが 苦しい。",
-              "chinese": "每個月被收高房租的話，生活很苦。"
+              "chinese": "每個月被收高房租的話，生活很苦。",
+              "note": null
             },
             {
               "japanese": "急な 修理代を かかられる と、驚く。",
-              "chinese": "突然被收修理費的話，會嚇一跳。"
+              "chinese": "突然被收修理費的話，會嚇一跳。",
+              "note": null
             },
             {
               "japanese": "余計な 送料を かかられる の は 嫌だ。",
-              "chinese": "討厭被多收運費。"
+              "chinese": "討厭被多收運費。",
+              "note": null
             }
           ]
         },
@@ -589,18 +718,23 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かからせる",
+          "note": "字典有但是不常用：「かからせる」日常不用",
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "店は 客に 送料を かからせる。",
-              "chinese": "店家讓客人負擔運費。"
+              "chinese": "店家讓客人負擔運費。",
+              "note": null
             },
             {
               "japanese": "会社は 社員に 交通費を かからせる ことに した。",
-              "chinese": "公司決定讓員工負擔交通費。"
+              "chinese": "公司決定讓員工負擔交通費。",
+              "note": null
             },
             {
               "japanese": "親は 子どもに 高い 学費を かからせる つもりだ。",
-              "chinese": "父母打算讓孩子負擔高額學費。"
+              "chinese": "父母打算讓孩子負擔高額學費。",
+              "note": null
             }
           ]
         }
@@ -611,18 +745,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすむ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日 会社を 休む。",
-              "chinese": "明天向公司請假。"
+              "chinese": "明天向公司請假。",
+              "note": null
             },
             {
               "japanese": "病気の 時は 仕事を 休む。",
-              "chinese": "生病時就向工作上請假。"
+              "chinese": "生病時就向工作上請假。",
+              "note": null
             },
             {
               "japanese": "日曜日は 学校を 休む。",
-              "chinese": "星期天向學校請假。"
+              "chinese": "星期天向學校請假。",
+              "note": null
             }
           ]
         },
@@ -631,18 +770,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすみます",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日 会社を 休みます。",
-              "chinese": "今天向公司請假。"
+              "chinese": "今天向公司請假。",
+              "note": null
             },
             {
               "japanese": "午後から 仕事を 休みます。",
-              "chinese": "下午開始向工作上請假。"
+              "chinese": "下午開始向工作上請假。",
+              "note": null
             },
             {
               "japanese": "熱が あるので 学校を 休みます。",
-              "chinese": "因為發燒，向學校請假。"
+              "chinese": "因為發燒，向學校請假。",
+              "note": null
             }
           ]
         },
@@ -651,18 +795,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすみません",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日は 会社を 休みません。",
-              "chinese": "明天不向公司請假。"
+              "chinese": "明天不向公司請假。",
+              "note": null
             },
             {
               "japanese": "忙しいので、仕事を 休みません。",
-              "chinese": "因為忙，不向工作請假。"
+              "chinese": "因為忙，不向工作請假。",
+              "note": null
             },
             {
               "japanese": "今日は 学校を 休みません。",
-              "chinese": "今天不向學校請假。"
+              "chinese": "今天不向學校請假。",
+              "note": null
             }
           ]
         },
@@ -671,18 +820,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすみました",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先週 三日 会社を 休みました。",
-              "chinese": "上週向公司請了三天假。"
+              "chinese": "上週向公司請了三天假。",
+              "note": null
             },
             {
               "japanese": "昨日 仕事を 休みました。",
-              "chinese": "昨天向工作請了假。"
+              "chinese": "昨天向工作請了假。",
+              "note": null
             },
             {
               "japanese": "風邪で 学校を 休みました。",
-              "chinese": "因為感冒向學校請了假。"
+              "chinese": "因為感冒向學校請了假。",
+              "note": null
             }
           ]
         },
@@ -691,18 +845,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすみませんでした",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先月は 一日も 会社を 休みませんでした。",
-              "chinese": "上個月一天也沒向公司請假。"
+              "chinese": "上個月一天也沒向公司請假。",
+              "note": null
             },
             {
               "japanese": "昨日は 仕事を 休みませんでした。",
-              "chinese": "昨天沒向工作請假。"
+              "chinese": "昨天沒向工作請假。",
+              "note": null
             },
             {
               "japanese": "今週は 学校を 休みませんでした。",
-              "chinese": "這週沒向學校請假。"
+              "chinese": "這週沒向學校請假。",
+              "note": null
             }
           ]
         },
@@ -711,18 +870,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすまない",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日は 会社を 休まない。",
-              "chinese": "明天不向公司請假。"
+              "chinese": "明天不向公司請假。",
+              "note": null
             },
             {
               "japanese": "体が 丈夫なら 仕事を 休まない。",
-              "chinese": "身體健康的話就不向工作請假。"
+              "chinese": "身體健康的話就不向工作請假。",
+              "note": null
             },
             {
               "japanese": "今日は 学校を 休まない。",
-              "chinese": "今天不向學校請假。"
+              "chinese": "今天不向學校請假。",
+              "note": null
             }
           ]
         },
@@ -731,18 +895,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすんだ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先週 会社を 休んだ。",
-              "chinese": "上週向公司請了假。"
+              "chinese": "上週向公司請了假。",
+              "note": null
             },
             {
               "japanese": "風邪で 仕事を 休んだ。",
-              "chinese": "因為感冒向工作請了假。"
+              "chinese": "因為感冒向工作請了假。",
+              "note": null
             },
             {
               "japanese": "昨日は 学校を 休んだ。",
-              "chinese": "昨天向學校請了假。"
+              "chinese": "昨天向學校請了假。",
+              "note": null
             }
           ]
         },
@@ -751,18 +920,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすまなかった",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "先月は 会社を 休まなかった。",
-              "chinese": "上個月沒向公司請假。"
+              "chinese": "上個月沒向公司請假。",
+              "note": null
             },
             {
               "japanese": "元気だったので 仕事を 休まなかった。",
-              "chinese": "因為很有精神，沒向工作請假。"
+              "chinese": "因為很有精神，沒向工作請假。",
+              "note": null
             },
             {
               "japanese": "先週は 学校を 休まなかった。",
-              "chinese": "上週沒向學校請假。"
+              "chinese": "上週沒向學校請假。",
+              "note": null
             }
           ]
         },
@@ -771,18 +945,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすんで",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "仕事を 休んで、旅行に 行った。",
-              "chinese": "向工作請假去旅行了。"
+              "chinese": "向工作請假去旅行了。",
+              "note": null
             },
             {
               "japanese": "学校を 休んで、病院へ 行った。",
-              "chinese": "向學校請假去了醫院。"
+              "chinese": "向學校請假去了醫院。",
+              "note": null
             },
             {
               "japanese": "会社を 休んで、家で 寝た。",
-              "chinese": "向公司請假在家睡了。"
+              "chinese": "向公司請假在家睡了。",
+              "note": null
             }
           ]
         },
@@ -791,18 +970,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすめる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日は 会社を 休める。",
-              "chinese": "明天可以向公司請假。"
+              "chinese": "明天可以向公司請假。",
+              "note": null
             },
             {
               "japanese": "有給が あるので、金曜日は 休める。",
-              "chinese": "因為有特休，星期五可以請假。"
+              "chinese": "因為有特休，星期五可以請假。",
+              "note": null
             },
             {
               "japanese": "来週は 一日 休める。",
-              "chinese": "下週可以請一天假。"
+              "chinese": "下週可以請一天假。",
+              "note": null
             }
           ]
         },
@@ -811,18 +995,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすもう",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "明日は 会社を 休もう。",
-              "chinese": "明天就向公司請假吧。"
+              "chinese": "明天就向公司請假吧。",
+              "note": null
             },
             {
               "japanese": "たまには 仕事を 休もう。",
-              "chinese": "偶爾也向工作請個假吧。"
+              "chinese": "偶爾也向工作請個假吧。",
+              "note": null
             },
             {
               "japanese": "今日は 学校を 休もう。",
-              "chinese": "今天就向學校請假吧。"
+              "chinese": "今天就向學校請假吧。",
+              "note": null
             }
           ]
         },
@@ -831,18 +1020,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすめ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "今日は 会社を 休め。",
-              "chinese": "今天就向公司請假。"
+              "chinese": "今天就向公司請假。",
+              "note": null
             },
             {
               "japanese": "熱が あるなら 仕事を 休め。",
-              "chinese": "發燒的話就向工作請假。"
+              "chinese": "發燒的話就向工作請假。",
+              "note": null
             },
             {
               "japanese": "無理を するな、学校を 休め。",
-              "chinese": "別勉強，向學校請假。"
+              "chinese": "別勉強，向學校請假。",
+              "note": null
             }
           ]
         },
@@ -851,18 +1045,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすめば",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "会社を 休めば、元気に なる。",
-              "chinese": "向公司請假的話就會好起來。"
+              "chinese": "向公司請假的話就會好起來。",
+              "note": null
             },
             {
               "japanese": "一日 休めば、治る。",
-              "chinese": "請一天假就會好。"
+              "chinese": "請一天假就會好。",
+              "note": null
             },
             {
               "japanese": "仕事を 休めば、家族と いられる。",
-              "chinese": "向工作請假的話就能和家人在一起。"
+              "chinese": "向工作請假的話就能和家人在一起。",
+              "note": null
             }
           ]
         },
@@ -871,18 +1070,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすまれる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "忙しい 日に 同僚に 休まれる と、店が 回らない。",
-              "chinese": "忙碌的日子同事請假，店裡就運轉不過來。"
+              "chinese": "忙碌的日子同事請假，店裡就運轉不過來。",
+              "note": null
             },
             {
               "japanese": "金曜日に 部下に 休まれる と、週末の 予定が 狂う。",
-              "chinese": "星期五部下請假，週末的計畫就亂了。"
+              "chinese": "星期五部下請假，週末的計畫就亂了。",
+              "note": null
             },
             {
               "japanese": "私が 休みたい 日に 後輩に 休まれる。",
-              "chinese": "我想請假的那天卻被後輩請走了。"
+              "chinese": "我想請假的那天卻被後輩請走了。",
+              "note": null
             }
           ]
         },
@@ -891,18 +1095,23 @@
           "group": "1",
           "chinese": "請假; 休息",
           "japanese": "やすませる",
+          "note": null,
+          "error_usage": false,
           "sentence": [
             {
               "japanese": "熱が あるので、子どもを 休ませる。",
-              "chinese": "因為發燒，讓孩子請假。"
+              "chinese": "因為發燒，讓孩子請假。",
+              "note": null
             },
             {
               "japanese": "会社は 社員を 三日 休ませる。",
-              "chinese": "公司讓員工請三天假。"
+              "chinese": "公司讓員工請三天假。",
+              "note": null
             },
             {
               "japanese": "先生は 病気の 生徒を 休ませる。",
-              "chinese": "老師讓生病的學生請假。"
+              "chinese": "老師讓生病的學生請假。",
+              "note": null
             }
           ]
         }
