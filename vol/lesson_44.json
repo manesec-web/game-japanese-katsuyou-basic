@@ -1070,32 +1070,16 @@
           "group": "1",
           "chinese": "乾; 乾燥",
           "japanese": "かわかれる",
-          "note": "字典有但是不常用：「乾かれる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "強い 風に 洗濯物を 乾かれる と、 しわに なる。",
-              "chinese": "衣服被強風吹乾，就會起皺。",
-              "note": null
-            },
-            {
-              "japanese": "日差しに 布団を 乾かれる と、 ふかふかに なる。",
-              "chinese": "棉被被陽光曬乾，就變得蓬鬆。",
-              "note": null
-            },
-            {
-              "japanese": "ストーブの 熱に 靴下を 乾かれる と、 固く なる。",
-              "chinese": "襪子被暖爐烘乾，就會變硬。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「乾かれる」是他動詞「乾かす」的受身形，不是「乾く」的受身形（「乾く」是自動詞，沒有受身形）",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "乾かせる",
           "group": "1",
           "chinese": "乾; 乾燥",
           "japanese": "かわかせる",
-          "note": "錯誤詞語，僅供轉詞練習：「乾かせる」是錯的：這是另一個動詞，不用作「乾く」的使役形",
+          "note": "錯誤詞語，僅供轉詞練習：「乾かせる」不是另一個動詞。他動詞是「乾かす」。「乾かせる」多作「乾かす」的可能形（可以弄乾）；「乾く」的使役在現代日語幾乎不說。",
           "error_usage": true,
           "sentence": []
         }
@@ -1415,50 +1399,18 @@
           "group": "2",
           "chinese": "淋濕; 濕",
           "japanese": "ぬれられる",
-          "note": "字典有但是不常用：「濡れられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "弟に 傘を 取られて、 雨に 濡れられる のは 嫌だ。",
-              "chinese": "被弟弟拿走傘，被雨淋濕很討厭。",
-              "note": null
-            },
-            {
-              "japanese": "隣の 人に 水を かけられて、 濡れられる のは 困る。",
-              "chinese": "被鄰居潑水淋濕很困擾。",
-              "note": null
-            },
-            {
-              "japanese": "上の 人に 水を こぼされて、 よく 濡れられる。",
-              "chinese": "被樓上的人灑水，常被淋濕。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「濡れる」是無意志動詞，沒有「濡れられる」這個受身形；「雨に 濡れられる」等例句不是日文",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "濡れさせる",
           "group": "2",
           "chinese": "淋濕; 濕",
           "japanese": "ぬれさせる",
-          "note": "字典有但是不常用：「濡れさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "子どもたちは 水遊びで 服を 濡れさせる。",
-              "chinese": "孩子們玩水把衣服弄濕。",
-              "note": null
-            },
-            {
-              "japanese": "弟は 傘を 忘れて、 かばんを 濡れさせる らしい。",
-              "chinese": "弟弟忘了帶傘，好像把書包淋濕了。",
-              "note": null
-            },
-            {
-              "japanese": "洗車の 水が 服を 濡れさせる ことが ある。",
-              "chinese": "洗車的水有時會把衣服弄濕。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「濡れさせる」是自動詞「濡れる」的使役形，但他動詞是「濡らす」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -1692,9 +1644,25 @@
           "group": "0",
           "chinese": "滑; 滑倒; 打滑",
           "japanese": "すべれる",
-          "note": "錯誤詞語，僅供轉詞練習：「滑る」是無意志動詞，「滑れる」這個可能形日常不用",
-          "error_usage": true,
-          "sentence": []
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この コースは 初心者でも 滑れる。",
+              "chinese": "這條雪道連初學者也滑得動。",
+              "note": null
+            },
+            {
+              "japanese": "雪が 降れば、 また 滑れる。",
+              "chinese": "下雪的話又能滑雪了。",
+              "note": null
+            },
+            {
+              "japanese": "子どもでも 一人で 滑れる 坂だ。",
+              "chinese": "這是連孩子也能自己滑的坡。",
+              "note": null
+            }
+          ]
         },
         "volitional-form": {
           "vol": "滑ろう",
@@ -2142,8 +2110,8 @@
               "note": null
             },
             {
-              "japanese": "雪の 日は 事故が 起きれば、 通行止めに なる。",
-              "chinese": "下雪天一旦發生事故，道路就會封閉。",
+              "japanese": "事故が 起きれば、 すぐ 警察が 来る。",
+              "chinese": "發生事故的話，警察馬上就來。",
               "note": null
             }
           ]

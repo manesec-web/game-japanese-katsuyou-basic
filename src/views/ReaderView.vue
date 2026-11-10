@@ -2,26 +2,24 @@
 import { computed, inject, onBeforeUnmount, ref, watch } from 'vue'
 import RubyWord from '../components/RubyWord.vue'
 import { groupLabel } from '../dict/forms.js'
-import { orderedFormEntries } from '../study/reader-forms.js'
 import { sentenceParts } from '../study/highlight.js'
-import { readerDirection, clampDrag, swipeEnabled } from '../ui/swipe.js'
+import { readerDirection, swipeEnabled } from '../ui/swipe.js'
 import { prefersReducedMotion } from '../ui/motion.js'
+import { READER_WINDOW } from '../ui/window.js'
+import { usePagingWindow } from '../ui/paging-window.js'
+import { readerEntries } from '../study/window-views.js'
 
 const store = inject('store')
 const session = store.session
-const offset = ref(0)
-const dragging = ref(false)
 let pointer = null
 
-// Page-turn phases. `leaving` slides the current word out, then the command
-// runs, then `entering` brings the new word in from the opposite edge. The
-// phases end on the transition and animation themselves, so the timings live in
-// one place (the CSS) and the two halves cannot drift apart. The numbers here
-// are only a safety net for an event that never arrives.
-const leaving = ref(null)
+// Page turn is one phase: the command swaps the word at once and the new page
+// plays a single short slide from the edge the gesture came from. The drag is
+// invisible — the page never follows the finger — so there is nothing to
+// spring back and nothing to settle twice. The phase ends on the animation
+// itself; the timer is only a safety net for an event that never arrives.
 const entering = ref(null)
 const PHASE_FALLBACK_MS = 600
-let leaveTimer = null
 let enterTimer = null
 
 const item = computed(() => session.items[session.index] ?? null)
@@ -29,18 +27,17 @@ const defaultFormId = computed(() => session.settings.dict.defaultForm)
 const showReading = computed(() => session.settings.dict.showReading)
 const canPrev = computed(() => session.index > 0)
 const canNext = computed(() => session.index < session.items.length - 1)
-const moving = computed(() => leaving.value !== null || entering.value !== null)
+const moving = computed(() => entering.value !== null)
 
-// 預設顯示形式 first, everything else in the canonical order.
-const formEntries = computed(() => orderedFormEntries(item.value?.verb, defaultFormId.value))
-
-// The word slides sideways with the finger in a straight, parallel line — no
-// rotation, no tilt, and no depth: the page stays flat, the way a phone moves
-// between its own screens.
-const dragStyle = computed(() => {
-  if (!offset.value) return null
-  return { transform: `translateX(${offset.value}px)` }
-})
+// The paging window: 5 mounted slots, the current word always in the 3rd. The
+// row of positions is state that each turn shifts by one, and every slot
+// carries its own word's forms.
+// Named `pagingSlotRow`, never `window`: this file still calls the global
+// `window.scrollTo`, and a local of that name would shadow it.
+const pagingSlotRow = usePagingWindow(session, READER_WINDOW)
+const slots = computed(() =>
+  readerEntries(session.items, pagingSlotRow.value, session.settings.dict),
+)
 
 // A new word opens at the top of the page: the default form is the first block.
 watch(
@@ -52,27 +49,14 @@ function canGo(direction) {
   return direction === 'next' ? canNext.value : canPrev.value
 }
 
-// One path for gestures and for the footer controls: leave, swap, enter.
+// One path for gestures and for the footer controls: swap at once, slide in.
 function go(direction) {
   if (!direction || !canGo(direction) || moving.value) return
-  if (prefersReducedMotion()) {
-    store.send(direction === 'next' ? 'dict.next' : 'dict.prev')
-    return
-  }
-  leaving.value = direction
-  clearTimeout(leaveTimer)
-  leaveTimer = setTimeout(finishLeave, PHASE_FALLBACK_MS)
-}
-
-// The outgoing page has reached the edge: swap the word while nothing is on
-// screen, then play the enter animation from the far edge.
-function finishLeave() {
-  const direction = leaving.value
-  if (!direction) return
-  clearTimeout(leaveTimer)
-  leaveTimer = null
+  // The scroll reset runs before the swap, so the slide never starts from a
+  // scrolled position and a reset can never land after the page has settled.
+  window.scrollTo({ top: 0, behavior: 'auto' })
   store.send(direction === 'next' ? 'dict.next' : 'dict.prev')
-  leaving.value = null
+  if (prefersReducedMotion()) return
   entering.value = direction
   clearTimeout(enterTimer)
   enterTimer = setTimeout(endEnter, PHASE_FALLBACK_MS)
@@ -84,12 +68,6 @@ function endEnter() {
   entering.value = null
 }
 
-function onPageTransitionEnd(event) {
-  if (event.target !== event.currentTarget) return
-  if (event.propertyName !== 'transform') return
-  finishLeave()
-}
-
 function onPageAnimationEnd(event) {
   if (event.target !== event.currentTarget) return
   if (!entering.value) return
@@ -97,7 +75,6 @@ function onPageAnimationEnd(event) {
 }
 
 onBeforeUnmount(() => {
-  clearTimeout(leaveTimer)
   clearTimeout(enterTimer)
 })
 
@@ -108,8 +85,6 @@ function onDown(event) {
   if (event.pointerType === 'mouse' && event.button !== 0) return
   if (moving.value) return
   pointer = { x: event.clientX, y: event.clientY, axis: null, lastDx: 0 }
-  dragging.value = true
-  offset.value = 0
   event.currentTarget.setPointerCapture?.(event.pointerId)
 }
 
@@ -123,17 +98,12 @@ function onMove(event) {
   }
   if (pointer.axis !== 'x') return
   pointer.lastDx = dx
-  if (prefersReducedMotion()) return
-  offset.value = clampDrag(dx)
 }
 
 function onUp() {
   if (!pointer) return
-  const dx = prefersReducedMotion() ? pointer.lastDx : offset.value
-  const direction = pointer.axis === 'x' ? readerDirection(dx) : null
+  const direction = pointer.axis === 'x' ? readerDirection(pointer.lastDx) : null
   pointer = null
-  dragging.value = false
-  offset.value = 0
   go(direction)
 }
 
@@ -163,58 +133,63 @@ function openSettings() {
       @pointercancel="onUp"
       @pointerleave="onUp"
     >
-      <article
-        class="reader-page"
-        :class="{
-          'reader-page--dragging': dragging,
-          'reader-page--leave-next': leaving === 'next',
-          'reader-page--leave-prev': leaving === 'prev',
-          'reader-page--enter-next': entering === 'next',
-          'reader-page--enter-prev': entering === 'prev',
-        }"
-        :style="dragStyle"
-        @transitionend="onPageTransitionEnd"
-        @animationend="onPageAnimationEnd"
-      >
-        <section
-          v-for="entry in formEntries"
-          :key="entry.id"
-          class="form-block"
-          :class="{ 'form-block--default': entry.isDefault }"
-          :data-form="entry.id"
-          :aria-current="entry.isDefault ? 'true' : undefined"
+      <div class="reader-window">
+        <article
+          v-for="entry in slots"
+          :key="entry.key"
+          class="reader-page"
+          :class="{
+            'reader-page--current': entry.current,
+            'reader-page--enter-next': entering === 'next' && entry.current,
+            'reader-page--enter-prev': entering === 'prev' && entry.current,
+          }"
+          :aria-hidden="entry.current ? undefined : 'true'"
+          :data-at="entry.at"
+          :style="{ transform: `translateX(${entry.offset}%)` }"
+          @animationend="entry.current && onPageAnimationEnd($event)"
         >
-          <h2 class="form-name">{{ entry.name }}</h2>
-          <div class="word">
-            <RubyWord
-              :text="entry.data.vol"
-              :reading="entry.data.japanese"
-              :show-reading="showReading"
-            />
-          </div>
-          <p class="gloss">{{ entry.data.chinese }}</p>
-          <div v-if="entry.isFirst" class="tags">
-            <span class="tag">{{ groupLabel(entry.data.group) }}</span>
-            <span class="tag">第{{ item.lesson }}課</span>
-          </div>
-
-          <div class="block">
-            <h3 class="block-title">例句：</h3>
-            <div
-              v-for="(sentence, index) in entry.data.sentence"
-              :key="index"
-              class="sentence"
+          <template v-if="entry.forms.length">
+            <section
+              v-for="form in entry.forms"
+              :key="form.id"
+              class="form-block"
+              :class="{ 'form-block--default': form.isDefault }"
+              :data-form="form.id"
+              :aria-current="form.isDefault ? 'true' : undefined"
             >
-              <p class="sentence-ja" lang="ja"><span
-                v-for="(part, at) in sentenceParts(sentence, entry.data.vol)"
-                :key="at"
-                :class="{ 'sentence-hit': part.highlight }"
-              >{{ part.text }}</span></p>
-              <p class="sentence-zh">{{ sentence.chinese }}</p>
-            </div>
-          </div>
-        </section>
-      </article>
+              <h2 class="form-name">{{ form.name }}</h2>
+              <div class="word">
+                <RubyWord
+                  :text="form.data.vol"
+                  :reading="form.data.japanese"
+                  :show-reading="showReading"
+                />
+              </div>
+              <p class="gloss">{{ form.data.chinese }}</p>
+              <div v-if="form.isFirst" class="tags">
+                <span class="tag">{{ groupLabel(form.data.group) }}</span>
+                <span class="tag">第{{ entry.lesson }}課</span>
+              </div>
+
+              <div class="block">
+                <h3 class="block-title">例句：</h3>
+                <div
+                  v-for="(sentence, at) in form.data.sentence"
+                  :key="at"
+                  class="sentence"
+                >
+                  <p class="sentence-ja" lang="ja"><span
+                    v-for="(part, index) in sentenceParts(sentence, form.data.vol)"
+                    :key="index"
+                    :class="{ 'sentence-hit': part.highlight }"
+                  >{{ part.text }}</span></p>
+                  <p class="sentence-zh">{{ sentence.chinese }}</p>
+                </div>
+              </div>
+            </section>
+          </template>
+        </article>
+      </div>
     </div>
 
     <footer class="reader-controls">
@@ -283,6 +258,15 @@ function openSettings() {
   padding: 4px 4px 8px;
 }
 
+/* The paging window: one slot per mounted word, pushed sideways by the slot's
+   own offset so the 3rd slot always sits where the current word belongs. The
+   window itself is never translated. */
+.reader-window {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+}
+
 /* Where gesture paging is on, a drag must page rather than select text.
    Above 550px text selection stays available (see the swipe gate in the view). */
 @media (max-width: 550px) {
@@ -293,47 +277,40 @@ function openSettings() {
 }
 
 .reader-page {
-  /* A release below the threshold returns in a short decelerating step, so the
-     page settles instead of springing back at the hand. */
-  transition: transform 140ms var(--ease-slide);
+  /* Nothing transitions at rest: the only transform in the page's life is the
+     single enter slide, and it ends on the page's own resting state, so the
+     settle frame changes nothing and cannot flash or move twice. The layer is
+     promoted once and stays promoted — tearing `will-change` down at the exact
+     settle frame is what used to flash on phones. */
+  will-change: transform;
 }
 
-.reader-page--dragging {
-  transition: none;
+/* Only the current page contributes to document flow; neighbours are taken
+   out of flow so they never add scroll height or capture taps, and the window
+   clips them so nothing shows past the column edge. */
+.reader-page:not(.reader-page--current) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  visibility: hidden;
 }
 
-/* Leaving: the old word slides out in the direction of travel, flat and
-   fully, like a page being pushed off the screen. The phase ends on the
-   transition itself (see onPageTransitionEnd), so this duration and the JS
-   fallback never have to agree. */
-.reader-page--leave-next {
-  transform: translateX(-100%);
-  transition: transform 170ms var(--ease-exit);
+.reader-page--current {
+  position: relative;
+  pointer-events: auto;
+  visibility: visible;
 }
 
-.reader-page--leave-prev {
-  transform: translateX(100%);
-  transition: transform 170ms var(--ease-exit);
-}
-
-/* Entering: the new word is pushed in from the edge the swipe came from, at
-   the same pace the old one left. */
+/* Entering: the new word is pushed in from the edge the swipe came from, one
+   short decelerating slide. */
 .reader-page--enter-next {
   animation: page-enter-next 190ms var(--ease-slide);
 }
 
 .reader-page--enter-prev {
   animation: page-enter-prev 190ms var(--ease-slide);
-}
-
-/* The moving phases stay on their own layer, so a phone repaints the page
-   instead of dropping frames mid-slide. */
-.reader-page--dragging,
-.reader-page--leave-next,
-.reader-page--leave-prev,
-.reader-page--enter-next,
-.reader-page--enter-prev {
-  will-change: transform;
 }
 
 @keyframes page-enter-next {
@@ -354,12 +331,8 @@ function openSettings() {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .reader-page,
-  .reader-page--leave-next,
-  .reader-page--leave-prev,
   .reader-page--enter-next,
   .reader-page--enter-prev {
-    transition: none;
     animation: none;
   }
 }

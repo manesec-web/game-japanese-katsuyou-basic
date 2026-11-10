@@ -384,7 +384,7 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あう",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -409,7 +409,7 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あいます",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -434,7 +434,7 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あいません",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -459,7 +459,7 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あいました",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -484,7 +484,7 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あいませんでした",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -509,7 +509,7 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あわない",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -534,7 +534,7 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あった",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -559,7 +559,7 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あわなかった",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -584,7 +584,7 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あって",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -618,7 +618,7 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あおう",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -643,32 +643,16 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あえ",
-          "note": "字典有但是不常用：「遭え」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "「事故に 遭え」と 言う 人は いない。",
-              "chinese": "沒有人會說「去遇上事故吧」。",
-              "note": null
-            },
-            {
-              "japanese": "わざと 事故に 遭え と 言われても 困る。",
-              "chinese": "被人叫故意遇上事故也很困擾。",
-              "note": null
-            },
-            {
-              "japanese": "悪い ことを する 人に 「事故に 遭え」と 言う のは よくない。",
-              "chinese": "對做壞事的人說「去遇上事故吧」並不好。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「遭う」是無意志動詞，沒有命令形；例句都在說明「沒有人會說」這句話，無法示範命令用法",
+          "error_usage": true,
+          "sentence": []
         },
         "conditional-form": {
           "vol": "遭えば",
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あえば",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -693,7 +677,7 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あわれる",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -718,7 +702,7 @@
           "group": "1",
           "chinese": "遭遇; 碰上（事故等）",
           "japanese": "あわせる",
-          "note": null,
+          "note": "「遭う」用於碰上事故、災難，不能換成「会う」。事故に遭う是常見說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -2226,25 +2210,9 @@
           "group": "0",
           "chinese": "順利; 進展順利",
           "japanese": "うまくいかせる",
-          "note": "字典有但是不常用：「うまく行かせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "親は 子どもを うまく行かせる ために 努力する。",
-              "chinese": "父母為了讓孩子順利而努力。",
-              "note": null
-            },
-            {
-              "japanese": "先生は 学生を うまく行かせる 方法を 知って いる。",
-              "chinese": "老師知道讓學生順利的方法。",
-              "note": null
-            },
-            {
-              "japanese": "社長は 部下を うまく行かせる のが 上手だ。",
-              "chinese": "社長很擅長讓部下順利。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「うまく行く」是無意志的慣用表現，不能說「人をうまく行かせる」，要表達使役要說「うまく行くようにする」",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {

@@ -986,9 +986,25 @@
           "group": "2",
           "chinese": "遲到; 延誤; 落後",
           "japanese": "おくれられる",
-          "note": "錯誤詞語，僅供轉詞練習：「遅れる」是無意志動詞，「遅れられる」這個可能形日常不用",
-          "error_usage": true,
-          "sentence": []
+          "note": "「遅れられる」是「可以遲到」。否定「遅れられない」（不能遲到）很常用。電車誤點這種無意志用法一般不用可能形。",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "明日なら、少し 遅れられる。",
+              "chinese": "明天的話，可以晚一點。",
+              "note": null
+            },
+            {
+              "japanese": "始発に 乗れば、 十分くらい 遅れられる。",
+              "chinese": "搭頭班車的話，晚個十分鐘也沒關係。",
+              "note": null
+            },
+            {
+              "japanese": "この 仕事は、一日くらい 遅れられる。",
+              "chinese": "這件工作可以晚一天。",
+              "note": null
+            }
+          ]
         },
         "volitional-form": {
           "vol": "遅れよう",
@@ -1034,8 +1050,8 @@
               "note": null
             },
             {
-              "japanese": "後の 電車に 遅れろ、急ぐ ことは ない。",
-              "chinese": "搭晚一點的電車吧，不必急。",
+              "japanese": "先に 行かなくて いい、 少し 遅れろ。",
+              "chinese": "不用先走，晚一點到就行。",
               "note": null
             }
           ]
@@ -1447,32 +1463,16 @@
           "group": "1",
           "chinese": "趕上; 來得及; 夠用",
           "japanese": "まにあわれる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "今 家を 出れば、九時の バスに 間に合われる。",
-              "chinese": "現在出門的話，趕得上九點的公車。",
-              "note": null
-            },
-            {
-              "japanese": "彼は いつも ぎりぎりで 電車に 間に合われる。",
-              "chinese": "他總是在最後一刻趕上電車。",
-              "note": null
-            },
-            {
-              "japanese": "この 資料は 締め切りに 間に合われる と 思う。",
-              "chinese": "這份資料我想趕得上截止日。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「間に合う」的受身「間に合われる」不能表「趕得上」（那是可能形「間に合える」）；受身用法不成立",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "間に合わせる",
           "group": "1",
           "chinese": "趕上; 來得及; 夠用",
           "japanese": "まにあわせる",
-          "note": null,
+          "note": "「間に合わせる」可以是「間に合う」的使役（子供を学校に間に合わせる＝讓人趕上）。它同時是另一個熟語，表示湊合、趕著準備（ありあわせのもので間に合わせる）。下面三句是使役，不是「湊合」。",
           "error_usage": false,
           "sentence": [
             {
@@ -2201,22 +2201,22 @@
           "group": "3",
           "chinese": "參加",
           "japanese": "さんかされる",
-          "note": null,
+          "note": "作受身幾乎不說。實際是尊敬語（校長も参加される），不是「被參加」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この 記念 パーティーは 社長に 参加される。",
-              "chinese": "這個紀念派對社長也出席。",
+              "japanese": "校長も 運動会に 参加される。",
+              "chinese": "校長也會參加運動會。",
               "note": null
             },
             {
-              "japanese": "運動会には 校長も 参加される。",
-              "chinese": "校長也參加運動會。",
+              "japanese": "先生が 明日の 会議に 参加される 予定です。",
+              "chinese": "老師預定參加明天的會議。",
               "note": null
             },
             {
-              "japanese": "ボランティアの 会には 市長が 参加される。",
-              "chinese": "市長也參加志工聚會。",
+              "japanese": "社長が パーティーに 参加される と 聞いて います。",
+              "chinese": "聽說社長會參加派對。",
               "note": null
             }
           ]
@@ -2889,25 +2889,9 @@
           "group": "1",
           "chinese": "收拾好; 整理好; 解決",
           "japanese": "かたづけ",
-          "note": "字典有但是不常用：「片付け」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "早く 片付け、お客さんが 来るぞ。",
-              "chinese": "快收拾，客人要來了。",
-              "note": null
-            },
-            {
-              "japanese": "自分の 机を 片付け。",
-              "chinese": "把自己的桌子收拾好。",
-              "note": null
-            },
-            {
-              "japanese": "ごみを 出して から 片付け。",
-              "chinese": "丟完垃圾再收拾。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「片付く」是自動詞，命令形「片付け」不能用作「收拾好！」；那是他動詞「片付ける」的命令",
+          "error_usage": true,
+          "sentence": []
         },
         "conditional-form": {
           "vol": "片付けば",
@@ -2939,50 +2923,18 @@
           "group": "1",
           "chinese": "收拾好; 整理好; 解決",
           "japanese": "かたづかれる",
-          "note": "字典有但是不常用：「片付かれる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "毎日 勝手に 机を 片付かれる。",
-              "chinese": "每天桌子被擅自整理。",
-              "note": null
-            },
-            {
-              "japanese": "私の 部屋は 母に 片付かれる。",
-              "chinese": "我的房間被母親整理。",
-              "note": null
-            },
-            {
-              "japanese": "大事な 書類を 人に 片付かれる と 困る。",
-              "chinese": "重要文件被人整理就麻煩了。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「片付く」是自動詞，不能接動作主（「業者に 片付かれる」不成立）；被動要說他動詞「片付ける」的受身「片付けられる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "片付かせる",
           "group": "1",
           "chinese": "收拾好; 整理好; 解決",
           "japanese": "かたづかせる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "母は 私に 部屋を 片付かせる。",
-              "chinese": "母親讓我收拾房間。",
-              "note": null
-            },
-            {
-              "japanese": "先生は 生徒に 机を 片付かせる。",
-              "chinese": "老師讓學生收拾桌子。",
-              "note": null
-            },
-            {
-              "japanese": "部長は 新人に 書類を 片付かせる。",
-              "chinese": "部長讓新人整理文件。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「片付く」是自動詞，「私に部屋を片付かせる」不成立；「讓人收拾」是他動詞「片付ける」的使役「片付けさせる」",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -3677,47 +3629,31 @@
           "group": "2",
           "chinese": "燃燒; 起火",
           "japanese": "もえられる",
-          "note": "字典有但是不常用：「燃えられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "この ごみは 燃えられる と 思う。",
-              "chinese": "我想這種垃圾能燒起來。",
-              "note": null
-            },
-            {
-              "japanese": "乾いた 紙は すぐ 燃えられる。",
-              "chinese": "乾的紙馬上就能燒起來。",
-              "note": null
-            },
-            {
-              "japanese": "生ごみは 燃えられる ものでは ない。",
-              "chinese": "廚餘不是能燒的東西。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「燃える」是無意志動詞，「燃えられる」無受身用法；例句實為可能形讀法，與可能形判定矛盾",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "燃えさせる",
           "group": "2",
           "chinese": "燃燒; 起火",
           "japanese": "もえさせる",
-          "note": "字典有但是不常用：「燃えさせる」日常不用",
+          "note": "字典有但是不常用：把火點著多說他動詞「燃やす」。比喻「情熱・闘志を燃えさせる」才用這個使役。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "子供が マッチで ごみを 燃えさせる。",
-              "chinese": "小孩用火柴讓垃圾燒起來。",
+              "japanese": "その 演説は 聴衆の 情熱を 燃えさせる。",
+              "chinese": "那場演說讓聽眾的熱情燃燒起來。",
               "note": null
             },
             {
-              "japanese": "風が 火を 大きく 燃えさせる。",
-              "chinese": "風讓火燒得更旺。",
+              "japanese": "応援が チームの 闘志を 燃えさせる。",
+              "chinese": "加油讓隊伍的鬥志燃燒起來。",
               "note": null
             },
             {
-              "japanese": "彼は 焚き火を 燃えさせる ために 木を 集める。",
-              "chinese": "他為了讓營火燒起來而撿木頭。",
+              "japanese": "彼の 言葉が 若者の 心を 燃えさせる。",
+              "chinese": "他的話點燃了年輕人的心。",
               "note": null
             }
           ]

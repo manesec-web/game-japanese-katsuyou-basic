@@ -514,12 +514,12 @@
           "sentence": [
             {
               "japanese": "力が 弱くて この 箱は 運ばない。",
-              "chinese": "力氣太小，這個箱子搬不動。",
+              "chinese": "力氣太小，不搬這個箱子。",
               "note": null
             },
             {
               "japanese": "彼は 一人では 大きい 机を 運ばない。",
-              "chinese": "他一個人不會搬大桌子。",
+              "chinese": "他一個人不搬大桌子。",
               "note": null
             },
             {
@@ -890,18 +890,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この 木は 冬でも 亡くならない。",
-              "chinese": "這棵樹在冬天也不會死。",
+              "japanese": "手術を すれば、祖父は まだ 亡くならない。",
+              "chinese": "動手術的話，祖父還不會走。",
               "note": null
             },
             {
-              "japanese": "薬を 飲めば 亡くならない。",
-              "chinese": "吃藥就不會死。",
+              "japanese": "薬を 飲めば、すぐには 亡くならない。",
+              "chinese": "吃藥的話，不會馬上就走。",
               "note": null
             },
             {
-              "japanese": "心配しなくても 人は すぐには 亡くならない。",
-              "chinese": "不用擔心，人不會馬上就死。",
+              "japanese": "今は まだ 亡くならない と 医者は 言った。",
+              "chinese": "醫生說現在還不會走。",
               "note": null
             }
           ]
@@ -999,18 +999,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "古い 木は もう 亡くなろうと して いる。",
-              "chinese": "老樹已經快要死了。",
+              "japanese": "祖父は もう 亡くなろうと して いる。",
+              "chinese": "祖父已經快要走了。",
               "note": null
             },
             {
-              "japanese": "彼は 一人で 静かに 亡くなろうと 決めた。",
-              "chinese": "他決定一個人安靜地死去。",
+              "japanese": "祖母も 安らかに 亡くなろうと して いる。",
+              "chinese": "祖母也正安詳地走向人生終點。",
               "note": null
             },
             {
-              "japanese": "だれでも 家で 亡くなろうと 思う。",
-              "chinese": "任何人都想在家裡過世。",
+              "japanese": "長い 闘病の あと、父は 亡くなろうと して いる。",
+              "chinese": "長期對抗病魔之後，父親已經快要走了。",
               "note": null
             }
           ]
@@ -1079,8 +1079,8 @@
               "note": null
             },
             {
-              "japanese": "社長は 病気で 亡くなられる そうだ。",
-              "chinese": "聽說社長因病去世。",
+              "japanese": "社長に 病気で 先に 亡くなられる と、 会社は 大変だ。",
+              "chinese": "社長因病先走一步的話，公司會很辛苦。",
               "note": null
             },
             {
@@ -1095,25 +1095,9 @@
           "group": "1",
           "chinese": "去世; 逝世",
           "japanese": "なくならせる",
-          "note": "字典有但是不常用：「亡くならせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "戦争は 多くの 家族を 亡くならせる 結果に なった。",
-              "chinese": "戰爭造成了讓許多家庭失去親人的結果。",
-              "note": null
-            },
-            {
-              "japanese": "重い 病気が 彼の 父を 亡くならせる こと に なった。",
-              "chinese": "重病使得他父親去世了。",
-              "note": null
-            },
-            {
-              "japanese": "その 災害は 小さな 村の 人を 何人も 亡くならせる こと に なった。",
-              "chinese": "那場災害讓小村莊好幾個人喪生。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「亡くならせる」是自動詞「亡くなる」的使役形，但「家族を亡くす」「死なせる」才是自然說法，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -1451,18 +1435,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "社長は 来週 入院される そうだ。",
-              "chinese": "聽說社長下週要住院。",
+              "japanese": "祖父に 急に 入院される と、 家の こと が 大変だ。",
+              "chinese": "祖父突然住院的話，家裡的事就很麻煩。",
               "note": null
             },
             {
-              "japanese": "先生は 入院される と 聞いた。",
-              "chinese": "聽說老師要住院。",
+              "japanese": "父に 入院される と、 介護の 準備で 忙しい。",
+              "chinese": "父親住院的話，為了照護的準備會很忙。",
               "note": null
             },
             {
-              "japanese": "父は 大きい 病院に 入院される。",
-              "chinese": "父親要住進大醫院。",
+              "japanese": "母に 入院される と、 夕飯を 作る 人が いない。",
+              "chinese": "母親住院的話，就沒人做晚飯。",
               "note": null
             }
           ]
@@ -1828,18 +1812,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "社長は 今日 退院される そうだ。",
-              "chinese": "聽說社長今天出院。",
+              "japanese": "祖父に 勝手に 退院される と、 家で 看病する の が 大変だ。",
+              "chinese": "祖父擅自出院的話，在家照護會很辛苦。",
               "note": null
             },
             {
-              "japanese": "母は 明日 退院される。",
-              "chinese": "母親明天出院。",
+              "japanese": "父に 先に 退院される と、 迎えの 車が まだ 着いて いない。",
+              "chinese": "父親先出院的話，接送的車還沒到。",
               "note": null
             },
             {
-              "japanese": "大臣は 早く 退院される と いい。",
-              "chinese": "大臣能早點出院就好了。",
+              "japanese": "母に 早く 退院される と、 家の 準備が まだ できて いない。",
+              "chinese": "母親太早出院的話，家裡還沒準備好。",
               "note": null
             }
           ]
@@ -2482,8 +2466,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この 包丁は よく 切れる。",
-              "chinese": "這把刀很鋒利。",
+              "japanese": "私は 片手で 野菜を 切れる。",
+              "chinese": "我單手就能切菜。",
               "note": null
             },
             {

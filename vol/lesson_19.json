@@ -713,18 +713,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この 部屋は いつも お客さんに 泊まられる。",
-              "chinese": "這個房間總是被客人住宿。",
+              "japanese": "隣の 部屋の 客に 遅くまで 泊まられて、 よく 眠れなかった。",
+              "chinese": "隔壁房間的客人住到很晚，害我睡不好。",
               "note": null
             },
             {
-              "japanese": "この ホテルは 毎年 多くの 観光客に 泊まられる。",
-              "chinese": "這家飯店每年被許多觀光客住宿。",
+              "japanese": "弟に 私の 部屋に 泊まられる と、 とても 狭い。",
+              "chinese": "弟弟住我房間的話，非常窄。",
               "note": null
             },
             {
-              "japanese": "古い 旅館は 今でも 旅人に 泊まられる。",
-              "chinese": "古老的旅館至今仍被旅人住宿。",
+              "japanese": "友だちに 先に 泊まられて、 布団が 足りない。",
+              "chinese": "朋友先住下的話，棉被不夠。",
               "note": null
             }
           ]
@@ -748,7 +748,7 @@
               "note": null
             },
             {
-              "japanese": "母は 客人を 家に 泊まらせる。",
+              "japanese": "母は お客さんを 家に 泊まらせる。",
               "chinese": "母親讓客人住家裡。",
               "note": null
             }
@@ -2217,18 +2217,50 @@
           "group": "1",
           "chinese": "成為; 變成",
           "japanese": "なられる",
-          "note": "錯誤詞語，僅供轉詞練習：「なられる」是尊敬用法，不是受身形；日常不用",
-          "error_usage": true,
-          "sentence": []
+          "note": "作受身幾乎不說。實際是尊敬語（先生が校長になられた），不是「被成為」。",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 来年 校長に なられる そうです。",
+              "chinese": "聽說老師明年會當校長。",
+              "note": null
+            },
+            {
+              "japanese": "おじいさんは 今年 九十歳に なられる そうです。",
+              "chinese": "聽說爺爺今年會滿九十歲。",
+              "note": null
+            },
+            {
+              "japanese": "部長は 来月 社長に なられる そうだ。",
+              "chinese": "聽說部長下個月要當社長。",
+              "note": null
+            }
+          ]
         },
         "causative-form": {
           "vol": "ならせる",
           "group": "1",
           "chinese": "成為; 變成",
           "japanese": "ならせる",
-          "note": "錯誤詞語，僅供轉詞練習：「ならせる」日常不用",
-          "error_usage": true,
-          "sentence": []
+          "note": "字典有但是不常用：口語也常說「〜ようにする」。例：子どもを医者にならせる。",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "親は 子どもを 医者に ならせる。",
+              "chinese": "父母讓孩子成為醫生。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 生徒を リーダーに ならせる。",
+              "chinese": "老師讓學生成為領隊。",
+              "note": null
+            },
+            {
+              "japanese": "会社は 彼を 責任者に ならせる。",
+              "chinese": "公司讓他成為負責人。",
+              "note": null
+            }
+          ]
         }
       }
     ]

@@ -236,18 +236,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この はさみは 紙が よく 切れる。",
-              "chinese": "這把剪刀能很好地剪紙。",
+              "japanese": "この はさみで 紙を 切れる。",
+              "chinese": "用這把剪刀可以剪紙。",
               "note": null
             },
             {
-              "japanese": "この ナイフは パンも 切れる。",
-              "chinese": "這把小刀也能切麵包。",
+              "japanese": "子どもでも この ナイフで パンを 切れる。",
+              "chinese": "連小孩也能用這把小刀切麵包。",
               "note": null
             },
             {
-              "japanese": "この 包丁は 肉が 切れる。",
-              "chinese": "這把菜刀能切肉。",
+              "japanese": "私は この 包丁で 肉を 切れる。",
+              "chinese": "我能用這把菜刀切肉。",
               "note": null
             }
           ]
@@ -714,7 +714,7 @@
           "sentence": [
             {
               "japanese": "毎年 クリスマスに 友だちに カードが 送られる。",
-              "chinese": "每年聖誕節，朋友會寄卡片來。",
+              "chinese": "每年聖誕節，卡片都會寄給朋友。",
               "note": null
             },
             {
@@ -1091,12 +1091,12 @@
           "sentence": [
             {
               "japanese": "私の 大切な 花は いつも 妹に あげられる。",
-              "chinese": "我珍貴的花總是被妹妹送給別人。",
+              "chinese": "我珍貴的花總是被拿去送給妹妹。",
               "note": null
             },
             {
               "japanese": "この 本は だれかに あげられる。",
-              "chinese": "這本書會被某人送出去。",
+              "chinese": "這本書會被送給某個人。",
               "note": null
             },
             {
@@ -2981,12 +2981,12 @@
             },
             {
               "japanese": "この 歌は 今でも 学校で 習われる。",
-              "chinese": "這首歌現在在學校仍被教。",
+              "chinese": "這首歌現在在學校仍然會學到。",
               "note": null
             },
             {
               "japanese": "あいさつは 小さい 時から 習われる。",
-              "chinese": "寒暄語從小就被學習。",
+              "chinese": "打招呼的說法從小就學。",
               "note": null
             }
           ]

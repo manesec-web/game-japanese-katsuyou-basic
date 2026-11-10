@@ -322,7 +322,7 @@
             },
             {
               "japanese": "もし 彼が 立てば、写真を 撮りましょう。",
-              "chinese": "如果他站著，就拍張照吧。",
+              "chinese": "如果他站起來，就拍張照吧。",
               "note": null
             }
           ]
@@ -1452,8 +1452,8 @@
               "note": null
             },
             {
-              "japanese": "エアコンの 下に 置けば、よく 効きます。",
-              "chinese": "放在冷氣下方，效果會很好。",
+              "japanese": "加湿器を エアコンの 下に 置けば、よく 効きます。",
+              "chinese": "加濕器放在冷氣下方，效果會很好。",
               "note": null
             }
           ]
@@ -1892,7 +1892,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくる",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -1917,7 +1917,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくります",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -1942,7 +1942,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくりません",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -1967,7 +1967,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくりました",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -1992,7 +1992,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくりませんでした",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -2017,7 +2017,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくらない",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -2042,7 +2042,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくった",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -2067,7 +2067,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくらなかった",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -2092,7 +2092,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくって",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -2117,7 +2117,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくれる",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -2142,7 +2142,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくろう",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -2167,7 +2167,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくれ",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -2192,7 +2192,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくれば",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -2217,7 +2217,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくられる",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -2242,7 +2242,7 @@
           "group": "1",
           "chinese": "製造; 建造",
           "japanese": "つくらせる",
-          "note": null,
+          "note": "字典有但是不常用：一般寫「作る」；「造る」多用於造船、造酒等大規模製造",
           "error_usage": false,
           "sentence": [
             {
@@ -2498,18 +2498,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この 店では 薬も 売れる。",
-              "chinese": "這家店也能賣藥。",
+              "japanese": "私は この 店で 薬を 売れる。",
+              "chinese": "我能在這家店賣藥。",
               "note": null
             },
             {
-              "japanese": "この 型の 車は よく 売れる。",
-              "chinese": "這款車賣得很好。",
+              "japanese": "この 市場では だれでも 魚を 売れる。",
+              "chinese": "在這個市場，任何人都能賣魚。",
               "note": null
             },
             {
-              "japanese": "今は 中古の 物も 高く 売れる。",
-              "chinese": "現在二手貨也能賣得高價。",
+              "japanese": "許可が あれば、ここで 魚を 売れる。",
+              "chinese": "有許可的話，能在這裡賣魚。",
               "note": null
             }
           ]
@@ -2871,7 +2871,7 @@
           "group": "0",
           "chinese": "得知; 知道",
           "japanese": "しれる",
-          "note": "字典有但是不常用；「知れる」是「知る」的自發用法（可由此得知），不作「能知道」的可能義",
+          "note": "字典有但是不常用：「知れる」是「知る」的自發用法（可由此得知），不作「能知道」的可能義",
           "error_usage": false,
           "sentence": [
             {
@@ -3087,8 +3087,8 @@
               "note": null
             },
             {
-              "japanese": "冬だけ なので、ここには 住みません。",
-              "chinese": "只有冬天，所以不住這裡。",
+              "japanese": "仕事が 冬だけ なので、ここには 住みません。",
+              "chinese": "工作只有冬天，所以不住這裡。",
               "note": null
             }
           ]

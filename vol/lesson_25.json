@@ -222,7 +222,7 @@
             },
             {
               "japanese": "一人で 考えて いると 時間が たつ。",
-              "chinese": "一個人想着想着時間就過去了。",
+              "chinese": "一個人想著想著時間就過去了。",
               "note": null
             }
           ]
@@ -523,8 +523,8 @@
               "note": null
             },
             {
-              "japanese": "急がないと 六時の 電車に 着かない。",
-              "chinese": "不快點就趕不上六點的電車。",
+              "japanese": "急がないと、 六時までに 駅に 着かない。",
+              "chinese": "不快點的話，六點前就到不了車站。",
               "note": null
             }
           ]
@@ -609,25 +609,9 @@
           "group": "1",
           "chinese": "到達; 抵達; 到（車站）",
           "japanese": "つける",
-          "note": "字典有但是不常用：「着ける」是「着く」的可能形，易與他動詞「着ける／付ける」混淆",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "この 速さなら 五時に 駅に 着ける。",
-              "chinese": "這個速度的話五點能到車站。",
-              "note": null
-            },
-            {
-              "japanese": "走れば、六時までに 着ける。",
-              "chinese": "跑的話六點前能到。",
-              "note": null
-            },
-            {
-              "japanese": "今 出れば 暗く なる 前に 着ける。",
-              "chinese": "現在出發的話天黑前能到。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「着ける」（つける）是另一個他動詞（穿戴上、附加、點亮），不作「着く」的可能形",
+          "error_usage": true,
+          "sentence": []
         },
         "volitional-form": {
           "vol": "着こう",
@@ -639,7 +623,7 @@
           "sentence": [
             {
               "japanese": "早く 着こう と 思って 走った。",
-              "chinese": "想着快點到，就跑了起來。",
+              "chinese": "想著快點到，就跑了起來。",
               "note": null
             },
             {
@@ -709,25 +693,9 @@
           "group": "1",
           "chinese": "到達; 抵達; 到（車站）",
           "japanese": "つかれる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "友だちに 先に 駅に 着かれる と 困る。",
-              "chinese": "被朋友先到車站就麻煩了。",
-              "note": null
-            },
-            {
-              "japanese": "だれかに 先に 頂上に 着かれる のは 嫌だ。",
-              "chinese": "討厭被別人先到山頂。",
-              "note": null
-            },
-            {
-              "japanese": "いつも 同僚に 先に 会社に 着かれる。",
-              "chinese": "總是被同事先到公司。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「着かれる」（つかれる）會讀成另一個動詞「疲れる」，且「着く」沒有自然的受身形",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "着かせる",
@@ -826,7 +794,7 @@
             },
             {
               "japanese": "この 学年では だれも 留学しません。",
-              "chinese": "這学年誰都不去留學。",
+              "chinese": "這一學年誰都不去留學。",
               "note": null
             }
           ]
@@ -1050,7 +1018,7 @@
               "note": null
             },
             {
-              "japanese": "社長は 「留学しろ」と だけ 言った。",
+              "japanese": "社長は 「留学しろ」とだけ 言った。",
               "chinese": "社長只說了「去留學」。",
               "note": null
             }

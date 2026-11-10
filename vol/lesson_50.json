@@ -332,25 +332,9 @@
           "group": "3",
           "chinese": "緊張",
           "japanese": "きんちょうされる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "社長は 大勢の 前でも 緊張される。",
-              "chinese": "總經理即使在人前也會緊張。",
-              "note": null
-            },
-            {
-              "japanese": "先生は 試験の 前は いつも 緊張される。",
-              "chinese": "老師考試前總是會緊張。",
-              "note": null
-            },
-            {
-              "japanese": "父は 人前で 話す 時は 緊張される。",
-              "chinese": "父親在人前說話時會緊張。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「緊張される」三句都是尊敬用法（社長は／先生は／父は 緊張される），不是受身形；「緊張する」沒有自然的被害受身",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "緊張させる",
@@ -896,7 +880,7 @@
             },
             {
               "japanese": "ここでは 写真を 撮らないで ください。",
-              "chinese": "請不要在裡拍照。",
+              "chinese": "請不要在這裡拍照。",
               "note": null
             },
             {
@@ -1091,7 +1075,7 @@
           "sentence": [
             {
               "japanese": "私は いつも 友達に 写真を 撮られる。",
-              "chinese": "我總是讓朋友拍照。",
+              "chinese": "我總是被朋友拍照。",
               "note": null
             },
             {
@@ -1363,7 +1347,7 @@
           "group": "1",
           "chinese": "實現; 如願",
           "japanese": "かなえる",
-          "note": "錯誤詞語，僅供轉詞練習：「叶える」不是「叶う」的可能形",
+          "note": "錯誤詞語，僅供轉詞練習：「叶える」是另一個動詞（他動詞「叶える」＝實現願望），不用作「叶う」的可能形",
           "error_usage": true,
           "sentence": []
         },
@@ -1397,7 +1381,7 @@
           "group": "1",
           "chinese": "實現; 如願",
           "japanese": "かなえ",
-          "note": "錯誤詞語，僅供轉詞練習：「叶え」不是「叶う」的命令形",
+          "note": "錯誤詞語，僅供轉詞練習：「叶え」會被讀成另一個動詞「叶える」，不用作「叶う」的命令形",
           "error_usage": true,
           "sentence": []
         },
@@ -1431,7 +1415,7 @@
           "group": "1",
           "chinese": "實現; 如願",
           "japanese": "かなわれる",
-          "note": "錯誤詞語，僅供轉詞練習：「叶われる」不是「叶う」的受身形",
+          "note": "錯誤詞語，僅供轉詞練習：「叶う」是自動詞，「叶われる」沒有自然的受身用法；日常不用",
           "error_usage": true,
           "sentence": []
         },
@@ -1440,7 +1424,7 @@
           "group": "1",
           "chinese": "實現; 如願",
           "japanese": "かなわせる",
-          "note": "錯誤詞語，僅供轉詞練習：「叶わせる」不是「叶う」的使役形",
+          "note": "錯誤詞語，僅供轉詞練習：「叶わせる」是自動詞「叶う」的使役形，但他動詞是「叶える」，不用這個使役形",
           "error_usage": true,
           "sentence": []
         }
@@ -1776,25 +1760,9 @@
           "group": "3",
           "chinese": "合作; 協助",
           "japanese": "きょうりょくされる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "先生は いつも 地域の 活動に 協力される。",
-              "chinese": "老師總是協助社區活動。",
-              "note": null
-            },
-            {
-              "japanese": "社長は 多くの 人に 協力される。",
-              "chinese": "總經理受到許多人協助。",
-              "note": null
-            },
-            {
-              "japanese": "校長先生は 毎年 この 行事に 協力される。",
-              "chinese": "校長每年協助這個活動。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「協力される」是尊敬用法（先生は／校長先生は 協力される），不是受身形；「協力する」沒有自然的被害受身",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "協力させる",
@@ -1805,17 +1773,17 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "先生は 学生に 地域の 清掃を 協力させる。",
-              "chinese": "老師讓學生協助打掃社區。",
+              "japanese": "先生は 学生に 地域の 清掃に 協力させる。",
+              "chinese": "老師讓學生協助社區清掃。",
               "note": null
             },
             {
-              "japanese": "会社は 社員を 協力させる ため 規則を 作った。",
-              "chinese": "公司為了讓員工合作而訂了規則。",
+              "japanese": "会社は 社員に 互いに 協力させる ため 規則を 作った。",
+              "chinese": "公司為了讓員工互相合作而訂了規則。",
               "note": null
             },
             {
-              "japanese": "父は 私に 家の 仕事を 協力させる。",
+              "japanese": "父は 私に 家の 仕事に 協力させる。",
               "chinese": "父親讓我協助家事。",
               "note": null
             }
@@ -2182,18 +2150,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "その 出来事は 私を 感謝させる。",
-              "chinese": "那件事讓我心懷感謝。",
+              "japanese": "母は 子どもに 助けて くれた 人に 感謝させる。",
+              "chinese": "媽媽讓孩子感謝幫助過他的人。",
               "note": null
             },
             {
-              "japanese": "先生の 話は 学生を 感謝させる。",
-              "chinese": "老師的話讓學生心懷感謝。",
+              "japanese": "先生は 学生に ボランティアの 人に 感謝させる。",
+              "chinese": "老師讓學生感謝志工。",
               "note": null
             },
             {
-              "japanese": "毎日の 小さな 親切が 人を 感謝させる。",
-              "chinese": "每天小小的親切讓人感謝。",
+              "japanese": "兄は 弟に 先生に 感謝させる。",
+              "chinese": "哥哥讓弟弟感謝老師。",
               "note": null
             }
           ]

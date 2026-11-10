@@ -1477,8 +1477,8 @@
               "note": null
             },
             {
-              "japanese": "あの 家は 通りから 見られる。",
-              "chinese": "那棟房子從街上可以看到。",
+              "japanese": "あの 家は 通りから よく 見られる ので、カーテンを 閉めています。",
+              "chinese": "那棟房子從街上常被看到，所以都拉著窗簾。",
               "note": null
             }
           ]
@@ -4102,22 +4102,22 @@
           "group": "1",
           "chinese": "遇見; 碰見; 見面",
           "japanese": "あわれる",
-          "note": null,
+          "note": "作受身很少說。實際是尊敬語（先生が客に会われる），不是「被見面」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "父が 社長に 会われる 日は 忙しいです。",
-              "chinese": "父親見社長的日子很忙。",
+              "japanese": "先生は 午後 客に 会われる。",
+              "chinese": "老師下午會見客人。",
               "note": null
             },
             {
-              "japanese": "先生が 客に 会われる 部屋は こちらです。",
-              "chinese": "老師見客人的房間是這裡。",
+              "japanese": "社長は 駅で 客に 会われる。",
+              "chinese": "社長在車站見客人。",
               "note": null
             },
             {
-              "japanese": "部長が 友達に 会われる 前に 電話します。",
-              "chinese": "部長見朋友前會先打電話。",
+              "japanese": "お客様は 明日 担当者に 会われる。",
+              "chinese": "客人明天會見負責人。",
               "note": null
             }
           ]

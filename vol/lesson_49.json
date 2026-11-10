@@ -332,25 +332,9 @@
           "group": "2",
           "chinese": "在公司工作; 任職; 服務",
           "japanese": "つとめられる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "彼は 小さな 会社に 勤められる ことになった。",
-              "chinese": "他被安排在小公司工作。",
-              "note": null
-            },
-            {
-              "japanese": "私は 父の 会社に 勤められる ことに なった。",
-              "chinese": "我被安排到父親的公司工作。",
-              "note": null
-            },
-            {
-              "japanese": "新人は 厳しい 部長の 下で 勤められる。",
-              "chinese": "新人被安排在嚴厲的部長手下工作。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「勤められる」這個字串是可能形，也用於尊敬（社長が勤められる）。「〜に勤める」沒有自然的受身。作可能形見可能形項。不是不存在的詞。",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "勤めさせる",
@@ -1463,25 +1447,9 @@
           "group": "1",
           "chinese": "度過; 過（時間）",
           "japanese": "すごされる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "正月は 家族と 一緒に 過ごされる ことが 多い。",
-              "chinese": "新年多半和家人一起度過。",
-              "note": null
-            },
-            {
-              "japanese": "長い 夜は 一人で 過ごされる。",
-              "chinese": "漫長的夜晚獨自度過。",
-              "note": null
-            },
-            {
-              "japanese": "休みの 日は 静かに 過ごされる。",
-              "chinese": "假日安靜地度過。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：例句「社長は正月を過ごされる」是尊敬用法，不是受身形；「過ごす」的受身「過ごされる」沒有實際用法",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "過ごさせる",

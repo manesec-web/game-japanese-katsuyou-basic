@@ -548,8 +548,8 @@
               "note": null
             },
             {
-              "japanese": "父は 私に 渡した お金で 本を 買った。",
-              "chinese": "爸爸用交給我的錢買了書。",
+              "japanese": "父が 私に 渡した お金で 本を 買った。",
+              "chinese": "用爸爸交給我的錢買了書。",
               "note": null
             }
           ]
@@ -1090,13 +1090,13 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "妹は もう 一人で 帰って来られる。",
-              "chinese": "妹妹已經能一個人回來了。",
+              "japanese": "夫に 遅く 帰って来られると、ご飯が 冷める。",
+              "chinese": "老公很晚回來的話，飯就涼了。",
               "note": null
             },
             {
-              "japanese": "駅が 近いので 歩いて 帰って来られる。",
-              "chinese": "因為車站很近，可以走路回來。",
+              "japanese": "弟に 先に 帰って来られると、おやつを 食べられてしまう。",
+              "chinese": "弟弟先回來的話，點心會被吃掉。",
               "note": null
             },
             {
@@ -1740,7 +1740,7 @@
           "group": "1",
           "chinese": "前往; 朝向; 走向",
           "japanese": "むかえる",
-          "note": "字典有但是不常用；「向かえる」是意志動詞「向かう」的可能形",
+          "note": null,
           "error_usage": false,
           "sentence": [
             {
@@ -1819,8 +1819,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この 道を 向かえば、駅に 着く。",
-              "chinese": "往這條路走就會到車站。",
+              "japanese": "駅に 向かえば、この 道を 通ります。",
+              "chinese": "前往車站的話，會走這條路。",
               "note": null
             },
             {
@@ -1840,25 +1840,9 @@
           "group": "1",
           "chinese": "前往; 朝向; 走向",
           "japanese": "むかわれる",
-          "note": "字典有但是不常用：「向かわれる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "客に じっと 向かわれる と、少し 緊張する。",
-              "chinese": "被客人一直盯著看，會有點緊張。",
-              "note": null
-            },
-            {
-              "japanese": "犬に 向かわれる と、子どもは 泣いて しまう。",
-              "chinese": "狗一朝向孩子，孩子就哭了。",
-              "note": null
-            },
-            {
-              "japanese": "社長は 毎朝 八時に 会社に 向かわれる。",
-              "chinese": "社長每天早上八點前往公司。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「向かう」是自動詞，沒有受身「向かわれる」；例句「社長は会社に向かわれる」是尊敬用法，其餘兩句「客に向かわれる」也不自然",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "向かわせる",

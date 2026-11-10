@@ -266,25 +266,9 @@
           "group": "1",
           "chinese": "了解; 明白; 懂",
           "japanese": "わかれ",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "いいか、相手の 気持ちが わかれ！",
-              "chinese": "聽好，要懂對方的心情！",
-              "note": null
-            },
-            {
-              "japanese": "まず 自分の 立場が わかれ と 父は 息子に 言った。",
-              "chinese": "父親對兒子說「先搞清楚自己的立場」。",
-              "note": null
-            },
-            {
-              "japanese": "一度 言ったら わかれ！",
-              "chinese": "說一次就要懂！",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「わかれ」在現代日語是「分かれる／別れる」的命令形（例：二手に 分かれ），不是「わかる」的命令形；「わかる」是狀態動詞，不能命令",
+          "error_usage": true,
+          "sentence": []
         },
         "conditional-form": {
           "vol": "わかれば",
@@ -622,8 +606,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "あしたは きっと いい 天気で あろう。",
-              "chinese": "明天一定會是好天氣吧。",
+              "japanese": "こんな 静かな 場所が この 町に あろう か。",
+              "chinese": "這個鎮上會有這麼安靜的地方嗎。",
               "note": null
             },
             {
@@ -632,8 +616,8 @@
               "note": null
             },
             {
-              "japanese": "どんなに 寒くても、春は 必ず 来る であろう。",
-              "chinese": "不管多冷，春天一定會來吧。",
+              "japanese": "時間は あろう と 思う。",
+              "chinese": "我想會有時間。",
               "note": null
             }
           ]
@@ -643,7 +627,7 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "あれ",
-          "note": null,
+          "note": "字典有但是不常用：「あれ」是文語命令形，只用於「〜であれ」等固定說法",
           "error_usage": false,
           "sentence": [
             {

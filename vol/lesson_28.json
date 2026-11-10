@@ -270,18 +270,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "店長は 店員に「もっと 売れろ」と 言った。",
-              "chinese": "店長對店員說「多賣一點」。",
+              "japanese": "店長は 新しい 商品に「もっと 売れろ」と 言った。",
+              "chinese": "店長對新商品說「再多賣一點啊」。",
               "note": null
             },
             {
-              "japanese": "部長は「今月は これで 売れろ」と 命じた。",
-              "chinese": "部長命令「這個月就賣這個」。",
+              "japanese": "部長は 新しい 車に「早く 売れろ」と 願った。",
+              "chinese": "部長盼望新車「快點賣出去啊」。",
               "note": null
             },
             {
-              "japanese": "先輩は 後輩に「安く 売れろ」と 言った。",
-              "chinese": "前輩對後輩說「便宜點賣」。",
+              "japanese": "先輩は この 商品に「安く 売れろ」と 言った。",
+              "chinese": "前輩對這個商品說「要便宜賣出去啊」。",
               "note": null
             }
           ]
@@ -316,50 +316,18 @@
           "group": "2",
           "chinese": "賣得出去; 暢銷; 能賣",
           "japanese": "うれられる",
-          "note": "字典有但是不常用：「売れられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "人気の ケーキは すぐ 客に 売れられる。",
-              "chinese": "人氣蛋糕馬上被客人買走。",
-              "note": null
-            },
-            {
-              "japanese": "限定の お菓子は 一日で 売れられる。",
-              "chinese": "限量的點心一天就被賣光。",
-              "note": null
-            },
-            {
-              "japanese": "あの 店の パンは 近所の 人に 売れられる。",
-              "chinese": "那家店的麵包被附近的人買走。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「売れる」是自動詞且為無意志動詞，「ケーキを客に売れられる」這種受身不成立，同形的可能形「売れられる」也已判為錯誤",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "売れさせる",
           "group": "2",
           "chinese": "賣得出去; 暢銷; 能賣",
           "japanese": "うれさせる",
-          "note": "字典有但是不常用：「売れさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "店長は 新しい パンを もっと 売れさせる。",
-              "chinese": "店長讓新麵包賣得更好。",
-              "note": null
-            },
-            {
-              "japanese": "店は 安い 値段で 野菜を 売れさせる。",
-              "chinese": "店用便宜價格讓蔬菜賣出去。",
-              "note": null
-            },
-            {
-              "japanese": "宣伝で この 飲み物を よく 売れさせる。",
-              "chinese": "靠宣傳讓這種飲料暢銷。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「売れさせる」是自動詞「売れる」的使役形，但日語用他動詞「売る」或「売れるようにする」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -1608,8 +1576,8 @@
               "note": null
             },
             {
-              "japanese": "わたしの 答えは 最後まで 違いませんでした。",
-              "chinese": "我的答案到最後都沒變。",
+              "japanese": "わたしの 答えは 彼の 答えと 違いませんでした。",
+              "chinese": "我的答案和他的答案沒有不同。",
               "note": null
             },
             {
@@ -1724,25 +1692,9 @@
           "group": "1",
           "chinese": "不同; 不一樣; 錯誤",
           "japanese": "ちがえる",
-          "note": "字典有但是不常用：字典裡有「違える」，但是日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "彼は よく 人の 名前を 違える。",
-              "chinese": "他常把別人的名字記錯。",
-              "note": null
-            },
-            {
-              "japanese": "この 店は 季節ごとに メニューを 違える。",
-              "chinese": "這家店每個季節的菜單都不一樣。",
-              "note": null
-            },
-            {
-              "japanese": "学校は 学年ごとに 制服の 色を 違える。",
-              "chinese": "學校每個年級的制服顏色都不相同。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「違える」是另一個動詞（変える・間違える），例句用的是那個詞；「違う」是狀態動詞，無可能形用法",
+          "error_usage": true,
+          "sentence": []
         },
         "volitional-form": {
           "vol": "違おう",
@@ -1774,25 +1726,9 @@
           "group": "1",
           "chinese": "不同; 不一樣; 錯誤",
           "japanese": "ちがえ",
-          "note": "字典有但是不常用：「違え」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "「その 答えは 違え！」と 先生が 黒板を たたいた。",
-              "chinese": "「那個答案是錯的！」老師敲著黑板說。",
-              "note": null
-            },
-            {
-              "japanese": "父は 私の 計算を 指して「そこは 違え」と 短く 言った。",
-              "chinese": "父親指著我的計算說「那裡錯了」。",
-              "note": null
-            },
-            {
-              "japanese": "「字が 違え！」と 友だちが ノートを 返した。",
-              "chinese": "「字不對！」朋友把筆記本還給我。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「違え」是另一個動詞「違える」（＝變更、弄錯）的命令形，不是「違う」可用的命令形；「違う」是狀態動詞，沒有命令用法",
+          "error_usage": true,
+          "sentence": []
         },
         "conditional-form": {
           "vol": "違えば",
@@ -1824,25 +1760,9 @@
           "group": "1",
           "chinese": "不同; 不一樣; 錯誤",
           "japanese": "ちがわれる",
-          "note": "字典有但是不常用：「違われる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "彼の 名前は よく 違われる。",
-              "chinese": "他的名字常被弄錯。",
-              "note": null
-            },
-            {
-              "japanese": "この 漢字は 人に 違われる ことが 多い。",
-              "chinese": "這個漢字常被人弄錯。",
-              "note": null
-            },
-            {
-              "japanese": "住所が 違われる と 荷物が 届かない。",
-              "chinese": "地址被弄錯的話包裹就到不了。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「違われる」不是「違う」的受身用法；例句的「被弄錯」是「間違えられる」的意思",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "違わせる",
@@ -1853,18 +1773,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "彼は いつも 答えを 違わせる。",
-              "chinese": "他總是把答案弄錯。",
+              "japanese": "この 店は 季節ごとに メニューを 違わせる。",
+              "chinese": "這家店讓每個季節的菜單不同。",
               "note": null
             },
             {
-              "japanese": "弟は わざと 名前を 違わせる。",
-              "chinese": "弟弟故意把名字寫錯。",
+              "japanese": "先生は グループごとに テーマを 違わせる。",
+              "chinese": "老師讓每一組的主題不同。",
               "note": null
             },
             {
-              "japanese": "その 店は 値段を 違わせる。",
-              "chinese": "那家店把價格弄錯。",
+              "japanese": "町は 地区ごとに ごみの 日を 違わせる。",
+              "chinese": "鎮上讓各地區的收垃圾日不同。",
               "note": null
             }
           ]

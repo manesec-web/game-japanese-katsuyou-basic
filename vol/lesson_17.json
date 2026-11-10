@@ -1120,8 +1120,8 @@
               "note": null
             },
             {
-              "japanese": "忙しさが 大切な 約束を なくさせる。",
-              "chinese": "忙碌會讓人丟掉重要的約定。",
+              "japanese": "引っ越しの 忙しさが 大切な 書類を なくさせる。",
+              "chinese": "搬家的忙碌會讓人弄丟重要的文件。",
               "note": null
             },
             {
@@ -1152,8 +1152,8 @@
               "note": null
             },
             {
-              "japanese": "分からない ときは 手を 挙げて、 質問を 出す。",
-              "chinese": "不懂時先舉手，再提出問題。",
+              "japanese": "会議では 自分の 意見を 出す ことが 大切だ。",
+              "chinese": "開會時提出自己的意見很重要。",
               "note": null
             }
           ]
@@ -1177,8 +1177,8 @@
               "note": null
             },
             {
-              "japanese": "学生は 授業の 後で 質問を 出します。",
-              "chinese": "學生課後提出問題。",
+              "japanese": "学生は 授業の 後で 宿題を 出します。",
+              "chinese": "學生課後交作業。",
               "note": null
             }
           ]
@@ -1422,8 +1422,8 @@
               "note": null
             },
             {
-              "japanese": "先生は 学生に「質問を 出せ」と 言いました。",
-              "chinese": "老師叫學生提出問題。",
+              "japanese": "先生は 学生に「宿題を 出せ」と 言いました。",
+              "chinese": "老師叫學生交出作業。",
               "note": null
             },
             {
@@ -1447,8 +1447,8 @@
               "note": null
             },
             {
-              "japanese": "質問を 出せば、 先生が 答えて くれます。",
-              "chinese": "提出問題的話，老師就會回答。",
+              "japanese": "意見を 出せば、 会議が 進みます。",
+              "chinese": "提出意見的話，會議就能推進。",
               "note": null
             },
             {
@@ -1574,13 +1574,13 @@
               "note": null
             },
             {
-              "japanese": "今月は まだ 家賃を 払いません。",
-              "chinese": "這個月還沒交房租。",
+              "japanese": "今月は 家賃を 払いません。",
+              "chinese": "這個月不交房租。",
               "note": null
             },
             {
-              "japanese": "この 店は カードでは 払いません。",
-              "chinese": "這家店不收卡。",
+              "japanese": "わたしは この 店では カードで 払いません。",
+              "chinese": "我在這家店不用卡付款。",
               "note": null
             }
           ]
@@ -1654,8 +1654,8 @@
               "note": null
             },
             {
-              "japanese": "カードが 使えない 店では 払わない。",
-              "chinese": "不能用卡的店就不付。",
+              "japanese": "確認が できていない 請求書は 払わない。",
+              "chinese": "還沒確認過的帳單不付錢。",
               "note": null
             }
           ]
@@ -2226,13 +2226,13 @@
               "note": null
             },
             {
-              "japanese": "お金は 先週 田中さんに 返される。",
-              "chinese": "錢上週被還給了田中。",
+              "japanese": "この お金は 来週 田中さんに 返される 予定です。",
+              "chinese": "這筆錢下週預定要還給田中。",
               "note": null
             },
             {
-              "japanese": "DVD は まだ 返される ことが ありません。",
-              "chinese": "DVD還沒被還回來。",
+              "japanese": "この DVD は 一度も 返される ことが ありません。",
+              "chinese": "這片 DVD 一次也沒有被還回來過。",
               "note": null
             }
           ]
@@ -2975,18 +2975,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "玄関で くつを 脱がれる ことが あります。",
-              "chinese": "在玄關被要求脫鞋。",
+              "japanese": "赤ちゃんは 母に くつを 脱がれる ことが あります。",
+              "chinese": "嬰兒有時被媽媽脫掉鞋子。",
               "note": null
             },
             {
               "japanese": "先生に 上着を 脱がれる のは いやです。",
-              "chinese": "被老師要求脫外套。",
+              "chinese": "外套被老師脫掉，很不舒服。",
               "note": null
             },
             {
               "japanese": "弟に くつを 脱がれる と、 困ります。",
-              "chinese": "有時被媽媽要求脫鞋。",
+              "chinese": "鞋子被弟弟脫掉的話，很為難。",
               "note": null
             }
           ]
@@ -3032,8 +3032,8 @@
               "note": null
             },
             {
-              "japanese": "心配する ほど 大丈夫です。",
-              "chinese": "沒到需要擔心的程度。",
+              "japanese": "心配する ほどでは ありません、大丈夫です。",
+              "chinese": "沒到需要擔心的程度，沒問題。",
               "note": null
             },
             {
@@ -3278,7 +3278,7 @@
           "sentence": [
             {
               "japanese": "あまり 心配しよう と は 思わない。",
-              "chinese": "別那麼擔心了吧。",
+              "chinese": "我不打算太擔心。",
               "note": null
             },
             {
@@ -3302,18 +3302,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "先生は「心配しろ」と 言いました。",
-              "chinese": "老師說別擔心。",
+              "japanese": "医者は「自分の 体を もっと 心配しろ」と 言しました。",
+              "chinese": "醫生說要多擔心自己的身體。",
               "note": null
             },
             {
-              "japanese": "母は「もっと 心配しろ」と 言いました。",
-              "chinese": "媽媽說別太擔心。",
+              "japanese": "父は「もっと 将来を 心配しろ」と 言いました。",
+              "chinese": "爸爸說要多擔心將來。",
               "note": null
             },
             {
               "japanese": "部長は「心配しろ」と は 言いませんでした。",
-              "chinese": "部長說不用擔心。",
+              "chinese": "部長沒有叫我們要擔心。",
               "note": null
             }
           ]
@@ -3332,8 +3332,8 @@
               "note": null
             },
             {
-              "japanese": "家族が 心配すれば、 わたしも 安心します。",
-              "chinese": "家人擔心我也安心。",
+              "japanese": "家族が 心配すれば、 すぐ 電話を かけます。",
+              "chinese": "家人一擔心，我就馬上打電話。",
               "note": null
             },
             {
@@ -3614,7 +3614,7 @@
               "note": null
             },
             {
-              "japanese": "みんなで 残業して、 仕事を 終わりました。",
+              "japanese": "みんなで 残業して、 仕事を 終えました。",
               "chinese": "大家一起加班完成了工作。",
               "note": null
             }
@@ -3730,17 +3730,17 @@
           "sentence": [
             {
               "japanese": "わたしは 部長に 残業される ことが 多いです。",
-              "chinese": "我常被部長要求加班。",
+              "chinese": "部長常加班，連我也得留下來。",
               "note": null
             },
             {
               "japanese": "新人は 先輩に 残業される。",
-              "chinese": "新人被前輩要求加班。",
+              "chinese": "前輩加班，新人也得陪著留下。",
               "note": null
             },
             {
-              "japanese": "社員は 会社に 残業される。",
-              "chinese": "員工被公司要求加班。",
+              "japanese": "夫に 残業される ので、 晩ごはんが 遅く なります。",
+              "chinese": "老公常加班，晚飯都變晚了。",
               "note": null
             }
           ]
@@ -4106,18 +4106,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "わたしは 会社に よく 出張される。",
-              "chinese": "我常被公司派去出差。",
+              "japanese": "わたしは 部長に 出張される ので、 仕事が 増えます。",
+              "chinese": "部長常出差，我的工作就變多。",
               "note": null
             },
             {
               "japanese": "新人は 部長に 出張される。",
-              "chinese": "新人被部長派去出差。",
+              "chinese": "新人常因部長出差而受累。",
               "note": null
             },
             {
               "japanese": "田中さんは 社長に 出張される そうです。",
-              "chinese": "聽說田中被告社長派去出差。",
+              "chinese": "聽說田中常因社長出差而受累。",
               "note": null
             }
           ]
@@ -4493,8 +4493,8 @@
               "note": null
             },
             {
-              "japanese": "この 水は 子どもの ときから 飲まれる。",
-              "chinese": "這水從小孩時就喝。",
+              "japanese": "この 水は 会社で 毎日 飲まれる。",
+              "chinese": "公司每天都喝這種水。",
               "note": null
             }
           ]

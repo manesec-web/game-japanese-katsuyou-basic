@@ -336,18 +336,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この 問題は すぐ 答えられる。",
-              "chinese": "這個問題馬上就能回答。",
+              "japanese": "先生の 質問は だれかに すぐ 答えられる。",
+              "chinese": "老師的問題馬上就會有人回答。",
               "note": null
             },
             {
-              "japanese": "名前を 呼ばれたら、大きな 声で 答えられる。",
-              "chinese": "被叫到名字時，能大聲回答。",
+              "japanese": "この 問題は 数学の 専門家に 答えられる。",
+              "chinese": "這個問題會由數學專家回答。",
               "note": null
             },
             {
-              "japanese": "準備が できていれば、どんな 質問にも 答えられる。",
-              "chinese": "有準備的話，任何問題都能回答。",
+              "japanese": "この 会議では すべての 意見が 担当者に 答えられる。",
+              "chinese": "在這場會議上，所有意見都會由負責人回答。",
               "note": null
             }
           ]
@@ -361,18 +361,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "先生は 学生に 質問を 答えさせる。",
+              "japanese": "先生は 学生に 質問に 答えさせる。",
               "chinese": "老師讓學生回答問題。",
               "note": null
             },
             {
-              "japanese": "母は こどもに 名前を 答えさせる。",
-              "chinese": "媽媽讓孩子回答名字。",
+              "japanese": "母は こどもに 自分の 名前を 答えさせる。",
+              "chinese": "媽媽讓孩子說出自己的名字。",
               "note": null
             },
             {
-              "japanese": "面接では 簡単な 質問を 答えさせる。",
-              "chinese": "面試時讓人回答簡單的問題。",
+              "japanese": "面接では 学生に 簡単な 質問に 答えさせる。",
+              "chinese": "面試時讓學生回答簡單的問題。",
               "note": null
             }
           ]
@@ -609,7 +609,7 @@
           "group": "2",
           "chinese": "倒塌; 倒下; 病倒",
           "japanese": "たおれられる",
-          "note": "字典有但是不常用；「倒れられる」限於意圖性倒下",
+          "note": "字典有但是不常用：「倒れられる」限於意圖性倒下（如護身倒法），日常會話少用",
           "error_usage": false,
           "sentence": [
             {
@@ -1070,50 +1070,18 @@
           "group": "2",
           "chinese": "烤; 燒; 燒毀",
           "japanese": "やけられる",
-          "note": "字典有但是不常用：「焼けられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "この 大きな 窯なら、 一度に パンが 二十個 焼けられる。",
-              "chinese": "用這個大窯，一次可以烤二十個麵包。",
-              "note": null
-            },
-            {
-              "japanese": "炭火は 温度が 高いので、 魚も 短い 時間で 焼けられる。",
-              "chinese": "炭火溫度高，魚也能在短時間內烤好。",
-              "note": null
-            },
-            {
-              "japanese": "切り方を 変えれば、 固い 肉でも 柔らかく 焼けられる。",
-              "chinese": "改變切法，硬肉也能烤得柔軟。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「焼ける」是無意志動詞，沒有「焼けられる」這個受身形；受身要由他動詞「焼く」構成（焼かれる）",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "焼けさせる",
           "group": "2",
           "chinese": "烤; 燒; 燒毀",
           "japanese": "やけさせる",
-          "note": "字典有但是不常用：「焼けさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "この 窯は パンを ゆっくり 焼けさせる。",
-              "chinese": "這個窯能讓麵包慢慢烤熟。",
-              "note": null
-            },
-            {
-              "japanese": "母は 魚を 炭火で 焼けさせる のを 楽しみに して いる。",
-              "chinese": "母親期待用炭火把魚烤熟。",
-              "note": null
-            },
-            {
-              "japanese": "強い 日差しが 畑の 草を 焼けさせる。",
-              "chinese": "強烈的陽光把田裡的草曬枯。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「焼けさせる」是自動詞「焼ける」的使役形，但他動詞是「焼く」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -1461,8 +1429,8 @@
               "note": null
             },
             {
-              "japanese": "先生は 毎朝 この 道を 通られる。",
-              "chinese": "老師每天早上走這條路（敬語）。",
+              "japanese": "私の 家の 前を 毎晩 バイクに 通られる と、 うるさい。",
+              "chinese": "每天晚上有機車從我家門前經過，很吵。",
               "note": null
             }
           ]
@@ -1503,8 +1471,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "金魚が 死ぬ。",
-              "chinese": "金魚死了。",
+              "japanese": "水が 汚いと 金魚が 死ぬ。",
+              "chinese": "水一髒，金魚就會死。",
               "note": null
             },
             {
@@ -1533,8 +1501,8 @@
               "note": null
             },
             {
-              "japanese": "この 木は 冬に なると 死にます。",
-              "chinese": "這棵樹一到冬天就會枯死。",
+              "japanese": "水を やらなければ、この 木は 死にます。",
+              "chinese": "不澆水的話，這棵樹會死。",
               "note": null
             },
             {
@@ -1728,18 +1696,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "こんな 高い 所から 落ちたら 死ねる。",
-              "chinese": "從這麼高的地方掉下來會死。",
+              "japanese": "孫の 顔を 見た。これで 死ねる。",
+              "chinese": "看到孫子的臉，這樣死也甘心。",
               "note": null
             },
             {
-              "japanese": "この 川は 流れが 速くて、 おぼれたら 死ねる。",
-              "chinese": "這條河水流很急，溺水會死。",
+              "japanese": "役目を 終えた。もう 死ねる。",
+              "chinese": "任務完成了，死也無憾。",
               "note": null
             },
             {
-              "japanese": "冬の 山で 道に 迷うと、 寒さで 死ねる。",
-              "chinese": "冬天在山裡迷路，會凍死。",
+              "japanese": "借金を 返した。やっと 死ねる。",
+              "chinese": "債還清了，總算能安心了。",
               "note": null
             }
           ]
@@ -2201,25 +2169,9 @@
           "group": "3",
           "chinese": "吃驚; 嚇一跳; 驚訝",
           "japanese": "びっくりされる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "お客様が 大きな 音に びっくりされる と いけないので、 音楽を 小さく した。",
-              "chinese": "怕客人被大聲響嚇到，所以把音樂調小了。",
-              "note": null
-            },
-            {
-              "japanese": "先生は 虫が 苦手で、 見る たびに びっくりされる。",
-              "chinese": "老師怕蟲，每次看到都會嚇一跳。",
-              "note": null
-            },
-            {
-              "japanese": "大きな 声で 話す ので、 隣の 人に びっくりされる ことが ある。",
-              "chinese": "因為講話太大聲，有時會讓旁邊的人嚇一跳。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「びっくりされる」是尊敬語，不是受身形；「びっくりする」是自動詞，沒有受身用法。要表達「讓某人嚇一跳」要用使役「びっくりさせる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "びっくりさせる",
@@ -2537,8 +2489,8 @@
               "note": null
             },
             {
-              "japanese": "「がっかりしろ」は 冗談で 使う 形だ。",
-              "chinese": "「がっかりしろ」是開玩笑時用的形式。",
+              "japanese": "「さあ、 がっかりしろ」と 友だちに 冗談で 言われた。",
+              "chinese": "朋友開玩笑地對我說「來吧，失望吧」。",
               "note": null
             },
             {
@@ -2578,25 +2530,9 @@
           "group": "3",
           "chinese": "失望; 沮喪; 灰心",
           "japanese": "がっかりされる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "母は 息子の 成績を 見る たびに がっかりされる。",
-              "chinese": "母親每次看到兒子的成績就會失望。",
-              "note": null
-            },
-            {
-              "japanese": "こんな 結果では、 先生に がっかりされる に ちがいない。",
-              "chinese": "這樣的結果，老師一定會失望。",
-              "note": null
-            },
-            {
-              "japanese": "期待して いた 分、 親に がっかりされる のは つらい。",
-              "chinese": "因為曾經期待，被父母失望看待是很難受的。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「がっかりされる」是尊敬語，不是受身形；「がっかりする」是自動詞，沒有受身用法。要表達「讓某人失望」要用使役「がっかりさせる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "がっかりさせる",
@@ -2955,25 +2891,9 @@
           "group": "3",
           "chinese": "安心; 放心; 寬心",
           "japanese": "あんしんされる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "ご家族が 安心される よう に、 写真を 送った。",
-              "chinese": "為了讓家人安心，寄了照片。",
-              "note": null
-            },
-            {
-              "japanese": "無事だ という 連絡が 来れば、 母も 安心される でしょう。",
-              "chinese": "若接到平安的消息，母親也會放心吧。",
-              "note": null
-            },
-            {
-              "japanese": "毎日 電話を すれば、 親も 安心される だろう。",
-              "chinese": "每天打電話的話，父母也會安心吧。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「安心される」三句都是尊敬用法（ご家族が／母も／親も 安心される），不是受身形；「安心する」沒有自然的被害受身",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "安心させる",
@@ -3232,7 +3152,7 @@
           "group": "3",
           "chinese": "遲到",
           "japanese": "ちこくできる",
-          "note": "字典有但是不常用；「びっくりできる」可用，通常說「びっくりする」",
+          "note": "字典有但是不常用：「遅刻できる」可用，但日常多說「遅刻する」",
           "error_usage": false,
           "sentence": [
             {
@@ -3341,8 +3261,8 @@
               "note": null
             },
             {
-              "japanese": "部長は よく 会議に 遅刻される。",
-              "chinese": "部長常常開會遲到。",
+              "japanese": "部長に 会議に 遅刻される と、 話が 進まない。",
+              "chinese": "部長遲到的話，討論就無法進行。",
               "note": null
             },
             {
@@ -3765,8 +3685,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "二人は 去年 離婚する ことに した。",
-              "chinese": "兩個人決定去年離婚。",
+              "japanese": "二人は 来月 離婚する ことに した。",
+              "chinese": "兩個人決定下個月離婚。",
               "note": null
             },
             {
@@ -4363,16 +4283,32 @@
           "group": "1",
           "chinese": "撞上; 碰撞; 碰上",
           "japanese": "ぶつかれる",
-          "note": "錯誤詞語，僅供轉詞練習：「ぶつかる」是無意志動詞，「ぶつかれる」這個可能形日常不用",
-          "error_usage": true,
-          "sentence": []
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "練習では 相手に 強く ぶつかれる。",
+              "chinese": "練習時能用力撞向對手。",
+              "note": null
+            },
+            {
+              "japanese": "広い コートなら 思い切り ぶつかれる。",
+              "chinese": "場地寬的話就能盡情衝撞。",
+              "note": null
+            },
+            {
+              "japanese": "覚悟が 決まれば、本音で ぶつかれる。",
+              "chinese": "下定決心就能坦率地硬碰硬。",
+              "note": null
+            }
+          ]
         },
         "volitional-form": {
           "vol": "ぶつかろう",
           "group": "1",
           "chinese": "撞上; 碰撞; 碰上",
           "japanese": "ぶつかろう",
-          "note": "字典有但是不常用：「ぶつかろう」日常不用",
+          "note": "「ぶつかろう」單用少見，但「ぶつかろうとしている」（快要撞上）是常用說法。",
           "error_usage": false,
           "sentence": [
             {
@@ -4472,25 +4408,9 @@
           "group": "1",
           "chinese": "撞上; 碰撞; 碰上",
           "japanese": "ぶつからせる",
-          "note": "字典有但是不常用：「ぶつからせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "ボールを 壁に ぶつからせる。",
-              "chinese": "讓球撞到牆。",
-              "note": null
-            },
-            {
-              "japanese": "車を 電柱に ぶつからせる。",
-              "chinese": "讓車撞上電線桿。",
-              "note": null
-            },
-            {
-              "japanese": "いたずらな 子どもを 人に ぶつからせる のは よくない。",
-              "chinese": "讓頑皮的孩子撞到人是不好的。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「ぶつからせる」是自動詞「ぶつかる」的使役形，但他動詞是「ぶつける」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {

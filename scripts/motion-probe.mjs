@@ -1,5 +1,5 @@
-// Motion probe: samples the paging and flip animations frame by frame so a
-// rebound can be measured instead of guessed. Run against the built site:
+// Motion probe: samples the paging and flip animations frame by frame so the
+// motion can be measured instead of guessed. Run against the built site:
 //   node scripts/motion-probe.mjs
 // Prints, for each case, the position trace, the peak speed, the settle time
 // and any direction reversal (a value that moves back past its resting point).

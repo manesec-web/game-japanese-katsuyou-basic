@@ -2,7 +2,7 @@
 
 ![Vue 3](https://img.shields.io/badge/Vue-3-42b883?logo=vue.js&logoColor=white)
 ![Vite 7](https://img.shields.io/badge/Vite-7-646cff?logo=vite&logoColor=white)
-![Vitest](https://img.shields.io/badge/tests-209%20passing-2ea44f)
+![Vitest](https://img.shields.io/badge/tests-234%20passing-2ea44f)
 ![Static site](https://img.shields.io/badge/deploy-static%20site-4a3f9f)
 
 > 朗讀功能、下載流程優化與 UI 優化列在 [`docs/roadmap.md`](docs/roadmap.md) 的
@@ -78,7 +78,7 @@ npm run preview    # 預覽建置結果（http://localhost:4173/game-japanese-ka
 | `npm run dev` | 啟動 Vite 開發伺服器（附字典中介層） |
 | `npm run build` | 建置靜態網站到 `output/`，並複製 50 個課程檔到 `output/dict/` |
 | `npm run preview` | 以 Vite 預覽 `output/` |
-| `npm test` | 執行 Vitest 單元測試（21 個檔案、209 個測試） |
+| `npm test` | 執行 Vitest 單元測試（24 個檔案、234 個測試） |
 | `npm run test:watch` | 監看模式 |
 | `node scripts/write-sha256.mjs` | 重新產生 `src/data/dict-manifest.json` |
 | `node scripts/write-sha256.mjs --check` | 校驗 manifest 與 `vol/` 位元組是否一致（不一致則非 0 結束） |
@@ -191,10 +191,10 @@ output/                     建置輸出（不提交）
 ## 測試與驗證
 
 ```bash
-npm test                                # 21 檔 / 209 個單元測試
+npm test                                # 24 檔 / 234 個單元測試
 npm run build                           # output/index.html + output/dict/（50 檔）
 node scripts/write-sha256.mjs --check   # manifest 一致
-node scripts/browser-check.mjs          # 379 項端到端檢查（390×844 為主；測驗題目
+node scripts/browser-check.mjs          # 411 項端到端檢查（390×844 為主；測驗題目
                                         # 由亂數種子決定，假名按鍵檢查數會上下浮動 1 項）
 ```
 

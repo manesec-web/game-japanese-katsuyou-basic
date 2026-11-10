@@ -337,7 +337,7 @@
           "sentence": [
             {
               "japanese": "重い 荷物は いつも 私に 降ろされる。",
-              "chinese": "重行李總是被派給我卸下來。",
+              "chinese": "重行李總是由我卸下來。",
               "note": null
             },
             {
@@ -362,7 +362,7 @@
           "sentence": [
             {
               "japanese": "店長は 新人に トラックから 荷物を 降ろさせる。",
-              "chinese": "店長讓新人在卡車上卸貨。",
+              "chinese": "店長讓新人從卡車上卸貨。",
               "note": null
             },
             {
@@ -986,9 +986,25 @@
           "group": "3",
           "chinese": "照顧; 照料; 關照",
           "japanese": "せわができる",
-          "note": "錯誤詞語，僅供轉詞練習：「世話ができる」不是「世話をする」的可能形",
-          "error_usage": true,
-          "sentence": []
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "一人でも 祖母の 世話ができる。",
+              "chinese": "我一個人也能照顧祖母。",
+              "note": null
+            },
+            {
+              "japanese": "妹は もう 犬の 世話ができる。",
+              "chinese": "妹妹已經能照顧狗了。",
+              "note": null
+            },
+            {
+              "japanese": "この 仕事は、人の 世話ができる 人に 向いている。",
+              "chinese": "這份工作適合能照顧人的人。",
+              "note": null
+            }
+          ]
         },
         "volitional-form": {
           "vol": "世話をしよう",

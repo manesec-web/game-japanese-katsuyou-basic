@@ -136,8 +136,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この 部屋の いすは 多すぎて、一人では 数えない。",
-              "chinese": "這房間的椅子太多，一個人數不完。",
+              "japanese": "この 部屋の いすは、今日は 数えない。",
+              "chinese": "今天不數這個房間的椅子。",
               "note": null
             },
             {
@@ -146,8 +146,8 @@
               "note": null
             },
             {
-              "japanese": "弟は まだ 10まで 数えない。",
-              "chinese": "弟弟還不會數到十。",
+              "japanese": "弟は お菓子の 数を 数えない。",
+              "chinese": "弟弟不數點心的數量。",
               "note": null
             }
           ]
@@ -382,24 +382,24 @@
         "dictionary-form": {
           "vol": "計る",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はかる",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この 荷物の 重さを 計る。",
-              "chinese": "量這件行李的重量。",
+              "japanese": "走った 時間を 計る。",
+              "chinese": "計跑步的時間。",
               "note": null
             },
             {
-              "japanese": "駅の 係の 人は スーツケースの 重さを 計る。",
-              "chinese": "車站人員會稱行李箱的重量。",
+              "japanese": "試合では ゴールまでの 時間を 計る。",
+              "chinese": "比賽時計到達終點的時間。",
               "note": null
             },
             {
-              "japanese": "長さを 計る には メジャーが 必要だ。",
-              "chinese": "量長度需要捲尺。",
+              "japanese": "会議の 時間を 計る。",
+              "chinese": "計會議的時間。",
               "note": null
             }
           ]
@@ -407,19 +407,19 @@
         "masu-form": {
           "vol": "計ります",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はかります",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "空港で 荷物の 重さを 計ります。",
-              "chinese": "在機場稱行李的重量。",
+              "japanese": "コーチは 走った 時間を 計ります。",
+              "chinese": "教練計跑步的時間。",
               "note": null
             },
             {
-              "japanese": "医者は 患者の 体重を 計ります。",
-              "chinese": "醫生量患者的體重。",
+              "japanese": "この 大会では 一位の 時間を 計ります。",
+              "chinese": "這個大會會計第一名的時間。",
               "note": null
             },
             {
@@ -432,14 +432,14 @@
         "masu-form-negative": {
           "vol": "計りません",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はかりません",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "手荷物は ここでは 計りません。",
-              "chinese": "手提行李在這裡不稱重。",
+              "japanese": "今日は 練習の 時間を 計りません。",
+              "chinese": "今天不計練習的時間。",
               "note": null
             },
             {
@@ -448,8 +448,8 @@
               "note": null
             },
             {
-              "japanese": "この 店では 長さを 計りません。",
-              "chinese": "這家店不量長度。",
+              "japanese": "この 大会では 途中の 時間を 計りません。",
+              "chinese": "這個大會不計中途的時間。",
               "note": null
             }
           ]
@@ -457,24 +457,24 @@
         "masu-form-past": {
           "vol": "計りました",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はかりました",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "昨日 空港で 荷物を 計りました。",
-              "chinese": "昨天在機場稱了行李。",
+              "japanese": "昨日 走った 時間を 計りました。",
+              "chinese": "昨天計了跑步的時間。",
               "note": null
             },
             {
-              "japanese": "マラソンの 前に 体重を 計りました。",
-              "chinese": "馬拉松前量了體重。",
+              "japanese": "試合の 前に 一周の 時間を 計りました。",
+              "chinese": "比賽前計了一圈的時間。",
               "note": null
             },
             {
-              "japanese": "店の 人が スーツの サイズを 計りました。",
-              "chinese": "店員量了西裝的尺寸。",
+              "japanese": "先生は テストの 時間を 計りました。",
+              "chinese": "老師計了考試的時間。",
               "note": null
             }
           ]
@@ -482,24 +482,24 @@
         "masu-form-past-negative": {
           "vol": "計りませんでした",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はかりませんでした",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "昨日は 忙しくて、重さを 計りませんでした。",
-              "chinese": "昨天太忙，沒有稱重量。",
+              "japanese": "昨日は 忙しくて、時間を 計りませんでした。",
+              "chinese": "昨天太忙，沒有計時。",
               "note": null
             },
             {
-              "japanese": "小さい 荷物は 計りませんでした。",
-              "chinese": "小的行李沒有稱重。",
+              "japanese": "短い 距離は 時間を 計りませんでした。",
+              "chinese": "短距離沒有計時。",
               "note": null
             },
             {
-              "japanese": "時間が なくて、長さを 計りませんでした。",
-              "chinese": "因為沒時間，沒有量長度。",
+              "japanese": "時間が なくて、一周の 時間を 計りませんでした。",
+              "chinese": "因為沒時間，沒有計一圈的時間。",
               "note": null
             }
           ]
@@ -507,19 +507,19 @@
         "nai-form": {
           "vol": "計らない",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はからない",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この はかりは 壊れて いて、重さを 計らない。",
-              "chinese": "這個秤壞了，不量重量。",
+              "japanese": "この 時計は 壊れて いて、時間を 計らない。",
+              "chinese": "這個碼錶壞了，不計時。",
               "note": null
             },
             {
-              "japanese": "手荷物は だれも 計らない。",
-              "chinese": "手提行李誰都不稱。",
+              "japanese": "練習では だれも 時間を 計らない。",
+              "chinese": "練習時誰都不計時。",
               "note": null
             },
             {
@@ -532,24 +532,24 @@
         "ta-form": {
           "vol": "計った",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はかった",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "出発の 前に 荷物を 計った。",
-              "chinese": "出發前稱了行李。",
+              "japanese": "出発の 前に 準備の 時間を 計った。",
+              "chinese": "出發前計了準備的時間。",
               "note": null
             },
             {
-              "japanese": "先生は 教室の 長さを 計った。",
-              "chinese": "老師量了教室的長度。",
+              "japanese": "先生は 走る 時間を 計った。",
+              "chinese": "老師計了跑步的時間。",
               "note": null
             },
             {
-              "japanese": "係の 人が スーツケースを 計った。",
-              "chinese": "工作人員稱了行李箱。",
+              "japanese": "係の 人が 一位の 時間を 計った。",
+              "chinese": "工作人員計了第一名的時間。",
               "note": null
             }
           ]
@@ -557,9 +557,9 @@
         "nakatta-form": {
           "vol": "計らなかった",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はからなかった",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
@@ -568,13 +568,13 @@
               "note": null
             },
             {
-              "japanese": "私は 体重を 計らなかった。",
-              "chinese": "我沒有量體重。",
+              "japanese": "私は 走る 時間を 計らなかった。",
+              "chinese": "我沒有計跑步的時間。",
               "note": null
             },
             {
-              "japanese": "店では サイズを 計らなかった。",
-              "chinese": "店裡沒有量尺寸。",
+              "japanese": "今日は 料理の 時間を 計らなかった。",
+              "chinese": "今天沒有計做菜的時間。",
               "note": null
             }
           ]
@@ -582,24 +582,24 @@
         "te-form": {
           "vol": "計って",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はかって",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "重さを 計って、表に 書いた。",
-              "chinese": "稱了重量後寫在表上。",
+              "japanese": "時間を 計って、表に 書いた。",
+              "chinese": "計了時間後寫在表上。",
               "note": null
             },
             {
-              "japanese": "まず 荷物を 計ってから、中に 入れて ください。",
-              "chinese": "請先稱行李再放進去。",
+              "japanese": "まず 時間を 計ってから、走り 始める。",
+              "chinese": "先計時，再開始跑。",
               "note": null
             },
             {
-              "japanese": "係の 人は 長さを 計って、切符を くれた。",
-              "chinese": "工作人員量了長度後給我票。",
+              "japanese": "係の 人は 時間を 計って、記録を 残した。",
+              "chinese": "工作人員計時後留下紀錄。",
               "note": null
             }
           ]
@@ -607,24 +607,24 @@
         "potential-form": {
           "vol": "計れる",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はかれる",
-          "note": "字典有但是不常用；「計れる」是「計る」的可能形",
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この はかりで 赤ちゃんの 体重も 計れる。",
-              "chinese": "這個秤也能量嬰兒的體重。",
+              "japanese": "この 時計で 一秒まで 計れる。",
+              "chinese": "這個碼錶可以計到一秒。",
               "note": null
             },
             {
-              "japanese": "メジャーが あれば、部屋の 長さを 計れる。",
-              "chinese": "有捲尺就能量房間的長度。",
+              "japanese": "ストップウォッチが あれば、走る 時間を 計れる。",
+              "chinese": "有碼錶就能計跑步的時間。",
               "note": null
             },
             {
-              "japanese": "1分で 荷物の 重さを 計れる。",
-              "chinese": "一分鐘就能稱完行李的重量。",
+              "japanese": "一分 単位で 料理の 時間を 計れる。",
+              "chinese": "可以以一分為單位計做菜的時間。",
               "note": null
             }
           ]
@@ -632,24 +632,24 @@
         "volitional-form": {
           "vol": "計ろう",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はかろう",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "出発の 前に もう 一度 荷物を 計ろう。",
-              "chinese": "出發前再稱一次行李吧。",
+              "japanese": "出発の 前に もう 一度 時間を 計ろう。",
+              "chinese": "出發前再計一次時間吧。",
               "note": null
             },
             {
-              "japanese": "みんなで 体重を 計ろう。",
-              "chinese": "大家來量體重吧。",
+              "japanese": "みんなで 走る 時間を 計ろう。",
+              "chinese": "大家來計跑步時間吧。",
               "note": null
             },
             {
-              "japanese": "まず スーツケースの 重さを 計ろう。",
-              "chinese": "先稱行李箱的重量吧。",
+              "japanese": "まず 一周の 時間を 計ろう。",
+              "chinese": "先計一圈的時間吧。",
               "note": null
             }
           ]
@@ -657,19 +657,19 @@
         "imperative-form": {
           "vol": "計れ",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はかれ",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "係の 人は 客に「ここで 荷物を 計れ」と 言った。",
-              "chinese": "工作人員對客人說「在這裡稱行李」。",
+              "japanese": "係の 人は 客に「ここで 時間を 計れ」と 言った。",
+              "chinese": "工作人員對客人說「在這裡計時」。",
               "note": null
             },
             {
-              "japanese": "先生は 生徒に「この ひもの 長さを 計れ」と 指示した。",
-              "chinese": "老師指示學生「量這條繩子的長度」。",
+              "japanese": "先生は 生徒に「走る 時間を 計れ」と 指示した。",
+              "chinese": "老師指示學生「計跑步的時間」。",
               "note": null
             },
             {
@@ -682,19 +682,19 @@
         "conditional-form": {
           "vol": "計れば",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はかれば",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "重さを 計れば、送料が わかる。",
-              "chinese": "稱了重量就知道運費。",
+              "japanese": "時間を 計れば、記録が 残る。",
+              "chinese": "計了時間就有紀錄。",
               "note": null
             },
             {
-              "japanese": "毎日 体重を 計れば、変化が わかる。",
-              "chinese": "每天量體重就能知道變化。",
+              "japanese": "毎日 時間を 計れば、変化が わかる。",
+              "chinese": "每天計時就能知道變化。",
               "note": null
             },
             {
@@ -707,24 +707,24 @@
         "passive-form": {
           "vol": "計られる",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はかられる",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "荷物は 空港で 係の 人に 計られる。",
-              "chinese": "行李在機場由工作人員稱重。",
+              "japanese": "時間は 大会で 係の 人に 計られる。",
+              "chinese": "時間在大會上由工作人員計。",
               "note": null
             },
             {
-              "japanese": "体重は 病院で 看護師に 計られる。",
-              "chinese": "體重在醫院由護士量。",
+              "japanese": "走る 時間は コーチに 計られる。",
+              "chinese": "跑步時間由教練計。",
               "note": null
             },
             {
-              "japanese": "長さは 店の 人に 計られる。",
-              "chinese": "長度由店員量。",
+              "japanese": "料理の 時間は 母に 計られる。",
+              "chinese": "做菜的時間由媽媽計。",
               "note": null
             }
           ]
@@ -732,19 +732,19 @@
         "causative-form": {
           "vol": "計らせる",
           "group": "1",
-          "chinese": "計量; 測量; 稱重",
+          "chinese": "計時; 計算（時間、數量）",
           "japanese": "はからせる",
-          "note": null,
+          "note": "「計る」用於計時間，也可用於人數、步數這類數量。重量用「量る」，長度、溫度用「測る」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "店の 人は 客に 荷物を 計らせる。",
-              "chinese": "店員讓客人自己稱行李。",
+              "japanese": "コーチは 選手に 時間を 計らせる。",
+              "chinese": "教練讓選手計時。",
               "note": null
             },
             {
-              "japanese": "先生は 生徒に 体重を 計らせる。",
-              "chinese": "老師讓學生量體重。",
+              "japanese": "先生は 生徒に 走る 時間を 計らせる。",
+              "chinese": "老師讓學生計跑步時間。",
               "note": null
             },
             {
@@ -1095,8 +1095,8 @@
               "note": null
             },
             {
-              "japanese": "テストの 日は 事務所で 確かめられる。",
-              "chinese": "考試的日子在辦公室確認。",
+              "japanese": "テストの 日は 事務所の 人に 確かめられる。",
+              "chinese": "考試的日子由事務所的人確認。",
               "note": null
             },
             {
@@ -1363,7 +1363,7 @@
           "group": "1",
           "chinese": "合適; 相配; 一致",
           "japanese": "あえる",
-          "note": "字典有但是不常用；「合える」是「合う」的可能形（慣用表現）",
+          "note": "字典有但是不常用：「合える」是「合う」的可能形，多用於「気の 合える」「話の 合える」等慣用表現",
           "error_usage": false,
           "sentence": [
             {
@@ -1378,7 +1378,7 @@
             },
             {
               "japanese": "息の 合える 選手と 組むと、 試合が 楽だ。",
-              "chinese": "和默契合的選手搭檔，比賽就輕鬆。",
+              "chinese": "和默契十足的選手搭檔，比賽就輕鬆。",
               "note": null
             }
           ]
@@ -1388,7 +1388,7 @@
           "group": "1",
           "chinese": "合適; 相配; 一致",
           "japanese": "あおう",
-          "note": "字典有但是不常用：「合おう」日常不用",
+          "note": "「合おう」常出現在「〜おうと〜まいと」的讓步句，不是日常不用。",
           "error_usage": false,
           "sentence": [
             {
@@ -1422,13 +1422,13 @@
               "note": null
             },
             {
-              "japanese": "監督は「声を 合え」と 指示した。",
-              "chinese": "教練指示「把聲音對齊」。",
+              "japanese": "監督は「拍に 合え」と 指示した。",
+              "chinese": "教練指示「跟上拍子」。",
               "note": null
             },
             {
-              "japanese": "先生は 生徒に「前に 出て、声を 合え」と 言った。",
-              "chinese": "老師對學生說「到前面來，把聲音對齊」。",
+              "japanese": "コーチは 選手に「歩幅に 合え」と 指示した。",
+              "chinese": "教練指示選手「配合步伐」。",
               "note": null
             }
           ]
@@ -1463,25 +1463,9 @@
           "group": "1",
           "chinese": "合適; 相配; 一致",
           "japanese": "あわれる",
-          "note": "字典有但是不常用：「合われる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "この スーツは 彼の 体に 合われるように 仕立てられた。",
-              "chinese": "這套西裝是照他的身材訂做的。",
-              "note": null
-            },
-            {
-              "japanese": "その 色は 若い 人に 合われる ことが 多い。",
-              "chinese": "那個顏色常被年輕人選用。",
-              "note": null
-            },
-            {
-              "japanese": "サイズは 店の 人に 合われる ので、少し 時間が かかる。",
-              "chinese": "尺寸由店員調整，所以要花一點時間。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「合われる」不是「合う」的受身用法；例句用的是「合う（〜が合う）」與「合わせる（調整）」的意思",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "合わせる",
@@ -1828,18 +1812,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "社長は 明日 東京を 出発される。",
-              "chinese": "社長明天從東京出發。",
+              "japanese": "友だちに 先に 出発される と、とても 寂しい。",
+              "chinese": "朋友先出發的話，會很寂寞。",
               "note": null
             },
             {
-              "japanese": "お客様は 9時に 出発される。",
-              "chinese": "客人九點出發。",
+              "japanese": "家族に 先に 出発される と、荷物が 運べない。",
+              "chinese": "家人先出發的話，行李就搬不動。",
               "note": null
             },
             {
-              "japanese": "先生は もう 出発される そうだ。",
-              "chinese": "聽說老師已經要出發了。",
+              "japanese": "同僚に 先に 出発される と、仕事が 残って 困る。",
+              "chinese": "同事先出發的話，工作留下來，很困擾。",
               "note": null
             }
           ]
@@ -2205,18 +2189,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "首相は 夕方 空港に 到着される。",
-              "chinese": "首相傍晚抵達機場。",
+              "japanese": "ライバルに 先に 到着される と、負けた 気分に なる。",
+              "chinese": "被對手先到達，會有輸了的感覺。",
               "note": null
             },
             {
-              "japanese": "お客様は もう 到着される そうだ。",
-              "chinese": "聽說客人已經要到了。",
+              "japanese": "弟に 先に 到着される と、いい 席が 取れない。",
+              "chinese": "弟弟先到的話，好位子就被佔走了。",
               "note": null
             },
             {
-              "japanese": "先生は 3時に 駅に 到着される。",
-              "chinese": "老師三點抵達車站。",
+              "japanese": "同僚に 先に 会場へ 到着される と、準備が 間に合わない。",
+              "chinese": "同事先到會場的話，準備就來不及。",
               "note": null
             }
           ]
@@ -2478,7 +2462,7 @@
           "group": "1",
           "chinese": "醉; 暈車",
           "japanese": "よえる",
-          "note": "字典有但是不常用；「酔える」是「酔う」的可能形（口語）",
+          "note": null,
           "error_usage": false,
           "sentence": [
             {
@@ -2628,7 +2612,7 @@
         "dictionary-form": {
           "vol": "量る",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はかる",
           "note": null,
           "error_usage": false,
@@ -2653,7 +2637,7 @@
         "masu-form": {
           "vol": "量ります",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はかります",
           "note": null,
           "error_usage": false,
@@ -2678,7 +2662,7 @@
         "masu-form-negative": {
           "vol": "量りません",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はかりません",
           "note": null,
           "error_usage": false,
@@ -2703,7 +2687,7 @@
         "masu-form-past": {
           "vol": "量りました",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はかりました",
           "note": null,
           "error_usage": false,
@@ -2728,7 +2712,7 @@
         "masu-form-past-negative": {
           "vol": "量りませんでした",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はかりませんでした",
           "note": null,
           "error_usage": false,
@@ -2753,7 +2737,7 @@
         "nai-form": {
           "vol": "量らない",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はからない",
           "note": null,
           "error_usage": false,
@@ -2778,7 +2762,7 @@
         "ta-form": {
           "vol": "量った",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はかった",
           "note": null,
           "error_usage": false,
@@ -2803,7 +2787,7 @@
         "nakatta-form": {
           "vol": "量らなかった",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はからなかった",
           "note": null,
           "error_usage": false,
@@ -2828,7 +2812,7 @@
         "te-form": {
           "vol": "量って",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はかって",
           "note": null,
           "error_usage": false,
@@ -2853,9 +2837,9 @@
         "potential-form": {
           "vol": "量れる",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はかれる",
-          "note": "字典有但是不常用；「量れる」是「量る」的可能形",
+          "note": null,
           "error_usage": false,
           "sentence": [
             {
@@ -2878,7 +2862,7 @@
         "volitional-form": {
           "vol": "量ろう",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はかろう",
           "note": null,
           "error_usage": false,
@@ -2903,7 +2887,7 @@
         "imperative-form": {
           "vol": "量れ",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はかれ",
           "note": null,
           "error_usage": false,
@@ -2928,7 +2912,7 @@
         "conditional-form": {
           "vol": "量れば",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はかれば",
           "note": null,
           "error_usage": false,
@@ -2953,7 +2937,7 @@
         "passive-form": {
           "vol": "量られる",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はかられる",
           "note": null,
           "error_usage": false,
@@ -2978,7 +2962,7 @@
         "causative-form": {
           "vol": "量らせる",
           "group": "1",
-          "chinese": "量（重量）; 稱; 測量",
+          "chinese": "量（重量）; 稱",
           "japanese": "はからせる",
           "note": null,
           "error_usage": false,

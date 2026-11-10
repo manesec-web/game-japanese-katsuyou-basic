@@ -336,18 +336,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "先生は よく お孫さんと 遊ばれる。",
-              "chinese": "老師常和孫子玩。",
-              "note": null
-            },
-            {
-              "japanese": "祖父は 毎日 庭で 犬と 遊ばれる。",
-              "chinese": "祖父每天在院子裡和狗玩。",
-              "note": null
-            },
-            {
               "japanese": "私の 部屋で 弟に 遊ばれる と、落ち着かない。",
               "chinese": "弟弟在我房間玩，我就靜不下來。",
+              "note": null
+            },
+            {
+              "japanese": "隣の 部屋で 夜おそくまで 遊ばれる ので、よく 眠れない。",
+              "chinese": "隔壁房間玩到深夜，我睡不好。",
+              "note": null
+            },
+            {
+              "japanese": "休みの 日は 子どもに 一日中 遊ばれる ので、とても 疲れる。",
+              "chinese": "假日小孩玩一整天，我非常累。",
               "note": null
             }
           ]
@@ -709,22 +709,22 @@
           "group": "1",
           "chinese": "游泳",
           "japanese": "およがれる",
-          "note": null,
+          "note": "字典有但是不常用：這裡是迷惑受身（子供に川で泳がれると心配だ）。「先生が泳がれる」則是尊敬語。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "先生は 毎朝 プールで 泳がれる。",
-              "chinese": "老師每天早上在游泳池游泳。",
+              "japanese": "子供に 川で 泳がれる と、心配だ。",
+              "chinese": "小孩在河裡游泳，讓人擔心。",
               "note": null
             },
             {
-              "japanese": "祖父は 八十歳でも 海で 泳がれる。",
-              "chinese": "祖父八十歲了還在海裡游泳。",
+              "japanese": "弟に 冷たい 海で 泳がれる と、風邪が 心配だ。",
+              "chinese": "弟弟在冰冷的海裡游泳，擔心他感冒。",
               "note": null
             },
             {
-              "japanese": "校長先生は 生徒と 一緒に プールで 泳がれる。",
-              "chinese": "校長和學生一起在游泳池游泳。",
+              "japanese": "生徒に 許可なく プールで 泳がれる と、困る。",
+              "chinese": "學生未經允許在泳池游泳，很困擾。",
               "note": null
             }
           ]
@@ -1447,25 +1447,9 @@
           "group": "2",
           "chinese": "疲累",
           "japanese": "つかれられる",
-          "note": "字典有但是不常用：「疲れられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "長い 会議に 何時間も 付き合わされて、疲れられる のは たまらない。",
-              "chinese": "被迫陪開好幾小時長會，累得受不了。",
-              "note": null
-            },
-            {
-              "japanese": "休みの 日まで 仕事の 電話を かけられて、疲れられる のは ごめんだ。",
-              "chinese": "連假日都被工作電話騷擾，累人，敬謝不敏。",
-              "note": null
-            },
-            {
-              "japanese": "満員電車で 一時間も 立たされて、疲れられる のは つらい。",
-              "chinese": "在滿員電車裡站一小時，累得難受。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「疲れられる」與可能形同形（同一字串，可能形已判為錯誤），且「疲れる」是無意志動詞，原句「疲れられる のは たまらない」其實是「累人」的意思，不是被動",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "疲れさせる",
@@ -2205,18 +2189,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "先生は 先に 喫茶店に 入られる。",
-              "chinese": "老師先進了咖啡廳。",
+              "japanese": "私の 部屋に 勝手に 入られて、びっくりした。",
+              "chinese": "有人擅自進到我房間，我嚇了一跳。",
               "note": null
             },
             {
-              "japanese": "社長は 部屋に 入られる。",
-              "chinese": "社長進了房間。",
+              "japanese": "留守の 間に 空き巣に 入られて、お金を 取られた。",
+              "chinese": "不在家時被小偷闖空門，錢被偷了。",
               "note": null
             },
             {
-              "japanese": "校長先生は 教室に 入られる。",
-              "chinese": "校長進了教室。",
+              "japanese": "毎年 この 季節は 空き巣に 入られる そうだ。",
+              "chinese": "聽說每年這個季節都會被闖空門。",
               "note": null
             }
           ]
@@ -2578,22 +2562,22 @@
           "group": "2",
           "chinese": "出去; 離開",
           "japanese": "でられる",
-          "note": null,
+          "note": "此形和可能形同形。這裡是迷惑受身（息子に夜家を出られる）。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "先生は 七時に 家を 出られる。",
-              "chinese": "老師七點出門。",
+              "japanese": "息子に 夜 家を 出られる と、心配だ。",
+              "chinese": "兒子晚上出門，讓人擔心。",
               "note": null
             },
             {
-              "japanese": "社長は 先に 喫茶店を 出られる。",
-              "chinese": "社長先離開咖啡廳。",
+              "japanese": "客に 早く 店を 出られる と、困る。",
+              "chinese": "客人早早離店，很困擾。",
               "note": null
             },
             {
-              "japanese": "社長は もう 部屋を 出られる。",
-              "chinese": "社長已經離開房間了。",
+              "japanese": "弟に 先に 部屋を 出られる と、一人に なる。",
+              "chinese": "弟弟先離開房間，就剩我一個人。",
               "note": null
             }
           ]
@@ -2955,22 +2939,22 @@
           "group": "3",
           "chinese": "結婚",
           "japanese": "けっこんされる",
-          "note": null,
+          "note": "「結婚される」常作尊敬語。這裡是迷惑受身（娘に結婚される）。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "先生は 来月 結婚されるそうです。",
-              "chinese": "聽說老師下個月結婚。",
+              "japanese": "娘に 勝手に 結婚される と、親は 困る。",
+              "chinese": "女兒擅自結婚，父母很困擾。",
               "note": null
             },
             {
-              "japanese": "あの 歌手は 来年 結婚されるらしい。",
-              "chinese": "聽說那位歌手明年結婚。",
+              "japanese": "息子に 急に 結婚される と、準備が 間に 合わない。",
+              "chinese": "兒子突然結婚，準備來不及。",
               "note": null
             },
             {
-              "japanese": "社長は 若い 人と 結婚されるそうです。",
-              "chinese": "聽說社長要和年輕人結婚。",
+              "japanese": "妹に 海外で 結婚される と、式に 行けない。",
+              "chinese": "妹妹在海外結婚，就去不了婚禮。",
               "note": null
             }
           ]
@@ -3311,8 +3295,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "安い 店で 買い物すれば、お金が かかりません。",
-              "chinese": "在便宜的店購物的話，不花錢。",
+              "japanese": "安い 店で 買い物すれば、お金が あまり かかりません。",
+              "chinese": "在便宜的店購物的話，不太花錢。",
               "note": null
             },
             {
@@ -3332,22 +3316,22 @@
           "group": "3",
           "chinese": "購物; 買東西",
           "japanese": "かいものされる",
-          "note": null,
+          "note": "「買い物される」常作尊敬語。這裡是迷惑受身。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "母は 毎週 デパートで 買い物される。",
-              "chinese": "母親每週在百貨公司購物。",
+              "japanese": "妻に 勝手に 買い物される と、家計が 苦しい。",
+              "chinese": "妻子擅自買東西，家計就吃緊。",
               "note": null
             },
             {
-              "japanese": "先生は 駅前で 買い物されるそうです。",
-              "chinese": "聽說老師在車站前購物。",
+              "japanese": "子供に 夜 買い物される と、心配だ。",
+              "chinese": "小孩晚上去買東西，讓人擔心。",
               "note": null
             },
             {
-              "japanese": "社長は 奥さんと 買い物されるらしい。",
-              "chinese": "聽說社長和太太購物。",
+              "japanese": "姉に 私の カードで 買い物される と、困る。",
+              "chinese": "姊姊用我的卡買東西，很困擾。",
               "note": null
             }
           ]
@@ -3709,22 +3693,22 @@
           "group": "3",
           "chinese": "用餐; 吃飯",
           "japanese": "しょくじされる",
-          "note": null,
+          "note": "「食事される」常作尊敬語。這裡是迷惑受身。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "社長は ホテルで 食事される。",
-              "chinese": "社長在飯店用餐。",
+              "japanese": "弟に 先に 食事される と、何も 残らない。",
+              "chinese": "弟弟先吃完飯，就什麼都不剩。",
               "note": null
             },
             {
-              "japanese": "先生は 家族と 食事されるそうです。",
-              "chinese": "聽說老師和家人用餐。",
+              "japanese": "子供に 勝手に 食事される と、私の 分が ない。",
+              "chinese": "小孩擅自先吃，我的份就沒了。",
               "note": null
             },
             {
-              "japanese": "お客様は 部屋で 食事されるらしい。",
-              "chinese": "聽說客人在房間用餐。",
+              "japanese": "家族に 先に 食事される と、温かい 料理が ない。",
+              "chinese": "家人先吃完，就沒有熱的菜。",
               "note": null
             }
           ]
@@ -4086,22 +4070,22 @@
           "group": "3",
           "chinese": "散步",
           "japanese": "さんぽされる",
-          "note": null,
+          "note": "「散歩される」常作尊敬語。這裡是迷惑受身。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "先生は 毎朝 公園を 散歩される。",
-              "chinese": "老師每天早上在公園散步。",
+              "japanese": "娘に 夜 一人で 散歩される と、心配で 眠れない。",
+              "chinese": "女兒晚上一個人散步，擔心得睡不著。",
               "note": null
             },
             {
-              "japanese": "社長は 夕方 川の 近くを 散歩されるそうです。",
-              "chinese": "聽說社長傍晚在河邊散步。",
+              "japanese": "子供に 雨の 中を 散歩される と、服が 汚れる。",
+              "chinese": "小孩在雨中散步，衣服會弄髒。",
               "note": null
             },
             {
-              "japanese": "祖父は 犬と 散歩される。",
-              "chinese": "祖父和狗散步。",
+              "japanese": "祖父に 夜遅く 散歩される と、迎えに 行かなければ ならない。",
+              "chinese": "祖父深夜散步，就得去接他。",
               "note": null
             }
           ]

@@ -300,50 +300,18 @@
           "group": "1",
           "chinese": "開; 打開",
           "japanese": "あかれる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "式の 前に、会場の 大きな ドアが 開かれる。",
-              "chinese": "典禮前，會場的大門會打開。",
-              "note": null
-            },
-            {
-              "japanese": "この 店の シャッターは 朝 8時に 開かれる。",
-              "chinese": "這家店的鐵門早上八點打開。",
-              "note": null
-            },
-            {
-              "japanese": "新しい 図書館の 門は 来月 開かれる。",
-              "chinese": "新圖書館的大門下個月打開。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「あかれる」不是「開く（あく）」的受身用法；「被打開」要用他動詞「開ける」的受身「開けられる」，或「開く（ひらく）」的受身「開かれる」（ひらかれる）",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "開かせる",
           "group": "1",
           "chinese": "開; 打開",
           "japanese": "あかせる",
-          "note": "字典有但是不常用：「開かせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "店長は 店を 早く 開かせる。",
-              "chinese": "店長讓店提早開門。",
-              "note": null
-            },
-            {
-              "japanese": "客が 待って いるので、店を 早く 開かせる。",
-              "chinese": "因為有客人在等，店提早開門。",
-              "note": null
-            },
-            {
-              "japanese": "学校は 行事の 日に 門を 開かせる。",
-              "chinese": "學校辦活動的日子讓人開大門。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「開かせる」是自動詞「開く」的使役形，但此處讀音是「あく」（自動詞），他動詞是「開ける（あける）」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -661,50 +629,18 @@
           "group": "1",
           "chinese": "關閉; 關上",
           "japanese": "しまられる",
-          "note": "字典有但是不常用：「閉まられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "隣の 店に 先に 閉まられる と、うちの 売り上げが 落ちる。",
-              "chinese": "隔壁店先打烊的話，我們的營業額就會掉。",
-              "note": null
-            },
-            {
-              "japanese": "図書館に 閉まられる ので、本は 早めに 返す。",
-              "chinese": "因為圖書館會關門，書要早點還。",
-              "note": null
-            },
-            {
-              "japanese": "閉まられる 前に、必要な 物は 買って おく。",
-              "chinese": "趁關門前，先把需要的東西買好。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「閉まる」是無意志自動詞，「閉まられる」沒有受身用法；「被關上」要用他動詞「閉める」的受身「閉められる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "閉まらせる",
           "group": "1",
           "chinese": "關閉; 關上",
           "japanese": "しまらせる",
-          "note": "字典有但是不常用：「閉まらせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "店長は 客が 減った ので、店を 早めに 閉まらせる。",
-              "chinese": "因為客人變少，店長讓店提早打烊。",
-              "note": null
-            },
-            {
-              "japanese": "寒い ので、母は 窓を 閉まらせる。",
-              "chinese": "因為很冷，媽媽讓窗戶關上。",
-              "note": null
-            },
-            {
-              "japanese": "先生は 授業の あと、教室の ドアを 閉まらせる。",
-              "chinese": "老師讓教室的門在課後關上。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「閉まらせる」是自動詞「閉まる」的使役形，但他動詞是「閉める（しめる）」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -1006,50 +942,18 @@
           "group": "1",
           "chinese": "亮起; 點亮",
           "japanese": "つかれる",
-          "note": "字典有但是不常用：「つかれる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "隣の 家の 明かりに 毎晩 つかれる ので、よく 眠れない。",
-              "chinese": "每天晚上被鄰居家的燈光弄得睡不好。",
-              "note": null
-            },
-            {
-              "japanese": "夜中に 街灯が つかれる と、部屋が まぶしく なる。",
-              "chinese": "半夜路燈亮起的話，房間會變刺眼。",
-              "note": null
-            },
-            {
-              "japanese": "センサーの ライトに 後ろから つかれる と、びっくりする。",
-              "chinese": "被後方的感應燈突然亮起會嚇一跳。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「つかれる」是另一個詞「疲れる」（以及「憑かれる」），不是「つく（点く）」的受身；「燈被打開」要用「つけられる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "つかせる",
           "group": "1",
           "chinese": "亮起; 點亮",
           "japanese": "つかせる",
-          "note": "字典有但是不常用：「つかせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "先生は 暗く なった 教室の 電気を つかせる。",
-              "chinese": "老師讓變暗的教室電燈亮起來。",
-              "note": null
-            },
-            {
-              "japanese": "母は 子どもに 廊下の ライトを つかせる。",
-              "chinese": "媽媽讓孩子把走廊的燈打開。",
-              "note": null
-            },
-            {
-              "japanese": "店長は 看板の 明かりを 夕方に つかせる。",
-              "chinese": "店長讓招牌燈在傍晚亮起。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「つかせる」是自動詞「つく」的使役形，但他動詞是「つける／点ける」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -1367,50 +1271,18 @@
           "group": "2",
           "chinese": "消失; 熄滅",
           "japanese": "きえられる",
-          "note": "字典有但是不常用：「消えられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "この 街の 街灯は 夜中に 消えられる。",
-              "chinese": "這個小鎮的路燈半夜被熄掉。",
-              "note": null
-            },
-            {
-              "japanese": "古い 電灯は 朝 6時に 消えられる。",
-              "chinese": "舊電燈早上六點被關掉。",
-              "note": null
-            },
-            {
-              "japanese": "教室の 電気は 管理室から 消えられる。",
-              "chinese": "教室的燈從管理室被關掉。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「消える」是無意志自動詞，「消えられる」沒有受身用法；「被關掉」要用他動詞「消す」的受身「消される」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "消えさせる",
           "group": "2",
           "chinese": "消失; 熄滅",
           "japanese": "きえさせる",
-          "note": "字典有但是不常用：「消えさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "先生は 教室の 電気を 消えさせる。",
-              "chinese": "老師讓教室的燈熄掉。",
-              "note": null
-            },
-            {
-              "japanese": "母は 子ども部屋の 明かりを 消えさせる。",
-              "chinese": "媽媽讓小孩房間的燈熄掉。",
-              "note": null
-            },
-            {
-              "japanese": "管理人は 夜に 街灯を 消えさせる。",
-              "chinese": "管理員晚上讓路燈熄掉。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「消えさせる」不是可用的使役形；「讓燈熄掉」要用他動詞「消す」的使役形「消させる」",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -1644,7 +1516,7 @@
           "group": "1",
           "chinese": "擁擠; 混雜",
           "japanese": "こめる",
-          "note": "錯誤詞語，僅供轉詞練習：「込める」不是「込む」的可能形",
+          "note": "錯誤詞語，僅供轉詞練習：「込める」是另一個動詞（把感情、力氣裝進去），不是「込む（擁擠）」的可能形。「込む」是無意志動詞，可能形日常不用。",
           "error_usage": true,
           "sentence": []
         },
@@ -1678,7 +1550,7 @@
           "group": "1",
           "chinese": "擁擠; 混雜",
           "japanese": "こめ",
-          "note": "錯誤詞語，僅供轉詞練習：「込め」不是「込む」的命令形",
+          "note": "錯誤詞語，僅供轉詞練習：「込め」與另一個動詞「込める」的詞幹同形，不是「込む（擁擠）」可用的命令形。「込む」是無意志動詞，沒有命令用法。",
           "error_usage": true,
           "sentence": []
         },
@@ -1696,8 +1568,8 @@
               "note": null
             },
             {
-              "japanese": "電車が 込めば 次の に 乗る。",
-              "chinese": "電車擠的話就搭下一班。",
+              "japanese": "電車が 込めば 次の 電車に 乗る。",
+              "chinese": "電車擠的話就搭下一班電車。",
               "note": null
             },
             {
@@ -1712,32 +1584,16 @@
           "group": "1",
           "chinese": "擁擠; 混雜",
           "japanese": "こまれる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "人の 多い 通りに 込まれる と、なかなか 前に 進めない。",
-              "chinese": "被人潮擠著就前進不了。",
-              "note": null
-            },
-            {
-              "japanese": "観光客に 込まれる 商店街は、いつも 人が 多い。",
-              "chinese": "被觀光客擠滿的商店街總是人很多。",
-              "note": null
-            },
-            {
-              "japanese": "朝の 電車に 込まれる ので、毎日 くたくただ。",
-              "chinese": "每天早上被電車擠，每天都筋疲力盡。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「込む」是無意志自動詞，現代日語沒有「人に込まれる」「電車に込まれる」這種受身。擁擠只說「電車が込む」。被人擠要用「押される」。",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "込ませる",
           "group": "1",
           "chinese": "擁擠; 混雜",
           "japanese": "こませる",
-          "note": null,
+          "note": "字典有但是不常用：「込ませる」少用，是「讓地方變擠」。把乘客往裡擠要說「奥へ 押し込む」，不是這個使役。",
           "error_usage": false,
           "sentence": [
             {
@@ -1751,8 +1607,8 @@
               "note": null
             },
             {
-              "japanese": "駅員は 乗客を 奥へ 込ませる。",
-              "chinese": "站務員讓乘客往裡面擠。",
+              "japanese": "新しい 店が この 通りを 込ませる。",
+              "chinese": "新開的店讓這條街變擠。",
               "note": null
             }
           ]
@@ -1989,7 +1845,7 @@
           "group": "1",
           "chinese": "空; 不擁擠",
           "japanese": "すける",
-          "note": "錯誤詞語，僅供轉詞練習：「すく」是無意志動詞，「すける」這個可能形日常不用",
+          "note": "錯誤詞語，僅供轉詞練習：「すける」是另一個動詞「透ける」（透光），不是「すく（空く）」的可能形。「すく」是無意志動詞，可能形日常不用。",
           "error_usage": true,
           "sentence": []
         },
@@ -2023,25 +1879,9 @@
           "group": "1",
           "chinese": "空; 不擁擠",
           "japanese": "すけ",
-          "note": "字典有但是不常用：「すけ」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "混んだ 会場で、係員が「そこを すけ！」と 叫んだ。",
-              "chinese": "擁擠的會場裡，工作人員喊「讓開那裡！」",
-              "note": null
-            },
-            {
-              "japanese": "入口に「席を すけ」と 書いた 紙が 貼って あった。",
-              "chinese": "入口貼著寫有「空出座位」的紙。",
-              "note": null
-            },
-            {
-              "japanese": "店員は 空いた 棚を 指して「もっと すけ」と 言った。",
-              "chinese": "店員指著空出的架子說「再空一點」。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「すけ」是「梳く」「透く」等其他同音動詞的命令形；「すく（空く）」是無意志動詞，沒有命令形用法（「讓開」是「空ける」的「空けろ」）",
+          "error_usage": true,
+          "sentence": []
         },
         "conditional-form": {
           "vol": "すけば",
@@ -2073,50 +1913,18 @@
           "group": "1",
           "chinese": "空; 不擁擠",
           "japanese": "すかれる",
-          "note": "字典有但是不常用：「すかれる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "この 道は 朝 早く すかれる。",
-              "chinese": "這條路一大早會空下來。",
-              "note": null
-            },
-            {
-              "japanese": "平日の 電車は 昼に すかれる。",
-              "chinese": "平日的電車中午會空。",
-              "note": null
-            },
-            {
-              "japanese": "夜の 通りは いつも すかれる。",
-              "chinese": "晚上的街道總是空的。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「すかれる」是「梳く」「透く」等其他同音動詞的形，不是「すく（空く）」的受身；「すく」是無意志自動詞，沒有受身用法",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "すかせる",
           "group": "1",
           "chinese": "空; 不擁擠",
           "japanese": "すかせる",
-          "note": "字典有但是不常用：「すかせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "会社は 時差出勤で 電車を すかせる。",
-              "chinese": "公司用錯開上班時間讓電車變空。",
-              "note": null
-            },
-            {
-              "japanese": "学校は 下校の 時間を ずらして 道を すかせる。",
-              "chinese": "學校錯開放學時間讓路上不擠。",
-              "note": null
-            },
-            {
-              "japanese": "店は 朝の 時間を 変えて 通りを すかせる。",
-              "chinese": "店家改早上時間讓街道不擠。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「すかせる」是自動詞「すく」的使役形，但他動詞是「空ける／空かす」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -2434,47 +2242,31 @@
           "group": "2",
           "chinese": "壞; 損壞",
           "japanese": "こわれられる",
-          "note": "字典有但是不常用：「壊れられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "大事な 花瓶に 壊れられる と、とても 悲しい。",
-              "chinese": "重要的花瓶要是壞了，會很難過。",
-              "note": null
-            },
-            {
-              "japanese": "展示の 賞品に 壊れられる ので、係員は 慎重に 運ぶ。",
-              "chinese": "展示的獎品會壞掉，所以工作人員小心搬運。",
-              "note": null
-            },
-            {
-              "japanese": "通勤の 途中で スマホに 壊れられる と、連絡が 取れなく なる。",
-              "chinese": "通勤路上手機壞掉的話，就聯絡不上人。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「壊れる」是無意志自動詞，「壊れられる」沒有受身用法；「被弄壞」要用他動詞「壊す」的受身「壊される」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "壊れさせる",
           "group": "2",
           "chinese": "壞; 損壞",
           "japanese": "こわれさせる",
-          "note": "字典有但是不常用：「壊れさせる」日常不用",
+          "note": "字典有但是不常用：「壊れさせる」少用，日常說「壊す」。不是另一個詞。下面三句只說明這個使役形，口語很少這樣說。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "子どもは 乱暴に 扱って、おもちゃを 壊れさせる。",
-              "chinese": "孩子粗暴對待，害玩具壞掉。",
+              "japanese": "強い 風が 古い 窓を 壊れさせる。",
+              "chinese": "強風讓舊窗戶壞掉。",
               "note": null
             },
             {
-              "japanese": "兄は 弟に 古い ラジオを 壊れさせる。",
-              "chinese": "哥哥讓弟弟弄壞舊收音機。",
+              "japanese": "落雷が 機械を 壊れさせる ことが ある。",
+              "chinese": "落雷有時會讓機器壞掉。",
               "note": null
             },
             {
-              "japanese": "先生は 生徒に 装置を 壊れさせる。",
-              "chinese": "老師讓學生弄壞裝置。",
+              "japanese": "急な 温度の 変化が ガラスを 壊れさせる。",
+              "chinese": "溫度驟變讓玻璃壞掉。",
               "note": null
             }
           ]
@@ -2795,50 +2587,18 @@
           "group": "2",
           "chinese": "破; 裂開",
           "japanese": "われられる",
-          "note": "字典有但是不常用：「割れられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "大事な 茶碗に 割れられる と、もう 使えない。",
-              "chinese": "重要的碗破了就不能用了。",
-              "note": null
-            },
-            {
-              "japanese": "引っ越しの 日に 鏡に 割れられる と、縁起が 悪い と 言われる。",
-              "chinese": "搬家那天鏡子破了，人家說不吉利。",
-              "note": null
-            },
-            {
-              "japanese": "店の ショーウィンドーに 割れられる と、商品が 台無しだ。",
-              "chinese": "店裡的櫥窗破了，商品就全毀。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「割れる」是無意志自動詞，「割れられる」沒有受身用法；「被打破」要用他動詞「割る」的受身「割られる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "割れさせる",
           "group": "2",
           "chinese": "破; 裂開",
           "japanese": "われさせる",
-          "note": "字典有但是不常用：「割れさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "父は 子どもに コップを 割れさせる。",
-              "chinese": "爸爸讓孩子把杯子打破。",
-              "note": null
-            },
-            {
-              "japanese": "工事の 音が 古い 窓を 割れさせる。",
-              "chinese": "施工的聲音讓舊窗戶破掉。",
-              "note": null
-            },
-            {
-              "japanese": "先生は 生徒に 試験管を 割れさせる。",
-              "chinese": "老師讓學生打破試管。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「割れさせる」不是可用的使役形；「讓〜破掉」要用他動詞「割る」的使役形「割らせる」",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -3156,50 +2916,18 @@
           "group": "2",
           "chinese": "折斷; 斷",
           "japanese": "おれられる",
-          "note": "字典有但是不常用：「折れられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "細い 枝は 風で 折れられる。",
-              "chinese": "細樹枝被風吹斷。",
-              "note": null
-            },
-            {
-              "japanese": "古い 木は 雪で 折れられる。",
-              "chinese": "老樹被雪壓斷。",
-              "note": null
-            },
-            {
-              "japanese": "この 鉛筆は 力で 折れられる。",
-              "chinese": "這支鉛筆被用力折斷。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「折れる」是無意志自動詞，「折れられる」沒有受身用法；「被折斷」要用他動詞「折る」的受身「折られる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "折れさせる",
           "group": "2",
           "chinese": "折斷; 斷",
           "japanese": "おれさせる",
-          "note": "字典有但是不常用：「折れさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "強風が 枝を 折れさせる。",
-              "chinese": "強風讓樹枝斷掉。",
-              "note": null
-            },
-            {
-              "japanese": "雪が 木を 折れさせる。",
-              "chinese": "雪讓樹斷掉。",
-              "note": null
-            },
-            {
-              "japanese": "弟は 椅子の 足を 折れさせる。",
-              "chinese": "弟弟讓椅子腳斷掉。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「折れさせる」不是可用的使役形；「讓〜折斷」要用他動詞「折る」的使役形「折らせる」",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -3517,50 +3245,18 @@
           "group": "2",
           "chinese": "破; 撕破",
           "japanese": "やぶれられる",
-          "note": "字典有但是不常用：「破れられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "薄い 紙は 引くと 破れられる。",
-              "chinese": "薄紙一拉就被撕破。",
-              "note": null
-            },
-            {
-              "japanese": "古い 布は 洗うと 破れられる。",
-              "chinese": "舊布一洗就被弄破。",
-              "note": null
-            },
-            {
-              "japanese": "この 袋は 重い 物で 破れられる。",
-              "chinese": "這個袋子被重東西弄破。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「破れる」是無意志自動詞，「破れられる」沒有受身用法；「被撕破」要用他動詞「破る」的受身「破られる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "破れさせる",
           "group": "2",
           "chinese": "破; 撕破",
           "japanese": "やぶれさせる",
-          "note": "字典有但是不常用：「破れさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "重い 物が 袋を 破れさせる。",
-              "chinese": "重東西讓袋子破掉。",
-              "note": null
-            },
-            {
-              "japanese": "弟は 紙を 破れさせる。",
-              "chinese": "弟弟讓紙破掉。",
-              "note": null
-            },
-            {
-              "japanese": "水が 古い 布を 破れさせる。",
-              "chinese": "水讓舊布破掉。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「破れさせる」不是可用的使役形；「讓〜破掉」要用他動詞「破る」的使役形「破らせる」",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -3878,50 +3574,18 @@
           "group": "2",
           "chinese": "髒; 弄髒",
           "japanese": "よごれられる",
-          "note": "字典有但是不常用：「汚れられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "新しい 服に 泥で 汚れられる と、がっかりする。",
-              "chinese": "新衣服被泥巴弄髒的話，很失望。",
-              "note": null
-            },
-            {
-              "japanese": "大切な 写真に 雨で 汚れられる と、もう 見えない。",
-              "chinese": "重要的照片被雨弄髒就看不清楚了。",
-              "note": null
-            },
-            {
-              "japanese": "壁に 落書きで 汚れられる と、大家に しかられる。",
-              "chinese": "牆壁被塗鴉弄髒，會被房東罵。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「汚れる」是無意志自動詞，「汚れられる」沒有受身用法；「被弄髒」要用他動詞「汚す」的受身「汚される」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "汚れさせる",
           "group": "2",
           "chinese": "髒; 弄髒",
           "japanese": "よごれさせる",
-          "note": "字典有但是不常用：「汚れさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "子どもは 泥の 中で 遊んで、服を 汚れさせる。",
-              "chinese": "孩子在泥裡玩，把衣服弄髒。",
-              "note": null
-            },
-            {
-              "japanese": "雨が 洗濯物を 汚れさせる。",
-              "chinese": "雨把洗好的衣服弄髒。",
-              "note": null
-            },
-            {
-              "japanese": "客は コーヒーを こぼして、テーブルを 汚れさせる。",
-              "chinese": "客人打翻咖啡，把桌子弄髒。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「汚れさせる」不是可用的使役形；「讓〜變髒」要用他動詞「汚す」的使役形「汚させる」",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -4223,50 +3887,18 @@
           "group": "1",
           "chinese": "附上; 附著",
           "japanese": "つかれる",
-          "note": "字典有但是不常用：「付かれる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "私に 変な 噂が 付かれる と、とても 困る。",
-              "chinese": "我被貼上奇怪的謠言會很困擾。",
-              "note": null
-            },
-            {
-              "japanese": "名前に 間違った 読みが 付かれる と、直せない。",
-              "chinese": "名字被標上錯誤的讀音就改不回來。",
-              "note": null
-            },
-            {
-              "japanese": "車に 傷が 付かれる と、修理代が 高い。",
-              "chinese": "車子被刮出傷痕，修理費很貴。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「付かれる」不是「付く」的受身用法（「つかれる」是「疲れる」）；「付く」是無意志自動詞，沒有受身，要說「傷が 付く」「噂が 付く」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "付かせる",
           "group": "1",
           "chinese": "附上; 附著",
           "japanese": "つかせる",
-          "note": "字典有但是不常用：「付かせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "母は 子どもに 糊で 切手を 封筒に 付かせる。",
-              "chinese": "媽媽讓孩子用膠水把郵票貼到信封上。",
-              "note": null
-            },
-            {
-              "japanese": "店員は 客に 値札を 商品に 付かせる。",
-              "chinese": "店員讓客人把標價貼在商品上。",
-              "note": null
-            },
-            {
-              "japanese": "先生は 生徒に ポスターを 壁に 付かせる。",
-              "chinese": "老師讓學生把海報貼在牆上。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「付かせる」是自動詞「付く」的使役形，但他動詞是「付ける／貼る」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -4584,50 +4216,18 @@
           "group": "2",
           "chinese": "脫落; 掉下",
           "japanese": "はずれられる",
-          "note": "字典有但是不常用：「外れられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "この ボタンは 力で 外れられる。",
-              "chinese": "這顆釦子被用力扯掉。",
-              "note": null
-            },
-            {
-              "japanese": "ふたは 手で 外れられる。",
-              "chinese": "蓋子被手拿掉。",
-              "note": null
-            },
-            {
-              "japanese": "チェーンは 石で 外れられる。",
-              "chinese": "鏈條被石頭撞掉。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「外れる」是無意志自動詞，「外れられる」沒有受身用法；「被弄掉」要用他動詞「外す」的受身「外される」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "外れさせる",
           "group": "2",
           "chinese": "脫落; 掉下",
           "japanese": "はずれさせる",
-          "note": "字典有但是不常用：「外れさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "子どもは ボタンを 外れさせる。",
-              "chinese": "小孩讓釦子掉掉。",
-              "note": null
-            },
-            {
-              "japanese": "弟は チェーンを 外れさせる。",
-              "chinese": "弟弟讓鏈條掉掉。",
-              "note": null
-            },
-            {
-              "japanese": "父は ふたを 外れさせる。",
-              "chinese": "爸爸讓蓋子掉掉。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「外れさせる」不是可用的使役形；「讓〜掉下來」要用他動詞「外す」的使役形「外させる」",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -4861,7 +4461,7 @@
           "group": "1",
           "chinese": "停止; 停下",
           "japanese": "とまれる",
-          "note": "字典有但是不常用；「止まれる」限於駕駛可控制的車輛",
+          "note": "字典有但是不常用：「止まれる」是「止まる」的可能形，只用於駕駛者可控制的車輛等",
           "error_usage": false,
           "sentence": [
             {
@@ -4965,12 +4565,12 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "電車が 途中で 止まられる と、会議に 遅れる。",
+              "japanese": "電車に 途中で 止まられる と、会議に 遅れる。",
               "chinese": "電車中途停住的話，開會就會遲到。",
               "note": null
             },
             {
-              "japanese": "工事で バスが 止まられる と、駅まで 歩く しか ない。",
+              "japanese": "工事で バスに 止まられる と、駅まで 歩く しか ない。",
               "chinese": "因為施工公車停駛的話，只能走到車站。",
               "note": null
             },
@@ -4986,25 +4586,9 @@
           "group": "1",
           "chinese": "停止; 停下",
           "japanese": "とまらせる",
-          "note": "字典有但是不常用：「止まらせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "父は 車を 駅の 前で 止まらせる。",
-              "chinese": "爸爸讓車停在車站前。",
-              "note": null
-            },
-            {
-              "japanese": "警備員は エレベーターを 3階で 止まらせる。",
-              "chinese": "警衛讓電梯在三樓停。",
-              "note": null
-            },
-            {
-              "japanese": "先生は バスを 学校の 前で 止まらせる。",
-              "chinese": "老師讓公車停在校前。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「止まらせる」是自動詞「止まる」的使役形，但他動詞是「止める（とめる）」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -5238,7 +4822,7 @@
           "group": "2",
           "chinese": "弄錯; 搞錯",
           "japanese": "まちがえられる",
-          "note": "字典有但是不常用；「間違えられる」是可能形，與受身形同形",
+          "note": "字典有但是不常用：「間違えられる」是可能形，與受身形同形",
           "error_usage": false,
           "sentence": [
             {
@@ -5644,8 +5228,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "帰りに ごみを 落とそう。",
-              "chinese": "回去時順便丟垃圾。",
+              "japanese": "この 石を 川に 落とそう。",
+              "chinese": "把這塊石頭丟進河裡吧。",
               "note": null
             },
             {
@@ -5744,8 +5328,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "母は 子どもに ごみを 落とさせる。",
-              "chinese": "媽媽讓小孩把垃圾丟掉。",
+              "japanese": "兄は 弟に 石を 川へ 落とさせる。",
+              "chinese": "哥哥讓弟弟把石頭丟進河裡。",
               "note": null
             },
             {
@@ -5782,7 +5366,7 @@
             },
             {
               "japanese": "古い 自転車は かぎが 掛かる。",
-              "chinese": "舊腳踏車有鎖。",
+              "chinese": "舊腳踏車會上鎖。",
               "note": null
             }
           ]
@@ -6076,50 +5660,18 @@
           "group": "1",
           "chinese": "鎖上; 掛上",
           "japanese": "かかられる",
-          "note": "字典有但是不常用：「掛かられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "私の ドアに 勝手に かぎを 掛かられる。",
-              "chinese": "我的門被人擅自上鎖。",
-              "note": null
-            },
-            {
-              "japanese": "門に 知らない 人から 鎖を 掛かられる。",
-              "chinese": "門被陌生人掛上鏈條。",
-              "note": null
-            },
-            {
-              "japanese": "自転車に 友だちから かぎを 掛かられる。",
-              "chinese": "腳踏車被朋友上鎖。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「掛かる」是自動詞（かぎが 掛かる），不能接動作主；「門に 鎖を 掛かられる」不成立，被動要說他動詞「掛ける」的受身「掛けられる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "掛からせる",
           "group": "1",
           "chinese": "鎖上; 掛上",
           "japanese": "かからせる",
-          "note": "字典有但是不常用：「掛からせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "店長は 店員に ドアの かぎを 掛からせる。",
-              "chinese": "店長讓店員把門上鎖。",
-              "note": null
-            },
-            {
-              "japanese": "父は 私に 門の 鎖を 掛からせる。",
-              "chinese": "爸爸讓我掛上門鏈。",
-              "note": null
-            },
-            {
-              "japanese": "先生は 学生に 自転車の かぎを 掛からせる。",
-              "chinese": "老師讓學生把腳踏車上鎖。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「掛からせる」是自動詞「掛かる」的使役形，但他動詞是「掛ける（かける）」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       }
     ]

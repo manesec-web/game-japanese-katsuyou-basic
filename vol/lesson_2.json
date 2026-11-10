@@ -232,7 +232,7 @@
           "group": "1",
           "chinese": "不同; 不對; 不是",
           "japanese": "ちがえる",
-          "note": "錯誤詞語，僅供轉詞練習：字典裡有「違える」，但是日常不用",
+          "note": "錯誤詞語，僅供轉詞練習：「違える」是另一個動詞（＝間違える、取り違える），不是「違う」的可能形用法",
           "error_usage": true,
           "sentence": []
         },
@@ -266,25 +266,9 @@
           "group": "1",
           "chinese": "不同; 不對; 不是",
           "japanese": "ちがえ",
-          "note": "字典有但是不常用：「違え」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "部長は 「二つの 値段を 違え」と 言いました。",
-              "chinese": "部長說「讓兩個價錢不一樣」。",
-              "note": null
-            },
-            {
-              "japanese": "コーチは 「色を 違え」と 指示しました。",
-              "chinese": "教練指示「把顏色弄成不一樣」。",
-              "note": null
-            },
-            {
-              "japanese": "先生は 学生に 「答えを 違え」と 言いました。",
-              "chinese": "老師對學生說「讓答案不一樣」。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「違え」是另一個動詞「違える」（＝變更、弄錯）的命令形，不是「違う」可用的命令形；「違う」是狀態動詞，沒有命令用法",
+          "error_usage": true,
+          "sentence": []
         },
         "conditional-form": {
           "vol": "違えば",
@@ -316,25 +300,9 @@
           "group": "1",
           "chinese": "不同; 不對; 不是",
           "japanese": "ちがわれる",
-          "note": "字典有但是不常用：「違われる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "私の 傘は よく 人の 傘と 違われる。",
-              "chinese": "我的傘常被誤認為別人的傘。",
-              "note": null
-            },
-            {
-              "japanese": "この 漢字は よく 似た 字と 違われる。",
-              "chinese": "這個漢字常被誤認為相似的字。",
-              "note": null
-            },
-            {
-              "japanese": "私の 声は 兄の 声と 違われる。",
-              "chinese": "我的聲音常被誤認為哥哥的聲音。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「違う」是自動詞，「〜と違われる」不能表「被誤認」；「被誤認」是他動詞「違える」的被動「違えられる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "違わせる",

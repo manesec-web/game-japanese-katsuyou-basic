@@ -4,7 +4,12 @@ This file is for the next AI that enters the repo. Do the tasks in order. The pr
 
 Current state: T1–T8 are complete, along with the follow-up revisions recorded
 in `docs/roadmap.md` and `docs/changelog.md`. Revision 13 added the loading-screen
-head and credit line and the first-card resistance in 翻卡學習. The site builds
+head and credit line and the first-card resistance in 翻卡學習; revision 14
+supersedes that resistance and the drag-follow/spring-back paging with an
+invisible drag and a direct swap plus one short slide-in; revision 15 mounts a
+paging window around the current item (9 cards in 翻卡學習, 5 words in the
+dictionary reader) with the current item always in the 3rd slot, so a turn only
+drops one end and adds the other. The site builds
 into `output/` and has not been published to GitHub Pages yet. Day-to-day status,
 verified commands and known limitations live in `docs/progress.md`; `README.md`
 is the user-facing overview. The tasks below stay as the original build plan and
@@ -135,7 +140,7 @@ Checks: tests show lesson 1 cannot be selected, `lessons.selectAll` skips empty 
 
 ### T5 Dictionary
 
-After `study.start` the screen is `reader`. Word order is lesson order, then the order inside that lesson's `vols`. A swipe right, or the next control, is `dict.next`. A swipe left, or the previous control, is `dict.prev`. A drag that passes the threshold changes the word. A shorter drag springs back. The first item does not move backward. The last item does not move forward.
+After `study.start` the screen is `reader`. Word order is lesson order, then the order inside that lesson's `vols`. A swipe right, or the next control, is `dict.next`. A swipe left, or the previous control, is `dict.prev`. A drag that passes the threshold changes the word on release; the drag itself is invisible. A shorter drag has no visual effect. The first item does not move backward. The last item does not move forward.
 
 The settings screen has 預設顯示形式 and 顯示平假名注音.
 
@@ -147,7 +152,7 @@ The face shows the source form. The back shows the target form and the Chinese g
 
 While 一開始顯示幾類動詞 is on, the face shows the verb class.
 
-Checks: a test shows that changing cards returns to the face. In a browser, a tap reveals the answer and a swipe right opens the next card. The first card resists a backward (right-hand) drag: it follows at a third of the finger, capped at 40px, and springs back without changing the card; the reader's first word and the last-card finish are unchanged.
+Checks: a test shows that changing cards returns to the face. In a browser, a tap reveals the answer and a swipe right opens the next card. The first card is completely still on a backward (right-hand) drag and does not change the card; the reader's first word and the last-card finish are unchanged.
 
 ### T7 Quiz
 

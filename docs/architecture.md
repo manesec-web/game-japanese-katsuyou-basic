@@ -130,9 +130,12 @@ src/study/results.js          run tally, score bands, completion emoji
 src/ui/store.js               reactive session + send()
 src/ui/bootstrap.js           boot → library → settings → home (also retry)
 src/ui/scrollbar.js           page scrollbar geometry (pure)
-src/ui/swipe.js               drag threshold, spring-back and the first-card
-                              resistance (pure)
+src/ui/swipe.js               drag threshold and swipe direction
+                              resolution (pure)
 src/ui/motion.js              prefers-reduced-motion probe
+src/ui/window.js              paging window: 9/5 slots, current in the 3rd
+src/ui/paging-window.js       keeps the window row and shifts it per turn
+src/study/window-views.js     per-slot card/reader data for the window
 src/ui/typing.js              IME-safe field edits (pure)
 src/views/*.vue               screens (thin)
 src/components/*.vue          shared UI pieces (thin: SiteHead, BuildFooter,
@@ -180,8 +183,8 @@ and leaves `boot.done` false. `boot.checked` counts verified lessons only.
 ## Testing
 
 - Vitest under Node for engine, commands, hashing, boot, settings, item
-  lists, keyboard, grading, ruby, swipe resolution, result tallies: 21 files,
-  209 tests.
+  lists, keyboard, grading, ruby, swipe resolution, paging window, result
+  tallies: 24 files, 234 tests.
 - Browser APIs (IndexedDB, fetch) are injected so tests use fakes; the IDB
   adapter itself is tested with `fake-indexeddb`. No browser is needed for
   `npm test`.
@@ -189,9 +192,9 @@ and leaves `boot.done` false. `boot.checked` counts verified lessons only.
   Chromium at 390×844 (plus 550/551/800/900 width probes) through loading,
   home, all three pickers, reader, three settings screens, cards, quiz and
   completion, including IndexedDB reuse, the loading head and credit line, the
-  first-card resistance, reduced motion and the 550px breakpoint. It is a
-  separate command, not part of `npm test`. The run is 379 checks on the final
-  pass (378–379: the seeded quiz item decides how many kana-key assertions run).
+  first-card wall, reduced motion and the 550px breakpoint. It is a
+  separate command, not part of `npm test`. The run is 408 checks on the final
+  pass (410–411: the seeded quiz item decides how many kana-key assertions run).
 
 ## Styling and motion
 
@@ -200,9 +203,9 @@ grain, warm off-white `min(100%, 480px)` column with 28px radius and light
 shadow, system CJK font stack (`Hiragino Sans`, `Noto Sans TC`, `Noto Sans JP`),
 36px × 10px-radius controls (chips and settings rows), 44px+ quiz keys, 60px
 home entries, 50px picker/reader/card footer controls and 60px 返回主頁, ~220ms
-screen transitions, a 240ms `rotateY` card flip, a 170ms accelerating exit and
-190ms decelerating entry for paging, a 140ms spring-back for a release under
-the threshold, 1.6s answer toasts, drag-follow for swipes, and a
+screen transitions, a 240ms `rotateY` card flip, a direct swap plus one 190ms
+decelerating slide-in for paging (no drag-follow, no spring-back, and nothing
+moves once the item has settled), 1.6s answer toasts, and a
 `prefers-reduced-motion: reduce` branch that freezes the gradient, changes
 items and cards directly, makes flips instant, and fades between screens.
 At ≤550px the column is full-bleed and the gradient is replaced by the column
@@ -216,13 +219,12 @@ colour.
 - The library lives in `src/dict/library.js` (module-level data passed to
   commands/stores as a dependency), not inside the reactive session. The
   session keeps only the small `lessons` summary the picker renders.
-- Paging phases are driven by the DOM, not by timers: the exit ends on
-  `transitionend` and the entry on `animationend`, with a 600ms fallback, so the
-  CSS owns every duration. Three easings are tokens in `src/styles/app.css`:
-  `--ease-exit` (accelerating, so the pace carries into the swap),
-  `--ease-slide` (decelerating settle, used for the entry and the spring-back)
-  and `--ease-turn` (the 3D flip). Speed either side of the swap is asserted
-  within 1.6x by `scripts/browser-check.mjs`; `scripts/motion-probe.mjs` prints
+- Paging has one phase, the entry, and it is driven by the DOM, not by timers:
+  the swap happens at once when the gesture resolves and the incoming item's
+  slide ends on `animationend`, with a 600ms fallback, so the CSS owns every
+  duration. The easing is the `--ease-slide` token (decelerating settle) in
+  `src/styles/app.css`, shared with `--ease-exit` (kept for screen-internal
+  exits) and `--ease-turn` (the 3D flip). `scripts/motion-probe.mjs` prints
   the frame-by-frame trace when a number needs re-measuring.
 - The page scrollbar is drawn, not native: `src/ui/scrollbar.js` holds the
   geometry (pure and unit tested) and `src/components/PageScrollBar.vue` wires
@@ -232,13 +234,14 @@ colour.
 - The viewport pins the scale (`maximum-scale=1, user-scalable=no`) and
   `html`/`body` set `touch-action: manipulation`, so a double tap and a pinch
   both leave the page at scale 1; the gesture surfaces override with `pan-y`.
-- Gesture wiring stays in the views, but thresholds/spring-back resolution
-  are pure (`src/ui/swipe.js`), answer normalization/grading and keyboard
-  generation are pure (`src/dict/quiz.js`), typing diffs are pure
+- Gesture wiring stays in the views, but the threshold and direction
+  resolution are pure (`src/ui/swipe.js`), answer normalization/grading and
+  keyboard generation are pure (`src/dict/quiz.js`), typing diffs are pure
   (`src/ui/typing.js`), and ruby alignment is pure (`src/dict/ruby.js`).
 - Under `prefers-reduced-motion: reduce`, `src/ui/motion.js` tells the reader
-  and card gestures to skip drag-follow (a 72px swipe still changes the item),
-  the stylesheet freezes the gradient, and screen changes keep a short fade.
+  and card gestures to skip the entry slide (a 72px swipe still changes the
+  item), the stylesheet freezes the gradient, and screen changes keep a short
+  fade.
 - Settings and lesson selections persist under `katsuyou-settings`; every
   command that changes them saves immediately through the injected storage.
 - The head and the credit line are components, not per-screen markup:
@@ -247,8 +250,7 @@ colour.
   home). `src/components/AboutSheet.vue` is the shared sheet, so both screens
   open the same panel. Each view keeps its own `sheetOpen` ref; there is no
   `about` command because the sheet was already view state.
-- The first card's wall is pure logic: `cardDrag` and `cardDirectionAt` in
-  `src/ui/swipe.js` decide the damped offset (a third of the finger, capped at
-  40px) and return no direction when `session.index === 0` and the drag goes
-  right. `CardView.vue` only applies them, and the existing 140ms `.card`
-  transition plays the spring-back.
+- The first card's wall is stillness, not resistance: `cardDirectionAt` in
+  `src/ui/swipe.js` returns no direction when `session.index === 0` and the
+  drag goes right, and `CardView.vue` never moves the card — no follow, no
+  spring-back. The reader's first word behaves the same way.

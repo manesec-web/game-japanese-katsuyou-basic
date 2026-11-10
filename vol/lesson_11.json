@@ -618,7 +618,7 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかろう",
-          "note": null,
+          "note": "字典有但是不常用：「かかろう」日常不用",
           "error_usage": false,
           "sentence": [
             {
@@ -643,25 +643,9 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかれ",
-          "note": "字典有但是不常用：「かかれ」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "説明書に 「十分に 時間が かかれ」と 書いて ある。",
-              "chinese": "說明書上寫著「要多花點時間」。",
-              "note": null
-            },
-            {
-              "japanese": "上司は この 仕事に 時間が かかれ と 命じた。",
-              "chinese": "上司命令這件工作要多花時間。",
-              "note": null
-            },
-            {
-              "japanese": "会議で 「もっと 時間が かかれ」と 意見が 出た。",
-              "chinese": "會上有人提出「應該多花點時間」。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「かかる」（花費時間或金錢）沒有命令用法，「時間がかかれ」母語者不說。",
+          "error_usage": true,
+          "sentence": []
         },
         "conditional-form": {
           "vol": "かかれば",
@@ -693,47 +677,31 @@
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かかられる",
-          "note": "字典有但是不常用：「かかられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "毎月 高い 家賃を かかられる と、暮らしが 苦しい。",
-              "chinese": "每個月被收高房租的話，生活很苦。",
-              "note": null
-            },
-            {
-              "japanese": "急な 修理代を かかられる と、驚く。",
-              "chinese": "突然被收修理費的話，會嚇一跳。",
-              "note": null
-            },
-            {
-              "japanese": "余計な 送料を かかられる の は 嫌だ。",
-              "chinese": "討厭被多收運費。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「かかる」是無意志自動詞，「かかられる」沒有受身用法；「被多收錢」要用他動詞「取る」的受身「取られる」，或說「家賃が かかって 困る」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "かからせる",
           "group": "1",
           "chinese": "花費（金錢或時間）; 需要",
           "japanese": "かからせる",
-          "note": "字典有但是不常用：「かからせる」日常不用",
+          "note": "「かからせる」是「かかる」的使役，表示讓人費時間、費錢、費工夫。另一個動詞是「かける」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "店は 客に 送料を かからせる。",
-              "chinese": "店家讓客人負擔運費。",
+              "japanese": "この 手続きは 客に 手間を かからせる。",
+              "chinese": "這個手續會讓客人費工夫。",
               "note": null
             },
             {
-              "japanese": "会社は 社員に 交通費を かからせる ことに した。",
-              "chinese": "公司決定讓員工負擔交通費。",
+              "japanese": "説明が ないと、相手に 時間を かからせる。",
+              "chinese": "沒有說明的話，會讓對方花時間。",
               "note": null
             },
             {
-              "japanese": "親は 子どもに 高い 学費を かからせる つもりだ。",
-              "chinese": "父母打算讓孩子負擔高額學費。",
+              "japanese": "修理は 客に 高い 費用を かからせる。",
+              "chinese": "修理會讓客人花很多錢。",
               "note": null
             }
           ]
@@ -759,8 +727,8 @@
               "note": null
             },
             {
-              "japanese": "日曜日は 学校を 休む。",
-              "chinese": "星期天向學校請假。",
+              "japanese": "熱が ある 日は 学校を 休む。",
+              "chinese": "發燒的日子向學校請假。",
               "note": null
             }
           ]
@@ -1085,7 +1053,7 @@
             },
             {
               "japanese": "私が 休みたい 日に 後輩に 休まれる。",
-              "chinese": "我想請假的那天卻被後輩請走了。",
+              "chinese": "我想請假的那天，後輩卻先請了假。",
               "note": null
             }
           ]

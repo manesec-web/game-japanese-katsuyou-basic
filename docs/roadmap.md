@@ -114,6 +114,24 @@ Each revision started from a user review. Every task records its evidence in
 | 13b | The loading screen carries the site head (`大家の日本語` / `轉型練習` / `涵蓋初級 1 – 50 課的單詞`) and the `Build with ❤ by Mane` credit, which opens the shared About sheet; the bug line stays home-only; head and credit survive the failure screen | done | `SiteHead.vue`, `BuildFooter.vue`, `AboutSheet.vue` reused by home and loading; browser check asserts the four loading labels, "no bug line", survival on `載入失敗（lesson N）`, and the sheet opening/closing |
 | 13c | Spec, changelog, progress, architecture, README, AGENTS and roadmap synced; the three requested future items recorded as backlog | done | `docs/spec.md` loading + card text; `docs/changelog.md` dated entry quoting the request; counts 209 tests / 379 checks everywhere |
 
+### Revision 14 — paging without follow or bounce (requested 2026-11-10)
+
+The user reported that the paging gesture hurt to watch on a phone: swiping the
+word left, the next word slid in, settled, then flashed and settled again
+("歸位完成之後就閃一下，然後在歸位"), and the follow/spring-back read as a strong
+bounce that desktop never showed. The chosen fix: keep the swipe, remove every
+follow and bounce visual, swap directly with one short slide-in. The spec was
+revised before any code (it supersedes the 140ms spring-back from revision 11
+and the first-card resistance from revision 13a).
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 14a | Spec revision: invisible drag, direct swap + one ~190ms slide-in past the 72px threshold, sub-threshold drags inert, no flash or second settle once the item rests, first-card backward drag completely still | done | `docs/spec.md` rewritten paging/motion clauses; this board; changelog entry |
+| 14b | 字典 paging rebuilt in `ReaderView.vue` (no drag-follow, no leave phase, one slide-in; settle-flash fixed at its source: will-change teardown / scroll reset timing) | done | `checkSlide('dictionary page turn')` — no follow, one monotonic slide, `nothing moves after the settle`; `a 55px drag never moves the page`; first/last word walls stay put |
+| 14c | 翻卡 paging rebuilt in `CardView.vue` (same motion; first card completely still; tap-flip and last-card finish unchanged) | done | `checkSlide('card turn')`; `the first card does not follow the drag` (60px and 180px both at 0px); tap-flip 3D checks and `swiping off the last card finishes the run` still pass |
+| 14d | Tests and `scripts/browser-check.mjs` motion assertions updated to the new rule | done | `swipe.js` trimmed to threshold/direction resolution; `swipe.test.js` rewritten (first-card wall names no direction at any distance); `slideVerdict`/`checkSlide` replace the seam/pace assertions; dead `traceVerdict`/`checkTurn`/`checkSettle` removed |
+| 14e | Verification: `npm test`, `npm run build`, browser walk-through at phone width | done | `npm test` 21 files / 205 tests; `npm run build` ok (`output/dict/` = 50, `output/index.html`); `node scripts/browser-check.mjs` 382 checks passing (390×844 + 550/551/800/900 probes + reduced-motion paths) |
+
 ### Backlog — requested next work
 
 Requested by the user on 2026-11-11. None of these has a spec entry yet, so
@@ -126,10 +144,28 @@ are `pending`, not `in progress`.
 | B2 | 優化下載文件 | pending | Whether the 50 per-lesson files stay (one file per lesson, hashed individually) or become one bundle; what that does to the SHA-256 manifest, `app.boot` and `boot.checked / boot.total` |
 | B3 | 優化UI | pending | Which screens and which complaints; every change is written into the spec's Look and motion section before code and the browser suite follow |
 
+### Revision 15 — the paging window (requested 2026-11-10)
+
+The phone paging rebuilt the whole page at the swap: the dictionary page is
+fifteen form blocks, and 翻卡學習 rebuilt its card. The request: render several
+items at once, keep the screen on the 3rd one, and make a swipe only delete the
+item at one end and add one at the other. The window is deliberately invisible —
+the spec keeps revision 14's motion, so nothing about what the user sees changes,
+only how many items are already laid out when the swap happens.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 15a | Spec revision: "The paging window" — 9 cards in 翻卡學習, 5 words in the reader, current item in the 3rd slot, front-delete/back-append, ends render nothing, window invisible | done | `docs/spec.md` new section + `Look and motion` bullet; `Dictionary reader` and `Cards` cross-reference it |
+| 15b | Pure window logic in `src/ui/window.js` (sizes, `CURRENT_SLOT`, `windowSlots`, `windowOffset`, `slotKey`, `shiftWindow`) | done | `src/ui/window.test.js` 13 tests: 3rd-slot invariant over every index/length, front-delete/back-append both directions, derived-shape equality, ends and unknown directions refused, `card.next/prev` + `dict.next/prev` ids and params unchanged |
+| 15c | Per-slot data in `src/study/window-views.js` so the views stay thin | done | `src/study/window-views.test.js` 10 tests: one current slot, offsets 0/±100, every slot holds its own word/hand/gloss rather than a copy of the current one, tags per card, one new key per turn |
+| 15d | 字典 and 翻卡 rebuilt on the window: the row is kept in state and shifted by `usePagingWindow` (one front delete, one back append per turn), no row translate, item-keyed slots, only the current item visible | done | browser check: 5 pages / 9 slots mounted, one current at x=0 and full width, 0 neighbours inside, neighbours hidden, per-slot words distinct |
+| 15e | 前刪後補 proven at DOM level, not just in unit tests | done | 第4課 (6 words) and 第6課 (11 verbs) walk-throughs: the window slides one slot per turn, the front node leaves, exactly one node arrives at the back, survivors keep their identity marker |
+| 15f | Verification and docs | done | `npm test` 24 files / 234 tests; `npm run build` ok (`output/dict/` = 50, `output/index.html`); `node scripts/browser-check.mjs` 411 checks passing; spec, changelog, progress, architecture, README, roadmap and AGENTS synced |
+
 ## Current status
 
-- Everything above is `done`; latest verification was 21 test files / 209
-  tests, a build with 50 dictionary files, and 379 browser checks (378–379,
+- Everything above is `done`; latest verification was 24 test files / 234
+  tests, a build with 50 dictionary files, and 411 browser checks (410–411,
   because the seeded quiz item decides how many kana-key assertions run).
 - Backlog items B1–B3 are `pending` and have no spec entry yet.
 - No known deviation from `docs/spec.md` other than the spec-silent choices
@@ -150,10 +186,10 @@ are `pending`, not `in progress`.
 ## Verification commands
 
 ```bash
-npm test                                # Vitest unit tests (21 files / 209)
+npm test                                # Vitest unit tests (24 files / 234)
 npm run build                           # static build into output/ (50 dict files)
 node scripts/write-sha256.mjs --check   # manifest consistency
-node scripts/browser-check.mjs          # headless Chromium walk-through (379 checks)
+node scripts/browser-check.mjs          # headless Chromium walk-through (411 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 ```
 

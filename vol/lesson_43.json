@@ -316,50 +316,18 @@
           "group": "2",
           "chinese": "增加; 增多",
           "japanese": "ふえられる",
-          "note": "字典有但是不常用：「増えられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "輸出が 増えられる のは 円が 安い からだ。",
-              "chinese": "出口會增加是因為日圓便宜。",
-              "note": null
-            },
-            {
-              "japanese": "人口が 増えられる 町では 家の 値段も 上がる。",
-              "chinese": "在人口會增加的城鎮，房價也會上漲。",
-              "note": null
-            },
-            {
-              "japanese": "町の 人口が 増えられる ように 学校を 作った。",
-              "chinese": "為了讓鎮上人口增加，建了學校。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「増えられる」與「増える」的可能形同形（同一字串），是可能形的誤用；「増える」是無意志動詞，沒有表示被動的自然用法",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "増えさせる",
           "group": "2",
           "chinese": "增加; 增多",
           "japanese": "ふえさせる",
-          "note": "字典有但是不常用：「増えさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "円安は 輸出を 増えさせる。",
-              "chinese": "日圓貶值使出口增加。",
-              "note": null
-            },
-            {
-              "japanese": "新しい 道路が 観光客を 増えさせる。",
-              "chinese": "新道路使觀光客增加。",
-              "note": null
-            },
-            {
-              "japanese": "安い 値段が 買う 人を 増えさせる。",
-              "chinese": "便宜的價格使買的人增加。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「増えさせる」是自動詞「増える」的使役形，但他動詞是「増やす」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -432,8 +400,8 @@
               "note": null
             },
             {
-              "japanese": "毎日 少しずつ 食べれば 体重は 減りません。",
-              "chinese": "每天只吃一點的話體重不會減少。",
+              "japanese": "お菓子を 食べ続ければ、体重は 減りません。",
+              "chinese": "一直吃零食的話，體重不會減少。",
               "note": null
             }
           ]
@@ -661,8 +629,8 @@
               "note": null
             },
             {
-              "japanese": "体重が 減れば 服が 大きく なる。",
-              "chinese": "體重減少的話衣服就變大了。",
+              "japanese": "体重が 減れば 服が ゆるく なる。",
+              "chinese": "體重減少的話，衣服就變鬆。",
               "note": null
             },
             {
@@ -677,32 +645,16 @@
           "group": "0",
           "chinese": "減少; 變少",
           "japanese": "へられる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "お客に 減られる と、 店の 売り上げが すぐ 落ちる。",
-              "chinese": "客人一減少，店裡的營業額馬上就下滑。",
-              "note": null
-            },
-            {
-              "japanese": "ライバル店が できて、 うちは 客に 減られる ばかりだ。",
-              "chinese": "競爭對手的店開張後，我們店的客人不斷流失。",
-              "note": null
-            },
-            {
-              "japanese": "工場が 閉まって、 この 町は 住人に 減られる 一方だ。",
-              "chinese": "工廠關閉後，這個城鎮的居民不斷減少。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「減る」是無意志自動詞，「客に減られる」不成立。客人變少說「客が減る」。要說「使減少」用他動詞「減らす」的受身「減らされる」。",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "減らせる",
           "group": "0",
           "chinese": "減少; 變少",
           "japanese": "へらせる",
-          "note": "錯誤詞語，僅供轉詞練習：「減らせる」是錯的：這是另一個動詞，不用作「減る」的使役形",
+          "note": "錯誤詞語，僅供轉詞練習：「減らせる」形態上是「減る」的使役，但現代日語不用這個使役。要說「使減少」用他動詞「減らす」。此形又和「減らす」的可能形同形，寫例句會分不清。",
           "error_usage": true,
           "sentence": []
         }
@@ -1038,25 +990,9 @@
           "group": "1",
           "chinese": "上漲; 上升; 提高",
           "japanese": "あがられる",
-          "note": "字典有但是不常用：「上がられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "野菜の 値段に 上がられる と、 買う 気が なくなる。",
-              "chinese": "菜價一漲，就沒心情買了。",
-              "note": null
-            },
-            {
-              "japanese": "家賃に 毎年 上がられる ので、 引っ越しを 考えて いる。",
-              "chinese": "房租每年都漲，所以正在考慮搬家。",
-              "note": null
-            },
-            {
-              "japanese": "米の 値段に 上がられる と、 店の 弁当も 高く なる。",
-              "chinese": "米價一漲，店裡的便當也變貴。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「値段に 上がられる」「家賃に 上がられる」把無生物的價格當 に 施事，日語沒有這種受身；價格上漲只說「値段が 上がる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "上がらせる",
@@ -1315,9 +1251,25 @@
           "group": "1",
           "chinese": "下降; 下跌; 降低",
           "japanese": "さがれる",
-          "note": "錯誤詞語，僅供轉詞練習：「下がる」是無意志動詞，「下がれる」這個可能形日常不用",
-          "error_usage": true,
-          "sentence": []
+          "note": "此形是意志性的「往後退」（同條命令形「一歩下がれ」）。價格、氣溫下降沒有可能形。",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ここなら もう 一歩 下がれる。",
+              "chinese": "這裡還能再退一步。",
+              "note": null
+            },
+            {
+              "japanese": "白線の 後ろまで 下がれる。",
+              "chinese": "可以退到白線後面。",
+              "note": null
+            },
+            {
+              "japanese": "危なく なったら、すぐ 後ろへ 下がれる。",
+              "chinese": "要是危險了，馬上可以往後退。",
+              "note": null
+            }
+          ]
         },
         "volitional-form": {
           "vol": "下がろう",
@@ -1399,47 +1351,31 @@
           "group": "1",
           "chinese": "下降; 下跌; 降低",
           "japanese": "さがられる",
-          "note": "字典有但是不常用：「下がられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "夜に 気温に 下がられる と、 風邪を ひきやすい。",
-              "chinese": "晚上氣溫一下降，就容易感冒。",
-              "note": null
-            },
-            {
-              "japanese": "給料に 下がられる と、 生活が 苦しく なる。",
-              "chinese": "薪水被調降，生活就變得辛苦。",
-              "note": null
-            },
-            {
-              "japanese": "エアコンの 設定で 室温に 下がられる ので、 夜中に 目が 覚める。",
-              "chinese": "因為冷氣設定室溫下降，半夜會醒來。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「気温に 下がられる」「給料に 下がられる」把無生物當 に 施事，日語沒有這種受身；下降只說「気温が 下がる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "下がらせる",
           "group": "1",
           "chinese": "下降; 下跌; 降低",
           "japanese": "さがらせる",
-          "note": "字典有但是不常用：「下がらせる」日常不用",
+          "note": "「下がらせる」是「往後退」的使役。他動詞「下げる」是把東西放低，不是這個形。例句是讓人／車後退，不是「可以降低」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "景気の 悪化が 給料を 下がらせる らしい。",
-              "chinese": "景氣惡化似乎使薪水下降。",
+              "japanese": "警官は 見物人を 白線の 後ろへ 下がらせる。",
+              "chinese": "警察讓圍觀的人退到白線後面。",
               "note": null
             },
             {
-              "japanese": "店員は お客さんを 地下の 売り場に 下がらせる。",
-              "chinese": "店員讓客人下到地下賣場。",
+              "japanese": "父は 弟を 危ない 場所から 下がらせる。",
+              "chinese": "爸爸讓弟弟從危險的地方退開。",
               "note": null
             },
             {
-              "japanese": "新しい 薬が 血圧を 下がらせる そうだ。",
-              "chinese": "據說新藥能讓血壓下降。",
+              "japanese": "係の 人は 車を 門の 前から 下がらせる。",
+              "chinese": "工作人員讓車子從門前往後退。",
               "note": null
             }
           ]
@@ -1760,50 +1696,18 @@
           "group": "2",
           "chinese": "斷掉; 折斷; 用盡",
           "japanese": "きれられる",
-          "note": "字典有但是不常用：「切れられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "ひもが 切れられる と 荷物が 落ちる。",
-              "chinese": "繩子被弄斷，行李就掉。",
-              "note": null
-            },
-            {
-              "japanese": "電池が 切れられる のは 困る。",
-              "chinese": "電池被用完很困擾。",
-              "note": null
-            },
-            {
-              "japanese": "大事な 糸が 切れられる と 直せない。",
-              "chinese": "重要的線被弄斷就修不好。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「切れられる」與「切れる」的可能形同形（同一字串），且「切れる」是無意志自動詞，被切斷要說「切られる」（他動詞「切る」的受身）",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "切れさせる",
           "group": "2",
           "chinese": "斷掉; 折斷; 用盡",
           "japanese": "きれさせる",
-          "note": "字典有但是不常用：「切れさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "強い 風が ひもを 切れさせる。",
-              "chinese": "強風使繩子斷。",
-              "note": null
-            },
-            {
-              "japanese": "古い 電池が 電話を 切れさせる。",
-              "chinese": "舊電池使手機沒電。",
-              "note": null
-            },
-            {
-              "japanese": "鋭い 石が 糸を 切れさせる。",
-              "chinese": "銳利的石頭使線斷。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「切れさせる」是自動詞「切れる」的使役形，但他動詞是「切る」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -2121,50 +2025,18 @@
           "group": "2",
           "chinese": "掉下來; 脫落; 鬆開",
           "japanese": "とれられる",
-          "note": "字典有但是不常用：「とれられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "ボタンが とれられる と コートが 使えない。",
-              "chinese": "鈕扣被拔掉，大衣就不能穿。",
-              "note": null
-            },
-            {
-              "japanese": "シールが とれられる のは いやだ。",
-              "chinese": "貼紙被撕掉很討厭。",
-              "note": null
-            },
-            {
-              "japanese": "大事な ネジが とれられる と 直せない。",
-              "chinese": "重要的螺絲被拆掉就修不好。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「とれられる」與「とれる」的可能形同形（同一字串）；「とれる」是「取れる」的自動詞用法，東西被弄掉要說「取られる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "とれさせる",
           "group": "2",
           "chinese": "掉下來; 脫落; 鬆開",
           "japanese": "とれさせる",
-          "note": "字典有但是不常用：「とれさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "強い 風が ボタンを とれさせる。",
-              "chinese": "強風使鈕扣掉落。",
-              "note": null
-            },
-            {
-              "japanese": "水が シールを とれさせる。",
-              "chinese": "水使貼紙脫落。",
-              "note": null
-            },
-            {
-              "japanese": "古い 糸が ボタンを とれさせる。",
-              "chinese": "舊線使鈕扣掉落。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「とれさせる」是自動詞「とれる」的使役形，但他動詞是「取る」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -2482,50 +2354,18 @@
           "group": "2",
           "chinese": "掉落; 落下",
           "japanese": "おちられる",
-          "note": "字典有但是不常用：「落ちられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "棚の 荷物に 落ちられる と、 けがを する 危険が ある。",
-              "chinese": "架子上的東西掉落，有受傷的危險。",
-              "note": null
-            },
-            {
-              "japanese": "夜中に 庭の 木から 枝に 落ちられる と、 窓が 割れる。",
-              "chinese": "半夜樹枝掉下來，窗戶就會破。",
-              "note": null
-            },
-            {
-              "japanese": "山で 石に 落ちられる と、 道が 通れなく なる。",
-              "chinese": "山上的石頭掉落，道路就無法通行。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「落ちられる」與「落ちる」的可能形同形（同一字串），且「棚の 荷物に 落ちられる」把無生物當 に 施事，不是日語；東西被弄掉要說「落とされる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "落ちさせる",
           "group": "2",
           "chinese": "掉落; 落下",
           "japanese": "おちさせる",
-          "note": "字典有但是不常用：「落ちさせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "強い 風が 荷物を 落ちさせる。",
-              "chinese": "強風使行李掉落。",
-              "note": null
-            },
-            {
-              "japanese": "子どもが 木を 揺らして 葉を 落ちさせる。",
-              "chinese": "孩子搖樹使葉子落下。",
-              "note": null
-            },
-            {
-              "japanese": "地震が 本を 落ちさせる。",
-              "chinese": "地震使書掉落。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「落ちさせる」是自動詞「落ちる」的使役形，但他動詞是「落とす」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -2843,50 +2683,18 @@
           "group": "1",
           "chinese": "沒有了; 用完; 消失",
           "japanese": "なくなられる",
-          "note": "字典有但是不常用：「なくなられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "定期券に なくなられる と、 電車に 乗れない。",
-              "chinese": "定期票一不見，就搭不了電車。",
-              "note": null
-            },
-            {
-              "japanese": "台所の 米に なくなられる と、 夕飯を 作れない。",
-              "chinese": "廚房的米一用完，就做不成晚飯。",
-              "note": null
-            },
-            {
-              "japanese": "ガソリンに なくなられる と、 途中で 車が 止まる。",
-              "chinese": "汽油一用完，車子就在半路停住。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「定期券に なくなられる」「ガソリンに なくなられる」把無生物當 に 施事，日語沒有這種受身；用完只說「ガソリンが なくなる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "なくならせる",
           "group": "1",
           "chinese": "沒有了; 用完; 消失",
           "japanese": "なくならせる",
-          "note": "字典有但是不常用：「なくならせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "区は 再開発で 古い 家を なくならせる 計画だ。",
-              "chinese": "區公所計畫透過再開發讓老房子消失。",
-              "note": null
-            },
-            {
-              "japanese": "台風が 畑の 作物を なくならせる ことが ある。",
-              "chinese": "颱風有時會毀掉田裡的作物。",
-              "note": null
-            },
-            {
-              "japanese": "父は 長年の 借金を なくならせる ため、 必死で 働いた。",
-              "chinese": "父親為了消掉長年的債務，拼命工作。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「なくならせる」是自動詞「なくなる」的使役形，但他動詞是「なくす」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       }
     ]

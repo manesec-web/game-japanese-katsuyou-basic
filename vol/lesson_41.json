@@ -72,7 +72,7 @@
             },
             {
               "japanese": "この 掃除は 一人では やりません。",
-              "chinese": "這個打掃我一個人不會做。",
+              "chinese": "這個打掃一個人不做。",
               "note": null
             }
           ]
@@ -337,17 +337,17 @@
           "sentence": [
             {
               "japanese": "新人は 先輩に たくさんの 仕事を やられる ことが 多い。",
-              "chinese": "新人常被前輩塞很多工作。",
+              "chinese": "新人的很多工作常常被前輩搶去做。",
               "note": null
             },
             {
               "japanese": "私は 部長に 書類の 整理を やられる のが 嫌だ。",
-              "chinese": "我討厭被部長派去整理文件。",
+              "chinese": "我討厭整理文件這件事被部長搶去做。",
               "note": null
             },
             {
               "japanese": "弟は いつも 兄に 庭の 掃除を やられる。",
-              "chinese": "弟弟總是被哥哥派去掃院子。",
+              "chinese": "弟弟掃院子的工作總是被哥哥搶去做。",
               "note": null
             }
           ]
@@ -738,18 +738,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "母は 私を 台所へ 呼ばせる。",
-              "chinese": "媽媽讓我到廚房去。",
+              "japanese": "母は 兄に 私を 台所へ 呼ばせる。",
+              "chinese": "媽媽讓哥哥把我叫到廚房。",
               "note": null
             },
             {
-              "japanese": "先生は 生徒を 職員室へ 呼ばせる。",
-              "chinese": "老師讓學生到辦公室去。",
+              "japanese": "先生は 係の 生徒に 学生を 職員室へ 呼ばせる。",
+              "chinese": "老師讓負責的學生把同學叫到辦公室。",
               "note": null
             },
             {
-              "japanese": "社長は 秘書を 部屋へ 呼ばせる。",
-              "chinese": "社長讓秘書到房間來。",
+              "japanese": "社長は 受付の 人に 秘書を 部屋へ 呼ばせる。",
+              "chinese": "社長讓接待把秘書叫到房間。",
               "note": null
             }
           ]
@@ -1844,18 +1844,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "その 荷物は ホテルに 預かられる。",
-              "chinese": "那件行李寄放在飯店。",
+              "japanese": "その 荷物は ホテルの 人に 預かられる。",
+              "chinese": "那件行李由飯店的人保管。",
               "note": null
             },
             {
-              "japanese": "私の 傘は いつも 店に 預かられる。",
-              "chinese": "我的傘總是寄放在店裡。",
+              "japanese": "私の 傘は いつも 店の 人に 預かられる。",
+              "chinese": "我的傘總是由店裡的人保管。",
               "note": null
             },
             {
-              "japanese": "大切な 書類は 金庫に 預かられる。",
-              "chinese": "重要文件放在金庫保管。",
+              "japanese": "大切な 書類は 金庫の 担当者に 預かられる。",
+              "chinese": "重要文件由金庫的負責人保管。",
               "note": null
             }
           ]
@@ -2141,7 +2141,7 @@
             },
             {
               "japanese": "みんな 一緒に 助かろう。",
-              "chinese": "大家一一起得救吧。",
+              "chinese": "大家一起得救吧。",
               "note": null
             }
           ]
@@ -2201,50 +2201,18 @@
           "group": "1",
           "chinese": "得救; 輕鬆; 節省",
           "japanese": "たすかられる",
-          "note": "字典有但是不常用：「助かられる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "先輩に 助かられる こと が 多く て、 いつも 申し訳ない。",
-              "chinese": "常常受到前輩幫助，總是很過意不去。",
-              "note": null
-            },
-            {
-              "japanese": "試験の 前日に 友だちに 助かられる と、 とても 安心する。",
-              "chinese": "考試前一天若有朋友幫忙，就會很安心。",
-              "note": null
-            },
-            {
-              "japanese": "知らない 人に 助かられる と、 ちょっと 照れる。",
-              "chinese": "被陌生人幫忙，會有點害羞。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「被幫助」是「助けられる」（助ける的受身）；「助かる」的受身「助かられる」沒有受身用法",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "助からせる",
           "group": "1",
           "chinese": "得救; 輕鬆; 節省",
           "japanese": "たすからせる",
-          "note": "字典有但是不常用：「助からせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "新しい 薬が その 患者を 助からせる と、 医師は 信じて いる。",
-              "chinese": "醫生相信新藥能讓那位病人得救。",
-              "note": null
-            },
-            {
-              "japanese": "医者は 徹夜の 手術で 子どもを 助からせる つもりだ。",
-              "chinese": "醫生打算用徹夜的手術救活那個孩子。",
-              "note": null
-            },
-            {
-              "japanese": "早い 発見が 彼女を 助からせる に 違いない。",
-              "chinese": "及早發現一定能救她。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「助からせる」是自動詞「助かる」的使役形，但他動詞是「助ける」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       }
     ]

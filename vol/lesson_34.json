@@ -589,18 +589,15 @@
           "sentence": [
             {
               "japanese": "部品を そろえて 組み立てて ください。",
-              "chinese": "請把零件備齊後組裝。",
-              "note": null
+              "chinese": "請把零件備齊後組裝。"
             },
             {
               "japanese": "組み立てて から 使います。",
-              "chinese": "組裝後再使用。",
-              "note": null
+              "chinese": "組裝後再使用。"
             },
             {
-              "japanese": "みんなで 組み立てて 一晩 かかった。",
-              "chinese": "大家一起組裝，花了一晚。",
-              "note": null
+              "japanese": "みんなで 組み立てて、やっと 完成した。",
+              "chinese": "大家一起組裝，總算完成了。"
             }
           ]
         },
@@ -891,18 +888,15 @@
           "sentence": [
             {
               "japanese": "この 枝は 折らない。",
-              "chinese": "這根樹枝不要折。",
-              "note": null
+              "chinese": "這根樹枝不要折。"
             },
             {
-              "japanese": "晴れて いる 日は 傘を 折らない。",
-              "chinese": "晴天不把傘收摺起來。",
-              "note": null
+              "japanese": "この 手紙は 大事なので 折らない。",
+              "chinese": "這封信很重要，所以不摺。"
             },
             {
               "japanese": "まだ 読むので 折らない。",
-              "chinese": "還要讀，所以不摺。",
-              "note": null
+              "chinese": "還要讀，所以不摺。"
             }
           ]
         },
@@ -1041,18 +1035,15 @@
           "sentence": [
             {
               "japanese": "紙を 半分に 折れ。",
-              "chinese": "把紙對折！",
-              "note": null
+              "chinese": "把紙對折！"
             },
             {
               "japanese": "洗濯物を 早く 折れ。",
-              "chinese": "快點摺衣服！",
-              "note": null
+              "chinese": "快點摺衣服！"
             },
             {
-              "japanese": "そこを 折れ。",
-              "chinese": "摺那裡！",
-              "note": null
+              "japanese": "この 線に 沿って 折れ。",
+              "chinese": "沿著這條線摺！"
             }
           ]
         },
@@ -1413,25 +1404,9 @@
           "group": "1",
           "chinese": "注意到; 察覺",
           "japanese": "きがつけ",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "忘れ物に 気が付け。",
-              "chinese": "注意有沒有忘東西！",
-              "note": null
-            },
-            {
-              "japanese": "もっと 周りに 気が付け。",
-              "chinese": "多注意周圍！",
-              "note": null
-            },
-            {
-              "japanese": "危険に 気が付け。",
-              "chinese": "注意危險！",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「気が付く」是無意志動詞，沒有可用的命令形；「気が付け」在口語又與「気を付け（気を付ける）」同音，實際上是另一個詞。日語自然的命令說法是「気を付けろ」。",
+          "error_usage": true,
+          "sentence": []
         },
         "conditional-form": {
           "vol": "気が付けば",
@@ -2226,25 +2201,9 @@
           "group": "1",
           "chinese": "被找到; 發現",
           "japanese": "みつからせる",
-          "note": "字典有但是不常用：「見つからせる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "先生は 生徒に 宝物を 見つからせる ため、 宝の 地図を 配った。",
-              "chinese": "老師為了讓學生找到寶物，發了藏寶圖。",
-              "note": null
-            },
-            {
-              "japanese": "祖父は 孫に 昔の 写真を 見つからせる の が 得意だ。",
-              "chinese": "祖父很擅長讓孫子找到舊照片。",
-              "note": null
-            },
-            {
-              "japanese": "店長は 新人に なくした 鍵を 倉庫で 見つからせる つもりだ。",
-              "chinese": "店長打算讓新人在倉庫找到遺失的鑰匙。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「見つからせる」是自動詞「見つかる」的使役形，但他動詞是「見つける」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
         }
       },
       {
@@ -2583,18 +2542,15 @@
           "sentence": [
             {
               "japanese": "子供は 母に ネクタイを される。",
-              "chinese": "小孩被母親打上領帶。",
-              "note": null
+              "chinese": "小孩被母親打上領帶。"
             },
             {
-              "japanese": "掃除は いつも 私に される。",
-              "chinese": "打掃總是我做。",
-              "note": null
+              "japanese": "掃除は いつも 母に される。",
+              "chinese": "打掃總是媽媽做的。"
             },
             {
               "japanese": "同じ 質問が 何度も される。",
-              "chinese": "同樣的問題被問了好幾次。",
-              "note": null
+              "chinese": "同樣的問題被問了好幾次。"
             }
           ]
         },
@@ -3332,22 +3288,22 @@
           "group": "2",
           "chinese": "沏茶; 泡茶",
           "japanese": "おちゃをたてられる",
-          "note": null,
+          "note": "與可能形同形。直接被動常說「お茶が たてられる」。下面是迷惑受身，不是尊敬語，也不是「たてさせられる」。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "客の 前で お茶をたてられる。",
-              "chinese": "在客人面前被要求沏茶。",
+              "japanese": "客に 長々と お茶をたてられる と、次の 予定が 遅れる。",
+              "chinese": "客人慢慢點茶，下一個行程會延遲。",
               "note": null
             },
             {
-              "japanese": "茶室で お茶をたてられる。",
-              "chinese": "在茶室被要求沏茶。",
+              "japanese": "弟に 先に お茶をたてられる と、自分の 番が 来ない。",
+              "chinese": "被弟弟搶先點茶，就輪不到自己。",
               "note": null
             },
             {
-              "japanese": "先生の 前で お茶をたてられる。",
-              "chinese": "在老師面前沏茶。",
+              "japanese": "隣の 人に お茶をたてられる と、話が 聞き取れない。",
+              "chinese": "隔壁的人點茶的話，就聽不清說話。",
               "note": null
             }
           ]
@@ -3514,18 +3470,15 @@
           "sentence": [
             {
               "japanese": "壊れ物は 載せない。",
-              "chinese": "不放易碎品。",
-              "note": null
+              "chinese": "不放易碎品。"
             },
             {
               "japanese": "この 箱には 載せない。",
-              "chinese": "不放在這個箱子裡。",
-              "note": null
+              "chinese": "不放在這個箱子上。"
             },
             {
               "japanese": "日曜日は 広告を 載せない。",
-              "chinese": "星期天不登廣告。",
-              "note": null
+              "chinese": "星期天不登廣告。"
             }
           ]
         },

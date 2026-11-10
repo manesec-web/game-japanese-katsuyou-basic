@@ -73,14 +73,14 @@ async function drag(page, dx, dy = 0, selector = '.reader-body') {
 
 // Press, drag, sample the card's transform while the finger is still down,
 // then release and sample again once the release has settled. Used for the
-// first-card wall, where the card must follow a little and then spring back.
+// first-card wall, where the card must stay completely still.
 async function dragHeld(page, dx, selector = '.card-stage') {
   const box = await page.locator(selector).boundingBox()
   const viewport = page.viewportSize()
   const cx = box.x + box.width / 2
   const cy = Math.max(90, Math.min(box.y + Math.min(box.height / 2, 240), viewport.height - 120))
   const transformOf = () =>
-    page.locator('.card').evaluate((el) => getComputedStyle(el).transform)
+    page.locator('.card--current').evaluate((el) => getComputedStyle(el).transform)
   await page.mouse.move(cx, cy)
   await page.mouse.down()
   await page.mouse.move(cx + dx / 2, cy, { steps: 5 })
@@ -103,7 +103,7 @@ function translateXOf(transform) {
 }
 
 // Swipe, then sample the page-turn state ~60ms after the finger lifts, while
-// the outgoing page is still sliding. Returns the phase classes and transform.
+// the incoming page is still sliding. Returns the phase classes and transform.
 async function dragSampled(page, dx, selector = '.reader-body') {
   const box = await page.locator(selector).boundingBox()
   const viewport = page.viewportSize()
@@ -115,7 +115,7 @@ async function dragSampled(page, dx, selector = '.reader-body') {
   await page.mouse.move(cx + dx, cy, { steps: 5 })
   await page.mouse.up()
   await wait(60)
-  const sample = await page.locator('.reader-page').evaluate((el) => ({
+  const sample = await page.locator('.reader-page--current').evaluate((el) => ({
     classes: el.getAttribute('class') || '',
     transform: getComputedStyle(el).transform,
   }))
@@ -123,7 +123,7 @@ async function dragSampled(page, dx, selector = '.reader-body') {
   return sample
 }
 
-async function wordText(page, selector = '.form-block--default .word') {
+async function wordText(page, selector = '.reader-page--current .form-block--default .word') {
   return page.locator(selector).evaluate((el) => {
     const clone = el.cloneNode(true)
     clone.querySelectorAll('rt').forEach((rt) => rt.remove())
@@ -138,7 +138,7 @@ async function ensureLesson(page, label) {
 }
 
 async function cardFlipped(page) {
-  const classes = (await page.locator('.card').getAttribute('class')) || ''
+  const classes = (await page.locator('.card--current').getAttribute('class')) || ''
   return classes.includes('card--flipped')
 }
 
@@ -152,15 +152,15 @@ async function horizontalOverflow(page) {
 }
 
 async function cardInnerTransform(page) {
-  return page.locator('.card-inner').evaluate((el) => getComputedStyle(el).transform)
+  return page.locator('.card--current .card-inner').evaluate((el) => getComputedStyle(el).transform)
 }
 
 // The paging motion must stay flat: a horizontal translation only, no rotation,
 // no scale and no fade. `inner` reports which side of the card is showing.
 async function cardMotion(page) {
   return page.evaluate(() => {
-    const card = document.querySelector('.card')
-    const inner = document.querySelector('.card-inner')
+    const card = document.querySelector('.card--current')
+    const inner = document.querySelector('.card--current .card-inner')
     if (!card || !inner) return null
     const cardStyle = getComputedStyle(card)
     const classes = card.getAttribute('class') || ''
@@ -173,6 +173,75 @@ async function cardMotion(page) {
       title: (document.querySelector('.bar-title')?.textContent || '').trim(),
     }
   })
+}
+
+// The paging window as the browser sees it: how many slots are mounted, which
+// list position each one holds, where the current item actually sits, and
+// whether any neighbour is visible inside the container. This is what a passing
+// test suite did not check before: the window could be offset off-screen, or
+// every slot could hold a copy of the current item, and the old assertions
+// would still pass.
+async function windowState(page, selectors) {
+  return page.evaluate(({ slot, item, current, container }) => {
+    const box = document.querySelector(container).getBoundingClientRect()
+    const nodes = [...document.querySelectorAll(slot)]
+    const items = [...document.querySelectorAll(item)]
+    const currentEl = document.querySelector(current)
+    const currentRect = currentEl ? currentEl.getBoundingClientRect() : null
+    return {
+      slots: nodes.length,
+      items: items.length,
+      currents: document.querySelectorAll(current).length,
+      // data-at is the item's list position; an empty slot carries none.
+      at: nodes.map((node) => (node.dataset.at === undefined ? null : Number(node.dataset.at))),
+      currentLeft: currentRect ? Math.round(currentRect.left - box.left) : null,
+      currentWidth: currentRect ? Math.round(currentRect.width) : null,
+      containerWidth: Math.round(box.width),
+      neighboursInside: items.filter((el) => {
+        if (el === currentEl) return false
+        const rect = el.getBoundingClientRect()
+        return rect.right > box.left + 1 && rect.left < box.right - 1
+      }).length,
+      visibleNeighbours: items.filter((el) => {
+        if (el === currentEl) return false
+        const style = getComputedStyle(el)
+        return style.visibility !== 'hidden' && style.display !== 'none'
+      }).length,
+      // Slots left in the accessibility tree: only the current one belongs
+      // there. A clipped-only neighbour still reads its word out to a screen
+      // reader, which is what made the window not invisible.
+      accessibleSlots: nodes.filter((node) => node.getAttribute('aria-hidden') !== 'true').length,
+      accessibleItems: items.filter(
+        (el) => !el.closest('[aria-hidden="true"]') && getComputedStyle(el).visibility !== 'hidden',
+      ).length,
+      words: items.map((el) => (el.querySelector('.word')?.textContent || '').replace(/\s/g, '')),
+    }
+  }, selectors)
+}
+
+// Stamps every mounted slot with a marker, so a later read can prove that the
+// node the browser kept is the same node rather than a rebuilt one.
+async function stampSlots(page, slotSelector) {
+  return page.evaluate((selector) => {
+    const nodes = [...document.querySelectorAll(selector)]
+    nodes.forEach((node, index) => {
+      node.dataset.uid = `u${index}`
+    })
+    return nodes.map((node) => ({ at: node.dataset.at ?? null, uid: node.dataset.uid }))
+  }, slotSelector)
+}
+
+// The same map, read after a page turn. A node that kept its marker was not
+// re-created; a node with no marker is one the turn just added.
+async function slotMarkers(page, slotSelector) {
+  return page.evaluate(
+    (selector) =>
+      [...document.querySelectorAll(selector)].map((node) => ({
+        at: node.dataset.at ?? null,
+        uid: node.dataset.uid ?? null,
+      })),
+    slotSelector,
+  )
 }
 
 // matrix(1, 0, 0, 1, tx, 0) or none: the element is unturned and only shifted.
@@ -244,8 +313,12 @@ function checkLabelAlignment(mode, align) {
 async function startTrace(page, selector, kind = 'x') {
   await page.evaluate(
     ([sel, mode]) => {
-      const el = document.querySelector(sel)
+      // The node is re-resolved every frame: with an item-keyed paging window,
+      // the element that is current changes identity on a turn, and a trace
+      // pinned to the old node would follow the outgoing item off the edge.
       const read = () => {
+        const el = document.querySelector(sel)
+        if (!el) return null
         const m = getComputedStyle(el).transform
         if (!m || m === 'none') return 0
         const p = m.slice(m.startsWith('matrix3d') ? 9 : 7, -1).split(',').map(Number)
@@ -258,7 +331,8 @@ async function startTrace(page, selector, kind = 'x') {
       window.__trace = []
       const t0 = performance.now()
       const loop = () => {
-        window.__trace.push([performance.now() - t0, read()])
+        const value = read()
+        if (value !== null) window.__trace.push([performance.now() - t0, value])
         if (performance.now() - t0 < 700) requestAnimationFrame(loop)
       }
       requestAnimationFrame(loop)
@@ -284,89 +358,54 @@ async function swipeTrace(page, dx, gestureSelector, movedSelector) {
   return page.evaluate(() => window.__trace)
 }
 
-// What the traces above are checked for. `travel` is the direction the item
-// moves on screen: a next swipe goes left.
-function traceVerdict(trace, direction) {
-  const travel = direction === 'next' ? -1 : 1
-  const width = Math.max(...trace.map(([, value]) => Math.abs(value)))
-  const visible = (value) => Math.abs(value) < width - 1
-  const speedAt = (i) => {
-    const [t0, a] = trace[i - 1]
-    const [t1, b] = trace[i]
-    return Math.abs(b - a) / Math.max(0.001, (t1 - t0) / 1000)
-  }
+// The paging motion after revision 14: the item never follows the finger, the
+// release swaps at once, and one decelerating slide brings the incoming item
+// in from the edge. The verdict: nothing moves while the finger is down, the
+// slide runs once and monotonically to rest, and nothing moves after it has
+// settled — the settle frame must be inert, not flash and re-settle.
+function slideVerdict(trace, direction) {
+  const side = direction === 'next' ? 1 : -1
+  const values = trace.map(([, value]) => value)
+  const moved = Math.max(0, ...values.map(Math.abs))
+  const start = values.findIndex((value) => Math.abs(value) > 1.5)
+  const held = start < 0 ? values : values.slice(0, start)
+  const follow = held.filter((value) => Math.abs(value) > 1.5).length
+  const slide = start < 0 ? [] : values.slice(start)
   let backwards = 0
-  let seamAt = -1
-  let seamClean = null
-  for (let i = 1; i < trace.length; i += 1) {
-    const [, a] = trace[i - 1]
-    const [, b] = trace[i]
-    if (visible(a) && visible(b) && (b - a) * travel < -1.5) backwards += 1
-    if (Math.abs(b - a) > width * 0.5 && Math.sign(a) !== Math.sign(b)) {
-      seamAt = i
-      // At a 60fps sample the last frame before the swap can be up to one frame
-      // short of the edge, so "off screen" is judged as a share of the width.
-      seamClean = Math.abs(a) >= width * 0.9 && Math.abs(b) >= width * 0.9
-    }
+  let wrongSide = 0
+  for (let i = 0; i < slide.length; i += 1) {
+    if (slide[i] * side < -1) wrongSide += 1
+    if (i > 0 && Math.abs(slide[i]) - Math.abs(slide[i - 1]) > 2) backwards += 1
   }
-  // Overshoot is a frame that arrives at rest and then moves again: whatever
-  // travels past the resting point has to stay there.
-  const restAt = trace.findIndex(([, value]) => Math.abs(value) <= 1.5)
-  const overshoot =
-    restAt > 0 ? trace.slice(restAt + 1).filter(([, value]) => Math.abs(value) > 1.5).length : 0
-  let beforeAt = -1
-  let afterAt = -1
-  for (let i = 1; i < (seamAt < 0 ? trace.length : seamAt); i += 1) {
-    if (visible(trace[i - 1][1]) && visible(trace[i][1])) beforeAt = i
-  }
-  if (seamAt > 0) {
-    for (let i = seamAt + 1; i < trace.length; i += 1) {
-      if (afterAt < 0 && visible(trace[i - 1][1]) && visible(trace[i][1])) afterAt = i
-    }
-  }
-  const exitSpeed = beforeAt > 0 ? speedAt(beforeAt) : 0
-  const entrySpeed = afterAt > 0 ? speedAt(afterAt) : 0
-  const ratio =
-    exitSpeed > 0 && entrySpeed > 0
-      ? Math.max(exitSpeed, entrySpeed) / Math.min(exitSpeed, entrySpeed)
-      : Infinity
-  const settle = trace.find(([, value]) => Math.abs(value) <= 0.5)
+  const restAt = slide.findIndex((value) => Math.abs(value) <= 1.5)
+  const afterRest = restAt < 0 ? 0 : slide.slice(restAt + 1).filter((value) => Math.abs(value) > 1.5).length
+  const settled = slide.findIndex((value) => Math.abs(value) <= 0.5)
+  const settleMs = start < 0 || settled < 0 ? null : Math.round(trace[start + settled][0] - trace[start][0])
   return {
-    width,
+    moved: Math.round(moved * 10) / 10,
+    follow,
     backwards,
-    overshoot,
-    seamAt,
-    seamClean,
-    exitSpeed: Math.round(exitSpeed),
-    entrySpeed: Math.round(entrySpeed),
-    ratio: Math.round(ratio * 100) / 100,
-    settleMs: settle ? Math.round(settle[0]) : null,
+    wrongSide,
+    afterRest,
+    settleMs,
     end: Math.round(trace.at(-1)[1]),
     frames: trace.length,
   }
 }
 
-// The checks every turn has to pass: nothing moves back against the hand while
-// it is on screen, nothing overshoots its resting point, the swap happens
-// entirely off screen, and the pace does not change across the swap.
-function checkTurn(label, verdict, settleLimit) {
-  check(`${label}: nothing slides back while it is on screen`, verdict.backwards === 0, JSON.stringify(verdict))
-  check(`${label}: the turn does not overshoot`, verdict.overshoot === 0, JSON.stringify(verdict))
-  check(`${label}: the swap happens fully off screen`, verdict.seamClean === true, JSON.stringify(verdict))
+// The checks every page turn has to pass now: the drag is invisible, the slide
+// is a single monotonic move from the edge to rest, and the settle is final.
+function checkSlide(label, verdict, settleLimit) {
+  check(`${label}: the item never follows the finger`, verdict.follow === 0, JSON.stringify(verdict))
   check(
-    `${label}: the pace holds across the swap`,
-    verdict.ratio <= 1.6,
-    `exit ${verdict.exitSpeed} px/s, entry ${verdict.entrySpeed} px/s (${verdict.ratio}x)`,
+    `${label}: the slide runs once, from the right edge, without reversing`,
+    verdict.wrongSide === 0 && verdict.backwards === 0,
+    JSON.stringify(verdict),
   )
-}
-
-// A release below the threshold never swaps anything: it has to come back to
-// rest quickly and without passing the resting point.
-function checkSettle(label, verdict, settleLimit) {
-  check(`${label}: the release does not overshoot rest`, verdict.overshoot === 0, JSON.stringify(verdict))
+  check(`${label}: nothing moves after the settle`, verdict.afterRest === 0, JSON.stringify(verdict))
   check(
-    `${label}: a short drag settles back within ${settleLimit}ms`,
-    verdict.settleMs !== null && verdict.settleMs <= settleLimit && verdict.end === 0,
+    `${label}: the slide settles within ${settleLimit}ms`,
+    verdict.settleMs !== null && verdict.settleMs <= settleLimit && Math.abs(verdict.end) <= 0.5,
     `${verdict.settleMs}ms, end ${verdict.end}px`,
   )
 }
@@ -832,23 +871,23 @@ try {
   await page.locator('.picker-start').click()
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   check('reader title counts items', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
-  check('reader lists all 15 forms', (await page.locator('.form-block').count()) === 15, String(await page.locator('.form-block').count()))
-  check('every form has three sentence pairs', (await page.locator('.form-block .sentence').count()) === 45)
-  check('exactly one form block is the default', (await page.locator('.form-block--default').count()) === 1)
+  check('reader lists all 15 forms', (await page.locator('.reader-page--current .form-block').count()) === 15, String(await page.locator('.reader-page--current .form-block').count()))
+  check('every form has three sentence pairs', (await page.locator('.reader-page--current .form-block .sentence').count()) === 45)
+  check('exactly one form block is the default', (await page.locator('.reader-page--current .form-block--default').count()) === 1)
   check(
     'default form starts as ます形',
-    (await page.locator('.form-block--default .form-name').textContent()).trim() === 'ます形',
-    (await page.locator('.form-block--default .form-name').textContent()).trim(),
+    (await page.locator('.reader-page--current .form-block--default .form-name').textContent()).trim() === 'ます形',
+    (await page.locator('.reader-page--current .form-block--default .form-name').textContent()).trim(),
   )
-  check('every block names its form', (await page.locator('.form-name').count()) === 15)
+  check('every block names its form', (await page.locator('.reader-page--current .form-name').count()) === 15)
   const blockFormat = await page.evaluate(() => {
-    const blocks = [...document.querySelectorAll('.form-block')]
+    const blocks = [...document.querySelectorAll('.reader-page--current .form-block')]
     return {
       backgrounds: [...new Set(blocks.map((b) => getComputedStyle(b).backgroundColor))],
       radii: [...new Set(blocks.map((b) => getComputedStyle(b).borderTopLeftRadius))],
       pads: [...new Set(blocks.map((b) => `${getComputedStyle(b).paddingLeft}|${getComputedStyle(b).paddingRight}`))],
       margins: [...new Set(blocks.map((b) => `${getComputedStyle(b).marginLeft}|${getComputedStyle(b).marginRight}`))],
-      tags: document.querySelectorAll('.tag').length,
+      tags: document.querySelectorAll('.reader-page--current .tag').length,
       taggedBlocks: blocks.filter((b) => b.querySelector('.tags')).length,
       firstHasTags: Boolean(blocks[0].querySelector('.tags')),
     }
@@ -864,7 +903,7 @@ try {
   check('the 群組 and 第N課 pills render twice in total', blockFormat.tags === 2, String(blockFormat.tags))
   check('only the first block carries the pills', blockFormat.taggedBlocks === 1 && blockFormat.firstHasTags)
   const highlight = await page.evaluate(() => {
-    const block = document.querySelector('.form-block')
+    const block = document.querySelector('.reader-page--current .form-block')
     const hits = [...block.querySelectorAll('.sentence-hit')]
     const first = hits[0]
     const sentence = hits[0] ? hits[0].closest('.sentence-ja') : null
@@ -913,7 +952,7 @@ try {
   check('the reader bar is sticky', stickyBar.position === 'sticky')
   check('scrolling pins the bar to the top', stickyBar.pinned && stickyBar.visible, JSON.stringify(stickyBar))
 
-  const formOrder = await page.locator('.form-block').evaluateAll((nodes) =>
+  const formOrder = await page.locator('.reader-page--current .form-block').evaluateAll((nodes) =>
     nodes.map((node) => node.dataset.form),
   )
   check('the default form sits first', formOrder[0] === 'masu-form', formOrder[0])
@@ -926,11 +965,11 @@ try {
   )
   check(
     'the last block is 使役形 and still names its form',
-    (await page.locator('.form-block').last().getAttribute('data-form')) === 'causative-form' &&
-      (await page.locator('.form-block').last().locator('.form-name').count()) === 1,
+    (await page.locator('.reader-page--current .form-block').last().getAttribute('data-form')) === 'causative-form' &&
+      (await page.locator('.reader-page--current .form-block').last().locator('.form-name').count()) === 1,
   )
   check('reader shows the default-form word', (await wordText(page)) === '行きます', await wordText(page))
-  check('reader shows furigana by default', (await page.locator('.reader-page rt').count()) > 0)
+  check('reader shows furigana by default', (await page.locator('.reader-page--current rt').count()) > 0)
   check('previous control disabled on the first item', await page.locator('.controls-button').first().isDisabled())
   const readerControls = (await page.locator('.reader-controls .controls-button').allTextContents()).map((t) => t.trim())
   check(
@@ -981,13 +1020,16 @@ try {
   })
   check('the reader footer keeps 10px under the controls', bottomGaps.reader === 10, JSON.stringify(bottomGaps))
 
+  // A drag below the threshold is invisible by design: nothing follows the
+  // finger and nothing springs back, so nothing moves at all.
   await drag(page, 40)
-  check('a 40px drag springs back', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  check('a 40px drag changes nothing', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
 
-  // Right-to-left advances: the hand pushes the next word in from the right.
+  // Right-to-left advances: the swap is direct and the new word slides in
+  // from the right edge.
   const forward = await dragSampled(page, -120)
   check('a right-to-left swipe advances', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
-  check('the outgoing page leaves to the left', forward.classes.includes('reader-page--leave-next'), forward.classes)
+  check('the incoming page slides in from the right', forward.classes.includes('reader-page--enter-next'), forward.classes)
   check(
     'the page slide is flat, not a 3D matrix',
     !forward.transform.includes('matrix3d') && forward.transform !== 'none',
@@ -996,13 +1038,13 @@ try {
   // translateX only: the x value carries the move and the y value stays zero.
   const turnSlide = /matrix\(1, 0, 0, 1, ([^,]+), ([^)]+)\)/.exec(forward.transform)
   check(
-    'the outgoing page moves only along x',
+    'the incoming page moves only along x',
     turnSlide !== null && Math.abs(Number(turnSlide[2])) < 1e-6 && Math.abs(Number(turnSlide[1])) > 1,
     forward.transform,
   )
   check(
-    'the leaving page does not fade',
-    (await page.locator('.reader-page').evaluate((el) => getComputedStyle(el).opacity)) === '1' || forward.transform === 'none',
+    'the entering page does not fade',
+    (await page.locator('.reader-page--current').evaluate((el) => getComputedStyle(el).opacity)) === '1' || forward.transform === 'none',
   )
   const readerPerspective = await page
     .locator('.reader-body')
@@ -1017,19 +1059,33 @@ try {
 
   const backward = await dragSampled(page, 120)
   check('a left-to-right swipe goes back', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
-  check('going back animates the other way', backward.classes.includes('reader-page--leave-prev'), backward.classes)
+  check('going back slides in from the left', backward.classes.includes('reader-page--enter-prev'), backward.classes)
 
-  // The turn judged as a curve: release, sample every frame, then check that
-  // nothing travels backwards on screen, nothing overshoots, the swap happens
-  // off screen, and the pace carries across it.
-  const readerSpring = traceVerdict(await swipeTrace(page, 55, '.reader-body', '.reader-page'), 'next')
-  checkSettle('dictionary', readerSpring, 160)
+  // The turn judged as a curve: no follow while held, one monotonic slide
+  // from the edge, and nothing at all after it settles.
+  const readerStill = slideVerdict(await swipeTrace(page, 55, '.reader-body', '.reader-page--current'), 'next')
+  check('a 55px drag never moves the page', readerStill.moved <= 1.5, JSON.stringify(readerStill))
   check('a 55px drag keeps the word', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
-  const readerTurn = traceVerdict(await swipeTrace(page, -120, '.reader-body', '.reader-page'), 'next')
+  const readerTurn = slideVerdict(await swipeTrace(page, -120, '.reader-body', '.reader-page--current'), 'next')
   check('the traced swipe advances', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
-  checkTurn('dictionary page turn', readerTurn, 160)
+  checkSlide('dictionary page turn', readerTurn, 260)
+
+  // The first and the last word have nothing beyond them: a drag towards the
+  // edge they sit on is completely still and never changes the word.
   await drag(page, 120)
-  check('the traced swipe went back to the first word', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  check('a back swipe returns to the first word', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  const firstWall = slideVerdict(await swipeTrace(page, 120, '.reader-body', '.reader-page--current'), 'prev')
+  check('the first word never moves backward', firstWall.moved <= 1.5, JSON.stringify(firstWall))
+  check('a stayed first word keeps its place', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  await drag(page, -120)
+  await drag(page, -120)
+  check('two forward swipes reach the last word', (await readerTitle(page)) === '學習（3/3）', await readerTitle(page))
+  const lastWall = slideVerdict(await swipeTrace(page, -120, '.reader-body', '.reader-page--current'), 'next')
+  check('the last word never moves forward', lastWall.moved <= 1.5, JSON.stringify(lastWall))
+  check('a stayed last word keeps its place', (await readerTitle(page)) === '學習（3/3）', await readerTitle(page))
+  await drag(page, 120)
+  await drag(page, 120)
+  check('two back swipes return to the first word', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
 
   // Above 550px the reader keeps text selectable and pages only by button.
   await page.setViewportSize({ width: 900, height: 900 })
@@ -1037,7 +1093,7 @@ try {
   await drag(page, 120)
   check('a drag does not page the wide reader', (await readerTitle(page)) === wideBefore, await readerTitle(page))
   const selectedText = await page.evaluate(() => {
-    const word = document.querySelector('.form-block--default .word')
+    const word = document.querySelector('.reader-page--current .form-block--default .word')
     const range = document.createRange()
     range.selectNodeContents(word)
     const selection = window.getSelection()
@@ -1049,8 +1105,8 @@ try {
   await page.setViewportSize({ width: 390, height: 844 })
 
   await page.locator('.controls-button').nth(1).click()
-  // The control runs the same leave-then-enter turn as a swipe, so the word
-  // arrives a beat later.
+  // The control runs the same direct swap plus one short slide as a swipe, so
+  // the word arrives a beat later.
   await wait(460)
   check('next control advances', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
   const wordBeforeForm = await wordText(page)
@@ -1074,7 +1130,7 @@ try {
   await page.locator('.switch').first().click()
   await page.locator('.icon-button[aria-label="返回"]').click()
   await page.waitForSelector('.reader-body', { timeout: 5000 })
-  check('reading switch hides ruby', (await page.locator('.reader-page rt').count()) === 0)
+  check('reading switch hides ruby', (await page.locator('.reader-page--current rt').count()) === 0)
 
   await page.reload({ waitUntil: 'load' })
   await page.waitForSelector('.home-actions', { timeout: 30000 })
@@ -1083,7 +1139,7 @@ try {
   await page.locator('.picker-start').click()
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   check('default form persisted after reload', (await wordText(page)) === '行って', await wordText(page))
-  check('reading-off setting persisted', (await page.locator('.reader-page rt').count()) === 0)
+  check('reading-off setting persisted', (await page.locator('.reader-page--current rt').count()) === 0)
 
   // T6 flashcards.
   await page.reload({ waitUntil: 'load' })
@@ -1134,13 +1190,13 @@ try {
     () => Math.round(window.innerHeight - document.querySelector('.card-controls .control').getBoundingClientRect().bottom),
   )
   check('the card footer keeps 10px under the controls', cardBottomGap === 10, String(cardBottomGap))
-  const faceWord = await wordText(page, '.card-face .word')
+  const faceWord = await wordText(page, '.card--current .card-face .word')
   const cardVerb = byMasu(faceWord)
   check('card face shows a source form from the lesson', Boolean(cardVerb), faceWord)
-  check('card face names the target', (await page.locator('.card-face .prompt').textContent()).trim() === '變成字典形')
-  check('card face shows the verb-class tag', (await page.locator('.card-face .tag--group').count()) === 1)
+  check('card face names the target', (await page.locator('.card--current .card-face .prompt').textContent()).trim() === '變成字典形')
+  check('card face shows the verb-class tag', (await page.locator('.card--current .card-face .tag--group').count()) === 1)
 
-  check('both faces exist for the 3D flip', (await page.locator('.card-side').count()) === 2)
+  check('both faces exist for the 3D flip', (await page.locator('.card--current .card-side').count()) === 2)
   check('the card starts on its face', !(await cardFlipped(page)))
 
   await page.locator('.card-stage').click()
@@ -1160,7 +1216,7 @@ try {
   await page.locator('.card-stage').click()
   await wait(350)
   check('a second tap returns to the face before the trace', !(await cardFlipped(page)))
-  await startTrace(page, '.card-inner', 'angle')
+  await startTrace(page, '.card--current .card-inner', 'angle')
   await page.locator('.card-stage').click()
   await wait(600)
   const flipAngles = (await page.evaluate(() => window.__trace)).map(([, angle]) => angle)
@@ -1171,22 +1227,22 @@ try {
   }
   check('the flip never runs past 180°', flipPeak <= 181, `${Math.round(flipPeak)}°`)
   check('the flip never turns back on itself', flipBack === 0, `${flipBack} frames went backwards`)
-  const flipTurnMs = await page.locator('.card-inner').evaluate((el) => getComputedStyle(el).transitionDuration)
+  const flipTurnMs = await page.locator('.card--current .card-inner').evaluate((el) => getComputedStyle(el).transitionDuration)
   check('the flip is a single short turn', parseFloat(flipTurnMs) * 1000 <= 260, flipTurnMs)
   await wait(200)
   check(
     'the answer carries the asked form as a tag',
-    (await page.locator('.card-back .tag--form').textContent()).trim() === '字典形',
-    (await page.locator('.card-back .tag--form').textContent()).trim(),
+    (await page.locator('.card--current .card-back .tag--form').textContent()).trim() === '字典形',
+    (await page.locator('.card--current .card-back .tag--form').textContent()).trim(),
   )
   check(
     'a tap reveals the matching target form',
-    (await wordText(page, '.card-back .word')) === cardVerb.dict,
-    await wordText(page, '.card-back .word'),
+    (await wordText(page, '.card--current .card-back .word')) === cardVerb.dict,
+    await wordText(page, '.card--current .card-back .word'),
   )
   check(
     'the back shows the gloss',
-    (await page.locator('.card-back .gloss').textContent()).includes(cardVerb.gloss.split(';')[0].trim()),
+    (await page.locator('.card--current .card-back .gloss').textContent()).includes(cardVerb.gloss.split(';')[0].trim()),
   )
 
   await page.locator('.card-stage').click()
@@ -1213,37 +1269,35 @@ try {
     (await page.locator('.bar-title').textContent()).trim(),
   )
 
-  // The same curve check as the reader, on the card.
-  const cardSpring = traceVerdict(await swipeTrace(page, 55, '.card-stage', '.card'), 'next')
-  checkSettle('cards', cardSpring, 180)
+  // The same curve check as the reader, on the card: no follow while held,
+  // one monotonic slide from the edge, and nothing after it settles.
+  const cardStill = slideVerdict(await swipeTrace(page, 55, '.card-stage', '.card--current'), 'next')
+  check('a 55px card drag never moves the card', cardStill.moved <= 1.5, JSON.stringify(cardStill))
   check('a 55px card drag keeps the card', (await page.locator('.bar-title').textContent()).trim() === '練習（1/3）')
-  const cardTurn = traceVerdict(await swipeTrace(page, -120, '.card-stage', '.card'), 'next')
+  const cardTurn = slideVerdict(await swipeTrace(page, -120, '.card-stage', '.card--current'), 'next')
   check('the traced card swipe advances', (await page.locator('.bar-title').textContent()).trim() === '練習（2/3）')
-  checkTurn('card turn', cardTurn, 200)
+  checkSlide('card turn', cardTurn, 260)
   await drag(page, 120, 0, '.card-stage')
   check('the traced card swipe came back', (await page.locator('.bar-title').textContent()).trim() === '練習（1/3）')
 
-  // 下一張 / 上一張 run the same leave-then-enter motion as a swipe.
+  // 下一張 / 上一張 run the same direct swap plus one short slide as a swipe.
   await page.locator('.card-controls .control').nth(1).click()
   await wait(70)
-  const leavingClasses = (await page.locator('.card').getAttribute('class')) || ''
-  check('下一張 animates the outgoing card', leavingClasses.includes('card--leave-next'), leavingClasses)
-  const leavingOverflow = await horizontalOverflow(page)
+  const enteringClasses = (await page.locator('.card--current').getAttribute('class')) || ''
+  check('下一張 slides the incoming card in', enteringClasses.includes('card--enter-next'), enteringClasses)
+  const enteringOverflow = await horizontalOverflow(page)
   check(
-    'the leaving card widens no scroll while it travels',
-    leavingOverflow.scroll <= leavingOverflow.inner,
-    JSON.stringify(leavingOverflow),
+    'the sliding card widens no scroll while it travels',
+    enteringOverflow.scroll <= enteringOverflow.inner,
+    JSON.stringify(enteringOverflow),
   )
-  await wait(200)
-  const enteringClasses = (await page.locator('.card').getAttribute('class')) || ''
-  check('下一張 animates the incoming card in from the left', enteringClasses.includes('card--enter-next'), enteringClasses)
   await wait(300)
   check('下一張 reaches the next card', (await page.locator('.bar-title').textContent()).trim() === '練習（2/3）')
 
   await page.locator('.card-controls .control').nth(0).click()
   await wait(70)
-  const backClasses = (await page.locator('.card').getAttribute('class')) || ''
-  check('上一張 animates backwards too', backClasses.includes('card--leave-prev'), backClasses)
+  const backClasses = (await page.locator('.card--current').getAttribute('class')) || ''
+  check('上一張 slides in from the other edge', backClasses.includes('card--enter-prev'), backClasses)
   // This direction sticks out to the right, which is the axis a browser can
   // actually scroll: the clip is what keeps the page from widening.
   const prevOverflow = await horizontalOverflow(page)
@@ -1255,10 +1309,10 @@ try {
   await wait(400)
   check('上一張 reaches the previous card', (await page.locator('.bar-title').textContent()).trim() === '練習（1/3）')
 
-  // Paging away from a flipped card is the case the report named: the outgoing
-  // card must slide away flat and keep the side the reader was on, the fade is
-  // gone, and the incoming card must arrive already on its face — never
-  // rotating back to the face while it travels.
+  // Paging away from a flipped card is the case the report named: the swap is
+  // direct — the flipped card is gone at once — and the incoming card arrives
+  // already on its face, never rotating into it while it travels, flat and
+  // without fading.
   await page.locator('.card-stage').click()
   await wait(400)
   check('the card about to page away is flipped', await cardFlipped(page))
@@ -1268,22 +1322,22 @@ try {
   await wait(60)
   const leaveLate = await cardMotion(page)
   check(
-    'a flipped card slides out on its own side',
-    leaveEarly.flipped && leaveLate.flipped,
+    'the incoming card arrives on its face and stays there',
+    !leaveEarly.flipped && !leaveLate.flipped,
     leaveEarly.classes,
   )
   check(
-    'the outgoing card never turns while it travels',
-    leaveEarly.inner === leaveLate.inner,
+    'the incoming card never turns while it travels',
+    isTurnedOff(leaveEarly.inner) && leaveEarly.inner === leaveLate.inner,
     `${leaveEarly.inner} -> ${leaveLate.inner}`,
   )
   check(
-    'the outgoing card travels flat',
+    'the incoming card travels flat',
     isFlatTranslate(leaveEarly.transform) && isFlatTranslate(leaveLate.transform),
     `${leaveEarly.transform} | ${leaveLate.transform}`,
   )
   check(
-    'the outgoing card does not fade',
+    'the incoming card does not fade',
     leaveEarly.opacity === '1' && leaveLate.opacity === '1',
     `${leaveEarly.opacity} | ${leaveLate.opacity}`,
   )
@@ -1322,13 +1376,13 @@ try {
   await wait(60)
   const backLate = await cardMotion(page)
   check(
-    'a flipped card slides back on its own side',
-    backEarly.flipped && backLate.flipped,
+    'the incoming previous card arrives on its face and stays there',
+    !backEarly.flipped && !backLate.flipped,
     backEarly.classes,
   )
   check(
     'the card going back never turns while it travels',
-    backEarly.inner === backLate.inner,
+    isTurnedOff(backEarly.inner) && backEarly.inner === backLate.inner,
     `${backEarly.inner} -> ${backLate.inner}`,
   )
   check(
@@ -1366,17 +1420,17 @@ try {
   await page.waitForSelector('.card-stage', { timeout: 5000 })
   check(
     'class switch off hides the front tag',
-    (await page.locator('.card-face .tag--group').count()) === 0,
+    (await page.locator('.card--current .card-face .tag--group').count()) === 0,
   )
   // The answer side keeps both pills: the asked form, then the verb class —
   // even though the class switch is off and hides the face's class pill.
-  const answerFaceWord = await wordText(page, '.card-face .word')
+  const answerFaceWord = await wordText(page, '.card--current .card-face .word')
   const answerVerb = byMasu(answerFaceWord)
   check('the answer check has a lesson 5 verb on the face', Boolean(answerVerb), answerFaceWord)
   await page.locator('.card-stage').click()
   await wait(400)
   const answerPills = await page.evaluate(() => {
-    const back = document.querySelector('.card-back')
+    const back = document.querySelector('.card--current .card-back')
     if (!back) return null
     const pills = [...back.querySelectorAll('.tags .tag')]
     return {
@@ -1850,7 +1904,7 @@ try {
   const afterSwipe = await readerTitle(page)
   check('reduced motion still changes the item on swipe', afterSwipe !== beforeSwipe, `${beforeSwipe} -> ${afterSwipe}`)
   const pageTransform = await page
-    .locator('.reader-page')
+    .locator('.reader-page--current')
     .evaluate((el) => getComputedStyle(el).transform)
   check('reduced motion does not leave the page offset', pageTransform === 'none' || pageTransform === 'matrix(1, 0, 0, 1, 0, 0)', pageTransform)
   // Reduced motion must also work for cards (3 cards in lesson 5).
@@ -1867,11 +1921,11 @@ try {
   await drag(page, -120, 0, '.card-stage')
   const afterCard = (await page.locator('.bar-title').textContent()).trim()
   check('reduced motion changes cards on swipe', beforeCard !== afterCard, `${beforeCard} -> ${afterCard}`)
-  const cardTransform = await page.locator('.card').evaluate((el) => getComputedStyle(el).transform)
+  const cardTransform = await page.locator('.card--current').evaluate((el) => getComputedStyle(el).transform)
   check('reduced motion leaves the card at rest', cardTransform === 'none' || cardTransform === 'matrix(1, 0, 0, 1, 0, 0)', cardTransform)
 
   const flipDuration = await page
-    .locator('.card-inner')
+    .locator('.card--current .card-inner')
     .evaluate((el) => getComputedStyle(el).transitionDuration)
   await page.locator('.card-stage').click()
   await wait(60)
@@ -1896,26 +1950,16 @@ try {
   await startCardRun()
   check('the swipe finish run starts on the first card', (await cardTitle()) === '練習（1/3）', await cardTitle())
 
-  // The first card has nothing behind it: a right-hand drag pulls the card
-  // against the edge at a third of the finger, then the release springs it
-  // back. The card never changes.
+  // The first card has nothing behind it: a right-hand drag is completely
+  // still — the card never follows the finger, so nothing springs back. The
+  // card never changes.
   const wall = await dragHeld(cardPage, 60)
-  const wallX = translateXOf(wall.held)
-  check(
-    'the first card follows the drag at a third of the finger',
-    wallX > 12 && wallX < 30 && wallX < 60 / 2,
-    `${wallX}px for a 60px drag`,
-  )
-  check('the first card springs back to rest', Math.abs(translateXOf(wall.rested)) < 1, wall.rested)
+  check('the first card does not follow the drag', Math.abs(translateXOf(wall.held)) < 1, wall.held)
+  check('the first card is at rest after the drag', Math.abs(translateXOf(wall.rested)) < 1, wall.rested)
 
   const wallFar = await dragHeld(cardPage, 180)
-  const wallFarX = translateXOf(wallFar.held)
-  check(
-    'resistance caps the follow at 40px',
-    wallFarX > 35 && wallFarX <= 40.5,
-    `${wallFarX}px for a 180px drag`,
-  )
-  check('a long drag also springs back to rest', Math.abs(translateXOf(wallFar.rested)) < 1, wallFar.rested)
+  check('a long drag does not move the first card either', Math.abs(translateXOf(wallFar.held)) < 1, wallFar.held)
+  check('a long drag leaves the first card at rest', Math.abs(translateXOf(wallFar.rested)) < 1, wallFar.rested)
   check('swiping right on the first card stays put', (await cardTitle()) === '練習（1/3）', await cardTitle())
   check('a stayed card is not a finished run', (await cardPage.locator('.complete').count()) === 0)
 
@@ -1954,8 +1998,8 @@ try {
   )
   check('the swipe finish offers 返回主頁', (await cardPage.locator('.complete-home').count()) === 1)
   check(
-    'the finished card does not slide the same card back in',
-    (await cardPage.locator('.card--enter-next, .card--enter-prev, .card--leave-next, .card--leave-prev').count()) === 0,
+    'the finished card does not slide another card in',
+    (await cardPage.locator('.card--enter-next, .card--enter-prev').count()) === 0,
   )
 
   // Reduced motion: no slide to wait for, but the same rule applies.
@@ -1967,7 +2011,7 @@ try {
   check('reduced motion leaves the first card still', (await cardTitle()) === '練習（1/3）', await cardTitle())
   check(
     'reduced motion does not move the first card at all',
-    translateXOf(await cardPage.locator('.card').evaluate((el) => getComputedStyle(el).transform)) === 0,
+    translateXOf(await cardPage.locator('.card--current').evaluate((el) => getComputedStyle(el).transform)) === 0,
   )
   await drag(cardPage, -120, 0, '.card-stage')
   check('reduced motion still advances a card', (await cardTitle()) === '練習（2/3）', await cardTitle())
@@ -1986,6 +2030,189 @@ try {
   )
   await cardPage.emulateMedia({ reducedMotion: null })
   await cardPage.close()
+
+  // The paging window itself: 5 words mounted in the dictionary, 9 cards in
+  // 翻卡學習, the current item in the 3rd slot and on screen, and a turn that
+  // really does delete the front node and add one at the back. 第4課 has 6
+  // words and 第6課 has 11 verbs, so both lists are longer than their window
+  // and the front slot has to leave.
+  const windowPage = await browser.newPage({ viewport: { width: 390, height: 844 } })
+  await windowPage.goto(BASE, { waitUntil: 'load' })
+  await windowPage.waitForSelector('.home-actions', { timeout: 60000 })
+
+  const readerSelectors = {
+    slot: '.reader-page',
+    item: '.reader-page',
+    current: '.reader-page--current',
+    container: '.reader-window',
+  }
+  const cardSelectors = {
+    slot: '.card-slot',
+    item: '.card',
+    current: '.card--current',
+    container: '.card-window',
+  }
+
+  // Dictionary reader, 第4課: six words, a five-slot window.
+  await windowPage.locator('.home-actions button', { hasText: '字典' }).click()
+  await windowPage.waitForSelector('.chip-grid', { timeout: 5000 })
+  await windowPage.locator('.chip', { hasText: '第4課' }).click()
+  await windowPage.locator('.picker-start').click()
+  await windowPage.waitForSelector('.reader-body', { timeout: 5000 })
+
+  const readerWindow = await windowState(windowPage, readerSelectors)
+  check('the reader mounts five pages', readerWindow.slots === 5, JSON.stringify(readerWindow.slots))
+  check('the reader shows one current page', readerWindow.currents === 1, String(readerWindow.currents))
+  check(
+    'the reader current page sits in the 3rd slot',
+    readerWindow.currentLeft === 0 && readerWindow.currentWidth === readerWindow.containerWidth,
+    JSON.stringify(readerWindow),
+  )
+  check(
+    'the reader window puts the current page in the 3rd slot with two behind it',
+    JSON.stringify(readerWindow.at) === '[null,null,0,1,2]',
+    JSON.stringify(readerWindow.at),
+  )
+  check('no reader neighbour shows inside the window', readerWindow.neighboursInside === 0, String(readerWindow.neighboursInside))
+  check('the reader hides its neighbours', readerWindow.visibleNeighbours === 0, String(readerWindow.visibleNeighbours))
+  check(
+    'only the current reader page is in the accessibility tree',
+    readerWindow.accessibleSlots === 1 && readerWindow.accessibleItems === 1,
+    JSON.stringify({ slots: readerWindow.accessibleSlots, items: readerWindow.accessibleItems }),
+  )
+  check(
+    'every mounted reader page holds its own word',
+    new Set(readerWindow.words.filter(Boolean)).size === readerWindow.words.filter(Boolean).length,
+    readerWindow.words.join(' | '),
+  )
+
+  // Two turns put the front page in the window's front slot; the third has to
+  // drop it and add the next word at the back.
+  await drag(windowPage, -120)
+  await drag(windowPage, -120)
+  const beforeShift = await stampSlots(windowPage, readerSelectors.slot)
+  const readerShifted = await windowState(windowPage, readerSelectors)
+  check(
+    'the window slides forward one slot per turn',
+    JSON.stringify(readerShifted.at) === '[0,1,2,3,4]',
+    JSON.stringify(readerShifted.at),
+  )
+  check(
+    'the 3rd slot still holds the current word after two turns',
+    readerShifted.currentLeft === 0 && readerShifted.at[2] === 2,
+    JSON.stringify({ left: readerShifted.currentLeft, at: readerShifted.at }),
+  )
+  await drag(windowPage, -120)
+  const afterShift = await slotMarkers(windowPage, readerSelectors.slot)
+  const readerTurned = await windowState(windowPage, readerSelectors)
+  check(
+    'the window keeps its 3rd slot after a turn',
+    JSON.stringify(readerTurned.at) === '[1,2,3,4,5]' && readerTurned.currentLeft === 0,
+    JSON.stringify({ at: readerTurned.at, left: readerTurned.currentLeft }),
+  )
+  // The item that sat in the front slot (list position 0) is gone; the item
+  // that was last is still mounted, as the same DOM node with its marker.
+  check(
+    'a turn drops the front page from the window',
+    !afterShift.some((entry) => entry.at === '0') && beforeShift.some((entry) => entry.at === '0'),
+    afterShift.map((entry) => entry.at).join(','),
+  )
+  check(
+    'a turn appends one new page at the back',
+    afterShift.filter((entry) => entry.uid === null).length === 1 && afterShift.some((entry) => entry.at === '5'),
+    JSON.stringify(afterShift),
+  )
+  const keptPage = beforeShift.find((entry) => entry.at === '1')
+  check(
+    'the pages that stay are the same DOM nodes, not rebuilt',
+    Boolean(keptPage) && afterShift.some((entry) => entry.at === '1' && entry.uid === keptPage.uid),
+    JSON.stringify({ kept: keptPage, after: afterShift }),
+  )
+  await windowPage.locator('.icon-button[aria-label="返回"]').click()
+  await windowPage.waitForSelector('.chip-grid', { timeout: 5000 })
+
+  // 翻卡學習, 第6課: eleven verbs, a nine-slot window.
+  await windowPage.locator('.icon-button[aria-label="返回"]').click()
+  await windowPage.waitForSelector('.home-actions', { timeout: 5000 })
+  await windowPage.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await windowPage.waitForSelector('.chip-grid', { timeout: 5000 })
+  const lessonSix = windowPage.locator('.chip', { hasText: '第6課' })
+  if (!((await lessonSix.getAttribute('class')) || '').includes('chip--on')) await lessonSix.click()
+  await windowPage.locator('.picker-start').click()
+  await windowPage.waitForSelector('.card-stage', { timeout: 5000 })
+
+  const cardWindow = await windowState(windowPage, cardSelectors)
+  check('the card run mounts nine slots', cardWindow.slots === 9, String(cardWindow.slots))
+  check('the card run shows one current card', cardWindow.currents === 1, String(cardWindow.currents))
+  check(
+    'the card current sits in the 3rd slot and fills it',
+    cardWindow.currentLeft === 0 && cardWindow.currentWidth === cardWindow.containerWidth,
+    JSON.stringify(cardWindow),
+  )
+  check(
+    'the card window puts two cards behind the current one',
+    JSON.stringify(cardWindow.at.slice(0, 3)) === '[null,null,0]',
+    JSON.stringify(cardWindow.at),
+  )
+  check('no card neighbour shows inside the window', cardWindow.neighboursInside === 0, String(cardWindow.neighboursInside))
+  check('the card run hides its neighbours', cardWindow.visibleNeighbours === 0, String(cardWindow.visibleNeighbours))
+  check(
+    'only the current card is in the accessibility tree',
+    cardWindow.accessibleSlots === 1 && cardWindow.accessibleItems === 1,
+    JSON.stringify({ slots: cardWindow.accessibleSlots, items: cardWindow.accessibleItems }),
+  )
+  check(
+    'every mounted card holds its own word',
+    new Set(cardWindow.words.filter(Boolean)).size === cardWindow.words.filter(Boolean).length,
+    cardWindow.words.join(' | '),
+  )
+
+  await drag(windowPage, -120, 0, '.card-stage')
+  await drag(windowPage, -120, 0, '.card-stage')
+  // Stamp once the window is full of real cards, so the next single turn is
+  // the one being measured: one node leaves the front, one arrives at the back.
+  const cardBeforeShift = await stampSlots(windowPage, cardSelectors.slot)
+  const cardShifted = await windowState(windowPage, cardSelectors)
+  check(
+    'the card window slides forward one slot per turn',
+    JSON.stringify(cardShifted.at) === '[0,1,2,3,4,5,6,7,8]',
+    JSON.stringify(cardShifted.at),
+  )
+  check(
+    'the 3rd card slot still holds the current card',
+    cardShifted.currentLeft === 0 && cardShifted.at[2] === 2,
+    JSON.stringify({ left: cardShifted.currentLeft, at: cardShifted.at }),
+  )
+  await drag(windowPage, -120, 0, '.card-stage')
+  const cardAfterShift = await slotMarkers(windowPage, cardSelectors.slot)
+  const cardTurned = await windowState(windowPage, cardSelectors)
+  check(
+    'the card window keeps its 3rd slot after a turn',
+    JSON.stringify(cardTurned.at) === '[1,2,3,4,5,6,7,8,9]' && cardTurned.currentLeft === 0,
+    JSON.stringify({ at: cardTurned.at, left: cardTurned.currentLeft }),
+  )
+  check(
+    'a card turn drops the front card and adds one at the back',
+    !cardAfterShift.some((entry) => entry.at === '0') && cardAfterShift.some((entry) => entry.at === '9'),
+    JSON.stringify(cardAfterShift.map((entry) => entry.at)),
+  )
+  check(
+    'a card turn adds exactly one new node',
+    cardAfterShift.filter((entry) => entry.uid === null).length === 1,
+    JSON.stringify(cardAfterShift.map((entry) => entry.uid)),
+  )
+  const keptCard = cardBeforeShift.find((entry) => entry.at === '2')
+  check(
+    'the cards that stay are the same DOM nodes, not rebuilt',
+    Boolean(keptCard) && cardAfterShift.some((entry) => entry.at === '2' && entry.uid === keptCard.uid),
+    JSON.stringify({ kept: keptCard, after: cardAfterShift }),
+  )
+  check(
+    'the counter follows the current card, not the window edge',
+    (await windowPage.locator('.bar-title').textContent()).trim() === '練習（4/11）',
+    (await windowPage.locator('.bar-title').textContent()).trim(),
+  )
+  await windowPage.close()
 
   // The page's own scrollbar is hidden and drawn by the app instead. A fresh
   // page keeps this block independent of the rest of the walk-through.

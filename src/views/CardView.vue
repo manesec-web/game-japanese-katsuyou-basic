@@ -2,58 +2,49 @@
 import { computed, inject, onBeforeUnmount, ref } from 'vue'
 import RubyWord from '../components/RubyWord.vue'
 import CompletePanel from '../components/CompletePanel.vue'
-import { formName } from '../dict/forms.js'
-import { backTags, frontTags } from '../study/card-tags.js'
-import { cardDirectionAt, cardDrag } from '../ui/swipe.js'
+import { cardDirectionAt } from '../ui/swipe.js'
 import { prefersReducedMotion } from '../ui/motion.js'
+import { CARD_WINDOW } from '../ui/window.js'
+import { usePagingWindow } from '../ui/paging-window.js'
+import { cardEntries } from '../study/window-views.js'
 
 const store = inject('store')
 const session = store.session
-const offset = ref(0)
-const dragging = ref(false)
-// Which direction the outgoing card is travelling, or null when it is still.
-const leaving = ref(null)
 // Which side the incoming card slides in from: 'next' enters from the right
-// (travelling right to left), 'prev' mirrors it.
+// (travelling right to left), 'prev' mirrors it. The drag is invisible: the
+// card never follows the finger, so there is nothing to spring back and
+// nothing to settle twice.
 const enterFrom = ref(null)
 
-// The phases end on their own DOM event, not on a timer that guesses how long
-// the CSS takes. A timer shorter than the transition cuts the outgoing card
-// off mid-slide and the new card then appears at the opposite edge, which is
-// what made the turn feel like a rebound. These two values are only a safety
-// net for an event that never arrives.
-const LEAVE_FALLBACK_MS = 600
+// The phase ends on its own DOM event, not on a timer that guesses how long
+// the CSS takes. This value is only a safety net for an event that never
+// arrives.
 const ENTER_FALLBACK_MS = 600
 
 // Paging is a flat slide, so the card never turns while it travels. A card the
-// reader had flipped to its answer slides out showing that answer instead of
-// spinning back to the face mid-flight, and the incoming card is snapped to its
-// face off-screen before it enters.
-const turning = computed(() => Boolean(leaving.value) || Boolean(enterFrom.value))
+// reader had flipped to its answer keeps that answer while it slides in, and
+// the incoming card is snapped to its face off-screen before it enters.
+const turning = computed(() => Boolean(enterFrom.value))
 
 let pointer = null
-let leaveTimer = null
 let enterTimer = null
 
 const item = computed(() => session.items[session.index] ?? null)
 const cardSettings = computed(() => session.settings.card)
-const source = computed(() => item.value?.verb?.[cardSettings.value.from] ?? null)
-const target = computed(() => item.value?.verb?.[item.value?.targetForm] ?? null)
-const showReading = computed(() => cardSettings.value.showReading)
-const faceTags = computed(() => frontTags(cardSettings.value, source.value))
-// The answer side always names the asked form and the verb's class.
-const answerTags = computed(() => backTags(item.value?.targetForm, target.value))
+// The paging window: 9 mounted slots, the current card always in the 3rd. The
+// row of positions is state that each turn shifts by one — delete the front,
+// append the back — and every slot carries its own card's face and back.
+const pagingSlotRow = usePagingWindow(session, CARD_WINDOW)
+const slots = computed(() => cardEntries(session.items, pagingSlotRow.value, cardSettings.value))
 
 function onDown(event) {
   if (event.pointerType === 'mouse' && event.button !== 0) return
   pointer = { x: event.clientX, y: event.clientY, axis: null, lastDx: 0 }
-  dragging.value = true
-  offset.value = 0
   event.currentTarget.setPointerCapture?.(event.pointerId)
 }
 
 function onMove(event) {
-  if (!pointer || leaving.value) return
+  if (!pointer) return
   const dx = event.clientX - pointer.x
   const dy = event.clientY - pointer.y
   if (!pointer.axis) {
@@ -62,66 +53,31 @@ function onMove(event) {
   }
   if (pointer.axis !== 'x') return
   pointer.lastDx = dx
-  if (prefersReducedMotion()) return
-  // The first card has nothing behind it: a right-hand drag there is damped to
-  // a third of the finger and capped, so the card pulls against the edge and
-  // then springs back instead of leaving.
-  offset.value = cardDrag(dx, { atFirst: onFirstCard.value })
 }
 
 function onUp() {
   if (!pointer) return
   const axis = pointer.axis
-  // The raw finger travel names the direction: damping only shortens the
-  // follow, and a damped first card is blocked before the threshold matters.
+  // The finger travel names the direction. The first card's backward drag
+  // names nothing at all: nothing moved, so nothing springs back.
   const direction = axis === 'x' ? cardDirectionAt(pointer.lastDx, { atFirst: onFirstCard.value }) : null
   pointer = null
-  dragging.value = false
   if (direction) {
     moveCard(direction)
     return
   }
-  offset.value = 0
   if (axis === null) store.send('card.flip')
 }
 
 const onLastCard = computed(() => session.index >= session.items.length - 1)
-// The first card has no card behind it, so its backward drag resists.
+// The first card has no card behind it, so its backward drag is completely
+// still: it never names a direction and never changes the card.
 const onFirstCard = computed(() => session.index === 0)
-
-// The outgoing card reaches the edge, then the item swaps while nothing is
-// on screen, then the new card enters from the other edge at the same pace.
-// Leaving the last card is the end of the run: the panel takes the card's place
-// instead of the same card sliding back in.
-function finishLeave() {
-  const direction = leaving.value
-  if (!direction) return
-  clearTimeout(leaveTimer)
-  leaveTimer = null
-  offset.value = 0
-  leaving.value = null
-  if (direction === 'next' && onLastCard.value) {
-    store.send('study.finish')
-    return
-  }
-  if (direction === 'next') store.send('card.next')
-  else store.send('card.prev')
-  enterFrom.value = direction
-  clearTimeout(enterTimer)
-  enterTimer = setTimeout(endEnter, ENTER_FALLBACK_MS)
-}
 
 function endEnter() {
   clearTimeout(enterTimer)
   enterTimer = null
   enterFrom.value = null
-}
-
-function onCardTransitionEnd(event) {
-  // The card's own transform only; the inner flip bubbles from a child.
-  if (event.target !== event.currentTarget) return
-  if (event.propertyName !== 'transform') return
-  finishLeave()
 }
 
 function onCardAnimationEnd(event) {
@@ -137,12 +93,8 @@ let queuedFrame = false
 function moveCard(direction) {
   if (prefersReducedMotion()) {
     // No motion to wait for: change the card at once.
-    offset.value = 0
-    leaving.value = null
     enterFrom.value = null
-    clearTimeout(leaveTimer)
     clearTimeout(enterTimer)
-    leaveTimer = null
     enterTimer = null
     if (direction === 'next' && onLastCard.value) store.send('study.finish')
     else if (direction === 'next') store.send('card.next')
@@ -150,11 +102,11 @@ function moveCard(direction) {
     return
   }
 
-  // One phase at a time. A press while the new card is still entering drops the
-  // enter animation first and makes the move on the next frame: changing the
-  // transform in the same frame as the animation is removed leaves the browser
-  // with nothing to interpolate, so the leave transition never starts. Two
-  // presses in one frame keep the newest direction instead of both running.
+  // One phase at a time. A press while the new card is still sliding drops
+  // the slide first and makes the move on the next frame: removing the
+  // animation and restarting it in the same frame leaves the browser with no
+  // class change to run, so the new slide would never start. Two presses in
+  // one frame keep the newest direction instead of both running.
   if (enterFrom.value || queuedFrame) {
     endEnter()
     queuedMove = direction
@@ -170,29 +122,35 @@ function moveCard(direction) {
     return
   }
 
-  // Let the card follow through and leave, then swap in the next card.
-  leaving.value = direction
-  clearTimeout(leaveTimer)
-  leaveTimer = setTimeout(finishLeave, LEAVE_FALLBACK_MS)
+  // The swap is direct and the new card slides in from the edge the gesture
+  // came from. Leaving the last card is the end of the run: the panel takes
+  // the card's place instead of another card sliding in.
+  if (direction === 'next' && onLastCard.value) {
+    store.send('study.finish')
+    return
+  }
+  if (direction === 'next') store.send('card.next')
+  else store.send('card.prev')
+  enterFrom.value = direction
+  clearTimeout(enterTimer)
+  enterTimer = setTimeout(endEnter, ENTER_FALLBACK_MS)
 }
 
 onBeforeUnmount(() => {
   queuedMove = null
   queuedFrame = false
-  clearTimeout(leaveTimer)
   clearTimeout(enterTimer)
 })
 
 // The last card ends the run: the right-hand control becomes 完成. Pressing it
-// runs the same turn as a swipe, and the turn itself ends the run on the last
+// runs the same move as a swipe, and the move itself ends the run on the last
 // card, so both ways out of a card run behave identically.
 function nextOrFinish() {
-  if (leaving.value) return
   moveCard('next')
 }
 
 function prevCard() {
-  if (leaving.value || session.index === 0) return
+  if (session.index === 0) return
   moveCard('prev')
 }
 
@@ -214,63 +172,82 @@ function openSettings() {
     </header>
 
     <div
-      v-if="item && source && !session.finished"
+      v-if="item && !session.finished"
       class="card-stage"
-      :class="{ 'card-stage--moving': dragging || Boolean(leaving) || Boolean(enterFrom) }"
+      :class="{ 'card-stage--moving': Boolean(enterFrom) }"
       @pointerdown="onDown"
       @pointermove="onMove"
       @pointerup="onUp"
       @pointercancel="onUp"
       @pointerleave="onUp"
     >
-      <div
-        class="card"
-        :class="{
-          'card--flipped': session.flipped,
-          'card--dragging': dragging || Boolean(leaving),
-          'card--no-turn': turning,
-          'card--leave-next': leaving === 'next',
-          'card--leave-prev': leaving === 'prev',
-          'card--enter-next': enterFrom === 'next',
-          'card--enter-prev': enterFrom === 'prev',
-        }"
-        :style="leaving ? null : { transform: `translateX(${offset}px)` }"
-        @transitionend="onCardTransitionEnd"
-        @animationend="onCardAnimationEnd"
-      >
-        <div class="card-inner">
-          <div class="card-side card-face" :aria-hidden="session.flipped ? 'true' : undefined">
-            <div class="word">
-              <RubyWord :text="source.vol" :reading="source.japanese" :show-reading="showReading" />
-            </div>
-            <div v-if="faceTags.length" class="tags">
-              <span
-                v-for="tag in faceTags"
-                :key="tag.kind"
-                class="tag"
-                :class="tag.className"
-              >{{ tag.text }}</span>
-            </div>
-            <p class="prompt">變成{{ formName(item.targetForm) }}</p>
-          </div>
+      <div class="card-window">
+        <div
+          v-for="entry in slots"
+          :key="entry.key"
+          class="card-slot"
+          :class="{ 'card-slot--current': entry.current }"
+          :aria-hidden="entry.current ? undefined : 'true'"
+          :data-at="entry.at"
+          :style="{ transform: `translateX(${entry.offset}%)` }"
+        >
+          <div
+            v-if="entry.face"
+            class="card"
+            :class="{
+              'card--current': entry.current,
+              'card--flipped': session.flipped && entry.current,
+              'card--no-turn': turning,
+              'card--enter-next': enterFrom === 'next' && entry.current,
+              'card--enter-prev': enterFrom === 'prev' && entry.current,
+            }"
+            @animationend="entry.current && onCardAnimationEnd($event)"
+          >
+            <div class="card-inner">
+              <div
+                class="card-side card-face"
+                :aria-hidden="entry.current && session.flipped ? 'true' : undefined"
+              >
+                <div class="word">
+                  <RubyWord
+                    :text="entry.face.word"
+                    :reading="entry.face.reading"
+                    :show-reading="cardSettings.showReading"
+                  />
+                </div>
+                <div v-if="entry.current && entry.face.tags.length" class="tags">
+                  <span
+                    v-for="tag in entry.face.tags"
+                    :key="tag.kind"
+                    class="tag"
+                    :class="tag.className"
+                  >{{ tag.text }}</span>
+                </div>
+                <p class="prompt">{{ entry.face.prompt }}</p>
+              </div>
 
-          <div class="card-side card-back" :aria-hidden="session.flipped ? undefined : 'true'">
-            <div v-if="answerTags.length" class="tags">
-              <span
-                v-for="tag in answerTags"
-                :key="tag.kind"
-                class="tag tag--answer"
-                :class="tag.className"
-              >{{ tag.text }}</span>
+              <div
+                class="card-side card-back"
+                :aria-hidden="entry.current && session.flipped ? undefined : 'true'"
+              >
+                <div v-if="entry.current && entry.back.tags.length" class="tags">
+                  <span
+                    v-for="tag in entry.back.tags"
+                    :key="tag.kind"
+                    class="tag tag--answer"
+                    :class="tag.className"
+                  >{{ tag.text }}</span>
+                </div>
+                <div class="word">
+                  <RubyWord
+                    :text="entry.back.word"
+                    :reading="entry.back.reading"
+                    :show-reading="cardSettings.showReading"
+                  />
+                </div>
+                <p class="gloss">{{ entry.back.gloss }}</p>
+              </div>
             </div>
-            <div class="word">
-              <RubyWord
-                :text="target.vol"
-                :reading="target.japanese"
-                :show-reading="showReading"
-              />
-            </div>
-            <p class="gloss">{{ target.chinese }}</p>
           </div>
         </div>
       </div>
@@ -337,6 +314,7 @@ function openSettings() {
 
 .card-stage {
   flex: 1;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -345,24 +323,72 @@ function openSettings() {
   user-select: none;
 }
 
-/* While a card follows the finger or slides out, the stage clips it. A card
-   that travels to ±112% would otherwise paint outside the column and give the
-   page a horizontal scrollbar. At rest the stage stays open, so the card keeps
-   its soft shadow. */
+/* The paging window: one slot per mounted card, laid on top of each other and
+   pushed sideways by the slot's own offset, so the 3rd slot always sits where
+   the current card belongs. The window itself is never translated — a
+   percentage transform on the window would be measured against the window's
+   own (nine times wider) box, not the stage. */
+.card-window {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: clip;
+}
+
+.card-slot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.card-slot--current {
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* Only the current card is real to the reader: the other eight are mounted so a
+   turn never lays anything out, but they are clipped, hidden and out of the
+   accessibility tree, exactly like the dictionary's neighbours. */
+.card-slot:not(.card-slot--current) {
+  visibility: hidden;
+}
+
+.card-slot:not(.card-slot--current) .card {
+  /* Neighbours must never flip or animate. */
+  animation: none !important;
+  transition: none !important;
+}
+
+/* While the card slides in, the stage clips it. A card that travels to ±112%
+   would otherwise paint outside the column and give the page a horizontal
+   scrollbar. At rest the stage stays open, so the card keeps its soft
+   shadow. */
 .card-stage--moving {
   /* Only the horizontal spill is clipped, so the card keeps its downward
      shadow while it travels. */
   overflow-x: clip;
 }
 
+/* The window clips the neighbours; the moving class only adds the enter
+   animation to the current card. */
+
 .card {
   position: relative;
   width: 100%;
   min-height: 340px;
   perspective: 1600px;
-  /* A release below the threshold returns in a short decelerating step, so
-     the card settles instead of springing back at the hand. */
-  transition: transform 140ms var(--ease-slide);
+  /* Nothing transitions at rest: the only transform in the card's life is the
+     single enter slide, and it ends on the card's own resting state, so the
+     settle frame changes nothing and cannot flash or move twice. The layer is
+     promoted once and stays promoted — tearing `will-change` down at the exact
+     settle frame is what used to flash on phones. */
+  will-change: transform;
   cursor: pointer;
 }
 
@@ -405,47 +431,21 @@ function openSettings() {
   }
 }
 
-.card--dragging {
-  transition: none;
-}
-
 /* Paging must stay flat: no rotation, no fade. The card travels in one straight
-   line, so the turn is cut for the whole phase and the element can never play a
-   rotateY transition while it moves. */
+   line, so the turn is cut while it slides and the element can never play a
+   rotateY transition during the move. */
 .card--no-turn .card-inner {
   transition: none;
 }
 
-/* Leaving: the old card is pushed fully off the screen in the direction of
-   travel, keeping the side the reader was looking at. The phase ends on the
-   transition itself (see onCardTransitionEnd), so this duration and the JS
-   fallback never have to agree. */
-.card--leave-next {
-  transform: translateX(-100%) !important;
-  transition: transform 170ms var(--ease-exit);
-}
-
-.card--leave-prev {
-  transform: translateX(100%) !important;
-  transition: transform 170ms var(--ease-exit);
-}
-
+/* Entering: the new card is pushed in from the edge the gesture came from,
+   one short decelerating slide. */
 .card--enter-next {
   animation: card-enter-next 190ms var(--ease-slide);
 }
 
 .card--enter-prev {
   animation: card-enter-prev 190ms var(--ease-slide);
-}
-
-/* The moving phases stay on their own layer, so a phone repaints the card
-   instead of dropping frames mid-slide. */
-.card--dragging,
-.card--leave-next,
-.card--leave-prev,
-.card--enter-next,
-.card--enter-prev {
-  will-change: transform;
 }
 
 /* Swiping right-to-left brings the next card in from the right edge and moves
@@ -469,8 +469,6 @@ function openSettings() {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card--leave-next,
-  .card--leave-prev,
   .card--enter-next,
   .card--enter-prev {
     animation: none;

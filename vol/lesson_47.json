@@ -346,7 +346,7 @@
               "note": null
             },
             {
-              "japanese": "駅の 前に 屋台に 集まられる と、 道が 狭く なる。",
+              "japanese": "駅の 前に 屋台の 人に 集まられる と、 道が 狭く なる。",
               "chinese": "攤販聚集在車站前，道路就變窄。",
               "note": null
             }
@@ -382,7 +382,7 @@
         "dictionary-form": {
           "vol": "別れる",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれる",
           "note": null,
           "error_usage": false,
@@ -407,7 +407,7 @@
         "masu-form": {
           "vol": "別れます",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれます",
           "note": null,
           "error_usage": false,
@@ -424,7 +424,7 @@
             },
             {
               "japanese": "来月 大阪で 友だちと 別れます。",
-              "chinese": "下個月在大阪和朋友分別。",
+              "chinese": "下個月在大阪和朋友分開。",
               "note": null
             }
           ]
@@ -432,7 +432,7 @@
         "masu-form-negative": {
           "vol": "別れません",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれません",
           "note": null,
           "error_usage": false,
@@ -457,7 +457,7 @@
         "masu-form-past": {
           "vol": "別れました",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれました",
           "note": null,
           "error_usage": false,
@@ -482,7 +482,7 @@
         "masu-form-past-negative": {
           "vol": "別れませんでした",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれませんでした",
           "note": null,
           "error_usage": false,
@@ -507,7 +507,7 @@
         "nai-form": {
           "vol": "別れない",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれない",
           "note": null,
           "error_usage": false,
@@ -532,7 +532,7 @@
         "ta-form": {
           "vol": "別れた",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれた",
           "note": null,
           "error_usage": false,
@@ -557,7 +557,7 @@
         "nakatta-form": {
           "vol": "別れなかった",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれなかった",
           "note": null,
           "error_usage": false,
@@ -582,7 +582,7 @@
         "te-form": {
           "vol": "別れて",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれて",
           "note": null,
           "error_usage": false,
@@ -607,16 +607,32 @@
         "potential-form": {
           "vol": "別れられる",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれられる",
-          "note": "錯誤詞語，僅供轉詞練習：「別れる」是無意志動詞，「別れられる」這個可能形日常不用",
-          "error_usage": true,
-          "sentence": []
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "やっと 恋人と 別れられる ことに なった。",
+              "chinese": "總算能和戀人分手了。",
+              "note": null
+            },
+            {
+              "japanese": "準備が できれば、 いつでも 別れられる。",
+              "chinese": "準備好的話隨時都能分手。",
+              "note": null
+            },
+            {
+              "japanese": "彼と 別れられる かどうか、 わからない。",
+              "chinese": "不知道能不能和他分手。",
+              "note": null
+            }
+          ]
         },
         "volitional-form": {
           "vol": "別れよう",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれよう",
           "note": null,
           "error_usage": false,
@@ -641,7 +657,7 @@
         "imperative-form": {
           "vol": "別れろ",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれろ",
           "note": null,
           "error_usage": false,
@@ -666,7 +682,7 @@
         "conditional-form": {
           "vol": "別れれば",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれれば",
           "note": null,
           "error_usage": false,
@@ -691,7 +707,7 @@
         "passive-form": {
           "vol": "別れられる",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれられる",
           "note": null,
           "error_usage": false,
@@ -716,7 +732,7 @@
         "causative-form": {
           "vol": "別れさせる",
           "group": "2",
-          "chinese": "分別; 分開; 離別",
+          "chinese": "分手; 分開; 離別",
           "japanese": "わかれさせる",
           "note": null,
           "error_usage": false,
@@ -1074,17 +1090,17 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "そんなに 長生きされる と、 家族が 心配する。",
-              "chinese": "你活得那麼久，家人會擔心。",
+              "japanese": "祖父に 長生きされる と、家族は 毎日 忙しい。",
+              "chinese": "祖父長壽，家人每天都忙。",
               "note": null
             },
             {
-              "japanese": "あの 人に 長生きされる と、 会社の 席が 空かない。",
-              "chinese": "那個人一直不老死，公司的位子就空不出來。",
+              "japanese": "あの 人に 長生きされる と、会社の 席が 空かない。",
+              "chinese": "那個人一直健在，公司的位子就空不出來。",
               "note": null
             },
             {
-              "japanese": "犬に 長生きされる と、 旅行に 行けない。",
+              "japanese": "犬に 長生きされる と、旅行に 行けない。",
               "chinese": "狗活得太久，就沒法去旅行。",
               "note": null
             }
@@ -1451,8 +1467,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "夜中に 隣の 部屋で 大きな 音を される と、 眠れない。",
-              "chinese": "半夜隔壁房間傳來大聲響，就睡不著。",
+              "japanese": "夜中に 隣の 部屋で 大きな 声で 話を される と、 眠れない。",
+              "chinese": "半夜隔壁房間有人大聲說話，就睡不著。",
               "note": null
             },
             {
@@ -2205,18 +2221,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "彼女は 有名な 人に 婚約される と 聞いて 驚いた。",
-              "chinese": "她聽說要被名人和她訂婚，很驚訝。",
+              "japanese": "妹に 先に 婚約される と、家族は 少し 寂しい。",
+              "chinese": "妹妹先訂婚的話，家人會有點寂寞。",
               "note": null
             },
             {
-              "japanese": "妹は 医者に 婚約される らしい。",
-              "chinese": "聽說妹妹要被醫生訂婚。",
+              "japanese": "弟に 先に 婚約される と、母は 焦る。",
+              "chinese": "弟弟先訂婚的話，媽媽會著急。",
               "note": null
             },
             {
-              "japanese": "わたしは そんな 人に 婚約される のは いやだ。",
-              "chinese": "我不想被那種人訂婚。",
+              "japanese": "後輩に 先に 婚約される と、少し 恥ずかしい。",
+              "chinese": "後輩先訂婚的話，會有點不好意思。",
               "note": null
             }
           ]
@@ -2578,25 +2594,9 @@
           "group": "1",
           "chinese": "認識; 結識; 相識",
           "japanese": "しりあわれる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "彼は 多くの 人に 知り合われる のが 嬉しい らしい。",
-              "chinese": "他似乎很高興被很多人認識。",
-              "note": null
-            },
-            {
-              "japanese": "有名に なると、 いろいろな 人に 知り合われる。",
-              "chinese": "出名後，會被各種人認識。",
-              "note": null
-            },
-            {
-              "japanese": "わたしは そんな 人に 知り合われる のは いやだ。",
-              "chinese": "我不想被那種人認識。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「知り合われる」不是「知り合う」的受身用法；「知り合う」是相互動詞，沒有受身，「被很多人認識」要用「知る」的受身「知られる」，或說「知り合いに なる」",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "知り合わせる",

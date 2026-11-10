@@ -787,3 +787,111 @@ Three reports from the user, all on the phone layout:
   entries); `npm test` 208/208; `npm run build` ok with `output/dict/` = 50
   files; `node scripts/write-sha256.mjs --check` ok;
   `node scripts/browser-check.mjs` -> 379 checks passed.
+
+## 2026-11-10 (revision 14)
+
+### Paging without follow or bounce (requested 2026-11-10)
+
+- Why: on a phone the paging gesture was painful to watch ("看到頭會很痛").
+  The user described it exactly: swiping the word left, the next word slides in
+  and settles ("歸位"), then it flashes once and settles again ("閃一下，然後在
+  歸位"). Desktop never showed this because it has no gesture paging. The fix
+  they chose: keep the swipe, remove the bounce visual entirely (follow and
+  spring-back), swap directly with one short slide-in — like the reduced-motion
+  path, but with the slide kept.
+- Spec change (`docs/spec.md`), written before the code:
+  - The word/card never follows the finger; the drag itself is invisible.
+  - Past the 72px threshold the release swaps the item at once and the new item
+    plays one short decelerating slide-in (about 190ms) from the edge the swipe
+    came from. A sub-threshold drag has no visual effect at all — nothing
+    springs back because nothing moved.
+  - Once the item settles it never moves again: no flash, no second slide.
+  - The first card's backward drag is completely still (no damped follow, no
+    40px cap, no spring-back); it still never names a direction or changes the
+    card. The reader's first word and the last-card finish are unchanged.
+  - Footer controls (上一個/下一個, 上一張/下一張) run the same direct swap +
+    slide. Reduced motion still swaps at once.
+- This supersedes the "follows the finger / settles back in 140ms / first card
+  resists at a third of the finger capped at 40px" clauses from revisions 6,
+  11 and 13a.
+- Docs synced in this entry: `docs/roadmap.md` (revision 14 board),
+  `docs/architecture.md` (motion notes), `docs/progress.md`, `AGENTS.md`
+  (T5/T6 acceptance lines).
+- Implemented in the same revision: `ReaderView.vue` and `CardView.vue` now
+  page in one phase (direct swap + one 190ms slide-in, ending on the item's
+  resting state), the drag follow and the leave/spring transitions are gone,
+  `window.scrollTo` runs before the swap, and `will-change` stays on the paging
+  element permanently so nothing is torn down at the settle frame — the flash
+  ("歸位完成之後就閃一下，然後在歸位") had its suspects removed at the source.
+  `src/ui/swipe.js` is trimmed to threshold/direction resolution; `clampDrag`,
+  `resistDrag`, `cardDrag`, `EDGE_RESIST_*` and `SWIPE_MAX` are deleted.
+- Verified: `npm test` 21 files / 205 tests (0 failures; the follow/回彈 tests
+  were replaced by the stillness rule); `npm run build` ok (`output/dict/` = 50,
+  `output/index.html`); `node scripts/browser-check.mjs` 382 checks passing,
+  including `checkSlide` traces (no follow, one monotonic slide, nothing after
+  the settle), the still first card, the still first/last word, tap-flip,
+  the last-card finish and the reduced-motion paths. Not verified: real
+  iOS/Android devices (repo-wide limitation — headless Chromium only).
+- Housekeeping: the working tree carried uncommitted `vol/` edits from the
+  2026-11-10 linguistic review (43 files, sentences and notes), and
+  `src/data/dict-manifest.json` was stale for `lesson_6.json` — the manifest
+  was regenerated from `vol/` (`node scripts/write-sha256.mjs`), and
+  `--check` passes. `vol/` itself is untouched.
+
+## 2026-11-10 (revision 15)
+
+### The paging window: 9 cards, 5 words, current item always 3rd
+
+- Why: the phone paging still cost a full re-render at the swap — the dictionary
+  page is fifteen form blocks, and it was rebuilt while the incoming slide ran.
+  The request: render several items at once, keep the screen on the 3rd slot, and
+  make a swipe only drop the item at one end and add one at the other.
+- Provenance: the sizes come from the user's instruction in this session —
+  「單詞改9張，字典改5張」 (cards 9, dictionary 5), given after the first request
+  named 5 for both. If that changes again, change `CARD_WINDOW` /
+  `READER_WINDOW` in `src/ui/window.js` and the spec line together.
+- Spec change (`docs/spec.md`), written before the code: a new
+  "The paging window" section. The dictionary reader keeps 5 words mounted and
+  翻卡學習 keeps 9 cards mounted; the current item always sits in the 3rd slot;
+  a next turn deletes the front slot and appends the next list item at the back,
+  a prev turn mirrors it; slots past either end render nothing; the window is
+  invisible (only the current item is ever on screen, the neighbours sit outside
+  the clipped container) and changes nothing about the motion from revision 14.
+- Implemented: `src/ui/window.js` (`CARD_WINDOW = 9`, `READER_WINDOW = 5`,
+  `CURRENT_SLOT = 2`, `windowSlots`, `windowOffset`, `slotKey`, `shiftWindow`),
+  `src/ui/paging-window.js` (`usePagingWindow`, which keeps the row as state and
+  hands each turn to `shiftWindow`, so production really does one front delete
+  and one back append instead of deriving the row again) and
+  `src/study/window-views.js`, which turns the window into per-slot card/reader
+  data so the `.vue` files only loop and print. Both views stopped translating
+  the row and now push each slot sideways by its own offset, keyed by the item's
+  list position, so Vue keeps the nodes of the items that stay and creates only
+  the one that entered. The duplicate `gloss` line and the leftover
+  `formEntries` computed are gone.
+- Tests: `src/ui/window.test.js` (13 tests: 3rd-slot invariant, front-delete /
+  back-append both ways, ends refused, paging command ids and params unchanged),
+  `src/ui/paging-window.test.js` (6 tests: the kept row shifts one turn at a
+  time, only one end changes per turn, a new list re-derives, the last item
+  stops at its end) and `src/study/window-views.test.js` (10 tests: 9/5 slots,
+  one current, offsets 0/±100, every slot holds its own item rather than a copy
+  of the current one, tags per card, one new key per turn).
+- Browser check: new geometry and DOM assertions instead of trusting the old
+  count — 5 reader pages / 9 card slots mounted, exactly one current, the current
+  item at x=0 and as wide as the window, no neighbour inside the container,
+  neighbours hidden, different words per slot, the window sliding one slot per
+  turn, the front node leaving and exactly one node arriving at the back, the
+  survivors keeping their identity marker, and the counter following the current
+  card. The motion trace now re-resolves the current node every frame, because a
+  trace pinned to the old node would follow the outgoing item off the edge.
+- A local `const window = usePagingWindow(...)` shadowed the global `window`
+  object in `ReaderView.vue` and broke every swipe for one build (`go()` threw
+  at `window.scrollTo` before dispatching `dict.next`); the row ref is now
+  `pagingSlotRow` and the browser check caught it.
+- Verified: `npm test` 24 files / 234 tests (0 failures); `node
+  scripts/write-sha256.mjs --check` ok (50 lessons); `npm run build` ok
+  (`output/dict/` = 50, `output/index.html`); `node scripts/browser-check.mjs`
+  411 checks passing, including that only the current item of either window is
+  in the accessibility tree (the card neighbours are `visibility: hidden` and
+  `aria-hidden`, like the dictionary's). Not verified: real iOS/Android devices (repo-wide
+  limitation — headless Chromium only), and no reduction in mounted-node count
+  was measured on a physical phone.

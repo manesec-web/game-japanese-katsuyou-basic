@@ -21,8 +21,8 @@
               "note": null
             },
             {
-              "japanese": "寝る 前に 部屋の 電気を つける。",
-              "chinese": "睡前開房間的燈。",
+              "japanese": "夜、部屋が 暗いので 電気を つける。",
+              "chinese": "晚上房間暗，所以開燈。",
               "note": null
             }
           ]
@@ -71,8 +71,8 @@
               "note": null
             },
             {
-              "japanese": "暑い なら エアコンを つけませんか。",
-              "chinese": "如果熱，要不要開冷氣？",
+              "japanese": "明るい ので 玄関の 電気を つけません。",
+              "chinese": "很亮，所以不開玄關的燈。",
               "note": null
             }
           ]
@@ -443,8 +443,8 @@
               "note": null
             },
             {
-              "japanese": "きょうは 涼しいので エアコンを 消しません。",
-              "chinese": "今天涼，先不關冷氣。",
+              "japanese": "まだ 暑いので エアコンを 消しません。",
+              "chinese": "還很熱，所以不關冷氣。",
               "note": null
             },
             {
@@ -1845,17 +1845,17 @@
           "sentence": [
             {
               "japanese": "同僚に 先を 急がれる と 疲れます。",
-              "chinese": "被同事催很累。",
+              "chinese": "同事搶著往前趕的話，我會累。",
               "note": null
             },
             {
               "japanese": "母に 急がれる と ミスを します。",
-              "chinese": "被媽媽催會出錯。",
+              "chinese": "媽媽在一旁趕的話，我會出錯。",
               "note": null
             },
             {
               "japanese": "先生に 急がれる と 焦ります。",
-              "chinese": "被老師催會著急。",
+              "chinese": "老師在一旁趕的話，我就著急。",
               "note": null
             }
           ]
@@ -2047,7 +2047,7 @@
           "sentence": [
             {
               "japanese": "駅で 一時間 友だちを 待った。",
-              "chinese": "在車站等了一小時朋友。",
+              "chinese": "在車站等朋友等了一小時。",
               "note": null
             },
             {
@@ -2871,7 +2871,7 @@
           "group": "1",
           "chinese": "轉向（右邊）; 轉彎",
           "japanese": "まがれる",
-          "note": "字典有但是不常用；「曲がれる」是「曲がる」的可能形（道路／車可轉彎）",
+          "note": null,
           "error_usage": false,
           "sentence": [
             {
@@ -3137,7 +3137,7 @@
               "note": null
             },
             {
-              "japanese": "必要 なかったので お金を 持ちませんでした。",
+              "japanese": "必要が なかったので お金を 持ちませんでした。",
               "chinese": "不需要所以沒帶錢。",
               "note": null
             }
@@ -3454,13 +3454,13 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "味が 足りて いるので 塩を 取りません。",
-              "chinese": "味道夠了，不加鹽。",
+              "japanese": "だれも 棚から 塩を 取りません。",
+              "chinese": "沒有人從架上拿鹽。",
               "note": null
             },
             {
               "japanese": "きょうは 砂糖を 取りません。",
-              "chinese": "今天不加砂糖。",
+              "chinese": "今天不拿砂糖。",
               "note": null
             },
             {
@@ -3504,13 +3504,13 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "味が 足りたので 塩を 取りませんでした。",
-              "chinese": "味道夠了，沒加鹽。",
+              "japanese": "だれも 棚から 塩を 取りませんでした。",
+              "chinese": "沒有人從架上拿鹽。",
               "note": null
             },
             {
               "japanese": "きのうは 砂糖を 取りませんでした。",
-              "chinese": "昨天沒加砂糖。",
+              "chinese": "昨天沒拿砂糖。",
               "note": null
             },
             {
@@ -3529,8 +3529,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "棚から 塩を 取らない と 味が 薄いです。",
-              "chinese": "不從架上拿鹽，味道會很淡。",
+              "japanese": "上の 棚から 本を 取らない と 読めません。",
+              "chinese": "不從上層架子拿書就讀不了。",
               "note": null
             },
             {
@@ -3559,8 +3559,8 @@
               "note": null
             },
             {
-              "japanese": "コーヒーに 砂糖を 取った。",
-              "chinese": "在咖啡裡加了砂糖。",
+              "japanese": "テーブルの 上から 砂糖を 取った。",
+              "chinese": "從桌上拿了砂糖。",
               "note": null
             },
             {
@@ -3579,13 +3579,13 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "味が 足りたので 塩を 取らなかった。",
-              "chinese": "味道夠了沒加鹽。",
+              "japanese": "だれも テーブルの 塩を 取らなかった。",
+              "chinese": "沒有人拿桌上的鹽。",
               "note": null
             },
             {
               "japanese": "きのうは 砂糖を 取らなかった。",
-              "chinese": "昨天沒加砂糖。",
+              "chinese": "昨天沒拿砂糖。",
               "note": null
             },
             {
@@ -4513,8 +4513,8 @@
               "note": null
             },
             {
-              "japanese": "先生は 一人ずつ 生徒を 呼ばせる。",
-              "chinese": "老師一個個叫學生。",
+              "japanese": "先生は 係の 人に 生徒を 一人ずつ 呼ばせる。",
+              "chinese": "老師讓工作人員一個個叫學生。",
               "note": null
             },
             {
@@ -4595,8 +4595,8 @@
               "note": null
             },
             {
-              "japanese": "人の 悪口は 話しません。",
-              "chinese": "不講別人的壞話。",
+              "japanese": "この ことは だれにも 話しません。",
+              "chinese": "這件事不跟任何人講。",
               "note": null
             }
           ]
@@ -5237,18 +5237,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "パスポートは 係の 人に 見せられる。",
-              "chinese": "護照被工作人員查看。",
+              "japanese": "空港で 係の 人に 案内図を 見せられる。",
+              "chinese": "在機場被工作人員出示導覽圖。",
               "note": null
             },
             {
-              "japanese": "日記を 家族に 見せられる と 恥ずかしいです。",
-              "chinese": "日記被家人看很害羞。",
+              "japanese": "私は 家族に 恥ずかしい 日記を 見せられる。",
+              "chinese": "我被家人拿出難為情的日記來看。",
               "note": null
             },
             {
-              "japanese": "写真は 友だちに 見せられる こと が 多いです。",
-              "chinese": "照片常給朋友看。",
+              "japanese": "私は 友だちに 旅行の 写真を よく 見せられる。",
+              "chinese": "我常被朋友出示旅行照片。",
               "note": null
             }
           ]
@@ -6098,8 +6098,8 @@
               "note": null
             },
             {
-              "japanese": "寒いので 雪は 降りません。",
-              "chinese": "很冷，不下雪。",
+              "japanese": "暖かい ので 雪は 降りません。",
+              "chinese": "天氣暖和，所以不下雪。",
               "note": null
             },
             {
@@ -6173,8 +6173,8 @@
               "note": null
             },
             {
-              "japanese": "雪が 降らない と 春に なりません。",
-              "chinese": "不下雪的話春天不會來。",
+              "japanese": "雨が 降らない と 作物が 育たない。",
+              "chinese": "不下雨的話作物長不好。",
               "note": null
             },
             {

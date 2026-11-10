@@ -1,29 +1,33 @@
 # Progress
 
-Last updated: 2026-11-11.
+Last updated: 2026-11-10 (revision 15).
 
-**Status: complete.** T1–T8 are done and revisions 2–13 have landed and been
+**Status: complete.** T1–T8 are done and revisions 2–15 have landed and been
 verified. The site is not published yet; the remaining step is to deploy
-`output/` to GitHub Pages. Revision 13 added the loading-screen head and credit
-line and the first-card resistance in 翻卡學習.
+`output/` to GitHub Pages. Revision 14 replaced the paging follow/spring-back
+(“跟手拖曳、短拖回彈、第一張卡阻力”) with an invisible drag and a direct swap
+plus one short slide-in, and fixed the post-settle flash (“歸位後閃一下、再動
+一次”). Revision 15 mounts a paging window around the current item — 9 cards in
+翻卡學習, 5 words in the dictionary — keeps the current item in the 3rd slot and
+shifts the window by dropping one end and adding the other.
 
 ## Current state
 
 - Vue 3.5 + Vite 7.3 + Vitest 3 static app. Verified with Node v26.4.0 and
   npm 11.18.0; Vite 7 requires Node `^20.19.0` or `>=22.12.0`.
-- `npm test`: 21 files, **209 tests passing**. `pretest` verifies the 50-lesson
+- `npm test`: 24 files, **234 tests passing**. `pretest` verifies the 50-lesson
   SHA-256 manifest first.
 - `npm run build`: `output/index.html`, `output/assets/` (one JS + one CSS
   bundle) and `output/dict/` with exactly **50** lesson files. `output/` is
   gitignored.
-- `node scripts/browser-check.mjs`: **379 checks passing on the final run**
-  (378–379; headless Chromium, 390×844 with 550/551/800/900 width probes, plus
+- `node scripts/browser-check.mjs`: **411 checks passing on the final run**
+  (410–411; headless Chromium, 390×844 with 550/551/800/900 width probes, plus
   a touch context for the zoom lock and frame-by-frame motion assertions). The
   count can move by one because the seeded quiz item decides how many kana-key
   assertions run.
 - `node scripts/motion-probe.mjs`: prints the frame-by-frame position trace for
-  the paging turns, the spring-back and the flip. Used to measure the motion
-  before and after a change; not part of the pass/fail gate.
+  the paging slide and the flip. Used to measure the motion before and after a
+  change; not part of the pass/fail gate.
 - Git: branch `main`, tracking `github/main`; history starts at commit
   `933c30b` (`init`). The GitHub Pages URL returned 404 when this document
   was refreshed, so the site has not been published yet.
@@ -33,10 +37,10 @@ line and the first-card resistance in 翻卡學習.
 ## Verification as of this refresh
 
 ```bash
-npm test                                # 21 files, 209 tests passed
+npm test                                # 24 files, 234 tests passed
 npm run build                           # manifest ok: 50 lessons; built in <1s
 ls output/dict | wc -l                  # 50
-node scripts/browser-check.mjs          # browser check passed (379 checks)
+node scripts/browser-check.mjs          # browser check passed (411 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 node scripts/write-sha256.mjs --check   # manifest ok: 50 lessons
 ```
@@ -100,10 +104,22 @@ in [`docs/changelog.md`](docs/changelog.md). Task acceptance evidence is in
   the first card in 翻卡學習 resists a right-hand drag (a third of the finger,
   capped at 40px, then a 140ms spring-back) instead of sitting still; and the
   roadmap gained a backlog (朗讀功能, 優化下載文件, 優化UI).
+- **Revision 14** (requested 2026-11-10: the paging bounce made the user ill —
+  “看到頭會很痛”): swipe paging is kept but the drag is invisible — no
+  follow, no spring-back, and the revision-13 first-card resistance is gone
+  (the first card is completely still). A swipe past 72px swaps at once and
+  the incoming item plays one ~190ms slide-in from the edge; a shorter drag
+  does nothing at all. The post-settle flash (“歸位後閃一下、再動一次”) is
+  fixed at its suspects: no leave phase, the slide ends on the resting state,
+  `will-change` is never torn down at the settle frame, and the scroll reset
+  runs before the swap. `docs/spec.md` was revised before the code.
 
 ## Known limitations and unverified paths
 
 - Real iOS/Android devices and Safari/Firefox were not tested; only Chromium.
+  The revision-14 flash fix is verified by frame-by-frame traces (nothing moves
+  after the settle) in headless Chromium; the visual “flash” itself was a
+  mobile-GPU raster artifact and needs a real phone to confirm gone.
 - **Double-tap zoom was not reproduced.** Chrome's double tap zoom is Android-only
   and never fires in headless Chromium: two quick taps leave `visualViewport.scale`
   at 1 even on a page with no zoom restrictions. Pinch *is* reproducible there

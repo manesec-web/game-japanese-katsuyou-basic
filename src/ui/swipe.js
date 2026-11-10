@@ -1,8 +1,9 @@
 // Swipe resolution. A horizontal drag past the threshold counts as a gesture;
-// anything shorter springs back. The result names where the finger travelled,
-// not what the screen should do: each screen maps it to its own command.
+// anything shorter changes nothing at all. The drag itself is invisible: the
+// item never follows the finger, so there is nothing to spring back. The
+// result names where the finger travelled, not what the screen should do:
+// each screen maps it to its own command.
 export const SWIPE_THRESHOLD = 72
-export const SWIPE_MAX = 140
 
 export function resolveSwipe(dx, threshold = SWIPE_THRESHOLD) {
   if (dx <= -threshold) return 'left'
@@ -25,29 +26,10 @@ export function cardDirection(dx, threshold = SWIPE_THRESHOLD) {
   return gesture ? CARD_SWIPE[gesture] : null
 }
 
-export function clampDrag(dx, max = SWIPE_MAX) {
-  return Math.max(-max, Math.min(max, dx))
-}
-
-// The first card has nothing behind it. It still follows the finger a little,
-// with resistance, so the gesture reads as a wall rather than a dead screen:
-// the offset grows at a third of the drag and stops well short of the threshold.
-// The last card is not damped, because leaving it finishes the run.
-export const EDGE_RESIST_RATIO = 1 / 3
-export const EDGE_RESIST_MAX = 40
-
-export function resistDrag(dx, ratio = EDGE_RESIST_RATIO, max = EDGE_RESIST_MAX) {
-  return Math.max(-max, Math.min(max, dx * ratio))
-}
-
-// What a card follows during a drag, and where that drag points. `atFirst`
-// is the first-card wall: a right-hand drag there is damped and names no
-// direction, so the card springs back instead of changing.
-export function cardDrag(dx, { atFirst = false, max = SWIPE_MAX } = {}) {
-  if (atFirst && dx > 0) return resistDrag(dx)
-  return clampDrag(dx, max)
-}
-
+// The first card has nothing behind it. A backward drag there is completely
+// still: it names no direction at any distance, so nothing renders, nothing
+// springs back and the card never changes. The reader's first word is guarded
+// the same way by its bounds check.
 export function cardDirectionAt(dx, { atFirst = false } = {}) {
   if (atFirst && dx > 0) return null
   return cardDirection(dx)

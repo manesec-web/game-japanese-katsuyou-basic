@@ -791,18 +791,15 @@
           "sentence": [
             {
               "japanese": "今日 友達を 食事に 誘います。",
-              "chinese": "今天邀朋友去吃飯。",
-              "note": null
+              "chinese": "今天邀朋友去吃飯。"
             },
             {
-              "japanese": "妹を デートに 誘います。",
-              "chinese": "邀妹妹去約會。",
-              "note": null
+              "japanese": "妹を 買い物に 誘います。",
+              "chinese": "邀妹妹去買東西。"
             },
             {
               "japanese": "同僚を 飲み会に 誘います。",
-              "chinese": "邀同事去聚會。",
-              "note": null
+              "chinese": "邀同事去聚會。"
             }
           ]
         },
@@ -1243,18 +1240,15 @@
           "sentence": [
             {
               "japanese": "今朝は 誰も 私を 起こしませんでした。",
-              "chinese": "今天早上沒有人叫醒我。",
-              "note": null
+              "chinese": "今天早上沒有人叫醒我。"
             },
             {
               "japanese": "昨日は 弟を 起こしませんでした。",
-              "chinese": "昨天沒有叫醒弟弟。",
-              "note": null
+              "chinese": "昨天沒有叫醒弟弟。"
             },
             {
-              "japanese": "アラームが 鳴ったのに 私を 起こしませんでした。",
-              "chinese": "鬧鐘響了卻沒把我叫醒。",
-              "note": null
+              "japanese": "昨日は 休みだったので 子供を 起こしませんでした。",
+              "chinese": "昨天因為放假，沒有叫醒小孩。"
             }
           ]
         },
@@ -1972,18 +1966,15 @@
           "sentence": [
             {
               "japanese": "昨日 友達に 引っ越しを 頼みました。",
-              "chinese": "昨天拜託朋友幫忙搬家。",
-              "note": null
+              "chinese": "昨天拜託朋友幫忙搬家。"
             },
             {
-              "japanese": "兄に 車を 貸して と 頼みました。",
-              "chinese": "拜託哥哥借車給我。",
-              "note": null
+              "japanese": "兄に「車を 貸して」と 頼みました。",
+              "chinese": "拜託哥哥把車借給我。"
             },
             {
               "japanese": "課長に 休みを 頼みました。",
-              "chinese": "向課長請了假。",
-              "note": null
+              "chinese": "向課長請了假。"
             }
           ]
         },
@@ -2022,18 +2013,15 @@
           "sentence": [
             {
               "japanese": "私は めったに 人に 頼まない。",
-              "chinese": "我很少拜託別人。",
-              "note": null
+              "chinese": "我很少拜託別人。"
             },
             {
               "japanese": "この 仕事は 一人で できるので 誰にも 頼まない。",
-              "chinese": "這工作一個人能做，所以不拜託任何人。",
-              "note": null
+              "chinese": "這工作一個人能做，所以不拜託任何人。"
             },
             {
-              "japanese": "父は 人に 物を 頼まない。",
-              "chinese": "爸爸不拜託別人東西。",
-              "note": null
+              "japanese": "父は 仕事を 人に 頼まない。",
+              "chinese": "爸爸不會把工作拜託別人。"
             }
           ]
         },
@@ -2246,17 +2234,17 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "父は 弟に 近所の 人を 頼ませる。",
+              "japanese": "父は 弟を 近所の 人に 頼ませる。",
               "chinese": "爸爸讓弟弟去拜託鄰居。",
               "note": null
             },
             {
-              "japanese": "課長は 私に 先輩を 頼ませる。",
+              "japanese": "課長は 私を 先輩に 頼ませる。",
               "chinese": "課長讓我去拜託前輩。",
               "note": null
             },
             {
-              "japanese": "先生は 学生に 友達を 頼ませる。",
+              "japanese": "先生は 学生を 友達に 頼ませる。",
               "chinese": "老師讓學生去拜託朋友。",
               "note": null
             }
@@ -2283,7 +2271,7 @@
               "note": null
             },
             {
-              "japanese": "母は 私に 言葉づかいに 注意する。",
+              "japanese": "母は 私に 言葉づかいを 注意する。",
               "chinese": "媽媽提醒我注意用詞。",
               "note": null
             }
@@ -2359,7 +2347,7 @@
             },
             {
               "japanese": "警官は スピードに 注意しました。",
-              "chinese": "警官提醒了車速。",
+              "chinese": "警官留意了車速。",
               "note": null
             }
           ]
@@ -2623,13 +2611,13 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "先生は 学生に 危険を 注意させる。",
+              "japanese": "先生は 学生に 危険に 注意させる。",
               "chinese": "老師讓學生注意危險。",
               "note": null
             },
             {
-              "japanese": "母は 私に 弟の 言葉を 注意させる。",
-              "chinese": "媽媽讓我提醒弟弟的用詞。",
+              "japanese": "母は 私に 弟の 言葉づかいに 注意させる。",
+              "chinese": "媽媽讓我注意弟弟的用詞。",
               "note": null
             },
             {
@@ -3455,18 +3443,15 @@
           "sentence": [
             {
               "japanese": "私は 物を 壊しません。",
-              "chinese": "我不弄壞東西。",
-              "note": null
+              "chinese": "我不弄壞東西。"
             },
             {
               "japanese": "弟は もう おもちゃを 壊しません。",
-              "chinese": "弟弟已經不再弄壞玩具。",
-              "note": null
+              "chinese": "弟弟已經不再弄壞玩具。"
             },
             {
-              "japanese": "この 機械は 簡単には 壊しません。",
-              "chinese": "這台機器不容易壞。",
-              "note": null
+              "japanese": "兄は この 機械を 簡単には 壊しません。",
+              "chinese": "哥哥不會輕易弄壞這台機器。"
             }
           ]
         },
@@ -4007,18 +3992,15 @@
           "sentence": [
             {
               "japanese": "泥の 道では すぐ 靴を 汚せる。",
-              "chinese": "在泥路上馬上就會弄髒鞋子。",
-              "note": null
+              "chinese": "在泥路上馬上就能把鞋子弄髒。"
             },
             {
               "japanese": "子供は 遊ぶと 服を 汚せる。",
-              "chinese": "小孩一玩就會弄髒衣服。",
-              "note": null
+              "chinese": "小孩一玩就能把衣服弄髒。"
             },
             {
               "japanese": "小さい 子は クレヨンで 壁を 汚せる。",
-              "chinese": "小孩子會用蠟筆弄髒牆壁。",
-              "note": null
+              "chinese": "小孩子用蠟筆就能把牆弄髒。"
             }
           ]
         },
@@ -4131,19 +4113,16 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "父は 私に 好きに 服を 汚させる。",
-              "chinese": "爸爸讓我把衣服隨意弄髒。",
-              "note": null
+              "japanese": "泥遊びで 子供に 服を 汚させるのは 仕方が ない。",
+              "chinese": "讓小孩玩泥巴弄髒衣服也是沒辦法的。"
             },
             {
               "japanese": "先生は 子供に 絵の 具で 服を 汚させる。",
-              "chinese": "老師讓小孩用畫具弄髒衣服。",
-              "note": null
+              "chinese": "老師讓小孩用畫具弄髒衣服。"
             },
             {
               "japanese": "兄は 弟に 泥で 靴を 汚させる。",
-              "chinese": "哥哥讓弟弟用泥弄髒鞋子。",
-              "note": null
+              "chinese": "哥哥讓弟弟用泥弄髒鞋子。"
             }
           ]
         }
@@ -5717,7 +5696,7 @@
           "sentence": [
             {
               "japanese": "彼は 何も 発明しません。",
-              "chinese": "他什麼都沒有發明。",
+              "chinese": "他什麼都不發明。",
               "note": null
             },
             {
@@ -6369,18 +6348,15 @@
           "sentence": [
             {
               "japanese": "この 建物は 有名な 建築家に よって 設計される。",
-              "chinese": "這棟建築由著名建築師設計。",
-              "note": null
+              "chinese": "這棟建築由著名建築師設計。"
             },
             {
-              "japanese": "この 家は 去年 設計される。",
-              "chinese": "這棟房子去年被設計。",
-              "note": null
+              "japanese": "この 家は 大手の 会社に 設計される。",
+              "chinese": "這棟房子由大公司設計。"
             },
             {
               "japanese": "新しい 工場は 来年 設計される。",
-              "chinese": "新工廠明年被設計。",
-              "note": null
+              "chinese": "新工廠預定明年設計。"
             }
           ]
         },
@@ -6421,18 +6397,15 @@
           "sentence": [
             {
               "japanese": "この 会社は 海を 埋め立てる。",
-              "chinese": "這家公司填海。",
-              "note": null
+              "chinese": "這家公司填海。"
             },
             {
               "japanese": "人々は 海を 埋め立てる 計画を 立てた。",
-              "chinese": "人們訂了填海的計畫。",
-              "note": null
+              "chinese": "人們訂了填海的計畫。"
             },
             {
-              "japanese": "この 工事は 海を 埋め立てる。",
-              "chinese": "這個工程填海。",
-              "note": null
+              "japanese": "この 工事で 海を 埋め立てる。",
+              "chinese": "用這項工程填海造地。"
             }
           ]
         },
@@ -6446,18 +6419,15 @@
           "sentence": [
             {
               "japanese": "この 会社は 海を 埋め立てます。",
-              "chinese": "這家公司填海。",
-              "note": null
+              "chinese": "這家公司填海。"
             },
             {
               "japanese": "国は 海を 埋め立てます。",
-              "chinese": "國家填海。",
-              "note": null
+              "chinese": "國家填海。"
             },
             {
-              "japanese": "うちの 工事は 海を 埋め立てます。",
-              "chinese": "我們的工程填海。",
-              "note": null
+              "japanese": "うちの 工事で 海を 埋め立てます。",
+              "chinese": "我們這項工程要填海造地。"
             }
           ]
         },
@@ -6750,8 +6720,8 @@
               "note": null
             },
             {
-              "japanese": "ここは 去年 埋め立てられる。",
-              "chinese": "這裡去年被填埋。",
+              "japanese": "ここは 来年、埋め立てられる 予定です。",
+              "chinese": "這裡預定明年填埋。",
               "note": null
             },
             {

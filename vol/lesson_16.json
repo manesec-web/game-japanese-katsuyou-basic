@@ -1453,7 +1453,7 @@
             },
             {
               "japanese": "汗を かいたまま 浴びれば、風邪を ひく。",
-              "chinese": "流汗不沖澡會感冒。",
+              "chinese": "流著汗直接沖澡會感冒。",
               "note": null
             }
           ]
@@ -1472,8 +1472,8 @@
               "note": null
             },
             {
-              "japanese": "夏は 海で 日光を 浴びられる。",
-              "chinese": "夏天能在海邊曬太陽。",
+              "japanese": "海辺で 夏の 日光を 浴びられると、肌が 痛い。",
+              "chinese": "在海邊被夏天的陽光曬到的話，皮膚會痛。",
               "note": null
             },
             {
@@ -2975,8 +2975,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この 部屋は いつでも 出られる。",
-              "chinese": "這房間隨時都能出去。",
+              "japanese": "部長に 先に 出られると、私も 帰れなく なる。",
+              "chinese": "部長先離開的話，我也走不了。",
               "note": null
             },
             {
@@ -3352,8 +3352,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この 仕事は いつでも やめられる。",
-              "chinese": "這工作隨時都能辭。",
+              "japanese": "育てた 新人に やめられる と、仕事が 進まない。",
+              "chinese": "培養的新人辭職的話，工作就推不動。",
               "note": null
             },
             {
