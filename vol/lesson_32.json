@@ -1025,8 +1025,8 @@
               "note": null
             },
             {
-              "japanese": "失敗しよう と している 人を 止めない。",
-              "chinese": "不阻止打算失敗的人。",
+              "japanese": "この 計画は 失敗しよう と して いる。",
+              "chinese": "這個計畫眼看就要失敗了。",
               "note": null
             }
           ]
@@ -3270,8 +3270,8 @@
               "note": null
             },
             {
-              "japanese": "強い 風が ほこりを 吹かせる。",
-              "chinese": "強風吹起灰塵。",
+              "japanese": "父は 子供に 焚き火を 吹かせる。",
+              "chinese": "父親讓孩子把營火吹旺。",
               "note": null
             },
             {
@@ -4518,8 +4518,8 @@
               "note": null
             },
             {
-              "japanese": "無理を して 風邪を ひこう と するな。",
-              "chinese": "別逞強讓自己感冒。",
+              "japanese": "無理を して 風邪を ひこう としたら、すぐ 休む ことだ。",
+              "chinese": "逞強快要感冒的話，就該馬上休息。",
               "note": null
             },
             {
@@ -4534,25 +4534,9 @@
           "group": "1",
           "chinese": "（風邪）得; 患上",
           "japanese": "ひけ",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "父は 私に 「風邪を ひけ」と 言った。",
-              "chinese": "父親對我說「感冒吧」。",
-              "note": null
-            },
-            {
-              "japanese": "母は 薄着の 私に 「風邪を ひけ」と 怒った。",
-              "chinese": "母親對穿太薄的我生氣說「去感冒吧」。",
-              "note": null
-            },
-            {
-              "japanese": "先生は 「風邪を ひけ」と 冗談を 言った。",
-              "chinese": "老師開玩笑說「感冒吧」。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「風邪をひく」是無意志動作，不能命令別人「感冒吧」；「ひけ」是另一個「ひく」（彈、拉、抽）的命令形。日常提醒說「風邪をひくぞ」。",
+          "error_usage": true,
+          "sentence": []
         },
         "conditional-form": {
           "vol": "ひけば",
@@ -4691,7 +4675,7 @@
           "sentence": [
             {
               "japanese": "この 冷蔵庫は よく 冷やしません。",
-              "chinese": "這個冰箱不太冷。",
+              "chinese": "這個冰箱不太能冰。",
               "note": null
             },
             {
@@ -5513,8 +5497,8 @@
               "note": null
             },
             {
-              "japanese": "まだ 寝る 前に ゆっくりしない ように して いる。",
-              "chinese": "睡前盡量不讓自己太放鬆。",
+              "japanese": "試験の 前は ゆっくりしない。",
+              "chinese": "考試前不放鬆。",
               "note": null
             }
           ]

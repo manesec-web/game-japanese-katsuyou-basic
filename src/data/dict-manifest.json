@@ -30,7 +30,7 @@
     {
       "lesson": 6,
       "file": "lesson_6.json",
-      "sha256": "8a3bafd054566548a082a46f78ff52df55f96c9dae14254f6a950dfbd2fba31c"
+      "sha256": "78377cb640a709314492494ff781dbe37f514e80e1c8d67c13b81d86d0411c25"
     },
     {
       "lesson": 7,
@@ -45,17 +45,17 @@
     {
       "lesson": 9,
       "file": "lesson_9.json",
-      "sha256": "fcb3c3aa0fd4ed45d7faabb12a63a256d253b5c00582adfc0a82c6cb16820e44"
+      "sha256": "3c9e3358856f2adb596d51eb2f38a4994134c56644907bfdf0fdd76c861f3b54"
     },
     {
       "lesson": 10,
       "file": "lesson_10.json",
-      "sha256": "1221fb504a0ec86be624fe434d1d306d19f62521b512f1e90dec901f4fd6e048"
+      "sha256": "46344531835967d8c58341fc65f17e802d2e6f456ac74ce10e8f1fa4c6d7291f"
     },
     {
       "lesson": 11,
       "file": "lesson_11.json",
-      "sha256": "4d3d7e3f950e07c73436fd4580bd218e62432ff50851f11499fc4b3601fe4722"
+      "sha256": "d2dbf0067956268f5b9d14a15494a1a90eeb504ab9c1cc8dd089e05735477ccc"
     },
     {
       "lesson": 12,
@@ -65,27 +65,27 @@
     {
       "lesson": 13,
       "file": "lesson_13.json",
-      "sha256": "4c1caa192dc5e37d62cc340408511f5bf7ccfa5cfc2fdf22aaa2ba4d5e62f60d"
+      "sha256": "b2a3da4234ceff7078198f5cea1acf1add8206408464304691cf8d97372d6743"
     },
     {
       "lesson": 14,
       "file": "lesson_14.json",
-      "sha256": "7d963760970b20c4cdc6fa97c3846acf7684c9e981d2b58cb4b57bf16aa50b7c"
+      "sha256": "254e256a204a89578e755f93afe61c346ea4d8348f6353ab59ab63f421113ee3"
     },
     {
       "lesson": 15,
       "file": "lesson_15.json",
-      "sha256": "148b686236ca62968899e014d09354ae1410e4c511be847d183a67944c110182"
+      "sha256": "71de2a60c1f56d3761f829c056d5cbc6b534957484d38151b7f9a34192f96d27"
     },
     {
       "lesson": 16,
       "file": "lesson_16.json",
-      "sha256": "309e5001489ab4d20ddbab32e708b963e47329b9c72e70f8155163cc1de79702"
+      "sha256": "042c755df9a56f644f7bd223362696f0c21767a3f04ce170713266432f1dd4ca"
     },
     {
       "lesson": 17,
       "file": "lesson_17.json",
-      "sha256": "a7e9f8f098f4c7531f02c24b7cbedf19cc6ac03ef9a850cca1d2823c7c6ca530"
+      "sha256": "f5e7ca9341f4049f800641d875456895ce3f00e3168dcf066c0080c03f950a3a"
     },
     {
       "lesson": 18,
@@ -95,42 +95,42 @@
     {
       "lesson": 19,
       "file": "lesson_19.json",
-      "sha256": "ee042ebf22b02bdc79eb7e8587e2c3ea1d639bee1ed80034887c9d293333b2c0"
+      "sha256": "fb0064b0befd3ef62eaa172b4334bb4e7d9ae2a33900b9181ec869edaf2f8ffd"
     },
     {
       "lesson": 20,
       "file": "lesson_20.json",
-      "sha256": "d3e0b26e52d9cb959220bb6f87517d1071de2ff6717b1ceccdd1e7481db614df"
+      "sha256": "25b09aa81f59d779de4e21ad014b20859977835f39518b5ddca7ef1555227afc"
     },
     {
       "lesson": 21,
       "file": "lesson_21.json",
-      "sha256": "ce2fd0ba631c3d0247c7d9f0891d986c8c81ffb81c94df3799196df6070f2171"
+      "sha256": "dc6c48d93559745a12e70060718b98d70a77fa2c44b17bca1195141298f19dd0"
     },
     {
       "lesson": 22,
       "file": "lesson_22.json",
-      "sha256": "5c8e37218a0f595406c77e95670cac797753d372a7d71e211161ce279148c139"
+      "sha256": "0d99235275cdd35f7744b66708b4ee0b64ebfd91cfaed20efc21bdd05ff9213c"
     },
     {
       "lesson": 23,
       "file": "lesson_23.json",
-      "sha256": "23f46b06097286bc8726a6357b1c47bced7c342ee5a2b609903917f5e1e17250"
+      "sha256": "3ff82be8475a75bedb33c0f3bf0be41aade371ffbbdf671561e5976a385c92cb"
     },
     {
       "lesson": 24,
       "file": "lesson_24.json",
-      "sha256": "6de13cfe8e4432c91c3da937648360b3bfe5c8b19162cb243f21e09c757b38ca"
+      "sha256": "225f7ea997e800bb01e2c05840aaf424d1c4d1ff3a50f3ce36d824a37e025409"
     },
     {
       "lesson": 25,
       "file": "lesson_25.json",
-      "sha256": "6cf8eab52e6b31463436b32ecbf7bcda7e1c3d9227da786e30bdd0d4f654b6de"
+      "sha256": "1286cdb9c1621996b1786f3af2e78dbb3122ac349139059a7dd54921bae0e548"
     },
     {
       "lesson": 26,
       "file": "lesson_26.json",
-      "sha256": "15d1022bc528522d2e55bec73286f4ad6f47439bf1fe8e9cc96c9008f3d15caa"
+      "sha256": "32134376b1584714f9c8d33dc9d250a8f58c36154e09b1d8756ff283a2e33f17"
     },
     {
       "lesson": 27,
@@ -145,22 +145,22 @@
     {
       "lesson": 29,
       "file": "lesson_29.json",
-      "sha256": "4c04cf5f77867cd6008b39f3754d405085c8c17a38789378c802a1b00fdd9ddc"
+      "sha256": "3c23dd9b3792dbd6d5875ea4986148b54bd28b62d7d4cae04fe2ae7a9caa0e06"
     },
     {
       "lesson": 30,
       "file": "lesson_30.json",
-      "sha256": "d21b7c094cb949c78f8a5b9521cc4bfb9926999008da345f492545c50002be33"
+      "sha256": "de58184a48696bd1174c3cf4981b4643565eee2704a589c0b6cbb443bf1be967"
     },
     {
       "lesson": 31,
       "file": "lesson_31.json",
-      "sha256": "2dadc9f19fa2cb0ca3e6c8e6c64ab53b423fc9d9b95733797001a452c49c6065"
+      "sha256": "59df6b6b3b50f71a46dc752f2d42f6e8a5c5968d4e802f4206702535496bf5c6"
     },
     {
       "lesson": 32,
       "file": "lesson_32.json",
-      "sha256": "2b56068f4760aa57737edfb4bf804ec0dfd012449ce309d57079ba1a5a1277e9"
+      "sha256": "9de46b4a94fc7cd77985b06df53b1343badc63fd36bf2b13c7ddbb16a78d0381"
     },
     {
       "lesson": 33,
@@ -175,7 +175,7 @@
     {
       "lesson": 35,
       "file": "lesson_35.json",
-      "sha256": "51264133328681a87dc15023107bb071e6b74b7f1184338e39f4a6b50d80e29d"
+      "sha256": "32595edea41281e44edff39a9a7936fc6431521d568a48402c38bee19fcd4964"
     },
     {
       "lesson": 36,
@@ -190,22 +190,22 @@
     {
       "lesson": 38,
       "file": "lesson_38.json",
-      "sha256": "a6759293d0e451af14f33eae5776a9ce3b0ea18b86d6f4b17a2b19687714f6e1"
+      "sha256": "703f537a15060a4470f1984a573db8c655b5d1cf4c544afaab15a8a460e754e2"
     },
     {
       "lesson": 39,
       "file": "lesson_39.json",
-      "sha256": "dd495b6f3e539dc6358ad08f0a58d671dbed61357467fa2d965a9018f8ec2ee4"
+      "sha256": "594d2d461d4c04cf9795a0a99f7c6582b06ef7ad7fe8335316d1783e45af82dd"
     },
     {
       "lesson": 40,
       "file": "lesson_40.json",
-      "sha256": "144959515427954ca76cfd143443d1928e852d65883e98712c81c82c580ae678"
+      "sha256": "d733c7afcf6d3183d815d4713c6fe68aba86537afc98857c695d2013742def5e"
     },
     {
       "lesson": 41,
       "file": "lesson_41.json",
-      "sha256": "59506110ea239673261c7adcfbdd211c35aed2906deb362c16195fe4a97e3cdf"
+      "sha256": "7bc346368fb250b2d23dbf524eed67fb92090c5c2c904d30fbd073a5baa81d3a"
     },
     {
       "lesson": 42,
@@ -220,7 +220,7 @@
     {
       "lesson": 44,
       "file": "lesson_44.json",
-      "sha256": "881fc07b54acfb7a25e0459a273b4d77cdce2a3fa816e8c54e6c1bc34913c112"
+      "sha256": "670ba3625b7776cab1e197b43e2a1c5066e14056e1a30d90c7abe83fc1bc1398"
     },
     {
       "lesson": 45,
@@ -245,7 +245,7 @@
     {
       "lesson": 49,
       "file": "lesson_49.json",
-      "sha256": "72064c4a02f5323ac7cc9ad71276593b0572de4f5f82ba43ee35110038f8a467"
+      "sha256": "2faf86b9c74d99660c4b7f0c462f984fada956a01dab22435eca928496ae91f6"
     },
     {
       "lesson": 50,

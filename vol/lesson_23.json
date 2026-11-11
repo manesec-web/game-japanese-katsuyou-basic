@@ -718,8 +718,8 @@
               "note": null
             },
             {
-              "japanese": "毎日 上司に 機械を 回される。",
-              "chinese": "每天被上司叫去轉機械。",
+              "japanese": "上司に 勝手に 機械を 回される ので、困っています。",
+              "chinese": "上司擅自轉動機械，讓我很困擾。",
               "note": null
             },
             {
@@ -2615,25 +2615,25 @@
           ]
         },
         "causative-form": {
-          "vol": "動かせる",
+          "vol": "動かさせる",
           "group": "1",
           "chinese": "轉動; 走動; 動",
-          "japanese": "うごかせる",
+          "japanese": "うごかさせる",
           "note": null,
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "コーチは 選手たちを 休まず 動かせる。",
+              "japanese": "コーチは 選手たちを 休まず 動かさせる。",
               "chinese": "教練讓選手們不停地活動。",
               "note": null
             },
             {
-              "japanese": "祖父は 毎朝 犬を 公園で 動かせる。",
+              "japanese": "祖父は 毎朝 犬を 公園で 動かさせる。",
               "chinese": "祖父每天早上在公園讓狗活動。",
               "note": null
             },
             {
-              "japanese": "体育の 先生は 生徒を 校庭で 動かせる。",
+              "japanese": "体育の 先生は 生徒を 校庭で 動かさせる。",
               "chinese": "體育老師讓學生在校園裡活動。",
               "note": null
             }
@@ -3725,25 +3725,9 @@
           "group": "2",
           "chinese": "小心; 注意",
           "japanese": "きをつけられる",
-          "note": null,
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "この 交差点は みんなに 気をつけられる。",
-              "chinese": "這個十字路口大家都會小心。",
-              "note": null
-            },
-            {
-              "japanese": "夜の 道は 皆に 気をつけられる。",
-              "chinese": "夜路大家都會注意。",
-              "note": null
-            },
-            {
-              "japanese": "この 道は 夜、歩く 人に 気をつけられる。",
-              "chinese": "這條路晚上走路的人都會小心。",
-              "note": null
-            }
-          ]
+          "note": "錯誤用法，僅供轉詞練習：「気をつける」沒有自然的受身用法；「気をつけられる」日常只用可能形（＝能小心注意）",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "気をつけさせる",

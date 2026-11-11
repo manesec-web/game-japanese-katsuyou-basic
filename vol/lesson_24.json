@@ -266,7 +266,7 @@
           "group": "2",
           "chinese": "給（我）; 給我",
           "japanese": "くれろ",
-          "note": null,
+          "note": "字典有但是不常用：命令形日常多說「くれ」（例：本を くれ），「くれろ」少用",
           "error_usage": false,
           "sentence": [
             {
@@ -2824,7 +2824,7 @@
             },
             {
               "japanese": "母は スープに 野菜を 入れて、煮ました。",
-              "chinese": "母親在湯裡加了蔬菜後煮。",
+              "chinese": "母親在湯裡加了蔬菜後煮了。",
               "note": null
             },
             {

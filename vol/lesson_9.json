@@ -602,7 +602,7 @@
           "group": "0",
           "chinese": "有; 存在",
           "japanese": "あろう",
-          "note": null,
+          "note": "字典有但是不常用：「あろう」的意志・推量用法日常不用；實際用於「〜あろうと」「〜であろう」等慣用表現",
           "error_usage": false,
           "sentence": [
             {
@@ -616,8 +616,8 @@
               "note": null
             },
             {
-              "japanese": "時間は あろう と 思う。",
-              "chinese": "我想會有時間。",
+              "japanese": "時間が あろうと なかろうと、計画は 変えません。",
+              "chinese": "不管有沒有時間，計畫都不變。",
               "note": null
             }
           ]

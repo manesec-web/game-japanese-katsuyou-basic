@@ -634,7 +634,7 @@
           "group": "0",
           "chinese": "有; 在（表示無生物的存在）",
           "japanese": "あろう",
-          "note": null,
+          "note": "字典有但是不常用：「あろう」的意志・推量用法日常不用；實際用於「〜あろうと」「〜であろう」等慣用表現",
           "error_usage": false,
           "sentence": [
             {
@@ -659,7 +659,7 @@
           "group": "0",
           "chinese": "有; 在（表示無生物的存在）",
           "japanese": "あれ",
-          "note": null,
+          "note": "字典有但是不常用：「あれ」是文語命令形，只用於「光あれ」「幸あれ」「〜であれ」等固定表現",
           "error_usage": false,
           "sentence": [
             {

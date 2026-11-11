@@ -1051,8 +1051,8 @@
               "note": null
             },
             {
-              "japanese": "忘れ物に 名前を 付ける。",
-              "chinese": "在失物上寫名字。",
+              "japanese": "持ち物に 名前を 付ける。",
+              "chinese": "在物品上寫名字。",
               "note": null
             },
             {
@@ -1131,8 +1131,8 @@
               "note": null
             },
             {
-              "japanese": "スープに 塩を 付けました。",
-              "chinese": "在湯裡加了鹽。",
+              "japanese": "おにぎりに 塩を 付けました。",
+              "chinese": "在飯糰上抹了鹽。",
               "note": null
             }
           ]
@@ -1206,8 +1206,8 @@
               "note": null
             },
             {
-              "japanese": "忘れ物に 名前を 付けた。",
-              "chinese": "在失物上寫了名字。",
+              "japanese": "持ち物に 名前を 付けた。",
+              "chinese": "在物品上寫了名字。",
               "note": null
             }
           ]
@@ -1376,8 +1376,8 @@
               "note": null
             },
             {
-              "japanese": "忘れ物は 名前を 付けられる。",
-              "chinese": "失物被寫上名字。",
+              "japanese": "持ち物は 名前を 付けられる。",
+              "chinese": "物品被寫上名字。",
               "note": null
             },
             {
@@ -1534,7 +1534,7 @@
             },
             {
               "japanese": "彼は お金を 拾いませんでした。",
-              "chinese": "他沒有撿到錢。",
+              "chinese": "他沒有撿錢。",
               "note": null
             }
           ]
@@ -1906,7 +1906,7 @@
             },
             {
               "japanese": "思ったより 時間が かかりませんでした。",
-              "chinese": "比想的沒有花時間。",
+              "chinese": "沒有想像中那麼花時間。",
               "note": null
             },
             {
@@ -2094,8 +2094,8 @@
               "note": null
             },
             {
-              "japanese": "この 番号に かかれば つながる。",
-              "chinese": "打這個號碼就能接通。",
+              "japanese": "電話が かかれば すぐ 出る。",
+              "chinese": "電話打來的話馬上接。",
               "note": null
             }
           ]

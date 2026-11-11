@@ -6298,21 +6298,21 @@
           "group": "1",
           "chinese": "下（雨）; 降（雨）",
           "japanese": "ふれ",
-          "note": null,
+          "note": "字典有但是不常用：「降れ」日常不用，只見於「雨よ降れ」等祈願・呼びかけ表現",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "「雨が 降れ」と 祈りました。",
+              "japanese": "「雨よ 降れ」と 祈りました。",
               "chinese": "祈禱「下雨吧」。",
               "note": null
             },
             {
-              "japanese": "「雪が 降れ」と 言いました。",
+              "japanese": "「雪よ 降れ」と 言いました。",
               "chinese": "說了「下雪吧」。",
               "note": null
             },
             {
-              "japanese": "「もっと 降れ」と 願いました。",
+              "japanese": "「雨よ もっと 降れ」と 願いました。",
               "chinese": "許願「再下多一點」。",
               "note": null
             }

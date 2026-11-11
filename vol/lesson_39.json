@@ -162,7 +162,7 @@
           "sentence": [
             {
               "japanese": "妹が 元気に 答えた。",
-              "chinese": "妹妹精神地回答了。",
+              "chinese": "妹妹很有精神地回答了。",
               "note": null
             },
             {
@@ -2094,7 +2094,7 @@
           "group": "3",
           "chinese": "吃驚; 嚇一跳; 驚訝",
           "japanese": "びっくりしよう",
-          "note": null,
+          "note": "字典有但是不常用：「びっくりしよう」日常不用；意向形主要用於「〜ようと している」。通常說「びっくりする」",
           "error_usage": false,
           "sentence": [
             {
@@ -2455,7 +2455,7 @@
           "group": "3",
           "chinese": "失望; 沮喪; 灰心",
           "japanese": "がっかりしよう",
-          "note": null,
+          "note": "字典有但是不常用：「がっかりしよう」日常不用；意向形主要用於「〜ようと している」。通常說「がっかりする」",
           "error_usage": false,
           "sentence": [
             {
@@ -2801,7 +2801,7 @@
             },
             {
               "japanese": "家族と いれば 安心できる。",
-              "chinese": "和家人在一就能安心。",
+              "chinese": "和家人在一起就能安心。",
               "note": null
             },
             {

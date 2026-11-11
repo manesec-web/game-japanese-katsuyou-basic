@@ -2598,7 +2598,7 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "この 手紙は 先生に 書かれる。",
+              "japanese": "この 手紙は 先生に 書かれました。",
               "chinese": "這封信是老師寫的。",
               "note": null
             },
@@ -3729,8 +3729,8 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "その 仕事は 兄に される。",
-              "chinese": "那項工作由哥哥做。",
+              "japanese": "その 質問は よく される。",
+              "chinese": "那個問題常被問起。",
               "note": null
             },
             {
@@ -3739,8 +3739,8 @@
               "note": null
             },
             {
-              "japanese": "私は 毎日 部長に 残業を される。",
-              "chinese": "我每天被部長要求加班。",
+              "japanese": "私は 先輩に ひどい ことを された。",
+              "chinese": "我被前輩做了很過分的事。",
               "note": null
             }
           ]
