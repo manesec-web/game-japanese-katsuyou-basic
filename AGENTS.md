@@ -5,11 +5,16 @@ This file is for the next AI that enters the repo. Do the tasks in order. The pr
 Current state: T1–T8 are complete, along with the follow-up revisions recorded
 in `docs/roadmap.md` and `docs/changelog.md`. Revision 13 added the loading-screen
 head and credit line and the first-card resistance in 翻卡學習; revision 14
-supersedes that resistance and the drag-follow/spring-back paging with an
+superseded that resistance and the drag-follow/spring-back paging with an
 invisible drag and a direct swap plus one short slide-in; revision 15 mounts a
 paging window around the current item (9 cards in 翻卡學習, 5 words in the
 dictionary reader) with the current item always in the 3rd slot, so a turn only
-drops one end and adds the other. The site builds
+drops one end and adds the other; revision 16 supersedes revision 14's motion
+with a finger-tracking drag (the strip follows the finger 1:1 while held and
+settles the page once from where the finger left it; the walls stay still)
+and also brought the Lucide top-bar icons, the enlarged completion emoji, the
+dictionary note layer (`note` / `error_usage` rendering), the `/issues/` issue
+link and the rewritten `README.md`. The site builds
 into `output/` and has not been published to GitHub Pages yet. Day-to-day status,
 verified commands and known limitations live in `docs/progress.md`; `README.md`
 is the user-facing overview. The tasks below stay as the original build plan and

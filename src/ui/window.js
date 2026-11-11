@@ -30,13 +30,19 @@ export function windowSlots(total, index, size) {
   return slots
 }
 
-// Where a slot sits on screen, in card widths from the current one: the slot
-// beside the current one is one full width away, and so on. The container
-// clips everything outside the current slot, so only its 0 is ever visible.
-// A slot is exactly as wide as the container, so this percentage is measured
-// against the slot's own width — the row itself is never translated.
+// A visible seam between neighbouring pages/cards. It sits outside the item:
+// every slot remains one full container wide and no content is shrunk.
+export const PAGING_GAP = 24
+
+// Where a slot sits on screen: a whole-width percentage plus a fixed pixel
+// gap. Keep the units separate until the view emits its CSS calc(); adding 24
+// to the percentage would make the seam depend on the viewport width.
 export function windowOffset(slot) {
   return (slot - CURRENT_SLOT) * 100
+}
+
+export function windowGap(slot) {
+  return (slot - CURRENT_SLOT) * PAGING_GAP
 }
 
 // One stable identity per rendered slot. Keyed by the item's position, not by

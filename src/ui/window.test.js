@@ -4,6 +4,7 @@ import {
   CURRENT_SLOT,
   READER_WINDOW,
   shiftWindow,
+  windowGap,
   windowOffset,
   windowSlots,
 } from './window.js'
@@ -69,12 +70,19 @@ describe('windowSlots', () => {
   })
 })
 
-describe('windowOffset', () => {
-  it('places the current slot at zero and the neighbours a width away', () => {
+describe('windowOffset and windowGap', () => {
+  it('places the current slot at zero and the neighbours a full width away', () => {
     expect(windowOffset(CURRENT_SLOT)).toBe(0)
     expect(windowOffset(CURRENT_SLOT + 1)).toBe(100)
     expect(windowOffset(CURRENT_SLOT - 1)).toBe(-100)
     expect(windowOffset(0)).toBe(-200)
+  })
+
+  it('adds a fixed 24px seam outside every full-width slot', () => {
+    expect(windowGap(CURRENT_SLOT)).toBe(0)
+    expect(windowGap(CURRENT_SLOT + 1)).toBe(24)
+    expect(windowGap(CURRENT_SLOT - 1)).toBe(-24)
+    expect(windowGap(0)).toBe(-48)
   })
 })
 

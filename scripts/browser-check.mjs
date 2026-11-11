@@ -71,16 +71,16 @@ async function drag(page, dx, dy = 0, selector = '.reader-body') {
   await wait(300)
 }
 
-// Press, drag, sample the card's transform while the finger is still down,
-// then release and sample again once the release has settled. Used for the
-// first-card wall, where the card must stay completely still.
+// Press, drag, sample the paging row's transform while the finger is still
+// down, then release and sample again once the release has settled. Used for
+// the first-card wall, where the strip must stay completely still.
 async function dragHeld(page, dx, selector = '.card-stage') {
   const box = await page.locator(selector).boundingBox()
   const viewport = page.viewportSize()
   const cx = box.x + box.width / 2
   const cy = Math.max(90, Math.min(box.y + Math.min(box.height / 2, 240), viewport.height - 120))
   const transformOf = () =>
-    page.locator('.card--current').evaluate((el) => getComputedStyle(el).transform)
+    page.locator('.card-window').evaluate((el) => getComputedStyle(el).transform)
   await page.mouse.move(cx, cy)
   await page.mouse.down()
   await page.mouse.move(cx + dx / 2, cy, { steps: 5 })
@@ -93,6 +93,79 @@ async function dragHeld(page, dx, selector = '.card-stage') {
   return { held, rested }
 }
 
+// A real touch drag, sampled before the finger lifts. The exposed strip must
+// hit the expected neighbour's own face: a transform or `visibility: visible`
+// assertion alone passes even when a zero-height clip or stacking order keeps
+// that neighbour off the screen.
+async function dragNeighbour(page, dx, expectedAt, mode = 'card') {
+  const reader = mode === 'reader'
+  const gesture = reader ? '.reader-body' : '.card-stage'
+  const box = await page.locator(gesture).boundingBox()
+  const viewport = page.viewportSize()
+  const cx = box.x + box.width / 2
+  const gestureY = Math.max(90, Math.min(box.y + Math.min(box.height / 2, 240), viewport.height - 120))
+  // A dictionary drag can scroll its much shorter finger-start point away.
+  // Sample the visible word block, not that stale document-space y coordinate.
+  const cy = reader
+    ? await page.locator('.reader-page--current .form-block--default .word').evaluate(
+        (el) => el.getBoundingClientRect().top + el.getBoundingClientRect().height / 2,
+      )
+    : gestureY
+  const cdp = await page.context().newCDPSession(page)
+  const point = (x) => [{ x, y: gestureY, id: 0, radiusX: 12, radiusY: 12, force: 1 }]
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: point(cx) })
+  for (let step = 1; step <= 6; step += 1) {
+    await cdp.send('Input.dispatchTouchEvent', {
+      type: 'touchMove',
+      touchPoints: point(cx + (dx * step) / 6),
+    })
+    await wait(25)
+  }
+  const state = await page.evaluate(({ at, reader: isReader, direction, y }) => {
+    const slotSelector = isReader ? '.reader-page' : '.card-slot'
+    const slot = document.querySelector(`${slotSelector}[data-at="${at}"]`)
+    const stage = document.querySelector(isReader ? '.reader-body' : '.card-stage')
+    const current = document.querySelector(isReader ? '.reader-page--current' : '.card--current .card-face')
+    if (!slot || !stage || !current) return { mounted: false }
+    const face = isReader ? slot : slot.querySelector('.card-face')
+    const rect = face.getBoundingClientRect()
+    const currentRect = current.getBoundingClientRect()
+    const clip = stage.getBoundingClientRect()
+    const left = Math.max(rect.left, clip.left, 0)
+    const right = Math.min(rect.right, clip.right, window.innerWidth)
+    const hit = right - left > 1
+      ? document.elementFromPoint((left + right) / 2, y)
+      : null
+    const hitSlot = hit?.closest(slotSelector)
+    return {
+      mounted: true,
+      visible: getComputedStyle(slot).visibility === 'visible',
+      exposedWidth: Math.round(Math.max(0, right - left)),
+      // A full-width item and its neighbour must not meet at the same edge.
+      gap: Math.round(direction === 'next' ? rect.left - currentRect.right : currentRect.left - rect.right),
+      hit: hitSlot === slot,
+      hitAt: hitSlot?.dataset.at ?? null,
+      hitTag: hit?.tagName ?? null,
+      hitClass: hit?.className ?? null,
+      // The clip must span the column's full width while paging, so the item
+      // reaches the true edge instead of leaving a side-padding gutter.
+      clipFillsViewport: clip.left <= 0.5 && clip.right >= window.innerWidth - 0.5,
+      clipLeft: Math.round(clip.left),
+      clipRight: Math.round(clip.right),
+      point: { x: Math.round((left + right) / 2), y: Math.round(y) },
+      sample: {
+        neighbour: { left: Math.round(rect.left), top: Math.round(rect.top), right: Math.round(rect.right), bottom: Math.round(rect.bottom) },
+        current: { left: Math.round(currentRect.left), top: Math.round(currentRect.top), right: Math.round(currentRect.right), bottom: Math.round(currentRect.bottom) },
+        clip: { left: Math.round(clip.left), top: Math.round(clip.top), right: Math.round(clip.right), bottom: Math.round(clip.bottom) },
+        scrollY: Math.round(window.scrollY),
+      },
+    }
+  }, { at: expectedAt, reader, direction: dx < 0 ? 'next' : 'prev', y: cy })
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] })
+  await wait(400)
+  return state
+}
+
 // matrix(a, b, c, d, e, f) or matrix3d(...); translateX is e / m41.
 function translateXOf(transform) {
   if (!transform || transform === 'none') return 0
@@ -102,8 +175,9 @@ function translateXOf(transform) {
   return parts.length === 16 ? parts[12] : parts[4]
 }
 
-// Swipe, then sample the page-turn state ~60ms after the finger lifts, while
-// the incoming page is still sliding. Returns the phase classes and transform.
+// Swipe, then sample the paging row ~60ms after the finger lifts, while the
+// settle move is still running, and again once it has come to rest. Returns
+// the mid-settle and rested transforms of the row.
 async function dragSampled(page, dx, selector = '.reader-body') {
   const box = await page.locator(selector).boundingBox()
   const viewport = page.viewportSize()
@@ -115,12 +189,14 @@ async function dragSampled(page, dx, selector = '.reader-body') {
   await page.mouse.move(cx + dx, cy, { steps: 5 })
   await page.mouse.up()
   await wait(60)
-  const sample = await page.locator('.reader-page--current').evaluate((el) => ({
-    classes: el.getAttribute('class') || '',
-    transform: getComputedStyle(el).transform,
-  }))
+  const mid = await page
+    .locator('.reader-window')
+    .evaluate((el) => getComputedStyle(el).transform)
   await wait(400)
-  return sample
+  const rested = await page
+    .locator('.reader-window')
+    .evaluate((el) => getComputedStyle(el).transform)
+  return { mid, rested }
 }
 
 async function wordText(page, selector = '.reader-page--current .form-block--default .word') {
@@ -161,6 +237,7 @@ async function cardMotion(page) {
   return page.evaluate(() => {
     const card = document.querySelector('.card--current')
     const inner = document.querySelector('.card--current .card-inner')
+    const row = document.querySelector('.card-window')
     if (!card || !inner) return null
     const cardStyle = getComputedStyle(card)
     const classes = card.getAttribute('class') || ''
@@ -168,6 +245,9 @@ async function cardMotion(page) {
       classes,
       flipped: classes.includes('card--flipped'),
       transform: cardStyle.transform,
+      // The travel itself lives on the paging row, not on the card: the card
+      // carries only its slot offset while the row slides under it.
+      row: row ? getComputedStyle(row).transform : 'none',
       opacity: cardStyle.opacity,
       inner: getComputedStyle(inner).transform,
       title: (document.querySelector('.bar-title')?.textContent || '').trim(),
@@ -197,6 +277,7 @@ async function windowState(page, selectors) {
       currentLeft: currentRect ? Math.round(currentRect.left - box.left) : null,
       currentWidth: currentRect ? Math.round(currentRect.width) : null,
       containerWidth: Math.round(box.width),
+      containerHeight: Math.round(box.height),
       neighboursInside: items.filter((el) => {
         if (el === currentEl) return false
         const rect = el.getBoundingClientRect()
@@ -265,6 +346,28 @@ function isTurnedOff(transform) {
 
 async function readerTitle(page) {
   return (await page.locator('.bar-title').textContent()).trim()
+}
+
+// The top-bar icons come from Lucide and are inlined as SVG at build time:
+// every icon button must carry exactly one Lucide glyph and no leftover text
+// character (the old ← / ⚙ buttons).
+async function iconGlyphs(page, label) {
+  const state = await page.evaluate(() =>
+    [...document.querySelectorAll('.icon-button')].map((button) => ({
+      svg: button.querySelectorAll('svg.lucide').length,
+      text: (button.textContent || '').trim(),
+    })),
+  )
+  check(
+    `${label}: the top-bar icons are Lucide SVG`,
+    state.length > 0 && state.every((b) => b.svg === 1),
+    JSON.stringify(state),
+  )
+  check(
+    `${label}: no text glyph is left in the icon buttons`,
+    state.every((b) => b.text === ''),
+    JSON.stringify(state),
+  )
 }
 
 // The 從 label has to sit on the form control's centre line: its glyph, not
@@ -341,9 +444,10 @@ async function startTrace(page, selector, kind = 'x') {
   )
 }
 
-// Drags, starts sampling while the finger is still down, releases, and waits
-// long enough for both halves of the turn to finish.
-async function swipeTrace(page, dx, gestureSelector, movedSelector) {
+// Drags, samples the paging row's transform while the finger is still down,
+// releases, and traces the settle move frame by frame until it rests. Returns
+// the held transform, the row width and the release-to-rest trace.
+async function dragSettle(page, dx, gestureSelector, rowSelector) {
   const box = await page.locator(gestureSelector).boundingBox()
   const viewport = page.viewportSize()
   const cx = box.x + box.width / 2
@@ -352,60 +456,68 @@ async function swipeTrace(page, dx, gestureSelector, movedSelector) {
   await page.mouse.down()
   await page.mouse.move(cx + dx / 2, cy, { steps: 5 })
   await page.mouse.move(cx + dx, cy, { steps: 5 })
-  await startTrace(page, movedSelector)
+  await wait(40)
+  const held = translateXOf(
+    await page.locator(rowSelector).evaluate((el) => getComputedStyle(el).transform),
+  )
+  // The settle pitch is one item width plus the gap. The item width is the
+  // paging row's own width, not the now full-bleed gesture surface.
+  const rowWidth = await page.locator(rowSelector).evaluate((el) => el.clientWidth)
+  await startTrace(page, rowSelector)
   await page.mouse.up()
   await wait(700)
-  return page.evaluate(() => window.__trace)
+  return {
+    held,
+    width: rowWidth,
+    trace: await page.evaluate(() => window.__trace),
+  }
 }
 
-// The paging motion after revision 14: the item never follows the finger, the
-// release swaps at once, and one decelerating slide brings the incoming item
-// in from the edge. The verdict: nothing moves while the finger is down, the
-// slide runs once and monotonically to rest, and nothing moves after it has
-// settled — the settle frame must be inert, not flash and re-settle.
-function slideVerdict(trace, direction) {
-  const side = direction === 'next' ? 1 : -1
+// The paging motion after the finger-tracking drag: the strip translates with
+// the finger 1:1 while held, the release either finishes the page as one
+// decelerating move to rest or settles the strip back where it started. The
+// verdict: the settle is a single monotonic run to rest on the side the move
+// travels to, and nothing at all moves once it has settled.
+function settleVerdict(trace, { held, side, limit = 260 }) {
   const values = trace.map(([, value]) => value)
-  const moved = Math.max(0, ...values.map(Math.abs))
-  const start = values.findIndex((value) => Math.abs(value) > 1.5)
-  const held = start < 0 ? values : values.slice(0, start)
-  const follow = held.filter((value) => Math.abs(value) > 1.5).length
-  const slide = start < 0 ? [] : values.slice(start)
+  const moved = Math.max(0, ...values.map((value) => Math.abs(value - held)))
+  const start = values.findIndex((value) => Math.abs(value - held) > 2)
+  const settle = start < 0 ? [] : values.slice(start)
   let backwards = 0
   let wrongSide = 0
-  for (let i = 0; i < slide.length; i += 1) {
-    if (slide[i] * side < -1) wrongSide += 1
-    if (i > 0 && Math.abs(slide[i]) - Math.abs(slide[i - 1]) > 2) backwards += 1
+  for (let i = 0; i < settle.length; i += 1) {
+    if (settle[i] * side < -1) wrongSide += 1
+    if (i > 0 && Math.abs(settle[i]) - Math.abs(settle[i - 1]) > 2) backwards += 1
   }
-  const restAt = slide.findIndex((value) => Math.abs(value) <= 1.5)
-  const afterRest = restAt < 0 ? 0 : slide.slice(restAt + 1).filter((value) => Math.abs(value) > 1.5).length
-  const settled = slide.findIndex((value) => Math.abs(value) <= 0.5)
+  const restAt = settle.findIndex((value) => Math.abs(value) <= 1.5)
+  const afterRest = restAt < 0 ? 0 : settle.slice(restAt + 1).filter((value) => Math.abs(value) > 1.5).length
+  const settled = settle.findIndex((value) => Math.abs(value) <= 0.5)
   const settleMs = start < 0 || settled < 0 ? null : Math.round(trace[start + settled][0] - trace[start][0])
   return {
     moved: Math.round(moved * 10) / 10,
-    follow,
+    from: start < 0 ? null : Math.round(settle[0]),
     backwards,
     wrongSide,
     afterRest,
     settleMs,
-    end: Math.round(trace.at(-1)[1]),
+    limit,
+    end: Math.round(trace.at(-1)[1] * 10) / 10,
     frames: trace.length,
   }
 }
 
-// The checks every page turn has to pass now: the drag is invisible, the slide
-// is a single monotonic move from the edge to rest, and the settle is final.
-function checkSlide(label, verdict, settleLimit) {
-  check(`${label}: the item never follows the finger`, verdict.follow === 0, JSON.stringify(verdict))
+// The checks every settle has to pass now: one monotonic move to rest on the
+// right side, and nothing moving after it has settled.
+function checkSettle(label, verdict) {
   check(
-    `${label}: the slide runs once, from the right edge, without reversing`,
+    `${label}: the settle runs once, on its own side, without reversing`,
     verdict.wrongSide === 0 && verdict.backwards === 0,
     JSON.stringify(verdict),
   )
   check(`${label}: nothing moves after the settle`, verdict.afterRest === 0, JSON.stringify(verdict))
   check(
-    `${label}: the slide settles within ${settleLimit}ms`,
-    verdict.settleMs !== null && verdict.settleMs <= settleLimit && Math.abs(verdict.end) <= 0.5,
+    `${label}: the settle finishes within ${verdict.limit}ms`,
+    verdict.settleMs !== null && verdict.settleMs <= verdict.limit && Math.abs(verdict.end) <= 0.5,
     `${verdict.settleMs}ms, end ${verdict.end}px`,
   )
 }
@@ -646,6 +758,12 @@ try {
   await failPage.locator('.loading .footer-link').click()
   check('the loading credit opens the About sheet', (await failPage.locator('.sheet').count()) === 1)
   check('the loading sheet carries the repository link', (await failPage.locator('.sheet-repo').count()) === 1)
+  const issueHref = await failPage.locator('.sheet-issue').getAttribute('href')
+  check(
+    'the issue link points at the issue list, not at a new-issue form',
+    issueHref === 'https://github.com/manesec-web/game-japanese-katsuyou-basic/issues/',
+    String(issueHref),
+  )
   await failPage.locator('.sheet .button').click()
   check('the About sheet closes', (await failPage.locator('.sheet').count()) === 0)
   await failPage.locator('.loading-error .button').click()
@@ -709,6 +827,7 @@ try {
   await page.locator('.home-actions button', { hasText: '字典' }).click()
   await page.waitForSelector('.chip-grid', { timeout: 5000 })
   check('picker shows 50 lesson chips', (await page.locator('.chip-grid .chip').count()) === 50)
+  await iconGlyphs(page, 'picker')
   const chipLabels = await page.locator('.chip-grid .chip').allTextContents()
   check(
     'chips are labelled 第N課',
@@ -870,6 +989,7 @@ try {
   await page.locator('.chip', { hasText: '第5課' }).click()
   await page.locator('.picker-start').click()
   await page.waitForSelector('.reader-body', { timeout: 5000 })
+  await iconGlyphs(page, 'dictionary')
   check('reader title counts items', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
   check('reader lists all 15 forms', (await page.locator('.reader-page--current .form-block').count()) === 15, String(await page.locator('.reader-page--current .form-block').count()))
   check('every form has three sentence pairs', (await page.locator('.reader-page--current .form-block .sentence').count()) === 45)
@@ -1020,31 +1140,45 @@ try {
   })
   check('the reader footer keeps 10px under the controls', bottomGaps.reader === 10, JSON.stringify(bottomGaps))
 
-  // A drag below the threshold is invisible by design: nothing follows the
-  // finger and nothing springs back, so nothing moves at all.
-  await drag(page, 40)
-  check('a 40px drag changes nothing', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  // A drag below the threshold follows the finger and settles back: the word
+  // never changes, and the strip rests where it started. The drag runs on the
+  // open side of the first word — a backward drag there is the wall below.
+  const shortDrag = await dragSettle(page, -55, '.reader-body', '.reader-window')
+  check('a 55px drag follows the finger', Math.abs(shortDrag.held + 55) < 3, String(shortDrag.held))
+  const shortVerdict = settleVerdict(shortDrag.trace, { held: shortDrag.held, side: -1 })
+  check(
+    'a 55px drag settles back without reversing',
+    shortVerdict.backwards === 0 && shortVerdict.wrongSide === 0,
+    JSON.stringify(shortVerdict),
+  )
+  check('a 55px drag settles back to rest', Math.abs(shortVerdict.end) <= 0.5, JSON.stringify(shortVerdict))
+  check('a 55px drag keeps the word', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
 
-  // Right-to-left advances: the swap is direct and the new word slides in
-  // from the right edge.
+  // Right-to-left advances: the strip follows the finger, then finishes the
+  // page in one decelerating move and swaps the word under it.
   const forward = await dragSampled(page, -120)
   check('a right-to-left swipe advances', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
-  check('the incoming page slides in from the right', forward.classes.includes('reader-page--enter-next'), forward.classes)
   check(
-    'the page slide is flat, not a 3D matrix',
-    !forward.transform.includes('matrix3d') && forward.transform !== 'none',
-    forward.transform,
+    'the settle is still running 60ms after release',
+    translateXOf(forward.mid) > 0.5 && translateXOf(forward.mid) < 400,
+    forward.mid,
+  )
+  check(
+    'the settle move is flat, not a 3D matrix',
+    !forward.mid.includes('matrix3d') && forward.mid !== 'none',
+    forward.mid,
   )
   // translateX only: the x value carries the move and the y value stays zero.
-  const turnSlide = /matrix\(1, 0, 0, 1, ([^,]+), ([^)]+)\)/.exec(forward.transform)
+  const turnSlide = /matrix\(1, 0, 0, 1, ([^,]+), ([^)]+)\)/.exec(forward.mid)
   check(
-    'the incoming page moves only along x',
-    turnSlide !== null && Math.abs(Number(turnSlide[2])) < 1e-6 && Math.abs(Number(turnSlide[1])) > 1,
-    forward.transform,
+    'the strip moves only along x',
+    turnSlide !== null && Math.abs(Number(turnSlide[2])) < 1e-6,
+    forward.mid,
   )
+  check('the settle comes to rest', Math.abs(translateXOf(forward.rested)) <= 0.5, forward.rested)
   check(
-    'the entering page does not fade',
-    (await page.locator('.reader-page--current').evaluate((el) => getComputedStyle(el).opacity)) === '1' || forward.transform === 'none',
+    'the moving page does not fade',
+    (await page.locator('.reader-page--current').evaluate((el) => getComputedStyle(el).opacity)) === '1',
   )
   const readerPerspective = await page
     .locator('.reader-body')
@@ -1059,29 +1193,54 @@ try {
 
   const backward = await dragSampled(page, 120)
   check('a left-to-right swipe goes back', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
-  check('going back slides in from the left', backward.classes.includes('reader-page--enter-prev'), backward.classes)
+  check('the settle returns from the left', translateXOf(backward.mid) < -0.5, backward.mid)
 
-  // The turn judged as a curve: no follow while held, one monotonic slide
-  // from the edge, and nothing at all after it settles.
-  const readerStill = slideVerdict(await swipeTrace(page, 55, '.reader-body', '.reader-page--current'), 'next')
-  check('a 55px drag never moves the page', readerStill.moved <= 1.5, JSON.stringify(readerStill))
-  check('a 55px drag keeps the word', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
-  const readerTurn = slideVerdict(await swipeTrace(page, -120, '.reader-body', '.reader-page--current'), 'next')
+  const readerNextNeighbour = await dragNeighbour(page, -120, 1, 'reader')
+  check(
+    'a leftward dictionary drag reveals the next word with a 24px gap',
+    readerNextNeighbour.visible && readerNextNeighbour.hit && readerNextNeighbour.gap === 24 &&
+      readerNextNeighbour.clipFillsViewport,
+    JSON.stringify(readerNextNeighbour),
+  )
+  check('the revealed dictionary neighbour becomes current', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
+  const readerPrevNeighbour = await dragNeighbour(page, 120, 0, 'reader')
+  check(
+    'a rightward dictionary drag reveals the previous word with a 24px gap',
+    readerPrevNeighbour.visible && readerPrevNeighbour.hit && readerPrevNeighbour.gap === 24 &&
+      readerPrevNeighbour.clipFillsViewport,
+    JSON.stringify(readerPrevNeighbour),
+  )
+  check('the previous dictionary neighbour becomes current', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+
+  // The turn judged as a curve: the strip follows the finger while held, then
+  // settles once into the next word and never moves again.
+  const readerTurn = await dragSettle(page, -120, '.reader-body', '.reader-window')
+  check('the strip follows the finger while held', Math.abs(readerTurn.held + 120) < 3, String(readerTurn.held))
+  const turnVerdict = settleVerdict(readerTurn.trace, { held: readerTurn.held, side: 1 })
   check('the traced swipe advances', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
-  checkSlide('dictionary page turn', readerTurn, 260)
+  check(
+    'the settle continues where the finger left the strip',
+    turnVerdict.from !== null && Math.abs(turnVerdict.from - (readerTurn.width + 24 - 120)) < 30,
+    JSON.stringify(turnVerdict),
+  )
+  checkSettle('dictionary page turn', turnVerdict)
 
   // The first and the last word have nothing beyond them: a drag towards the
   // edge they sit on is completely still and never changes the word.
   await drag(page, 120)
   check('a back swipe returns to the first word', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
-  const firstWall = slideVerdict(await swipeTrace(page, 120, '.reader-body', '.reader-page--current'), 'prev')
-  check('the first word never moves backward', firstWall.moved <= 1.5, JSON.stringify(firstWall))
+  const firstWall = await dragSettle(page, 120, '.reader-body', '.reader-window')
+  const firstVerdict = settleVerdict(firstWall.trace, { held: firstWall.held, side: 1 })
+  check('the first word never follows a backward drag', Math.abs(firstWall.held) < 1, String(firstWall.held))
+  check('the first word never moves backward', firstVerdict.moved <= 1.5, JSON.stringify(firstVerdict))
   check('a stayed first word keeps its place', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
   await drag(page, -120)
   await drag(page, -120)
   check('two forward swipes reach the last word', (await readerTitle(page)) === '學習（3/3）', await readerTitle(page))
-  const lastWall = slideVerdict(await swipeTrace(page, -120, '.reader-body', '.reader-page--current'), 'next')
-  check('the last word never moves forward', lastWall.moved <= 1.5, JSON.stringify(lastWall))
+  const lastWall = await dragSettle(page, -120, '.reader-body', '.reader-window')
+  const lastVerdict = settleVerdict(lastWall.trace, { held: lastWall.held, side: -1 })
+  check('the last word never follows a forward drag', Math.abs(lastWall.held) < 1, String(lastWall.held))
+  check('the last word never moves forward', lastVerdict.moved <= 1.5, JSON.stringify(lastVerdict))
   check('a stayed last word keeps its place', (await readerTitle(page)) === '學習（3/3）', await readerTitle(page))
   await drag(page, 120)
   await drag(page, 120)
@@ -1113,6 +1272,7 @@ try {
 
   await page.locator('.icon-button[aria-label="設定"]').click()
   await page.waitForSelector('.settings', { timeout: 5000 })
+  await iconGlyphs(page, 'settings')
   check('settings shows 預設顯示形式', (await page.locator('.row-label').first().textContent()).trim() === '預設顯示形式')
   check('settings shows 顯示平假名注音', (await page.locator('.row-label', { hasText: '顯示平假名注音' }).count()) === 1)
   const switchBox = await page.locator('.switch').first().boundingBox()
@@ -1140,6 +1300,93 @@ try {
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   check('default form persisted after reload', (await wordText(page)) === '行って', await wordText(page))
   check('reading-off setting persisted', (await page.locator('.reader-page--current rt').count()) === 0)
+
+  // Dictionary layout and the note layer: the word, the gloss and the tag row
+  // sit centred in the block; the note and the example sentences keep the
+  // reading edge. The form's note rides above the sentences in its own
+  // colour, and a form flagged error_usage has its word struck through twice
+  // with the colour left alone.
+  await page.reload({ waitUntil: 'load' })
+  await page.waitForSelector('.home-actions', { timeout: 30000 })
+  await page.locator('.home-actions button', { hasText: '字典' }).click()
+  await page.waitForSelector('.chip-grid', { timeout: 5000 })
+  for (const chip of await page.locator('.chip-grid .chip').all()) {
+    const label = (await chip.textContent()).trim()
+    const on = ((await chip.getAttribute('class')) || '').includes('chip--on')
+    const want = label === '第10課' || label === '第11課'
+    if (on !== want) await chip.click()
+  }
+  await page.locator('.picker-start').click()
+  await page.waitForSelector('.reader-body', { timeout: 5000 })
+
+  const layout = await page.evaluate(() => {
+    const block = document.querySelector('.reader-page--current .form-block--default')
+    const style = (selector) => getComputedStyle(block.querySelector(selector))
+    return {
+      word: style('.word').textAlign,
+      gloss: style('.gloss').textAlign,
+      tags: style('.tags').justifyContent,
+      sentence: style('.sentence-ja').textAlign,
+    }
+  })
+  check('the word is centred in its block', layout.word === 'center', layout.word)
+  check('the gloss is centred in its block', layout.gloss === 'center', layout.gloss)
+  check('the tag row is centred in its block', layout.tags === 'center', layout.tags)
+  check('the example sentences keep the reading edge', layout.sentence !== 'center', layout.sentence)
+
+  let noteSeen = null
+  let errorSeen = null
+  for (let step = 0; step < 5; step += 1) {
+    const found = await page.evaluate(() => {
+      const result = {}
+      for (const block of document.querySelectorAll('.reader-page--current .form-block')) {
+        const note = block.querySelector('.note-line')
+        const sentences = block.querySelector('.block')
+        if (note && sentences && !result.note) {
+          result.note = {
+            text: note.textContent.trim().slice(0, 24),
+            color: getComputedStyle(note).color,
+            align: getComputedStyle(note).textAlign,
+            beforeSentences: Boolean(
+              note.compareDocumentPosition(sentences) & Node.DOCUMENT_POSITION_FOLLOWING,
+            ),
+          }
+        }
+        const struck = block.querySelector('.word--error')
+        if (struck && !result.error) {
+          const style = getComputedStyle(struck)
+          result.error = {
+            text: struck.textContent.trim(),
+            line: style.textDecorationLine,
+            style: style.textDecorationStyle,
+            color: style.color,
+            hasNote: Boolean(block.querySelector('.note-line')),
+            hasSentences: Boolean(block.querySelector('.block')),
+          }
+        }
+      }
+      return result
+    })
+    if (found.note && !noteSeen) noteSeen = found.note
+    if (found.error && !errorSeen) errorSeen = found.error
+    if (noteSeen && errorSeen) break
+    if (step < 4) {
+      await page.locator('.controls-button').nth(1).click()
+      await wait(460)
+    }
+  }
+  check('a form note rides above the example sentences', noteSeen?.beforeSentences === true, JSON.stringify(noteSeen))
+  check('the note is marked with its own colour', noteSeen?.color === 'rgb(180, 83, 9)', noteSeen?.color ?? 'none')
+  check('the note keeps the reading edge', noteSeen?.align !== 'center', noteSeen?.align ?? 'none')
+  check('an error_usage form is found in the reader', errorSeen !== null, JSON.stringify(errorSeen))
+  check(
+    'the error word is struck through twice',
+    errorSeen?.line === 'line-through' && errorSeen?.style === 'double',
+    JSON.stringify(errorSeen),
+  )
+  check('the error word keeps its colour', errorSeen?.color === 'rgb(36, 33, 58)', errorSeen?.color ?? 'none')
+  check('the error form carries its note', errorSeen?.hasNote === true, JSON.stringify(errorSeen))
+  check('the error form has no example sentences', errorSeen?.hasSentences === false, JSON.stringify(errorSeen))
 
   // T6 flashcards.
   await page.reload({ waitUntil: 'load' })
@@ -1179,6 +1426,7 @@ try {
   check('開始 sits 20px clear of the window edge', startBottomGap === 20, String(startBottomGap))
   await page.locator('.picker-start').click()
   await page.waitForSelector('.card-stage', { timeout: 5000 })
+  await iconGlyphs(page, 'cards')
   check('card title counts cards', (await page.locator('.bar-title').textContent()).trim() === '練習（1/3）')
   const cardControls = (await page.locator('.card-controls .control').allTextContents()).map((t) => t.trim())
   check(
@@ -1269,22 +1517,36 @@ try {
     (await page.locator('.bar-title').textContent()).trim(),
   )
 
-  // The same curve check as the reader, on the card: no follow while held,
-  // one monotonic slide from the edge, and nothing after it settles.
-  const cardStill = slideVerdict(await swipeTrace(page, 55, '.card-stage', '.card--current'), 'next')
-  check('a 55px card drag never moves the card', cardStill.moved <= 1.5, JSON.stringify(cardStill))
+  // The same curve check as the reader, on the card: the strip follows the
+  // finger while held and settles once, and nothing moves after it.
+  const cardStill = await dragSettle(page, -55, '.card-stage', '.card-window')
+  const cardStillVerdict = settleVerdict(cardStill.trace, { held: cardStill.held, side: -1 })
+  check('a 55px card drag follows the finger', Math.abs(cardStill.held + 55) < 3, String(cardStill.held))
+  check(
+    'a 55px card drag settles back without reversing',
+    cardStillVerdict.backwards === 0 && cardStillVerdict.wrongSide === 0,
+    JSON.stringify(cardStillVerdict),
+  )
   check('a 55px card drag keeps the card', (await page.locator('.bar-title').textContent()).trim() === '練習（1/3）')
-  const cardTurn = slideVerdict(await swipeTrace(page, -120, '.card-stage', '.card--current'), 'next')
+  const cardTurn = await dragSettle(page, -120, '.card-stage', '.card-window')
+  const cardTurnVerdict = settleVerdict(cardTurn.trace, { held: cardTurn.held, side: 1 })
+  check('the card strip follows the finger while held', Math.abs(cardTurn.held + 120) < 3, String(cardTurn.held))
   check('the traced card swipe advances', (await page.locator('.bar-title').textContent()).trim() === '練習（2/3）')
-  checkSlide('card turn', cardTurn, 260)
+  check(
+    'the card settle continues where the finger left the strip',
+    cardTurnVerdict.from !== null && Math.abs(cardTurnVerdict.from - (cardTurn.width + 24 - 120)) < 30,
+    JSON.stringify(cardTurnVerdict),
+  )
+  checkSettle('card turn', cardTurnVerdict)
   await drag(page, 120, 0, '.card-stage')
   check('the traced card swipe came back', (await page.locator('.bar-title').textContent()).trim() === '練習（1/3）')
 
-  // 下一張 / 上一張 run the same direct swap plus one short slide as a swipe.
+  // 下一張 / 上一張 run the same settle move as a swipe: the strip carries the
+  // old card out and the new one in from the edge.
   await page.locator('.card-controls .control').nth(1).click()
   await wait(70)
-  const enteringClasses = (await page.locator('.card--current').getAttribute('class')) || ''
-  check('下一張 slides the incoming card in', enteringClasses.includes('card--enter-next'), enteringClasses)
+  const nextMid = await page.locator('.card-window').evaluate((el) => getComputedStyle(el).transform)
+  check('下一張 slides the strip through', translateXOf(nextMid) > 0.5 && translateXOf(nextMid) < 400, nextMid)
   const enteringOverflow = await horizontalOverflow(page)
   check(
     'the sliding card widens no scroll while it travels',
@@ -1296,8 +1558,8 @@ try {
 
   await page.locator('.card-controls .control').nth(0).click()
   await wait(70)
-  const backClasses = (await page.locator('.card--current').getAttribute('class')) || ''
-  check('上一張 slides in from the other edge', backClasses.includes('card--enter-prev'), backClasses)
+  const backMid = await page.locator('.card-window').evaluate((el) => getComputedStyle(el).transform)
+  check('上一張 slides in from the other side', translateXOf(backMid) < -0.5, backMid)
   // This direction sticks out to the right, which is the axis a browser can
   // actually scroll: the clip is what keeps the page from widening.
   const prevOverflow = await horizontalOverflow(page)
@@ -1333,8 +1595,8 @@ try {
   )
   check(
     'the incoming card travels flat',
-    isFlatTranslate(leaveEarly.transform) && isFlatTranslate(leaveLate.transform),
-    `${leaveEarly.transform} | ${leaveLate.transform}`,
+    isFlatTranslate(leaveEarly.row) && isFlatTranslate(leaveLate.row),
+    `${leaveEarly.row} | ${leaveLate.row}`,
   )
   check(
     'the incoming card does not fade',
@@ -1350,8 +1612,8 @@ try {
   )
   check(
     'the entering card slides flat and does not fade',
-    isFlatTranslate(enterNext.transform) && enterNext.opacity === '1',
-    `${enterNext.transform} | ${enterNext.opacity}`,
+    isFlatTranslate(enterNext.row) && enterNext.opacity === '1',
+    `${enterNext.row} | ${enterNext.opacity}`,
   )
   await wait(300)
   const settledNext = await cardMotion(page)
@@ -1387,11 +1649,11 @@ try {
   )
   check(
     'the card going back travels flat without fading',
-    isFlatTranslate(backEarly.transform) &&
-      isFlatTranslate(backLate.transform) &&
+    isFlatTranslate(backEarly.row) &&
+      isFlatTranslate(backLate.row) &&
       backEarly.opacity === '1' &&
       backLate.opacity === '1',
-    `${backEarly.transform} | ${backLate.transform} | ${backEarly.opacity} | ${backLate.opacity}`,
+    `${backEarly.row} | ${backLate.row} | ${backEarly.opacity} | ${backLate.opacity}`,
   )
   await wait(130)
   const enterPrev = await cardMotion(page)
@@ -1402,8 +1664,8 @@ try {
   )
   check(
     'the entering previous card slides flat and does not fade',
-    isFlatTranslate(enterPrev.transform) && enterPrev.opacity === '1',
-    `${enterPrev.transform} | ${enterPrev.opacity}`,
+    isFlatTranslate(enterPrev.row) && enterPrev.opacity === '1',
+    `${enterPrev.row} | ${enterPrev.opacity}`,
   )
   await wait(300)
   check(
@@ -1509,6 +1771,11 @@ try {
   )
   check('the emoji is a single one, never a row', !String(practiceFigure?.text).includes(' '), String(practiceFigure?.text))
   check('the figure sits above the congrats line', practiceFigure?.aboveTitle === true)
+  check(
+    'the completion emoji is drawn large',
+    parseFloat(practiceFigure?.fontSize ?? 0) >= 56,
+    String(practiceFigure?.fontSize),
+  )
   check('card completion has no confetti', (await page.locator('.confetti-piece').count()) === 0)
   check(
     'card completion offers a 60px 返回主頁',
@@ -1536,6 +1803,7 @@ try {
   await page.locator('.form-option', { hasText: /^ます形$/ }).click()
   await page.locator('.picker-start').click()
   await page.waitForSelector('.quiz-body', { timeout: 5000 })
+  await iconGlyphs(page, 'quiz')
   check('quiz title counts items', (await page.locator('.bar-title').textContent()).trim() === '練習（1/3）')
   const quizPrompt = await wordText(page, '.prompt .word')
   const quizVerb = byMasu(quizPrompt)
@@ -1658,6 +1926,7 @@ try {
     return {
       percent: document.querySelector('.percent')?.textContent.trim() ?? '',
       emoji: emoji ? emoji.textContent.trim().split(/\s+/) : [],
+      emojiSize: emoji ? getComputedStyle(emoji).fontSize : '0px',
       confetti: document.querySelectorAll('.confetti-piece').length,
       homeHeight: home ? home.height : 0,
     }
@@ -1666,6 +1935,11 @@ try {
     SCORE_BANDS.find((entry) => entry.percent === Math.min(100, Math.floor(parseInt(band.percent, 10) / 10) * 10)) ??
     SCORE_BANDS[0]
   check('quiz completion shows one score emoji', band.emoji.length === 1, band.emoji.join('|'))
+  check(
+    'the quiz completion emoji is drawn large too',
+    parseFloat(band.emojiSize) >= 56,
+    band.emojiSize,
+  )
   check(
     'the score emoji come from the matching band',
     band.emoji.every((emoji) => expectedBand.emojis.includes(emoji)),
@@ -1814,6 +2088,12 @@ try {
     `href=${href}`,
   )
   check('repository link opens in a new tab', target === '_blank', `target=${target}`)
+  const homeIssueHref = await page.locator('.sheet-link.sheet-issue').getAttribute('href')
+  check(
+    'the home sheet issue link points at the issue list too',
+    homeIssueHref === 'https://github.com/manesec-web/game-japanese-katsuyou-basic/issues/',
+    String(homeIssueHref),
+  )
 
   if (WANT_SHOTS) {
     await page.screenshot({ path: path.join(SHOT_DIR, 'footer-sheet.png') })
@@ -1904,7 +2184,7 @@ try {
   const afterSwipe = await readerTitle(page)
   check('reduced motion still changes the item on swipe', afterSwipe !== beforeSwipe, `${beforeSwipe} -> ${afterSwipe}`)
   const pageTransform = await page
-    .locator('.reader-page--current')
+    .locator('.reader-window')
     .evaluate((el) => getComputedStyle(el).transform)
   check('reduced motion does not leave the page offset', pageTransform === 'none' || pageTransform === 'matrix(1, 0, 0, 1, 0, 0)', pageTransform)
   // Reduced motion must also work for cards (3 cards in lesson 5).
@@ -1921,7 +2201,7 @@ try {
   await drag(page, -120, 0, '.card-stage')
   const afterCard = (await page.locator('.bar-title').textContent()).trim()
   check('reduced motion changes cards on swipe', beforeCard !== afterCard, `${beforeCard} -> ${afterCard}`)
-  const cardTransform = await page.locator('.card--current').evaluate((el) => getComputedStyle(el).transform)
+  const cardTransform = await page.locator('.card-window').evaluate((el) => getComputedStyle(el).transform)
   check('reduced motion leaves the card at rest', cardTransform === 'none' || cardTransform === 'matrix(1, 0, 0, 1, 0, 0)', cardTransform)
 
   const flipDuration = await page
@@ -1931,9 +2211,16 @@ try {
   await wait(60)
   check('reduced motion flips instantly', await cardFlipped(page))
   check('reduced motion removes the flip transition', flipDuration === '0s', flipDuration)
-  // The last card ends the run on a swipe, not only on the button. Its own page
-  // keeps the card run here independent of the walk-through's card section.
-  const cardPage = await browser.newPage({ viewport: { width: 390, height: 844 } })
+  // The last card ends the run on a swipe, not only on the button. Its own
+  // touch-capable phone context keeps the card run independent and exercises
+  // the same pointer path as a finger, not only a desktop mouse.
+  const cardTouchContext = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    deviceScaleFactor: 3,
+    isMobile: true,
+    hasTouch: true,
+  })
+  const cardPage = await cardTouchContext.newPage()
   await cardPage.goto(BASE, { waitUntil: 'load' })
   await cardPage.waitForSelector('.home-actions', { timeout: 60000 })
 
@@ -1949,6 +2236,39 @@ try {
 
   await startCardRun()
   check('the swipe finish run starts on the first card', (await cardTitle()) === '練習（1/3）', await cardTitle())
+
+  // Regression: the row used to follow the finger while its zero-height clip
+  // and raised current slot kept every neighbour invisible. Measure the actual
+  // exposed face in both directions before release, not just the row transform.
+  const nextNeighbour = await dragNeighbour(cardPage, -120, 1)
+  check(
+    'a leftward touch drag reveals the next card in the exposed edge',
+    nextNeighbour.mounted && nextNeighbour.visible && nextNeighbour.exposedWidth > 75 &&
+      nextNeighbour.hit && nextNeighbour.gap === 24 && nextNeighbour.clipFillsViewport,
+    JSON.stringify(nextNeighbour),
+  )
+  check('the revealed next card becomes current on release', (await cardTitle()) === '練習（2/3）', await cardTitle())
+  check('the touch-paged card opens on its face', !(await cardFlipped(cardPage)))
+
+  const previousNeighbour = await dragNeighbour(cardPage, 120, 0)
+  check(
+    'a rightward touch drag reveals the previous card in the exposed edge',
+    previousNeighbour.mounted && previousNeighbour.visible && previousNeighbour.exposedWidth > 75 &&
+      previousNeighbour.hit && previousNeighbour.gap === 24 && previousNeighbour.clipFillsViewport,
+    JSON.stringify(previousNeighbour),
+  )
+  check('the revealed previous card becomes current on release', (await cardTitle()) === '練習（1/3）', await cardTitle())
+
+  const shortNeighbour = await dragNeighbour(cardPage, -55, 1)
+  check(
+    'a short drag also reveals the next card while held',
+    shortNeighbour.mounted && shortNeighbour.visible && shortNeighbour.exposedWidth > 25 &&
+      shortNeighbour.hit && shortNeighbour.gap === 24 && shortNeighbour.clipFillsViewport,
+    JSON.stringify(shortNeighbour),
+  )
+  check('a short touch drag settles back to the same card', (await cardTitle()) === '練習（1/3）', await cardTitle())
+  const shortRest = await cardPage.locator('.card-window').evaluate((el) => getComputedStyle(el).transform)
+  check('a short touch drag leaves no residual offset', Math.abs(translateXOf(shortRest)) < 1, shortRest)
 
   // The first card has nothing behind it: a right-hand drag is completely
   // still — the card never follows the finger, so nothing springs back. The
@@ -1999,7 +2319,7 @@ try {
   check('the swipe finish offers 返回主頁', (await cardPage.locator('.complete-home').count()) === 1)
   check(
     'the finished card does not slide another card in',
-    (await cardPage.locator('.card--enter-next, .card--enter-prev').count()) === 0,
+    (await cardPage.locator('.card-window').count()) === 0,
   )
 
   // Reduced motion: no slide to wait for, but the same rule applies.
@@ -2011,7 +2331,7 @@ try {
   check('reduced motion leaves the first card still', (await cardTitle()) === '練習（1/3）', await cardTitle())
   check(
     'reduced motion does not move the first card at all',
-    translateXOf(await cardPage.locator('.card--current').evaluate((el) => getComputedStyle(el).transform)) === 0,
+    translateXOf(await cardPage.locator('.card-window').evaluate((el) => getComputedStyle(el).transform)) === 0,
   )
   await drag(cardPage, -120, 0, '.card-stage')
   check('reduced motion still advances a card', (await cardTitle()) === '練習（2/3）', await cardTitle())
@@ -2030,6 +2350,7 @@ try {
   )
   await cardPage.emulateMedia({ reducedMotion: null })
   await cardPage.close()
+  await cardTouchContext.close()
 
   // The paging window itself: 5 words mounted in the dictionary, 9 cards in
   // 翻卡學習, the current item in the 3rd slot and on screen, and a turn that
@@ -2144,6 +2465,11 @@ try {
   const cardWindow = await windowState(windowPage, cardSelectors)
   check('the card run mounts nine slots', cardWindow.slots === 9, String(cardWindow.slots))
   check('the card run shows one current card', cardWindow.currents === 1, String(cardWindow.currents))
+  check(
+    'the card window has a real paint height',
+    cardWindow.containerHeight >= 340,
+    JSON.stringify({ height: cardWindow.containerHeight, width: cardWindow.containerWidth }),
+  )
   check(
     'the card current sits in the 3rd slot and fills it',
     cardWindow.currentLeft === 0 && cardWindow.currentWidth === cardWindow.containerWidth,

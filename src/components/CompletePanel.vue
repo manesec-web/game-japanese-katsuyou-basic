@@ -149,9 +149,11 @@ function home() {
   }
 }
 
+/* The congratulation emoji is the piece of colour on the panel: big enough
+   to read as the drawing it is, not a stray character in the title's line. */
 .complete-emoji {
   margin: 0;
-  font-size: 2rem;
+  font-size: 4rem;
   line-height: 1.1;
 }
 

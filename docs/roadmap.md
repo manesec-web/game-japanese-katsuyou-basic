@@ -162,11 +162,41 @@ only how many items are already laid out when the swap happens.
 | 15e | 前刪後補 proven at DOM level, not just in unit tests | done | 第4課 (6 words) and 第6課 (11 verbs) walk-throughs: the window slides one slot per turn, the front node leaves, exactly one node arrives at the back, survivors keep their identity marker |
 | 15f | Verification and docs | done | `npm test` 24 files / 234 tests; `npm run build` ok (`output/dict/` = 50, `output/index.html`); `node scripts/browser-check.mjs` 411 checks passing; spec, changelog, progress, architecture, README, roadmap and AGENTS synced |
 
+### Revision 16 — finger-tracking drag, Lucide, notes, docs pass (requested 2026-11-11)
+
+The user review named seven items (quoted in `docs/changelog.md`), headed by
+“單詞和字典的動畫不跟手，按住無法實現跟手的拖動（*重要”. Questionnaire answers:
+dictionary **and** 翻卡 get the finger-tracking drag, the icon library is
+Lucide (npm, inline SVG), and both note kinds are shown. This supersedes
+revision 14's invisible drag and slide-in.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 16a | Finger-tracking drag in 字典 + 翻卡: strip follows the finger 1:1 while held (clamped to one item width), release past 72px finishes the page as one ~190ms settle from where the finger left it, sub-threshold releases settle back, walls (first card, first/last word) stay completely still at any distance; first-card rule, last-card finish and reduced motion unchanged | done | `src/ui/drag.test.js` 9 tests (axis slop, 1:1 follow, clamp, walls, release naming); browser check `settleVerdict` traces: held≈dx, settle continues from `width − 120`, one monotonic move to rest, `nothing moves after the settle`, walls at 0px; `docs/spec.md` paging clauses rewritten first |
+| 16b | `←` / `⚙` glyphs replaced by Lucide (`ArrowLeft`, `Settings`) in all five views, inlined at build time | done | `lucide-vue-next` in the bundle (no CDN); browser check `iconGlyphs` on picker/dictionary/settings/cards/quiz: one `svg.lucide` per icon button, no text glyph left |
+| 16c | Completion emoji enlarged (2rem → 4rem) | done | browser check `the completion emoji is drawn large` ≥ 56px on card and quiz completion |
+| 16d | Dictionary block: word / gloss / tags centred; form `note` above 例句 and sentence notes under the Chinese line, both in the `--note` colour and left-aligned; `error_usage` words get a double strikethrough with no colour change and no 例句 block | done | `reader-forms.test.js` +5 (note/error_usage passthrough); browser check: centring, note above sentences in `rgb(180, 83, 9)`, `line-through` + `double` in the ink colour, error forms without sentences; `vol/` untouched |
+| 16e | 提交ISSUE links to `.../issues/` (the issue list), no longer to the new-issue form | done | browser check on both About sheets; `grep` finds no new-issue-form URL in docs/src/scripts |
+| 16f | Docs pass (spec, changelog, progress, roadmap, architecture, AGENTS) and `README.md` rewritten to reference `docs/` | done | this board; `docs/changelog.md` 2026-11-11 entry; counts synced at 241 tests / 443 checks |
+
+### Revision 17 — card neighbours render, 24px gap, full-bleed paging
+
+The user reported the card follow without neighbours (「練習的卡片跟手但是滑動沒有出現
+其他的卡片」) and the side-padding gutter during a drag (「卡片拖動到左邊的時候，可以
+看到有column的padding 拖動的時候很醜；字典是否也可以這樣做？」).
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 17a | Card paging window paints its neighbours: real minimum height replaces the zero-height `height:100%`, slot faces hit-testable, no raised current slot | done | touch probe hits the neighbour's own face during a held drag (`elementFromPoint`), not just a visible transform; the zero-height clip is documented in `docs/changelog.md` |
+| 17b | 24px inter-item gap on both screens, outside the item (fixed px, not a viewport %) | done | `src/ui/window.test.js` +1 and `window-views.test.js` geometry; browser check `dragNeighbour.gap === 24` both directions; settle pitch reads the row width |
+| 17c | Full-bleed paging surface while dragging: `--page-gutter` on the column, negative margins on the stage/body, content-width window inside | done | browser check `clipFillsViewport` during the held drag on card and dictionary; at-rest geometry unchanged (`currentLeft === 0`, content fills the window) |
+
 ## Current status
 
-- Everything above is `done`; latest verification was 24 test files / 234
-  tests, a build with 50 dictionary files, and 411 browser checks (410–411,
-  because the seeded quiz item decides how many kana-key assertions run).
+- Everything above is `done`; latest verification was 25 test files / 242
+  tests, a build with 50 dictionary files, and 456 browser checks (the count
+  can move by one because the seeded quiz item decides how many kana-key
+  assertions run).
 - Backlog items B1–B3 are `pending` and have no spec entry yet.
 - No known deviation from `docs/spec.md` other than the spec-silent choices
   listed in `docs/progress.md`.
@@ -186,10 +216,10 @@ only how many items are already laid out when the swap happens.
 ## Verification commands
 
 ```bash
-npm test                                # Vitest unit tests (24 files / 234)
+npm test                                # Vitest unit tests (25 files / 242)
 npm run build                           # static build into output/ (50 dict files)
 node scripts/write-sha256.mjs --check   # manifest consistency
-node scripts/browser-check.mjs          # headless Chromium walk-through (411 checks)
+node scripts/browser-check.mjs          # headless Chromium walk-through (456 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 ```
 

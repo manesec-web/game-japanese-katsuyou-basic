@@ -1,5 +1,6 @@
 <script setup>
 import { computed, inject, ref } from 'vue'
+import { ArrowLeft } from 'lucide-vue-next'
 import { FORMS, formName } from '../dict/forms.js'
 import { canStart, nextSelectAllTargets, startHint } from '../dict/settings.js'
 import { EMPTY_LESSON_HINT, selectAllLabel } from '../dict/lessons.js'
@@ -49,7 +50,7 @@ function back() {
 <template>
   <section class="picker">
     <header class="bar bar--sticky">
-      <button class="icon-button" type="button" aria-label="返回" @click="back">←</button>
+      <button class="icon-button" type="button" aria-label="返回" @click="back"><ArrowLeft :size="22" aria-hidden="true" /></button>
       <h1 class="bar-title">詞彙</h1>
     </header>
 
@@ -172,7 +173,9 @@ function back() {
   border: 0;
   background: transparent;
   color: var(--ink);
-  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 48px;
   height: 48px;
   border-radius: 12px;

@@ -211,17 +211,17 @@ try {
   await page.locator('.picker-start').click()
   await page.waitForSelector('.reader-page', { timeout: 5000 })
 
-  console.log('\n== reader transitions at rest')
+  console.log('\n== reader paging row at rest')
   console.log(
     '  ',
-    await page.locator('.reader-page').evaluate((el) => {
+    await page.locator('.reader-window').evaluate((el) => {
       const s = getComputedStyle(el)
       return `transition=${s.transitionProperty} ${s.transitionDuration} ${s.transitionTimingFunction}`
     }),
   )
 
   await dragWith(page, '.reader-body', 60, false)
-  await startSampler(page, '.reader-page', READ_X)
+  await startSampler(page, '.reader-window', READ_X)
   await page.mouse.up()
   await wait(700)
   const below = (await collect(page)).map(([t, v]) => [t, txOf(v)])
@@ -230,7 +230,7 @@ try {
   // 3. Reader: drag 120px (past the threshold) and release.
   await wait(400)
   await dragWith(page, '.reader-body', -120, false)
-  await startSampler(page, '.reader-page', READ_X)
+  await startSampler(page, '.reader-window', READ_X)
   await page.mouse.up()
   await wait(900)
   const above = (await collect(page)).map(([t, v]) => [t, txOf(v)])
@@ -269,7 +269,7 @@ try {
   )
 
   await dragWith(page, '.card-stage', 60, false)
-  await startSampler(page, '.card', READ_X)
+  await startSampler(page, '.card-window', READ_X)
   await page.mouse.up()
   await wait(700)
   const cardBelow = (await collect(page)).map(([t, v]) => [t, txOf(v)])
@@ -278,7 +278,7 @@ try {
   // Card past the threshold: the same leave-then-enter handover as the reader.
   await wait(400)
   await dragWith(page, '.card-stage', -120, false)
-  await startSampler(page, '.card', READ_X)
+  await startSampler(page, '.card-window', READ_X)
   await page.mouse.up()
   await wait(900)
   const cardAbove = (await collect(page)).map(([t, v]) => [t, txOf(v)])

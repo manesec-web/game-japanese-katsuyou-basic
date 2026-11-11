@@ -1,29 +1,43 @@
 # Progress
 
-Last updated: 2026-11-10 (revision 15).
+Last updated: 2026-11-11 (revision 17).
 
-**Status: complete.** T1–T8 are done and revisions 2–15 have landed and been
+**Status: complete.** T1–T8 are done and revisions 2–17 have landed and been
 verified. The site is not published yet; the remaining step is to deploy
 `output/` to GitHub Pages. Revision 14 replaced the paging follow/spring-back
 (“跟手拖曳、短拖回彈、第一張卡阻力”) with an invisible drag and a direct swap
 plus one short slide-in, and fixed the post-settle flash (“歸位後閃一下、再動
 一次”). Revision 15 mounts a paging window around the current item — 9 cards in
 翻卡學習, 5 words in the dictionary — keeps the current item in the 3rd slot and
-shifts the window by dropping one end and adding the other.
+shifts the window by dropping one end and adding the other. Revision 16
+supersedes revision 14's motion with the finger-tracking drag the user asked
+for (“按住無法實現跟手的拖動”): the strip follows the finger 1:1 while held and
+finishes the page on release as one short settle from where the finger left
+it; the walls (first card, first/last word) stay completely still. The same
+revision swapped the `←`/`⚙` glyphs for Lucide icons, enlarged the completion
+emoji (2rem → 4rem), centred the word/gloss/tag row in the dictionary block,
+added the note layer (form notes above 例句, sentence notes under the Chinese
+line, both in the `--note` colour) and the double strikethrough for
+`error_usage` forms, pointed 提交ISSUE at `/issues/`, and rewrote `README.md`.
+Revision 17 fixed the card paging window's zero-height clip (the current card
+followed the finger but no neighbour appeared), gave both screens a 24px gap
+between adjacent pages, and made the paging surface span the column's full
+width while dragging so the item reaches the true edge instead of leaving a
+side-padding gutter.**
 
 ## Current state
 
 - Vue 3.5 + Vite 7.3 + Vitest 3 static app. Verified with Node v26.4.0 and
   npm 11.18.0; Vite 7 requires Node `^20.19.0` or `>=22.12.0`.
-- `npm test`: 24 files, **234 tests passing**. `pretest` verifies the 50-lesson
+- `npm test`: 25 files, **242 tests passing**. `pretest` verifies the 50-lesson
   SHA-256 manifest first.
 - `npm run build`: `output/index.html`, `output/assets/` (one JS + one CSS
   bundle) and `output/dict/` with exactly **50** lesson files. `output/` is
   gitignored.
-- `node scripts/browser-check.mjs`: **411 checks passing on the final run**
-  (410–411; headless Chromium, 390×844 with 550/551/800/900 width probes, plus
-  a touch context for the zoom lock and frame-by-frame motion assertions). The
-  count can move by one because the seeded quiz item decides how many kana-key
+- `node scripts/browser-check.mjs`: **456 checks passing on the final run**
+  (headless Chromium, 390×844 with 550/551/800/900 width probes, plus a touch
+  context for the zoom lock and frame-by-frame motion assertions). The count
+  can move by one because the seeded quiz item decides how many kana-key
   assertions run.
 - `node scripts/motion-probe.mjs`: prints the frame-by-frame position trace for
   the paging slide and the flip. Used to measure the motion before and after a
@@ -37,10 +51,10 @@ shifts the window by dropping one end and adding the other.
 ## Verification as of this refresh
 
 ```bash
-npm test                                # 24 files, 234 tests passed
+npm test                                # 25 files, 242 tests passed
 npm run build                           # manifest ok: 50 lessons; built in <1s
 ls output/dict | wc -l                  # 50
-node scripts/browser-check.mjs          # browser check passed (411 checks)
+node scripts/browser-check.mjs          # browser check passed (456 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 node scripts/write-sha256.mjs --check   # manifest ok: 50 lessons
 ```
@@ -113,6 +127,20 @@ in [`docs/changelog.md`](docs/changelog.md). Task acceptance evidence is in
   fixed at its suspects: no leave phase, the slide ends on the resting state,
   `will-change` is never torn down at the settle frame, and the scroll reset
   runs before the swap. `docs/spec.md` was revised before the code.
+- **Revision 15**: the paging window — 9 cards in 翻卡學習 and 5 words in the
+  dictionary keep their neighbours mounted with the current item in the 3rd
+  slot; a turn is one front delete plus one back append, and only the current
+  item is ever visible.
+- **Revision 16** (requested 2026-11-11: “單詞和字典的動畫不跟手，按住無法實現
+  跟手的拖動”): the drag is back under the finger — the strip of items follows
+  the hand 1:1 while held and on release finishes the page as one short settle
+  from where the finger left it (superseding revision 14's invisible drag; the
+  first-card and list-end walls stay completely still). Same revision: Lucide
+  icons instead of the `←`/`⚙` glyphs, the completion emoji enlarged to 4rem,
+  the dictionary block's word/gloss/tags centred, the note layer (form note
+  above 例句, sentence notes under the Chinese line, `--note` colour) and the
+  double strikethrough on `error_usage` words, 提交ISSUE → `/issues/`, and a
+  rewritten `README.md`.
 
 ## Known limitations and unverified paths
 
@@ -181,7 +209,7 @@ Troubleshooting steps: [`docs/serving.md`](docs/serving.md).
 - Verb-less lessons still download and hash on boot (lessons 1, 3, 8, 12), so
   `boot.checked` always reaches 50.
 - The About sheet's copy is aligned to `docs/spec.md` (`提交ISSUE` →
-  `/issues/new`, thanks line `どうもありがとうございます。`).
+  `/issues/`, thanks line `どうもありがとうございます。`).
 
 Nothing else is known to deviate from `docs/spec.md`. If a different rule is
 wanted, amend the spec first, then code and the browser suite.

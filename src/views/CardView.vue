@@ -1,33 +1,40 @@
 <script setup>
 import { computed, inject, onBeforeUnmount, ref } from 'vue'
+import { ArrowLeft, Settings as SettingsIcon } from 'lucide-vue-next'
 import RubyWord from '../components/RubyWord.vue'
 import CompletePanel from '../components/CompletePanel.vue'
-import { cardDirectionAt } from '../ui/swipe.js'
-import { prefersReducedMotion } from '../ui/motion.js'
-import { CARD_WINDOW } from '../ui/window.js'
+import { dragAxis, dragDirection, dragShift } from '../ui/drag.js'
+import { prefersReducedMotion, slideRow } from '../ui/motion.js'
+import { CARD_WINDOW, PAGING_GAP } from '../ui/window.js'
 import { usePagingWindow } from '../ui/paging-window.js'
 import { cardEntries } from '../study/window-views.js'
 
 const store = inject('store')
 const session = store.session
-// Which side the incoming card slides in from: 'next' enters from the right
-// (travelling right to left), 'prev' mirrors it. The drag is invisible: the
-// card never follows the finger, so there is nothing to spring back and
-// nothing to settle twice.
-const enterFrom = ref(null)
 
-// The phase ends on its own DOM event, not on a timer that guesses how long
-// the CSS takes. This value is only a safety net for an event that never
+// Paging is a finger-tracking drag: while the finger is down, the row of
+// cards translates with it 1:1 so the card is under the hand. On release past
+// the threshold the row finishes the page as one decelerating move from where
+// the finger left it; the command swaps the card under that move. A shorter
+// drag settles back to rest, and a tap (no drag at all) turns the card over.
+const rowEl = ref(null)
+const dragX = ref(0)
+const held = ref(false)
+const sliding = ref(false)
+
+// The phase ends on its own animation event, not on a timer that guesses how
+// long the CSS takes. This value is only a safety net for an event that never
 // arrives.
-const ENTER_FALLBACK_MS = 600
+const SETTLE_FALLBACK_MS = 600
+let settleTimer = null
+let rowAnimation = null
 
 // Paging is a flat slide, so the card never turns while it travels. A card the
 // reader had flipped to its answer keeps that answer while it slides in, and
 // the incoming card is snapped to its face off-screen before it enters.
-const turning = computed(() => Boolean(enterFrom.value))
+const turning = computed(() => held.value || sliding.value)
 
 let pointer = null
-let enterTimer = null
 
 const item = computed(() => session.items[session.index] ?? null)
 const cardSettings = computed(() => session.settings.card)
@@ -37,78 +44,73 @@ const cardSettings = computed(() => session.settings.card)
 const pagingSlotRow = usePagingWindow(session, CARD_WINDOW)
 const slots = computed(() => cardEntries(session.items, pagingSlotRow.value, cardSettings.value))
 
-function onDown(event) {
-  if (event.pointerType === 'mouse' && event.button !== 0) return
-  pointer = { x: event.clientX, y: event.clientY, axis: null, lastDx: 0 }
-  event.currentTarget.setPointerCapture?.(event.pointerId)
-}
-
-function onMove(event) {
-  if (!pointer) return
-  const dx = event.clientX - pointer.x
-  const dy = event.clientY - pointer.y
-  if (!pointer.axis) {
-    if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return
-    pointer.axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y'
-  }
-  if (pointer.axis !== 'x') return
-  pointer.lastDx = dx
-}
-
-function onUp() {
-  if (!pointer) return
-  const axis = pointer.axis
-  // The finger travel names the direction. The first card's backward drag
-  // names nothing at all: nothing moved, so nothing springs back.
-  const direction = axis === 'x' ? cardDirectionAt(pointer.lastDx, { atFirst: onFirstCard.value }) : null
-  pointer = null
-  if (direction) {
-    moveCard(direction)
-    return
-  }
-  if (axis === null) store.send('card.flip')
-}
-
 const onLastCard = computed(() => session.index >= session.items.length - 1)
 // The first card has no card behind it, so its backward drag is completely
-// still: it never names a direction and never changes the card.
+// still: the card never follows the finger and never changes.
 const onFirstCard = computed(() => session.index === 0)
 
-function endEnter() {
-  clearTimeout(enterTimer)
-  enterTimer = null
-  enterFrom.value = null
+function rowWidth() {
+  return rowEl.value?.clientWidth ?? 0
 }
 
-function onCardAnimationEnd(event) {
-  if (event.target !== event.currentTarget) return
-  if (!enterFrom.value) return
-  endEnter()
+function endSlide() {
+  clearTimeout(settleTimer)
+  settleTimer = null
+  if (rowAnimation) {
+    rowAnimation.cancel()
+    rowAnimation = null
+  }
+  sliding.value = false
+}
+
+// One settle move of the whole row: from where the finger left it (or from
+// one item width away for a footer press) to rest. The command has already
+// swapped the card, so the row carries the old card out and the new one in —
+// the new card slides in from the edge the gesture came from.
+function startSlide(fromPx) {
+  endSlide()
+  sliding.value = true
+  rowAnimation = slideRow(rowEl.value, fromPx, () => {
+    rowAnimation = null
+    sliding.value = false
+    clearTimeout(settleTimer)
+    settleTimer = null
+  })
+  settleTimer = setTimeout(endSlide, SETTLE_FALLBACK_MS)
+}
+
+// The spring back: a release below the threshold, or into the first-card
+// wall. Nothing committed, so the row simply settles to where it started.
+function settleBack() {
+  const from = dragX.value
+  dragX.value = 0
+  if (prefersReducedMotion() || from === 0) return
+  startSlide(from)
 }
 
 // One move can be waiting for a frame: the newest press wins.
 let queuedMove = null
 let queuedFrame = false
 
-function moveCard(direction) {
+function moveCard(direction, releasedX = 0) {
+  if (!direction || held.value) return
+
   if (prefersReducedMotion()) {
     // No motion to wait for: change the card at once.
-    enterFrom.value = null
-    clearTimeout(enterTimer)
-    enterTimer = null
+    endSlide()
+    dragX.value = 0
     if (direction === 'next' && onLastCard.value) store.send('study.finish')
     else if (direction === 'next') store.send('card.next')
     else store.send('card.prev')
     return
   }
 
-  // One phase at a time. A press while the new card is still sliding drops
-  // the slide first and makes the move on the next frame: removing the
-  // animation and restarting it in the same frame leaves the browser with no
-  // class change to run, so the new slide would never start. Two presses in
-  // one frame keep the newest direction instead of both running.
-  if (enterFrom.value || queuedFrame) {
-    endEnter()
+  // One phase at a time. A press while the new card is still settling drops
+  // that move first and makes the new one on the next frame: the interrupted
+  // movement is finished, never stacked, and two presses in one frame keep
+  // the newest direction instead of both running.
+  if (sliding.value || queuedFrame) {
+    endSlide()
     queuedMove = direction
     if (!queuedFrame) {
       queuedFrame = true
@@ -122,25 +124,86 @@ function moveCard(direction) {
     return
   }
 
-  // The swap is direct and the new card slides in from the edge the gesture
+  dragX.value = 0
+  // The swap is direct and the new card settles in from the edge the gesture
   // came from. Leaving the last card is the end of the run: the panel takes
   // the card's place instead of another card sliding in.
   if (direction === 'next' && onLastCard.value) {
     store.send('study.finish')
     return
   }
-  if (direction === 'next') store.send('card.next')
-  else store.send('card.prev')
-  enterFrom.value = direction
-  clearTimeout(enterTimer)
-  enterTimer = setTimeout(endEnter, ENTER_FALLBACK_MS)
+  store.send(direction === 'next' ? 'card.next' : 'card.prev')
+  // The page pitch includes the visible gap. The direct swap restores the
+  // current slot's position, so the settle makes up that pitch minus the
+  // distance the finger already travelled; the gap never collapses mid-turn.
+  const pitch = rowWidth() + PAGING_GAP
+  startSlide(direction === 'next' ? pitch + releasedX : releasedX - pitch)
 }
 
 onBeforeUnmount(() => {
   queuedMove = null
   queuedFrame = false
-  clearTimeout(enterTimer)
+  endSlide()
 })
+
+function onDown(event) {
+  if (event.pointerType === 'mouse' && event.button !== 0) return
+  if (held.value || sliding.value) return
+  pointer = {
+    x: event.clientX,
+    y: event.clientY,
+    axis: null,
+    lastDx: 0,
+    width: rowWidth(),
+  }
+  event.currentTarget.setPointerCapture?.(event.pointerId)
+}
+
+function onMove(event) {
+  if (!pointer) return
+  const dx = event.clientX - pointer.x
+  const dy = event.clientY - pointer.y
+  if (!pointer.axis) {
+    const axis = dragAxis(dx, dy)
+    if (!axis) return
+    pointer.axis = axis
+    if (axis === 'x') held.value = true
+  }
+  if (pointer.axis !== 'x') return
+  pointer.lastDx = dx
+  // Under reduced motion the drag stays invisible: the release still changes
+  // the card directly, but nothing tracks the finger on the way there.
+  if (!prefersReducedMotion()) {
+    dragX.value = dragShift(dx, {
+      canPrev: !onFirstCard.value,
+      canNext: true,
+      width: pointer.width,
+    })
+  }
+}
+
+function onUp() {
+  if (!pointer) return
+  const { axis, lastDx } = pointer
+  pointer = null
+  held.value = false
+  if (axis === null) {
+    store.send('card.flip')
+    return
+  }
+  if (axis !== 'x') return
+  // The finger travel names the direction. The first card's backward drag
+  // names nothing at all: nothing moved, so nothing springs back.
+  const direction = dragDirection(lastDx, {
+    canPrev: !onFirstCard.value,
+    canNext: true,
+  })
+  if (direction) {
+    moveCard(direction, dragX.value)
+    return
+  }
+  settleBack()
+}
 
 // The last card ends the run: the right-hand control becomes 完成. Pressing it
 // runs the same move as a swipe, and the move itself ends the run on the last
@@ -166,22 +229,27 @@ function openSettings() {
 <template>
   <section class="cards">
     <header class="bar bar--sticky">
-      <button class="icon-button" type="button" aria-label="返回" @click="back">←</button>
+      <button class="icon-button" type="button" aria-label="返回" @click="back"><ArrowLeft :size="22" aria-hidden="true" /></button>
       <h1 class="bar-title">練習（{{ session.index + 1 }}/{{ session.items.length }}）</h1>
-      <button class="icon-button" type="button" aria-label="設定" @click="openSettings">⚙</button>
+      <button class="icon-button" type="button" aria-label="設定" @click="openSettings"><SettingsIcon :size="22" aria-hidden="true" /></button>
     </header>
 
     <div
       v-if="item && !session.finished"
       class="card-stage"
-      :class="{ 'card-stage--moving': Boolean(enterFrom) }"
+      :class="{ 'card-stage--moving': held || sliding }"
       @pointerdown="onDown"
       @pointermove="onMove"
       @pointerup="onUp"
       @pointercancel="onUp"
       @pointerleave="onUp"
     >
-      <div class="card-window">
+      <div
+        ref="rowEl"
+        class="card-window"
+        :class="{ 'card-window--paging': held || sliding }"
+        :style="{ transform: `translateX(${dragX}px)` }"
+      >
         <div
           v-for="entry in slots"
           :key="entry.key"
@@ -189,7 +257,7 @@ function openSettings() {
           :class="{ 'card-slot--current': entry.current }"
           :aria-hidden="entry.current ? undefined : 'true'"
           :data-at="entry.at"
-          :style="{ transform: `translateX(${entry.offset}%)` }"
+          :style="{ transform: `translateX(calc(${entry.offset}% + ${entry.gap}px))` }"
         >
           <div
             v-if="entry.face"
@@ -198,10 +266,7 @@ function openSettings() {
               'card--current': entry.current,
               'card--flipped': session.flipped && entry.current,
               'card--no-turn': turning,
-              'card--enter-next': enterFrom === 'next' && entry.current,
-              'card--enter-prev': enterFrom === 'prev' && entry.current,
             }"
-            @animationend="entry.current && onCardAnimationEnd($event)"
           >
             <div class="card-inner">
               <div
@@ -300,7 +365,9 @@ function openSettings() {
   border: 0;
   background: transparent;
   color: var(--ink);
-  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -321,18 +388,29 @@ function openSettings() {
   padding: 12px 0 6px;
   touch-action: pan-y;
   user-select: none;
+  /* While paging, the stage reaches the column's true edge: the card can
+     slide all the way out instead of stopping short of the side padding. The
+     window inside keeps the content width, so the card never changes size. */
+  margin-left: calc(-1 * var(--page-gutter));
+  margin-right: calc(-1 * var(--page-gutter));
 }
 
 /* The paging window: one slot per mounted card, laid on top of each other and
    pushed sideways by the slot's own offset, so the 3rd slot always sits where
-   the current card belongs. The window itself is never translated — a
-   percentage transform on the window would be measured against the window's
-   own (nine times wider) box, not the stage. */
+   the current card belongs. The window is the strip the finger drags — its
+   own transform carries the whole row 1:1 while held and the settle move
+   after release. A percentage transform on it would be measured against its
+   own box, so only pixels move it.
+
+   The stage's height is content-sized and every slot is absolute, so a 100%
+   height here resolves to zero in Chromium. A real minimum height gives the
+   slot faces a paint area. The stage, not this zero-width-at-rest clip path,
+   clips the strip while it moves; at rest the neighbours are hidden. */
 .card-window {
   position: relative;
-  width: 100%;
-  height: 100%;
-  overflow-x: clip;
+  width: calc(100% - 2 * var(--page-gutter));
+  min-height: 340px;
+  will-change: transform;
 }
 
 .card-slot {
@@ -344,13 +422,13 @@ function openSettings() {
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
+  /* The stage owns the gesture for every slot. Keeping the faces hit-testable
+     makes a revealed neighbour a real card, not an untouchable picture. */
+  pointer-events: auto;
 }
 
-.card-slot--current {
-  pointer-events: auto;
-  z-index: 1;
-}
+/* No raised current slot: while paging, DOM order lets the next card paint
+   into the edge uncovered by the current one. */
 
 /* Only the current card is real to the reader: the other eight are mounted so a
    turn never lays anything out, but they are clipped, hidden and out of the
@@ -365,8 +443,14 @@ function openSettings() {
   transition: none !important;
 }
 
-/* While the card slides in, the stage clips it. A card that travels to ±112%
-   would otherwise paint outside the column and give the page a horizontal
+/* While the row is under the finger or settling, the neighbours peek in at
+   the edges: the drag is real, so what is behind it is really there. */
+.card-window--paging .card-slot:not(.card-slot--current) {
+  visibility: visible;
+}
+
+/* While the row slides, the stage clips it. A card that travels past the
+   column edge would otherwise paint outside and give the page a horizontal
    scrollbar. At rest the stage stays open, so the card keeps its soft
    shadow. */
 .card-stage--moving {
@@ -375,19 +459,11 @@ function openSettings() {
   overflow-x: clip;
 }
 
-/* The window clips the neighbours; the moving class only adds the enter
-   animation to the current card. */
-
 .card {
   position: relative;
   width: 100%;
   min-height: 340px;
   perspective: 1600px;
-  /* Nothing transitions at rest: the only transform in the card's life is the
-     single enter slide, and it ends on the card's own resting state, so the
-     settle frame changes nothing and cannot flash or move twice. The layer is
-     promoted once and stays promoted — tearing `will-change` down at the exact
-     settle frame is what used to flash on phones. */
   will-change: transform;
   cursor: pointer;
 }
@@ -429,6 +505,9 @@ function openSettings() {
   .card-inner {
     transition: none;
   }
+  .card-window {
+    will-change: auto;
+  }
 }
 
 /* Paging must stay flat: no rotation, no fade. The card travels in one straight
@@ -436,44 +515,6 @@ function openSettings() {
    rotateY transition during the move. */
 .card--no-turn .card-inner {
   transition: none;
-}
-
-/* Entering: the new card is pushed in from the edge the gesture came from,
-   one short decelerating slide. */
-.card--enter-next {
-  animation: card-enter-next 190ms var(--ease-slide);
-}
-
-.card--enter-prev {
-  animation: card-enter-prev 190ms var(--ease-slide);
-}
-
-/* Swiping right-to-left brings the next card in from the right edge and moves
-   it leftwards; swiping left-to-right mirrors that. */
-@keyframes card-enter-next {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes card-enter-prev {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .card--enter-next,
-  .card--enter-prev {
-    animation: none;
-    transition: none;
-  }
 }
 
 .card-face,

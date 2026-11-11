@@ -7,6 +7,9 @@
   --accent-ink: #ffffff;
   /* The studied word, marked inside example sentences. */
   --highlight: #7c3aed;
+  /* A note passage: usage notes and error explanations ride on their own
+     colour so the eye finds them among the sentences without a box. */
+  --note: #b45309;
   --line: rgba(36, 33, 58, 0.12);
   --surface: #ffffff;
   --surface-strong: #f3efe6;
@@ -93,9 +96,12 @@ body {
 .column {
   width: min(100%, 480px);
   min-height: calc(100vh - 40px);
+  /* The paging surfaces use this to reach the column's true edge while a
+     drag is held, ignoring the side padding that insets them at rest. */
+  --page-gutter: 24px;
   /* The bottom gap belongs to each screen's footer, so it is the same whether
      the footer is pinned or resting at the end of the page. */
-  padding: 24px 24px 0;
+  padding: 24px var(--page-gutter) 0;
   border-radius: var(--radius);
   background: var(--column);
   box-shadow: var(--shadow);
@@ -234,7 +240,8 @@ button:active:not(:disabled) {
   .column {
     width: 100%;
     min-height: 100vh;
-    padding: 20px 16px 0;
+    --page-gutter: 16px;
+    padding: 20px var(--page-gutter) 0;
     border-radius: 0;
     box-shadow: none;
   }

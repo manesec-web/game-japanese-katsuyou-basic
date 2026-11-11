@@ -1,5 +1,6 @@
 <script setup>
 import { computed, inject, onBeforeUnmount, ref } from 'vue'
+import { ArrowLeft, Settings as SettingsIcon } from 'lucide-vue-next'
 import RubyWord from '../components/RubyWord.vue'
 import CompletePanel from '../components/CompletePanel.vue'
 import { formName } from '../dict/forms.js'
@@ -92,9 +93,9 @@ onBeforeUnmount(() => clearTimeout(toastTimer))
 <template>
   <section class="quiz">
     <header class="bar bar--sticky">
-      <button class="icon-button" type="button" aria-label="返回" @click="back">←</button>
+      <button class="icon-button" type="button" aria-label="返回" @click="back"><ArrowLeft :size="22" aria-hidden="true" /></button>
       <h1 class="bar-title">練習（{{ session.index + 1 }}/{{ session.items.length }}）</h1>
-      <button class="icon-button" type="button" aria-label="設定" @click="openSettings">⚙</button>
+      <button class="icon-button" type="button" aria-label="設定" @click="openSettings"><SettingsIcon :size="22" aria-hidden="true" /></button>
     </header>
 
     <div v-if="item && source && !session.finished" class="quiz-body">
@@ -217,7 +218,9 @@ onBeforeUnmount(() => clearTimeout(toastTimer))
   border: 0;
   background: transparent;
   color: var(--ink);
-  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 48px;
   height: 48px;
   border-radius: 12px;

@@ -1,11 +1,13 @@
 <script setup>
 import { computed, inject, onBeforeUnmount, ref, watch } from 'vue'
+import { ArrowLeft, Settings as SettingsIcon } from 'lucide-vue-next'
 import RubyWord from '../components/RubyWord.vue'
 import { groupLabel } from '../dict/forms.js'
 import { sentenceParts } from '../study/highlight.js'
-import { readerDirection, swipeEnabled } from '../ui/swipe.js'
-import { prefersReducedMotion } from '../ui/motion.js'
-import { READER_WINDOW } from '../ui/window.js'
+import { swipeEnabled } from '../ui/swipe.js'
+import { dragAxis, dragDirection, dragShift } from '../ui/drag.js'
+import { prefersReducedMotion, slideRow } from '../ui/motion.js'
+import { PAGING_GAP, READER_WINDOW } from '../ui/window.js'
 import { usePagingWindow } from '../ui/paging-window.js'
 import { readerEntries } from '../study/window-views.js'
 
@@ -13,21 +15,28 @@ const store = inject('store')
 const session = store.session
 let pointer = null
 
-// Page turn is one phase: the command swaps the word at once and the new page
-// plays a single short slide from the edge the gesture came from. The drag is
-// invisible — the page never follows the finger — so there is nothing to
-// spring back and nothing to settle twice. The phase ends on the animation
-// itself; the timer is only a safety net for an event that never arrives.
-const entering = ref(null)
-const PHASE_FALLBACK_MS = 600
-let enterTimer = null
+// Page turn is a finger-tracking drag: while the finger is down, the paging
+// row translates with it 1:1 so the word is under the hand. On release past
+// the threshold the row finishes the page as one decelerating move from where
+// the finger left it; the command swaps the word under that move, so the
+// window advance is never visible. A shorter drag settles back to rest.
+const rowEl = ref(null)
+const dragX = ref(0)
+const held = ref(false)
+const sliding = ref(false)
+
+const SETTLE_FALLBACK_MS = 600
+let settleTimer = null
+let rowAnimation = null
 
 const item = computed(() => session.items[session.index] ?? null)
 const defaultFormId = computed(() => session.settings.dict.defaultForm)
 const showReading = computed(() => session.settings.dict.showReading)
 const canPrev = computed(() => session.index > 0)
 const canNext = computed(() => session.index < session.items.length - 1)
-const moving = computed(() => entering.value !== null)
+// While the row is held or settling, the neighbours peek in at the edges and
+// the footer controls wait: one move at a time.
+const paging = computed(() => held.value || sliding.value)
 
 // The paging window: 5 mounted slots, the current word always in the 3rd. The
 // row of positions is state that each turn shifts by one, and every slot
@@ -49,33 +58,71 @@ function canGo(direction) {
   return direction === 'next' ? canNext.value : canPrev.value
 }
 
-// One path for gestures and for the footer controls: swap at once, slide in.
-function go(direction) {
-  if (!direction || !canGo(direction) || moving.value) return
-  // The scroll reset runs before the swap, so the slide never starts from a
-  // scrolled position and a reset can never land after the page has settled.
+function rowWidth() {
+  return rowEl.value?.clientWidth ?? 0
+}
+
+function endSlide() {
+  clearTimeout(settleTimer)
+  settleTimer = null
+  if (rowAnimation) {
+    rowAnimation.cancel()
+    rowAnimation = null
+  }
+  sliding.value = false
+}
+
+// One settle move of the whole row: from where the finger left it (or from
+// one item width away for a footer press) to rest. The command has already
+// swapped the word, so the row carries the old word out and the new one in —
+// the same pushed-in-from-the-edge slide the direct swap used to play.
+function startSlide(fromPx) {
+  endSlide()
+  sliding.value = true
+  rowAnimation = slideRow(rowEl.value, fromPx, () => {
+    rowAnimation = null
+    sliding.value = false
+    clearTimeout(settleTimer)
+    settleTimer = null
+  })
+  settleTimer = setTimeout(endSlide, SETTLE_FALLBACK_MS)
+}
+
+function sendMove(direction) {
   window.scrollTo({ top: 0, behavior: 'auto' })
   store.send(direction === 'next' ? 'dict.next' : 'dict.prev')
-  if (prefersReducedMotion()) return
-  entering.value = direction
-  clearTimeout(enterTimer)
-  enterTimer = setTimeout(endEnter, PHASE_FALLBACK_MS)
 }
 
-function endEnter() {
-  clearTimeout(enterTimer)
-  enterTimer = null
-  entering.value = null
+// One path for gestures and for the footer controls: swap the word at once
+// under the settle move. A press while a move is settling drops that move
+// first and runs the new one — movement is finished, never stacked.
+function go(direction, releasedX = 0) {
+  if (!direction || !canGo(direction) || paging.value) return
+  dragX.value = 0
+  if (prefersReducedMotion()) {
+    // No motion to wait for: change the word at once.
+    sendMove(direction)
+    return
+  }
+  sendMove(direction)
+  // Keep the same 24px seam throughout a turn: compensate for the width plus
+  // gap restored by the direct swap, less the finger's completed travel.
+  const pitch = rowWidth() + PAGING_GAP
+  const from = direction === 'next' ? pitch + releasedX : releasedX - pitch
+  startSlide(from)
 }
 
-function onPageAnimationEnd(event) {
-  if (event.target !== event.currentTarget) return
-  if (!entering.value) return
-  endEnter()
+// The spring back: a release below the threshold, or into a wall. Nothing
+// committed, so the row simply settles to where it started.
+function settleBack() {
+  const from = dragX.value
+  dragX.value = 0
+  if (prefersReducedMotion() || from === 0) return
+  startSlide(from)
 }
 
 onBeforeUnmount(() => {
-  clearTimeout(enterTimer)
+  endSlide()
 })
 
 function onDown(event) {
@@ -83,8 +130,14 @@ function onDown(event) {
   // selection matters more than swiping. Only the footer buttons page there.
   if (!swipeEnabled(window.innerWidth)) return
   if (event.pointerType === 'mouse' && event.button !== 0) return
-  if (moving.value) return
-  pointer = { x: event.clientX, y: event.clientY, axis: null, lastDx: 0 }
+  if (paging.value) return
+  pointer = {
+    x: event.clientX,
+    y: event.clientY,
+    axis: null,
+    lastDx: 0,
+    width: rowWidth(),
+  }
   event.currentTarget.setPointerCapture?.(event.pointerId)
 }
 
@@ -93,18 +146,41 @@ function onMove(event) {
   const dx = event.clientX - pointer.x
   const dy = event.clientY - pointer.y
   if (!pointer.axis) {
-    if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return
-    pointer.axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y'
+    const axis = dragAxis(dx, dy)
+    if (!axis) return
+    pointer.axis = axis
+    if (axis === 'x') held.value = true
   }
   if (pointer.axis !== 'x') return
   pointer.lastDx = dx
+  // Under reduced motion the drag stays invisible: the release still changes
+  // the word directly, but nothing tracks the finger on the way there.
+  if (!prefersReducedMotion()) {
+    dragX.value = dragShift(dx, {
+      canPrev: canPrev.value,
+      canNext: canNext.value,
+      width: pointer.width,
+    })
+  }
 }
 
 function onUp() {
   if (!pointer) return
-  const direction = pointer.axis === 'x' ? readerDirection(pointer.lastDx) : null
+  const { axis, lastDx } = pointer
   pointer = null
-  go(direction)
+  held.value = false
+  if (axis !== 'x') return
+  // The finger travel names the direction. A wall — the first word backward,
+  // the last word forward — names nothing at any distance.
+  const direction = dragDirection(lastDx, {
+    canPrev: canPrev.value,
+    canNext: canNext.value,
+  })
+  if (direction) {
+    go(direction, dragX.value)
+    return
+  }
+  settleBack()
 }
 
 function back() {
@@ -119,9 +195,9 @@ function openSettings() {
 <template>
   <section class="reader">
     <header class="bar bar--sticky">
-      <button class="icon-button" type="button" aria-label="返回" @click="back">←</button>
+      <button class="icon-button" type="button" aria-label="返回" @click="back"><ArrowLeft :size="22" aria-hidden="true" /></button>
       <h1 class="bar-title">學習（{{ session.index + 1 }}/{{ session.items.length }}）</h1>
-      <button class="icon-button" type="button" aria-label="設定" @click="openSettings">⚙</button>
+      <button class="icon-button" type="button" aria-label="設定" @click="openSettings"><SettingsIcon :size="22" aria-hidden="true" /></button>
     </header>
 
     <div
@@ -133,20 +209,20 @@ function openSettings() {
       @pointercancel="onUp"
       @pointerleave="onUp"
     >
-      <div class="reader-window">
+      <div
+        ref="rowEl"
+        class="reader-window"
+        :class="{ 'reader-window--paging': paging }"
+        :style="{ transform: `translateX(${dragX}px)` }"
+      >
         <article
           v-for="entry in slots"
           :key="entry.key"
           class="reader-page"
-          :class="{
-            'reader-page--current': entry.current,
-            'reader-page--enter-next': entering === 'next' && entry.current,
-            'reader-page--enter-prev': entering === 'prev' && entry.current,
-          }"
+          :class="{ 'reader-page--current': entry.current }"
           :aria-hidden="entry.current ? undefined : 'true'"
           :data-at="entry.at"
-          :style="{ transform: `translateX(${entry.offset}%)` }"
-          @animationend="entry.current && onPageAnimationEnd($event)"
+          :style="{ transform: `translateX(calc(${entry.offset}% + ${entry.gap}px))` }"
         >
           <template v-if="entry.forms.length">
             <section
@@ -158,7 +234,7 @@ function openSettings() {
               :aria-current="form.isDefault ? 'true' : undefined"
             >
               <h2 class="form-name">{{ form.name }}</h2>
-              <div class="word">
+              <div class="word" :class="{ 'word--error': form.errorUsage }">
                 <RubyWord
                   :text="form.data.vol"
                   :reading="form.data.japanese"
@@ -171,7 +247,11 @@ function openSettings() {
                 <span class="tag">第{{ entry.lesson }}課</span>
               </div>
 
-              <div class="block">
+              <!-- The form's own note sits above the example sentences, laid
+                   out like a sentence but marked with its own colour. -->
+              <p v-if="form.note" class="note-line">{{ form.note }}</p>
+
+              <div v-if="form.data.sentence?.length" class="block">
                 <h3 class="block-title">例句：</h3>
                 <div
                   v-for="(sentence, at) in form.data.sentence"
@@ -184,6 +264,7 @@ function openSettings() {
                     :class="{ 'sentence-hit': part.highlight }"
                   >{{ part.text }}</span></p>
                   <p class="sentence-zh">{{ sentence.chinese }}</p>
+                  <p v-if="sentence.note" class="note-line">{{ sentence.note }}</p>
                 </div>
               </div>
             </section>
@@ -196,7 +277,7 @@ function openSettings() {
       <button
         class="button ghost controls-button"
         type="button"
-        :disabled="!canPrev || moving"
+        :disabled="!canPrev || paging"
         @click="go('prev')"
       >
         ‹ 上一個
@@ -204,7 +285,7 @@ function openSettings() {
       <button
         class="button ghost controls-button"
         type="button"
-        :disabled="!canNext || moving"
+        :disabled="!canNext || paging"
         @click="go('next')"
       >
         下一個 ›
@@ -239,7 +320,9 @@ function openSettings() {
   border: 0;
   background: transparent;
   color: var(--ink);
-  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -255,16 +338,23 @@ function openSettings() {
   flex: 1;
   overflow: hidden;
   touch-action: pan-y;
-  padding: 4px 4px 8px;
+  padding: 4px 0 8px;
+  /* The gesture surface reaches the column's true edge while paging, so a
+     word slides to the edge instead of stopping at the side padding. */
+  margin-left: calc(-1 * var(--page-gutter));
+  margin-right: calc(-1 * var(--page-gutter));
 }
 
 /* The paging window: one slot per mounted word, pushed sideways by the slot's
    own offset so the 3rd slot always sits where the current word belongs. The
-   window itself is never translated. */
+   window is the strip the finger drags — its own transform carries the whole
+   row 1:1 while held and the settle move after release. */
 .reader-window {
   position: relative;
-  width: 100%;
+  width: calc(100% - 2 * var(--page-gutter) - 8px);
+  margin: 0 auto;
   min-height: 100%;
+  will-change: transform;
 }
 
 /* Where gesture paging is on, a drag must page rather than select text.
@@ -276,18 +366,13 @@ function openSettings() {
   }
 }
 
-.reader-page {
-  /* Nothing transitions at rest: the only transform in the page's life is the
-     single enter slide, and it ends on the page's own resting state, so the
-     settle frame changes nothing and cannot flash or move twice. The layer is
-     promoted once and stays promoted — tearing `will-change` down at the exact
-     settle frame is what used to flash on phones. */
-  will-change: transform;
-}
-
 /* Only the current page contributes to document flow; neighbours are taken
    out of flow so they never add scroll height or capture taps, and the window
    clips them so nothing shows past the column edge. */
+.reader-page {
+  will-change: transform;
+}
+
 .reader-page:not(.reader-page--current) {
   position: absolute;
   top: 0;
@@ -303,37 +388,17 @@ function openSettings() {
   visibility: visible;
 }
 
-/* Entering: the new word is pushed in from the edge the swipe came from, one
-   short decelerating slide. */
-.reader-page--enter-next {
-  animation: page-enter-next 190ms var(--ease-slide);
+/* While the row is under the finger or settling, the neighbours peek in at
+   the edges: the drag is real, so what is behind it is really there. */
+.reader-window--paging .reader-page:not(.reader-page--current) {
+  visibility: visible;
+  /* A revealed neighbour is a real page, hit-testable like the card faces. */
+  pointer-events: auto;
 }
 
-.reader-page--enter-prev {
-  animation: page-enter-prev 190ms var(--ease-slide);
-}
-
-@keyframes page-enter-next {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes page-enter-prev {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
 @media (prefers-reduced-motion: reduce) {
-  .reader-page--enter-next,
-  .reader-page--enter-prev {
-    animation: none;
+  .reader-window {
+    will-change: auto;
   }
 }
 
@@ -362,18 +427,29 @@ function openSettings() {
   font-size: 2rem;
   font-weight: 600;
   margin-top: 2px;
+  text-align: center;
+}
+
+/* A form flagged error_usage is kept for conjugation practice only: its word
+   is struck through twice and keeps its own colour — the strike alone marks
+   the misuse. */
+.word--error {
+  text-decoration-line: line-through;
+  text-decoration-style: double;
 }
 
 .gloss {
   margin: 8px 0 10px;
   font-size: 1rem;
   color: var(--ink-soft);
+  text-align: center;
 }
 
 .tags {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .tag {
@@ -417,6 +493,15 @@ function openSettings() {
   margin: 2px 0 0;
   font-size: 0.84rem;
   color: var(--ink-soft);
+}
+
+/* A note is laid out like the example sentences — same reading edge, not
+   centred — and marked by its own colour. */
+.note-line {
+  margin: 6px 0 0;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--note);
 }
 
 .reader-controls {

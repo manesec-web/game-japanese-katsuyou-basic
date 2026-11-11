@@ -37,12 +37,13 @@ describe('cardEntries', () => {
     expect(entries[CURRENT_SLOT].at).toBe(5)
   })
 
-  it('puts the current slot at 0 and the neighbours a full width away', () => {
+  it('puts the current slot at 0 and neighbours a full width plus 24px away', () => {
     const entries = cardEntries(cardItems(20), windowSlots(20, 5, CARD_WINDOW), settings)
     expect(entries[CURRENT_SLOT].offset).toBe(0)
-    expect(entries[CURRENT_SLOT - 1].offset).toBe(-100)
-    expect(entries[CURRENT_SLOT + 1].offset).toBe(100)
-    expect(entries[0].offset).toBe(-200)
+    expect(entries[CURRENT_SLOT].gap).toBe(0)
+    expect(entries[CURRENT_SLOT - 1]).toMatchObject({ offset: -100, gap: -24 })
+    expect(entries[CURRENT_SLOT + 1]).toMatchObject({ offset: 100, gap: 24 })
+    expect(entries[0]).toMatchObject({ offset: -200, gap: -48 })
   })
 
   it('gives every slot its own item, not a copy of the current one', () => {

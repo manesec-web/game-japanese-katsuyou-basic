@@ -4,7 +4,7 @@
 // the item at that list position — never from "the current item". That is what
 // keeps a neighbour showing its own word instead of a copy of the current one.
 import { formName } from '../dict/forms.js'
-import { windowOffset, slotKey, CURRENT_SLOT } from '../ui/window.js'
+import { windowGap, windowOffset, slotKey, CURRENT_SLOT } from '../ui/window.js'
 import { backTags, frontTags } from './card-tags.js'
 import { orderedFormEntries } from './reader-forms.js'
 
@@ -17,6 +17,7 @@ function frames(items, slots) {
     at,
     key: slotKey(at, slot),
     offset: windowOffset(slot),
+    gap: windowGap(slot),
     current: slot === CURRENT_SLOT,
     item: at === null ? null : items[at],
   }))

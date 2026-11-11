@@ -1,5 +1,6 @@
 <script setup>
 import { computed, inject, ref } from 'vue'
+import { ArrowLeft } from 'lucide-vue-next'
 import { FORMS, formName } from '../dict/forms.js'
 import { REVEAL_CHOICES } from '../dict/quiz.js'
 
@@ -34,7 +35,7 @@ function toggle(field) {
 <template>
   <section class="settings">
     <header class="bar bar--sticky">
-      <button class="icon-button" type="button" aria-label="返回" @click="back">←</button>
+      <button class="icon-button" type="button" aria-label="返回" @click="back"><ArrowLeft :size="22" aria-hidden="true" /></button>
       <h1 class="bar-title">設定</h1>
       <span class="bar-spacer"></span>
     </header>
@@ -157,7 +158,9 @@ function toggle(field) {
   border: 0;
   background: transparent;
   color: var(--ink);
-  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 48px;
   height: 48px;
   border-radius: 12px;

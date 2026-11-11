@@ -295,7 +295,7 @@ Dated, newest last. Each entry: what changed, why, and what was verified.
 - Home (`HomeView.vue`): h1 `日語動詞變形練習`; footer now has
   `🥺 如果有 BUG 記得告訴我！` above `Build with ❤ by Mane`, both opening one
   sheet. The sheet carries the open-source sentence with the repo link,
-  `意見 & Bug 反饋：` with `提交ISSUE` (repo `/issues/new`, new tab, noopener)
+  `意見 & Bug 反饋：` with `提交ISSUE` (repo `/issues/`, new tab, noopener)
   and `mailto:mane@manesec.com`, then `🥺 どうもありがとうございます。` and 關閉.
 - Reader (`reader-forms.js`, `ReaderView.vue`): the first block's accent panel
   is gone — all 15 blocks use one format (same padding, hairline separator,
@@ -492,7 +492,7 @@ Dated, newest last. Each entry: what changed, why, and what was verified.
 - `docs/serving.md`: added a build self-check block and a GitHub Pages note
   (that file was then rewritten for the subpath base; see the entry below).
 - `src/views/HomeView.vue`: the About sheet's copy now matches `docs/spec.md`
-  (`提交ISSUE` opens `/issues/new`, thanks line `🥺 どうもありがとうございます。`).
+  (`提交ISSUE` opens `/issues/`, thanks line `🥺 どうもありがとうございます。`).
   No behaviour changed; this closes two copy drifts that had gone unrecorded.
 - Verified after the edits: `npm test` 20 files / 191 tests; `npm run
   build` with 50 files in `output/dict/`; `node scripts/browser-check.mjs`
@@ -895,3 +895,116 @@ Three reports from the user, all on the phone layout:
   `aria-hidden`, like the dictionary's). Not verified: real iOS/Android devices (repo-wide
   limitation — headless Chromium only), and no reduction in mounted-node count
   was measured on a physical phone.
+
+## 2026-11-11
+
+### Revision 16 — finger-tracking paging, Lucide icons, notes and docs pass
+
+The user reviewed the built site and asked for seven changes (quoted):
+"1. 單詞和字典的動畫不跟手，按住無法實現跟手的拖動（*重要 2. 返回按鈕的圖標很奇怪，
+設定的按鈕也是，使用第三方圖標庫會好一些。 3. 結算畫面的emoji大一點。 4. 字典裏的
+單詞居中、中文居中、TAG 居中。加入一個 Note 和例句一樣，不需要居中，但是要使用
+顔色標記這段話。這個Note 放在例句上面。然後如果出現 Error 是true的，就使用雙刪除線，
+不需要單詞的修改顔色。 5. 完成後更新所有markdown文件，最後然後重寫README.md 來引用
+docs裏面的文件。 6. 提交 Issue 的鏈接設置成 .../issues/ 不要 new。 7. 最後修改所有
+的markdown文件，然後把所有docs的内容加入到README.md，顯得專業一點。"
+Confirmed by questionnaire: both the dictionary and 翻卡學習 get the
+finger-tracking drag (superseding revision 14's invisible drag), the icon
+library is Lucide (npm, tree-shaken inline SVG — no CDN), and both note kinds
+(form-level and sentence-level) are shown.
+
+- **16a Finger-tracking drag** (`src/ui/drag.js` new, `src/ui/motion.js`
+  `slideRow`, `ReaderView.vue`, `CardView.vue`): while a horizontal drag is
+  held, the paging window's row translates with the finger 1:1 (clamped to one
+  item width, so at most the mounted neighbour peeks in at the edge). On
+  release past 72px the row finishes the page as one ~190ms decelerating move
+  from where the finger left it (the Web Animations API runs it imperatively,
+  so a press during a settle drops that move and starts the next — no class
+  restart, no rAF dance); the command swaps the item under that move, so the
+  window advance stays invisible. A shorter drag settles back to rest. Walls
+  are stillness at any distance: the first card's backward drag, the first
+  word's backward drag and the last word's forward drag never move the row.
+  The last-card finish, the tap flip and `prefers-reduced-motion` (invisible
+  drag, direct swap) are unchanged. `docs/spec.md` paging clauses rewritten
+  before the code; the enter-slide keyframes and the rAF queue are gone.
+- **16b Lucide icons** (`lucide-vue-next`): every `←` / `⚙` text button in
+  Picker/Reader/Card/Quiz/Settings is now an inlined Lucide SVG (`ArrowLeft`,
+  `Settings`, 22px, centred in the same 48px button; `aria-label` unchanged).
+- **16c Completion emoji**: `.complete-emoji` 2rem → 4rem — the panel's one
+  piece of colour, on card and quiz completion alike.
+- **16d Dictionary notes and layout** (`reader-forms.js` entries now carry
+  `note` + `errorUsage`; `ReaderView.vue`; `--note: #b45309`): the word, gloss
+  and tag row are centred in the block while the note and the sentences keep
+  the reading edge. The form's `note` renders above the 例句： block, laid out
+  like a sentence and marked in the note colour; each sentence's own `note`
+  rides under its Chinese line in the same colour. A form flagged
+  `error_usage` shows its word with a double strikethrough and no colour
+  change; it has no sentences, so the 例句： block is not drawn and its note
+  stands alone.
+- **16e Issue link**: `提交ISSUE` now opens `.../issues/` (the issue list) in
+  `AboutSheet.vue`, `docs/spec.md` and the docs — no more linking to the
+  new-issue form.
+- **16f Docs pass**: spec, changelog, progress, roadmap, architecture and
+  AGENTS describe revision 16; `README.md` rewritten (professional structure,
+  referencing `docs/` instead of restating the spec).
+- Tests: `src/ui/drag.test.js` (9 tests: drag axis slop, 1:1 follow, clamp to
+  one width, first-card and list-end walls at any distance, release naming),
+  `src/ui/swipe.test.js` trimmed to threshold + width gate,
+  `reader-forms.test.js` +5 (note/error_usage passthrough, sentence notes).
+- Browser check: the motion assertions were rewritten for the new rule
+  (`settleVerdict`/`checkSettle`: held-follows-finger, settle continues from
+  the finger's position, one monotonic move to rest, nothing after; walls at
+  0px), plus Lucide glyph checks on all five screens, the note/error walk
+  (note above the sentences in `rgb(180, 83, 9)`, double strikethrough in the
+  ink colour, error forms without sentences), the enlarged emoji and the
+  issue-list link on both About sheets.
+- Verified: `npm test` 25 files / 241 tests (0 failures); `npm run build` ok
+  (`output/dict/` = 50, `output/index.html`); `node scripts/browser-check.mjs`
+  443 checks passing. `vol/` untouched (`git status vol/` clean). Not
+  verified: real iOS/Android devices (repo-wide limitation), the visual result
+  of the double strikethrough under ruby on a real phone.
+
+### Revision 17 — card neighbours render, 24px gap, full-bleed paging
+
+The user reported two follow-ups on the revision-16 finger-tracking drag
+(quoted): 「練習的卡片跟手但是滑動沒有出現其他的卡片」 and 「卡片拖動到左邊的
+時候，可以看到有column的padding 拖動的時候很醜；字典是否也可以這樣做？」.
+
+- **17a The paging window now paints** (`CardView.vue`): the card run mounted
+  nine slots and the row translated with the finger, but the `.card-window`
+  had `height: 100%` against a content-sized stage while every slot was
+  absolutely positioned — Chromium resolved that height to **0px**, so the
+  clip discarded the current card and its neighbours at the same time. A real
+  minimum height (340px, the card height) gives the faces a paint area; the
+  full-bleed stage now owns the horizontal clip. The `.card-slot` faces became
+  hit-testable and the raised `z-index` on the current slot was removed so a
+  revealed neighbour really paints in the uncovered edge (verified by
+  `elementFromPoint`, not just `visibility`).
+- **17b A 24px inter-item gap** (`src/ui/window.js` `PAGING_GAP`, `windowGap`,
+  `src/study/window-views.js`, both views): each item keeps the full width of
+  the container and the seam is added outside it — `translateX(calc(offset% +
+  gap px))`, a fixed 24px rather than a viewport-scaled percentage. The settle
+  pitch and its browser assertions use one item width + 24px, so a turn
+  finishes without closing the gap onto the outgoing item. The dictionary and
+  翻卡學習 share the same 24px.
+- **17c Full-bleed while paging** (`--page-gutter` on `.column`,
+  `CardView.vue`, `ReaderView.vue`): at rest the surface keeps the column's
+  side padding exactly as before. While a drag is held or a settle runs, the
+  stage/body reaches the column's true edge with negative margins and the
+  paging window inside keeps the content width, so the card or word slides to
+  the real edge without a gutter band — on the phone that is the viewport
+  edge. The dictionary's neighbours also become hit-testable while paging
+  (they are real pages during the motion, like the card faces).
+- Spec: the paging-window and motion sections now state the 24px seam and the
+  full-bleed clip behaviour before the code (AGENTS rule: spec first).
+- Tests: `src/ui/window.test.js` +1 and `src/study/window-views.test.js`
+  geometry updated for the fixed gap; 242 unit tests total.
+- Browser check: `dragNeighbour` now proves the exposed region hits the
+  neighbour's own face during a held touch drag (the earlier probe only read
+  the row transform), asserts the 24px seam and that the clip spans the
+  viewport, and the settle trace reads the paging row's own width. 456 checks
+  passing.
+- Verified: `npm test` 25 files / 242 tests (0 failures); `npm run build` ok
+  (`output/dict/` = 50, `output/index.html`); `node scripts/browser-check.mjs`
+  456 checks passing. `vol/` untouched. Not verified: real iOS/Android devices
+  (repo-wide limitation) and the visual seam on a real phone GPU.

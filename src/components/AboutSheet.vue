@@ -27,7 +27,7 @@ defineEmits(['close'])
           <li>
             <a
               class="sheet-link sheet-issue"
-              href="https://github.com/manesec-web/game-japanese-katsuyou-basic/issues/new"
+              href="https://github.com/manesec-web/game-japanese-katsuyou-basic/issues/"
               target="_blank"
               rel="noopener noreferrer"
             >提交ISSUE</a
