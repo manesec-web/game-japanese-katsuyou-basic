@@ -1,6 +1,6 @@
 import { CommandError } from '../engine/errors.js'
 import { canStart } from '../dict/settings.js'
-import { buildItems } from '../study/items.js'
+import { buildItems, isErrorUsageItem } from '../study/items.js'
 import { createResults } from '../study/results.js'
 
 export const STUDY_SCREEN = { dict: 'reader', card: 'card', quiz: 'quiz' }
@@ -19,7 +19,27 @@ export function specs(deps = {}) {
           throw new CommandError('library-missing', 'library is not configured')
         }
         const mode = session.mode
-        const items = buildItems(mode, library, session.settings[mode], random ? { random } : {})
+        session.quizSkipped = []
+        let items
+        if (mode === 'quiz') {
+          // Build the full shuffled queue, then split off the error_usage items
+          // when 跳過錯誤的單詞 is on. Keeping them in `quizSkipped` lets a
+          // mid-run toggle put them back at the tail.
+          const full = buildItems(
+            'quiz',
+            library,
+            { ...session.settings.quiz, skipErrorUsage: false },
+            random ? { random } : {},
+          )
+          if (session.settings.quiz.skipErrorUsage) {
+            items = full.filter((item) => !isErrorUsageItem(item))
+            session.quizSkipped = full.filter(isErrorUsageItem)
+          } else {
+            items = full
+          }
+        } else {
+          items = buildItems(mode, library, session.settings[mode], random ? { random } : {})
+        }
         if (items.length === 0) {
           throw new CommandError('no-items', '沒有可練習的項目')
         }

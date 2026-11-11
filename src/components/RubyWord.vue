@@ -6,6 +6,7 @@ const props = defineProps({
   text: { type: String, required: true },
   reading: { type: String, default: '' },
   showReading: { type: Boolean, default: true },
+  error: { type: Boolean, default: false },
 })
 
 const tokens = computed(() => {
@@ -15,9 +16,9 @@ const tokens = computed(() => {
 </script>
 
 <template>
-  <span class="ruby-word" :lang="'ja'">
+  <span class="ruby-word" :class="{ 'ruby-word--error': error }" :lang="'ja'">
     <template v-for="(token, index) in tokens" :key="index">
-      <ruby v-if="token.ruby">{{ token.text }}<rt>{{ token.ruby }}</rt></ruby>
+      <ruby v-if="token.ruby"><rb>{{ token.text }}</rb><rt>{{ token.ruby }}</rt></ruby>
       <span v-else>{{ token.text }}</span>
     </template>
   </span>
@@ -44,5 +45,25 @@ const tokens = computed(() => {
   color: var(--ink-soft);
   letter-spacing: 0.02em;
   font-weight: 400;
+}
+
+/* An error word keeps its error colour and now carries a double strike: the
+   colour marks the misuse and the two lines make it read as deleted at a
+   glance. The decoration goes on the base boxes — `rb` and the plain spans —
+   because a flex item does not inherit its container's decoration, and it
+   deliberately skips `rt` so the reading is not struck too. The line colour is
+   left at currentColor, so it stays the error colour of the word. */
+.ruby-word--error {
+  color: var(--error);
+}
+
+.ruby-word--error rb,
+.ruby-word--error > span {
+  text-decoration-line: line-through;
+  text-decoration-style: double;
+}
+
+.ruby-word--error rt {
+  color: var(--error);
 }
 </style>

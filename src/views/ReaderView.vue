@@ -1,6 +1,6 @@
 <script setup>
 import { computed, inject, onBeforeUnmount, ref, watch } from 'vue'
-import { ArrowLeft, Settings as SettingsIcon } from 'lucide-vue-next'
+import { ArrowLeft, ChevronLeft, ChevronRight, Settings as SettingsIcon } from 'lucide-vue-next'
 import RubyWord from '../components/RubyWord.vue'
 import { groupLabel } from '../dict/forms.js'
 import { sentenceParts } from '../study/highlight.js'
@@ -239,6 +239,7 @@ function openSettings() {
                   :text="form.data.vol"
                   :reading="form.data.japanese"
                   :show-reading="showReading"
+                  :error="form.errorUsage"
                 />
               </div>
               <p class="gloss">{{ form.data.chinese }}</p>
@@ -280,7 +281,8 @@ function openSettings() {
         :disabled="!canPrev || paging"
         @click="go('prev')"
       >
-        ‹ 上一個
+        <ChevronLeft :size="18" aria-hidden="true" />
+        <span>上一個</span>
       </button>
       <button
         class="button ghost controls-button"
@@ -288,7 +290,8 @@ function openSettings() {
         :disabled="!canNext || paging"
         @click="go('next')"
       >
-        下一個 ›
+        <span>下一個</span>
+        <ChevronRight :size="18" aria-hidden="true" />
       </button>
     </footer>
   </section>
@@ -351,7 +354,7 @@ function openSettings() {
    row 1:1 while held and the settle move after release. */
 .reader-window {
   position: relative;
-  width: calc(100% - 2 * var(--page-gutter) - 8px);
+  width: calc(100% - 2 * var(--page-gutter));
   margin: 0 auto;
   min-height: 100%;
   will-change: transform;
@@ -431,12 +434,9 @@ function openSettings() {
 }
 
 /* A form flagged error_usage is kept for conjugation practice only: its word
-   is struck through twice and keeps its own colour — the strike alone marks
-   the misuse. */
-.word--error {
-  text-decoration-line: line-through;
-  text-decoration-style: double;
-}
+   is coloured with the error colour and struck through twice, both drawn
+   inside RubyWord (the `error` prop); `.word--error` remains as the locator
+   the tests and the view share. */
 
 .gloss {
   margin: 8px 0 10px;
@@ -531,5 +531,9 @@ function openSettings() {
 
 .controls-button {
   flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 </style>

@@ -41,7 +41,10 @@ export function cardEntries(items, slots, settings) {
         word: target?.vol ?? '',
         reading: target?.japanese ?? '',
         gloss: target?.chinese ?? '',
-        tags: backTags(item.targetForm, target),
+        tags: backTags(item.targetForm, target, {
+          lesson: item.lesson,
+          errorUsage: target?.error_usage === true,
+        }),
       },
     }
   })
@@ -54,7 +57,10 @@ export function readerEntries(items, slots, settings) {
     return {
       ...frame,
       lesson: item.lesson,
-      forms: orderedFormEntries(item.verb, settings.defaultForm),
+      forms: orderedFormEntries(item.verb, settings.defaultForm, {
+        skipErrorUsage: settings.skipErrorUsage,
+        displayForms: settings.displayForms,
+      }),
     }
   })
 }

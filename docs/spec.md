@@ -147,22 +147,22 @@ Card mode and quiz mode add a 變形 block.
 
 Each mode remembers its own lessons and form choices under the `localStorage` key `katsuyou-settings`.
 
-開始 builds the item list and opens study. The dictionary list is the verbs in the selected lessons, lessons ascending, and inside a lesson the JSON order. The card and quiz lists are those verbs crossed with the selected target forms: lesson, then in-lesson order, then the form order in the table above. Study starts at the first item.
+開始 builds the item list and opens study. The dictionary list is the verbs in the selected lessons, lessons ascending, and inside a lesson the JSON order. The card and quiz lists are those verbs crossed with the selected target forms: lesson, then in-lesson order, then the form order in the table above. When 跳過錯誤的單詞 is on, the card and quiz lists drop any pair whose target form is flagged `error_usage`. Study starts at the first item.
 
 ### Dictionary reader
 
 Top: back (to the picker), the title `學習（n/total）`, and a settings gear.
 
-The body lists every one of the 15 forms, in the canonical order of the table above. Each form block shows:
+The body draws the forms selected in 選擇顯示的類型, with the 預設顯示形式 first and the remaining drawn forms in the canonical order of the table above; 跳過錯誤的單詞 also leaves out `error_usage` forms. With the default settings all 15 are drawn. Each drawn form block shows:
 
 - A small heading with the form name, for example `字典形` or `ます形`. Every block has one.
-- The word `vol`, centred in the block. When readings are on, apply the ruby rules below so `japanese` sits on the kanji. When the form carries `error_usage`, the word is struck through twice and keeps its colour — the strike alone marks the misuse.
+- The word `vol`, centred in the block. When readings are on, apply the ruby rules below so `japanese` sits on the kanji. When the form carries `error_usage`, the word takes the error colour and its base text is struck through twice — two lines in that same error colour, across the kanji and the kana — while the reading above it keeps the colour and is not struck; the strike never changes the colour. With 跳過錯誤的單詞 on, such forms are not drawn at all.
 - The gloss `chinese`, with its semicolons kept, centred in the block.
-- Two tags, the group label and `第N課`, as a centred row. Only the first block carries them, so the pills appear once per word instead of fifteen times.
+- Two tags, the group label and `第N課`, as a centred row. Only the first drawn block carries them, so the pills appear once per word rather than once per form.
 - The form's `note`, when there is one, above the 例句： block. It is laid out like a sentence line — left-aligned, not centred — and marked with its own colour.
 - 例句： that form's sentences. Japanese first, then Chinese. Inside the Japanese line, every occurrence of that form's own `vol` is painted in purple so the word is visible in context. The match is exact: the sentence text is never rewritten, and the Chinese line is left plain. A sentence's own `note`, when present, rides under its Chinese line in the same note colour. Every usable form in `vol/` contains its own `vol` inside at least one of its sentences. A form flagged `error_usage` has no sentences at all, so its note stands alone and the 例句： block is not drawn.
 
-All 15 blocks share one format: the same padding, a hairline separator between blocks, and no tinted panel, accent border, radius or inset margins. The block for the current 預設顯示形式 is simply the first block; the others follow in the canonical order. A word opens at the top of the page. There is no separate 字典形 section at the bottom.
+All drawn blocks share one format: the same padding, a hairline separator between blocks, and no tinted panel, accent border, radius or inset margins. The block for the current 預設顯示形式 is simply the first drawn block; the others follow in the canonical order. The 預設顯示形式 is always one of the selected forms (see Settings), so its block is always drawn and always first; if a skip setting hides it, the first remaining drawn form is promoted to the opening block. A word opens at the top of the page. There is no separate 字典形 section at the bottom.
 
 At 550px or less, swipe right-to-left for the next word and swipe left-to-right for the previous word. A horizontal drag is finger-tracking: while the finger is down, the whole strip of words translates with it 1:1, so the word is under the hand, and the word behind it peeks in at the edge it is dragged toward. The travel is clamped to one word width. The first item does not move backward and the last item does not move forward: a drag towards a wall moves nothing at all, at any distance. A horizontal move past 72px changes the word on release. A shorter drag settles the strip back to where it started. Vertical movement stays page scroll.
 
@@ -176,7 +176,9 @@ The footer has two controls labeled `上一個` and `下一個`; they perform th
 
 Back returns to the reader and keeps the current word.
 
-- 預設顯示形式: one of the 15 forms. Default ます形.
+- 預設顯示形式: a dropdown that lists the 15 forms. Default ます形.
+- 選擇顯示的類型: the 15 forms as wrapping chip buttons, all selected by default. The chips fill equal-width cells from edge to edge, so their rows align like the quiz settings' 錯 X 題就顯示答案 button group; a label never shrinks its button or overflows it, and a partly filled last row keeps the same cell width. Deselecting a form hides it from the reader, so a form the user has not learned can be put away temporarily; at least one form stays selected. The control beside 選擇顯示的類型 follows the selection state: it reads 全選 whenever fewer than all 15 forms are selected, and 取消全選 once all 15 are selected. Pressing 全選 selects all 15 and the control becomes 取消全選; pressing 取消全選 leaves only the current 預設顯示形式 selected and the control returns to 全選. Toggling individual chips updates the label by the same rule, and the choice persists with the other settings. The current 預設顯示形式 is always selected: its chip is a disabled button and reports the reason in a tooltip reading `這是預設顯示形式，必須顯示，不能取消`, so a press cannot remove it. Like the disabled 第1課 lesson chip, this locked chip has a transparent background, muted grey text, a divider-colour border, 45% opacity, no hover accent and no pointer events; its wrapper still shows the tooltip on hover or focus. It remains pressed (`aria-pressed="true"`) and its form is always drawn first in the reader. When the 預設顯示形式 changes to a form that is not currently selected, that form joins the selection and the old default becomes an ordinary selectable chip again; the selection can never end up without the default form.
+- 跳過錯誤的單詞: a switch, default off. When on, the reader hides every form flagged `error_usage` (an invalid conjugation kept for practice only). A small note under the row reads `跳過錯誤的詞語，例如：「始まられる」。因為「始まる」是自動詞，所以「〜を始まられる」不成立，跳過這類不成立的動詞。`
 - 顯示平假名注音: a switch. Default on.
 
 ### Cards
@@ -189,11 +191,11 @@ Face:
 - The group tag while 一開始顯示幾類動詞 is on. Default on.
 - A line `變成` plus the target form’s name, for example `變成字典形`.
 
-A tap flips the card with a 3D page-turn (`rotateY`, about 240ms, decelerating, no overshoot past 180°). The back shows the target `vol`, its reading, and `chinese`, plus two tags: the target form’s name, for example `字典形`, then the verb-class tag, for example `2類動詞`, in that order. Both answer tags are always there: they ignore 一開始顯示幾類動詞 and 顯示平假名注音, so the class is named on the answer even when the switch is off. Another tap flips back to the face.
+A tap flips the card with a 3D page-turn (`rotateY`, about 240ms, decelerating, no overshoot past 180°). The back shows the target `vol`, its reading, and `chinese`, plus tags: the target form's name (for example `字典形`), then the verb-class tag (for example `2類動詞`), then `第N課`, in that order. When the target form is flagged `error_usage`, a `錯誤單詞` tag follows. These answer tags are always there: they ignore 一開始顯示幾類動詞 and 顯示平假名注音, so the class is named on the answer even when the switch is off. Another tap flips back to the face.
 
 The card list is shuffled once when 開始 is pressed; 上一張 and 下一張 then walk that frozen order rather than the lesson and form order. Swipe right-to-left for the next card, the same way the dictionary pages: the card follows the finger 1:1 while the drag is held, the card behind it peeks in at the edge, and on release past the threshold the strip finishes the page as one short decelerating move from where the finger left it. Swipe left-to-right for the previous card. The threshold matches the dictionary. A new card opens on its face. Pressing 上一張 or 下一張 runs the same move as a swipe — the strip carries the old card out and the new one in — rather than swapping instantly; under reduced motion the drag stays invisible and the swap is immediate. The nine mounted cards of the paging window follow the same rules.
 
-The right-hand footer control reads 下一張 › until the last card; on the last card it reads 完成. Pressing 完成 ends the run and shows the completion screen below.
+The right-hand footer control reads 下一張 until the last card; on the last card it reads 完成. Pressing 完成 ends the run and shows the completion screen below.
 
 Swipe right-to-left on the last card and the run ends the same way: the completion screen takes the card's place instead of another card sliding in. Arriving on the last card does not end the run by itself, and the arrow keys stay where they are: there is nothing after the last card, so a right-to-left swipe on it finishes rather than bouncing back.
 
@@ -202,11 +204,12 @@ The first card has nothing behind it, so a backward drag is completely still: th
 ### Card settings
 
 - 一開始顯示幾類動詞
+- 跳過錯誤的單詞: a switch, default off. When on, cards whose target form is flagged `error_usage` are left out of the run. A small note under the row explains the rule with the 始まられる example.
 - 顯示平假名注音
 
 ### Quiz
 
-The title is `練習（n/total）`.
+The title is `測驗（n/total）`.
 
 The prompt shows the source form and its reading. The question is:
 
@@ -233,16 +236,19 @@ Grading applies NFKC, removes whitespace, and converts katakana to hiragana. Eit
 
 A correct answer shows 回答正確, opens the next item immediately, clears the field, and builds a new keyboard.
 
-A wrong answer shows 回答錯誤 and stays on the item, with the input kept. A wrong answer also shows the countdown 再答錯 X 題就顯示答案, where X counts down on that item.
+A wrong answer keeps the input and shakes the input field, then turns it red; the item stays. A wrong answer also shows the countdown 再答錯 X 題就顯示答案, where X counts down on that item.
 
 The Nth wrong answer on the same item reveals the correct answer, where N is 錯 X 題就顯示答案: default 3, and 1 to 5. The revealed answer shows both `vol` and `japanese` in a panel that sits on top of the keyboard and covers it. The keyboard and the field then stop accepting input, and 下一題 appears inside that panel. The user presses it to continue; the revealed answer never advances by itself. The earlier misses do not reveal and do not advance.
 
 自動提交答案 defaults to on. While it is on, each append or backspace that already equals an accepted answer grades immediately. While it is off, only the check button grades. After the answer is revealed, nothing grades automatically.
 
+跳過錯誤的單詞 can be flipped while a run is live: the answered items stay; turning it on removes the error_usage items from the unanswered portion (the item on screen included), and the run ends immediately when nothing follows; turning it off appends those items to the tail of the queue.
+
 ### Quiz settings
 
 - 自動提交答案
 - 錯 X 題就顯示答案: 1 to 5, default 3
+- 跳過錯誤的單詞: a switch, default off. At start it drops every item whose target form is flagged `error_usage`. Flipped mid-run: turning it on removes the error_usage items from the unanswered portion (the item on screen included) and the run ends immediately when nothing follows, and turning it off puts them back at the tail. A small note under the row explains the rule with the 始まられる example.
 - 顯示平假名注音
 
 ## Completion
@@ -253,7 +259,7 @@ The completion screen replaces the study body and shows:
 
 - 恭喜，你已經做完了練習。
 - 正確 N 題 and 錯誤 M 題. An item counts as wrong when its answer had to be revealed.
-- A simple bar showing the correct percentage, with the percentage beside it. The percentage is correct over resolved items, and 0% when nothing was resolved.
+- A simple bar showing the correct percentage, with the percentage beside it. The percentage is correct over resolved items, and 0% when nothing was resolved. Items removed by a mid-run 跳過錯誤的單詞 switch are not counted, because only actually answered items feed the tally.
 - 錯誤的單詞: one row per missed item with the prompt word, the form that was asked, and the answer that was revealed. This list is left out when nothing was missed.
 - 返回主頁. It is 60px tall, the same height in card and quiz mode.
 
@@ -309,16 +315,17 @@ In 翻卡學習 only the current card turns over. It always opens on its face af
 The wireframes say which pieces exist. Do not copy their colors or boxes.
 
 - The page is a fixed-scale phone screen. Its viewport meta pins the scale (`maximum-scale=1, user-scalable=no`) and `html`/`body` declare `touch-action: manipulation`, so neither a double tap nor a pinch changes the scale, and a tap is not held back waiting for a possible second tap. The gesture surfaces keep `touch-action: pan-y` so a horizontal drag belongs to the swipe. Screen readers keep their browser zoom override; nothing in the page fights it.
-- The browser's own vertical scrollbar is hidden and the page draws its own: a 4px rounded thumb against the column's right edge, sized to the share of the page that is on screen and moving with it. It is a hint, not a control: it never covers a tap, it is not drawn when the page already fits, and it is not drawn on top of a screen that does not scroll. It appears while the page moves and fades out about a second after it stops. The two inner dropdown lists (從 and the settings form list) are their own scroll containers and keep the native bar. Under `prefers-reduced-motion: reduce` the thumb still appears and leaves, without the fade.
+- The browser's own vertical scrollbar is hidden and the page draws its own: a 4px rounded thumb against the column's right edge, sized to the share of the page that is on screen and moving with it. On the full-bleed phone layout the thumb keeps a 3px gap from the window edge and the track stops 16px short of the screen's top and bottom. On a framed desktop the thumb sits inside the box instead: 8px in from the column's right edge, with the track starting 32px from the top and bottom so the column's 28px corner radius never crosses the thumb, and far enough outside the 24px content gutter that it cannot cross a footer button. It is a hint, not a control: it never covers a tap, it is not drawn when the page already fits, and it is not drawn on top of a screen that does not scroll. It appears while the page moves and fades out about a second after it stops. The two inner dropdown lists (從 and the 預設顯示形式 list) are their own scroll containers and hide the native bar: each draws the same 4px rounded thumb inside its panel, a small inset from the panel's right edge, sized to the share of the list that is on screen and moving with it. The list thumb appears both while the list moves and as soon as an overflowing list opens, so the bar tells the reader that more options are below. It fades about two seconds after the list opens or the last scroll or pointer activity; a pointer entering the list, or moving inside it, shows the thumb again and restarts the same two-second wait. Scrolling also restarts that wait. It never covers a tap, is hidden from assistive technology, and a list whose options already fit draws nothing; under `prefers-reduced-motion: reduce` it still appears and leaves, without the fade. These opening and pointer rules apply to both dropdown lists. The page thumb is separate: it still appears while the page moves and fades about a second after it stops. Under `prefers-reduced-motion: reduce` the page thumb still appears and leaves, without the fade.
 - The page background is a slow gradient from indigo to warm amber, with a faint grain. The column is warm off-white, large radius, light shadow. At viewport widths of 550px or less the column drops its radius, shadow and side margins, fills the browser, and the background becomes the plain column colour.
 - Use the system stack: `Hiragino Sans`, `Noto Sans TC`, `Noto Sans JP`, `sans-serif`. Do not download a CJK webfont.
 - The word is large. The reading is small and sits above the kanji. Controls are 36px tall with a 10px radius, so they read as buttons rather than pills: that covers `.button`, the lesson and form chips, the 到 chips, the 選擇 buttons. Settings rows are 52px so each row can hold its switch comfortably. The quiz keyboard keys are 48px for typing. The home screen's three entries are 60px, the picker's 開始 and the reader and card footer controls are 50px, and 返回主頁 on the completion screens is 60px.
-- Every screen's top bar — the back button and the title — is pinned to the top of the viewport, on the column colour, above the scrolling content. This is the same treatment the dictionary reader has. The back and settings buttons are Lucide icons (`ArrowLeft`, `Settings`), inlined into the bundle at build time: no icon font, no CDN.
+- Every screen's top bar — the back button and the title — is pinned to the top of the viewport, on the column colour, above the scrolling content. This is the same treatment the dictionary reader has. The back and settings buttons are Lucide icons (`ArrowLeft`, `Settings`), the dropdown chevrons use `ChevronDown`, and the paging controls use `ChevronLeft` / `ChevronRight`, all inlined into the bundle at build time: no icon font, no CDN.
 - On every screen except home, the extra bottom height is gone: content ends 10px above the bottom of the column, and screens with a pinned footer carry their own bottom space instead, so the gap is the same whether the footer is pinned mid-page or resting at the end. The reader's 上一個 / 下一個, the card controls, settings and quiz all keep 10px. The picker's 開始 is the one exception at 20px, because that is where the primary action on that screen sits: its fade band stays above the button and 20px of solid column colour sits under it.
-- A pressed button scales down slightly. Pinned footers keep a transparent fade, but the fade band sits above the controls so the buttons stay solid and fully visible. Paging is one flat horizontal slide of the whole strip of items: a horizontal drag carries the strip with the finger 1:1, clamped to one item width, and on release the strip finishes the page as one decelerating move from where the finger left it — or settles back to rest when the release names no turn. Screen changes take about 220ms. A tapped card turns over in 3D (`rotateY`, about 240ms).
+- A separator between two entries of the settings screen is a drawn line of its own, not a border on either row: a 1px horizontal rule in the divider colour, spanning the content width. It carries no border of its own and is hidden from assistive technology. Because it is an element rather than a row edge, a hover or press tint on either neighbour cannot paint over it, a pressed row cannot shorten it, and the line keeps one colour in every state. The first row has no rule above it, the last entry of a screen has no rule under it, and inside the 預設顯示形式 list the rule runs between the options rather than after the final one. The list opens directly under the 預設顯示形式 row with no rule between the row and the panel — a line there reads as an extra divider and the user rejected it. This covers the settings screen only: the picker's 從 list keeps its row borders.
+- A pressed button scales down slightly. The rows of the two dropdown lists (從 and 預設顯示形式) are the exception: they are rows of a panel, not free-standing buttons, so the row never scales and it tints its whole body. The settings list's 預設顯示形式 draws its separators as `hrule` elements between the options instead of as row borders, so neither hover nor press can change their colour or their length, and the row's tint may cover its whole body because nothing has to be clipped away from a border. The picker's 從 list keeps the revision-18 treatment — each row carries the panel's divider as its own bottom border, with the tint clipped to the padding box so the line keeps one colour in every state — because the drawn-line change covers the settings screen only. Pinned footers keep a transparent fade, but the fade band sits above the controls so the buttons stay solid and fully visible. Paging is one flat horizontal slide of the whole strip of items: a horizontal drag carries the strip with the finger 1:1, clamped to one item width, and on release the strip finishes the page as one decelerating move from where the finger left it — or settles back to rest when the release names no turn. Screen changes take about 220ms. A tapped card turns over in 3D (`rotateY`, about 240ms).
 - A page turn and a card turn are one motion, not two: the swap is direct and the strip decelerates into place (about 190ms). A turn travels one item width plus the 24px inter-item gap, so the incoming item finishes in the current slot without closing the gap onto the outgoing one. Nothing overshoots its resting point or travels backwards while it is on screen, and once the item settles it never moves again — no flash and no second slide. Movement that has been interrupted is finished rather than stacked: a press during the incoming settle drops that slide first.
 - The paging window keeps the neighbours mounted (9 cards in 翻卡學習, 5 words in the dictionary reader) with the current item in the 3rd slot, and advances by deleting one end and adding to the other. At rest only the current item is visible; while a drag or a settle runs, the mounted neighbours peek in at the edges.
-- 回答正確 and 回答錯誤 slide in from the top and leave after about 1.6 seconds. A revealed answer stays on the question itself. The toast is not the only place that answer exists.
+- 回答正確 slides in from the top and leaves after about 1.6 seconds. A wrong answer shakes the input field and turns it red instead of a toast. A revealed answer stays on the question itself. The toast is not the only place that answer exists.
 - The page never scrolls sideways: no horizontal scrollbar appears in any screen. Paging motion is clipped by its own container, so a card that travels past the column edge is cut off rather than widening the page.
 - Under `prefers-reduced-motion: reduce`, the gradient is still, a drag stays invisible and a swipe changes the item directly, card flips are instant, and screen changes are a short fade.
 
@@ -328,9 +335,11 @@ The wireframes say which pieces exist. Do not copy their colors or boxes.
 
 - Each mode’s lesson list.
 - 從 and 到 for cards and for the quiz.
-- The dictionary’s default form.
+- The dictionary's default form.
+- The dictionary's 選擇顯示的類型 list.
 - Three reading switches, one each for dictionary, cards, and quiz.
 - The card verb-class switch.
+- Each mode's 跳過錯誤的單詞 switch.
 - Quiz auto-submit.
 - Quiz 錯 X 題就顯示答案.
 

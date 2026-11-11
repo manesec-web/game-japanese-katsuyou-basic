@@ -40,7 +40,7 @@ function enter(mode) {
 }
 
 .home-head {
-  margin-top: 12vh;
+  margin-top: 8vh;
 }
 
 .home-actions {

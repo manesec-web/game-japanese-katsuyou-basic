@@ -10,7 +10,9 @@ import { typingEdits } from '../ui/typing.js'
 const store = inject('store')
 const session = store.session
 const toast = ref('')
+const shaking = ref(false)
 let toastTimer = null
+let shakeTimer = null
 
 const item = computed(() => session.items[session.index] ?? null)
 const source = computed(() => item.value?.verb?.[session.settings.quiz.from] ?? null)
@@ -35,7 +37,22 @@ function announce(result) {
   if (!result || !result.ok) return
   const status = result.result?.status
   if (!status) return
-  showToast(status === 'correct' ? '回答正確' : '回答錯誤')
+  // A correct answer keeps the 回答正確 toast; a miss shakes the field and
+  // turns it red instead of showing a 回答錯誤 toast.
+  if (status === 'correct') showToast('回答正確')
+  else shake()
+}
+
+function shake() {
+  // Re-trigger the shake animation even on consecutive misses.
+  shaking.value = false
+  requestAnimationFrame(() => {
+    shaking.value = true
+  })
+  clearTimeout(shakeTimer)
+  shakeTimer = setTimeout(() => {
+    shaking.value = false
+  }, 360)
 }
 
 function showToast(text) {
@@ -87,14 +104,17 @@ function openSettings() {
   store.send('nav.go', { screen: 'settings' })
 }
 
-onBeforeUnmount(() => clearTimeout(toastTimer))
+onBeforeUnmount(() => {
+  clearTimeout(toastTimer)
+  clearTimeout(shakeTimer)
+})
 </script>
 
 <template>
   <section class="quiz">
     <header class="bar bar--sticky">
       <button class="icon-button" type="button" aria-label="返回" @click="back"><ArrowLeft :size="22" aria-hidden="true" /></button>
-      <h1 class="bar-title">練習（{{ session.index + 1 }}/{{ session.items.length }}）</h1>
+      <h1 class="bar-title">{{ session.items.length ? `測驗（${session.index + 1}/${session.items.length}）` : '測驗' }}</h1>
       <button class="icon-button" type="button" aria-label="設定" @click="openSettings"><SettingsIcon :size="22" aria-hidden="true" /></button>
     </header>
 
@@ -111,7 +131,7 @@ onBeforeUnmount(() => clearTimeout(toastTimer))
       </div>
 
       <div class="answer-row">
-        <div class="field">
+        <div class="field" :class="{ 'field--error': answer.verdict === 'wrong', 'field--shake': shaking }">
           <input
             class="answer-input"
             type="text"
@@ -259,6 +279,26 @@ onBeforeUnmount(() => clearTimeout(toastTimer))
   border-radius: 12px;
   background: var(--surface);
   padding-right: 44px;
+}
+
+.field--error {
+  border-color: var(--error);
+}
+
+.field--error .answer-input {
+  color: var(--error);
+}
+
+.field--shake {
+  animation: field-shake 320ms ease;
+}
+
+@keyframes field-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
 }
 
 .answer-input {

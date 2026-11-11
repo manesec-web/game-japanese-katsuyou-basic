@@ -128,3 +128,63 @@ describe('note and error_usage passthrough', () => {
     expect(entries.every((entry) => entry.errorUsage === false)).toBe(true)
   })
 })
+
+describe('跳過錯誤的單詞', () => {
+  const skipVerb = {
+    'dictionary-form': { vol: 'ある' },
+    'masu-form': { vol: 'あります' },
+    'passive-form': { vol: 'あられる', error_usage: true },
+  }
+
+  it('removes the error_usage forms and keeps the rest', () => {
+    const entries = orderedFormEntries(skipVerb, 'dictionary-form', { skipErrorUsage: true })
+    expect(entries.map((entry) => entry.id)).toEqual(['dictionary-form', 'masu-form'])
+    expect(entries.every((entry) => entry.errorUsage === false)).toBe(true)
+  })
+
+  it('leaves the error_usage forms when skipping is off', () => {
+    const entries = orderedFormEntries(skipVerb, 'dictionary-form', { skipErrorUsage: false })
+    expect(entries.map((entry) => entry.id)).toEqual(['dictionary-form', 'masu-form', 'passive-form'])
+  })
+
+  it('replaces a skipped default with the first remaining form', () => {
+    const entries = orderedFormEntries(skipVerb, 'passive-form', { skipErrorUsage: true })
+    expect(entries[0].id).toBe('dictionary-form')
+    expect(entries[0].isDefault).toBe(true)
+    expect(entries[0].isFirst).toBe(true)
+  })
+})
+
+describe('選擇顯示的類型 (displayForms)', () => {
+  it('shows only the selected forms', () => {
+    const entries = orderedFormEntries(verb, 'masu-form', { displayForms: ['masu-form', 'te-form'] })
+    expect(entries.map((entry) => entry.id)).toEqual(['masu-form', 'te-form'])
+  })
+
+  it('hides the default form and promotes the first visible one', () => {
+    const entries = orderedFormEntries(verb, 'te-form', { displayForms: ['dictionary-form', 'masu-form'] })
+    expect(entries.map((entry) => entry.id)).toEqual(['dictionary-form', 'masu-form'])
+    expect(entries[0].id).toBe('dictionary-form')
+    expect(entries[0].isDefault).toBe(true)
+    expect(entries[0].isFirst).toBe(true)
+  })
+
+  it('shows all forms when displayForms is empty or missing', () => {
+    const all = ['masu-form', 'dictionary-form', 'nai-form', 'te-form']
+    expect(orderedFormEntries(verb, 'masu-form', { displayForms: [] }).map((entry) => entry.id)).toEqual(all)
+    expect(orderedFormEntries(verb, 'masu-form').map((entry) => entry.id)).toEqual(all)
+  })
+
+  it('combines with 跳過錯誤的單詞', () => {
+    const skipVerb = {
+      'dictionary-form': { vol: 'ある' },
+      'masu-form': { vol: 'あります' },
+      'passive-form': { vol: 'あられる', error_usage: true },
+    }
+    const entries = orderedFormEntries(skipVerb, 'dictionary-form', {
+      displayForms: ['dictionary-form', 'passive-form'],
+      skipErrorUsage: true,
+    })
+    expect(entries.map((entry) => entry.id)).toEqual(['dictionary-form'])
+  })
+})

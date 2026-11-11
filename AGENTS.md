@@ -14,13 +14,38 @@ with a finger-tracking drag (the strip follows the finger 1:1 while held and
 settles the page once from where the finger left it; the walls stay still)
 and also brought the Lucide top-bar icons, the enlarged completion emoji, the
 dictionary note layer (`note` / `error_usage` rendering), the `/issues/` issue
-link and the rewritten `README.md`. The site builds
-into `output/` and has not been published to GitHub Pages yet. Day-to-day status,
-verified commands and known limitations live in `docs/progress.md`; `README.md`
-is the user-facing overview. The tasks below stay as the original build plan and
-as the acceptance checklist — do not reopen them without a spec change. Three
-future items sit in `docs/roadmap.md` as a backlog (朗讀功能, 優化下載文件,
-優化UI): none is implemented, and each needs a spec entry first.
+link and the rewritten `README.md`. Revision 17 kept the paging window painting
+and gap-accurate. Two follow-up UI passes, recorded as A and B in
+`docs/roadmap.md` and `docs/changelog.md`, then added the per-mode
+跳過錯誤的單詞 switch (including mid-run quiz queue reconciliation), the
+dictionary's 選擇顯示的類型 form filter, the 第N課 / 錯誤單詞 card tags, the
+測驗（n/total） title, wrong-answer shake/red feedback in place of a 回答錯誤
+toast, ChevronDown and paging-arrow icons, and the framed desktop page thumb.
+Revisions 18–19 kept dropdown option hairlines constant, removed every
+`border-bottom` from the settings screen in favour of a global `.hrule` class
+that draws each separator as its own 1px element, and put a double
+strikethrough (colour unchanged) back on the dictionary's `error_usage` words.
+Revision 20 draws the page's scroll thumb inside a framed desktop column (8px
+in, with a track that clears the corner radius) while the two dropdown lists
+swap their native bars for the same drawn, fading thumb; revision 21 then
+removed the rule between the 預設顯示形式 row and its list and turned that form's
+chip in 選擇顯示的類型 into a disabled button with an explanatory tooltip,
+backed by a settings invariant. Revision 22 makes the 15 chips of 選擇顯示的類型
+fill equal-width cells like the quiz settings' 錯 X 題就顯示答案 button group,
+so the dictionary chip rows align instead of leaving ragged gaps. Revision 23
+makes that group's 全選 control stateful (全選 / 取消全選, leaving only the
+locked default on clear), gives the locked default chip the picker's disabled
+第1課 look while keeping it pressed and its tooltip, and reveals both dropdown
+list thumbs on open or pointer activity for about two seconds before they fade.
+The broader 優化UI backlog remains pending for further, unspecified UI work.
+The site builds into `output/` and has not been published to GitHub Pages yet.
+Day-to-day status, verified commands and known limitations live in
+`docs/progress.md`; `README.md` is the user-facing overview. The tasks below
+stay as the original build plan and as the acceptance checklist — do not reopen
+them without a spec change. Three future items sit in `docs/roadmap.md` as a
+backlog (朗讀功能, 優化下載文件, 優化UI): B1 and B2 are unimplemented and need
+a spec entry first; B3 is still open for further, unspecified UI work,
+although the specific requests recorded in revisions 2–23 have been delivered.
 
 Behavior lives in `docs/spec.md`. Read the matching section before you build that piece. If the spec does not cover a product behavior, stop and ask. Do not invent a rule.
 
@@ -145,9 +170,9 @@ Checks: tests show lesson 1 cannot be selected, `lessons.selectAll` skips empty 
 
 ### T5 Dictionary
 
-After `study.start` the screen is `reader`. Word order is lesson order, then the order inside that lesson's `vols`. A swipe right, or the next control, is `dict.next`. A swipe left, or the previous control, is `dict.prev`. A drag that passes the threshold changes the word on release; the drag itself is invisible. A shorter drag has no visual effect. The first item does not move backward. The last item does not move forward.
+After `study.start` the screen is `reader`. Word order is lesson order, then the order inside that lesson's `vols`. A swipe right, or the next control, is `dict.next`. A swipe left, or the previous control, is `dict.prev`. A drag follows the finger 1:1 while held; a release past the threshold settles the page once from where the finger left it. A shorter drag settles back to rest. The first item does not move backward. The last item does not move forward. This is the revision-16 motion, which supersedes the invisible-drag text above; the authoritative rule is in `docs/spec.md`.
 
-The settings screen has 預設顯示形式 and 顯示平假名注音.
+The settings screen has 預設顯示形式, 選擇顯示的類型, 跳過錯誤的單詞 and 顯示平假名注音.
 
 Checks: a test shows the index stays inside the list. In a browser, a swipe right loads the next word, and settings are still there after reload.
 

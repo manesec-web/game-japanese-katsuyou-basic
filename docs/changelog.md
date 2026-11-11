@@ -1,6 +1,10 @@
 # Changelog
 
 Dated, newest last. Each entry: what changed, why, and what was verified.
+The `## 2026-11-10` headings record work requested on 2026-11-10 even
+though they were written later; the revision number is the ordering key.
+Historical per-revision test/check counts are evidence for that revision,
+not the current verification totals.
 
 ## 2026-11-09
 
@@ -1008,3 +1012,344 @@ The user reported two follow-ups on the revision-16 finger-tracking drag
   (`output/dict/` = 50, `output/index.html`); `node scripts/browser-check.mjs`
   456 checks passing. `vol/` untouched. Not verified: real iOS/Android devices
   (repo-wide limitation) and the visual seam on a real phone GPU.
+
+### Follow-up pass A — UI: error-word skipping, card tags and quiz feedback
+
+Two completed UI goals landed between revision 17's paging-window fix and the
+later dropdown/settings revisions. They are recorded here as follow-up passes A and B, between
+revisions 17 and 18, so the changelog covers the working tree that
+revision 23 verifies.
+
+The first goal was a four-part UI pass: 「改進全域、字典、翻卡學習與測驗的 UI，並在
+三種模式加入可跳過不成立用法（error_usage）的「跳過錯誤的單詞」設定，同時更新 spec
+與測試。」
+
+- **Icons and page thumb**: both dropdowns use Lucide `ChevronDown`; the
+  reader/card footer controls use `ChevronLeft` / `ChevronRight` instead of
+  text glyphs. The desktop page thumb first moved inside the framed column.
+  `ReaderView.vue` lost the extra `- 8px` window inset that could show a seam
+  while paging. Revision 20 later refined the thumb's exact 8px/32px geometry.
+- **跳過錯誤的單詞**: `src/dict/settings.js` gained one persisted boolean per
+  mode. `orderedFormEntries()` hides `error_usage` reader blocks and
+  `buildItems()` filters flagged card/quiz targets. For a live quiz,
+  `study.start` builds the full queue and `settings.patch` calls the pure
+  `reconcileQuizQueue()`: answered items stay, skipped error items leave the
+  unanswered portion (the current item included) or return at its tail, and an
+  empty remainder finishes the run. `session.quizSkipped` holds the split.
+- **Cards and quiz**: `backTags()` now returns form, class, 第N課 and, for a
+  flagged target, 錯誤單詞. The quiz title is `測驗（n/total）`, a wrong answer
+  shakes and reddens the input instead of showing the 回答錯誤 toast, and the
+  completion percentage counts only resolved items.
+- **Spec and tests**: `docs/spec.md` gained all of these clauses before code;
+  tests cover settings validation, item filtering, reader form order, card
+  tags, queue reconciliation and window data.
+- Verified at the time: `npm test` 26 files / 261 tests; `npm run build` ok
+  (`output/dict/` = 50, `output/index.html`); `node scripts/browser-check.mjs`
+  469 checks passing. `vol/` untouched.
+
+### Follow-up pass B — dictionary display-form filter and corrections
+
+The next goal restored the 預設顯示形式 dropdown after the first pass and
+added 選擇顯示的類型, whose 15 chips hide unlearned forms from the reader. It
+also changed `error_usage` words from a double strike to colour-only, corrected
+the live quiz's displayed total when skipping removes the current item, and
+changed the quiz title from 練習 to 測驗.
+
+- **Data and view**: `displayForms` is a canonicalized `forms` list in the
+  dictionary settings; `orderedFormEntries()` filters by it while keeping the
+  default form first (or promoting the first drawn form). `RubyWord.vue` gained
+  the `--error` colour treatment whose reading stays unstruck. The quiz queue
+  reconciliation preserves the answered prefix and produces a correct
+  `n/total` title, with no `n/0` case. The desktop thumb first moved to the
+  24px content gutter; revision 20 superseded that placement.
+- **Spec and tests**: the Dictionary settings, Quiz and Look-and-motion
+  clauses were updated, with settings/reader/window tests and browser checks
+  for the dropdown, chip filtering, error colour, mid-run skip and title.
+- Verified at the time: `npm test` 26 files / 269 tests; `npm run build` ok;
+  `node scripts/browser-check.mjs` 471 checks passing. `vol/` untouched.
+- **Later refinement**: revision 19 restored the double strike alongside the
+  error colour; revisions 21–23 locked the default chip, aligned the chips and
+  made 全選／取消全選 stateful. Those final rules, not this intermediate pass,
+  are authoritative in `docs/spec.md`.
+
+### Revision 18 — dropdown option rows keep their hairline
+
+The user reviewed the built site: "在單詞卡練習中，點擊設置中的"預設顯示形式" 然後點擊
+下拉選項，那個水平分割綫不太對勁" — the horizontal separator under a row of the form
+dropdown looked wrong once the pointer was on the row.
+
+- **Cause** (`SettingsView.vue`, `PickerView.vue` `.form-option`): the option rows
+  carry the panel's separator as their own `border-bottom: 1px solid var(--line)`
+  and set a hover fill. A `background` shorthand paints with
+  `background-clip: border-box`, so the semi-transparent hairline composited on
+  top of the row's own tint: over white it measured `rgb(228, 228, 231)`, under
+  the hovered row `rgb(217, 214, 209)` — one divider in the list visibly darker
+  and warmer than the other fourteen, exactly under the pointer. Pressing was
+  worse: the global `button:active:not(:disabled) { transform: scale(0.97) }`
+  applied to the row too, so the hairline shortened from `17..373` to
+  `22.3..367.7` and lifted 0.6px off the panel's border for the length of the
+  press.
+- **Fix**: `background-clip: padding-box` on the row, so the hover/press tint
+  stops above the hairline and the line composites over the panel's own white
+  in every state; the `:hover` fill switched from the `background` shorthand to
+  `background-color` because the shorthand resets `background-clip` back to
+  `border-box`. The rows also drop the press scale (`transform: none`, the tint
+  is the whole press feedback): a listed row is a row of a panel, and scaling it
+  drags its separator off the panel's edge. Both dropdowns (從 in the picker,
+  預設顯示形式 in the reader settings) share the fix.
+- Spec: the Look and motion bullet about a pressed button now names the dropdown
+  rows as the exception, with the reason (spec before code).
+- Browser check: two new assertions in the walk-through — the option's computed
+  `background-clip` is `padding-box`, and an option held down keeps its width
+  and still spans the list's inner edges (`rest=356 held=356 x=17 list=17..373`).
+- Verified: pixels re-measured in the built site at `deviceScaleFactor: 3` —
+  the divider under a hovered/pressed option reads `rgb(228, 228, 231)` at
+  x = 40/120/200/300/360, identical to the untouched dividers, and the pressed
+  row's rect stays `17..373 × 40px`; the picker's list holds the same
+  (`x=55 width=318`, list inner `55..373`). `npm test` 26 files / 269 tests (0
+  failures); `npm run build` ok; `node scripts/browser-check.mjs` 473 checks
+  passing. `vol/` untouched.
+
+### Revision 19 — drawn separators in settings, double strike on error words
+
+The user asked for two visual changes (quoted): 「設定中所有的 border-bottom 都要刪除。
+製作一個水平綫的 .class 來替換掉 border-bottom。」 and 「把所有錯誤的單詞加入雙刪除綫，
+請不要修改現在的顔色。」
+
+- **19a Separators are drawn lines, not row borders** (`src/styles/app.css`,
+  `src/views/SettingsView.vue`): a global `.hrule` class draws a 1px
+  horizontal rule in `var(--line)` — `display: block`, `height: 1px`,
+  `flex: 0 0 1px`, no border of its own, rendered as an `aria-hidden` element
+  between entries. `border-bottom` is gone from settings `.row`; the
+  dropdown's `.form-option` loses its `border-bottom`, its `:last-child`
+  override and the `background-clip: padding-box` workaround, because the
+  divider no longer belongs to the row. The template inserts the rule between
+  rows (one per row boundary, none above a mode's first row and none after the
+  last row) and between the form-list options (one after every option but the
+  final one), so no `:last-child` rule is needed to drop a closing line. A
+  press on an option can no longer shorten a divider and a hover tint can no
+  longer darken one: the line is its own element, out of reach of both.
+- **19b Error words are struck through twice again** (`src/components/RubyWord.vue`):
+  an `error_usage` word keeps its error colour and now also carries
+  `text-decoration-line: line-through` with `text-decoration-style: double`
+  on its base boxes — `rb` and the plain kana spans. The decoration sits on
+  the base boxes because a flex item does not inherit its container's
+  decoration (a rule on `.ruby-word` painted nothing, and a rule on `ruby`
+  struck the reading too). `rt` is left unstruck, and the decoration colour
+  stays `currentColor`, so the line is the same error colour as the word.
+- Spec: the reader clause about `error_usage` (colour only, no strike) and the
+  Look-and-motion clause about a dropdown row's hairline were rewritten
+  before the code — the divider is now a drawn element, and the error word
+  reads colour + double strike.
+- Browser check (`scripts/browser-check.mjs`): the settings section now
+  asserts no row or option carries `border-bottom`, that every separator is a
+  1px `rgba(36, 33, 58, 0.12)` `aria-hidden` element with no border, that the
+  rule count equals rows plus options minus one and the screen ends on a row,
+  and that a pressed option row keeps its width and position. The error-word
+  assertions went from "red instead of struck" to per-word checks over every
+  error word met while paging: error colour kept, every base box
+  `line-through` + `double`, decoration colour `rgb(220, 38, 38)`, and — on a
+  word with a reading — `rt` unstruck and still `rgb(220, 38, 38)`. 第2課
+  joined the note/error sweep so a kanji error word is met, and the section
+  turns the dictionary's readings back on (the walk had switched them off
+  earlier) so the reading rule has an `rt` to measure.
+- Paint evidence (not asserted in the walk): a screenshot probe on the built
+  site, with the decoration colour overridden to blue so the line is
+  distinguishable from the red glyphs, found exactly two 3px bands at rows
+  57–59 and 61–63 of the word box — both inside the kanji base band (39–74)
+  and none in the reading band (22–39) — with `rb`/kana reporting
+  `line-through`/`double`/`rgb(220, 38, 38)` and `rt` reporting `none`.
+- Settings geometry re-measured in the browser on all three modes: dictionary
+  4 rows / 3 rules closed and 4 rows / 15 options / 18 rules with the list
+  open, cards 3 / 2, quiz 4 / 3; every rule 1px in the divider colour.
+- Verified: `npm test` 26 files / 269 tests (0 failures); `npm run build` ok
+  (`output/index.html`, `output/dict/` = 50); `node scripts/browser-check.mjs`
+  479 checks passing. `vol/` untouched.
+
+### Revision 20 — page thumb inside the frame, drawn thumbs in the dropdown lists
+
+Two requests (quoted): 「滑動條的位置在電腦的顯示怪怪，是否可以貼近box最右側的邊緣？ 另外修改下拉box的滑動條樣式。」, then — after the first placement — 「page-scrollbar 是否可以放進去column内？因爲在電腦版會闖過外面column然後很醜」. The second message refined the desktop placement: the thumb belongs *inside* the box, not on its edge.
+
+- **20a Page thumb placement** (`src/ui/scrollbar.js`, `src/components/PageScrollBar.vue`):
+  the 24px frame inset is gone. The framed desktop layout now draws the thumb
+  inside the column — 8px in from the box's right edge — and its track stops
+  32px short of the viewport's top and bottom, which is more than the column's
+  28px corner radius, so the bar never rides the rounded corner and never reads
+  as crossing the frame. 8px also keeps it outside the 24px content gutter, so
+  it cannot cross a footer button (the first complaint: the 24px-inset thumb sat
+  on the content edge and cut through 上一個 / 下一個). The full-bleed phone
+  layout is untouched: 3px from the window edge, 16px track inset. `rightInset`,
+  `isFramed` and the new `trackInset` stay pure and unit tested.
+- **20b Dropdown lists draw their own thumb** (`src/ui/scrollbar.js`,
+  `src/ui/element-thumb.js`, `src/components/ScrollThumb.vue`,
+  `SettingsView.vue`, `PickerView.vue`): both lists (從 in the picker,
+  預設顯示形式 in the settings) hide the native bar (`scrollbar-width: none`
+  plus `::-webkit-scrollbar { display: none }`) and draw the same 4px rounded
+  bar the page draws, 4px inside the panel's right edge and 4px inside its top
+  and bottom so it stays clear of the panel's 12px corners. `listThumbMetrics`
+  is pure and unit tested (fits → nothing drawn, share of the list, minimum
+  thumb, end position, overscroll clamp); `useElementThumb` wires scroll,
+  rAF and ResizeObserver and runs the same 1s fade; `ScrollThumb.vue` only
+  renders. The list is wrapped in `.form-list-frame` (the panel's margin moved
+  to the frame) so the thumb can sit absolutely inside it without scrolling
+  with the content.
+- Spec: the page-scrollbar clause and the dropdown clause were rewritten
+  before the code (spec first), including the corner-radius reasoning.
+- Browser check: the wide-window assertion now proves the thumb is 8px inside
+  the box with its track starting 32px down and inside the column, plus a new
+  assertion that it never crosses a footer control; the picker list's native
+  bar assertion became "native bar hidden + the drawn 4px thumb (4px insets,
+  fade, reduced motion)"; the settings list got its own assertions (thumb
+  present, native bar hidden, hidden until the list moves). The picker's row
+  dividers stay asserted from revision 19.
+- Verified: `npm test` 26 files / 280 tests (0 failures); `npm run build` ok
+  (`output/index.html`, `output/dict/` = 50); `node scripts/browser-check.mjs`
+  489 checks passing. Browser probes: thumb gap to the column edge 8px at
+  700/900/1200 widths (3px at 390), 32px track start at scroll 0, inside the
+  column, no control crossing; list thumb 4px wide, 4px insets, fade after
+  1.3s, `transition: 0s` with the thumb still shown under reduced motion.
+  `vol/` untouched.
+
+### Revision 21 — no rule above the form list, the 預設顯示形式 chip is locked
+
+Two requests landed after revision 20. First the user edited the source itself:
+the separator above the 預設顯示形式 dropdown was commented out with the note
+「不要加綫，很醜！」 — a line between the row and its own list reads as an extra
+divider. Second:「字典中，如果選擇 "預設顯示形式" 是 masu 形，"選擇顯示的類型" 就必須是要
+選擇。使用禁止按鈕，并且tooltips 提示 "預設顯示形式" 默認需要顯示這個之類的提示。」
+
+- **21a No rule above the form list** (`SettingsView.vue`): the list opens
+  directly under the 預設顯示形式 row. The `hrule` above it stays commented out
+  (the user's own note is kept in place), the separators between the list's
+  options remain, and the spec now says the list carries no rule of its own.
+- **21b The default form's chip is a disabled button** (`SettingsView.vue`,
+  `src/dict/settings.js`): the chip of the current 預設顯示形式 is disabled,
+  keeps its selected look (`chip--locked`), and explains itself in a tooltip
+  reading `這是預設顯示形式，必須顯示，不能取消` (the picker's `.chip-tip`
+  pattern, shown on hover of the chip's wrapper). `toggleDisplayForm` returns
+  early for that form, so the rule also holds if a click event arrives. The
+  data layer keeps the invariant: `applyPatch` re-adds the default form when a
+  patch removes it or picks a new default outside the selection, and
+  `normalizeSettings` repairs a stored selection that misses it. Choosing a
+  different 預設顯示形式 therefore adds that form and frees the old chip.
+- Spec: the 選擇顯示的類型 clause gained the locked-chip rule and its tooltip
+  text, and the reader clause now states that the 預設顯示形式 is always drawn
+  (its block is always first), which replaces the old "if the 預設顯示形式 form
+  is hidden" fallback wording.
+- Browser check: four new assertions — the 預設顯示形式 chip is a disabled
+  button that is still pressed, no other chip is disabled, the tooltip carries
+  the spec text through `aria-describedby` and stays hidden until the wrapper
+  is hovered (then opacity 1), and the lock follows a new default (て形 locked,
+  the freed ます形 chip toggles off and on again). The 選擇顯示的類型 show/hide
+  walk now uses 字典形 instead of て形, because て形 becomes the locked default.
+- Verified: `npm test` 26 files / 284 tests (0 failures); `npm run build` ok
+  (`output/index.html`, `output/dict/` = 50); `node scripts/browser-check.mjs`
+  497 checks passing (the count moves by one with the seeded quiz item). `vol/` untouched.
+
+### Revision 22 — dictionary settings chips aligned with the quiz button group
+
+The user said:「字典中的設置形式的按鈕非常丑，請你和“挑戰”功能的按鈕組進行對其」.
+The product has no 挑戰 mode; the reference is the quiz/測驗 settings'
+錯 X 題就顯示答案 group, whose five buttons share one equal-width, flush row.
+The dictionary's 選擇顯示的類型 buttons had been shrinking to their labels
+inside a 96px-minimum grid, leaving ragged edges between columns.
+
+- **22a Equal-width chips** (`src/views/SettingsView.vue`): each `.chip` now
+  fills its `.chip-wrap` cell (`width: 100%`, `min-width: 0`), the wrapper gets
+  `min-width: 0`, and the grid's minimum track rises to 112px so even
+  ませんでした形 fits without overflow. The grid still wraps (`auto-fill`), so
+  a short final row keeps the same cell width instead of stretching its
+  buttons. The locked 預設顯示形式 chip, its tooltip, all 15 chips, the 36px
+  height, 10px radius and selected colours stay unchanged.
+- **Spec**: the 選擇顯示的類型 clause now says the chips fill equal-width cells
+  edge to edge and align like the quiz settings' button group, with no label
+  shrinking its button or overflowing it.
+- **Browser check** (`scripts/browser-check.mjs`): four new assertions cover
+  the quiz reference row (five equal-width, flush buttons), the dictionary's
+  15 equal-width chips filling their cells, full wrapping rows flush with the
+  group edges, and no label overflowing its button.
+- Verified: `npm test` 26 files / 284 tests (0 failures); `npm run build` ok
+  (`output/index.html`, `output/dict/` = 50); `node scripts/browser-check.mjs`
+  501 checks passing (the count moves by one with the seeded quiz item). `vol/` untouched.
+
+### Revision 23 — select-all state, locked-chip look, dropdown thumb hints
+
+The user asked to continue 「優化UI」 with three concrete changes:「在設定的
+"選擇顯示的類型" 全選的按鈕，按一下要變成取消全選，另外禁止的按鈕要和第一課禁止的
+按鈕一樣」 and 「點擊下拉框的時候，下拉框的滑動條要顯示，然後几秒後再消失，鼠標移動
+進去也要顯示，因爲這樣可以告訴人原來下面還有内容」. The choices were confirmed
+before implementation: the label follows the selection state; the locked chip
+keeps its pressed state and tooltip while adopting the 第1課 disabled look;
+and **both** dropdown lists show the thumb for about two seconds on open and
+after pointer or scroll activity. The broader 優化UI backlog stays pending.
+
+- **23a State-based 全選／取消全選** (`src/dict/settings.js`,
+  `src/views/SettingsView.vue`): the selection-label rule and the
+  `nextSelectAllDisplayForms` transition are pure functions. 全選 selects all
+  15 forms; 取消全選 leaves only `defaultForm` (the reader's opening block);
+  manual toggles update the label. The view only dispatches `settings.patch`,
+  so the state persists with the other localStorage settings. The
+  `defaultForm ∈ displayForms` invariant and the reader's default-first order
+  are unchanged.
+- **23b Disabled-chip look** (`src/views/SettingsView.vue`): the locked
+  `.chip--locked:disabled` uses the same transparent body, `var(--muted)`
+  text, `var(--line)` border, 45% opacity, default cursor and no pointer
+  events as `.chip--empty:disabled` in the picker. It overrides the filled
+  `.chip--on` style but stays `aria-pressed="true"`; its wrapper continues to
+  show `這是預設顯示形式，必須顯示，不能取消` on hover or focus.
+- **23c Dropdown thumb hints** (`src/ui/scrollbar.js`,
+  `src/ui/element-thumb.js`): `LIST_SCROLLBAR.fadeDelay` is 2000ms while the
+  page thumb stays 1000ms. `useElementThumb` reveals on attach (the list's
+  `v-if` mount), scroll, `pointerenter` and `pointermove`; each event restarts
+  the two-second fade. A fitting list renders no thumb, and reduced motion
+  still shows/leaves the thumb without a CSS transition.
+- **Tests** (`src/dict/settings.test.js`, `src/commands/settings.test.js`,
+  `src/ui/scrollbar.test.js`, `src/ui/element-thumb.test.js`,
+  `scripts/browser-check.mjs`): pure transition/persistence tests and six
+  fake-timer thumb tests; browser assertions on both dropdowns for immediate
+  open reveal, ~2s fade, pointer reveal/reset, scroll reveal, fitting-list
+  suppression, reduced motion, computed-style parity with the disabled 第1課
+  chip, tooltip, 15 equal-width chips, select-all label/click/reload, and the
+  unchanged ~1s page thumb.
+- Verified: `npm test` 27 files / 296 tests (0 failures); `npm run build` ok
+  (`output/index.html`, `output/dict/` = 50); `node scripts/browser-check.mjs`
+  527 checks passing (the count moves by one with the seeded quiz item);
+  `node scripts/write-sha256.mjs --check` ok. `vol/` untouched.
+
+
+## 2026-11-11 (docs and repository sync)
+
+The user asked to update all markdown and commit the repository. This pass
+reconciles the docs with the working tree's final implementation: revisions
+follow-up passes A/B are recorded above, 18–23 were already in the dated
+log, and the
+current verification remains 27 test files / 296 unit tests, a build with 50
+dictionary files, and 527 browser checks.
+
+- **Spec**: the dictionary reader clauses now distinguish drawn forms from all
+  15 forms and state the first-drawn-block tag/fallback rule; `AGENTS.md` T5
+  names the revision-16 finger-tracking gesture and the four dictionary
+  settings rather than the superseded invisible drag and two-setting list.
+- **Status**: `docs/progress.md`, `docs/roadmap.md`, `AGENTS.md` and
+  `docs/architecture.md` agree on revisions 2–23 and passes A/B, the
+  three pending backlog items, the settings invariant, live quiz queue
+  reconciliation, wrong-answer feedback, and the final test/check counts.
+  `docs/roadmap.md` now orders boards 19→23 and adds boards for passes A/B.
+- **Overview and serving**: `README.md` has the 296-test badge and counts, the
+  display-form filter, error-skipping rules, new card/quiz feedback, and both
+  drawn scroll thumbs. `docs/serving.md` notes that it was rechecked against
+  the current build; its secure-origin, IndexedDB and Pages-subpath rules are
+  unchanged.
+- **Architecture**: the file map includes `src/ui/element-thumb.js` and
+  `ScrollThumb.vue`; the session, settings, reader, quiz and testing sections
+  describe the new pure rules. Current counts are 27 files / 296 tests and 527
+  browser checks, replacing the stale 25 / 242 / 456 figures.
+- **Historical snapshots**: `docs/audit/*.md` are dated 2026-11-10 dictionary
+  audits and intentionally remain unchanged; `README.md` now labels them as
+  historical, not current-state documents.
+- Verified: `node scripts/write-sha256.mjs --check` (manifest ok: 50 lessons);
+  `npm test` 27 files / 296 tests (0 failures); `npm run build` ok
+  (`output/index.html`, `output/dict/` = 50); `node scripts/browser-check.mjs`
+  527 checks passing; `git diff --check` clean and `git status --short -- vol`
+  empty. Not verified: a real GitHub Pages deployment, real iOS/Android
+  devices, Safari/Firefox, or manual visual inspection.

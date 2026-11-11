@@ -85,11 +85,11 @@ describe('cardEntries', () => {
     const entries = cardEntries(cardItems(20), windowSlots(20, 5, CARD_WINDOW), settings)
     const current = entries[CURRENT_SLOT]
     expect(current.face.tags).toEqual([{ kind: 'group', text: '1類動詞', className: 'tag--group' }])
-    expect(current.back.tags.map((tag) => tag.text)).toEqual(['字典形', '1類動詞'])
+    expect(current.back.tags.map((tag) => tag.text)).toEqual(['字典形', '1類動詞', '第5課'])
     const off = cardEntries(cardItems(20), windowSlots(20, 5, CARD_WINDOW), { ...settings, showGroup: false })
     expect(off[CURRENT_SLOT].face.tags).toEqual([])
     // The answer side names the form and the class even with the switch off.
-    expect(off[CURRENT_SLOT].back.tags.map((tag) => tag.text)).toEqual(['字典形', '1類動詞'])
+    expect(off[CURRENT_SLOT].back.tags.map((tag) => tag.text)).toEqual(['字典形', '1類動詞', '第5課'])
   })
 })
 

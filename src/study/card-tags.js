@@ -11,12 +11,18 @@ export function frontTags(settings, source) {
   return [{ kind: 'group', text: groupLabel(source.group), className: 'tag--group' }]
 }
 
-export function backTags(targetFormId, target) {
+export function backTags(targetFormId, target, context = {}) {
   if (!targetFormId) return []
   const tags = [{ kind: 'form', text: formName(targetFormId), className: 'tag--form' }]
   const group = target?.group
   if (group !== undefined && group !== null) {
     tags.push({ kind: 'group', text: groupLabel(group), className: 'tag--group' })
+  }
+  if (context?.lesson !== undefined && context?.lesson !== null) {
+    tags.push({ kind: 'lesson', text: `第${context.lesson}課`, className: 'tag--lesson' })
+  }
+  if (context?.errorUsage === true) {
+    tags.push({ kind: 'error', text: '錯誤單詞', className: 'tag--error' })
   }
   return tags
 }

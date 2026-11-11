@@ -4,12 +4,15 @@
 // with the page, and gets out of the way when the page stops moving. All the
 // numbers come from `src/ui/scrollbar.js`; this file only wires events to it.
 import { onBeforeUnmount, onMounted, ref } from 'vue'
-import { rightInset, SCROLLBAR, thumbMetrics, trackHeight } from '../ui/scrollbar.js'
+import { rightInset, SCROLLBAR, thumbMetrics, trackHeight, trackInset } from '../ui/scrollbar.js'
 
 const visible = ref(false)
 const length = ref(0)
 const offset = ref(0)
 const fromRight = ref(SCROLLBAR.inset)
+// The track stops 32px short at both ends inside a framed column (its 28px
+// corner radius) and 16px short on the full-bleed phone layout.
+const edgeInset = ref(SCROLLBAR.edgeInset)
 
 let fadeTimer = null
 let frame = 0
@@ -20,11 +23,12 @@ function read() {
   const columnRight = column ? column.getBoundingClientRect().right : 0
   const viewport = window.innerHeight
   fromRight.value = rightInset(window.innerWidth, columnRight)
+  edgeInset.value = trackInset(window.innerWidth, columnRight)
   const metrics = thumbMetrics({
     scrollTop: window.scrollY,
     viewport,
     content: document.documentElement.scrollHeight,
-    track: trackHeight(viewport),
+    track: trackHeight(viewport, edgeInset.value),
   })
   length.value = metrics.length
   offset.value = metrics.offset
@@ -86,7 +90,7 @@ onBeforeUnmount(() => {
     :style="{
       right: `${fromRight}px`,
       height: `${length}px`,
-      transform: `translateY(${SCROLLBAR.edgeInset + offset}px)`,
+      transform: `translateY(${edgeInset + offset}px)`,
     }"
     aria-hidden="true"
   ></div>

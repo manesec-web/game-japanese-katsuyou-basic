@@ -1,6 +1,6 @@
 <script setup>
 import { computed, inject, onBeforeUnmount, ref } from 'vue'
-import { ArrowLeft, Settings as SettingsIcon } from 'lucide-vue-next'
+import { ArrowLeft, ChevronLeft, ChevronRight, Settings as SettingsIcon } from 'lucide-vue-next'
 import RubyWord from '../components/RubyWord.vue'
 import CompletePanel from '../components/CompletePanel.vue'
 import { dragAxis, dragDirection, dragShift } from '../ui/drag.js'
@@ -331,10 +331,12 @@ function openSettings() {
         :disabled="session.index === 0"
         @click="prevCard"
       >
-        ‹ 上一張
+        <ChevronLeft :size="18" aria-hidden="true" />
+        <span>上一張</span>
       </button>
       <button class="button ghost control" type="button" @click="nextOrFinish">
-        {{ onLastCard ? '完成' : '下一張 ›' }}
+        <span>{{ onLastCard ? '完成' : '下一張' }}</span>
+        <ChevronRight v-if="!onLastCard" :size="18" aria-hidden="true" />
       </button>
     </footer>
   </section>
@@ -583,5 +585,9 @@ function openSettings() {
 
 .control {
   flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 </style>

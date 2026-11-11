@@ -1,7 +1,10 @@
 # Serving locally (and why a Python server can fail)
 
 The site is a static build in `output/`. Nothing else in the repository is
-served to the browser: `vol/` is build input, `src/` is Vite input.
+served to the browser: `vol/` is build input, `src/` is Vite input. The
+serving, secure-origin and Pages rules below were rechecked on 2026-11-11
+against the revision-23 build (50 dictionary files, `output/index.html`); they
+are unchanged by the later settings and UI work.
 
 ## Correct ways to run it
 
@@ -83,8 +86,11 @@ curl -I http://localhost:8000/game-japanese-katsuyou-basic/dict/lesson_1.json   
 
 `node scripts/browser-check.mjs` runs the same build through headless
 Chromium, including a boot from an empty IndexedDB, a reload that reuses the
-cache, and a simulated storage-failure path. If the suite passes, the build
-and the boot rule are sound and the problem is the origin or the server.
+cache, and a simulated storage-failure path. The current suite is 527 checks
+(the count can move by one with the seeded quiz item); the separate
+`strike-probe.mjs` paint probe is informational, not a serving gate. If the
+browser suite passes, the build and the boot rule are sound and the problem is
+the origin or the server.
 
 ## GitHub Pages
 

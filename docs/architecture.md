@@ -83,7 +83,10 @@ entering a picker from home selects the mode in the same dispatch.
 `src/engine/session.js` exports `createSession()`. The session is plain data:
 current screen, mode, boot progress (`checked`, `total`, `done`, `error`), the
 lesson lists, form selections, study item list and cursor, current answer
-state, and settings. Commands own the transitions; views only display.
+state, and settings. Commands own the transitions; views only display. The
+quiz session also carries `quizSkipped`, the list of `error_usage` items pulled
+out of the unanswered queue when 跳過錯誤的單詞 is enabled; turning the switch
+off appends them back at the tail.
 
 The session is the single source of truth. Nothing derived is stored twice
 unless the spec says so.
@@ -117,11 +120,13 @@ src/dict/lessons.js           lesson summary + selection rules (全選)
 src/dict/library.js           verified dictionary loaded into memory
 src/dict/quiz.js              keyboard generation, grading, reveal rules (pure)
 src/dict/ruby.js              kanji / reading alignment for <ruby>
-src/dict/settings.js          defaults, validation, patches, start hints
+src/dict/settings.js          defaults, validation, patches, form-selection
+                              invariants, stateful select-all rules, start hints
 src/data/dict-manifest.json   generated manifest, committed
 src/storage/idb.js            IndexedDB dictionary cache (read/write/remove)
 src/storage/settings.js       localStorage settings load/save
-src/study/items.js            verb × form item lists (pure)
+src/study/items.js            verb × form item lists and live quiz queue
+                              reconciliation (pure)
 src/study/shuffle.js          seeded shuffle (pure)
 src/study/reader-forms.js     reader block order, first-block flags and the
                               note/error_usage layer the blocks render
@@ -130,7 +135,7 @@ src/study/card-tags.js        card face/back tag composition
 src/study/results.js          run tally, score bands, completion emoji
 src/ui/store.js               reactive session + send()
 src/ui/bootstrap.js           boot → library → settings → home (also retry)
-src/ui/scrollbar.js           page scrollbar geometry (pure)
+src/ui/scrollbar.js           page/dropdown scrollbar geometry (pure)
 src/ui/swipe.js               swipe threshold and the phone-width gate (pure)
 src/ui/drag.js                finger-tracking drag: axis, held offset and
                               release naming, walls included (pure)
@@ -138,11 +143,14 @@ src/ui/motion.js              prefers-reduced-motion probe + slideRow (one
                               Web Animations settle of the paging row)
 src/ui/window.js              paging window: 9/5 slots, current in the 3rd
 src/ui/paging-window.js       keeps the window row and shifts it per turn
+src/ui/element-thumb.js       dropdown thumb reveal, pointer/scroll activity,
+                              and the two-second fade
 src/study/window-views.js     per-slot card/reader data for the window
 src/ui/typing.js              IME-safe field edits (pure)
 src/views/*.vue               screens (thin)
 src/components/*.vue          shared UI pieces (thin: SiteHead, BuildFooter,
-                              AboutSheet, RubyWord, CompletePanel, PageScrollBar)
+                              AboutSheet, RubyWord, CompletePanel,
+                              PageScrollBar, ScrollThumb)
                               — top-bar icons come from lucide-vue-next (npm),
                               inlined into the bundle at build time
 src/styles/app.css            design tokens, layout, motion, breakpoints
@@ -188,8 +196,9 @@ and leaves `boot.done` false. `boot.checked` counts verified lessons only.
 ## Testing
 
 - Vitest under Node for engine, commands, hashing, boot, settings, item
-  lists, keyboard, grading, ruby, swipe/drag resolution, paging window, result
-  tallies: 25 files, 242 tests.
+  lists, quiz queue reconciliation, keyboard, grading, ruby, swipe/drag
+  resolution, paging window, scrollbar geometry, dropdown thumb timers and
+  result tallies: 27 files, 296 tests.
 - Browser APIs (IndexedDB, fetch) are injected so tests use fakes; the IDB
   adapter itself is tested with `fake-indexeddb`. No browser is needed for
   `npm test`.
@@ -198,8 +207,11 @@ and leaves `boot.done` false. `boot.checked` counts verified lessons only.
   home, all three pickers, reader, three settings screens, cards, quiz and
   completion, including IndexedDB reuse, the loading head and credit line, the
   first-card wall, reduced motion and the 550px breakpoint. It is a
-  separate command, not part of `npm test`. The run is 456 checks on the final
-  pass (the count can move by one: the seeded quiz item decides how many
+  separate command, not part of `npm test`. Its 527 checks on the final pass
+  cover the dictionary display-form filter and error-word hiding, live quiz
+  queue reconciliation, wrong-answer shake/red feedback, the settings' locked
+  chip and select-all state, both drawn dropdown thumbs, and the framed desktop
+  page thumb (the count can move by one: the seeded quiz item decides how many
   kana-key assertions run).
 
 ## Styling and motion
@@ -213,10 +225,11 @@ screen transitions, a 240ms `rotateY` card flip, a finger-tracking paging
 drag — the strip of items follows the hand 1:1 while held (clamped to one
 item width) and on release finishes the page as one ~190ms decelerating
 settle from where the finger left it, or settles back when the release names
-no turn; nothing moves once the item has settled — 1.6s answer toasts, and a
-`prefers-reduced-motion: reduce` branch that freezes the gradient, keeps the
-drag invisible while swipes change items directly, makes flips instant, and
-fades between screens.
+no turn; nothing moves once the item has settled — the 1.6s 回答正確 toast, a
+wrong answer that shakes the input field and turns it red instead of showing a
+回答錯誤 toast, and a `prefers-reduced-motion: reduce` branch that freezes the
+gradient, keeps the drag invisible while swipes change items directly, makes
+flips instant, and fades between screens.
 At ≤550px the column is full-bleed and the gradient is replaced by the column
 colour.
 
@@ -244,8 +257,24 @@ colour.
 - The page scrollbar is drawn, not native: `src/ui/scrollbar.js` holds the
   geometry (pure and unit tested) and `src/components/PageScrollBar.vue` wires
   `scroll`/`resize`/`ResizeObserver` to it. `app.css` hides the browser bar on
-  `html`/`body` only, and the two inner `.form-list` dropdowns set
-  `scrollbar-width: auto` because `scrollbar-width` inherits.
+  `html`/`body` only. `rightInset`, `isFramed` and `trackInset` give the thumb
+  two placements: a full-bleed phone column keeps the 3px gap and 16px track,
+  while a framed desktop column draws it 8px inside the box with a 32px track
+  inset — more than the 28px corner radius, so the bar never rides the arc —
+  and 8px also sits outside the 24px content gutter, so it cannot cross a
+  footer button.
+- The two dropdown lists draw their own thumb instead of the native bar:
+  `.form-list` hides the native scrollbar (`scrollbar-width: none` plus
+  `::-webkit-scrollbar`), and each list is wrapped in a `.form-list-frame` that
+  carries the panel's margin and holds a `<ScrollThumb>` absolutely. Geometry
+  is `listThumbMetrics` in `src/ui/scrollbar.js` (pure, unit tested),
+  `src/ui/element-thumb.js` wires the list's `scroll`,
+  `pointerenter`/`pointermove`, `ResizeObserver` and a two-second fade, and
+  `src/components/ScrollThumb.vue` only renders the 4px rounded bar, inset 4px
+  from the panel's edges so it stays clear of the 12px corners. An overflowing
+  list reveals the thumb as soon as its `v-if` mounts; scroll or pointer
+  activity shows it again and restarts the fade. A fitting list renders nothing.
+  The page thumb keeps its own separate one-second timing.
 - The viewport pins the scale (`maximum-scale=1, user-scalable=no`) and
   `html`/`body` set `touch-action: manipulation`, so a double tap and a pinch
   both leave the page at scale 1; the gesture surfaces override with `pan-y`.
@@ -275,5 +304,54 @@ colour.
   `src/study/reader-forms.js` carries each form's `note` and `errorUsage`, and
   `ReaderView.vue` renders the note above the 例句 block (and each sentence's
   own note under its Chinese line) in the `--note` colour, while an
-  `error_usage` word gets a double strikethrough with its colour left alone
-  and no 例句 block.
+  `error_usage` word keeps the error colour and gets a double strikethrough
+  with no 例句 block. The same pure function filters forms by `displayForms`
+  and `skipErrorUsage`, keeping the default form first and promoting the first
+  drawn form if the original default is not drawn.
+- The three modes keep their `error_usage` rules in pure JavaScript:
+  `buildItems()` excludes flagged targets from card/quiz lists, and
+  `reconcileQuizQueue()` preserves answered items while moving skipped error
+  items out of, or back into, the unanswered quiz tail. `settings.patch`
+  reconciles a live quiz only when the skip switch actually flips, and marks
+  the run finished if no item remains. Card backs receive form, class, 第N課,
+  and (for error items) 錯誤單詞 tags from `card-tags.js`.
+- Settings validation accepts the dictionary's `displayForms` list and each
+  mode's `skipErrorUsage` boolean. Unknown fields still reject the whole patch;
+  form lists are canonicalized, duplicates and unknown ids are removed, and the
+  `defaultForm ∈ displayForms` invariant is repaired on both restore and patch.
+  The stateful 全選／取消全選 label and transition are pure helpers in
+  `src/dict/settings.js`; views only dispatch `settings.patch`.
+- The 預設顯示形式 is always one of the drawn forms: `applyPatch` re-adds it
+  when a patch drops it or picks a new default outside the selection, and
+  `normalizeSettings` repairs a stored selection that misses it, so the reader
+  always has its opening block. The settings view renders that form's chip as a
+  disabled button (`chip--locked`) with a `.chip-tip` tooltip, and
+  `toggleDisplayForm` returns early for it, so neither a press nor a patch can
+  remove it. Its 選擇顯示的類型 chips fill equal-width grid cells from edge to
+  edge, matching the quiz settings' equal-width button group; the tooltip
+  wrapper stays outside the button so the locked chip's hint still shows. The
+  control beside 選擇顯示的類型 reads 全選 or 取消全選 according to the selection;
+  pure functions in `src/dict/settings.js` compute the label and the next form
+  list, with 取消全選 leaving only `defaultForm`. That locked chip stays
+  `aria-pressed="true"` but is styled like the picker's disabled 第1課 button,
+  so its tooltip wrapper receives the hover while the button itself has no
+  pointer events or hover accent.
+- The settings separators are `.hrule` elements between entries, never above
+  the 預設顯示形式 list: that list opens directly under its row (the user removed
+  the line there — 「不要加綫，很醜！」).
+- The double strikethrough is drawn on the base boxes, not on the word: the
+  rule lives in `RubyWord.vue` and targets `rb` plus the plain kana spans, with
+  `text-decoration-style: double` and the colour left at `currentColor`. A
+  decoration on the `inline-flex` container paints nothing (the flex items do
+  not inherit it) and a decoration on `ruby` also strikes `rt`, so the reading
+  would be crossed out too; only the base boxes give two lines through the word
+  and nothing through the reading.
+- Settings separators are drawn elements, not borders: `.hrule` in
+  `src/styles/app.css` is a `display: block`, `height: 1px`, `flex: 0 0 1px`, borderless
+  rule in `var(--line)`, rendered as an `aria-hidden` span between entries. No
+  settings row or dropdown option carries a `border-bottom`, so no
+  `background-clip` workaround and no `:last-child` override is needed: the
+  template inserts the rule between rows (never above a mode's first row, never
+  after the last entry) and between the form-list options. Because the line is
+  its own element, a hover or press tint on a neighbour cannot change its
+  colour and a pressed row cannot shorten it.

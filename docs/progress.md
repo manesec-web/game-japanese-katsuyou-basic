@@ -1,10 +1,14 @@
 # Progress
 
-Last updated: 2026-11-11 (revision 17).
+Last updated: 2026-11-11 (revision 23, documentation sync).
 
-**Status: complete.** T1–T8 are done and revisions 2–17 have landed and been
-verified. The site is not published yet; the remaining step is to deploy
-`output/` to GitHub Pages. Revision 14 replaced the paging follow/spring-back
+**Status: complete.** T1–T8 are done and revisions 2–23 have landed and been
+verified, including follow-up UI passes A/B. The site is not published yet;
+the remaining product step is to deploy `output/` to GitHub Pages. Backlog
+B1–B3 remain `pending`; B3 is open for further, unspecified UI work.
+
+The following revision summaries are historical. Revision 14 replaced the
+paging follow/spring-back
 (“跟手拖曳、短拖回彈、第一張卡阻力”) with an invisible drag and a direct swap
 plus one short slide-in, and fixed the post-settle flash (“歸位後閃一下、再動
 一次”). Revision 15 mounts a paging window around the current item — 9 cards in
@@ -17,24 +21,59 @@ it; the walls (first card, first/last word) stay completely still. The same
 revision swapped the `←`/`⚙` glyphs for Lucide icons, enlarged the completion
 emoji (2rem → 4rem), centred the word/gloss/tag row in the dictionary block,
 added the note layer (form notes above 例句, sentence notes under the Chinese
-line, both in the `--note` colour) and the double strikethrough for
-`error_usage` forms, pointed 提交ISSUE at `/issues/`, and rewrote `README.md`.
-Revision 17 fixed the card paging window's zero-height clip (the current card
+line, both in the `--note` colour), pointed 提交ISSUE at `/issues/`, and rewrote
+`README.md`. Revision 16 also gave `error_usage` forms a double strikethrough;
+follow-up pass B temporarily changed that to colour-only, and revision 19 restored
+the double strike in the final rendering. Revision 17 fixed the card paging
+window's zero-height clip (the current card
 followed the finger but no neighbour appeared), gave both screens a 24px gap
 between adjacent pages, and made the paging surface span the column's full
 width while dragging so the item reaches the true edge instead of leaving a
-side-padding gutter.**
+side-padding gutter. Revision 18 kept the hairline under a dropdown option row
+constant: the hover and press tint no longer paints under it and the row no
+longer scales on press, so the separator stops darkening and shortening while
+the pointer is on it ("那個水平分割綫不太對勁"). Revision 19 then removed every
+`border-bottom` from the settings screen in favour of a global `.hrule` class
+that draws each separator as its own 1px element, and put a double strike back
+on the dictionary's `error_usage` words while keeping their existing error
+colour (no colour value changed in that revision).
+
+Two follow-up UI goals between revisions 17 and 18, recorded as passes
+A/B, added the three 跳過錯誤的單詞 switches (with live quiz
+queue reconciliation), the 選擇顯示的類型 reader filter, 第N課 / 錯誤單詞 card
+tags, the 測驗（n/total） title, shake/red wrong-answer feedback instead of a
+回答錯誤 toast, the ChevronDown and paging-arrow icons, and the first framed
+desktop page-thumb placement; their intermediate visual choices were later
+refined by revisions 19–23. Revision 20 moved the page's drawn thumb inside a
+framed desktop column (8px in from the box's right edge with a 32px
+track that clears the 28px corner radius, so it no longer reads as crossing
+the frame or cutting through the footer buttons) while the phone layout keeps its 3px/16px placement, and replaced the
+native scrollbars of the two dropdown lists with the same drawn 4px rounded,
+fading thumb the page uses. Revision 21 keeps the 預設顯示形式 list opening
+directly under its row with no rule in between (the user removed that line with
+「不要加綫，很醜！」) and turns the 預設顯示形式 chip of 選擇顯示的類型 into a
+disabled button with the tooltip 「這是預設顯示形式，必須顯示，不能取消」, backed by
+a data-layer invariant so the default form can never be dropped from the
+selection. Revision 22 aligns the dictionary's 15 選擇顯示的類型 chips with the
+quiz settings' 錯 X 題就顯示答案 button group: each chip fills an equal-width
+cell, so the wrapping rows have flush edges and no ragged gaps. Revision 23
+makes 選擇顯示的類型's 全選 toggle to 取消全選 according to the selection state
+(clearing leaves only the locked default form), gives that locked chip the same
+transparent, muted, 45%-opacity disabled look as 第1課 while keeping it pressed
+and its tooltip, and shows both dropdown list thumbs immediately on open or
+pointer activity for about two seconds before they fade. The broader 優化UI
+backlog remains pending for further, unspecified UI work.
 
 ## Current state
 
 - Vue 3.5 + Vite 7.3 + Vitest 3 static app. Verified with Node v26.4.0 and
   npm 11.18.0; Vite 7 requires Node `^20.19.0` or `>=22.12.0`.
-- `npm test`: 25 files, **242 tests passing**. `pretest` verifies the 50-lesson
+- `npm test`: 27 files, **296 tests passing**. `pretest` verifies the 50-lesson
   SHA-256 manifest first.
 - `npm run build`: `output/index.html`, `output/assets/` (one JS + one CSS
   bundle) and `output/dict/` with exactly **50** lesson files. `output/` is
   gitignored.
-- `node scripts/browser-check.mjs`: **456 checks passing on the final run**
+- `node scripts/browser-check.mjs`: **527 checks passing on the final run**
   (headless Chromium, 390×844 with 550/551/800/900 width probes, plus a touch
   context for the zoom lock and frame-by-frame motion assertions). The count
   can move by one because the seeded quiz item decides how many kana-key
@@ -42,6 +81,9 @@ side-padding gutter.**
 - `node scripts/motion-probe.mjs`: prints the frame-by-frame position trace for
   the paging slide and the flip. Used to measure the motion before and after a
   change; not part of the pass/fail gate.
+- `node scripts/strike-probe.mjs`: the one-off screenshot probe that measured
+  where the double strike is painted and confirmed the reading is unstruck.
+  It is retained as a development diagnostic, not part of the pass/fail gate.
 - Git: branch `main`, tracking `github/main`; history starts at commit
   `933c30b` (`init`). The GitHub Pages URL returned 404 when this document
   was refreshed, so the site has not been published yet.
@@ -51,10 +93,10 @@ side-padding gutter.**
 ## Verification as of this refresh
 
 ```bash
-npm test                                # 25 files, 242 tests passed
+npm test                                # 27 files, 296 tests passed
 npm run build                           # manifest ok: 50 lessons; built in <1s
 ls output/dict | wc -l                  # 50
-node scripts/browser-check.mjs          # browser check passed (456 checks)
+node scripts/browser-check.mjs          # browser check passed (527 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 node scripts/write-sha256.mjs --check   # manifest ok: 50 lessons
 ```
@@ -62,8 +104,8 @@ node scripts/write-sha256.mjs --check   # manifest ok: 50 lessons
 ## History in one line each
 
 Full detail, including quoted user requests and before/after measurements, is
-in [`docs/changelog.md`](docs/changelog.md). Task acceptance evidence is in
-[`docs/roadmap.md`](docs/roadmap.md).
+in [`docs/changelog.md`](changelog.md). Task acceptance evidence is in
+[`docs/roadmap.md`](roadmap.md).
 
 - **T1**: Vite + Vue 3 skeleton, `dispatch`, empty session, Vitest, build into
   `output/`.
@@ -141,6 +183,67 @@ in [`docs/changelog.md`](docs/changelog.md). Task acceptance evidence is in
   above 例句, sentence notes under the Chinese line, `--note` colour) and the
   double strikethrough on `error_usage` words, 提交ISSUE → `/issues/`, and a
   rewritten `README.md`.
+- **Follow-up pass A** (2026-11-11, four-part UI pass): Lucide
+  `ChevronDown` / paging arrows, the first framed desktop page thumb, the three
+  跳過錯誤的單詞 switches with live quiz queue reconciliation, 第N課 / 錯誤單詞
+  card tags, 測驗（n/total）, wrong-answer shake/red feedback, and a completion
+  tally over resolved items. `src/study/items.js` gained the pure queue helper;
+  `session.quizSkipped` holds the deferred error items. Final pass: 26 files /
+  261 tests and 469 browser checks.
+- **Follow-up pass B** (2026-11-11, restore the default-form dropdown and
+  add a display-form filter): 預設顯示形式 stays a dropdown, 選擇顯示的類型 adds
+  15 persisted chips that hide reader forms, `error_usage` words temporarily
+  become colour-only, the quiz skip keeps `n/total` correct with no `n/0` case,
+  and the quiz title becomes 測驗. Final pass: 26 files / 269 tests and 471
+  browser checks. Revision 19 later restored the double strike; revisions
+  21–23 finalized the form-chip controls.
+- **Revision 18** (requested 2026-11-11:「那個水平分割綫不太對勁」): both
+  dropdown option rows keep a constant hairline under hover and press — the
+  tint is clipped to the padding box and the row no longer scales — so the
+  divider neither darkens nor shortens. Final pass: 26 files / 269 tests and
+  473 browser checks.
+- **Revision 19** (requested 2026-11-11: “設定中所有的 border-bottom 都要刪除。
+  製作一個水平綫的 .class 來替換掉 border-bottom” and “把所有錯誤的單詞加入雙刪除
+  綫，請不要修改現在的顔色”): settings rows and dropdown options no longer
+  carry a `border-bottom`; a global `.hrule` class draws each separator as a
+  1px `aria-hidden` element in the `--line` colour, so a hover or press tint
+  cannot paint over the line and a pressed row cannot shorten it. The
+  dictionary's `error_usage` words keep their error colour and gain a double
+  `line-through` on the base text (`rb` plus the kana spans), with the reading
+  left unstruck and the strike drawn in the same error colour.
+- **Revision 20** (requested 2026-11-11: “滑動條的位置在電腦的顯示怪怪，是否可以貼近
+  box最右側的邊緣？ 另外修改下拉box的滑動條樣式。”, refined by “page-scrollbar
+  是否可以放進去column内？因爲在電腦版會闖過外面column然後很醜”): the page thumb
+  is drawn inside a framed column — 8px in from the box's right edge, with the
+  track starting 32px from the top and bottom so the 28px corner radius never
+  crosses it, and clear of the 24px content gutter so it cannot cut through a
+  footer button; the full-bleed phone layout keeps its 3px/16px placement. Both
+  dropdown lists hide the native bar and draw the page's own 4px rounded thumb
+  (`src/ui/element-thumb.js` + `src/components/ScrollThumb.vue`), revealed
+  while the list moves and faded a second later.
+- **Revision 21** (requested 2026-11-11: the user's own note in `SettingsView.vue`
+  「不要加綫，很醜！」 removed the separator above the 預設顯示形式 list; then
+  「字典中，如果選擇 "預設顯示形式" 是 masu 形，"選擇顯示的類型" 就必須是要選擇。使用禁止按鈕，
+  并且tooltips 提示 "預設顯示形式" 默認需要顯示這個之類的提示。」): the list opens
+  straight under its row, and the current 預設顯示形式's chip in 選擇顯示的類型 is
+  a disabled button with the tooltip 「這是預設顯示形式，必須顯示，不能取消」. The data
+  layer re-adds the default form after any patch or restore that would drop it.
+- **Revision 22** (requested 2026-11-11:「字典中的設置形式的按鈕非常丑，請你和
+  “挑戰”功能的按鈕組進行對其」): the 選擇顯示的類型 chips now fill equal-width
+  grid cells, like the quiz/測驗 settings' 錯 X 題就顯示答案 buttons, so their
+  wrapping rows are flush and no chip shrinks to its label. The locked default
+  chip and its tooltip are unchanged.
+- **Revision 23** (requested 2026-11-11:「繼續優化UI」 with three concrete
+  changes): 選擇顯示的類型's control follows the selection: 全選 selects 15 forms
+  and reads 取消全選, which leaves only the current 預設顯示形式 and returns to
+  全選; manual toggles update the label and the choice persists. The locked
+  default chip keeps `aria-pressed="true"` and its tooltip but takes the picker's
+  第1課 disabled look (transparent, muted text, divider border, opacity 0.45,
+  no hover accent/pointer events). Both the settings and picker dropdowns show
+  their drawn thumb on open, after scroll, and on pointer enter/move; each event
+  restarts a two-second fade. A fitting list draws nothing, reduced motion keeps
+  the appear/leave behavior without a transition, and the page thumb's separate
+  one-second rule is unchanged. Backlog B3 remains pending for further UI work.
 
 ## Known limitations and unverified paths
 
@@ -193,7 +296,7 @@ number. Current causes:
 | Storage blocked/disabled | `IndexedDB is unavailable on this origin; storage is blocked or disabled` |
 | Two downloads mismatch | stops and names the lesson; retry after clearing site data |
 
-Troubleshooting steps: [`docs/serving.md`](docs/serving.md).
+Troubleshooting steps: [`docs/serving.md`](serving.md).
 
 ## Spec-silent decisions (still worth confirming)
 

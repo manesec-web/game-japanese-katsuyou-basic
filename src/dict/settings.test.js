@@ -5,10 +5,12 @@ import {
   canStart,
   defaultSettings,
   isAllTargetsSelected,
+  nextSelectAllDisplayForms,
   nextSelectAllTargets,
   NO_LESSON_HINT,
   NO_TARGET_HINT,
   normalizeSettings,
+  selectAllDisplayLabel,
   startHint,
   toggleTarget,
   validatePatch,
@@ -157,6 +159,91 @@ describe('錯 X 題就顯示答案', () => {
   })
 })
 
+describe('跳過錯誤的單詞', () => {
+  it('defaults to off', () => {
+    expect(defaultSettings().dict.skipErrorUsage).toBe(false)
+    expect(defaultSettings().card.skipErrorUsage).toBe(false)
+    expect(defaultSettings().quiz.skipErrorUsage).toBe(false)
+  })
+
+  it('accepts a boolean patch and rejects a non-boolean', () => {
+    expect(validatePatch({ dict: { skipErrorUsage: true } })).toEqual({ ok: true })
+    expect(validatePatch({ card: { skipErrorUsage: true } })).toEqual({ ok: true })
+    expect(validatePatch({ quiz: { skipErrorUsage: true } })).toEqual({ ok: true })
+    expect(validatePatch({ dict: { skipErrorUsage: false } })).toEqual({ ok: true })
+    expect(validatePatch({ card: { skipErrorUsage: 'yes' } }).ok).toBe(false)
+    expect(validatePatch({ quiz: { skipErrorUsage: 'yes' } }).ok).toBe(false)
+  })
+
+  it('persists a patch and survives a restore', () => {
+    const patched = applyPatch(defaultSettings(), { card: { skipErrorUsage: true } })
+    expect(patched.card.skipErrorUsage).toBe(true)
+    expect(normalizeSettings({ card: { skipErrorUsage: true } }).card.skipErrorUsage).toBe(true)
+    expect(normalizeSettings({ card: { skipErrorUsage: 'yes' } }).card.skipErrorUsage).toBe(false)
+  })
+})
+
+describe('選擇顯示的類型', () => {
+  it('defaults to every form', () => {
+    expect(defaultSettings().dict.displayForms).toEqual(FORM_IDS)
+  })
+
+  it('accepts a valid form array and rejects bad values', () => {
+    expect(validatePatch({ dict: { displayForms: [DICT, MASU] } })).toEqual({ ok: true })
+    expect(validatePatch({ dict: { displayForms: [] } })).toEqual({ ok: true })
+    expect(validatePatch({ dict: { displayForms: ['nope'] } }).ok).toBe(false)
+    expect(validatePatch({ dict: { displayForms: [DICT, DICT] } }).ok).toBe(false)
+  })
+
+  it('cleans to canonical order, persists, and survives a restore', () => {
+    // The 預設顯示形式 (ます形 here) is always one of the drawn forms, so it is
+    // added back even though the patch did not name it.
+    const patched = applyPatch(defaultSettings(), { dict: { displayForms: ['te-form', DICT] } })
+    expect(patched.dict.displayForms).toEqual([DICT, MASU, 'te-form'])
+    expect(normalizeSettings({ dict: { displayForms: ['te-form'] } }).dict.displayForms).toEqual([
+      MASU,
+      'te-form',
+    ])
+    expect(normalizeSettings({ dict: { displayForms: 'nope' } }).dict.displayForms).toEqual(FORM_IDS)
+  })
+
+  it('reads 取消全選 only once all 15 forms are selected', () => {
+    expect(selectAllDisplayLabel(FORM_IDS)).toBe('取消全選')
+    expect(selectAllDisplayLabel(FORM_IDS.slice(1))).toBe('全選')
+    expect(selectAllDisplayLabel([MASU])).toBe('全選')
+    expect(selectAllDisplayLabel([])).toBe('全選')
+  })
+
+  it('selects all 15 from 全選, then leaves only the default from 取消全選', () => {
+    const few = [MASU, DICT]
+    const all = nextSelectAllDisplayForms(few, MASU)
+    expect(all).toEqual(FORM_IDS)
+    expect(nextSelectAllDisplayForms(all, MASU)).toEqual([MASU])
+    // The same rule follows a different current 預設顯示形式.
+    expect(nextSelectAllDisplayForms(all, DICT)).toEqual([DICT])
+  })
+
+  it('keeps the label in step with a manually toggled chip', () => {
+    const small = nextSelectAllDisplayForms([MASU], MASU)
+    expect(selectAllDisplayLabel(small)).toBe('取消全選')
+    const patched = applyPatch(defaultSettings(), {
+      dict: { displayForms: small.filter((id) => id !== DICT) },
+    })
+    expect(selectAllDisplayLabel(patched.dict.displayForms)).toBe('全選')
+    const restored = applyPatch(patched, { dict: { displayForms: [...patched.dict.displayForms, DICT] } })
+    expect(selectAllDisplayLabel(restored.dict.displayForms)).toBe('取消全選')
+  })
+
+  it('clears through settings.patch without ever dropping the default form', () => {
+    const patched = applyPatch(defaultSettings(), {
+      dict: { displayForms: nextSelectAllDisplayForms(FORM_IDS, DICT), defaultForm: DICT },
+    })
+    expect(patched.dict.displayForms).toEqual([DICT])
+    expect(selectAllDisplayLabel(patched.dict.displayForms)).toBe('全選')
+    expect(normalizeSettings(patched).dict.displayForms).toEqual([DICT])
+  })
+})
+
 describe('startHint', () => {
   it('asks for a lesson before anything else, in every mode', () => {
     const settings = defaultSettings()
@@ -211,5 +298,40 @@ describe('startHint', () => {
     settings.card.to = ['dictionary-form']
     expect(canStart(settings, 'card')).toBe(true)
     expect(startHint(settings, 'card')).toBe(null)
+  })
+})
+
+// The 預設顯示形式 is the block the reader opens on, so it is always one of the
+// drawn forms: the settings screen disables its chip, and the data layer keeps
+// the invariant for a patch or a stored selection that tries to drop it.
+describe('the default form stays displayed', () => {
+  it('adds a new default form to the selection', () => {
+    const patched = applyPatch(defaultSettings(), { dict: { defaultForm: DICT } })
+    expect(patched.dict.defaultForm).toBe(DICT)
+    expect(patched.dict.displayForms).toContain(DICT)
+  })
+
+  it('restores the default form when a patch removes it', () => {
+    const patched = applyPatch(defaultSettings(), {
+      dict: { displayForms: FORM_IDS.filter((id) => id !== MASU) },
+    })
+    expect(patched.dict.defaultForm).toBe(MASU)
+    expect(patched.dict.displayForms).toContain(MASU)
+    // The rest of the selection is kept, in canonical order.
+    expect(patched.dict.displayForms).toEqual(FORM_IDS)
+  })
+
+  it('keeps only the default form when every other chip is cleared', () => {
+    const patched = applyPatch(defaultSettings(), { dict: { displayForms: [] } })
+    expect(patched.dict.displayForms).toEqual([MASU])
+  })
+
+  it('repairs a stored selection that misses its default form', () => {
+    const restored = normalizeSettings({
+      dict: { defaultForm: 'te-form', displayForms: [MASU, 'dictionary-form'] },
+    })
+    expect(restored.dict.defaultForm).toBe('te-form')
+    expect(restored.dict.displayForms).toContain('te-form')
+    expect(restored.dict.displayForms).toEqual(['dictionary-form', MASU, 'te-form'])
   })
 })

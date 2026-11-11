@@ -7,6 +7,7 @@ import path from 'node:path'
 import { chromium } from 'playwright-core'
 import { CONFETTI_EMOJI, PRACTICE_EMOJI, SCORE_BANDS } from '../src/study/results.js'
 import { groupLabel } from '../src/dict/forms.js'
+import { LIST_SCROLLBAR, SCROLLBAR } from '../src/ui/scrollbar.js'
 
 const PORT = Number(process.env.PORT || 5199)
 
@@ -42,6 +43,21 @@ function check(name, ok, detail = '') {
 }
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
+// Read the drawn thumb inside either dropdown frame. Kept as a helper because
+// both lists share the same open/pointer/fade rules but are reached from
+// different screens.
+async function readListThumbState(page, frameSelector) {
+  return page.evaluate((selector) => {
+    const thumb = document.querySelector(`${selector} .list-thumb`)
+    if (!thumb) return { present: false, on: false, opacity: 0 }
+    return {
+      present: true,
+      on: (thumb.getAttribute('class') || '').includes('list-thumb--on'),
+      opacity: Number(getComputedStyle(thumb).opacity),
+    }
+  }, frameSelector)
+}
 
 async function waitForServer(timeout = 30000) {
   const deadline = Date.now() + timeout
@@ -922,8 +938,23 @@ try {
     await page.locator('.bar .icon-button[aria-label="返回"]').isVisible(),
   )
 
-  // Empty lessons are unpressable but explain themselves on hover.
+  // Empty lessons are unpressable but explain themselves on hover. Capture
+  // their computed disabled look here so the settings' locked chip can be
+  // compared against the real 第1課 button later in the same browser.
   const emptyChip = page.locator('.chip-wrap').first()
+  const emptyChipStyle = await page.evaluate(() => {
+    const chip = document.querySelector('.chip-grid .chip--empty:disabled')
+    const style = getComputedStyle(chip)
+    return {
+      color: style.color,
+      background: style.backgroundColor,
+      border: style.borderTopColor,
+      opacity: style.opacity,
+      pointerEvents: style.pointerEvents,
+      cursor: style.cursor,
+      fontWeight: style.fontWeight,
+    }
+  })
   await emptyChip.hover()
   await wait(220)
   const hintState = await page.evaluate(() => {
@@ -947,6 +978,15 @@ try {
   await page.locator('.home-actions button', { hasText: '翻卡學習' }).click()
   await page.waitForSelector('.form-select', { timeout: 5000 })
   check('card picker shows 從 and 到', (await page.locator('.form-chips').count()) === 1)
+  const fromGlyph = await page.locator('.form-select').evaluate((el) => ({
+    svg: el.querySelectorAll('svg.lucide').length,
+    text: (el.textContent || '').trim(),
+  }))
+  check(
+    '從 uses a Lucide chevron, not a text glyph',
+    fromGlyph.svg === 1 && !fromGlyph.text.includes('⌄'),
+    JSON.stringify(fromGlyph),
+  )
   checkLabelAlignment('card picker', await labelAlignment(page))
   check('到 header row exists', (await page.locator('.targets-head').count()) === 1)
   check('到 header labels the row', (await page.locator('.targets-head .field-label').textContent()).trim() === '到')
@@ -1094,7 +1134,7 @@ try {
   const readerControls = (await page.locator('.reader-controls .controls-button').allTextContents()).map((t) => t.trim())
   check(
     'reader controls read 上一個 / 下一個',
-    readerControls[0] === '‹ 上一個' && readerControls[1] === '下一個 ›',
+    readerControls[0] === '上一個' && readerControls[1] === '下一個',
     readerControls.join(' | '),
   )
 
@@ -1274,11 +1314,401 @@ try {
   await page.waitForSelector('.settings', { timeout: 5000 })
   await iconGlyphs(page, 'settings')
   check('settings shows 預設顯示形式', (await page.locator('.row-label').first().textContent()).trim() === '預設顯示形式')
+  check('settings shows 選擇顯示的類型', (await page.locator('.row-label', { hasText: '選擇顯示的類型' }).count()) === 1)
   check('settings shows 顯示平假名注音', (await page.locator('.row-label', { hasText: '顯示平假名注音' }).count()) === 1)
   const switchBox = await page.locator('.switch').first().boundingBox()
   check('switch control is 32px tall', switchBox.height >= 31.9 && switchBox.height <= 33, `height=${switchBox.height}`)
+  // The current 預設顯示形式 is always selected: its 選擇顯示的類型 chip is a
+  // disabled button that explains itself in a tooltip, and a press cannot
+  // switch it off.
+  const readLockedChip = () =>
+    page.evaluate(() => {
+      const chips = [...document.querySelectorAll('.settings .form-chips .chip')]
+      const locked = document.querySelector('.settings .form-chips .chip--locked')
+      const tip = locked?.parentElement?.querySelector('.chip-tip')
+      return {
+        chips: chips.length,
+        pressed: chips.filter((chip) => chip.getAttribute('aria-pressed') === 'true').length,
+        lockedName: locked?.textContent.trim() ?? null,
+        lockedDisabled: locked?.disabled === true,
+        lockedPressed: locked?.getAttribute('aria-pressed') === 'true',
+        lockedDescribed: locked?.getAttribute('aria-describedby') ?? null,
+        tipId: tip?.id ?? null,
+        tipText: tip?.textContent.trim() ?? null,
+        tipOpacity: tip ? Number(getComputedStyle(tip).opacity) : null,
+        otherDisabled: chips.filter((chip) => chip !== locked && chip.disabled).length,
+      }
+    })
+  // The 選擇顯示的類型 control follows the state just like the lesson 全選.
+  // It starts fully selected, so the first visit sees 取消全選.
+  const displaySelectAll = page.locator('.settings .row-head .text-button')
+  const displayControlText = async () => (await displaySelectAll.textContent()).trim()
+  const pressedCount = async () =>
+    (await page.locator('.settings .form-chips .chip[aria-pressed="true"]').count())
+  check('all 15 display forms start selected', (await pressedCount()) === 15, String(await pressedCount()))
+  check('the display control reads 取消全選 when all are selected', (await displayControlText()) === '取消全選', await displayControlText())
+  await displaySelectAll.click()
+  check(
+    '取消全選 leaves only the locked 預設顯示形式',
+    (await pressedCount()) === 1 && (await readLockedChip()).lockedPressed,
+    `pressed=${await pressedCount()} state=${JSON.stringify(await readLockedChip())}`,
+  )
+  check('the display control returns to 全選 after clearing', (await displayControlText()) === '全選', await displayControlText())
+  await displaySelectAll.click()
+  check('全選 selects all 15 display forms again', (await pressedCount()) === 15, String(await pressedCount()))
+  check('the display control becomes 取消全選 again', (await displayControlText()) === '取消全選', await displayControlText())
+  // A manual toggle also updates the control's label.
+  await page.locator('.settings .form-chips .chip', { hasText: /^字典形$/ }).click()
+  check(
+    'hiding one form returns the display control to 全選',
+    (await displayControlText()) === '全選' && (await pressedCount()) === 14,
+    `label=${await displayControlText()} pressed=${await pressedCount()}`,
+  )
+  await page.locator('.settings .form-chips .chip', { hasText: /^字典形$/ }).click()
+  check(
+    'restoring the last form returns the display control to 取消全選',
+    (await displayControlText()) === '取消全選' && (await pressedCount()) === 15,
+    `label=${await displayControlText()} pressed=${await pressedCount()}`,
+  )
+  // 取消全選 keeps its state across reload and still draws the opening block.
+  await displaySelectAll.click()
+  const afterClear = await page.evaluate(() => {
+    const stored = JSON.parse(localStorage.getItem('katsuyou-settings') || '{}')
+    return stored?.dict?.displayForms ?? null
+  })
+  check('取消全選 persists its one-form selection', Array.isArray(afterClear) && afterClear.length === 1 && afterClear[0] === 'masu-form', JSON.stringify(afterClear))
+  await page.reload({ waitUntil: 'load' })
+  await page.waitForSelector('.home-actions', { timeout: 30000 })
+  await page.locator('.home-actions button', { hasText: '字典' }).click()
+  await page.waitForSelector('.chip-grid', { timeout: 5000 })
+  await page.locator('.picker-start').click()
+  await page.waitForSelector('.reader-body', { timeout: 5000 })
+  // Reload restarts the reader on its first word. The rest of this settings
+  // walk was written against the second verb, so page forward once again.
+  await page.locator('.controls-button').nth(1).click()
+  await wait(460)
+  check('the reload walk returns to the second verb', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
+  check(
+    'only the default form block is drawn after clearing',
+    (await page.locator('.reader-page--current .form-block').count()) === 1 &&
+      (await page.locator('.reader-page--current .form-block--default').count()) === 1,
+    `blocks=${await page.locator('.reader-page--current .form-block').count()}`,
+  )
+  await page.locator('.icon-button[aria-label="設定"]').click()
+  await page.waitForSelector('.settings .form-chips', { timeout: 5000 })
+  const reloadedControl = page.locator('.settings .row-head .text-button')
+  check('cleared display selection persists after reload', (await reloadedControl.textContent()).trim() === '全選', (await reloadedControl.textContent()).trim())
+  check('the locked chip is still pressed after reload', (await readLockedChip()).lockedPressed === true)
+  await reloadedControl.click()
+  check('全選 restores all 15 after reload', (await pressedCount()) === 15, String(await pressedCount()))
+  const chipRest = await readLockedChip()
+  check(
+    'the 預設顯示形式 chip is a disabled button',
+    chipRest.lockedName === 'ます形' && chipRest.lockedDisabled && chipRest.lockedPressed,
+    JSON.stringify(chipRest),
+  )
+  check(
+    'no other 選擇顯示的類型 chip is disabled',
+    chipRest.otherDisabled === 0 && chipRest.chips === 15,
+    JSON.stringify(chipRest),
+  )
+  check(
+    'the locked chip explains itself in a tooltip',
+    chipRest.tipText === '這是預設顯示形式，必須顯示，不能取消' &&
+      chipRest.lockedDescribed === chipRest.tipId &&
+      chipRest.tipOpacity === 0,
+    JSON.stringify(chipRest),
+  )
+  // A locked 預設顯示形式 is still selected, but looks like the picker's
+  // disabled 第1課 chip: the filled 'on' style must not win over the disabled
+  // look, and hovering its wrapper must not add the accent border.
+  const lockedStyle = (reference) =>
+    page.evaluate((empty) => {
+      const chip = document.querySelector('.settings .chip--locked:disabled')
+      const style = getComputedStyle(chip)
+      const current = {
+        color: style.color,
+        background: style.backgroundColor,
+        border: style.borderTopColor,
+        opacity: style.opacity,
+        pointerEvents: style.pointerEvents,
+        cursor: style.cursor,
+        fontWeight: style.fontWeight,
+      }
+      return {
+        current,
+        sameAsEmptyChip: Object.keys(empty).every((key) => current[key] === empty[key]),
+        pressed: chip.getAttribute('aria-pressed'),
+      }
+    }, reference)
+  const lockedRest = await lockedStyle(emptyChipStyle)
+  check(
+    'the locked chip has the disabled 第1課 computed look',
+    lockedRest.sameAsEmptyChip && lockedRest.pressed === 'true',
+    `empty=${JSON.stringify(emptyChipStyle)} locked=${JSON.stringify(lockedRest)}`,
+  )
+  await page.locator('.settings .form-chips .chip-wrap', { hasText: 'ます形' }).hover()
+  await wait(250)
+  const chipHover = await readLockedChip()
+  const lockedOnHover = await lockedStyle(emptyChipStyle)
+  check('hovering the locked chip shows its tooltip', chipHover.tipOpacity === 1, JSON.stringify(chipHover))
+  check(
+    'hovering the locked chip wrapper keeps the disabled look and no accent border',
+    lockedOnHover.sameAsEmptyChip && lockedOnHover.current.border === emptyChipStyle.border,
+    `empty=${JSON.stringify(emptyChipStyle)} hover=${JSON.stringify(lockedOnHover)}`,
+  )
+  // The 選擇顯示的類型 buttons line up with the quiz settings' equal-width
+  // button group: every chip fills its grid cell and the full rows sit flush
+  // with the group's edges, instead of shrinking to the width of its label.
+  const chipGrid = await page.evaluate(() => {
+    const group = document.querySelector('.settings .form-chips')
+    const box = group.getBoundingClientRect()
+    const chips = [...group.querySelectorAll('.chip')].map((chip) => {
+      const rect = chip.getBoundingClientRect()
+      const wrap = chip.parentElement.getBoundingClientRect()
+      return {
+        left: rect.left,
+        right: rect.right,
+        top: rect.top,
+        width: rect.width,
+        wrapLeft: wrap.left,
+        wrapRight: wrap.right,
+      }
+    })
+    const perRow = new Map()
+    for (const chip of chips) {
+      const key = Math.round(chip.top)
+      perRow.set(key, [...(perRow.get(key) ?? []), chip])
+    }
+    const rows = [...perRow.values()]
+    const widths = chips.map((chip) => chip.width)
+    const fullRows = rows.filter((row) => row.length === Math.max(...rows.map((r) => r.length)))
+    return {
+      chips: chips.length,
+      rows: rows.length,
+      minWidth: Math.min(...widths),
+      maxWidth: Math.max(...widths),
+      fillsWrap: chips.every((chip) =>
+        Math.abs(chip.left - chip.wrapLeft) < 0.5 && Math.abs(chip.right - chip.wrapRight) < 0.5,
+      ),
+      groupLeft: box.left,
+      groupRight: box.right,
+      rowEdges: fullRows.map((row) => ({
+        left: Math.min(...row.map((chip) => chip.left)),
+        right: Math.max(...row.map((chip) => chip.right)),
+      })),
+      widestLabelFits: chips.every((_, index) => {
+        const chip = group.querySelectorAll('.chip')[index]
+        return chip.scrollWidth <= chip.clientWidth + 0.5
+      }),
+    }
+  })
+  check(
+    'the 選擇顯示的類型 chips have equal widths and fill their cells',
+    chipGrid.chips === 15 && chipGrid.maxWidth - chipGrid.minWidth < 0.5 && chipGrid.fillsWrap,
+    JSON.stringify(chipGrid),
+  )
+  check(
+    'the 選擇顯示的類型 chips wrap in flush, full-width rows',
+    chipGrid.rows > 1 &&
+      chipGrid.rowEdges.every(
+        (edge) =>
+          Math.abs(edge.left - chipGrid.groupLeft) < 0.5 &&
+          Math.abs(edge.right - chipGrid.groupRight) < 0.5,
+      ),
+    JSON.stringify(chipGrid),
+  )
+  check(
+    'no 選擇顯示的類型 label overflows its button',
+    chipGrid.widestLabelFits,
+    JSON.stringify(chipGrid),
+  )
+  await page.mouse.move(5, 5)
   await page.locator('.form-select').click()
-  await page.locator('.form-option', { hasText: /^て形$/ }).click()
+  // No row carries a border-bottom any more: every separator is an `.hrule`
+  // element of its own, so a hover or press tint cannot paint over the line
+  // and a pressed row cannot shorten it. Held down, the row still spans the
+  // list's inner width.
+  const optionRow = page.locator('.form-option', { hasText: /^て形$/ })
+  const listInner = await page.locator('.form-list').evaluate((el) => {
+    const box = el.getBoundingClientRect()
+    const border = parseFloat(getComputedStyle(el).borderLeftWidth)
+    return { left: box.left + border, right: box.right - border }
+  })
+  const dividers = await page.evaluate(() => {
+    const settings = document.querySelector('.settings')
+    const rows = settings.querySelectorAll('.row')
+    const options = settings.querySelectorAll('.form-option')
+    const rules = [...settings.querySelectorAll('.hrule')]
+    const bordered = [...rows, ...options].filter(
+      (el) => getComputedStyle(el).borderBottomWidth !== '0px',
+    )
+    const drawn = rules.map((el) => {
+      const style = getComputedStyle(el)
+      return {
+        height: Math.round(el.getBoundingClientRect().height * 100) / 100,
+        color: style.backgroundColor,
+        border: style.borderBottomWidth,
+        hidden: el.getAttribute('aria-hidden'),
+      }
+    })
+    return {
+      rows: rows.length,
+      options: options.length,
+      rules: rules.length,
+      bordered: bordered.length,
+      onePixel: drawn.every((rule) => rule.height === 1),
+      lineColour: drawn.every((rule) => rule.color === 'rgba(36, 33, 58, 0.12)'),
+      borderless: drawn.every((rule) => rule.border === '0px'),
+      decorative: drawn.every((rule) => rule.hidden === 'true'),
+      endsOnRow: settings.lastElementChild?.classList.contains('row') === true,
+      // The 預設顯示形式 list opens straight under its row: the user asked for
+      // no rule between the row and the panel ("不要加綫，很醜！").
+      ruleAboveList:
+        document.querySelector('.form-list-frame')?.previousElementSibling?.classList.contains(
+          'hrule',
+        ) === true,
+    }
+  })
+  check(
+    'settings rows carry no border-bottom',
+    dividers.bordered === 0 && dividers.rows > 0,
+    JSON.stringify(dividers),
+  )
+  check(
+    'settings separators are 1px drawn lines in the line colour',
+    dividers.onePixel && dividers.lineColour && dividers.borderless,
+    JSON.stringify(dividers),
+  )
+  check(
+    'every rule separates two entries and the list ends on a row',
+    dividers.decorative &&
+      dividers.endsOnRow &&
+      // One rule between every pair of rows (the list opens with no rule of
+      // its own), plus one between every pair of options.
+      dividers.rules ===
+        dividers.rows - 1 + Math.max(0, dividers.options - 1),
+    JSON.stringify(dividers),
+  )
+  check(
+    'the form list opens directly under its row, with no rule in between',
+    dividers.ruleAboveList === false,
+    JSON.stringify(dividers),
+  )
+  // Both dropdowns reveal the thumb as soon as they open. The settings list
+  // is measured here; the picker's 從 list gets its own timing walk below.
+  const settingsList = await page.evaluate(() => {
+    const frame = document.querySelector('.settings .form-list-frame')
+    const list = frame?.querySelector('.form-list')
+    const thumb = frame?.querySelector('.list-thumb')
+    if (!list) return { present: false }
+    const listBox = list.getBoundingClientRect()
+    const style = getComputedStyle(list)
+    if (!thumb) return { present: true, nativeBar: style.scrollbarWidth, thumb: null }
+    const box = thumb.getBoundingClientRect()
+    const thumbStyle = getComputedStyle(thumb)
+    return {
+      present: true,
+      nativeBar: style.scrollbarWidth,
+      scrollable: list.scrollHeight > list.clientHeight + 1,
+      thumb: {
+        width: Math.round(box.width * 10) / 10,
+        radius: thumbStyle.borderRadius,
+        rightInset: Math.round((listBox.right - box.right) * 10) / 10,
+        opacity: Number(thumbStyle.opacity),
+        on: (thumb.getAttribute('class') || '').includes('list-thumb--on'),
+        pointer: thumbStyle.pointerEvents,
+        aria: thumb.getAttribute('aria-hidden'),
+      },
+    }
+  })
+  check(
+    'the settings list draws the drawn thumb instead of the native bar',
+    settingsList.present &&
+      settingsList.nativeBar === 'none' &&
+      settingsList.scrollable === true &&
+      settingsList.thumb?.width === 4 &&
+      settingsList.thumb?.radius === '999px' &&
+      settingsList.thumb?.rightInset === 4 &&
+      settingsList.thumb?.pointer === 'none' &&
+      settingsList.thumb?.aria === 'true',
+    JSON.stringify(settingsList),
+  )
+  check(
+    'the settings list thumb is visible as soon as the dropdown opens',
+    settingsList.thumb?.on === true && settingsList.thumb?.opacity === 1,
+    JSON.stringify(settingsList.thumb),
+  )
+  // The same two-second hint applies to the settings dropdown. The pointer
+  // sits outside it during this wait, then re-enters to restart the timer.
+  await page.mouse.move(5, 5)
+  await wait(LIST_SCROLLBAR.fadeDelay + 250)
+  const settingsThumbIdle = await readListThumbState(page, '.settings .form-list-frame')
+  check(
+    'the settings list thumb fades two seconds after opening',
+    settingsThumbIdle.on === false && settingsThumbIdle.opacity === 0,
+    JSON.stringify(settingsThumbIdle),
+  )
+  const settingsListBounds = await page.locator('.settings .form-list').boundingBox()
+  await page.mouse.move(settingsListBounds.x + 20, settingsListBounds.y + 20)
+  await wait(250)
+  const settingsThumbPointer = await readListThumbState(page, '.settings .form-list-frame')
+  check(
+    'pointer activity reveals the settings list thumb again',
+    settingsThumbPointer.on === true && settingsThumbPointer.opacity === 1,
+    JSON.stringify(settingsThumbPointer),
+  )
+  await page.mouse.move(5, 5)
+  await wait(LIST_SCROLLBAR.fadeDelay + 250)
+  const settingsThumbFaded = await readListThumbState(page, '.settings .form-list-frame')
+  check(
+    'the settings list thumb fades two seconds after pointer activity',
+    settingsThumbFaded.on === false && settingsThumbFaded.opacity === 0,
+    JSON.stringify(settingsThumbFaded),
+  )
+  await page.locator('.settings .form-select').click()
+  await page.locator('.settings .form-select').click()
+  await wait(120)
+  const settingsThumbReopened = await readListThumbState(page, '.settings .form-list-frame')
+  check(
+    'reopening the settings dropdown shows its thumb immediately',
+    settingsThumbReopened.on === true && settingsThumbReopened.opacity === 1,
+    JSON.stringify(settingsThumbReopened),
+  )
+  await page.mouse.move(5, 5)
+  await optionRow.hover()
+  const optionRest = await optionRow.boundingBox()
+  await page.mouse.down()
+  const optionHeld = await optionRow.boundingBox()
+  // Release away from the row: a release on it would select the form and close
+  // the list before the click check below.
+  await page.mouse.move(5, 20, { steps: 4 })
+  await page.mouse.up()
+  check(
+    'a pressed option row keeps its width and its position',
+    Math.abs(optionHeld.width - optionRest.width) < 0.5 &&
+      Math.abs(optionHeld.x - listInner.left) < 0.5 &&
+      Math.abs(optionHeld.x + optionHeld.width - listInner.right) < 0.5,
+    `rest=${optionRest.width} held=${optionHeld.width} x=${optionHeld.x} list=${listInner.left}..${listInner.right}`,
+  )
+  await optionRow.click()
+  // Choosing て形 moves the lock: the new default cannot be switched off and
+  // the old one is an ordinary chip again.
+  const chipAfterForm = await readLockedChip()
+  check(
+    'the lock follows the new 預設顯示形式',
+    chipAfterForm.lockedName === 'て形' && chipAfterForm.lockedDisabled && chipAfterForm.otherDisabled === 0,
+    JSON.stringify(chipAfterForm),
+  )
+  // Pressing the freed ます形 chip removes it from the drawn forms.
+  await page.locator('.settings .form-chips .chip', { hasText: /^ます形$/ }).click()
+  const chipToggled = await readLockedChip()
+  check(
+    'the freed chip can be switched off again',
+    chipToggled.pressed === chipAfterForm.pressed - 1,
+    `pressed ${chipAfterForm.pressed} -> ${chipToggled.pressed}`,
+  )
+  await page.locator('.settings .form-chips .chip', { hasText: /^ます形$/ }).click()
   await page.locator('.icon-button[aria-label="返回"]').click()
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   const wordAfterForm = await wordText(page)
@@ -1292,6 +1722,32 @@ try {
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   check('reading switch hides ruby', (await page.locator('.reader-page--current rt').count()) === 0)
 
+  // 選擇顯示的類型 hides a deselected form; restoring it brings it back. The
+  // chip under test is 字典形, because て形 is the current 預設顯示形式 and its
+  // chip is a disabled button (it can never be switched off).
+  await page.locator('.icon-button[aria-label="設定"]').click()
+  await page.waitForSelector('.settings', { timeout: 5000 })
+  await page.locator('.form-chips .chip', { hasText: /^字典形$/ }).click()
+  await page.locator('.icon-button[aria-label="返回"]').click()
+  await page.waitForSelector('.reader-body', { timeout: 5000 })
+  check(
+    '選擇顯示的類型 hides the deselected form',
+    (await page.locator('.reader-page--current .form-block[data-form="dictionary-form"]').count()) === 0,
+  )
+  check(
+    'the default form stays drawn while another is hidden',
+    (await page.locator('.reader-page--current .form-block[data-form="te-form"]').count()) === 1,
+  )
+  await page.locator('.icon-button[aria-label="設定"]').click()
+  await page.waitForSelector('.settings', { timeout: 5000 })
+  await page.locator('.form-chips .chip', { hasText: /^字典形$/ }).click()
+  await page.locator('.icon-button[aria-label="返回"]').click()
+  await page.waitForSelector('.reader-body', { timeout: 5000 })
+  check(
+    '選擇顯示的類型 restores the form',
+    (await page.locator('.reader-page--current .form-block[data-form="dictionary-form"]').count()) === 1,
+  )
+
   await page.reload({ waitUntil: 'load' })
   await page.waitForSelector('.home-actions', { timeout: 30000 })
   await page.locator('.home-actions button', { hasText: '字典' }).click()
@@ -1304,8 +1760,11 @@ try {
   // Dictionary layout and the note layer: the word, the gloss and the tag row
   // sit centred in the block; the note and the example sentences keep the
   // reading edge. The form's note rides above the sentences in its own
-  // colour, and a form flagged error_usage has its word struck through twice
-  // with the colour left alone.
+  // colour, and a form flagged error_usage keeps its error colour and carries
+  // a double strike through the word (the reading above it stays unstruck).
+  // 第2課 is in the set because its first verb (違う) has error_usage forms
+  // written with kanji, so the reading rule has a word with an `rt` to check;
+  // 第10課 and 第11課 carry the notes.
   await page.reload({ waitUntil: 'load' })
   await page.waitForSelector('.home-actions', { timeout: 30000 })
   await page.locator('.home-actions button', { hasText: '字典' }).click()
@@ -1313,7 +1772,7 @@ try {
   for (const chip of await page.locator('.chip-grid .chip').all()) {
     const label = (await chip.textContent()).trim()
     const on = ((await chip.getAttribute('class')) || '').includes('chip--on')
-    const want = label === '第10課' || label === '第11課'
+    const want = label === '第2課' || label === '第10課' || label === '第11課'
     if (on !== want) await chip.click()
   }
   await page.locator('.picker-start').click()
@@ -1334,11 +1793,27 @@ try {
   check('the tag row is centred in its block', layout.tags === 'center', layout.tags)
   check('the example sentences keep the reading edge', layout.sentence !== 'center', layout.sentence)
 
+  // The strike rule needs a reading on screen, and this walk turned the
+  // dictionary's readings off earlier (the setting persisted). Turn them back
+  // on so a kanji error word has an `rt` above its base text to measure.
+  await page.locator('.icon-button[aria-label="設定"]').click()
+  await page.waitForSelector('.settings', { timeout: 5000 })
+  const readingSwitch = page.locator('.switch').first()
+  if ((await readingSwitch.getAttribute('aria-checked')) !== 'true') await readingSwitch.click()
+  await page.locator('.icon-button[aria-label="返回"]').click()
+  await page.waitForSelector('.reader-body', { timeout: 5000 })
+  check(
+    'the walk shows readings for the strike check',
+    (await page.locator('.reader-page--current rt').count()) > 0,
+    String(await page.locator('.reader-page--current rt').count()),
+  )
+
   let noteSeen = null
   let errorSeen = null
-  for (let step = 0; step < 5; step += 1) {
+  const errorWords = []
+  for (let step = 0; step < 8; step += 1) {
     const found = await page.evaluate(() => {
-      const result = {}
+      const result = { errors: [] }
       for (const block of document.querySelectorAll('.reader-page--current .form-block')) {
         const note = block.querySelector('.note-line')
         const sentences = block.querySelector('.block')
@@ -1353,40 +1828,107 @@ try {
           }
         }
         const struck = block.querySelector('.word--error')
-        if (struck && !result.error) {
-          const style = getComputedStyle(struck)
-          result.error = {
+        if (struck) {
+          const base = struck.querySelector('rb') ?? struck.querySelector('.ruby-word > span')
+          const rubyWord = struck.querySelector('.ruby-word') ?? struck
+          const baseBoxes = [
+            ...rubyWord.querySelectorAll('rb'),
+            ...rubyWord.querySelectorAll(':scope > span'),
+          ]
+          const reading = rubyWord.querySelector('rt')
+          const baseStyle = base ? getComputedStyle(base) : null
+          const readingStyle = reading ? getComputedStyle(reading) : null
+          result.errors.push({
             text: struck.textContent.trim(),
-            line: style.textDecorationLine,
-            style: style.textDecorationStyle,
-            color: style.color,
+            color: baseStyle ? baseStyle.color : null,
+            line: baseStyle ? baseStyle.textDecorationLine : 'none',
+            style: baseStyle ? baseStyle.textDecorationStyle : 'none',
+            strikeColor: baseStyle ? baseStyle.textDecorationColor : null,
+            // Every base box carries the strike: the kanji (`rb`) and each
+            // plain kana span. A rule on the flex container or on `ruby`
+            // would also strike the reading, so the reading is measured too.
+            everyBaseStruck:
+              baseBoxes.length > 0 &&
+              baseBoxes.every((box) => getComputedStyle(box).textDecorationLine === 'line-through'),
+            readingLine: readingStyle ? readingStyle.textDecorationLine : null,
+            readingColor: readingStyle ? readingStyle.color : null,
             hasNote: Boolean(block.querySelector('.note-line')),
             hasSentences: Boolean(block.querySelector('.block')),
-          }
+          })
         }
       }
+      if (result.errors.length) result.error = result.errors[0]
       return result
     })
     if (found.note && !noteSeen) noteSeen = found.note
-    if (found.error && !errorSeen) errorSeen = found.error
-    if (noteSeen && errorSeen) break
-    if (step < 4) {
-      await page.locator('.controls-button').nth(1).click()
+    for (const entry of found.errors ?? []) {
+      if (!errorWords.some((seen) => seen.text === entry.text)) errorWords.push(entry)
+      // A page holds all 15 forms of one verb, so the first error word met may
+      // be an all-kana verb with no reading above it. Keep paging until one
+      // with a reading shows up: that is the case the reading rule is about.
+      if (entry.readingLine !== null) errorSeen = entry
+    }
+    if (!errorSeen && found.error) errorSeen = found.error
+    if (noteSeen && errorSeen && errorSeen.readingLine !== null) break
+    if (step < 7) {
+      const next = page.locator('.controls-button').nth(1)
+      if (await next.isDisabled()) break
+      await next.click()
       await wait(460)
     }
   }
   check('a form note rides above the example sentences', noteSeen?.beforeSentences === true, JSON.stringify(noteSeen))
   check('the note is marked with its own colour', noteSeen?.color === 'rgb(180, 83, 9)', noteSeen?.color ?? 'none')
   check('the note keeps the reading edge', noteSeen?.align !== 'center', noteSeen?.align ?? 'none')
-  check('an error_usage form is found in the reader', errorSeen !== null, JSON.stringify(errorSeen))
+  check('an error_usage form is found in the reader', errorWords.length > 0, JSON.stringify(errorSeen))
   check(
-    'the error word is struck through twice',
-    errorSeen?.line === 'line-through' && errorSeen?.style === 'double',
+    'every error word keeps its error colour',
+    errorWords.every((word) => word.color === 'rgb(220, 38, 38)'),
+    JSON.stringify(errorWords.map((word) => [word.text, word.color])),
+  )
+  check(
+    'every base box of every error word is struck through twice',
+    errorWords.every(
+      (word) => word.line === 'line-through' && word.style === 'double' && word.everyBaseStruck,
+    ),
+    JSON.stringify(errorWords.map((word) => [word.text, word.line, word.style, word.everyBaseStruck])),
+  )
+  check(
+    'the strike keeps the error colour',
+    errorWords.every((word) => word.strikeColor === 'rgb(220, 38, 38)'),
+    JSON.stringify(errorWords.map((word) => [word.text, word.strikeColor])),
+  )
+  check(
+    'a reading over an error word keeps its colour and is not struck',
+    errorSeen?.readingLine === 'none' && errorSeen?.readingColor === 'rgb(220, 38, 38)',
     JSON.stringify(errorSeen),
   )
-  check('the error word keeps its colour', errorSeen?.color === 'rgb(36, 33, 58)', errorSeen?.color ?? 'none')
   check('the error form carries its note', errorSeen?.hasNote === true, JSON.stringify(errorSeen))
   check('the error form has no example sentences', errorSeen?.hasSentences === false, JSON.stringify(errorSeen))
+
+  // 跳過錯誤的單詞: turning the switch on removes every error_usage block from
+  // the remaining words in the run.
+  await page.locator('.icon-button[aria-label="設定"]').click()
+  await page.waitForSelector('.settings', { timeout: 5000 })
+  await page.locator('.switch[aria-label="跳過錯誤的單詞"]').click()
+  await page.locator('.icon-button[aria-label="返回"]').click()
+  await page.waitForSelector('.reader-body', { timeout: 5000 })
+  const skipSweep = await page.evaluate(async () => {
+    let errorWords = 0
+    let words = 0
+    for (let guard = 0; guard < 40; guard += 1) {
+      const current = document.querySelector('.reader-page--current')
+      if (!current) break
+      words += 1
+      errorWords += current.querySelectorAll('.word--error').length
+      const next = document.querySelector('.reader-controls .controls-button:last-child')
+      if (!next || next.disabled) break
+      next.click()
+      await new Promise((resolve) => setTimeout(resolve, 320))
+    }
+    return { errorWords, words }
+  })
+  check('跳過錯誤的單詞 removes the error_usage blocks', skipSweep.errorWords === 0 && skipSweep.words > 0, JSON.stringify(skipSweep))
 
   // T6 flashcards.
   await page.reload({ waitUntil: 'load' })
@@ -1431,7 +1973,7 @@ try {
   const cardControls = (await page.locator('.card-controls .control').allTextContents()).map((t) => t.trim())
   check(
     'card controls stay 上一張 / 下一張',
-    cardControls[0] === '‹ 上一張' && cardControls[1] === '下一張 ›',
+    cardControls[0] === '上一張' && cardControls[1] === '下一張',
     cardControls.join(' | '),
   )
   const cardBottomGap = await page.evaluate(
@@ -1482,6 +2024,11 @@ try {
     'the answer carries the asked form as a tag',
     (await page.locator('.card--current .card-back .tag--form').textContent()).trim() === '字典形',
     (await page.locator('.card--current .card-back .tag--form').textContent()).trim(),
+  )
+  check(
+    'the answer carries the lesson tag',
+    (await page.locator('.card--current .card-back .tag--lesson').textContent()).trim() === '第5課',
+    (await page.locator('.card--current .card-back .tag--lesson').textContent()).trim(),
   )
   check(
     'a tap reveals the matching target form',
@@ -1713,17 +2260,19 @@ try {
     `${answerPills?.texts?.[1]} vs ${groupLabel(answerVerb.group)}`,
   )
   check(
-    'the answer pills run form first, class second',
+    'the answer pills run form, class, then lesson',
     Boolean(answerPills) &&
-      answerPills.classes.length === 2 &&
+      answerPills.classes.length === 3 &&
       answerPills.classes[0].includes('tag--form') &&
       answerPills.classes[1].includes('tag--group') &&
-      answerPills.lefts[0] < answerPills.lefts[1],
+      answerPills.classes[2].includes('tag--lesson') &&
+      answerPills.lefts[0] < answerPills.lefts[1] &&
+      answerPills.lefts[1] < answerPills.lefts[2],
     JSON.stringify(answerPills),
   )
   check(
-    'the two answer pills share one row',
-    Boolean(answerPills) && answerPills.tops[0] === answerPills.tops[1],
+    'the answer pills share one row',
+    Boolean(answerPills) && answerPills.tops.every((top) => top === answerPills.tops[0]),
     JSON.stringify(answerPills?.tops),
   )
   await page.locator('.card-stage').click()
@@ -1792,6 +2341,50 @@ try {
   await page.locator('.complete-home').click()
   await page.waitForSelector('.home-actions', { timeout: 5000 })
 
+  // 翻卡學習 error_usage: the card carries 錯誤單詞 and 跳過錯誤的單詞 drops it.
+  await page.reload({ waitUntil: 'load' })
+  await page.waitForSelector('.home-actions', { timeout: 30000 })
+  await page.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await page.waitForSelector('.chip-grid', { timeout: 5000 })
+  for (const chip of await page.locator('.chip-grid .chip').all()) {
+    const label = (await chip.textContent()).trim()
+    const on = ((await chip.getAttribute('class')) || '').includes('chip--on')
+    const want = label === '第10課'
+    if (on !== want) await chip.click()
+  }
+  // 從 stays ます形; make 到 just 受身形 (lesson 10 flags ある's 受身形).
+  await page.locator('.chip--form', { hasText: /^字典形$/ }).click()
+  await page.locator('.chip--form', { hasText: /^受身形$/ }).click()
+  await page.locator('.picker-start').click()
+  await page.waitForSelector('.card-stage', { timeout: 5000 })
+  check('the error run holds both cards before skipping', (await page.locator('.bar-title').textContent()).trim() === '練習（1/2）')
+
+  let errorTagCount = 0
+  for (let guard = 0; guard < 10; guard += 1) {
+    await page.locator('.card-stage').click()
+    await wait(320)
+    if ((await page.locator('.card--current .card-back .tag--error').count()) > 0) errorTagCount += 1
+    const lastControl = await page.locator('.card-controls .control').last().textContent()
+    const isLast = lastControl.trim() === '完成'
+    await page.locator('.card-stage').click()
+    await wait(320)
+    if (isLast) break
+    await page.locator('.card-controls .control').last().click()
+    await wait(320)
+  }
+  check('an error_usage card carries 錯誤單詞', errorTagCount === 1, String(errorTagCount))
+
+  await page.locator('.icon-button[aria-label="設定"]').click()
+  await page.waitForSelector('.settings', { timeout: 5000 })
+  await page.locator('.switch[aria-label="跳過錯誤的單詞"]').click()
+  await page.locator('.icon-button[aria-label="返回"]').click()
+  await page.waitForSelector('.card-stage', { timeout: 5000 })
+  await page.locator('.icon-button[aria-label="返回"]').click()
+  await page.waitForSelector('.chip-grid', { timeout: 5000 })
+  await page.locator('.picker-start').click()
+  await page.waitForSelector('.card-stage', { timeout: 5000 })
+  check('跳過錯誤的單詞 drops the error card', (await page.locator('.bar-title').textContent()).trim() === '練習（1/1）')
+
   // T7 quiz.
   await page.reload({ waitUntil: 'load' })
   await page.waitForSelector('.home-actions', { timeout: 30000 })
@@ -1804,7 +2397,7 @@ try {
   await page.locator('.picker-start').click()
   await page.waitForSelector('.quiz-body', { timeout: 5000 })
   await iconGlyphs(page, 'quiz')
-  check('quiz title counts items', (await page.locator('.bar-title').textContent()).trim() === '練習（1/3）')
+  check('quiz title counts items', (await page.locator('.bar-title').textContent()).trim() === '測驗（1/3）')
   const quizPrompt = await wordText(page, '.prompt .word')
   const quizVerb = byMasu(quizPrompt)
   check('quiz prompt shows a source form from the lesson', Boolean(quizVerb), quizPrompt)
@@ -1823,7 +2416,7 @@ try {
   }
   await page.waitForSelector('.toast', { timeout: 3000 })
   check('a correct answer shows 回答正確', (await page.locator('.toast').textContent()).trim() === '回答正確')
-  check('a correct answer advances', (await page.locator('.bar-title').textContent()).trim() === '練習（2/3）')
+  check('a correct answer advances', (await page.locator('.bar-title').textContent()).trim() === '測驗（2/3）')
   check('the field clears after a correct answer', (await page.locator('.answer-input').inputValue()) === '')
 
   for (let attempt = 1; attempt <= 3; attempt += 1) {
@@ -1831,9 +2424,14 @@ try {
     await page.locator('.check-button').click()
     await wait(120)
     if (attempt === 1) {
-      check('a wrong answer stays on the item', (await page.locator('.bar-title').textContent()).trim() === '練習（2/3）')
+      check('a wrong answer stays on the item', (await page.locator('.bar-title').textContent()).trim() === '測驗（2/3）')
       check('a wrong answer keeps the input', (await page.locator('.answer-input').inputValue()) === 'あ')
-      check('a wrong answer shows 回答錯誤', (await page.locator('.toast').textContent()).trim() === '回答錯誤')
+      check('a wrong answer shakes the field', (await page.locator('.field--shake').count()) === 1)
+      check('a wrong answer turns the field red', (await page.locator('.field--error').count()) === 1)
+      const missToast = (await page.locator('.toast').count()) > 0
+        ? (await page.locator('.toast').textContent()).trim()
+        : ''
+      check('a wrong answer shows no 回答錯誤 toast', missToast !== '回答錯誤', missToast)
       check('the first miss does not reveal', (await page.locator('.reveal').count()) === 0)
       check('the first miss shows no 下一題', (await page.locator('.next-button').count()) === 0)
       check(
@@ -1879,10 +2477,10 @@ try {
   check('the reveal waits for 下一題', (await page.locator('.next-button').count()) === 1)
   check('the answer field is disabled after the reveal', await page.locator('.answer-input').isDisabled())
   check('the keyboard is disabled after the reveal', await page.locator('.keyboard .key').first().isDisabled())
-  check('the revealed item does not advance by itself', (await page.locator('.bar-title').textContent()).trim() === '練習（2/3）')
+  check('the revealed item does not advance by itself', (await page.locator('.bar-title').textContent()).trim() === '測驗（2/3）')
 
   await page.locator('.next-button').click()
-  check('下一題 advances after the reveal', (await page.locator('.bar-title').textContent()).trim() === '練習（3/3）')
+  check('下一題 advances after the reveal', (await page.locator('.bar-title').textContent()).trim() === '測驗（3/3）')
   check('the next item has an enabled field', !(await page.locator('.answer-input').isDisabled()))
 
   // Third item: miss it and finish the run.
@@ -1969,6 +2567,31 @@ try {
     (await page.locator('.row-label', { hasText: '錯 3 題就顯示答案' }).count()) === 1,
   )
   check('the reveal threshold offers 1 to 5', (await page.locator('.choice').count()) === 5)
+  // The quiz group is the reference: five equal-width buttons in one flush
+  // row. The dictionary's wrapping group uses the same full-cell alignment.
+  const quizChoiceRow = await page.evaluate(() => {
+    const group = document.querySelector('.settings .choice-chips')
+    const box = group.getBoundingClientRect()
+    const buttons = [...group.querySelectorAll('.choice')].map((button) => {
+      const rect = button.getBoundingClientRect()
+      return { left: rect.left, right: rect.right, top: rect.top, width: rect.width }
+    })
+    const widths = buttons.map((button) => button.width)
+    return {
+      widths: Math.max(...widths) - Math.min(...widths),
+      left: Math.abs(Math.min(...buttons.map((button) => button.left)) - box.left),
+      right: Math.abs(Math.max(...buttons.map((button) => button.right)) - box.right),
+      rows: new Set(buttons.map((button) => Math.round(button.top))).size,
+    }
+  })
+  check(
+    'the quiz settings buttons are equal-width and flush in one row',
+    quizChoiceRow.widths < 0.5 &&
+      quizChoiceRow.left < 0.5 &&
+      quizChoiceRow.right < 0.5 &&
+      quizChoiceRow.rows === 1,
+    JSON.stringify(quizChoiceRow),
+  )
   await page.locator('.choice', { hasText: /^1$/ }).click()
   check(
     'choosing 1 updates the label',
@@ -2001,6 +2624,50 @@ try {
   check('auto-submit defaults to on', (await page.locator('.switch').first().getAttribute('aria-checked')) === 'true')
   await page.locator('.icon-button[aria-label="返回"]').click()
   await page.waitForSelector('.quiz-body', { timeout: 5000 })
+
+  // 跳過錯誤的單詞 in the quiz: it excludes error_usage items at start, and a
+  // mid-run toggle puts them back at the tail.
+  await page.reload({ waitUntil: 'load' })
+  await page.waitForSelector('.home-actions', { timeout: 30000 })
+  await page.locator('.home-actions button', { hasText: '測驗' }).click()
+  await page.waitForSelector('.chip-grid', { timeout: 5000 })
+  for (const chip of await page.locator('.chip-grid .chip').all()) {
+    const label = (await chip.textContent()).trim()
+    const on = ((await chip.getAttribute('class')) || '').includes('chip--on')
+    const want = label === '第10課'
+    if (on !== want) await chip.click()
+  }
+  await page.locator('.chip--form', { hasText: /^字典形$/ }).click()
+  await page.locator('.chip--form', { hasText: /^受身形$/ }).click()
+  await page.locator('.picker-start').click()
+  await page.waitForSelector('.quiz-body', { timeout: 5000 })
+  check('quiz starts with the error item before skipping', (await page.locator('.bar-title').textContent()).trim() === '測驗（1/2）')
+
+  await page.locator('.icon-button[aria-label="設定"]').click()
+  await page.waitForSelector('.settings', { timeout: 5000 })
+  check('quiz settings show 跳過錯誤的單詞', (await page.locator('.switch[aria-label="跳過錯誤的單詞"]').count()) === 1)
+  await page.locator('.switch[aria-label="跳過錯誤的單詞"]').click()
+  await page.locator('.icon-button[aria-label="返回"]').click()
+  await page.waitForSelector('.quiz-body', { timeout: 5000 })
+  check('turning 跳過錯誤的單詞 on removes the error item mid-run', (await page.locator('.bar-title').textContent()).trim() === '測驗（1/1）')
+  await page.locator('.icon-button[aria-label="返回"]').click()
+  await page.waitForSelector('.chip-grid', { timeout: 5000 })
+  await page.locator('.picker-start').click()
+  await page.waitForSelector('.quiz-body', { timeout: 5000 })
+  check('跳過錯誤的單詞 excludes the error item at start', (await page.locator('.bar-title').textContent()).trim() === '測驗（1/1）')
+
+  await page.locator('.icon-button[aria-label="設定"]').click()
+  await page.waitForSelector('.settings', { timeout: 5000 })
+  await page.locator('.switch[aria-label="跳過錯誤的單詞"]').click()
+  await page.locator('.icon-button[aria-label="返回"]').click()
+  await page.waitForSelector('.quiz-body', { timeout: 5000 })
+  check('turning 跳過錯誤的單詞 off restores the error item', (await page.locator('.bar-title').textContent()).trim() === '測驗（1/2）')
+
+  // Restore the quiz picker's 到 to 字典形 for the sections that follow.
+  await page.locator('.icon-button[aria-label="返回"]').click()
+  await page.waitForSelector('.chip-grid', { timeout: 5000 })
+  await page.locator('.chip--form', { hasText: /^受身形$/ }).click()
+  await page.locator('.chip--form', { hasText: /^字典形$/ }).click()
 
   // A perfect run earns the whole 100% row plus the confetti layer.
   await page.reload({ waitUntil: 'load' })
@@ -2555,14 +3222,168 @@ try {
     'nothing is drawn on a page that fits',
     (await barPage.locator('.page-scrollbar').count()) === 0,
   )
-  // A dropdown list is its own scroll container and keeps the native bar.
+  // A dropdown list is its own scroll container: the native bar is hidden and
+  // the list draws the same 4px rounded thumb the page draws, inside its own
+  // frame.
   await barPage.locator('.home-actions button', { hasText: '翻卡學習' }).click()
   await barPage.waitForSelector('.form-select', { timeout: 5000 })
   await barPage.locator('.form-select').click()
-  const listBar = await barPage
-    .locator('.form-list')
-    .evaluate((el) => getComputedStyle(el).scrollbarWidth)
-  check('the form dropdown keeps its native scrollbar', listBar === 'auto', listBar)
+  const readListThumb = () =>
+    barPage.evaluate(() => {
+      const frame = document.querySelector('.form-list-frame')
+      const list = frame?.querySelector('.form-list')
+      const thumb = frame?.querySelector('.list-thumb')
+      if (!list) return { present: false }
+      const listBox = list.getBoundingClientRect()
+      const listStyle = getComputedStyle(list)
+      if (!thumb) {
+        return {
+          present: true,
+          nativeBar: listStyle.scrollbarWidth,
+          scrollable: list.scrollHeight > list.clientHeight + 1,
+          thumb: null,
+        }
+      }
+      const box = thumb.getBoundingClientRect()
+      const style = getComputedStyle(thumb)
+      return {
+        present: true,
+        nativeBar: listStyle.scrollbarWidth,
+        scrollable: list.scrollHeight > list.clientHeight + 1,
+        clientHeight: list.clientHeight,
+        scrollHeight: list.scrollHeight,
+        thumb: {
+          width: Math.round(box.width * 10) / 10,
+          height: Math.round(box.height * 10) / 10,
+          rightInset: Math.round((listBox.right - box.right) * 10) / 10,
+          on: (thumb.getAttribute('class') || '').includes('list-thumb--on'),
+          opacity: Number(style.opacity),
+          transition: style.transitionDuration,
+          pointer: style.pointerEvents,
+          aria: thumb.getAttribute('aria-hidden'),
+          radius: style.borderRadius,
+        },
+      }
+    })
+  const listRest = await readListThumb()
+  check(
+    'the form dropdown hides its native scrollbar',
+    listRest.nativeBar === 'none' && listRest.scrollable,
+    JSON.stringify(listRest),
+  )
+  check(
+    'the dropdown draws the same 4px rounded thumb as the page',
+    listRest.thumb?.width === 4 &&
+      listRest.thumb?.radius === '999px' &&
+      listRest.thumb?.rightInset === 4 &&
+      listRest.thumb?.pointer === 'none' &&
+      listRest.thumb?.aria === 'true' &&
+      listRest.thumb?.on === true &&
+      listRest.thumb?.opacity === 1,
+    JSON.stringify(listRest.thumb),
+  )
+  check(
+    'the picker list thumb is visible as soon as the dropdown opens',
+    listRest.thumb?.on === true && listRest.thumb?.opacity === 1,
+    JSON.stringify(listRest.thumb),
+  )
+  const listWanted = (listRest.clientHeight - 8) * (listRest.clientHeight / listRest.scrollHeight)
+  check(
+    'the list thumb is as long as the share of the list on screen',
+    Math.abs(listRest.thumb.height - listWanted) <= 2,
+    `${listRest.thumb.height} vs ${Math.round(listWanted * 10) / 10}`,
+  )
+  // Each scroll or pointer event restarts the two-second hint. Keep the mouse
+  // outside the list while measuring the open/scroll fade so pointermove does
+  // not extend it by accident.
+  await barPage.mouse.move(5, 5)
+  await wait(LIST_SCROLLBAR.fadeDelay + 250)
+  const listOpenIdle = await readListThumb()
+  check(
+    'an opened list thumb fades about two seconds later',
+    !listOpenIdle.thumb.on && listOpenIdle.thumb.opacity === 0,
+    JSON.stringify(listOpenIdle.thumb),
+  )
+  await barPage.evaluate(() => {
+    document.querySelector('.form-list').scrollTop = 180
+  })
+  await wait(250)
+  const listMoving = await readListThumb()
+  check('scrolling the list reveals its thumb', listMoving.thumb.on && listMoving.thumb.opacity === 1, JSON.stringify(listMoving.thumb))
+  await wait(LIST_SCROLLBAR.fadeDelay + 250)
+  const listIdle = await readListThumb()
+  check('the list thumb fades once the list is still', !listIdle.thumb.on && listIdle.thumb.opacity === 0, JSON.stringify(listIdle.thumb))
+  // Moving the mouse inside the panel reveals the hint again and restarts the
+  // same wait, even though the list is not scrolling.
+  const listBox = await barPage.locator('.form-list').boundingBox()
+  await barPage.mouse.move(listBox.x + listBox.width / 2, listBox.y + 30)
+  await wait(250)
+  const pointerShown = await readListThumb()
+  check('moving the pointer into the list reveals its thumb', pointerShown.thumb.on && pointerShown.thumb.opacity === 1, JSON.stringify(pointerShown.thumb))
+  await wait(LIST_SCROLLBAR.fadeDelay - 500)
+  await barPage.mouse.move(listBox.x + listBox.width / 2 + 12, listBox.y + 50, { steps: 3 })
+  await wait(700)
+  const pointerReset = await readListThumb()
+  check(
+    'pointer movement restarts the two-second list thumb wait',
+    pointerReset.thumb.on && pointerReset.thumb.opacity === 1,
+    JSON.stringify(pointerReset.thumb),
+  )
+  await barPage.mouse.move(5, 5)
+  await wait(LIST_SCROLLBAR.fadeDelay + 250)
+  const pointerIdle = await readListThumb()
+  check(
+    'the list thumb fades again after pointer activity stops',
+    !pointerIdle.thumb.on && pointerIdle.thumb.opacity === 0,
+    JSON.stringify(pointerIdle.thumb),
+  )
+  // Reduced motion keeps the thumb and drops the fade.
+  await barPage.emulateMedia({ reducedMotion: 'reduce' })
+  await barPage.evaluate(() => {
+    document.querySelector('.form-list').scrollTop = 40
+  })
+  await wait(250)
+  const listReduced = await readListThumb()
+  check(
+    'reduced motion keeps the list thumb without the fade',
+    listReduced.thumb.transition === '0s' && listReduced.thumb.on === true,
+    JSON.stringify(listReduced.thumb),
+  )
+  await barPage.emulateMedia({ reducedMotion: null })
+  await wait(LIST_SCROLLBAR.fadeDelay + 250)
+  const reducedFaded = await readListThumb()
+  check(
+    'reduced motion still lets the list thumb leave after two seconds',
+    !reducedFaded.thumb.on && reducedFaded.thumb.opacity === 0,
+    JSON.stringify(reducedFaded.thumb),
+  )
+  // The picker's 從 list is not part of the settings separator change: it keeps
+  // the revision-18 treatment (each row carries the panel's divider as its own
+  // border, clipped to the padding box) because the user scoped the `.hrule`
+  // switch to the settings screen.
+  const pickerRows = await barPage.evaluate(() => {
+    const list = document.querySelector('.form-list')
+    const rows = [...list.querySelectorAll('.form-option')]
+    const style = (el) => getComputedStyle(el)
+    return {
+      rows: rows.length,
+      bordered: rows.filter((row) => style(row).borderBottomWidth === '1px').length,
+      clipped: rows.filter((row) => style(row).backgroundClip === 'padding-box').length,
+      // Every row but the last carries the divider; the last row closes the
+      // panel instead of drawing a line against its own bottom edge.
+      lastClosed: rows.length > 0 && style(rows.at(-1)).borderBottomWidth === '0px',
+      noRules: list.querySelectorAll('.hrule').length,
+    }
+  })
+  check(
+    "the picker's 從 list keeps its own row dividers",
+    pickerRows.rows > 1 &&
+      pickerRows.bordered === pickerRows.rows - 1 &&
+      pickerRows.clipped === pickerRows.rows &&
+      pickerRows.lastClosed &&
+      pickerRows.noRules === 0,
+    JSON.stringify(pickerRows),
+  )
   await barPage.locator('.icon-button[aria-label="返回"]').click()
   await barPage.waitForSelector('.home-actions', { timeout: 5000 })
 
@@ -2631,23 +3452,49 @@ try {
   const barFaded = await barRead()
   check('the thumb leaves once the page is still', !barFaded.on && barFaded.opacity === 0, JSON.stringify(barFaded))
 
-  // The drawn thumb sits at the column's right edge, not the window's.
+  // The drawn thumb hugs the column's own right edge at every width: on a
+  // framed desktop the 24px content gutter is not where it belongs, because
+  // the footer buttons reach the content edge and the thumb would cross them.
   await barPage.setViewportSize({ width: 900, height: 900 })
-  await barPage.evaluate(() => window.scrollTo({ top: 400 }))
+  // Back to the top of the page: the thumb then sits at the start of its track,
+  // which is where the corner clearance is measurable (32px, not 16px).
+  await barPage.evaluate(() => window.scrollTo({ top: 0 }))
   await wait(250)
   const barWide = await barPage.evaluate(() => {
     const el = document.querySelector('.page-scrollbar')
     const column = document.querySelector('.column').getBoundingClientRect()
     const rect = el.getBoundingClientRect()
+    const controls = [...document.querySelectorAll('.reader-controls .controls-button')].map((button) => {
+      const box = button.getBoundingClientRect()
+      return { left: box.left, right: box.right, top: box.top, bottom: box.bottom }
+    })
+    // The thumb is drawn over the column, so a control underneath it would be
+    // hit first if the thumb took pointer events; visually it would also cut
+    // through the button's own edge.
+    const crossesAControl = controls.some(
+      (box) =>
+        rect.right > box.left && rect.left < box.right && rect.bottom > box.top && rect.top < box.bottom,
+    )
     return {
       gap: Math.round(column.right - rect.right),
       right: Math.round(window.innerWidth - rect.right),
+      top: Math.round(rect.top * 10) / 10,
+      insideColumn: rect.left >= column.left && rect.right <= column.right,
+      crossesAControl,
       on: (el.getAttribute('class') || '').includes('page-scrollbar--on'),
     }
   })
   check(
-    'on a wide screen the thumb sits on the column edge',
-    barWide.gap === 3 && barWide.right > 100,
+    'on a wide screen the thumb sits inside the box, clear of the corner',
+    barWide.gap === SCROLLBAR.frameInset &&
+      barWide.top === SCROLLBAR.frameEdgeInset &&
+      barWide.right > 100 &&
+      barWide.insideColumn,
+    JSON.stringify(barWide),
+  )
+  check(
+    'the wide thumb never crosses a footer control',
+    barWide.crossesAControl === false,
     JSON.stringify(barWide),
   )
   check('the wide thumb is still shown after the resize scroll', barWide.on)
@@ -2672,6 +3519,35 @@ try {
     return at ? at.className || at.tagName : 'none'
   })
   check('the thumb is not the top element under the finger', footerTap !== 'page-scrollbar', String(footerTap))
+
+  // A dropdown whose options already fit draws no hint. Use the same browser
+  // context (and so the same verified dictionary cache), but a fresh page
+  // with a very short option list via a local style override.
+  const fitContext = await browser.newContext({ viewport: { width: 390, height: 844 } })
+  const fitPage = await fitContext.newPage()
+  await fitPage.goto(BASE, { waitUntil: 'load' })
+  await fitPage.waitForSelector('.home-actions', { timeout: 30000 })
+  await fitPage.addStyleTag({
+    content: '.form-list { max-height: none !important; height: 260px !important; } .form-option { min-height: 0 !important; height: 10px !important; line-height: 10px !important; padding: 0 !important; } .form-list .hrule { display: none !important; }',
+  })
+  await fitPage.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await fitPage.waitForSelector('.form-select', { timeout: 5000 })
+  await fitPage.locator('.form-select').click()
+  await wait(250)
+  const fittingList = await fitPage.evaluate(() => {
+    const list = document.querySelector('.form-list')
+    const frame = document.querySelector('.form-list-frame')
+    return {
+      fits: list.scrollHeight <= list.clientHeight + 1,
+      thumb: frame.querySelectorAll('.list-thumb').length,
+    }
+  })
+  check(
+    'a dropdown whose options fit draws no thumb',
+    fittingList.fits && fittingList.thumb === 0,
+    JSON.stringify(fittingList),
+  )
+  await fitContext.close()
   await barPage.close()
 
   // Zoom lock on every screen, in a phone-shaped context with touch.

@@ -11,7 +11,12 @@ export function makeDefaults() {
       lessons: [],
       // 預設顯示形式 starts at ます形, like 從 in cards and quiz.
       defaultForm: 'masu-form',
+      // 選擇顯示的類型: every form is shown by default; the user can hide
+      // forms they have not learned yet.
+      displayForms: [...FORM_IDS],
       showReading: true,
+      // 跳過錯誤的單詞: hide the error_usage forms in the reader.
+      skipErrorUsage: false,
     },
     card: {
       lessons: [],
@@ -19,6 +24,8 @@ export function makeDefaults() {
       to: ['dictionary-form'],
       showReading: true,
       showGroup: true,
+      // 跳過錯誤的單詞: drop cards whose target is an error_usage form.
+      skipErrorUsage: false,
     },
     quiz: {
       lessons: [],
@@ -28,6 +35,8 @@ export function makeDefaults() {
       autoSubmit: true,
       // 錯 X 題就顯示答案
       revealAfter: DEFAULT_REVEAL_AFTER,
+      // 跳過錯誤的單詞: drop quiz items whose target is an error_usage form.
+      skipErrorUsage: false,
     },
   }
 }
@@ -40,7 +49,9 @@ const SCHEMA = {
   dict: {
     lessons: 'lessons',
     defaultForm: 'form',
+    displayForms: 'forms',
     showReading: 'boolean',
+    skipErrorUsage: 'boolean',
   },
   card: {
     lessons: 'lessons',
@@ -48,6 +59,7 @@ const SCHEMA = {
     to: 'forms',
     showReading: 'boolean',
     showGroup: 'boolean',
+    skipErrorUsage: 'boolean',
   },
   quiz: {
     lessons: 'lessons',
@@ -56,6 +68,7 @@ const SCHEMA = {
     showReading: 'boolean',
     autoSubmit: 'boolean',
     revealAfter: 'revealAfter',
+    skipErrorUsage: 'boolean',
   },
 }
 
@@ -132,6 +145,12 @@ export function normalizeSettings(raw) {
       if (settings.to.length === 0) settings.to = [fallbackTarget(settings.from)]
     }
   }
+  // The 預設顯示形式 is always one of the drawn forms: it is the block the
+  // reader opens on, so a stored selection that misses it gets it back.
+  const dict = defaults.dict
+  if (!dict.displayForms.includes(dict.defaultForm)) {
+    dict.displayForms = cleanForms([...dict.displayForms, dict.defaultForm])
+  }
   return defaults
 }
 
@@ -165,8 +184,9 @@ export function applyPatch(settings, patch) {
   const next = JSON.parse(JSON.stringify(settings))
   for (const [mode, value] of Object.entries(patch)) {
     for (const [key, field] of Object.entries(value)) {
+      const kind = SCHEMA[mode]?.[key]
       if (key === 'lessons') next[mode].lessons = cleanLessons(field)
-      else if (key === 'to') next[mode].to = cleanForms(field)
+      else if (kind === 'forms') next[mode][key] = cleanForms(field)
       else next[mode][key] = field
     }
   }
@@ -177,6 +197,11 @@ export function applyPatch(settings, patch) {
         next[mode].to = [fallbackTarget(next[mode].from)]
       }
     }
+  }
+  // The 預設顯示形式 is always displayed (spec): a patch that removes it, or
+  // that picks a new default that is not in the selection, leaves it selected.
+  if (!next.dict.displayForms.includes(next.dict.defaultForm)) {
+    next.dict.displayForms = cleanForms([...next.dict.displayForms, next.dict.defaultForm])
   }
   return next
 }
@@ -203,6 +228,24 @@ export function nextSelectAllTargets(to, from) {
 
 export function toggleTarget(to, id) {
   return to.includes(id) ? to.filter((item) => item !== id) : [...to, id]
+}
+
+// 選擇顯示的類型: the control follows the selection, like the lesson-wide
+// 全選. Pressing 取消全選 cannot clear the reader's opening block, so the
+// default form is the one form that stays.
+export const SELECT_ALL_DISPLAY_FORMS = '全選'
+export const CLEAR_ALL_DISPLAY_FORMS = '取消全選'
+
+export function allDisplayFormsSelected(displayForms) {
+  return FORM_IDS.length === displayForms.length && FORM_IDS.every((id) => displayForms.includes(id))
+}
+
+export function selectAllDisplayLabel(displayForms) {
+  return allDisplayFormsSelected(displayForms) ? CLEAR_ALL_DISPLAY_FORMS : SELECT_ALL_DISPLAY_FORMS
+}
+
+export function nextSelectAllDisplayForms(displayForms, defaultForm) {
+  return allDisplayFormsSelected(displayForms) ? [defaultForm] : [...FORM_IDS]
 }
 
 // Copy shown above 開始 when the user cleared every 到 chip. Dictionary mode

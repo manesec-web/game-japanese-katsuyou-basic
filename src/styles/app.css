@@ -10,6 +10,7 @@
   /* A note passage: usage notes and error explanations ride on their own
      colour so the eye finds them among the sentences without a box. */
   --note: #b45309;
+  --error: #dc2626;
   --line: rgba(36, 33, 58, 0.12);
   --surface: #ffffff;
   --surface-strong: #f3efe6;
@@ -162,6 +163,21 @@ body {
 
 .placeholder {
   color: var(--ink-soft);
+}
+
+/* A horizontal rule between two rows. It used to be a `border-bottom` on the
+   row itself, which made the divider share the row's fate: a hover or press
+   tint painted over the line, a press scale shortened it, and the row had to
+   clip its background to the padding box to keep the line one colour. A drawn
+   line is its own element, so the rows above it can tint and scale freely and
+   the rule keeps the same colour, length and position in every state. */
+.hrule {
+  display: block;
+  flex: 0 0 1px;
+  height: 1px;
+  margin: 0;
+  border: 0;
+  background: var(--line);
 }
 
 /* Every screen's top bar: pinned to the viewport, solid column colour behind

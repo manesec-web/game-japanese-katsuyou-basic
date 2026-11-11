@@ -1,13 +1,19 @@
 <script setup>
-import { computed, inject, ref } from 'vue'
-import { ArrowLeft } from 'lucide-vue-next'
+import { computed, inject, ref, watch } from 'vue'
+import { ArrowLeft, ChevronDown } from 'lucide-vue-next'
 import { FORMS, formName } from '../dict/forms.js'
 import { canStart, nextSelectAllTargets, startHint } from '../dict/settings.js'
 import { EMPTY_LESSON_HINT, selectAllLabel } from '../dict/lessons.js'
+import ScrollThumb from '../components/ScrollThumb.vue'
+import { useElementThumb } from '../ui/element-thumb.js'
 
 const store = inject('store')
 const session = store.session
 const formsOpen = ref(false)
+// The 從 list is its own scroll container with a drawn thumb.
+const formListRef = ref(null)
+const formThumb = useElementThumb()
+watch(formListRef, (el) => formThumb.attach(el), { flush: 'post' })
 
 const mode = computed(() => session.mode)
 const settings = computed(() => session.settings[session.mode])
@@ -102,22 +108,29 @@ function back() {
           @click="formsOpen = !formsOpen"
         >
           <span>{{ formName(settings.from) }}</span>
-          <span class="chevron" :class="{ 'chevron--up': formsOpen }">⌄</span>
+          <ChevronDown :size="16" class="chevron" :class="{ 'chevron--up': formsOpen }" aria-hidden="true" />
         </button>
       </div>
     </div>
 
-    <div v-if="needsForms && formsOpen" class="form-list">
-      <button
-        v-for="form in FORMS"
-        :key="form.id"
-        class="form-option"
-        :class="{ 'form-option--on': settings.from === form.id }"
-        type="button"
-        @click="selectFrom(form.id)"
-      >
-        {{ form.name }}
-      </button>
+    <div v-if="needsForms && formsOpen" class="form-list-frame">
+      <div ref="formListRef" class="form-list">
+        <button
+          v-for="form in FORMS"
+          :key="form.id"
+          class="form-option"
+          :class="{ 'form-option--on': settings.from === form.id }"
+          type="button"
+          @click="selectFrom(form.id)"
+        >
+          {{ form.name }}
+        </button>
+      </div>
+      <ScrollThumb
+        :visible="formThumb.visible.value"
+        :length="formThumb.length.value"
+        :offset="formThumb.offset.value"
+      />
     </div>
 
     <div v-if="needsForms" class="targets">
@@ -339,16 +352,24 @@ function back() {
   transform: rotate(180deg);
 }
 
-.form-list {
+.form-list-frame {
+  position: relative;
   margin: 8px 0 0 38px;
+}
+
+.form-list {
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--surface);
   max-height: 320px;
   overflow-y: auto;
-  /* The page hides its own scrollbar; this list is a scroll container of its
-     own, so it opts back in and keeps the native bar. */
-  scrollbar-width: auto;
+  /* The page hides its own scrollbar; this list hides the native bar too and
+     draws the same thumb the page uses, inside its own frame. */
+  scrollbar-width: none;
+}
+
+.form-list::-webkit-scrollbar {
+  display: none;
 }
 
 .form-option {
@@ -362,14 +383,24 @@ function back() {
   color: var(--ink);
   text-align: left;
   cursor: pointer;
+  /* See SettingsView: the row's hairline belongs to the list panel, so the tint
+     stops at the padding box and the divider keeps one colour in every state. */
+  background-clip: padding-box;
 }
 
 .form-option:last-child {
   border-bottom: 0;
 }
 
+/* Longhand: the `background` shorthand would reset background-clip to border-box. */
 .form-option:hover {
-  background: var(--surface-strong);
+  background-color: var(--surface-strong);
+}
+
+/* No press scale: a scaled row drags its hairline off the panel's edge. */
+.form-option:active {
+  transform: none;
+  background-color: var(--surface-strong);
 }
 
 .form-option--on {

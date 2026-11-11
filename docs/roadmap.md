@@ -47,9 +47,10 @@ Status values: `pending`, `in progress`, `done`, `blocked`.
 8. T7 quiz.
 9. T8 polish and verification.
 
-All T-entries are `done`. The only remaining step is to publish `output/` as
+All T-entries are `done`. The remaining product step is to publish `output/` as
 the GitHub Pages site root; deployment notes are in `README.md` and serving
-caveats in `docs/serving.md`.
+caveats in `docs/serving.md`. Backlog B1–B3 still need a spec entry before any
+new feature work (B3 remains open for further, unspecified UI work).
 
 ## Revision boards
 
@@ -134,15 +135,17 @@ and the first-card resistance from revision 13a).
 
 ### Backlog — requested next work
 
-Requested by the user on 2026-11-11. None of these has a spec entry yet, so
-none can start until the matching section of `docs/spec.md` is written; they
-are `pending`, not `in progress`.
+Requested by the user on 2026-11-11. B1 and B2 still need a spec entry before
+start. Follow-up passes A/B and revision 23 specified and delivered concrete
+優化UI complaints, but the broader B3 backlog stays `pending` for any further,
+unspecified UI work; it is not a blanket claim that every possible UI
+improvement is done.
 
 | # | Change | Status | What the spec has to settle first |
 |---|--------|--------|----------------------------------|
 | B1 | 朗讀功能 | pending | Which text is spoken (the form alone, `vol`, `japanese`, or a `sentence`), which engine (the browser's own `SpeechSynthesis`, since the site still allows no backend and no model call), and where the control sits on reader, card and quiz |
 | B2 | 優化下載文件 | pending | Whether the 50 per-lesson files stay (one file per lesson, hashed individually) or become one bundle; what that does to the SHA-256 manifest, `app.boot` and `boot.checked / boot.total` |
-| B3 | 優化UI | pending | Which screens and which complaints; every change is written into the spec's Look and motion section before code and the browser suite follow |
+| B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–23 (including follow-up passes A/B); every new change is written into the spec's Look and motion section before code and the browser suite follow |
 
 ### Revision 15 — the paging window (requested 2026-11-10)
 
@@ -191,35 +194,148 @@ The user reported the card follow without neighbours (「練習的卡片跟手�
 | 17b | 24px inter-item gap on both screens, outside the item (fixed px, not a viewport %) | done | `src/ui/window.test.js` +1 and `window-views.test.js` geometry; browser check `dragNeighbour.gap === 24` both directions; settle pitch reads the row width |
 | 17c | Full-bleed paging surface while dragging: `--page-gutter` on the column, negative margins on the stage/body, content-width window inside | done | browser check `clipFillsViewport` during the held drag on card and dictionary; at-rest geometry unchanged (`currentLeft === 0`, content fills the window) |
 
+### Follow-up pass A — UI: error-word skipping, card tags and quiz feedback (2026-11-11)
+
+A follow-up UI goal added the per-mode 跳過錯誤的單詞 switch and several
+small visual corrections. Its spec clauses were written before the code; the
+final behaviour is in `docs/spec.md` and the final verification is revision 23.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| A1 | ChevronDown in both dropdowns, ChevronLeft/Right in the reader and card footers, and the first framed desktop page-thumb placement; the reader strip loses its extra `- 8px` inset so the paging seam does not flash | done | browser checks for Lucide glyphs, gap-accurate paging and framed thumb placement; `src/ui/scrollbar.js` geometry tests |
+| A2 | 跳過錯誤的單詞 in dictionary, card and quiz settings; `orderedFormEntries()` hides flagged forms, `buildItems()` filters flagged card/quiz pairs, and a live quiz keeps answered items while moving skipped items out of or back to the tail | done | `reader-forms.test.js`, `items.test.js` and `src/commands/settings.test.js`; browser checks in all three modes and for mid-run toggling |
+| A3 | Card answer tags become form, class, 第N課 and (for error items) 錯誤單詞; quiz title becomes 測驗（n/total）; wrong answers shake and redden the input instead of showing 回答錯誤; completion counts only resolved items | done | `card-tags.test.js`, `window-views.test.js`; browser checks for tags, title, shake/red, no wrong-answer toast and score tallies |
+| A4 | Spec, tests and build/browser verification for the pass | done | `npm test` 26 files / 261 tests; `npm run build` with 50 dict files and `output/index.html`; `node scripts/browser-check.mjs` 469 checks passing; `docs/spec.md` updated |
+
+### Follow-up pass B — dictionary display-form filter and corrections (2026-11-11)
+
+The next goal restored 預設顯示形式 as a dropdown and added 選擇顯示的類型. It
+also changed error words to colour-only after revision 17a, before revision 19
+restored the double strike. Its other corrections survive in the final spec.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| B1a | Dictionary settings keep a 15-form 預設顯示形式 dropdown and gain a 15-chip 選擇顯示的類型 filter; deselected forms are omitted from the reader and the selection persists | done | `src/dict/settings.js` validation and reader-filter tests; browser checks for the dropdown, chips, filtering and reload persistence |
+| B1b | `error_usage` words use the dedicated `--error` colour; quiz skip keeps the displayed total correct when the current item is removed, with no `n/0` title; the quiz title reads 測驗 rather than 練習 | done | browser checks for error colour, mid-run skip, corrected total and quiz title |
+| B1c | Spec and verification for the pass | done | `npm test` 26 files / 269 tests; `npm run build` ok; `node scripts/browser-check.mjs` 471 checks passing; later revisions 19–23 refine the error-word decoration and display-form controls |
+
+### Revision 19 — drawn separators in settings, double strike on error words (requested 2026-11-11)
+
+The user asked for two visual changes: “設定中所有的 border-bottom 都要刪除。製作一個
+水平綫的 .class 來替換掉 border-bottom” and “把所有錯誤的單詞加入雙刪除綫，請不要修改
+現在的顔色”. Answered design questions: the horizontal-line class is global in
+`src/styles/app.css` and replaces the settings separators only (the picker keeps
+its own), and the double strike applies to the dictionary reader's word only
+(not the card back or the quiz result rows).
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 19a | Global `.hrule` class draws each settings separator as its own 1px element; `border-bottom` removed from `.row` and `.form-option`, along with the `:last-child` override and the `background-clip` workaround; the template inserts the rule between entries | done | browser probe on all three modes (dictionary 4 rows/3 rules closed, 4/15/18 open; cards 3/2; quiz 4/3): every rule 1px `rgba(36,33,58,0.12)`, `aria-hidden`, no border of its own, no row or option with a bottom border; browser check asserts the same plus a pressed option keeps its width and position |
+| 19b | `error_usage` words keep the error colour and gain a double `line-through` on `rb` plus the plain kana spans; `rt` stays unstruck; decoration colour stays `currentColor` | done | computed styles on the built site: `rb`/kana `line-through`/`double`/`rgb(220,38,38)`, `rt` `none`; screenshot probe (blue decoration override) found two 3px bands at 57–59 and 61–63 inside the base band 39–74 and none in the reading band 22–39; browser check asserts every error word met while paging |
+| 19c | Spec, changelog, progress, architecture, roadmap and AGENTS resynced | done | `docs/spec.md` reader clause and Look-and-motion separator clause rewritten before the code; changelog revision 19; `grep` finds no "keeps no strike" / "instead of being struck through" left; `npm test` 26 files / 269 tests, `npm run build` ok (50 dict files), `node scripts/browser-check.mjs` 479 checks passing |
+
+### Revision 20 — page thumb inside the frame, drawn thumbs in the dropdown lists (requested 2026-11-11)
+
+The user reported the desktop placement (「滑動條的位置在電腦的顯示怪怪，是否可以貼近box最右側的邊緣？
+另外修改下拉box的滑動條樣式。」) and refined it after the first pass (「page-scrollbar
+是否可以放進去column内？因爲在電腦版會闖過外面column然後很醜」): the thumb belongs inside
+the box. Answered: the desktop thumb sits inside the column (not on its edge), and
+the dropdown lists use the same drawn thumb as the page, hidden native bars.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 20a | Page thumb placement: framed desktop draws it 8px inside the column's right edge with a 32px track inset (> the 28px corner radius), clear of the 24px content gutter so it cannot cross a footer button; full-bleed phone layout unchanged (3px / 16px) | done | `src/ui/scrollbar.test.js` (+4: framed inset, `isFramed` ×3, `trackInset` ×2); browser probe: gap 8px at 700/900/1200 and 3px at 390, track start 32px at scroll 0, inside the column, no footer control crossed; browser check asserts the same |
+| 20b | 兩個下拉清單 hide the native bar and draw the page's 4px rounded, fading thumb (`listThumbMetrics`, `useElementThumb`, `ScrollThumb.vue`, `.form-list-frame`) | done | `scrollbar.test.js` +6 (fits → nothing, track inset, share, ends, minimum, clamp); probe: `scrollbar-width: none`, thumb 4px with 4px insets, reveals on scroll, fades after 1.3s, reduced motion keeps it at `transition: 0s`; browser check covers both lists |
+| 20c | Spec, changelog, progress, roadmap, architecture, AGENTS resynced | done | spec clauses for the page bar and the two lists rewritten before the code; `grep` finds no "keep the native bar" / 24px-inset prose left; `npm test` 26 files / 280 tests, `npm run build` ok (50 dict files), `node scripts/browser-check.mjs` 489 checks passing |
+
+### Revision 21 — no rule above the form list, locked 預設顯示形式 chip (requested 2026-11-11)
+
+The user removed the separator above the 預設顯示形式 list in the source itself
+(`<!-- 不要加綫，很醜！ -->`), then asked:「字典中，如果選擇 "預設顯示形式" 是 masu 形，
+"選擇顯示的類型" 就必須是要選擇。使用禁止按鈕，并且tooltips 提示 "預設顯示形式" 默認需要顯示這個
+之類的提示。」
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 21a | The 預設顯示形式 list opens directly under its row: no `hrule` between the row and the panel (the user's own edit, kept), the separators between options unchanged | done | browser check: `ruleAboveList === false` plus the rule count `rows - 1 + options - 1`; spec clause names the panelless gap |
+| 21b | The current 預設顯示形式's chip in 選擇顯示的類型 is a disabled button (`chip--locked`) with the tooltip `這是預設顯示形式，必須顯示，不能取消`; `toggleDisplayForm` guards it and `applyPatch`/`normalizeSettings` keep `defaultForm ∈ displayForms` | done | `settings.test.js` +4 (patch adds a new default, restores a removed one, clears to the default only, repairs a stored selection); browser check: chip disabled and still pressed, no other chip disabled, tip text via `aria-describedby` hidden until hover, lock follows a new default and the freed chip toggles |
+| 21c | Spec, changelog, progress, roadmap, architecture, AGENTS resynced | done | spec 選擇顯示的類型 + reader clauses rewritten first; `npm test` 26 files / 284 tests, `npm run build` ok (50 dict files), `node scripts/browser-check.mjs` 497 checks passing |
+
+### Revision 22 — dictionary settings chips aligned with the quiz button group
+
+The user reported 「字典中的設置形式的按鈕非常丑，請你和“挑戰”功能的按鈕組進行對其」.
+There is no feature named 挑戰 in the product; the reference is the quiz/測驗
+settings' 錯 X 題就顯示答案 button group, whose buttons are equal-width and
+flush with the row. The dictionary's 選擇顯示的類型 chips previously shrank to
+their labels inside equal grid cells and left ragged gaps.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 22a | `SettingsView.vue`: the 15 dictionary chips fill their grid cells (`width: 100%`, `min-width: 0`), a 112px minimum track clears the longest form name, and the tooltip wrapper cannot widen a track | done | browser check: equal widths, each chip flush with its wrapper, labels do not overflow, and full rows flush with the group's left/right edges |
+| 22b | Spec, architecture, changelog, progress, roadmap, AGENTS resynced | done | spec 選擇顯示的類型 clause records the equal-cell alignment; `npm test` 26 files / 284 tests, `npm run build` ok (50 dict files), `node scripts/browser-check.mjs` 501 checks passing |
+
+### Revision 23 — select-all state, locked-chip look, dropdown thumb hints (requested 2026-11-11)
+
+The user asked to continue 「優化UI」 with three concrete changes:「在設定的
+"選擇顯示的類型" 全選的按鈕，按一下要變成取消全選，另外禁止的按鈕要和第一課禁止的
+按鈕一樣」 and 「點擊下拉框的時候，下拉框的滑動條要顯示，然後几秒後再消失，鼠標移動
+進去也要顯示，因爲這樣可以告訴人原來下面還有内容」. The decisions below were
+confirmed before implementation. This is a narrow revision of those controls;
+backlog B3 (優化UI) remains `pending` because it covers further, unspecified UI work.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 23a | Spec first: state-based 全選／取消全選 in Dictionary settings; locked chip looks exactly like the disabled 第1課 chip while remaining selected and showing its tooltip; both dropdown thumbs reveal on open, fade after about 2s, and reveal again on pointer enter/move | done | `docs/spec.md` Dictionary settings + Look and motion clauses rewritten and re-read before code; 27 files / 296 unit tests, 50 dict files, 527 browser checks; backlog B3 remains `pending` |
+| 23b | 選擇顯示的類型: 全選 selects all 15 and becomes 取消全選; 取消全選 leaves only `defaultForm` and returns to 全選; individual toggles also update the label; settings stay valid and persist | done | `settings.test.js` +4 and `src/commands/settings.test.js` +1; browser checks cover label, click, manual toggle, localStorage persistence, reload, one default-form reader block; 296/296 unit tests pass |
+| 23c | The locked 預設顯示形式 chip adopts the disabled 第1課 look (transparent, muted text, divider border, 45% opacity, no hover accent, no pointer events) while keeping `disabled`, `aria-pressed="true"`, its tooltip and wrapper hover | done | browser computed-style comparison against real `.chip--empty:disabled` at rest and on hover; 15 equal-width chip, pressed-state, tooltip, wrapper-hover, reader-block checks pass |
+| 23d | Both dropdown lists reveal a scroll thumb immediately when an overflowing list opens; scroll and pointer enter/move restart an about-2s fade; a fitting list draws nothing; reduced motion keeps appear/leave without transition | done | `src/ui/element-thumb.test.js` +6 fake-timer tests and +1 timing test in `scrollbar.test.js`; browser checks on both lists for open, ~2s fade, pointer reveal/reset, scroll, fitting list, reduced motion; page thumb's separate ~1s checks pass |
+| 23e | Documentation and final verification | done | `docs/changelog.md`, `docs/progress.md`, `docs/architecture.md`, `docs/roadmap.md` and `AGENTS.md` updated; manifest check, 296 tests, build (50 dict files + `output/index.html`), 527 browser checks pass; `vol/` unchanged and `output/` remains gitignored |
+
+The view stays thin: selection and reveal rules live in `.js`, and user-visible
+actions go through `dispatch`. No backend, MCP or model call is added, and
+`vol/` is read-only. If a behavior below is not specified, stop and ask instead
+of inventing a rule.
+
 ## Current status
 
-- Everything above is `done`; latest verification was 25 test files / 242
-  tests, a build with 50 dictionary files, and 456 browser checks (the count
-  can move by one because the seeded quiz item decides how many kana-key
-  assertions run).
-- Backlog items B1–B3 are `pending` and have no spec entry yet.
-- No known deviation from `docs/spec.md` other than the spec-silent choices
-  listed in `docs/progress.md`.
+- Revisions 2–23 and follow-up passes A/B are `done`; the
+  implementation was developed and verified over several incremental passes.
+  The latest verification is 27 test files / 296 tests, a build with 50
+  dictionary files, and 527 browser checks (the count can move by one because
+  the seeded quiz item decides how many kana-key assertions run).
+- Backlog B1–B3 remain `pending`. Revisions 2–23 cover specific, specified UI
+  requests; B3 is still open for further UI work (B1 and B2 need a spec entry
+  first). The revision-23 documentation sync also updated `README.md`,
+  `docs/serving.md`, `docs/architecture.md`, `AGENTS.md` and the historical
+  report banners in `docs/audit/*.md`.
+- Revision 23's spec and implementation are both in place, and `README.md`,
+  `docs/serving.md`, `docs/architecture.md`, `AGENTS.md` and the four status
+  documents have been resynced. Other than the spec-silent choices listed in
+  `docs/progress.md`, revisions 2–23 have no known deviation from
+  `docs/spec.md`.
 - The GitHub Pages site is not live yet (the project URL returned 404 when
   checked); the repository history starts at commit `933c30b`.
 
 ## How to resume a future session
 
-1. Read `docs/progress.md` — it names the latest verification and the known
+1. Read `AGENTS.md` — it is the execution plan and acceptance checklist.
+2. Read `docs/progress.md` — it names the latest verification and the known
    limitations.
-2. Read `docs/architecture.md` — it explains the engine contract and file map.
-3. Read `docs/changelog.md` — recent changes and decisions.
-4. Open the matching section of `docs/spec.md` before touching that feature.
-5. Update `docs/progress.md`, `docs/roadmap.md` and `docs/changelog.md` when a
+3. Read `docs/architecture.md` — it explains the engine contract and file map.
+4. Read `docs/changelog.md` — recent changes and decisions.
+5. Open the matching section of `docs/spec.md` before touching that feature.
+6. Update `docs/progress.md`, `docs/roadmap.md` and `docs/changelog.md` when a
    task lands.
+7. Check `README.md` and `docs/serving.md` when verification counts or serving
+   assumptions change; `docs/audit/*.md` are historical snapshots.
 
 ## Verification commands
 
 ```bash
-npm test                                # Vitest unit tests (25 files / 242)
+npm test                                # Vitest unit tests (27 files / 296)
 npm run build                           # static build into output/ (50 dict files)
 node scripts/write-sha256.mjs --check   # manifest consistency
-node scripts/browser-check.mjs          # headless Chromium walk-through (456 checks)
+node scripts/browser-check.mjs          # headless Chromium walk-through (527 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 ```
 

@@ -59,6 +59,23 @@ describe('backTags', () => {
     expect(backTags('te-form', { group: null })).toHaveLength(1)
   })
 
+  it('adds the lesson tag when a lesson is supplied', () => {
+    const tags = backTags('dictionary-form', target, { lesson: 7 })
+    expect(tags.map((tag) => tag.text)).toEqual(['字典形', '1類動詞', '第7課'])
+    expect(tags[2]).toEqual({ kind: 'lesson', text: '第7課', className: 'tag--lesson' })
+  })
+
+  it('marks an error_usage target with 錯誤單詞', () => {
+    const tags = backTags('passive-form', { group: '1' }, { lesson: 3, errorUsage: true })
+    expect(tags.map((tag) => tag.text)).toEqual(['受身形', '1類動詞', '第3課', '錯誤單詞'])
+    expect(tags[3]).toEqual({ kind: 'error', text: '錯誤單詞', className: 'tag--error' })
+  })
+
+  it('does not add the error tag for a usable target', () => {
+    const tags = backTags('dictionary-form', target, { lesson: 3, errorUsage: false })
+    expect(tags.some((tag) => tag.kind === 'error')).toBe(false)
+  })
+
   it('shows nothing without a target form', () => {
     expect(backTags(undefined)).toEqual([])
     expect(backTags(null)).toEqual([])
