@@ -1,8 +1,8 @@
 # Progress
 
-Last updated: 2026-11-11 (revision 24, mobile overscroll suppression).
+Last updated: 2026-11-11 (revision 25, dynamic viewport for short screens).
 
-**Status: complete.** T1–T8 are done and revisions 2–24 have landed and been
+**Status: complete.** T1–T8 are done and revisions 2–25 have landed and been
 verified, including follow-up UI passes A/B. The site is not published yet;
 the remaining product step is to deploy `output/` to GitHub Pages. Backlog
 B1–B3 remain `pending`; B3 is open for further, unspecified UI work.
@@ -73,7 +73,7 @@ backlog remains pending for further, unspecified UI work.
 - `npm run build`: `output/index.html`, `output/assets/` (one JS + one CSS
   bundle) and `output/dict/` with exactly **50** lesson files. `output/` is
   gitignored.
-- `node scripts/browser-check.mjs`: **532 checks passing on the final run**
+- `node scripts/browser-check.mjs`: **533 checks passing on the final run**
   (headless Chromium, 390×844 with 550/551/800/900 width probes, plus a touch
   context for the zoom lock and frame-by-frame motion assertions). The count
   can move by one because the seeded quiz item decides how many kana-key
@@ -161,12 +161,21 @@ in [`docs/changelog.md`](changelog.md). Task acceptance evidence is in
   vertical edge crossings, leaves horizontal paging and multi-touch alone,
   and settles a crossing at the exact boundary. It is not a fixed-body or
   document-wide scroll lock. Verified by 13 unit tests and five additional
-  touch-capable Chromium checks (28 files / 309 tests, 532 browser checks);
+  touch-capable Chromium checks (28 files / 309 tests, 533 browser checks);
   actual iOS Safari rubber-banding and Android hardware still need real-device
   verification. Chromium's compositor-owned, non-cancelable root moves are
   documented in the spec/architecture/changelog rather than presented as an
   iOS simulation. Pre-existing external `vol/` and generated-manifest changes
   seen during the final diff were not edited or reverted by this revision.
+
+- **Revision 25**: `body`, `#app` and the framed/mobile `.column` now size short
+  screens with `min-height: 100dvh` (framed column `calc(100dvh - 40px)`),
+  keeping `vh` as the fallback, so short screens such as 翻卡學習 and settings no
+  longer overflow when an iOS browser toolbar makes the static `vh` taller than
+  the visible area. Home and loading already used `dvh`. A new browser check
+  asserts a fresh card run has no vertical overflow (533 checks on the final
+  run); a collapsing-toolbar test is not reproducible in headless Chromium, so
+  the actual iPhone 18 Pro behavior is a real-device acceptance check.
 
 - **Revision 13**: the loading screen carries the site head
   (`大家の日本語` / `轉型練習` / `涵蓋初級 1 – 50 課的單詞`) and the credit line

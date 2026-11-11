@@ -2902,6 +2902,25 @@ try {
   const cardTitle = async () => (await cardPage.locator('.bar-title').textContent()).trim()
 
   await startCardRun()
+  // A short screen must not gain a browser-chrome-sized scroller: the outer
+  // shell follows the dynamic viewport height, so the card fits the visible
+  // area and the document has nothing extra to scroll. `dvh` cannot be
+  // exercised for Safari's collapsing toolbar in headless Chromium, but the
+  // declaration plus this no-overflow assertion guard the short-page path.
+  const shortCardLayout = await cardPage.evaluate(() => ({
+    content: document.documentElement.scrollHeight,
+    viewport: window.innerHeight,
+    body: getComputedStyle(document.body).minHeight,
+    app: getComputedStyle(document.querySelector('#app')).minHeight,
+    column: getComputedStyle(document.querySelector('.column')).minHeight,
+  }))
+  check(
+    'a short card screen fills the viewport without a vertical overflow',
+    shortCardLayout.content <= shortCardLayout.viewport + 1 &&
+      Math.round(parseFloat(shortCardLayout.body)) === shortCardLayout.viewport &&
+      Math.round(parseFloat(shortCardLayout.app)) === shortCardLayout.viewport,
+    JSON.stringify(shortCardLayout),
+  )
   check('the swipe finish run starts on the first card', (await cardTitle()) === '練習（1/3）', await cardTitle())
 
   // Regression: the row used to follow the finger while its zero-height clip

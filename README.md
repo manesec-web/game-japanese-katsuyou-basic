@@ -41,6 +41,7 @@ SHA-256 校驗後快取於 IndexedDB，重新開啟時只重新驗證、不重�
   背景。自繪 4px 頁面滾動軸，只在捲動時淡入、停止約 1 秒淡出；兩個下拉
   清單也使用自繪軸，打開或指標活動後顯示約 2 秒再淡出。保留正常上下捲動，
   以 CSS 與 iOS 邊界觸控防護抑制橡皮筋效果及 Android 下拉重新整理；左右翻卡不受影響。
+  短畫面使用動態 viewport 高度（`dvh`），不會得到多餘的直向捲動。
 - **載入頁與錯誤處理**：三行標題與 `Loading ...` 進度條；載入失敗（
   `載入失敗（lesson N）`）可重試，標題與底部都保留。
 - **無障礙與動效偏好**：尊重 `prefers-reduced-motion: reduce`（拖曳不跟手、
@@ -146,7 +147,7 @@ output/                     建置輸出（不提交）
 npm test                                # 28 檔 / 309 個單元測試
 npm run build                           # output/index.html + output/dict/（50 檔）
 node scripts/write-sha256.mjs --check   # manifest 一致
-node scripts/browser-check.mjs          # 532 項端到端檢查（390×844 為主；測驗題目
+node scripts/browser-check.mjs          # 533 項端到端檢查（390×844 為主；測驗題目
                                         # 由亂數種子決定，假名按鍵檢查數會上下浮動 1 項）
 ```
 

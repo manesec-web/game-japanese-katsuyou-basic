@@ -208,7 +208,7 @@ and leaves `boot.done` false. `boot.checked` counts verified lessons only.
   home, all three pickers, reader, three settings screens, cards, quiz and
   completion, including IndexedDB reuse, the loading head and credit line, the
   first-card wall, reduced motion and the 550px breakpoint. It is a
-  separate command, not part of `npm test`. Its 532 checks on the final pass
+  separate command, not part of `npm test`. Its 533 checks on the final pass
   cover the dictionary display-form filter and error-word hiding, live quiz
   queue reconciliation, wrong-answer shake/red feedback, the settings' locked
   chip and select-all state, both drawn dropdown thumbs, and the framed desktop
@@ -276,6 +276,11 @@ colour.
   list reveals the thumb as soon as its `v-if` mounts; scroll or pointer
   activity shows it again and restarts the fade. A fitting list renders nothing.
   The page thumb keeps its own separate one-second timing.
+- The shell layers (`body`, `#app`, framed/mobile `.column`) use
+  `min-height: 100dvh` (framed column `calc(100dvh - 40px)`) with `100vh` as
+  the earlier-declared fallback, so short screens match the live visible
+  viewport and do not gain a browser-chrome-sized overflow on iOS where `vh`
+  is the large viewport. Home and loading already used `dvh`.
 - The viewport pins the scale (`maximum-scale=1, user-scalable=no`) and
   `html`/`body` set `touch-action: manipulation`, so a double tap and a pinch
   both leave the page at scale 1; the gesture surfaces override with `pan-y`.

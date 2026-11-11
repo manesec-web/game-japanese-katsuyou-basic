@@ -1397,3 +1397,29 @@ The Look and motion spec was amended before the implementation.
   dictionary JSON was edited by this change. Pre-existing external changes to
   `vol/` and the generated manifest were observed during the final diff and
   left untouched; this revision neither reverts nor claims them.
+
+### Revision 25 — short screens fit the dynamic viewport
+
+The user reported that on iPhone 18 Pro, pages whose content fits — settings,
+翻卡學習 — still scroll vertically, while desktop Chrome showed no such
+overflow. The cause was the outer shell: `body`, `#app` and the `.column`
+sized short screens to the static `100vh`, while the already-correct home and
+loading screens used `100dvh`. On iOS Safari `vh` is the large viewport, so a
+visible browser toolbar makes `100vh` taller than the actual visible area and
+adds a browser-chrome-sized scroll range that disappears once the toolbar
+collapses.
+
+- **25a Dynamic viewport shell** (`src/styles/app.css`): `body`, `#app` and
+  the framed/mobile `.column` declared `min-height: 100dvh` (and
+  `calc(100dvh - 40px)` for the framed column) with the existing `100vh` kept
+  as the fallback for older browsers. The home/loading screens already used
+  `dvh`; now every shell layer agrees.
+- **25b Regression check** (`scripts/browser-check.mjs`): after entering a
+  翻卡學習 run, assert the document has no vertical overflow and the computed
+  `body`/`#app` min-heights resolve to the viewport height. Headless Chromium
+  cannot reproduce Safari's collapsing toolbar, so the `dvh` declaration is a
+  browser-visible assertion here while the actual iPhone 18 Pro gesture needs
+  a real-device pass.
+- Verified: `npm run build` ok (`output/index.html`, `output/dict/` = 50);
+  `node scripts/browser-check.mjs` 533 checks passing; `npm test` unchanged at
+  28 files / 309 tests (no JS logic changed). No `vol/` JSON was edited.
