@@ -105,7 +105,7 @@ README.md                     user-facing overview, setup, test and deploy notes
 scripts/write-sha256.mjs      hashes vol/*.json into src/data/dict-manifest.json
 scripts/browser-check.mjs     headless Chromium walk-through of the built site
 scripts/motion-probe.mjs      frame-by-frame motion traces (informational)
-src/main.js                   app entry: creates store, boots, mounts Vue
+src/main.js                   app entry: store, Vue mount, overscroll guard, boot
 src/App.vue                   screen switch + shared shell
 src/engine/registry.js        command registry + dispatch
 src/engine/settle.js          sync/async result envelope helper
@@ -135,6 +135,7 @@ src/study/card-tags.js        card face/back tag composition
 src/study/results.js          run tally, score bands, completion emoji
 src/ui/store.js               reactive session + send()
 src/ui/bootstrap.js           boot → library → settings → home (also retry)
+src/ui/scroll-guard.js        one-finger iOS overscroll boundary guard
 src/ui/scrollbar.js           page/dropdown scrollbar geometry (pure)
 src/ui/swipe.js               swipe threshold and the phone-width gate (pure)
 src/ui/drag.js                finger-tracking drag: axis, held offset and
@@ -197,8 +198,8 @@ and leaves `boot.done` false. `boot.checked` counts verified lessons only.
 
 - Vitest under Node for engine, commands, hashing, boot, settings, item
   lists, quiz queue reconciliation, keyboard, grading, ruby, swipe/drag
-  resolution, paging window, scrollbar geometry, dropdown thumb timers and
-  result tallies: 27 files, 296 tests.
+  resolution, paging window, overscroll touch boundaries, scrollbar geometry,
+  dropdown thumb timers and result tallies: 28 files, 309 tests.
 - Browser APIs (IndexedDB, fetch) are injected so tests use fakes; the IDB
   adapter itself is tested with `fake-indexeddb`. No browser is needed for
   `npm test`.
@@ -207,7 +208,7 @@ and leaves `boot.done` false. `boot.checked` counts verified lessons only.
   home, all three pickers, reader, three settings screens, cards, quiz and
   completion, including IndexedDB reuse, the loading head and credit line, the
   first-card wall, reduced motion and the 550px breakpoint. It is a
-  separate command, not part of `npm test`. Its 527 checks on the final pass
+  separate command, not part of `npm test`. Its 532 checks on the final pass
   cover the dictionary display-form filter and error-word hiding, live quiz
   queue reconciliation, wrong-answer shake/red feedback, the settings' locked
   chip and select-all state, both drawn dropdown thumbs, and the framed desktop
@@ -278,6 +279,17 @@ colour.
 - The viewport pins the scale (`maximum-scale=1, user-scalable=no`) and
   `html`/`body` set `touch-action: manipulation`, so a double tap and a pinch
   both leave the page at scale 1; the gesture surfaces override with `pan-y`.
+  Root `overscroll-behavior-y: none` suppresses Android pull-to-refresh and
+  root rubber-banding; the two dropdowns contain their own overscroll rather
+  than disabling it. `src/ui/scroll-guard.js` adds a non-passive `touchmove`
+  fallback for iOS: it predicts whether a one-finger vertical move crosses the
+  nearest scroll container's boundary, cancels only that crossing and settles
+  the container at its exact edge. Ordinary vertical scrolling, horizontal
+  paging and multi-touch remain enabled. Neither the body nor the whole page
+  is scroll-locked. Chromium touch checks cover normal page/list scrolling;
+  its compositor can make root moves non-cancelable, so the cancelable-iOS
+  branch is unit tested and actual Safari rubber-band behavior needs a real
+  device check.
 - Gesture wiring stays in the views, but the rules are pure: swipe threshold
   and the phone-width gate in `src/ui/swipe.js`, drag axis / held offset /
   release naming (walls included) in `src/ui/drag.js`, answer

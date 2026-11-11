@@ -363,6 +363,10 @@ function back() {
   background: var(--surface);
   max-height: 320px;
   overflow-y: auto;
+  /* A list at either end does not pass its remaining drag to the root page.
+     It still scrolls normally between those ends. */
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
   /* The page hides its own scrollbar; this list hides the native bar too and
      draws the same thumb the page uses, inside its own frame. */
   scrollbar-width: none;

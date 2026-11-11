@@ -424,6 +424,10 @@ function selectAllDisplayForms() {
   background: var(--surface);
   max-height: 320px;
   overflow-y: auto;
+  /* Keep a list-edge gesture inside this panel instead of handing it to the
+     root page; the panel's own vertical scrolling remains enabled. */
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
   /* The page hides its own scrollbar; this list hides the native bar too and
      draws the same thumb the page uses, inside its own frame. */
   scrollbar-width: none;

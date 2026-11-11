@@ -3550,6 +3550,123 @@ try {
   await fitContext.close()
   await barPage.close()
 
+  // Root overscroll containment: preserve normal reading and inner-list
+  // scrolling rather than applying a document-wide touchmove preventDefault.
+  // The touch context also exercises the boundary guard's real event path.
+  const scrollContext = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    deviceScaleFactor: 3,
+    isMobile: true,
+    hasTouch: true,
+  })
+  const scrollPage = await scrollContext.newPage()
+  await scrollPage.addInitScript(() => {
+    window.scrollGuardEvents = []
+    for (const type of ['touchstart', 'touchmove', 'touchend', 'touchcancel']) {
+      document.addEventListener(type, (event) => {
+        const touch = event.touches[0] ?? event.changedTouches[0]
+        window.scrollGuardEvents.push({
+          type,
+          cancelable: event.cancelable,
+          canceled: event.defaultPrevented,
+          x: touch?.clientX ?? null,
+          y: touch?.clientY ?? null,
+        })
+      }, { passive: true })
+    }
+  })
+  await scrollPage.goto(BASE, { waitUntil: 'load' })
+  await scrollPage.waitForSelector('.home-actions', { timeout: 60000 })
+  await scrollPage.evaluate(() => {
+    const settings = {
+      dict: { lessons: [5], defaultForm: 'masu-form' },
+      card: { lessons: [5], from: 'masu-form', to: ['dictionary-form'] },
+    }
+    localStorage.setItem('katsuyou-settings', JSON.stringify(settings))
+  })
+  await scrollPage.reload({ waitUntil: 'load' })
+  await scrollPage.waitForSelector('.home-actions', { timeout: 30000 })
+  const rootOverscroll = await scrollPage.evaluate(() => ({
+    html: getComputedStyle(document.documentElement).overscrollBehaviorY,
+    body: getComputedStyle(document.body).overscrollBehaviorY,
+    touch: getComputedStyle(document.documentElement).touchAction,
+    position: getComputedStyle(document.body).position,
+  }))
+  check(
+    'root overscroll is disabled on Android/iOS CSS without locking the body',
+    rootOverscroll.html === 'none' &&
+      rootOverscroll.body === 'none' &&
+      rootOverscroll.touch === 'manipulation' &&
+      rootOverscroll.position === 'static',
+    JSON.stringify(rootOverscroll),
+  )
+  await scrollPage.locator('.home-actions button', { hasText: '字典' }).click()
+  await scrollPage.locator('.picker-start').click()
+  await scrollPage.waitForSelector('.reader-body', { timeout: 5000 })
+  await wait(300)
+  const scrollCdp = await scrollContext.newCDPSession(scrollPage)
+  const touchScroll = async (x, y, dy) => {
+    await scrollCdp.send('Input.dispatchTouchEvent', {
+      type: 'touchStart', touchPoints: [{ x, y, id: 0 }],
+    })
+    for (let step = 1; step <= 8; step += 1) {
+      await scrollCdp.send('Input.dispatchTouchEvent', {
+        type: 'touchMove', touchPoints: [{ x, y: y + (dy * step) / 8, id: 0 }],
+      })
+      await wait(25)
+    }
+    await scrollCdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] })
+    await wait(500)
+    return scrollPage.evaluate(() => ({
+      page: window.scrollY,
+      list: document.querySelector('.form-list')?.scrollTop ?? null,
+      events: window.scrollGuardEvents.splice(0),
+    }))
+  }
+  const inwardScroll = await touchScroll(195, 600, -220)
+  check(
+    'a one-finger drag in the middle of a long reader still scrolls down',
+    inwardScroll.page > 0 && inwardScroll.events.some((event) => event.type === 'touchmove' && event.cancelable),
+    JSON.stringify(inwardScroll),
+  )
+  const outwardScroll = await touchScroll(195, 300, 160)
+  // Chrome can hand a root scroll to its compositor and make subsequent
+  // touchmove events non-cancelable before any page listener sees them. That
+  // is NOT an iOS rubber-band simulation. The pure guard tests assert the
+  // cancelable-iOS event path; here verify the observable page position and
+  // that the guard does not invent a scroll offset. A real-device Safari
+  // bounce check remains a separate manual acceptance step.
+  check(
+    'a downward touch at the page top leaves its scroll position at zero',
+    outwardScroll.page === 0 &&
+      outwardScroll.events.some((event) => event.type === 'touchmove'),
+    JSON.stringify(outwardScroll),
+  )
+  await scrollPage.locator('.icon-button[aria-label="設定"]').click()
+  await scrollPage.waitForSelector('.settings .form-select', { timeout: 5000 })
+  await scrollPage.locator('.settings .form-select').click()
+  const innerBefore = await scrollPage.locator('.settings .form-list').evaluate((list) => {
+    const box = list.getBoundingClientRect()
+    return {
+      x: box.x + box.width / 2,
+      y: Math.min(box.bottom - 60, window.innerHeight - 100),
+      scrollTop: list.scrollTop,
+      containment: getComputedStyle(list).overscrollBehaviorY,
+    }
+  })
+  check(
+    'the dropdown contains overscroll instead of disabling its own scrolling',
+    innerBefore.containment === 'contain' && innerBefore.scrollTop === 0,
+    JSON.stringify(innerBefore),
+  )
+  const innerScroll = await touchScroll(innerBefore.x, innerBefore.y, -150)
+  check(
+    'a dropdown still scrolls normally under the iOS touch guard',
+    innerScroll.list > 0 && innerScroll.page === 0,
+    JSON.stringify(innerScroll),
+  )
+  await scrollContext.close()
+
   // Zoom lock on every screen, in a phone-shaped context with touch.
   const zoomContext = await browser.newContext({
     viewport: { width: 390, height: 844 },

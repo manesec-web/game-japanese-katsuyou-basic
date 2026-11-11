@@ -1353,3 +1353,47 @@ dictionary files, and 527 browser checks.
   527 checks passing; `git diff --check` clean and `git status --short -- vol`
   empty. Not verified: a real GitHub Pages deployment, real iOS/Android
   devices, Safari/Firefox, or manual visual inspection.
+
+### Revision 24 — mobile overscroll suppression without a scroll lock
+
+The user asked to try disabling webpage scroll behavior on Android and iPhone,
+especially the iOS rubber-band effect, and supplied fixed-body, CSS and
+non-passive `touchmove` approaches. The applied scope is **overscroll**, not
+ordinary reading: this app's long dictionary pages and dropdown lists must
+stay scrollable, so neither `body { position: fixed }`, `overflow: hidden`,
+`touch-action: none` nor unconditional `touchmove.preventDefault()` is used.
+The Look and motion spec was amended before the implementation.
+
+- **24a Root and dropdown CSS** (`src/styles/app.css`,
+  `src/views/PickerView.vue`, `src/views/SettingsView.vue`): root
+  `overscroll-behavior-y: none` suppresses Android Chrome pull-to-refresh and
+  root overscroll; the two form lists use `overscroll-behavior-y: contain`
+  and retain native touch scrolling. The existing custom drawn scroll thumbs,
+  `touch-action: manipulation`, `pan-y` gesture surfaces and horizontal
+  overflow clipping remain unchanged.
+- **24b iOS boundary guard** (`src/ui/scroll-guard.js`, `src/main.js`): a
+  document listener registers `touchmove` with `{ passive: false }`, identifies
+  the nearest scrollable ancestor at touch start, and reads its latest
+  `scrollTop` on movement. It cancels only a cancelable, one-finger,
+  predominantly vertical move predicted to cross that container's top/bottom,
+  then places it at the exact edge. Ordinary scroll moves and inner-list
+  scrolling pass through, horizontal reader/card gestures stay live, and a
+  multi-touch sequence stays released even when one finger remains. Listener
+  setup is idempotent and Vite disposal detaches it with the app.
+- **24c Tests and limits** (`src/ui/scroll-guard.test.js`,
+  `scripts/browser-check.mjs`): 13 guard tests cover both page boundaries,
+  predictive crossings and exact settling, normal page/list travel, dropdown
+  edges, horizontal paging, multi-touch/non-cancelable events, short pages,
+  cleanup and reset. The touch-capable Chromium context adds five checks for
+  computed containment without a fixed body, real page scrolling, zero at a
+  top pull, and dropdown scrolling. Chromium can mark root moves
+  non-cancelable when its compositor owns them, and it does not simulate iOS
+  rubber-banding; the browser suite therefore does **not** claim a real-iOS
+  bounce pass. Real iPhone/iOS Safari and Android hardware remain manual
+  acceptance checks.
+- Verified: `npm test` 28 files / 309 tests (0 failures); `npm run build` ok
+  (`output/index.html`, `output/dict/` = 50); `node scripts/browser-check.mjs`
+  532 checks passing; manifest check included in pretest/prebuild. No
+  dictionary JSON was edited by this change. Pre-existing external changes to
+  `vol/` and the generated manifest were observed during the final diff and
+  left untouched; this revision neither reverts nor claims them.

@@ -50,6 +50,13 @@ body {
      the old 300ms wait before a tap becomes a click. Pinch is handled by the
      meta, so the gesture surfaces can keep their own `pan-y`. */
   touch-action: manipulation;
+  /* Keep ordinary vertical reading and its momentum, but never let an edge
+     drag hand off to the root viewport: Android Chrome otherwise shows
+     pull-to-refresh / a rubber-band glow. The non-passive touch guard in
+     src/ui/scroll-guard.js covers iOS versions that still bounce despite this
+     declaration. Do not use touch-action: none or overflow: hidden here:
+     either would also disable scrolling that the dictionary needs. */
+  overscroll-behavior-y: none;
   /* Paging animations slide inside their own clipped container. The page
      itself never scrolls sideways. `clip` is used rather than `hidden`
      because `hidden` would make this a scroll container and break the sticky
@@ -63,6 +70,10 @@ body {
    The two inner dropdown lists opt back in, so they keep a native bar. */
 html {
   scrollbar-width: none;
+  /* The root is the viewport's scroll container. Put the containment here as
+     well as in the shared rule above so Safari cannot select a different
+     overscroll ancestor through the body. */
+  overscroll-behavior: none;
 }
 
 html::-webkit-scrollbar,

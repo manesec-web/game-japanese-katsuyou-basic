@@ -37,7 +37,11 @@ makes that group's 全選 control stateful (全選 / 取消全選, leaving only 
 locked default on clear), gives the locked default chip the picker's disabled
 第1課 look while keeping it pressed and its tooltip, and reveals both dropdown
 list thumbs on open or pointer activity for about two seconds before they fade.
-The broader 優化UI backlog remains pending for further, unspecified UI work.
+Revision 24 suppresses Android root overscroll/pull-to-refresh and adds an iOS
+non-passive touch boundary guard for rubber-banding, while retaining normal
+long-page and dropdown scrolling and horizontal paging; it does not lock the
+body or cancel every touchmove. Actual iOS/Android rubber-band behavior still
+needs real-device verification. The broader 優化UI backlog remains pending for further, unspecified UI work.
 The site builds into `output/` and has not been published to GitHub Pages yet.
 Day-to-day status, verified commands and known limitations live in
 `docs/progress.md`; `README.md` is the user-facing overview. The tasks below
@@ -45,7 +49,7 @@ stay as the original build plan and as the acceptance checklist — do not reope
 them without a spec change. Three future items sit in `docs/roadmap.md` as a
 backlog (朗讀功能, 優化下載文件, 優化UI): B1 and B2 are unimplemented and need
 a spec entry first; B3 is still open for further, unspecified UI work,
-although the specific requests recorded in revisions 2–23 have been delivered.
+although the specific requests recorded in revisions 2–24 have been delivered.
 
 Behavior lives in `docs/spec.md`. Read the matching section before you build that piece. If the spec does not cover a product behavior, stop and ask. Do not invent a rule.
 

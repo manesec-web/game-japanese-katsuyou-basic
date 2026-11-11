@@ -2,7 +2,7 @@
 
 ![Vue 3](https://img.shields.io/badge/Vue-3-42b883?logo=vue.js&logoColor=white)
 ![Vite 7](https://img.shields.io/badge/Vite-7-646cff?logo=vite&logoColor=white)
-![Vitest](https://img.shields.io/badge/tests-296%20passing-2ea44f)
+![Vitest](https://img.shields.io/badge/tests-309%20passing-2ea44f)
 ![Static site](https://img.shields.io/badge/deploy-static%20site-4a3f9f)
 
 > 朗讀功能、下載流程優化與 UI 優化列在 [`docs/roadmap.md`](docs/roadmap.md) 的
@@ -39,7 +39,8 @@ SHA-256 校驗後快取於 IndexedDB，重新開啟時只重新驗證、不重�
   寫入 IndexedDB；再次開啟只重新計算雜湊。
 - **手機優先的版面**：≤550px 滿版單色；>550px 內容置中於 480px 欄並顯示漸層
   背景。自繪 4px 頁面滾動軸，只在捲動時淡入、停止約 1 秒淡出；兩個下拉
-  清單也使用自繪軸，打開或指標活動後顯示約 2 秒再淡出。
+  清單也使用自繪軸，打開或指標活動後顯示約 2 秒再淡出。保留正常上下捲動，
+  以 CSS 與 iOS 邊界觸控防護抑制橡皮筋效果及 Android 下拉重新整理；左右翻卡不受影響。
 - **載入頁與錯誤處理**：三行標題與 `Loading ...` 進度條；載入失敗（
   `載入失敗（lesson N）`）可重試，標題與底部都保留。
 - **無障礙與動效偏好**：尊重 `prefers-reduced-motion: reduce`（拖曳不跟手、
@@ -75,7 +76,7 @@ npm run preview    # 預覽建置結果（http://localhost:4173/game-japanese-ka
 | `npm run dev` | 啟動 Vite 開發伺服器（附字典中介層） |
 | `npm run build` | 建置靜態網站到 `output/`，並複製 50 個課程檔到 `output/dict/` |
 | `npm run preview` | 以 Vite 預覽 `output/` |
-| `npm test` | 執行 Vitest 單元測試（27 個檔案、296 個測試） |
+| `npm test` | 執行 Vitest 單元測試（28 個檔案、309 個測試） |
 | `npm run test:watch` | 監看模式 |
 | `node scripts/write-sha256.mjs` | 重新產生 `src/data/dict-manifest.json` |
 | `node scripts/write-sha256.mjs --check` | 校驗 manifest 與 `vol/` 位元組是否一致（不一致則非 0 結束） |
@@ -142,10 +143,10 @@ output/                     建置輸出（不提交）
 ## 測試與驗證
 
 ```bash
-npm test                                # 27 檔 / 296 個單元測試
+npm test                                # 28 檔 / 309 個單元測試
 npm run build                           # output/index.html + output/dict/（50 檔）
 node scripts/write-sha256.mjs --check   # manifest 一致
-node scripts/browser-check.mjs          # 527 項端到端檢查（390×844 為主；測驗題目
+node scripts/browser-check.mjs          # 532 項端到端檢查（390×844 為主；測驗題目
                                         # 由亂數種子決定，假名按鍵檢查數會上下浮動 1 項）
 ```
 

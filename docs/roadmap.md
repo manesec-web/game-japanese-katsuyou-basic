@@ -145,7 +145,7 @@ improvement is done.
 |---|--------|--------|----------------------------------|
 | B1 | 朗讀功能 | pending | Which text is spoken (the form alone, `vol`, `japanese`, or a `sentence`), which engine (the browser's own `SpeechSynthesis`, since the site still allows no backend and no model call), and where the control sits on reader, card and quiz |
 | B2 | 優化下載文件 | pending | Whether the 50 per-lesson files stay (one file per lesson, hashed individually) or become one bundle; what that does to the SHA-256 manifest, `app.boot` and `boot.checked / boot.total` |
-| B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–23 (including follow-up passes A/B); every new change is written into the spec's Look and motion section before code and the browser suite follow |
+| B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–24 (including follow-up passes A/B); every new change is written into the spec's Look and motion section before code and the browser suite follow |
 
 ### Revision 15 — the paging window (requested 2026-11-10)
 
@@ -291,6 +291,20 @@ backlog B3 (優化UI) remains `pending` because it covers further, unspecified U
 | 23d | Both dropdown lists reveal a scroll thumb immediately when an overflowing list opens; scroll and pointer enter/move restart an about-2s fade; a fitting list draws nothing; reduced motion keeps appear/leave without transition | done | `src/ui/element-thumb.test.js` +6 fake-timer tests and +1 timing test in `scrollbar.test.js`; browser checks on both lists for open, ~2s fade, pointer reveal/reset, scroll, fitting list, reduced motion; page thumb's separate ~1s checks pass |
 | 23e | Documentation and final verification | done | `docs/changelog.md`, `docs/progress.md`, `docs/architecture.md`, `docs/roadmap.md` and `AGENTS.md` updated; manifest check, 296 tests, build (50 dict files + `output/index.html`), 527 browser checks pass; `vol/` unchanged and `output/` remains gitignored |
 
+### Revision 24 — mobile overscroll suppression
+
+The user asked to try disabling Android/iPhone scroll behavior, especially the
+iOS rubber-band effect. The chosen scope keeps all required vertical reading
+and dropdown scrolling while suppressing root overscroll and pull-to-refresh;
+it is not a whole-page scroll lock. The spec's Look and motion section was
+amended before code.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 24a | Root `overscroll-behavior-y: none`; both form dropdowns contain overscroll but remain scrollable; existing `manipulation`/`pan-y` and drawn thumbs stay | done | `src/styles/app.css`, `PickerView.vue`, `SettingsView.vue`; browser computed-style and real-touch list checks |
+| 24b | `src/ui/scroll-guard.js`: non-passive iOS `touchmove` guard for predicted one-finger vertical boundary crossings, exact-edge settling, no body lock, no global cancellation; main.js attaches/detaches cleanly | done | `src/ui/scroll-guard.test.js` covers page/list boundaries, normal scrolling, horizontal gestures, multi-touch, non-cancelable events, lifecycle and short pages |
+| 24c | Tests, browser regression and docs | done | 28 files / 309 unit tests; build with 50 dictionary files; 532 browser checks including five touch/overscroll checks; iOS rubber-band behavior still needs real-device verification |
+
 The view stays thin: selection and reveal rules live in `.js`, and user-visible
 actions go through `dispatch`. No backend, MCP or model call is added, and
 `vol/` is read-only. If a behavior below is not specified, stop and ask instead
@@ -298,21 +312,21 @@ of inventing a rule.
 
 ## Current status
 
-- Revisions 2–23 and follow-up passes A/B are `done`; the
+- Revisions 2–24 and follow-up passes A/B are `done`; the
   implementation was developed and verified over several incremental passes.
-  The latest verification is 27 test files / 296 tests, a build with 50
-  dictionary files, and 527 browser checks (the count can move by one because
+  The latest verification is 28 test files / 309 tests, a build with 50
+  dictionary files, and 532 browser checks (the count can move by one because
   the seeded quiz item decides how many kana-key assertions run).
-- Backlog B1–B3 remain `pending`. Revisions 2–23 cover specific, specified UI
+- Backlog B1–B3 remain `pending`. Revisions 2–24 cover specific, specified UI
   requests; B3 is still open for further UI work (B1 and B2 need a spec entry
   first). The revision-23 documentation sync also updated `README.md`,
   `docs/serving.md`, `docs/architecture.md`, `AGENTS.md` and the historical
   report banners in `docs/audit/*.md`.
-- Revision 23's spec and implementation are both in place, and `README.md`,
-  `docs/serving.md`, `docs/architecture.md`, `AGENTS.md` and the four status
-  documents have been resynced. Other than the spec-silent choices listed in
-  `docs/progress.md`, revisions 2–23 have no known deviation from
-  `docs/spec.md`.
+- Revisions 23–24 have their spec and implementation in place, and `README.md`,
+  `docs/architecture.md`, `AGENTS.md` and the status documents have been
+  resynced. Revision 24's iOS/Android rubber-band behavior still needs real
+  hardware verification; other than that and the spec-silent choices listed in
+  `docs/progress.md`, revisions 2–24 have no known deviation from `docs/spec.md`.
 - The GitHub Pages site is not live yet (the project URL returned 404 when
   checked); the repository history starts at commit `933c30b`.
 
@@ -332,10 +346,10 @@ of inventing a rule.
 ## Verification commands
 
 ```bash
-npm test                                # Vitest unit tests (27 files / 296)
+npm test                                # Vitest unit tests (28 files / 309)
 npm run build                           # static build into output/ (50 dict files)
 node scripts/write-sha256.mjs --check   # manifest consistency
-node scripts/browser-check.mjs          # headless Chromium walk-through (527 checks)
+node scripts/browser-check.mjs          # headless Chromium walk-through (532 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 ```
 
