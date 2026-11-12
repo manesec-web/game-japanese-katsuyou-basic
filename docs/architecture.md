@@ -101,6 +101,7 @@ docs/serving.md               local serving and boot-failure troubleshooting
 docs/roadmap.md               task board and resume instructions
 docs/progress.md              current state, commands run, next step
 docs/changelog.md             dated change log
+docs/logo/                    logo source logo.jpg plus the derived tab icons
 README.md                     user-facing overview, setup, test and deploy notes
 scripts/write-sha256.mjs      hashes vol/*.json into src/data/dict-manifest.json
 scripts/browser-check.mjs     headless Chromium walk-through of the built site
@@ -136,7 +137,12 @@ src/study/results.js          run tally, score bands, completion emoji
 src/ui/store.js               reactive session + send()
 src/ui/bootstrap.js           boot → library → settings → home (also retry)
 src/ui/scroll-guard.js        one-finger iOS overscroll boundary guard
-src/ui/scrollbar.js           page/dropdown scrollbar geometry (pure)
+src/ui/scrollbar.js           page/dropdown scrollbar geometry and drag mapping
+                              (pure)
+src/ui/page-scrollbar.js      page thumb wiring: measure, mouse proximity,
+                              pointer capture, fade (non-pure)
+src/ui/element-thumb.js       dropdown thumb reveal + drag, pointer/scroll
+                              activity, and the two-second fade (non-pure)
 src/ui/swipe.js               swipe threshold and the phone-width gate (pure)
 src/ui/drag.js                finger-tracking drag: axis, held offset and
                               release naming, walls included (pure)
@@ -155,7 +161,7 @@ src/components/*.vue          shared UI pieces (thin: SiteHead, BuildFooter,
                               — top-bar icons come from lucide-vue-next (npm),
                               inlined into the bundle at build time
 src/styles/app.css            design tokens, layout, motion, breakpoints
-index.html
+index.html                    document title; logo icons linked relatively from docs/logo/
 vite.config.js                outDir "output", base "/game-japanese-katsuyou-basic/", dict serving/copy
 output/                       build output, gitignored
 ```
@@ -198,8 +204,9 @@ and leaves `boot.done` false. `boot.checked` counts verified lessons only.
 
 - Vitest under Node for engine, commands, hashing, boot, settings, item
   lists, quiz queue reconciliation, keyboard, grading, ruby, swipe/drag
-  resolution, paging window, overscroll touch boundaries, scrollbar geometry,
-  dropdown thumb timers and result tallies: 28 files, 309 tests.
+  resolution, paging window, overscroll touch boundaries, scrollbar geometry
+  and drag mapping, dropdown thumb timers/dragging and result tallies: 28
+  files, 317 tests.
 - Browser APIs (IndexedDB, fetch) are injected so tests use fakes; the IDB
   adapter itself is tested with `fake-indexeddb`. No browser is needed for
   `npm test`.
@@ -208,12 +215,11 @@ and leaves `boot.done` false. `boot.checked` counts verified lessons only.
   home, all three pickers, reader, three settings screens, cards, quiz and
   completion, including IndexedDB reuse, the loading head and credit line, the
   first-card wall, reduced motion and the 550px breakpoint. It is a
-  separate command, not part of `npm test`. Its 533 checks on the final pass
+  separate command, not part of `npm test`. Its 549 checks on the final pass
   cover the dictionary display-form filter and error-word hiding, live quiz
   queue reconciliation, wrong-answer shake/red feedback, the settings' locked
-  chip and select-all state, both drawn dropdown thumbs, and the framed desktop
-  page thumb (the count can move by one: the seeded quiz item decides how many
-  kana-key assertions run).
+  chip and select-all state, both drawn dropdown thumbs (now mouse-draggable),
+  the framed desktop page thumb (now mouse-draggable with proximity reveal),
 
 ## Styling and motion
 
@@ -245,7 +251,9 @@ colour.
 - Paging is one finger-tracking phase. While a drag is held, the paging
   row (`.reader-window` / `.card-window`) translates with the finger 1:1 via
   its own inline transform — `dragShift` in `src/ui/drag.js` clamps the travel
-  to one item width and walls off directions with no item behind them. On
+  to one item width and walls off directions with no item behind them, and
+  `paintRowOffset` writes each held offset synchronously in the pointer event
+  instead of a Vue render per move. On
   release the command swaps the item at once and `slideRow` in
   `src/ui/motion.js` settles the whole row with one Web Animations move from
   where the finger left it (190ms, `--ease-slide`), so the window advance
@@ -256,25 +264,34 @@ colour.
   motion-probe.mjs` prints the frame-by-frame trace when a number needs
   re-measuring.
 - The page scrollbar is drawn, not native: `src/ui/scrollbar.js` holds the
-  geometry (pure and unit tested) and `src/components/PageScrollBar.vue` wires
-  `scroll`/`resize`/`ResizeObserver` to it. `app.css` hides the browser bar on
+  geometry and the thumb-offset ↔ scroll-position mapping (pure and unit
+  tested) and `src/ui/page-scrollbar.js` wires
+  `scroll`/`resize`/`ResizeObserver`, mouse proximity, pointer capture,
+  dragging and the fade to it. `app.css` hides the browser bar on
   `html`/`body` only. `rightInset`, `isFramed` and `trackInset` give the thumb
   two placements: a full-bleed phone column keeps the 3px gap and 16px track,
   while a framed desktop column draws it 8px inside the box with a 32px track
   inset — more than the 28px corner radius, so the bar never rides the arc —
   and 8px also sits outside the 24px content gutter, so it cannot cross a
-  footer button.
+  footer button. On a fine-pointer desktop the thumb is a control: a 24px
+  proximity zone reveals it, its 20px invisible hit area grabs it under the
+  primary mouse button without a jump, and pointer capture keeps the drag
+  alive outside the bar. A hidden thumb is pointer-transparent, and
+  coarse-pointer/touch devices keep the passive hint with ordinary scrolling.
 - The two dropdown lists draw their own thumb instead of the native bar:
   `.form-list` hides the native scrollbar (`scrollbar-width: none` plus
   `::-webkit-scrollbar`), and each list is wrapped in a `.form-list-frame` that
   carries the panel's margin and holds a `<ScrollThumb>` absolutely. Geometry
   is `listThumbMetrics` in `src/ui/scrollbar.js` (pure, unit tested),
   `src/ui/element-thumb.js` wires the list's `scroll`,
-  `pointerenter`/`pointermove`, `ResizeObserver` and a two-second fade, and
+  `pointerenter`/`pointermove`, `ResizeObserver`, a two-second fade, and mouse
+  dragging through the same inverse mapping (offset minus the panel inset, so
+  no pointerdown jump), and
   `src/components/ScrollThumb.vue` only renders the 4px rounded bar, inset 4px
   from the panel's edges so it stays clear of the 12px corners. An overflowing
   list reveals the thumb as soon as its `v-if` mounts; scroll or pointer
-  activity shows it again and restarts the fade. A fitting list renders nothing.
+  activity shows it again and restarts the fade, and a held thumb stays shown
+  until release. A fitting list renders nothing.
   The page thumb keeps its own separate one-second timing.
 - The shell layers (`body`, `#app`, framed/mobile `.column`) use
   `min-height: 100dvh` (framed column `calc(100dvh - 40px)`) with `100vh` as

@@ -21,6 +21,57 @@ export const SCROLLBAR = {
   // Shown while the page moves, gone about a second after it stops.
   fadeDelay: 1000,
   fadeMs: 160,
+  // Desktop mouse affordance: reveal before the pointer reaches the 4px
+  // drawing, then make the visible thumb easy to grab without widening the
+  // visual bar or its framed-column placement.
+  proximity: 24,
+  hitX: 8,
+  hitY: 6,
+}
+
+// Convert a thumb offset back to a scroll position. This is the inverse of
+// thumbMetrics' offset calculation and is shared by page and list dragging.
+// Keeping the grab's starting offset means the thumb never jumps to centre
+// itself under the mouse on pointerdown.
+export function scrollTopForThumbOffset({
+  offset = 0,
+  viewport = 0,
+  content = 0,
+  track = 0,
+  length = 0,
+} = {}) {
+  const maxScroll = Math.max(0, content - viewport)
+  const travel = Math.max(0, track - length)
+  if (!(maxScroll > 0) || !(travel > 0)) return 0
+  const clamped = Math.min(travel, Math.max(0, offset))
+  return (clamped / travel) * maxScroll
+}
+
+export function dragScrollTop({ startOffset = 0, deltaY = 0, ...geometry } = {}) {
+  return scrollTopForThumbOffset({ ...geometry, offset: startOffset + deltaY })
+}
+
+// Mouse proximity belongs to the whole track, not just the current thumb:
+// this reveals the control before a wheel-less user has to find its 4px body.
+// The function is pure so the exact hot zone can be tested without a browser.
+export function isNearPageThumb({
+  x = 0,
+  y = 0,
+  viewportWidth = 0,
+  viewportHeight = 0,
+  right = SCROLLBAR.inset,
+  edgeInset = SCROLLBAR.edgeInset,
+  proximity = SCROLLBAR.proximity,
+} = {}) {
+  if (!(viewportWidth > 0) || !(viewportHeight > 0)) return false
+  const thumbRight = viewportWidth - right
+  const thumbLeft = thumbRight - SCROLLBAR.width
+  return (
+    x >= thumbLeft - proximity &&
+    x <= thumbRight + proximity &&
+    y >= edgeInset - proximity &&
+    y <= viewportHeight - edgeInset + proximity
+  )
 }
 
 export function trackHeight(viewportHeight, edgeInset = SCROLLBAR.edgeInset) {

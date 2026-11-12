@@ -1423,3 +1423,124 @@ collapses.
 - Verified: `npm run build` ok (`output/index.html`, `output/dict/` = 50);
   `node scripts/browser-check.mjs` 533 checks passing; `npm test` unchanged at
   28 files / 309 tests (no JS logic changed). No `vol/` JSON was edited.
+
+### Revision 26 — draggable scrollbars, no-lesson start state, snappier card drag
+
+Requested 2026-11-12. Four items:
+1. the drawn scrollbar could not be grabbed by a mouse;
+2. a mouse with no wheel needed the bar to appear as the pointer approached;
+3. whether the 翻卡學習 drag delay was real;
+4. remove `請至少選擇一門課程才可以開始` in 字典/翻卡學習/測驗 and replace 開始
+   with a red-bordered transparent button (labelled `請至少選擇一個轉型才可以開始`
+   when 到 is empty) until the choices are valid.
+
+- **26a Page scrollbar becomes a control** (`src/ui/page-scrollbar.js`,
+  `src/components/PageScrollBar.vue`, `src/ui/scrollbar.js`): the page's 4px
+  thumb now owns fine-mouse dragging. `isNearPageThumb` reveals it when the
+  pointer is within 24px of the track (before the user has to find the 4px
+  body), `scrollTopForThumbOffset` / `dragScrollTop` map the thumb's track
+  travel back to the document scroll range, and pointer capture keeps the drag
+  alive outside the 20px hit area until release. A hidden thumb is
+  pointer-transparent again, so it cannot swallow a footer control; a
+  coarse-pointer/touch device keeps the old passive hint and normal touch
+  scrolling (no `pointer: auto`, no proximity listener for touch).
+- **26b Dropdown thumb dragging** (`src/ui/element-thumb.js`,
+  `src/components/ScrollThumb.vue`): both 從 and 預設顯示形式 draw the same
+  drag affordance as the page. The grab starts from the thumb's current
+  offset minus the panel inset (so it never jumps to centre under the mouse),
+  scrolls the list through the same inverse mapping, stays visible while held
+  and fades only after release. Touch presses never enter the mouse drag path.
+- **26c Card drag latency** (`src/views/CardView.vue`,
+  `src/views/ReaderView.vue`, `src/ui/drag.js`): the held row offset is no
+  longer a Vue `ref` re-rendered per pointermove; `paintRowOffset` writes the
+  inline transform synchronously in the pointer event. The 8px direction slop
+  is the only intentional still period — there was no added drag animation,
+  but the previous reactive path cost a component render each move, which the
+  new browser check proves by sampling the row in the same task as pointermove.
+- **26d Start button carries the empty state** (`src/views/PickerView.vue`,
+  `src/dict/settings.js`): the separate `請至少選擇一門課程才可以開始` line is
+  gone in all three modes. The disabled 開始 button now shows red text and a
+  red 1px border on a transparent background (no fill or shadow) until both the
+  lesson and target requirements are met; while a lesson exists but 到 is
+  empty, the button's own label reads `請至少選擇一個轉型才可以開始`, and it
+  returns to the purple primary `開始` button once the choices are valid.
+  `startHint` no longer returns a lesson hint, so the 轉型 label waits
+  until a lesson exists instead of stacking two explanations.
+- Spec/docs updated before code (`docs/spec.md` paging, scrollbar and picker
+  clauses), and `scripts/browser-check.mjs` asserts the red/primary button
+  states, real page/list thumb drags, mouse-proximity reveal/leave, hidden
+  thumb transparency, coarse-pointer passivity, and the synchronous card
+  offset.
+- Verified: `npm test` 28 files / **317 tests** (0 failures);
+  `npm run build` ok (`output/index.html`, `output/dict/` = 50);
+  `node scripts/browser-check.mjs` **546 checks** passing (the 轉型 hint was
+  consolidated onto the button label, folding three of the earlier hint
+  assertions into two). No `vol/` JSON was edited.
+
+### Revision 27 — the site title reads 動詞轉型練習
+
+The user asked for the title wording to change: 「標題從“轉型練習” 改成“動詞轉型
+練習” 并且更新文檔」. Only the words change — the head keeps its three lines,
+type scale and centred geometry, and no behaviour, command or dictionary data
+moves. The five-character subtitle still fits: at 320/375/390/480/800px the head
+shows no clipping, no horizontal document overflow, and the line stays centred.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 27a | `src/components/SiteHead.vue` subtitle and the `index.html` document title now read `動詞轉型練習`; both the loading and home heads pick it up because each renders `SiteHead.vue` | done | `grep -P "(?<!動詞)轉型練習"` finds no bare old wording in `src/`, `scripts/`, `index.html`; width probes at 320/375/390/480/800px report `clipped: false`, `docOverflowX: 0`, `overflowsHead: false` |
+| 27b | `scripts/browser-check.mjs` loading-subtitle assertion expects `動詞轉型練習` | done | `PORT=5299 node scripts/browser-check.mjs` 549 checks passing, including `loading shows the subtitle`, `loading shows the site title` and `a failed boot keeps the site title` (5199 was occupied by an unrelated preview server) |
+| 27c | Current-behaviour docs synced: the loading and home head text in `docs/spec.md`, the T3 acceptance line in `AGENTS.md`, and the `README.md` title | done | `docs/spec.md` loading + home clauses, `AGENTS.md` T3, `README.md` line 1; only current wording touched |
+| 27d | Historical mentions kept verbatim, with the rename recorded here instead of rewritten | done | revision 5 (progress), revision 13b (roadmap), the revision-5 changelog entry still read `轉型練習`; this section states the new wording |
+| 27e | Verification | done | `npm test` 28 files / 317 tests; `npm run build` ok — `output/index.html:10` carries `<title>大家の日本語 · 動詞轉型練習</title>`, `output/dict/` = 50 files |
+
+Revision 26 (draggable scroll thumbs, no-lesson start state, synchronous held
+drag) was uncommitted work already in the tree when this revision ran; it is the
+source of the 317 tests / 549 browser checks reported above, while this revision
+neither edited nor reverted any of its files (`src/ui/page-scrollbar.js`,
+`drag.js`, `scrollbar.js`, `element-thumb.js`, `src/dict/settings.js`,
+`PageScrollBar.vue`, `ScrollThumb.vue`, `CardView.vue`, `PickerView.vue`,
+`ReaderView.vue`, `SettingsView.vue`). This rename adds and removes no test or
+browser check — it only changes the expected subtitle string — and it edits no
+`.js` logic, command, behaviour clause, or `vol/*.json` file.
+
+### Revision 28 — the tab title and the site logo
+
+The user asked for the page title to read 「大家の動詞轉型練習」 and for
+`docs/logo/logo.jpg` to serve as the site's logo, with other formats allowed
+into that folder. The document head and one line of the shared head change; no
+screen layout, command, session field or dictionary byte moves, and the on-screen
+head keeps its three lines and draws no image.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 28a | `index.html` document title reads `大家の動詞轉型練習` (was `大家の日本語 · 動詞轉型練習`) | done | built `output/index.html` carries the new `<title>`; browser check `the document title is 大家の動詞轉型練習` |
+| 28b | Logo converted inside `docs/logo/`: `favicon.ico` (16/32/48px), `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` (180px) and `logo-512.png` | done | `file docs/logo/*` shows one ICO with three sizes and PNGs at 32/180/192/512px; the source JPEG stays as the artwork |
+| 28c | `index.html` links the icons with relative hrefs (`./docs/logo/...`) so Vite hashes them and prefixes the Pages base | done | `output/assets/` holds `favicon-*.ico`, `favicon-32-*.png`, `favicon-192-*.png`, `apple-touch-icon-*.png`, and the built HTML points at `/game-japanese-katsuyou-basic/assets/...` |
+| 28d | Browser checks cover the title and the icons | done | `the document title is 大家の動詞轉型練習`, `the head declares a favicon and a touch icon`, `every icon URL lives under the Pages subpath`, `the favicon is served as an image`, `the 32px and 192px favicons are served as images`, `the iOS touch icon is served as an image` all pass |
+| 28e | Loading and home lede reads `涵蓋初級 1 – 50 課的動詞` (was `...課的單詞`) | done | `src/components/SiteHead.vue`, the spec's loading/home clauses, the `AGENTS.md` T3 line and the harness's `loading shows the description` assertion |
+| 28f | Verification | done | `npm test` 28 files / 317 tests; `npm run build` ok (`output/assets/` = the four hashed icons, `output/dict/` = 50); `PORT=5299 node scripts/browser-check.mjs` 550 checks passing, 0 failures. No `vol/*.json` was touched |
+
+The first MIME probe read `Response.type` (`basic`), not the `Content-Type`
+header, so `the favicon is served as an image` failed at first; the harness now
+reads `response.headers.get('content-type')`. This revision also records that the
+documented browser-check total had drifted from the number the tree produced
+(roadmap said 546, the run reported in revision 27 said 549); the seeded quiz
+item makes the count move, and the number reported here is the measured one.
+
+### Revision 29 — the card face tag moves above the word
+
+Requested: in 翻卡學習 the not-yet-flipped face's tag should sit above the word,
+matching how the answer side lays out its tags. Only the face's vertical order
+changes — the pill itself, its wording, and the 變成 prompt are untouched.
+
+- `src/views/CardView.vue`: the face now renders its `.tags` row before the
+  `.word`, so the face reads tag → word → `變成…` prompt, the same top position
+  the answer's tags occupy above its answer word.
+- `docs/spec.md`: the Cards face clause lists the group tag above the source
+  form and says it uses the answer's position and pill style.
+- `scripts/browser-check.mjs`: a new check asserts the face tag's bottom sits
+  above the word's top, on the same card that verifies the verb-class tag is
+  present.
+- Verified: `npm test` 28 files / 317 tests; `npm run build` ok;
+  `node scripts/browser-check.mjs` 550 checks passing (the seeded quiz item
+  keeps the total moving by one). No `vol/*.json` was edited.

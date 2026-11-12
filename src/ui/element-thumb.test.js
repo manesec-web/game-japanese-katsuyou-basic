@@ -27,6 +27,27 @@ function fakeList({ clientHeight = 100, scrollHeight = 400 } = {}) {
   }
 }
 
+function fakeThumb() {
+  let captured = null
+  return {
+    setPointerCapture: vi.fn((id) => { captured = id }),
+    hasPointerCapture: vi.fn((id) => captured === id),
+    releasePointerCapture: vi.fn(() => { captured = null }),
+  }
+}
+
+function pointer(target, values = {}) {
+  return {
+    pointerType: 'mouse',
+    button: 0,
+    pointerId: 7,
+    clientY: 100,
+    currentTarget: target,
+    preventDefault: vi.fn(),
+    ...values,
+  }
+}
+
 function setup(list) {
   const scope = effectScope()
   const thumb = scope.run(() => useElementThumb())
@@ -106,6 +127,55 @@ describe('useElementThumb', () => {
     expect(thumb.visible.value).toBe(true)
     await vi.advanceTimersByTimeAsync(800)
     expect(thumb.visible.value).toBe(false)
+    scope.stop()
+  })
+
+  it('drags the list from the grab offset without jumping and clamps at the end', () => {
+    const list = fakeList()
+    const target = fakeThumb()
+    const { scope, thumb } = setup(list)
+    thumb.dragStart(pointer(target))
+    expect(target.setPointerCapture).toHaveBeenCalledWith(7)
+    expect(thumb.dragging.value).toBe(true)
+    expect(list.scrollTop).toBe(0)
+
+    // 92px track, 24px minimum thumb, 68px travel for 300px of scroll.
+    // Moving half the travel therefore scrolls half the list.
+    thumb.dragMove(pointer(target, { clientY: 134 }))
+    expect(list.scrollTop).toBe(150)
+    expect(thumb.offset.value).toBe(38)
+    thumb.dragMove(pointer(target, { clientY: 999 }))
+    expect(list.scrollTop).toBe(300)
+    thumb.dragEnd(pointer(target, { clientY: 999 }))
+    expect(thumb.dragging.value).toBe(false)
+    expect(target.releasePointerCapture).toHaveBeenCalledWith(7)
+    scope.stop()
+  })
+
+  it('keeps the thumb visible while held and starts the fade only on release', async () => {
+    const list = fakeList()
+    const target = fakeThumb()
+    const { scope, thumb } = setup(list)
+    thumb.dragStart(pointer(target))
+    await vi.advanceTimersByTimeAsync(LIST_SCROLLBAR.fadeDelay + 500)
+    expect(thumb.visible.value).toBe(true)
+    expect(thumb.dragging.value).toBe(true)
+    thumb.dragEnd(pointer(target))
+    await vi.advanceTimersByTimeAsync(LIST_SCROLLBAR.fadeDelay - 1)
+    expect(thumb.visible.value).toBe(true)
+    await vi.advanceTimersByTimeAsync(1)
+    expect(thumb.visible.value).toBe(false)
+    scope.stop()
+  })
+
+  it('does not turn a touch press into mouse dragging', () => {
+    const list = fakeList()
+    const target = fakeThumb()
+    const { scope, thumb } = setup(list)
+    thumb.dragStart(pointer(target, { pointerType: 'touch' }))
+    expect(thumb.dragging.value).toBe(false)
+    expect(target.setPointerCapture).not.toHaveBeenCalled()
+    expect(list.scrollTop).toBe(0)
     scope.stop()
   })
 

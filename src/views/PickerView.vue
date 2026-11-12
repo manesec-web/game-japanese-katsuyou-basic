@@ -128,8 +128,12 @@ function back() {
       </div>
       <ScrollThumb
         :visible="formThumb.visible.value"
+        :dragging="formThumb.dragging.value"
         :length="formThumb.length.value"
         :offset="formThumb.offset.value"
+        @drag-start="formThumb.dragStart"
+        @drag-move="formThumb.dragMove"
+        @drag-end="formThumb.dragEnd"
       />
     </div>
 
@@ -154,14 +158,14 @@ function back() {
     </div>
 
     <footer class="picker-footer">
-      <p v-if="startHintText" class="start-hint" role="status">{{ startHintText }}</p>
       <button
         class="button primary picker-start"
+        :class="{ 'picker-start--invalid': !startEnabled }"
         type="button"
         :disabled="!startEnabled"
         @click="start"
       >
-        開始
+        {{ startHintText || '開始' }}
       </button>
     </footer>
   </section>
@@ -444,20 +448,23 @@ function back() {
   font-size: 0.8rem;
 }
 
-.start-hint {
-  margin: 0 0 10px;
-  text-align: center;
-  font-size: 0.86rem;
-  letter-spacing: 0.02em;
-  color: var(--accent);
-}
-
 /* 開始 is the one primary action on this screen, so it keeps a tall target. */
 .picker-start {
   width: 100%;
   min-height: 50px;
   font-size: 17px;
   font-weight: 600;
+}
+
+/* No separate no-lesson warning: the disabled action itself carries the
+   invalid state. The same red outline also covers an empty 到 selection. */
+.picker-start.picker-start--invalid:disabled {
+  color: var(--error);
+  background: transparent;
+  border-color: var(--error);
+  box-shadow: none;
+  opacity: 1;
+  cursor: default;
 }
 
 .picker-footer {

@@ -5,7 +5,7 @@ import RubyWord from '../components/RubyWord.vue'
 import { groupLabel } from '../dict/forms.js'
 import { sentenceParts } from '../study/highlight.js'
 import { swipeEnabled } from '../ui/swipe.js'
-import { dragAxis, dragDirection, dragShift } from '../ui/drag.js'
+import { dragAxis, dragDirection, dragShift, paintRowOffset } from '../ui/drag.js'
 import { prefersReducedMotion, slideRow } from '../ui/motion.js'
 import { PAGING_GAP, READER_WINDOW } from '../ui/window.js'
 import { usePagingWindow } from '../ui/paging-window.js'
@@ -21,7 +21,9 @@ let pointer = null
 // the finger left it; the command swaps the word under that move, so the
 // window advance is never visible. A shorter drag settles back to rest.
 const rowEl = ref(null)
-const dragX = ref(0)
+// Pointer-held pixels bypass the Vue render queue; `held` still supplies the
+// one class change that reveals the mounted neighbours.
+let dragX = 0
 const held = ref(false)
 const sliding = ref(false)
 
@@ -98,7 +100,8 @@ function sendMove(direction) {
 // first and runs the new one — movement is finished, never stacked.
 function go(direction, releasedX = 0) {
   if (!direction || !canGo(direction) || paging.value) return
-  dragX.value = 0
+  dragX = 0
+  paintRowOffset(rowEl.value, 0)
   if (prefersReducedMotion()) {
     // No motion to wait for: change the word at once.
     sendMove(direction)
@@ -115,8 +118,9 @@ function go(direction, releasedX = 0) {
 // The spring back: a release below the threshold, or into a wall. Nothing
 // committed, so the row simply settles to where it started.
 function settleBack() {
-  const from = dragX.value
-  dragX.value = 0
+  const from = dragX
+  dragX = 0
+  paintRowOffset(rowEl.value, 0)
   if (prefersReducedMotion() || from === 0) return
   startSlide(from)
 }
@@ -156,11 +160,12 @@ function onMove(event) {
   // Under reduced motion the drag stays invisible: the release still changes
   // the word directly, but nothing tracks the finger on the way there.
   if (!prefersReducedMotion()) {
-    dragX.value = dragShift(dx, {
+    dragX = dragShift(dx, {
       canPrev: canPrev.value,
       canNext: canNext.value,
       width: pointer.width,
     })
+    paintRowOffset(rowEl.value, dragX)
   }
 }
 
@@ -177,7 +182,7 @@ function onUp() {
     canNext: canNext.value,
   })
   if (direction) {
-    go(direction, dragX.value)
+    go(direction, dragX)
     return
   }
   settleBack()
@@ -213,7 +218,7 @@ function openSettings() {
         ref="rowEl"
         class="reader-window"
         :class="{ 'reader-window--paging': paging }"
-        :style="{ transform: `translateX(${dragX}px)` }"
+        style="transform: translateX(0px)"
       >
         <article
           v-for="entry in slots"

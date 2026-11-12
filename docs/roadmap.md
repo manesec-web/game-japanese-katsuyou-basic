@@ -145,7 +145,7 @@ improvement is done.
 |---|--------|--------|----------------------------------|
 | B1 | 朗讀功能 | pending | Which text is spoken (the form alone, `vol`, `japanese`, or a `sentence`), which engine (the browser's own `SpeechSynthesis`, since the site still allows no backend and no model call), and where the control sits on reader, card and quiz |
 | B2 | 優化下載文件 | pending | Whether the 50 per-lesson files stay (one file per lesson, hashed individually) or become one bundle; what that does to the SHA-256 manifest, `app.boot` and `boot.checked / boot.total` |
-| B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–25 (including follow-up passes A/B); every new change is written into the spec's Look and motion section before code and the browser suite follow |
+| B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–28 (including follow-up passes A/B); every new change is written into the spec's Look and motion section before code and the browser suite follow |
 
 ### Revision 15 — the paging window (requested 2026-11-10)
 
@@ -324,23 +324,78 @@ actions go through `dispatch`. No backend, MCP or model call is added, and
 `vol/` is read-only. If a behavior below is not specified, stop and ask instead
 of inventing a rule.
 
+### Revision 26 — draggable scrollbars, no-lesson start state, snappier card drag
+
+Requested 2026-11-12. The drawn scrollbar could not be grabbed with a mouse, a
+wheel-less pointer needed the bar to appear on approach, the user asked whether
+the 翻卡學習 drag felt delayed, and the `請至少選擇一門課程才可以開始` line was
+to be removed with the disabled 開始 button turned red-outlined and transparent
+(and labelled `請至少選擇一個轉型才可以開始` when 到 is empty).
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 26a | Page thumb: proximity reveal, no-jump mouse drag with pointer capture, hidden-thumb pointer transparency, touch stays passive | done | `src/ui/page-scrollbar.js`, `src/ui/scrollbar.js`, `src/components/PageScrollBar.vue`; scrollbar unit tests + browser drag/proximity/coarse-pointer checks |
+| 26b | Dropdown thumbs drag the same way (offset minus inset, capture, no jump) | done | `src/ui/element-thumb.js`, `src/components/ScrollThumb.vue`; element-thumb tests + browser drag checks |
+| 26c | Held card/reader offset painted synchronously in the pointer event | done | `src/ui/drag.js` `paintRowOffset`; `src/views/CardView.vue`/`ReaderView.vue`; browser same-task transform check |
+| 26d | Remove no-lesson warning; red-bordered transparent disabled 開始 (labelled `請至少選擇一個轉型才可以開始` when 到 is empty) until valid | done | `src/dict/settings.js`, `src/views/PickerView.vue`; settings tests + browser red/primary checks |
+
+### Revision 27 — site title becomes 動詞轉型練習 (requested 2026-11-12)
+
+The user asked to rename the title: 「標題從“轉型練習” 改成“動詞轉型練習” 并且更新
+文檔」. The head keeps its three-line structure and type scale; only the words
+change, and the historical revision rows above keep their original wording.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 27a | `SiteHead.vue` subtitle and `index.html` document title read `動詞轉型練習`; loading and home both inherit it | done | no bare `轉型練習` left in `src/`, `scripts/`, `index.html`; 320–800px width probes show a centred line with no clipping and no horizontal overflow |
+| 27b | Browser harness expects the new subtitle | done | `PORT=5299 node scripts/browser-check.mjs` — 549 checks passing, `loading shows the subtitle` included |
+| 27c | Current-behaviour docs synced (spec loading/home head, `AGENTS.md` T3, `README.md` title); historical entries untouched | done | `docs/spec.md`, `AGENTS.md`, `README.md`; changelog revision 5 / roadmap 13b / progress revision 5 keep the old wording |
+| 27d | Verification | done | `npm test` 28 files / 317 tests; `npm run build` ok (`output/index.html` + 50 dict files) |
+
+### Revision 28 — tab title and site logo (requested 2026-11-12)
+
+The user asked for the page title to read `大家の動詞轉型練習` and for
+`docs/logo/logo.jpg` to be the site's logo, allowing other formats to be
+written into that folder. This touches the document head and one line of the
+shared head only: no command, session field, dictionary byte, layout rule or
+icon-library entry moves, so the unit suite stays unchanged.
+
+| # | Change | Status | Acceptance evidence |
+|---|---|---|---|
+| 28a | `index.html` document title reads `大家の動詞轉型練習` | done | `output/index.html` carries the new `<title>`; browser check `the document title is 大家の動詞轉型練習` |
+| 28b | Logo converted inside `docs/logo/` — `favicon.ico` (16/32/48px), `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` (180px), `logo-512.png` — and the first four declared in `index.html` with relative hrefs | done | Vite emits hashed copies under `output/assets/` with the `/game-japanese-katsuyou-basic/` prefix; browser checks assert every icon URL lives under the subpath and each answers 200 with an `image/*` content type |
+| 28c | Loading and home lede reads `涵蓋初級 1 – 50 課的動詞` | done | `src/components/SiteHead.vue`, the spec's loading/home clauses and the `AGENTS.md` T3 line; browser check `loading shows the description` |
+| 28d | On-screen head otherwise untouched: still three lines, still no image | done | `SiteHead.vue` markup unchanged apart from the lede string; `docs/spec.md` Build section states the logo is the tab mark only |
+| 28e | Verification | done | `npm test` 28 files / 317 tests; `npm run build` ok (`output/assets/` holds the four hashed icons, `output/dict/` = 50); `PORT=5299 node scripts/browser-check.mjs` 550 checks passing, 0 failures |
+
+### Revision 29 — card face tag above the word (requested 2026-11-12)
+
+The user asked that the unflipped card's tag sit above the word, in the same
+position the answer's tags occupy. Only the face's vertical order moves; the
+pill, its wording and the 變成 prompt stay the same.
+
+| # | Change | Status | Acceptance evidence |
+|---|---|---|---|
+| 29a | `CardView.vue` renders the face `.tags` before `.word` (tag → word → 變成 prompt) | done | browser check `the face tag sits above the word like the answer` |
+| 29b | Spec + harness updated | done | `docs/spec.md` Cards face clause; `scripts/browser-check.mjs` position assertion; `npm test` 28 files / 317 tests; build ok; 550 browser checks, 0 failures |
+
 ## Current status
 
-- Revisions 2–25 and follow-up passes A/B are `done`; the
+- Revisions 2–29 and follow-up passes A/B are `done`; the
   implementation was developed and verified over several incremental passes.
-  The latest verification is 28 test files / 309 tests, a build with 50
-  dictionary files, and 533 browser checks (the count can move by one because
-  the seeded quiz item decides how many kana-key assertions run).
-- Backlog B1–B3 remain `pending`. Revisions 2–25 cover specific, specified UI
+  The latest verification is 28 test files / 317 tests, a build with 50
+  dictionary files, and 550 browser checks (the count moves with the seeded quiz
+  item, which decides how many kana-key assertions run).
+- Backlog B1–B3 remain `pending`. Revisions 2–29 cover specific, specified UI
   requests; B3 is still open for further UI work (B1 and B2 need a spec entry
   first). The revision-23 documentation sync also updated `README.md`,
   `docs/serving.md`, `docs/architecture.md`, `AGENTS.md` and the historical
   report banners in `docs/audit/*.md`.
-- Revisions 23–25 have their spec and implementation in place, and `README.md`,
+- Revisions 23–27 have their spec and implementation in place, and `README.md`,
   `docs/architecture.md`, `AGENTS.md` and the status documents have been
   resynced. Revisions 24–25's iOS rubber-band and dynamic-viewport behavior
   still needs real hardware verification; other than that and the spec-silent
-  choices listed in `docs/progress.md`, revisions 2–25 have no known deviation
+  choices listed in `docs/progress.md`, revisions 2–29 have no known deviation
   from `docs/spec.md`.
 - The GitHub Pages site is not live yet (the project URL returned 404 when
   checked); the repository history starts at commit `933c30b`.
@@ -361,10 +416,10 @@ of inventing a rule.
 ## Verification commands
 
 ```bash
-npm test                                # Vitest unit tests (28 files / 309)
+npm test                                # Vitest unit tests (28 files / 317)
 npm run build                           # static build into output/ (50 dict files)
 node scripts/write-sha256.mjs --check   # manifest consistency
-node scripts/browser-check.mjs          # headless Chromium walk-through (533 checks)
+node scripts/browser-check.mjs          # headless Chromium walk-through (550 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 ```
 

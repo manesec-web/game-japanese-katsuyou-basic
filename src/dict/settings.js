@@ -248,14 +248,17 @@ export function nextSelectAllDisplayForms(displayForms, defaultForm) {
   return allDisplayFormsSelected(displayForms) ? [defaultForm] : [...FORM_IDS]
 }
 
-// Copy shown above 開始 when the user cleared every 到 chip. Dictionary mode
-// has no 轉型 to choose, so it never shows this.
+// Copy shown on the disabled 開始 button when the user cleared every 到 chip.
+// Dictionary mode has no 轉型 to choose, so it never shows this.
 export const NO_TARGET_HINT = '請至少選擇一個轉型才可以開始'
 
-// Copy shown above 開始 when no lesson is chosen yet. It comes first: a run
-// with no vocabulary cannot start even when 到 still holds forms.
+// Copy shown on the disabled 開始 button when no lesson is chosen yet. It comes
+// first: a run with no vocabulary cannot start even when 到 still holds forms.
 export const NO_LESSON_HINT = '請至少選擇一門課程才可以開始'
 
+// The button's own label names the missing requirement, so a disabled action
+// always says why instead of showing a bare red 開始. A lesson comes before a
+// 轉型, so the lesson message never shares the button with the 轉型 message.
 export function startHint(settings, mode) {
   const modeSettings = settings[mode]
   if (!modeSettings) return null

@@ -1,8 +1,8 @@
-# 大家の日本語 · 轉型練習
+# 大家の動詞轉型練習
 
 ![Vue 3](https://img.shields.io/badge/Vue-3-42b883?logo=vue.js&logoColor=white)
 ![Vite 7](https://img.shields.io/badge/Vite-7-646cff?logo=vite&logoColor=white)
-![Vitest](https://img.shields.io/badge/tests-309%20passing-2ea44f)
+![Vitest](https://img.shields.io/badge/tests-317%20passing-2ea44f)
 ![Static site](https://img.shields.io/badge/deploy-static%20site-4a3f9f)
 
 > 朗讀功能、下載流程優化與 UI 優化列在 [`docs/roadmap.md`](docs/roadmap.md) 的
@@ -38,10 +38,17 @@ SHA-256 校驗後快取於 IndexedDB，重新開啟時只重新驗證、不重�
 - **資料完整性**：50 個課程檔以 SHA-256 manifest 校驗；首次載入逐課下載、驗證、
   寫入 IndexedDB；再次開啟只重新計算雜湊。
 - **手機優先的版面**：≤550px 滿版單色；>550px 內容置中於 480px 欄並顯示漸層
-  背景。自繪 4px 頁面滾動軸，只在捲動時淡入、停止約 1 秒淡出；兩個下拉
-  清單也使用自繪軸，打開或指標活動後顯示約 2 秒再淡出。保留正常上下捲動，
+  背景。自繪 4px 頁面滾動軸，只在捲動時淡入、停止約 1 秒淡出；桌面版滑鼠靠近
+  就會先出現，也可以按住直接拖動。兩個下拉清單也使用自繪軸，打開或指標活動後
+  顯示約 2 秒再淡出，桌面版同樣可拖。保留正常上下捲動，
   以 CSS 與 iOS 邊界觸控防護抑制橡皮筋效果及 Android 下拉重新整理；左右翻卡不受影響。
   短畫面使用動態 viewport 高度（`dvh`），不會得到多餘的直向捲動。
+- **開始按鈕的禁用狀態**：未選好課程或未選好轉型時，「開始」顯示為紅字、紅色
+  邊框的透明按鈕（不再另顯示「請至少選擇一門課程才可以開始」；到為空時按鈕
+  文字改為「請至少選擇一個轉型才可以開始」），選好後回復原本的紫色實心按鈕。
+- **網站標題與圖示**：瀏覽器分頁標題為「大家の動詞轉型練習」，圖示取自
+  `docs/logo/logo.jpg`（轉存 `favicon.ico`、32/192px PNG 與 iOS touch icon，建置時
+  雜湊後發佈；只出現在分頁與書籤，頁面內不畫 logo）。
 - **載入頁與錯誤處理**：三行標題與 `Loading ...` 進度條；載入失敗（
   `載入失敗（lesson N）`）可重試，標題與底部都保留。
 - **無障礙與動效偏好**：尊重 `prefers-reduced-motion: reduce`（拖曳不跟手、
@@ -77,7 +84,7 @@ npm run preview    # 預覽建置結果（http://localhost:4173/game-japanese-ka
 | `npm run dev` | 啟動 Vite 開發伺服器（附字典中介層） |
 | `npm run build` | 建置靜態網站到 `output/`，並複製 50 個課程檔到 `output/dict/` |
 | `npm run preview` | 以 Vite 預覽 `output/` |
-| `npm test` | 執行 Vitest 單元測試（28 個檔案、309 個測試） |
+| `npm test` | 執行 Vitest 單元測試（28 個檔案、317 個測試） |
 | `npm run test:watch` | 監看模式 |
 | `node scripts/write-sha256.mjs` | 重新產生 `src/data/dict-manifest.json` |
 | `node scripts/write-sha256.mjs --check` | 校驗 manifest 與 `vol/` 位元組是否一致（不一致則非 0 結束） |
@@ -98,6 +105,7 @@ npm run preview    # 預覽建置結果（http://localhost:4173/game-japanese-ka
 vol/                        字典來源：lesson_1.json … lesson_50.json（唯讀）
 docs/                       規格、架構、進度、變更紀錄、本機伺服說明
 docs/screenshot-draft/      初期的線框稿（wireframe）
+docs/logo/                  網站 logo：logo.jpg 與由其轉存的 favicon／touch icon
 scripts/write-sha256.mjs    產生／校驗 SHA-256 manifest
 scripts/browser-check.mjs   端到端瀏覽器檢查
 scripts/motion-probe.mjs    動效逐幀量測
@@ -144,17 +152,19 @@ output/                     建置輸出（不提交）
 ## 測試與驗證
 
 ```bash
-npm test                                # 28 檔 / 309 個單元測試
+npm test                                # 28 檔 / 317 個單元測試
 npm run build                           # output/index.html + output/dict/（50 檔）
 node scripts/write-sha256.mjs --check   # manifest 一致
-node scripts/browser-check.mjs          # 533 項端到端檢查（390×844 為主；測驗題目
-                                        # 由亂數種子決定，假名按鍵檢查數會上下浮動 1 項）
+node scripts/browser-check.mjs          # 550 項端到端檢查（390×844 為主；測驗題目
+                                        # 由亂數種子決定，假名按鍵檢查數會上下浮動幾項）
 ```
 
-端到端檢查涵蓋：載入（正常／失敗／重試）、首頁、三種模式的選課、字典閱讀（含
+端到端檢查涵蓋：瀏覽器分頁標題與網站圖示（favicon.ico、32/192px PNG、
+apple-touch-icon，皆由 Pages 子路徑提供且回應 `image/*`）、載入（正常／失敗／重試）、
+首頁、三種模式的選課、字典閱讀（含
 跟手拖動、顯示形式篩選、註解與雙刪除線）、設定、翻卡（含第一張卡的邊界與
 錯誤單詞標籤）、測驗（含答錯抖動、中途跳過錯誤單詞）、完成畫面、減少動效、
-550px 斷點、頁面與下拉清單滾動軸、IndexedDB 快取重用、縮放鎖定與 Lucide 圖標。
+550px 斷點、頁面與下拉清單滾動軸（含桌面滑鼠拖動與靠近顯示）、IndexedDB 快取重用、縮放鎖定與 Lucide 圖標。
 
 未涵蓋：真實 iOS／Android 裝置、真實輸入法（合成事件以純函式測試）、
 GitHub Pages 子路徑部署、視覺外觀的人工檢視。已知限制清單見

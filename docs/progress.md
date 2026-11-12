@@ -1,8 +1,9 @@
 # Progress
 
-Last updated: 2026-11-11 (revision 25, dynamic viewport for short screens).
+Last updated: 2026-11-12 (revision 28: tab title `大家の動詞轉型練習`, logo in
+`docs/logo/`, lede `涵蓋初級 1 – 50 課的動詞`).
 
-**Status: complete.** T1–T8 are done and revisions 2–25 have landed and been
+**Status: complete.** T1–T8 are done and revisions 2–28 have landed and been
 verified, including follow-up UI passes A/B. The site is not published yet;
 the remaining product step is to deploy `output/` to GitHub Pages. Backlog
 B1–B3 remain `pending`; B3 is open for further, unspecified UI work.
@@ -62,22 +63,32 @@ makes 選擇顯示的類型's 全選 toggle to 取消全選 according to the sel
 transparent, muted, 45%-opacity disabled look as 第1課 while keeping it pressed
 and its tooltip, and shows both dropdown list thumbs immediately on open or
 pointer activity for about two seconds before they fade. The broader 優化UI
-backlog remains pending for further, unspecified UI work.
+backlog remains pending for further, unspecified UI work. Revision 26 then made
+the page and dropdown thumbs draggable by mouse (with pointer proximity revealing
+the page thumb first), removed the separate no-lesson warning and moved that
+state onto a red-bordered transparent 開始 button (labelled
+`請至少選擇一個轉型才可以開始` when 到 is empty), and made the held card/reader
+drag paint synchronously in the pointer event rather than waiting for Vue.
+Revision 27 then renamed the site title from `轉型練習` to `動詞轉型練習` in
+`SiteHead.vue` and the document title, and updated the current-behaviour docs
+(the spec's loading/home head, the T3 line in `AGENTS.md`, `README.md`) while
+leaving the historical revision rows at their original wording.
 
 ## Current state
 
 - Vue 3.5 + Vite 7.3 + Vitest 3 static app. Verified with Node v26.4.0 and
   npm 11.18.0; Vite 7 requires Node `^20.19.0` or `>=22.12.0`.
-- `npm test`: 28 files, **309 tests passing**. `pretest` verifies the 50-lesson
+- `npm test`: 28 files, **317 tests passing**. `pretest` verifies the 50-lesson
   SHA-256 manifest first.
 - `npm run build`: `output/index.html`, `output/assets/` (one JS + one CSS
-  bundle) and `output/dict/` with exactly **50** lesson files. `output/` is
-  gitignored.
-- `node scripts/browser-check.mjs`: **533 checks passing on the final run**
+  bundle plus the four hashed logo icons — `favicon*.ico`, `favicon-32*.png`,
+  `favicon-192*.png`, `apple-touch-icon*.png`) and `output/dict/` with exactly
+  **50** lesson files. `output/` is gitignored.
+- `node scripts/browser-check.mjs`: **550 checks passing on the final run**
   (headless Chromium, 390×844 with 550/551/800/900 width probes, plus a touch
-  context for the zoom lock and frame-by-frame motion assertions). The count
-  can move by one because the seeded quiz item decides how many kana-key
-  assertions run.
+  context for the zoom lock, thumb-drag/proximity assertions and frame-by-frame
+  motion checks). The count moves with the seeded quiz item, which decides how
+  many kana-key assertions run.
 - `node scripts/motion-probe.mjs`: prints the frame-by-frame position trace for
   the paging slide and the flip. Used to measure the motion before and after a
   change; not part of the pass/fail gate.
@@ -93,10 +104,10 @@ backlog remains pending for further, unspecified UI work.
 ## Verification as of this refresh
 
 ```bash
-npm test                                # 28 files, 309 tests passed
+npm test                                # 28 files, 317 tests passed
 npm run build                           # manifest ok: 50 lessons; output/index.html + 50 dict files
 ls output/dict | wc -l                  # 50
-node scripts/browser-check.mjs          # browser check passed (532 checks)
+node scripts/browser-check.mjs          # browser check passed (550 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 node scripts/write-sha256.mjs --check   # manifest ok: 50 lessons
 ```
@@ -176,6 +187,57 @@ in [`docs/changelog.md`](changelog.md). Task acceptance evidence is in
   asserts a fresh card run has no vertical overflow (533 checks on the final
   run); a collapsing-toolbar test is not reproducible in headless Chromium, so
   the actual iPhone 18 Pro behavior is a real-device acceptance check.
+
+- **Revision 26**: the page and the two dropdown thumbs become draggable with a
+  mouse (pointer proximity reveals the page thumb first; the grab starts from
+  the thumb's current offset and never jumps), while touch keeps ordinary
+  scrolling and a passive hint. The separate `請至少選擇一門課程才可以開始`
+  line is removed in all three modes and the disabled 開始 button carries the
+  invalid state as red text + a red 1px border on a transparent background
+  (its label becomes `請至少選擇一個轉型才可以開始` when 到 is empty),
+  returning to the purple primary style once the choices are valid. The held
+  card/reader drag now paints synchronously in the pointer event instead of a
+  Vue render per move, answering the perceived delay: the 8px direction slop
+  was the only intended still period. 28 files / 317 tests, 546 browser checks.
+
+- **Revision 27** (requested 2026-11-12: 「標題從“轉型練習” 改成“動詞轉型練習”
+  并且更新文檔」): the site's subtitle and the page title now read
+  `動詞轉型練習`; `src/components/SiteHead.vue` is shared by the loading and home
+  screens, so both heads follow in one edit. The loading-subtitle assertion in
+  `scripts/browser-check.mjs` expects the new wording. Width probes at
+  320/375/390/480/800px report a centred subtitle with no clipping and no
+  horizontal overflow, so the fifth character needs no layout change. Spec/AGENTS/
+  README were resynced; changelog revision 5, roadmap 13b and this file's
+  revision-5 bullet keep `轉型練習` because they record what shipped then.
+  Verified: `npm test` 28 files / 317 tests (no JS change), `npm run build` ok
+  with `output/index.html` carrying the new `<title>` and 50 files in
+  `output/dict/`, and `PORT=5299 node scripts/browser-check.mjs` 549 checks
+  passing. No `vol/*.json` was touched.
+
+- **Revision 28** (requested 2026-11-12: 「網頁標題改成“大家の動詞轉型練習”
+  然後使用這個 docs/logo/logo.jpg 作爲網頁的logo，你可以轉換其他的格式放入該
+  文件夾」 + 「涵蓋初級 1 – 50 課的單詞 改成 涵蓋初級 1 – 50 課的動詞」): the
+  browser-tab title is now `大家の動詞轉型練習`, and the tab carries the logo
+  from `docs/logo/logo.jpg`, converted inside that folder to `favicon.ico`
+  (16/32/48px), `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png`
+  (180px) and `logo-512.png`. `index.html` links them with relative hrefs, so
+  Vite hashes each file into `output/assets/` and prefixes the Pages base —
+  no root-absolute `/favicon.ico`, no third-party icon host, no `public/`.
+  The loading/home lede reads `涵蓋初級 1 – 50 課的動詞`; the on-screen head
+  keeps its three lines and draws no image, and the logo appears in the tab,
+  bookmarks and the iOS home-screen icon only. The harness gained six checks
+  (document title, declared icons, subpath URLs, served favicons and touch
+  icon). Verified: `npm test` 28 files / 317 tests; `npm run build` ok
+  (`output/assets/` = 4 hashed icons, `output/dict/` = 50); `PORT=5299 node
+  scripts/browser-check.mjs` 550 checks passing, 0 failures. No `vol/*.json`
+  was touched.
+
+- **Revision 29** (requested 2026-11-12: the unflipped card's tag should sit
+  above the word, like the answer): `CardView.vue` reorders the face so it
+  reads tag → word → `變成…` prompt, matching where the answer places its
+  tags. The pill, its wording and the prompt are unchanged. The spec's Cards
+  face clause and a new browser position assertion follow; the run still
+  passes 28 files / 317 tests and 550 browser checks with 0 failures.
 
 - **Revision 13**: the loading screen carries the site head
   (`大家の日本語` / `轉型練習` / `涵蓋初級 1 – 50 課的單詞`) and the credit line
@@ -292,7 +354,10 @@ in [`docs/changelog.md`](changelog.md). Task acceptance evidence is in
   `/game-japanese-katsuyou-basic/` and asserts `document.baseURI` ends with it.
   A real `github.io` origin was still not exercised locally.
 - Visual appearance was judged from computed styles and geometry, not from
-  viewing screenshots (the agent cannot view images).
+  viewing screenshots (the agent cannot view images). The revision-28 logo was
+  therefore checked by file type, dimensions, URL and HTTP response only; how
+  the artwork reads at 16px in a real tab, and the iOS home-screen icon, were
+  not inspected on a device.
 - Plain-HTTP LAN origins: IndexedDB works but `crypto.subtle` does not, so boot
   stops on lesson 1 with `download 2 could not be hashed`. Fixing that would
   require shipping a non-WebCrypto SHA-256 implementation, which is a new

@@ -1,10 +1,13 @@
 import { describe, expect, it } from 'vitest'
 import {
+  dragScrollTop,
   isFramed,
+  isNearPageThumb,
   listThumbMetrics,
   LIST_SCROLLBAR,
   rightInset,
   SCROLLBAR,
+  scrollTopForThumbOffset,
   thumbMetrics,
   trackHeight,
   trackInset,
@@ -67,6 +70,47 @@ describe('thumbMetrics', () => {
     expect(short.visible).toBe(false)
     const nearly = thumbMetrics({ viewport: 400, content: 402, track: 40 })
     expect(nearly.length).toBeLessThanOrEqual(40)
+  })
+})
+
+describe('thumb dragging geometry', () => {
+  const geometry = { viewport: 800, content: 1600, track: 700, length: 350 }
+
+  it('maps the two ends and the midpoint back to the page scroll range', () => {
+    expect(scrollTopForThumbOffset({ ...geometry, offset: 0 })).toBe(0)
+    expect(scrollTopForThumbOffset({ ...geometry, offset: 175 })).toBe(400)
+    expect(scrollTopForThumbOffset({ ...geometry, offset: 350 })).toBe(800)
+  })
+
+  it('clamps a drag past either wall and handles a zero-travel track', () => {
+    expect(scrollTopForThumbOffset({ ...geometry, offset: -50 })).toBe(0)
+    expect(scrollTopForThumbOffset({ ...geometry, offset: 999 })).toBe(800)
+    expect(scrollTopForThumbOffset({ ...geometry, length: 700, offset: 100 })).toBe(0)
+    expect(scrollTopForThumbOffset({ offset: 100 })).toBe(0)
+  })
+
+  it('adds pointer travel to the grab offset without a pointerdown jump', () => {
+    expect(dragScrollTop({ ...geometry, startOffset: 0, deltaY: 175 })).toBe(400)
+    expect(dragScrollTop({ ...geometry, startOffset: 175, deltaY: 175 })).toBe(800)
+    expect(dragScrollTop({ ...geometry, startOffset: 175, deltaY: -999 })).toBe(0)
+  })
+})
+
+describe('isNearPageThumb', () => {
+  const track = { viewportWidth: 900, viewportHeight: 900, right: 188, edgeInset: 32 }
+
+  it('reveals inside the 24px neighbourhood around the whole track', () => {
+    // The visual thumb's right edge is x=712; x=688 is 20px left of its
+    // 4px body and therefore inside the proximity zone without touching it.
+    expect(isNearPageThumb({ ...track, x: 688, y: 400 })).toBe(true)
+    expect(isNearPageThumb({ ...track, x: 700, y: 8 })).toBe(true)
+  })
+
+  it('does not reveal far away or beyond the track neighbourhood', () => {
+    expect(isNearPageThumb({ ...track, x: 500, y: 400 })).toBe(false)
+    expect(isNearPageThumb({ ...track, x: 700, y: 7 })).toBe(false)
+    expect(isNearPageThumb({ ...track, x: 700, y: 893 })).toBe(false)
+    expect(isNearPageThumb({ x: 0, y: 0 })).toBe(false)
   })
 })
 

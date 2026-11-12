@@ -245,19 +245,13 @@ describe('選擇顯示的類型', () => {
 })
 
 describe('startHint', () => {
-  it('asks for a lesson before anything else, in every mode', () => {
+  it('asks for a lesson first, in every mode, even when 到 is empty too', () => {
     const settings = defaultSettings()
+    settings.card.to = []
     expect(startHint(settings, 'dict')).toBe(NO_LESSON_HINT)
     expect(startHint(settings, 'card')).toBe(NO_LESSON_HINT)
     expect(startHint(settings, 'quiz')).toBe(NO_LESSON_HINT)
     expect(NO_LESSON_HINT).toBe('請至少選擇一門課程才可以開始')
-  })
-
-  it('puts the lesson hint ahead of the 轉型 hint', () => {
-    const settings = defaultSettings()
-    settings.card.lessons = []
-    settings.card.to = []
-    expect(startHint(settings, 'card')).toBe(NO_LESSON_HINT)
     settings.card.lessons = [2]
     expect(startHint(settings, 'card')).toBe(NO_TARGET_HINT)
   })
@@ -289,7 +283,7 @@ describe('startHint', () => {
     expect(startHint(settings, 'dict')).toBe(null)
   })
 
-  it('matches canStart: the hint shows exactly when 開始 is disabled for 到', () => {
+  it('matches canStart once a lesson is selected: the hint shows exactly when 到 is empty', () => {
     const settings = defaultSettings()
     settings.card.lessons = [2]
     settings.card.to = []

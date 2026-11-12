@@ -19,6 +19,13 @@ export function dragAxis(dx, dy, threshold = DRAG_AXIS_THRESHOLD) {
 // Where the row sits while the finger is down: the finger travel, clamped to
 // one item width so at most the neighbouring item peeks in at the edge. A
 // travel into a walled direction is 0 at every distance.
+// Paint a held card row in the pointer event itself. Keeping this write out of
+// Vue's render queue avoids one component-render wait per pointermove; the
+// release animation still owns the row through the Web Animations API.
+export function paintRowOffset(row, x) {
+  if (row) row.style.transform = `translateX(${x}px)`
+}
+
 export function dragShift(dx, { canPrev, canNext, width }) {
   if (dx > 0 && !canPrev) return 0
   if (dx < 0 && !canNext) return 0

@@ -59,6 +59,26 @@ async function readListThumbState(page, frameSelector) {
   }, frameSelector)
 }
 
+async function readStartButton(page) {
+  return page.evaluate(() => {
+    const button = document.querySelector('.picker-start')
+    if (!button) return { present: false }
+    const style = getComputedStyle(button)
+    return {
+      present: true,
+      disabled: button.disabled,
+      invalid: button.classList.contains('picker-start--invalid'),
+      text: button.textContent.trim(),
+      hints: document.querySelectorAll('.start-hint').length,
+      color: style.color,
+      background: style.backgroundColor,
+      border: style.borderTopColor,
+      borderWidth: style.borderTopWidth,
+      shadow: style.boxShadow,
+    }
+  })
+}
+
 async function waitForServer(timeout = 30000) {
   const deadline = Date.now() + timeout
   while (Date.now() < deadline) {
@@ -645,6 +665,73 @@ try {
     servedBase.endsWith(SITE_BASE),
     servedBase,
   )
+  // The tab carries the wordmark and the logo: the document title is the site
+  // name, and the favicon and the iOS touch icon must resolve to real images
+  // under the Pages subpath instead of a bare root path.
+  const headMeta = await page.evaluate(async () => {
+    const linkOf = (selector) => {
+      const link = document.querySelector(selector)
+      if (!link) return null
+      return { href: link.href, sizes: link.getAttribute('sizes') || '', type: link.getAttribute('type') || '' }
+    }
+    const probe = async (href) => {
+      if (!href) return { status: 0, type: '', bytes: 0, ok: false }
+      const response = await fetch(href)
+      const blob = await response.blob()
+      return {
+        status: response.status,
+        // response.type is the fetch mode ('basic'/'cors'), so read the header.
+        type: response.headers.get('content-type') || '',
+        bytes: blob.size,
+        ok: response.ok,
+      }
+    }
+    const icons = {
+      ico: linkOf('link[rel="icon"][href$=".ico"]'),
+      png32: linkOf('link[rel="icon"][type="image/png"][sizes="32x32"]'),
+      png192: linkOf('link[rel="icon"][type="image/png"][sizes="192x192"]'),
+      touch: linkOf('link[rel="apple-touch-icon"]'),
+    }
+    return {
+      title: document.title,
+      icons,
+      ico: await probe(icons.ico && icons.ico.href),
+      png32: await probe(icons.png32 && icons.png32.href),
+      png192: await probe(icons.png192 && icons.png192.href),
+      touch: await probe(icons.touch && icons.touch.href),
+    }
+  })
+  check(
+    'the document title is 大家の動詞轉型練習',
+    headMeta.title === '大家の動詞轉型練習',
+    headMeta.title,
+  )
+  check(
+    'the head declares a favicon and a touch icon',
+    Boolean(headMeta.icons.ico && headMeta.icons.png192 && headMeta.icons.touch),
+    JSON.stringify(headMeta.icons),
+  )
+  check(
+    'every icon URL lives under the Pages subpath',
+    [headMeta.icons.ico, headMeta.icons.png32, headMeta.icons.png192, headMeta.icons.touch]
+      .every((icon) => icon && icon.href.includes(SITE_BASE)),
+    [headMeta.icons.ico, headMeta.icons.touch].map((icon) => icon && icon.href).join(' '),
+  )
+  check(
+    'the favicon is served as an image',
+    headMeta.ico.ok && headMeta.ico.bytes > 0 && /image/.test(headMeta.ico.type),
+    `${headMeta.ico.status} ${headMeta.ico.type} ${headMeta.ico.bytes}B`,
+  )
+  check(
+    'the 32px and 192px favicons are served as images',
+    headMeta.png32.ok && headMeta.png192.ok && headMeta.png32.bytes > 0 && headMeta.png192.bytes > 0,
+    `${headMeta.png32.status}/${headMeta.png192.status}`,
+  )
+  check(
+    'the iOS touch icon is served as an image',
+    headMeta.touch.ok && headMeta.touch.bytes > 0 && /image/.test(headMeta.touch.type),
+    `${headMeta.touch.status} ${headMeta.touch.type} ${headMeta.touch.bytes}B`,
+  )
   check('loading text is "Loading ..."', (await page.locator('.loading-text').textContent()).trim() === 'Loading ...')
   // The first paint already names the site: head plus the build credit, and
   // the credit is the only footer line on this screen.
@@ -655,11 +742,11 @@ try {
   )
   check(
     'loading shows the subtitle',
-    (await page.locator('.loading .site-subtitle').textContent()).trim() === '轉型練習',
+    (await page.locator('.loading .site-subtitle').textContent()).trim() === '動詞轉型練習',
   )
   check(
     'loading shows the description',
-    (await page.locator('.loading .site-lede').textContent()).trim() === '涵蓋初級 1 – 50 課的單詞',
+    (await page.locator('.loading .site-lede').textContent()).trim() === '涵蓋初級 1 – 50 課的動詞',
   )
   check(
     'loading shows the build credit',
@@ -792,6 +879,20 @@ try {
     await page.waitForSelector('.chip-grid', { timeout: 5000 })
     const title = (await page.locator('.bar-title').textContent()).trim()
     check(`entry ${label} opens the picker`, title === '詞彙', `title=${title}`)
+    const invalidStart = await readStartButton(page)
+    check(
+      `${label} shows the lesson message on the red disabled 開始 button`,
+      invalidStart.disabled &&
+        invalidStart.invalid &&
+        invalidStart.text === '請至少選擇一門課程才可以開始' &&
+        invalidStart.hints === 0 &&
+        invalidStart.color === 'rgb(220, 38, 38)' &&
+        invalidStart.background === 'rgba(0, 0, 0, 0)' &&
+        invalidStart.border === 'rgb(220, 38, 38)' &&
+        invalidStart.borderWidth === '1px' &&
+        invalidStart.shadow === 'none',
+      JSON.stringify(invalidStart),
+    )
     const downloadsBefore = dictRequests
     await page.reload({ waitUntil: 'load' })
     await page.waitForSelector('.home-actions', { timeout: 30000 })
@@ -854,25 +955,32 @@ try {
   check('lesson 1 is disabled (no verbs)', await chipOne.isDisabled())
   check('lesson 1 looks empty', (await chipOne.getAttribute('class')).includes('chip--empty'))
   check('start disabled with no lessons', await page.locator('.picker-start').isDisabled())
-  const noLessonHint = await page.evaluate(() => {
-    const hint = document.querySelector('.start-hint')
-    if (!hint) return null
-    return {
-      text: hint.textContent.trim(),
-      aboveStart: hint.getBoundingClientRect().bottom <= document.querySelector('.picker-start').getBoundingClientRect().top + 1,
-    }
-  })
-  check('with no lesson the picker asks for one', noLessonHint?.text === '請至少選擇一門課程才可以開始', noLessonHint?.text ?? 'no hint')
-  check('the lesson hint sits above 開始', noLessonHint?.aboveStart === true)
+  check(
+    'the dictionary puts the lesson message on the 開始 button',
+    (await page.locator('.start-hint').count()) === 0 &&
+      (await page.locator('.picker-start').textContent()).trim() === '請至少選擇一門課程才可以開始',
+  )
 
   const chipTwo = page.locator('.chip', { hasText: '第2課' })
   await chipTwo.click()
   check('selecting a lesson fills the chip', (await chipTwo.getAttribute('class')).includes('chip--on'))
   check('start enabled with one lesson', await page.locator('.picker-start').isEnabled())
+  // The disabled→primary swap animates background over 140ms; wait for it.
+  await wait(220)
+  const validStart = await readStartButton(page)
   check(
-    'the lesson hint clears once a lesson is picked',
-    (await page.locator('.start-hint').count()) === 0,
-    `hints=${await page.locator('.start-hint').count()}`,
+    'a valid lesson restores the original purple primary 開始 button',
+    !validStart.disabled &&
+      !validStart.invalid &&
+      validStart.text === '開始' &&
+      validStart.color === 'rgb(255, 255, 255)' &&
+      validStart.background === 'rgb(74, 63, 159)',
+    JSON.stringify(validStart),
+  )
+  check(
+    'the lesson message leaves the button once a lesson is picked',
+    validStart.text === '開始' && (await page.locator('.start-hint').count()) === 0,
+    `text=${validStart.text} hints=${await page.locator('.start-hint').count()}`,
   )
 
   const stored = await page.evaluate(() => localStorage.getItem('katsuyou-settings'))
@@ -1630,7 +1738,7 @@ try {
       settingsList.thumb?.width === 4 &&
       settingsList.thumb?.radius === '999px' &&
       settingsList.thumb?.rightInset === 4 &&
-      settingsList.thumb?.pointer === 'none' &&
+      settingsList.thumb?.pointer === 'auto' &&
       settingsList.thumb?.aria === 'true',
     JSON.stringify(settingsList),
   )
@@ -1939,28 +2047,38 @@ try {
   await page.locator('.form-select').click()
   await page.locator('.form-option', { hasText: /^ます形$/ }).click()
 
-  // Clearing 到 explains why 開始 is disabled, and picking a form recovers.
+  // Clearing 到 explains why 開始 is disabled: the message moves onto the
+  // button's label, and picking a form recovers it.
   const onTargets = page.locator('.chip--form.chip--on')
   while ((await onTargets.count()) > 0) await onTargets.first().click()
-  const emptied = await page.evaluate(() => ({
-    hint: document.querySelector('.start-hint')?.textContent.trim() ?? null,
-    disabled: document.querySelector('.picker-start').disabled,
-    aboveStart: (() => {
-      const hint = document.querySelector('.start-hint')
-      if (!hint) return false
-      return hint.getBoundingClientRect().bottom <= document.querySelector('.picker-start').getBoundingClientRect().top + 1
-    })(),
-  }))
-  check('clearing 到 shows the 轉型 hint', emptied.hint === '請至少選擇一個轉型才可以開始', emptied.hint)
-  check('the hint sits above 開始', emptied.aboveStart)
-  check('開始 is disabled with no 轉型', emptied.disabled)
+  const emptied = await page.evaluate(() => {
+    const button = document.querySelector('.picker-start')
+    return {
+      text: button.textContent.trim(),
+      disabled: button.disabled,
+      invalid: button.classList.contains('picker-start--invalid'),
+      separateHint: document.querySelector('.start-hint'),
+    }
+  })
+  check(
+    'clearing 到 puts the 轉型 hint on the 開始 button',
+    emptied.text === '請至少選擇一個轉型才可以開始' &&
+      emptied.disabled &&
+      emptied.invalid &&
+      emptied.separateHint === null,
+    JSON.stringify(emptied),
+  )
   await page.locator('.chip--form', { hasText: '字典形' }).click()
   const restored = await page.evaluate(() => ({
-    hint: document.querySelector('.start-hint')?.textContent.trim() ?? null,
+    text: document.querySelector('.picker-start').textContent.trim(),
     disabled: document.querySelector('.picker-start').disabled,
+    invalid: document.querySelector('.picker-start').classList.contains('picker-start--invalid'),
   }))
-  check('picking a 轉型 hides the hint', restored.hint === null)
-  check('開始 recovers once a 轉型 is picked', restored.disabled === false)
+  check(
+    'picking a 轉型 returns the button to 開始 and enables it',
+    restored.text === '開始' && restored.disabled === false && restored.invalid === false,
+    JSON.stringify(restored),
+  )
 
   const startBottomGap = await page.evaluate(
     () => Math.round(window.innerHeight - document.querySelector('.picker-start').getBoundingClientRect().bottom),
@@ -1970,6 +2088,37 @@ try {
   await page.waitForSelector('.card-stage', { timeout: 5000 })
   await iconGlyphs(page, 'cards')
   check('card title counts cards', (await page.locator('.bar-title').textContent()).trim() === '練習（1/3）')
+  const immediateCardPaint = await page.evaluate(() => {
+    const stage = document.querySelector('.card-stage')
+    const row = document.querySelector('.card-window')
+    const capture = stage.setPointerCapture
+    stage.setPointerCapture = () => {}
+    const event = (type, x) => new PointerEvent(type, {
+      bubbles: true,
+      pointerId: 77,
+      pointerType: 'mouse',
+      button: 0,
+      clientX: x,
+      clientY: 300,
+    })
+    stage.dispatchEvent(event('pointerdown', 200))
+    stage.dispatchEvent(event('pointermove', 196))
+    const insideSlop = row.style.transform
+    stage.dispatchEvent(event('pointermove', 176))
+    // Read in the same task as pointermove, before Vue's queued microtask can
+    // render. A reactive-only implementation still says 0px here.
+    const horizontal = row.style.transform
+    stage.dispatchEvent(event('pointercancel', 176))
+    stage.setPointerCapture = capture
+    return { insideSlop, horizontal }
+  })
+  check(
+    'a card paints its held offset in the pointer event after the 8px axis slop',
+    immediateCardPaint.insideSlop === 'translateX(0px)' &&
+      immediateCardPaint.horizontal === 'translateX(-24px)',
+    JSON.stringify(immediateCardPaint),
+  )
+  await wait(300)
   const cardControls = (await page.locator('.card-controls .control').allTextContents()).map((t) => t.trim())
   check(
     'card controls stay 上一張 / 下一張',
@@ -1985,6 +2134,15 @@ try {
   check('card face shows a source form from the lesson', Boolean(cardVerb), faceWord)
   check('card face names the target', (await page.locator('.card--current .card-face .prompt').textContent()).trim() === '變成字典形')
   check('card face shows the verb-class tag', (await page.locator('.card--current .card-face .tag--group').count()) === 1)
+  const faceTagAboveWord = await page.evaluate(() => {
+    const tag = document.querySelector('.card--current .card-face .tag')
+    const word = document.querySelector('.card--current .card-face .word')
+    if (!tag || !word) return false
+    const tagBox = tag.getBoundingClientRect()
+    const wordBox = word.getBoundingClientRect()
+    return tagBox.bottom <= wordBox.top + 1
+  })
+  check('the face tag sits above the word like the answer', faceTagAboveWord === true, String(faceTagAboveWord))
 
   check('both faces exist for the 3D flip', (await page.locator('.card--current .card-side').count()) === 2)
   check('the card starts on its face', !(await cardFlipped(page)))
@@ -3295,7 +3453,7 @@ try {
     listRest.thumb?.width === 4 &&
       listRest.thumb?.radius === '999px' &&
       listRest.thumb?.rightInset === 4 &&
-      listRest.thumb?.pointer === 'none' &&
+      listRest.thumb?.pointer === 'auto' &&
       listRest.thumb?.aria === 'true' &&
       listRest.thumb?.on === true &&
       listRest.thumb?.opacity === 1,
@@ -3312,6 +3470,35 @@ try {
     Math.abs(listRest.thumb.height - listWanted) <= 2,
     `${listRest.thumb.height} vs ${Math.round(listWanted * 10) / 10}`,
   )
+  // A wheel-less mouse can grab the drawn thumb itself. Moving outside the
+  // narrow bar while held also proves pointer capture keeps the drag alive.
+  const draggableListThumb = await barPage.locator('.list-thumb').boundingBox()
+  await barPage.mouse.move(
+    draggableListThumb.x + draggableListThumb.width / 2,
+    draggableListThumb.y + draggableListThumb.height / 2,
+  )
+  await barPage.mouse.down()
+  await barPage.mouse.move(
+    draggableListThumb.x + draggableListThumb.width / 2 + 80,
+    draggableListThumb.y + draggableListThumb.height / 2 + 34,
+    { steps: 4 },
+  )
+  const listDragged = await barPage.evaluate(() => ({
+    scrollTop: document.querySelector('.form-list').scrollTop,
+    dragging: document.querySelector('.list-thumb').classList.contains('list-thumb--dragging'),
+    on: document.querySelector('.list-thumb').classList.contains('list-thumb--on'),
+  }))
+  check(
+    'dragging a dropdown thumb scrolls its list even outside the hit area',
+    listDragged.scrollTop > 0 && listDragged.dragging && listDragged.on,
+    JSON.stringify(listDragged),
+  )
+  await barPage.mouse.up()
+  check(
+    'releasing the dropdown thumb ends its drag state',
+    !(await barPage.locator('.list-thumb').getAttribute('class')).includes('list-thumb--dragging'),
+  )
+  await barPage.evaluate(() => { document.querySelector('.form-list').scrollTop = 0 })
   // Each scroll or pointer event restarts the two-second hint. Keep the mouse
   // outside the list while measuring the open/scroll fade so pointermove does
   // not extend it by accident.
@@ -3452,7 +3639,11 @@ try {
   await barPage.evaluate(() => window.scrollTo({ top: 300 }))
   await wait(200)
   const barShown = await barRead()
-  check('a scroll reveals the thumb', barShown.on && barShown.opacity === 1, JSON.stringify(barShown))
+  check(
+    'a scroll reveals an interactive desktop thumb',
+    barShown.on && barShown.opacity === 1 && barShown.pointer === 'auto',
+    JSON.stringify(barShown),
+  )
   check(
     'the thumb follows the page',
     Math.abs(barShown.top - barAtRest.top) > 20 && barShown.top > barAtRest.top,
@@ -3470,6 +3661,33 @@ try {
   await wait(1300)
   const barFaded = await barRead()
   check('the thumb leaves once the page is still', !barFaded.on && barFaded.opacity === 0, JSON.stringify(barFaded))
+
+  // No wheel is needed on a fine-pointer desktop: approaching the track
+  // reveals the 4px thumb, which remains available while the mouse is nearby.
+  const fadedBox = await barPage.locator('.page-scrollbar').boundingBox()
+  await barPage.mouse.move(fadedBox.x - 12, fadedBox.y + fadedBox.height / 2)
+  await wait(250)
+  const barNear = await barRead()
+  check(
+    'mouse proximity reveals the page scrollbar without scrolling',
+    barNear.on && barNear.opacity === 1 && barNear.pointer === 'auto',
+    JSON.stringify(barNear),
+  )
+  await wait(1300)
+  const barNearHeld = await barRead()
+  check(
+    'the page scrollbar stays visible while the mouse remains nearby',
+    barNearHeld.on && barNearHeld.opacity === 1,
+    JSON.stringify(barNearHeld),
+  )
+  await barPage.mouse.move(5, 5)
+  await wait(1300)
+  const barNearLeft = await barRead()
+  check(
+    'leaving the scrollbar neighbourhood starts its normal fade',
+    !barNearLeft.on && barNearLeft.opacity === 0,
+    JSON.stringify(barNearLeft),
+  )
 
   // The drawn thumb hugs the column's own right edge at every width: on a
   // framed desktop the 24px content gutter is not where it belongs, because
@@ -3518,6 +3736,26 @@ try {
   )
   check('the wide thumb is still shown after the resize scroll', barWide.on)
 
+  const pageThumbBox = await barPage.locator('.page-scrollbar').boundingBox()
+  await barPage.mouse.move(pageThumbBox.x + 2, pageThumbBox.y + 4)
+  await barPage.mouse.down()
+  await barPage.mouse.move(pageThumbBox.x + 180, pageThumbBox.y + 104, { steps: 5 })
+  const pageDragged = await barPage.evaluate(() => ({
+    scrollTop: window.scrollY,
+    dragging: document.querySelector('.page-scrollbar').classList.contains('page-scrollbar--dragging'),
+    on: document.querySelector('.page-scrollbar').classList.contains('page-scrollbar--on'),
+  }))
+  check(
+    'dragging the page thumb scrolls the document and survives leaving the hit area',
+    pageDragged.scrollTop > 0 && pageDragged.dragging && pageDragged.on,
+    JSON.stringify(pageDragged),
+  )
+  await barPage.mouse.up()
+  check(
+    'releasing the page thumb ends its drag state',
+    !(await barPage.locator('.page-scrollbar').getAttribute('class')).includes('page-scrollbar--dragging'),
+  )
+
   // Reduced motion: the thumb still appears and leaves, it just does not fade.
   await barPage.setViewportSize({ width: 390, height: 844 })
   await barPage.emulateMedia({ reducedMotion: 'reduce' })
@@ -3528,16 +3766,24 @@ try {
   check('reduced motion still shows the thumb while moving', barReduced.on, JSON.stringify(barReduced))
   await barPage.emulateMedia({ reducedMotion: null })
 
-  // The thumb is a scroll hint only: it must not cover a footer control.
+  // A visible fine-pointer thumb is grabbable; once hidden it must become
+  // pointer-transparent again instead of leaving an invisible strip over UI.
   const footerTap = await barPage.evaluate(() => {
     const el = document.querySelector('.page-scrollbar')
     el.classList.add('page-scrollbar--on')
     const rect = el.getBoundingClientRect()
-    const at = document.elementFromPoint(rect.left + rect.width / 2, rect.top + 4)
+    const x = rect.left + rect.width / 2
+    const y = rect.top + 4
+    const visibleHit = document.elementFromPoint(x, y)
     el.classList.remove('page-scrollbar--on')
-    return at ? at.className || at.tagName : 'none'
+    const hiddenHit = document.elementFromPoint(x, y)
+    return {
+      visible: visibleHit ? visibleHit.className || visibleHit.tagName : 'none',
+      hidden: hiddenHit ? hiddenHit.className || hiddenHit.tagName : 'none',
+    }
   })
-  check('the thumb is not the top element under the finger', footerTap !== 'page-scrollbar', String(footerTap))
+  check('the visible desktop thumb owns its mouse grab', footerTap.visible === 'page-scrollbar', JSON.stringify(footerTap))
+  check('the hidden thumb does not cover the UI underneath', footerTap.hidden !== 'page-scrollbar', JSON.stringify(footerTap))
 
   // A dropdown whose options already fit draws no hint. Use the same browser
   // context (and so the same verified dictionary cache), but a fresh page
@@ -3623,6 +3869,21 @@ try {
   await scrollPage.locator('.picker-start').click()
   await scrollPage.waitForSelector('.reader-body', { timeout: 5000 })
   await wait(300)
+  await scrollPage.evaluate(() => window.scrollTo({ top: 240 }))
+  await wait(250)
+  const coarseThumb = await scrollPage.evaluate(() => ({
+    fine: matchMedia('(hover: hover) and (pointer: fine)').matches,
+    on: document.querySelector('.page-scrollbar')?.classList.contains('page-scrollbar--on'),
+    pointer: document.querySelector('.page-scrollbar')
+      ? getComputedStyle(document.querySelector('.page-scrollbar')).pointerEvents
+      : null,
+  }))
+  check(
+    'a coarse-pointer phone keeps a passive scroll hint, never a mouse drag target',
+    coarseThumb.fine === false && coarseThumb.on === true && coarseThumb.pointer === 'none',
+    JSON.stringify(coarseThumb),
+  )
+  await scrollPage.evaluate(() => window.scrollTo({ top: 0 }))
   const scrollCdp = await scrollContext.newCDPSession(scrollPage)
   const touchScroll = async (x, y, dy) => {
     await scrollCdp.send('Input.dispatchTouchEvent', {
@@ -3648,6 +3909,9 @@ try {
     inwardScroll.page > 0 && inwardScroll.events.some((event) => event.type === 'touchmove' && event.cancelable),
     JSON.stringify(inwardScroll),
   )
+  // The next probe asserts the top edge, so restore the page to its top first.
+  await scrollPage.evaluate(() => window.scrollTo({ top: 0 }))
+  await wait(250)
   const outwardScroll = await touchScroll(195, 300, 160)
   // Chrome can hand a root scroll to its compositor and make subsequent
   // touchmove events non-cancelable before any page listener sees them. That
@@ -3671,11 +3935,14 @@ try {
       y: Math.min(box.bottom - 60, window.innerHeight - 100),
       scrollTop: list.scrollTop,
       containment: getComputedStyle(list).overscrollBehaviorY,
+      thumbPointer: getComputedStyle(document.querySelector('.settings .list-thumb')).pointerEvents,
     }
   })
   check(
     'the dropdown contains overscroll instead of disabling its own scrolling',
-    innerBefore.containment === 'contain' && innerBefore.scrollTop === 0,
+    innerBefore.containment === 'contain' &&
+      innerBefore.scrollTop === 0 &&
+      innerBefore.thumbPointer === 'none',
     JSON.stringify(innerBefore),
   )
   const innerScroll = await touchScroll(innerBefore.x, innerBefore.y, -150)

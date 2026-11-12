@@ -2,8 +2,8 @@
 <template>
   <header class="site-head">
     <h1 class="site-title">大家の日本語</h1>
-    <p class="site-subtitle">轉型練習</p>
-    <p class="site-lede">涵蓋初級 1 – 50 課的單詞</p>
+    <p class="site-subtitle">動詞轉型練習</p>
+    <p class="site-lede">涵蓋初級 1 – 50 課的動詞</p>
   </header>
 </template>
 

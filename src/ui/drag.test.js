@@ -1,6 +1,18 @@
 import { describe, expect, it } from 'vitest'
-import { dragAxis, dragDirection, dragShift, DRAG_AXIS_THRESHOLD } from './drag.js'
+import { dragAxis, dragDirection, dragShift, DRAG_AXIS_THRESHOLD, paintRowOffset } from './drag.js'
 import { SWIPE_THRESHOLD } from './swipe.js'
+
+describe('paintRowOffset', () => {
+  it('writes the held pixels synchronously without a transition', () => {
+    const row = { style: { transform: 'translateX(0px)' } }
+    paintRowOffset(row, -37)
+    expect(row.style.transform).toBe('translateX(-37px)')
+    expect(row.style.transition).toBeUndefined()
+    paintRowOffset(row, 0)
+    expect(row.style.transform).toBe('translateX(0px)')
+    expect(() => paintRowOffset(null, 20)).not.toThrow()
+  })
+})
 
 describe('dragAxis', () => {
   it('names nothing until the drag passes the slop', () => {

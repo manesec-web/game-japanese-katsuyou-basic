@@ -3,7 +3,7 @@ import { computed, inject, onBeforeUnmount, ref } from 'vue'
 import { ArrowLeft, ChevronLeft, ChevronRight, Settings as SettingsIcon } from 'lucide-vue-next'
 import RubyWord from '../components/RubyWord.vue'
 import CompletePanel from '../components/CompletePanel.vue'
-import { dragAxis, dragDirection, dragShift } from '../ui/drag.js'
+import { dragAxis, dragDirection, dragShift, paintRowOffset } from '../ui/drag.js'
 import { prefersReducedMotion, slideRow } from '../ui/motion.js'
 import { CARD_WINDOW, PAGING_GAP } from '../ui/window.js'
 import { usePagingWindow } from '../ui/paging-window.js'
@@ -18,7 +18,9 @@ const session = store.session
 // the finger left it; the command swaps the card under that move. A shorter
 // drag settles back to rest, and a tap (no drag at all) turns the card over.
 const rowEl = ref(null)
-const dragX = ref(0)
+// Held pixels are deliberately not reactive: each pointermove paints this
+// value straight onto the row instead of waiting for a Vue component render.
+let dragX = 0
 const held = ref(false)
 const sliding = ref(false)
 
@@ -82,8 +84,9 @@ function startSlide(fromPx) {
 // The spring back: a release below the threshold, or into the first-card
 // wall. Nothing committed, so the row simply settles to where it started.
 function settleBack() {
-  const from = dragX.value
-  dragX.value = 0
+  const from = dragX
+  dragX = 0
+  paintRowOffset(rowEl.value, 0)
   if (prefersReducedMotion() || from === 0) return
   startSlide(from)
 }
@@ -98,7 +101,8 @@ function moveCard(direction, releasedX = 0) {
   if (prefersReducedMotion()) {
     // No motion to wait for: change the card at once.
     endSlide()
-    dragX.value = 0
+    dragX = 0
+    paintRowOffset(rowEl.value, 0)
     if (direction === 'next' && onLastCard.value) store.send('study.finish')
     else if (direction === 'next') store.send('card.next')
     else store.send('card.prev')
@@ -124,7 +128,8 @@ function moveCard(direction, releasedX = 0) {
     return
   }
 
-  dragX.value = 0
+  dragX = 0
+  paintRowOffset(rowEl.value, 0)
   // The swap is direct and the new card settles in from the edge the gesture
   // came from. Leaving the last card is the end of the run: the panel takes
   // the card's place instead of another card sliding in.
@@ -174,11 +179,12 @@ function onMove(event) {
   // Under reduced motion the drag stays invisible: the release still changes
   // the card directly, but nothing tracks the finger on the way there.
   if (!prefersReducedMotion()) {
-    dragX.value = dragShift(dx, {
+    dragX = dragShift(dx, {
       canPrev: !onFirstCard.value,
       canNext: true,
       width: pointer.width,
     })
+    paintRowOffset(rowEl.value, dragX)
   }
 }
 
@@ -199,7 +205,7 @@ function onUp() {
     canNext: true,
   })
   if (direction) {
-    moveCard(direction, dragX.value)
+    moveCard(direction, dragX)
     return
   }
   settleBack()
@@ -248,7 +254,7 @@ function openSettings() {
         ref="rowEl"
         class="card-window"
         :class="{ 'card-window--paging': held || sliding }"
-        :style="{ transform: `translateX(${dragX}px)` }"
+        style="transform: translateX(0px)"
       >
         <div
           v-for="entry in slots"
@@ -273,13 +279,6 @@ function openSettings() {
                 class="card-side card-face"
                 :aria-hidden="entry.current && session.flipped ? 'true' : undefined"
               >
-                <div class="word">
-                  <RubyWord
-                    :text="entry.face.word"
-                    :reading="entry.face.reading"
-                    :show-reading="cardSettings.showReading"
-                  />
-                </div>
                 <div v-if="entry.current && entry.face.tags.length" class="tags">
                   <span
                     v-for="tag in entry.face.tags"
@@ -287,6 +286,13 @@ function openSettings() {
                     class="tag"
                     :class="tag.className"
                   >{{ tag.text }}</span>
+                </div>
+                <div class="word">
+                  <RubyWord
+                    :text="entry.face.word"
+                    :reading="entry.face.reading"
+                    :show-reading="cardSettings.showReading"
+                  />
                 </div>
                 <p class="prompt">{{ entry.face.prompt }}</p>
               </div>

@@ -109,8 +109,12 @@ function selectAllDisplayForms() {
         </div>
         <ScrollThumb
           :visible="formThumb.visible.value"
+          :dragging="formThumb.dragging.value"
           :length="formThumb.length.value"
           :offset="formThumb.offset.value"
+          @drag-start="formThumb.dragStart"
+          @drag-move="formThumb.dragMove"
+          @drag-end="formThumb.dragEnd"
         />
       </div>
     </template>

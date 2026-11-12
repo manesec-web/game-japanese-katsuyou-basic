@@ -46,7 +46,28 @@ needs real-device verification. Revision 25 sizes the outer shell (`body`,
 40px)` framed) so short screens such as settings and 翻卡學習 stop overflowing
 when an iOS toolbar makes the static `vh` taller than the visible area; `vh`
 stays as the fallback. Real-device verification remains for the dynamic
-viewport. The broader 優化UI backlog remains pending for further, unspecified UI work.
+viewport. Revision 26 makes the page and dropdown scroll thumbs draggable with
+a fine mouse (with a proximity reveal so a wheel-less pointer can find the page
+thumb first, and pointer capture keeping the drag alive outside the bar), while
+touch keeps ordinary scrolling and a passive hint; removes the separate
+`請至少選擇一門課程才可以開始` line in favour of a red-bordered transparent
+開始 button until the choices are valid (labelled
+`請至少選擇一個轉型才可以開始` when 到 is empty); and paints the held card/reader drag
+synchronously in the pointer event instead of a Vue render per move.
+Revision 27 renames the site title from `轉型練習` to `動詞轉型練習` in the shared
+`SiteHead.vue` and in the `index.html` document title, updating the spec's
+loading/home head text, this file's T3 line and `README.md`, while the historical
+revision rows keep their original wording. Revision 28 sets the `index.html`
+document title to `大家の動詞轉型練習` and gives the tab a logo: the artwork at
+`docs/logo/logo.jpg` is converted, inside `docs/logo/`, to `favicon.ico` (16,
+32, 48px), `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` (180px)
+and `logo-512.png`, and `index.html` references the first four with relative
+paths so Vite hashes them into `output/assets/` under the Pages base. The same
+revision changes the loading/home lede to `涵蓋初級 1 – 50 課的動詞`; the on-screen
+head keeps its three lines and draws no image. Revision 29 moves the unflipped
+card's tag above the word in 翻卡學習, matching the answer's tag position, while
+the pill, its wording and the 變成 prompt stay unchanged. The broader 優化UI backlog remains
+pending for further, unspecified UI work.
 The site builds into `output/` and has not been published to GitHub Pages yet.
 Day-to-day status, verified commands and known limitations live in
 `docs/progress.md`; `README.md` is the user-facing overview. The tasks below
@@ -54,7 +75,7 @@ stay as the original build plan and as the acceptance checklist — do not reope
 them without a spec change. Three future items sit in `docs/roadmap.md` as a
 backlog (朗讀功能, 優化下載文件, 優化UI): B1 and B2 are unimplemented and need
 a spec entry first; B3 is still open for further, unspecified UI work,
-although the specific requests recorded in revisions 2–25 have been delivered.
+although the specific requests recorded in revisions 2–29 have been delivered.
 
 Behavior lives in `docs/spec.md`. Read the matching section before you build that piece. If the spec does not cover a product behavior, stop and ask. Do not invent a rule.
 
@@ -78,6 +99,7 @@ After the build, the tree looks like this:
 vol/                          already present. lesson_1.json … lesson_50.json
 docs/spec.md                  product spec
 docs/screenshot-draft/        wireframes
+docs/logo/                    logo source (logo.jpg) and the icons derived from it
 scripts/write-sha256.mjs      reads vol/, writes the sha256 manifest
 scripts/browser-check.mjs     end-to-end walk-through of the built site
 src/main.js
@@ -100,13 +122,14 @@ src/ui/bootstrap.js           boot → library → settings → home
 src/views/*.vue
 src/components/*.vue
 src/styles/app.css
-index.html
+index.html                    document title + relative logo icon links
 vite.config.js                build.outDir = "output", base = "/game-japanese-katsuyou-basic/"
 output/                       build output, do not commit
 ```
 
 There is no `public/` directory; the dictionary is copied from `vol/` into
-`output/dict/` by the Vite plugin.
+`output/dict/` by the Vite plugin, and the logo icons are pulled in from
+`docs/logo/` by the relative `link` tags in `index.html`.
 
 `vite.config.js` serves `vol/lesson_*.json` as `/game-japanese-katsuyou-basic/dict/lesson_N.json` in dev and build, and copies those files into `output/dict/`. The source files stay in `vol/`.
 
@@ -161,7 +184,7 @@ Checks:
 
 ### T3 Loading and home
 
-The `loading` screen shows the site head (大家の日本語 / 轉型練習 / 涵蓋初級 1 – 50 課的單詞), a progress bar and the text `Loading ...`, and the footer line `Build with ❤ by Mane` alone (the `🥺 如果有 BUG 記得告訴我！` line stays on home); the credit opens the same About sheet. Progress is `boot.checked / boot.total`. Opening the site runs `app.boot`. Success goes to `home`. On failure the bar stops, the screen offers retry, and retry runs `app.boot` again; the head and the footer are still there.
+The `loading` screen shows the site head (大家の日本語 / 動詞轉型練習 / 涵蓋初級 1 – 50 課的動詞), a progress bar and the text `Loading ...`, and the footer line `Build with ❤ by Mane` alone (the `🥺 如果有 BUG 記得告訴我！` line stays on home); the credit opens the same About sheet. Progress is `boot.checked / boot.total`. Opening the site runs `app.boot`. Success goes to `home`. On failure the bar stops, the screen offers retry, and retry runs `app.boot` again; the head and the footer are still there.
 
 `home` has three buttons: 字典, 翻卡學習, 測驗. Each opens `picker` in that mode. The footer line is `Build with ❤ by Mane`. Activating it shows a small sheet with a link to `https://github.com/manesec-web/game-japanese-katsuyou-basic`, opened in a new tab.
 
