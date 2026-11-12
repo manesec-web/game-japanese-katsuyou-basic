@@ -300,25 +300,9 @@
           "group": "0",
           "chinese": "要; 需要",
           "japanese": "いられる",
-          "note": "字典有但是不常用：「要られる」日常不用",
-          "error_usage": false,
-          "sentence": [
-            {
-              "japanese": "この 工場では、経験より 体力が 要られる。",
-              "chinese": "這家工廠要求的不是經驗而是體力。",
-              "note": null
-            },
-            {
-              "japanese": "面接では、落ち着いた 態度が 要られる。",
-              "chinese": "面試時要求沉著的態度。",
-              "note": null
-            },
-            {
-              "japanese": "小さな 店ほど、細かい 気配りが 要られる。",
-              "chinese": "越是小店，越要求細心的關照。",
-              "note": null
-            }
-          ]
+          "note": "錯誤詞語，僅供轉詞練習：「要る」是無意志動詞，沒有自然的受身形。「〜が要られる」不成立，要說「被要求」用「求められる」。",
+          "error_usage": true,
+          "sentence": []
         },
         "causative-form": {
           "vol": "要らせる",

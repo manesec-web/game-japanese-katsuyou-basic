@@ -3304,18 +3304,18 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "新しい 企画は 毎年 社員に チャレンジされる。",
-              "chinese": "新企畫每年由社員挑戰。",
+              "japanese": "チャンピオンは 毎年 新人に チャレンジされる。",
+              "chinese": "冠軍每年都被新人挑戰。",
               "note": null
             },
             {
-              "japanese": "難しい 仕事は 彼に チャレンジされる。",
-              "chinese": "困難的工作由他挑戰。",
+              "japanese": "強い 選手は よく 後輩に チャレンジされる。",
+              "chinese": "厲害的選手常常被後輩挑戰。",
               "note": null
             },
             {
-              "japanese": "その 大会は 学生に チャレンジされる。",
-              "chinese": "那個大會由學生挑戰。",
+              "japanese": "その 大会の 優勝者は 学生に チャレンジされる。",
+              "chinese": "那個大賽的冠軍被學生挑戰。",
               "note": null
             }
           ]

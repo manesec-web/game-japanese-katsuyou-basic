@@ -296,8 +296,8 @@
               "note": null
             },
             {
-              "japanese": "寮では 小さい 鳥なら 飼え。",
-              "chinese": "宿舍裡小鳥的話可以養。",
+              "japanese": "その 小鳥を 部屋で 飼え。",
+              "chinese": "把那隻小鳥養在房間裡。",
               "note": null
             }
           ]
@@ -2443,13 +2443,13 @@
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "明日までに 出来ようと、 みんなで 頑張る。",
-              "chinese": "為了明天前完成，大家一起努力。",
+              "japanese": "明日までに 出来ようと しても、 時間が 足りない。",
+              "chinese": "就算想在明天之前做完，時間也不夠。",
               "note": null
             },
             {
-              "japanese": "一時間で 出来ようと、 準備は 早めに する。",
-              "chinese": "就算一小時能做好，還是提早準備。",
+              "japanese": "一時間で 出来ようと しても、 無理だ。",
+              "chinese": "就算想一小時做完，也做不到。",
               "note": null
             },
             {
@@ -2809,22 +2809,22 @@
           "group": "1",
           "chinese": "打開; 開",
           "japanese": "ひらけ",
-          "note": null,
+          "note": "「開け」這裡讀「ひらけ」，是「開く（ひらく）」的命令形。窗、門、店多半讀成另一個動詞「開ける（あける）」。下面用書、傘、地圖。",
           "error_usage": false,
           "sentence": [
             {
-              "japanese": "「窓を 開け」と 先生が 言った。",
-              "chinese": "老師說「開窗」。",
+              "japanese": "「本を 開け」と 先生が 言った。",
+              "chinese": "老師說「把書打開」。",
               "note": null
             },
             {
-              "japanese": "店長は 「九時に 店を 開け」と 言った。",
-              "chinese": "店長說「九點開店」。",
+              "japanese": "「傘を 開け」と 母が 言った。",
+              "chinese": "媽媽說「把傘打開」。",
               "note": null
             },
             {
-              "japanese": "「ドアを 開け」と 彼は 叫んだ。",
-              "chinese": "他喊「開門」。",
+              "japanese": "「地図を 開け」と 彼は 叫んだ。",
+              "chinese": "他喊「把地圖打開」。",
               "note": null
             }
           ]
