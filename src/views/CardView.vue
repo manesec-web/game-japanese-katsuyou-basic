@@ -279,7 +279,7 @@ function openSettings() {
                 class="card-side card-face"
                 :aria-hidden="entry.current && session.flipped ? 'true' : undefined"
               >
-                <div v-if="entry.current && entry.face.tags.length" class="tags">
+                <div v-if="entry.face.tags.length" class="tags">
                   <span
                     v-for="tag in entry.face.tags"
                     :key="tag.kind"
@@ -301,7 +301,7 @@ function openSettings() {
                 class="card-side card-back"
                 :aria-hidden="entry.current && session.flipped ? undefined : 'true'"
               >
-                <div v-if="entry.current && entry.back.tags.length" class="tags">
+                <div v-if="entry.back.tags.length" class="tags">
                   <span
                     v-for="tag in entry.back.tags"
                     :key="tag.kind"

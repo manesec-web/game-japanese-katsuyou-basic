@@ -51,7 +51,7 @@ Status values: `pending`, `in progress`, `done`, `blocked`.
 9. T8 polish and verification.
 
 All T-entries are `done`. The remaining product step is to publish `output/` as
-the GitHub Pages site root; deployment notes are in `README.md` and serving
+the GitHub Pages site root; deployment notes are in `docs/development.md` and serving
 caveats in `docs/serving.md`. Backlog B1–B3 still need a spec entry before any
 new feature work (B3 remains open for further, unspecified UI work).
 
@@ -114,7 +114,7 @@ Each revision started from a user review. Every task records its evidence in
 
 | # | Change | Status | Acceptance evidence |
 |---|--------|--------|---------------------|
-| 13a | The first card in 翻卡學習 resists a right-hand drag: a third of the finger travel, capped at 40px, springing back in ~140ms without changing the card; the dictionary reader and the last-card finish are untouched | done | 5 new pure tests in `src/ui/swipe.test.js`; browser check sees 20px at a 60px drag, 40px at a 180px drag, both at rest afterwards, 0px under reduced motion; `npm test` 21 files / 209 tests |
+| 13a | The first card in 翻卡練習 resists a right-hand drag: a third of the finger travel, capped at 40px, springing back in ~140ms without changing the card; the dictionary reader and the last-card finish are untouched | done | 5 new pure tests in `src/ui/swipe.test.js`; browser check sees 20px at a 60px drag, 40px at a 180px drag, both at rest afterwards, 0px under reduced motion; `npm test` 21 files / 209 tests |
 | 13b | The loading screen carries the site head (`大家の日本語` / `轉型練習` / `涵蓋初級 1 – 50 課的單詞`) and the `Build with ❤ by Mane` credit, which opens the shared About sheet; the bug line stays home-only; head and credit survive the failure screen | done | `SiteHead.vue`, `BuildFooter.vue`, `AboutSheet.vue` reused by home and loading; browser check asserts the four loading labels, "no bug line", survival on `載入失敗（lesson N）`, and the sheet opening/closing |
 | 13c | Spec, changelog, progress, architecture, README, AGENTS and roadmap synced; the three requested future items recorded as backlog | done | `docs/spec.md` loading + card text; `docs/changelog.md` dated entry quoting the request; counts 209 tests / 379 checks everywhere |
 
@@ -138,8 +138,8 @@ and the first-card resistance from revision 13a).
 
 ### Backlog — requested next work
 
-Requested by the user on 2026-11-11. B1 and B2 still need a spec entry before
-start. Follow-up passes A/B and revision 23 specified and delivered concrete
+Requested by the user on 2026-11-11. B1 still needs a spec entry before
+start; B2 was specified and delivered as revision 32. Follow-up passes A/B and revision 23 specified and delivered concrete
 優化UI complaints, but the broader B3 backlog stays `pending` for any further,
 unspecified UI work; it is not a blanket claim that every possible UI
 improvement is done.
@@ -147,13 +147,13 @@ improvement is done.
 | # | Change | Status | What the spec has to settle first |
 |---|--------|--------|----------------------------------|
 | B1 | 朗讀功能 | pending | Which text is spoken (the form alone, `vol`, `japanese`, or a `sentence`), which engine (the browser's own `SpeechSynthesis`, since the site still allows no backend and no model call), and where the control sits on reader, card and quiz |
-| B2 | 優化下載文件 | pending | Whether the 50 per-lesson files stay (one file per lesson, hashed individually) or become one bundle; what that does to the SHA-256 manifest, `app.boot` and `boot.checked / boot.total` |
+| B2 | 優化下載文件 | done (revision 32) | Settled: the 50 per-lesson files become one verified ZIP bundle; the per-lesson manifest, per-entry hashing, `app.boot` retry rule and `boot.checked / boot.total` all stay as they were |
 | B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–31 (including follow-up passes A/B, the 單詞目錄 screen of revision 30, and the revision-31 dictionary data pass); every new change is written into the spec's Look and motion section before code and the browser suite follow |
 
 ### Revision 15 — the paging window (requested 2026-11-10)
 
 The phone paging rebuilt the whole page at the swap: the dictionary page is
-fifteen form blocks, and 翻卡學習 rebuilt its card. The request: render several
+fifteen form blocks, and 翻卡練習 rebuilt its card. The request: render several
 items at once, keep the screen on the 3rd one, and make a swipe only delete the
 item at one end and add one at the other. The window is deliberately invisible —
 the spec keeps revision 14's motion, so nothing about what the user sees changes,
@@ -161,7 +161,7 @@ only how many items are already laid out when the swap happens.
 
 | # | Change | Status | Acceptance evidence |
 |---|--------|--------|---------------------|
-| 15a | Spec revision: "The paging window" — 9 cards in 翻卡學習, 5 words in the reader, current item in the 3rd slot, front-delete/back-append, ends render nothing, window invisible | done | `docs/spec.md` new section + `Look and motion` bullet; `Dictionary reader` and `Cards` cross-reference it |
+| 15a | Spec revision: "The paging window" — 9 cards in 翻卡練習, 5 words in the reader, current item in the 3rd slot, front-delete/back-append, ends render nothing, window invisible | done | `docs/spec.md` new section + `Look and motion` bullet; `Dictionary reader` and `Cards` cross-reference it |
 | 15b | Pure window logic in `src/ui/window.js` (sizes, `CURRENT_SLOT`, `windowSlots`, `windowOffset`, `slotKey`, `shiftWindow`) | done | `src/ui/window.test.js` 13 tests: 3rd-slot invariant over every index/length, front-delete/back-append both directions, derived-shape equality, ends and unknown directions refused, `card.next/prev` + `dict.next/prev` ids and params unchanged |
 | 15c | Per-slot data in `src/study/window-views.js` so the views stay thin | done | `src/study/window-views.test.js` 10 tests: one current slot, offsets 0/±100, every slot holds its own word/hand/gloss rather than a copy of the current one, tags per card, one new key per turn |
 | 15d | 字典 and 翻卡 rebuilt on the window: the row is kept in state and shifted by `usePagingWindow` (one front delete, one back append per turn), no row translate, item-keyed slots, only the current item visible | done | browser check: 5 pages / 9 slots mounted, one current at x=0 and full width, 0 neighbours inside, neighbours hidden, per-slot words distinct |
@@ -311,7 +311,7 @@ amended before code.
 ### Revision 25 — short screens fit the dynamic viewport
 
 The user reported that on iPhone 18 Pro, short screens such as settings and
-翻卡學習 still scroll vertically even though their content fits. The outer shell
+翻卡練習 still scroll vertically even though their content fits. The outer shell
 was sized to the static `100vh` while home/loading already used `100dvh`; iOS
 measures `vh` against the large viewport, so a visible toolbar added a
 browser-chrome-sized overflow to short screens. The spec's Look and motion
@@ -320,7 +320,7 @@ section was amended before code.
 | # | Change | Status | Acceptance evidence |
 |---|--------|--------|---------------------|
 | 25a | `body`, `#app` and the framed/mobile `.column` use `min-height: 100dvh` (framed `calc(100dvh - 40px)`) with `100vh` retained as the fallback; home/loading already agreed | done | `src/styles/app.css`; `npm run build` ok; no `vol/` edit |
-| 25b | Browser regression: a fresh 翻卡學習 run must not produce a vertical overflow, and `body`/`#app` min-heights resolve to the viewport | done | `scripts/browser-check.mjs` new card short-page check; 533 checks passing |
+| 25b | Browser regression: a fresh 翻卡練習 run must not produce a vertical overflow, and `body`/`#app` min-heights resolve to the viewport | done | `scripts/browser-check.mjs` new card short-page check; 533 checks passing |
 
 The view stays thin: selection and reveal rules live in `.js`, and user-visible
 actions go through `dispatch`. No backend, MCP or model call is added, and
@@ -332,7 +332,7 @@ instead of inventing a rule.
 
 Requested 2026-11-12. The drawn scrollbar could not be grabbed with a mouse, a
 wheel-less pointer needed the bar to appear on approach, the user asked whether
-the 翻卡學習 drag felt delayed, and the `請至少選擇一門課程才可以開始` line was
+the 翻卡練習 drag felt delayed, and the `請至少選擇一門課程才可以開始` line was
 to be removed with the disabled 開始 button turned red-outlined and transparent
 (and labelled `請至少選擇一個轉型才可以開始` when 到 is empty).
 
@@ -412,15 +412,71 @@ Requested: 「你是日本母語的老師，請你修改每一個單詞下面的
 | 31e | Full verification | done | `node scripts/write-sha256.mjs --check` ok; `npm test` 30 files / 331 tests; `npm run build` ok with `output/index.html` + 50 dict JSON; `node scripts/browser-check.mjs` 574 checks, 0 failures (8 new per-form gloss checks); see `docs/progress.md` |
 | 31f | Temporary artifacts removed | done | The rewrite plan, frozen baseline, doubt list and the two one-off scripts were deleted at the user's request; the resulting `vol/` data, spec, manifest and browser checks remain |
 
+### Revision 32 — one verified dictionary archive (requested 2026-11-13)
+
+The user proposed 「在編譯的時候，輸出一個 vol.bin 之類的放在公開目錄中。然後瀏覽器就可以使用
+unzipit 來解壓這個文件，然後存進去IndexedDB中」 to cut the first-load download. Measured
+first: the 50 lesson files are 4,899,916 bytes; a level-9 ZIP of the same bytes is about
+550 KB (11.5%), so one request replaces 50. Confirmed before code: no per-lesson fallback
+files stay, `unzipit` + ZIP (not a custom container), the archive lives at
+`dict/vol.bin` beside the site, per-lesson manifest hashes are unchanged, and the build
+verifies `vol/` before packing.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 32a | Spec first: "How the dictionary reaches the browser" rewritten — one archive, two-phase boot, per-entry hashing, retry once, unchanged progress meaning; "no per-lesson fallback" recorded | done | `docs/spec.md` rewritten and re-read before the code; `docs/architecture.md` Dictionary delivery follows |
+| 32b | `scripts/zip.mjs` deterministic ZIP writer (fixed 1980-01-01 stamps, deflate 9, CRC-32, central directory, no zip64) + `scripts/vol-archive.mjs`, which verifies every lesson's SHA-256 against the manifest before packing and throws on a mismatch, a missing source or an empty manifest | done | `scripts/zip.test.js` 6 tests (unzipit round-trip, byte-identical output, CRC check value, compression ratio, empty archive) and `scripts/vol-archive.test.js` 6 tests (50 entries, reproducible sha256, tampered manifest, empty manifest, missing source) |
+| 32c | `scripts/write-vol-archive.mjs` CLI (`--check`, `--out`) prints lessons, raw→zip sizes and the archive sha256 | done | `node scripts/write-vol-archive.mjs --check` → `checked 50 lessons: 4.65 MB -> 549 KB (11.5%)` |
+| 32d | Vite plugin serves `dict/vol.bin` in dev (rebuilds when `vol/` or the manifest changes) and writes `output/dict/vol.bin` on build; the 50-file copy is gone | done | dev archive byte-identical to `output/dict/vol.bin`; `output/dict` holds only `vol.bin` |
+| 32e | `src/dict/archive.js` wraps `unzipit` (`useWorkers: false`, lazy entry reads); `boot.js` finds missing/corrupt lessons first, then downloads once, verifies each entry, stores only matches, retries once, and stops naming the first lesson that failed twice | done | `src/dict/archive.test.js` 3 tests (real archive round-trip + manifest hashes, `has`/missing entry); `src/dict/boot.test.js` 14 tests (one download, cache reuse, corrupt copy repair, download retry, wrong bytes then good, two mismatches stop without writing, absent entry, unreadable archive, write failure, empty-verb lessons, progress callback, empty manifest, dispatch envelopes) |
+| 32f | Browser harness follows the new URL: one archive request, no per-lesson request, zip content type, `PK\x03\x04` header + 50-entry end record, `output/dict` holds only the archive, failure path aborts the archive twice, private window counts one archive download, progress sampled from document start | done | `PORT=5299 node scripts/browser-check.mjs` 580 checks passing, 0 failures |
+| 32g | Docs synced: spec, architecture, `AGENTS.md` (layout, `app.boot`, T2, T8), `README.md`, `docs/serving.md`, `docs/progress.md`, `docs/changelog.md`, this board; backlog B2 closed | done | `npm test` 33 files / 349 tests; `npm run build` (`output/dict/vol.bin`, `output/index.html`); manifest check ok; 580 browser checks |
+| 32h | Renamed `vol.zip` → `vol.bin` and switched its Content-Type to `application/octet-stream`, because download-helper browser extensions sniff `.zip` URLs and hijack them with a save dialog (follow-up request); the bytes, the ZIP format, the manifest and the boot rule are unchanged | done | `ARCHIVE_NAME` / `ARCHIVE_FILE` hold `vol.bin`; dev + preview serve `application/octet-stream`; browser check asserts one binary request, the `PK\x03\x04` header and 50 entries, `output/dict` holding only `vol.bin`; `npm run build` writes `output/dict/vol.bin` |
+
+### Revision 33 — the loading bar shows the download (requested 2026-11-13)
+
+Follow-up request: 「另外，可以做到下載的進度條嗎？」 Before revision 32 the bar
+was verified lessons / 50, and it could sit still for the whole 550 KB download.
+The bar now shows the slow step it is actually waiting for, without ever moving
+backwards and without new visible copy.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 33a | Spec first: the loading bar rule — cache-check progress, then streaming bytes against `Content-Length` starting from the cache-check percentage, then a hold at 100% while extracted entries are verified; no `Content-Length` holds the bar; a retry restarts at the already-verified percentage | done | `docs/spec.md` How the dictionary reaches the browser, re-read before code |
+| 33b | `app.boot` streams `dict/vol.bin` (`response.body.getReader()`, chunks joined once), reporting `(loaded, total)`; `session.boot.download = { base, loaded, total, done }` carries the phase; each attempt recomputes `base` from verified lessons and resets the counters | done | `src/commands/boot.js`, `src/dict/boot.js`, `src/engine/session.js`; `src/dict/boot.test.js` +2 (byte reports and the 20-lesson base), callback count still one per verified lesson |
+| 33c | `src/ui/boot-progress.js` computes the percentage as a pure function; `LoadingView.vue` only renders it | done | `src/ui/boot-progress.test.js` 8 tests: idle, verified-only, 1/50 rounding, byte fraction, base offset, unknown length, done hold, retry reset, clamping |
+| 33d | Browser harness: the bar is sampled from document start (width + timestamp), must start at 0, reach 100 and never move backwards; a throttled boot (CDP `Network.emulateNetworkConditions`, 200 KB/s) must show ≥3 intermediate widths spread over ≥700 ms, which verification alone cannot produce | done | `PORT=5299 node scripts/browser-check.mjs` **584 checks passing**, 0 failures |
+| 33e | Docs synced | done | spec, `docs/architecture.md` (boot-progress + bar rule), `docs/development.md`, `docs/progress.md`, `docs/changelog.md`, this board; 34 files / 360 unit tests |
+
+### Revision 34 — locked 到 chips, 翻卡練習, immediate class pill (requested 2026-11-13)
+
+A four-part UI request: (1) in the card and quiz picker, the chip under 到 that
+equals 從 must be disabled with a tooltip, using the dictionary settings'
+locked-chip logic; (2) the mode is renamed 翻卡學習 → 翻卡練習 everywhere;
+(3) with 一開始顯示幾類動詞 on, the incoming card's class pill only appeared at
+release, so fix it to be drawn while the card slides in; (4) sync every
+markdown file. The spec was amended before the code.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 34a | Spec first: 到's own-form chip is disabled, unselected, skipped by 全選 and explains itself with the tooltip `這和「從」的形式相同，不能選為「到」`; every mounted card paints its own tags so the incoming card's class pill exists before release; 翻卡學習 → 翻卡練習 in the spec | done | `docs/spec.md` Picker and Cards sections + the mode name; re-read before code |
+| 34b | `targetChips(from, to)` + `toggleTarget(to, id, from)` in `src/dict/settings.js`; `PickerView.vue` renders the flags, the disabled 第1課 look and the wrapping tooltip (narrow enough not to widen the page) | done | `src/dict/settings.test.js` +4 (locked flag, lock follows a new 從, 全選 skips the lock, `toggleTarget` refuses to add 從 but can remove a stale one) |
+| 34c | CardView drops the `entry.current &&` guard on both tag blocks, so the window paints each card's own face and answer pills | done | `PORT=5299 node scripts/browser-check.mjs`: the exposed next card carries its own `.tag--group` while the drag is still held, and the hold-on-release bug is gone |
+| 34d | Mode copy renamed in the home button, comments, probes and current docs; quoted user requests in `docs/changelog.md` keep their original wording (revision-27 precedent) | done | `grep 翻卡學習` finds only the quoted request, the rename records and `docs/audit/` snapshots; `scripts/motion-probe.mjs` and `src/ui/window.js` updated with the code |
+| 34e | The lock tooltip widens to 320px (`width: max-content`, otherwise an absolute span wraps inside the chip's ~96px cell) and its hover position is clamped to the viewport by `src/ui/tooltip.js` | done | `src/ui/tooltip.test.js` 6 tests (centred fits, right/left clamp, margin, oversized, junk); browser check: 223px wide, 24px tall (one line), and a 使役形 lock in the last column stays inside the viewport with no sideways scroll |
+| 34f | Verification and docs sync | done | `npm test` 35 files / 370 tests; `npm run build` (`output/dict/vol.bin`, `output/index.html`); `node scripts/browser-check.mjs` 597 checks, 0 failures; spec, architecture, AGENTS, README, development, serving, progress, changelog and this board updated; `vol/` untouched |
+
 ## Current status
 
 - Revisions 2–31 and follow-up passes A/B are `done`; the
   implementation was developed and verified over several incremental passes.
   Revision 31 is a data-only change: no `.vue`, command, engine or settings
   file was touched. The latest verification is recorded in `docs/progress.md`.
-- Backlog B1–B3 remain `pending`. Revisions 2–31 cover specific, specified
-  requests; B3 is still open for further UI work (B1 and B2 need a spec entry
-  first). The revision-31 documentation sync also updated `README.md`,
+- Backlog B2 (優化下載文件) is `done` as revisions 32–33 (single verified
+  archive, `.bin` naming, download progress bar). Revision 34 delivers concrete
+  優化UI items, but B3 stays `pending` for any further, unspecified UI work.
+  B1 (朗讀功能) still needs a spec entry before code. Revisions 2–34 cover
+  specific, specified requests. The revision-31 documentation sync also updated `README.md`,
   `docs/serving.md`, `docs/architecture.md`, `AGENTS.md`, `docs/spec.md`,
   `docs/progress.md` and `docs/changelog.md`; `docs/audit/*.md` remain
   historical snapshots.
@@ -442,16 +498,18 @@ Requested: 「你是日本母語的老師，請你修改每一個單詞下面的
 5. Open the matching section of `docs/spec.md` before touching that feature.
 6. Update `docs/progress.md`, `docs/roadmap.md` and `docs/changelog.md` when a
    task lands.
-7. Check `README.md` and `docs/serving.md` when verification counts or serving
-   assumptions change; `docs/audit/*.md` are historical snapshots.
+7. Check `docs/development.md` and `docs/serving.md` when verification counts or serving
+   assumptions change; `docs/audit/*.md` are historical snapshots. `README.md`
+   speaks to learners — keep it free of developer detail.
 
 ## Verification commands
 
 ```bash
-npm test                                # Vitest unit tests (30 files / 331)
-npm run build                           # static build into output/ (50 dict files)
+npm test                                # Vitest unit tests (35 files / 370)
+npm run build                           # static build into output/ (dict/vol.bin)
 node scripts/write-sha256.mjs --check   # manifest consistency
-node scripts/browser-check.mjs          # headless Chromium walk-through (574 checks)
+node scripts/write-vol-archive.mjs --check  # archive builds from verified vol/
+node scripts/browser-check.mjs          # headless Chromium walk-through (597 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 ```
 

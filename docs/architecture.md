@@ -105,9 +105,13 @@ docs/serving.md               local serving and boot-failure troubleshooting
 docs/roadmap.md               task board and resume instructions
 docs/progress.md              current state, commands run, next step
 docs/changelog.md             dated change log
+docs/development.md          dev setup, commands, structure, data model, testing, deploy
 docs/logo/                    logo source logo.jpg plus the derived tab icons
-README.md                     user-facing overview, setup, test and deploy notes
+README.md                     plain-language product overview and play link
 scripts/write-sha256.mjs      hashes vol/*.json into src/data/dict-manifest.json
+scripts/zip.mjs              deterministic deflate ZIP writer (pure)
+scripts/vol-archive.mjs      builds dict/vol.bin, verifying each lesson first
+scripts/write-vol-archive.mjs  CLI: check + write the archive (--check, --out)
 scripts/browser-check.mjs     headless Chromium walk-through of the built site
 scripts/motion-probe.mjs      frame-by-frame motion traces (informational)
 src/main.js                   app entry: store, Vue mount, overscroll guard, boot
@@ -120,7 +124,8 @@ src/commands/index.js         assembles all specs with injected dependencies
 src/commands/*.js             one module per feature, each exports specs()
 src/dict/forms.js             the 15 form ids and on-screen names, in order
 src/dict/hash.js              SHA-256 (Web Crypto wrapper)
-src/dict/boot.js              per-lesson verify/download/cache rule
+src/dict/archive.js           reads dict/vol.bin with unzipit (lazy entries)
+src/dict/boot.js              verify stored lessons, then unzip the archive once
 src/dict/lessons.js           lesson summary + selection rules (全選)
 src/dict/library.js           verified dictionary loaded into memory
 src/dict/quiz.js              keyboard generation, grading, reveal rules (pure)
@@ -139,6 +144,10 @@ src/study/highlight.js        paint the studied form inside its sentences
 src/study/card-tags.js        card face/back tag composition
 src/study/results.js          run tally, score bands, completion emoji
 src/ui/store.js               reactive session + send()
+src/ui/boot-progress.js       loading-bar percentage: cache-check progress,
+                              streaming download bytes, verification hold (pure)
+src/ui/tooltip.js             viewport clamp for a tooltip centred on its chip
+                              (pure)
 src/ui/bootstrap.js           boot → library → settings → home (also retry)
 src/ui/scroll-guard.js        one-finger iOS overscroll boundary guard
 src/ui/scrollbar.js           page/dropdown scrollbar geometry and drag mapping
@@ -166,8 +175,8 @@ src/components/*.vue          shared UI pieces (thin: SiteHead, BuildFooter,
                               inlined into the bundle at build time
 src/styles/app.css            design tokens, layout, motion, breakpoints
 index.html                    document title; logo icons linked relatively from docs/logo/
-vite.config.js                outDir "output", base "/game-japanese-katsuyou-basic/", dict serving/copy
-output/                       build output, gitignored
+vite.config.js                outDir "output", base "/game-japanese-katsuyou-basic/", serves and writes dict/vol.bin
+output/                       build output, gitignored (output/dict/ holds only vol.bin)
 ```
 
 ## Dictionary delivery
@@ -188,21 +197,40 @@ Manifest shape (`src/data/dict-manifest.json`, generated, committed):
 actual bytes and exits non-zero on any mismatch. The `pretest` and `prebuild`
 scripts run the check.
 
-Boot rule per lesson, in order: a stored IndexedDB record is used only when its
-hash matches. A missing or corrupt copy is downloaded up to twice; the file
-is written only after a download hashes correctly. If both downloads
-mismatch, boot stops, records `session.boot.error = { lesson, file, message }`
-and leaves `boot.done` false. `boot.checked` counts verified lessons only.
+The loading bar is `src/ui/boot-progress.js`, a pure function of
+`session.boot`: verified lessons while the cache is checked, then the streaming
+download's bytes against `Content-Length` starting from the percentage the
+cache check reached, then a hold at 100% while extracted entries are verified.
+A response without `Content-Length` holds the bar until the bytes arrive. The
+bar never moves backwards; a retry restarts the download portion at the
+already-verified percentage.
 
-- Dev: Vite middleware serves `vol/lesson_N.json` at
-  `/game-japanese-katsuyou-basic/dict/lesson_N.json`, accepting the URL with or
-  without the base prefix.
-- Build: a Vite plugin copies all 50 lesson files to `output/dict/`.
-- Runtime: fetch `dict/lesson_N.json`, resolved against the page URL with
-  `document.baseURI`, so it follows whatever `base` the build used
-  (`/game-japanese-katsuyou-basic/` for GitHub Pages). Then verify SHA-256
-  against the bundled manifest and store the bytes in the IndexedDB database
-  `katsuyou-dict`, object store `lessons`, keyed by file name.
+Boot rule, in order: a stored IndexedDB record is used only when its hash
+matches its manifest record. Missing or corrupt lessons are collected, and when
+anything was collected boot downloads `dict/vol.bin` once. Every collected
+entry is decompressed (unzipit, one entry at a time), hashed, and written
+only when it matches. A failed download, unreadable archive, absent entry or
+hash mismatch is retried with a second archive download; if bytes still do not
+match, boot stops, records `session.boot.error = { lesson, file, message }`
+and leaves `boot.done` false. `boot.checked` counts verified lessons only, so
+the loading bar's meaning did not change.
+
+The archive is built, never checked in (it lands in `output/dict/`):
+
+- `scripts/zip.mjs` writes a deterministic ZIP (fixed 1980-01-01 timestamps, deflate level 9, no zip64) so identical input gives identical bytes.
+- `scripts/vol-archive.mjs` reads the manifest, verifies every lesson's SHA-256 against it, then packs the raw bytes in manifest order. A mismatch, a missing source or an empty manifest throws, which fails `npm run build`.
+- `scripts/write-vol-archive.mjs --check` performs that work without writing, for manual/CI checks.
+
+- Dev: Vite middleware serves the archive at
+  `/game-japanese-katsuyou-basic/dict/vol.bin` (with or without the base
+  prefix), rebuilding it when `vol/` or the manifest changes.
+- Build: the plugin writes `output/dict/vol.bin` and nothing else under `dict/`.
+- Runtime: fetch `dict/vol.bin` resolved against `document.baseURI`, then read
+  entries by their `lesson_N.json` names; each entry's raw bytes are what
+  `write-sha256.mjs` hashed.
+
+The 50 lesson files total 4,899,916 bytes; the archive is about 550 KB (11.5%)
+and arrives in one request instead of 50.
 
 ### Revision 31 — per-form Chinese gloss data
 
@@ -229,8 +257,8 @@ change, not an engine or UI change.
 - Vitest under Node for engine, commands, hashing, boot, settings, item
   lists, quiz queue reconciliation, keyboard, grading, ruby, swipe/drag
   resolution, paging window, overscroll touch boundaries, scrollbar geometry
-  and drag mapping, dropdown thumb timers/dragging and result tallies: 30
-  files, 331 tests.
+  and drag mapping, dropdown thumb timers/dragging, archive packing/unpacking,
+  the loading bar and result tallies: 34 files, 364 tests.
 - Browser APIs (IndexedDB, fetch) are injected so tests use fakes; the IDB
   adapter itself is tested with `fake-indexeddb`. No browser is needed for
   `npm test`.
@@ -373,6 +401,15 @@ colour.
   reconciles a live quiz only when the skip switch actually flips, and marks
   the run finished if no item remains. Card backs receive form, class, 第N課,
   and (for error items) 錯誤單詞 tags from `card-tags.js`.
+- The 到 chips follow the 從 form: `targetChips(from, to)` returns one entry per
+  form with `on` and `locked` flags, and `toggleTarget(to, id, from)` refuses to
+  add the 從 form, so the disabled chip cannot be reached by a press or by a
+  stale stored selection. The picker itself only renders those flags; the
+  locked chip uses the disabled 第1課 look and carries the
+  `這和「從」的形式相同，不能選為「到」` tooltip on its wrapper; the tooltip is
+  320px wide (`width: max-content`, otherwise an absolute span shrinks to the
+  chip's cell) and its hover-time position is clamped by `src/ui/tooltip.js`
+  so a chip in the last column cannot push it past the viewport edge.
 - Settings validation accepts the dictionary's `displayForms` list and each
   mode's `skipErrorUsage` boolean. Unknown fields still reject the whole patch;
   form lists are canonicalized, duplicates and unknown ids are removed, and the

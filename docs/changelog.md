@@ -68,7 +68,7 @@ not the current verification totals.
 - `src/views/LoadingView.vue`: `Loading ...`, progress bar bound to
   `boot.checked / boot.total`, `載入失敗（lesson N）` + 重試 when
   `boot.error` is set.
-- `src/views/HomeView.vue`: stacked 字典 / 翻卡學習 / 測驗 buttons entering
+- `src/views/HomeView.vue`: stacked 字典 / 翻卡練習 / 測驗 buttons entering
   `picker` with an optional `mode` on `nav.go`; footer `Build with ❤ by Mane`
   opens a bottom sheet with the GitHub link (`target="_blank"`).
 - `src/App.vue` switches loading/home/placeholder; `src/main.js` boots on
@@ -856,7 +856,7 @@ Three reports from the user, all on the phone layout:
   `READER_WINDOW` in `src/ui/window.js` and the spec line together.
 - Spec change (`docs/spec.md`), written before the code: a new
   "The paging window" section. The dictionary reader keeps 5 words mounted and
-  翻卡學習 keeps 9 cards mounted; the current item always sits in the 3rd slot;
+  翻卡練習 keeps 9 cards mounted; the current item always sits in the 3rd slot;
   a next turn deletes the front slot and appends the next list item at the back,
   a prev turn mirrors it; slots past either end render nothing; the window is
   invisible (only the current item is ever on screen, the neighbours sit outside
@@ -912,7 +912,7 @@ The user reviewed the built site and asked for seven changes (quoted):
 不需要單詞的修改顔色。 5. 完成後更新所有markdown文件，最後然後重寫README.md 來引用
 docs裏面的文件。 6. 提交 Issue 的鏈接設置成 .../issues/ 不要 new。 7. 最後修改所有
 的markdown文件，然後把所有docs的内容加入到README.md，顯得專業一點。"
-Confirmed by questionnaire: both the dictionary and 翻卡學習 get the
+Confirmed by questionnaire: both the dictionary and 翻卡練習 get the
 finger-tracking drag (superseding revision 14's invisible drag), the icon
 library is Lucide (npm, tree-shaken inline SVG — no CDN), and both note kinds
 (form-level and sentence-level) are shown.
@@ -990,7 +990,7 @@ The user reported two follow-ups on the revision-16 finger-tracking drag
   gap px))`, a fixed 24px rather than a viewport-scaled percentage. The settle
   pitch and its browser assertions use one item width + 24px, so a turn
   finishes without closing the gap onto the outgoing item. The dictionary and
-  翻卡學習 share the same 24px.
+  翻卡練習 share the same 24px.
 - **17c Full-bleed while paging** (`--page-gutter` on `.column`,
   `CardView.vue`, `ReaderView.vue`): at rest the surface keeps the column's
   side padding exactly as before. While a drag is held or a settle runs, the
@@ -1401,7 +1401,7 @@ The Look and motion spec was amended before the implementation.
 ### Revision 25 — short screens fit the dynamic viewport
 
 The user reported that on iPhone 18 Pro, pages whose content fits — settings,
-翻卡學習 — still scroll vertically, while desktop Chrome showed no such
+翻卡練習 — still scroll vertically, while desktop Chrome showed no such
 overflow. The cause was the outer shell: `body`, `#app` and the `.column`
 sized short screens to the static `100vh`, while the already-correct home and
 loading screens used `100dvh`. On iOS Safari `vh` is the large viewport, so a
@@ -1415,7 +1415,7 @@ collapses.
   as the fallback for older browsers. The home/loading screens already used
   `dvh`; now every shell layer agrees.
 - **25b Regression check** (`scripts/browser-check.mjs`): after entering a
-  翻卡學習 run, assert the document has no vertical overflow and the computed
+  翻卡練習 run, assert the document has no vertical overflow and the computed
   `body`/`#app` min-heights resolve to the viewport height. Headless Chromium
   cannot reproduce Safari's collapsing toolbar, so the `dvh` declaration is a
   browser-visible assertion here while the actual iPhone 18 Pro gesture needs
@@ -1429,8 +1429,8 @@ collapses.
 Requested 2026-11-12. Four items:
 1. the drawn scrollbar could not be grabbed by a mouse;
 2. a mouse with no wheel needed the bar to appear as the pointer approached;
-3. whether the 翻卡學習 drag delay was real;
-4. remove `請至少選擇一門課程才可以開始` in 字典/翻卡學習/測驗 and replace 開始
+3. whether the 翻卡練習 drag delay was real;
+4. remove `請至少選擇一門課程才可以開始` in 字典/翻卡練習/測驗 and replace 開始
    with a red-bordered transparent button (labelled `請至少選擇一個轉型才可以開始`
    when 到 is empty) until the choices are valid.
 
@@ -1529,7 +1529,7 @@ item makes the count move, and the number reported here is the measured one.
 
 ### Revision 29 — the card face tag moves above the word
 
-Requested: in 翻卡學習 the not-yet-flipped face's tag should sit above the word,
+Requested: in 翻卡練習 the not-yet-flipped face's tag should sit above the word,
 matching how the answer side lays out its tags. Only the face's vertical order
 changes — the pill itself, its wording, and the 變成 prompt are untouched.
 
@@ -1598,3 +1598,187 @@ At the user's request the temporary rewrite directory (rules, baseline,
 plan, doubt list) and its two one-off scripts were deleted once the data pass
 was verified. The rewritten `vol/` data, the regenerated manifest, the spec's
 per-form gloss definition and the browser checks remain.
+
+## 2026-11-13 (revision 32)
+
+### One verified dictionary archive
+
+Requested:「現在我希望可以優化一下下載速度，所以我想到了在編譯的時候，輸出一個
+vol.bin 之類的放在公開目錄中。然後瀏覽器就可以使用 unzipit 來解壓這個文件，
+然後存進去IndexedDB中。」Measured first: `vol/` is 4,899,916 bytes across 50
+lesson files, level-9 gzip is 530 KB and level-9 ZIP is 566 KB, so one compressed
+request replaces 50 uncompressed ones.
+
+Answers given before code: the per-lesson JSON fallback is **not** kept; the
+archive is `unzipit` + ZIP; it lives at `dict/vol.bin` (built by the existing Vite
+plugin, dev serves the same archive); the manifest, per-entry hashing,
+`boot.checked / boot.total` and the loading screen are unchanged; and the build
+verifies `vol/` against the manifest while packing, so a bad archive never ships.
+
+- `scripts/zip.mjs`: deterministic deflate ZIP writer with fixed 1980-01-01
+  timestamps, CRC-32, one central directory, no zip64. Identical input gives identical
+  bytes, which is why the archive sha256 can be quoted.
+- `scripts/vol-archive.mjs`: reads the manifest, verifies every lesson's SHA-256
+  against it, then packs raw bytes in manifest order. A mismatch, a missing source
+  or an empty manifest throws, which fails `npm run build`.
+- `scripts/write-vol-archive.mjs`: CLI (`--check`, `--out`); prints
+  `checked 50 lessons: 4.65 MB -> 549 KB (11.5%)` and the archive sha256.
+- `vite.config.js`: the plugin serves `dict/vol.bin` in dev (rebuilding when
+  `vol/` or the manifest mtime changes) and writes `output/dict/vol.bin`; the
+  per-lesson copy is gone. The dev archive was byte-identical to the build.
+- `src/dict/archive.js`: `openArchive(bytes)` wraps `unzipit` with
+  `useWorkers: false` and exposes `names`, `has(name)` and `read(name)`; entries
+  decompress lazily, so repairing one lesson never inflates the other 49.
+- `src/dict/boot.js`: two phases. Phase 1 walks the 50 entries, hashing what
+  IndexedDB holds (a match counts as finished, exactly as before). Phase 2 runs
+  only when something was missing or corrupt: one archive download, then each
+  collected entry is read, hashed against its own manifest record, and stored
+  only on a match. A failed download, unreadable archive, absent entry or
+  mismatch is retried with a second download; whatever still fails stops boot
+  naming the first such lesson, without writing those bytes.
+- `src/commands/boot.js`: `app.boot` now fetches `dict/vol.bin` (one URL,
+  resolved against `document.baseURI`, `cache: 'no-cache'`).
+- `scripts/browser-check.mjs`: one archive request per fresh boot, zero
+  per-lesson requests, `application/zip`, `PK\x03\x04` header with a 50-entry
+  end record, `output/dict` holds only the archive, per-lesson JSON no longer
+  answers with dictionary content, the failure path aborts the archive twice,
+  a private window downloads once, and the progress bar is sampled from document
+  start (a single download finishes too fast for after-the-fact polling).
+
+Why not a whole-archive hash: per-entry hashing already detects any corruption,
+while one archive-level hash would turn a single CDN cache miss into a site that
+cannot start at all.
+
+Verified: `npm test` 33 files / 349 tests; `npm run build` (`output/dict/vol.bin`
+549 KB, `output/index.html`); `node scripts/write-sha256.mjs --check` ok;
+`node scripts/write-vol-archive.mjs --check` ok; `node scripts/browser-check.mjs`
+580 checks, 0 failures. `vol/` bytes were not edited.
+
+**Follow-up (same day, before delivery): the archive is named `vol.bin`, not
+`vol.zip`.** The user asked to avoid the `.zip` suffix: 「改成bin，不要改成zip，
+因爲一些插件會抓取然後劫持之後彈出下載框」. `ARCHIVE_NAME` (build) and
+`ARCHIVE_FILE` (runtime) now hold `vol.bin`, the dev server sends
+`application/octet-stream` instead of `application/zip`, and the browser check
+asserts a binary response. The bytes, the ZIP format, the manifest, the per-entry
+hash rule and `boot.checked / boot.total` are unchanged.
+
+## 2026-11-13 (README rewrite, docs split)
+
+- Rewrote `README.md` in plain language for learners: what the site is, the
+  play link line **▶ 立即遊玩：<https://manesec-web.github.io/game-japanese-katsuyou-basic/>**,
+  the three modes described without jargon, how to use it, small tips (empty
+  lessons, 跳過錯誤的單詞), a short FAQ, and the feedback links. The technical
+  sections (quick start, command table, project structure, data model,
+  architecture highlights, testing and verification, local serving notes,
+  deployment, browser support) moved out.
+- Added `docs/development.md` with that technical content verbatim in spirit:
+  dev setup, commands, structure, data model, architecture, verification,
+  serving and deployment. Cross-references to `spec.md`, `architecture.md`,
+  `progress.md` and `serving.md` kept.
+- Synced the pointers: `docs/architecture.md` file map (README = plain-language
+  overview + play link; new `docs/development.md` row), `docs/roadmap.md`
+  ground rules and deployment note now name `docs/development.md` for
+  verification counts and deploy notes.
+- Why: the README should speak to learners ("講人話") and keep the
+  professional/developer material in `docs/`, with a prominent link to play.
+- Verified: docs-only change; `npm test` (manifest check + 34 files / 360
+  tests) passes and `npm run build` produces
+  `output/index.html` + `output/dict/vol.bin`. The counts in the new
+  `docs/development.md` were refreshed to the actual 34 / 360 (the old README
+  said 33 / 349). No code or `vol/` bytes touched.
+
+## 2026-11-13 (revision 33)
+
+### The loading bar shows the download
+
+Requested:「另外，可以做到下載的進度條嗎？」Before revision 32 the bar was
+verified lessons / 50 and could sit still through the whole 550 KB download, so
+the slowest step looked like a freeze.
+
+- `session.boot.download = { base, loaded, total, done }` records the download
+  phase: `base` is the percentage verified when the attempt started, `loaded` /
+  `total` are bytes, and `done` means the bytes arrived.
+- `app.boot` streams `dict/vol.bin` with `response.body.getReader()`, joins the
+  chunks once, and reports `(loaded, total)`; `Content-Length` is read from the
+  response, and a response without it holds the bar instead of guessing.
+- `src/ui/boot-progress.js` (pure) maps that state to a percentage: the cache
+  check fills it with verified lessons, the download fills it from the
+  cache-check percentage to 100 by bytes received, and verification then holds
+  it at 100. A retry restarts the download portion at the already-verified
+  percentage, never below it. `LoadingView.vue` only renders the result, keeping
+  the "no behaviour in `.vue`" rule.
+- No new visible copy: the same bar, the same `Loading ...` line, the same head
+  and credit line.
+- Why the hold at 100: entry verification after the download takes about 100 ms;
+  dropping the bar back to 0 to show it would read as a restart, and spreading
+  the two phases over fixed halves would make the 550 KB transfer own only half
+  of a bar that is mostly idle work.
+
+Verified: `npm test` 34 files / 360 tests (`src/ui/boot-progress.test.js` 8 tests,
+`src/dict/boot.test.js` +2); `npm run build`; `node scripts/browser-check.mjs`
+584 checks, 0 failures, including a CDP-throttled boot (200 KB/s) whose recorded
+bar widths rise through at least three intermediate values spread over 700 ms —
+something the fast verification step alone never produces.
+
+**Follow-up in the same revision:** the archive is now published as
+`dict/vol.bin` with `application/octet-stream` (see revision 32), because
+download-helper browser extensions hijack `.zip` URLs.
+
+## 2026-11-13 (revision 34)
+
+### Locked 到 chips, 翻卡練習, and the class pill while a card slides in
+
+Requested as one UI pass:
+
+1. 「翻卡學習和測驗，下面有一個從XXX到XXX的。但是如果上面是masu形，下面masu的按鈕要
+   變成無法選擇，然後有toolstip，其他的也一樣。邏輯參考字典的設置。」
+2. 「"翻卡學習"變成"翻卡練習"。」
+3. 「翻卡測驗中，如果打開"一開始顯示幾類動詞"，要拖入到下一個詞語后放手那一刻才會
+   突然顯示，所以很bug。」
+4. 「請你更新所有markdown文件。」
+
+- **1 — the source form is not a target.** `src/dict/settings.js` gains
+  `targetChips(from, to)` (one entry per chip with `on` / `locked`) and
+  `toggleTarget(to, id, from)`, which refuses to add 從 but can still remove a
+  stale selection. `PickerView.vue` renders the flags: the 從 form's chip is a
+  disabled button with the dictionary's locked-chip look (muted, transparent,
+  divider border, 45% opacity, no hover accent, no pointer events) and the
+  tooltip `這和「從」的形式相同，不能選為「到」` on the wrapper, revealed on hover
+  or focus. It stays `aria-pressed="false"` and 全選 skips it, so the old
+  silent exclusion became a visible, explained one. The tooltip wraps inside
+  160px so a right-hand chip cannot widen the page.
+- **2 — naming.** The home button, the spec, `README.md` and every current doc
+  now say 翻卡練習. Comments in `src/ui/window.js` and the `hasText` locator in
+  `scripts/motion-probe.mjs` were updated with it. Quoted user requests in this
+  file keep the wording they were quoted with (revision-27 precedent), so
+  `grep 翻卡學習` now finds only the quoted request and the rename records.
+- **3 — the pill is painted before the release.** `CardView.vue` rendered its
+  tag rows only for `entry.current`, so the incoming card's class pill could
+  only exist after the swap, i.e. at the moment of release. The guard is gone:
+  every mounted card paints its own face and answer tags, which the paging
+  window already computed per slot. The pill now comes in with the card.
+- **4 — docs.** Spec, architecture, AGENTS, README, development, serving,
+  progress, this changelog and the roadmap board were re-read and synced,
+  including the test and browser-check counts.
+
+Why the disabled chip instead of removing 從 from 到 silently: a card or quiz
+item needs two different forms, and a button that simply does nothing reads as
+broken. The dictionary's 預設顯示形式 chip already established the pattern —
+disabled look plus a tooltip that explains why — so the picker reuses it.
+
+**Follow-up in the same revision:** the tooltip was too narrow
+(「toolstip 的寬度太窄了，放大2倍」). It now measures up to 320px — twice the old
+160px cap — because an absolutely positioned span with only `max-width` shrinks
+to its chip's ~96px cell and wrapped the sentence into three lines; `width:
+max-content` is what actually widens it, and the sentence fits on one line
+(223px rendered, 24px tall). A chip in the right-hand column would then push
+the centred tooltip past the viewport edge, so `src/ui/tooltip.js` (pure) computes
+a hover-time `translateX` clamp with 8px margins; the picker only applies it.
+
+Verified: `npm test` 35 files / 370 tests (`settings.test.js` +4,
+`tooltip.test.js` +6); `npm run build` (549 KB `output/dict/vol.bin`,
+`output/index.html`); `node scripts/browser-check.mjs` 597 checks, 0 failures,
+including the disabled chip + tooltip + 全選 skip + lock-follows-從 +
+no-sideways-overflow checks, a one-line 223px tooltip and a clamped right-edge
+tooltip, and the exposed next card's own class pill sampled *before* release.
+`vol/` bytes were not touched.

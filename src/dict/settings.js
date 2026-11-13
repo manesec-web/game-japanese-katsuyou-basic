@@ -1,5 +1,5 @@
 // Settings defaults, validation, and patching. Plain data; no storage here.
-import { FORM_IDS } from './forms.js'
+import { FORM_IDS, FORMS } from './forms.js'
 import { DEFAULT_REVEAL_AFTER, isValidRevealAfter } from './quiz.js'
 
 export const SETTINGS_KEY = 'katsuyou-settings'
@@ -226,8 +226,26 @@ export function nextSelectAllTargets(to, from) {
   return allTargetsExcept(from)
 }
 
-export function toggleTarget(to, id) {
-  return to.includes(id) ? to.filter((item) => item !== id) : [...to, id]
+// Copy shown on the 到 chip that is disabled because it equals 從.
+export const LOCKED_TARGET_HINT = '這和「從」的形式相同，不能選為「到」'
+
+// One entry per 到 chip: the form's name, whether it is selected, and whether
+// it is the current 從 — the one form that cannot also be the target.
+export function targetChips(from, to) {
+  return FORMS.map((form) => ({
+    id: form.id,
+    name: form.name,
+    on: to.includes(form.id),
+    locked: form.id === from,
+  }))
+}
+
+// A locked chip cannot be added; removing a stale selection is still allowed,
+// so a stored row that still lists 從 can be cleaned up.
+export function toggleTarget(to, id, from) {
+  if (to.includes(id)) return to.filter((item) => item !== id)
+  if (id === from) return to
+  return [...to, id]
 }
 
 // 選擇顯示的類型: the control follows the selection, like the lesson-wide

@@ -9,9 +9,11 @@ import {
   nextSelectAllTargets,
   NO_LESSON_HINT,
   NO_TARGET_HINT,
+  LOCKED_TARGET_HINT,
   normalizeSettings,
   selectAllDisplayLabel,
   startHint,
+  targetChips,
   toggleTarget,
   validatePatch,
 } from './settings.js'
@@ -131,6 +133,43 @@ describe('toggleTarget', () => {
   it('adds and removes a form', () => {
     expect(toggleTarget([DICT], MASU)).toEqual([DICT, MASU])
     expect(toggleTarget([DICT, MASU], DICT)).toEqual([MASU])
+  })
+
+  it('refuses to add the form that is already 從', () => {
+    expect(toggleTarget([], MASU, MASU)).toEqual([])
+    expect(toggleTarget([DICT], MASU, MASU)).toEqual([DICT])
+    // Removing it is still allowed, so a stale selection can be cleaned up.
+    expect(toggleTarget([DICT, MASU], MASU, MASU)).toEqual([DICT])
+    expect(toggleTarget([MASU], MASU, MASU)).toEqual([])
+  })
+})
+
+describe('targetChips', () => {
+  it('marks exactly the 從 form as locked', () => {
+    const chips = targetChips(MASU, [DICT])
+    expect(chips).toHaveLength(15)
+    expect(chips.filter((chip) => chip.locked)).toHaveLength(1)
+    expect(chips.find((chip) => chip.locked)).toEqual({
+      id: MASU,
+      name: 'ます形',
+      on: false,
+      locked: true,
+    })
+    expect(chips.filter((chip) => chip.on).map((chip) => chip.id)).toEqual([DICT])
+  })
+
+  it('follows a new 從', () => {
+    const chips = targetChips(DICT, [MASU])
+    expect(chips.find((chip) => chip.locked).id).toBe(DICT)
+    expect(chips.find((chip) => chip.id === MASU)).toMatchObject({ on: true, locked: false })
+  })
+
+  it('never marks 全選 as selecting the locked form', () => {
+    const to = nextSelectAllTargets([], MASU)
+    const chips = targetChips(MASU, to)
+    expect(chips.filter((chip) => chip.on)).toHaveLength(14)
+    expect(chips.find((chip) => chip.locked).on).toBe(false)
+    expect(LOCKED_TARGET_HINT).toBe('這和「從」的形式相同，不能選為「到」')
   })
 })
 

@@ -2,14 +2,20 @@
 
 This file is for the next AI that enters the repo. Do the tasks in order. The product is a static site for learning Japanese verb conjugation: Vue source, build output in `output/`, published with GitHub Pages.
 
+**Revision 34 (picker lock, naming, card pill):** the 到 chip that equals 從 is now a disabled button with the dictionary settings' locked-chip look and the tooltip `這和「從」的形式相同，不能選為「到」` (up to 320px wide, one line, viewport-clamped by the pure `src/ui/tooltip.js`), and 全選 skips it; the mode is renamed 翻卡學習 → 翻卡練習 in the UI and the current docs; and every mounted card paints its own tags, so the class pill of the card sliding in is drawn while the finger still holds the drag instead of appearing at release. The rules are pure in `src/dict/settings.js` (`targetChips`, `toggleTarget`); `.vue` files only render.
+
+**Revision 33 (loading bar):** the bar now shows the archive download itself, not only lesson verification. While `dict/vol.bin` streams, the bar fills from the share of lessons the cache check verified up to 100% in proportion to bytes received (against `Content-Length`); when the bytes arrive it holds at 100% while the extracted entries are verified. It never moves backwards, a retry restarts the download share at the already-verified percentage, and no new visible copy was added. The rule is pure in `src/ui/boot-progress.js`; `LoadingView.vue` only renders it.
+
+**Revision 32 (download path):** the build no longer publishes 50 per-lesson JSON files. It verifies `vol/` against the manifest and packs it into one deflate ZIP, `dict/vol.bin` (~550 KB instead of 4.9 MB, one request; a ZIP published without the `.zip` suffix and served as `application/octet-stream`, because download-helper browser extensions hijack `.zip` URLs), which the browser decompresses with `unzipit` and verifies entry by entry against the unchanged manifest before writing to IndexedDB. Boot finds missing/corrupt lessons first, then downloads the archive once (retried once), so `boot.checked / boot.total` still means finished lessons / 50. See `docs/spec.md` How the dictionary reaches the browser and `docs/architecture.md` Dictionary delivery.
+
 **Revision 31 (data only):** every form's `chinese` now carries its own conjugated meaning, and misleading `note` text was corrected. See `docs/spec.md` Data and the one-time `vol/` exception in rule 5 below. No UI/engine code changed; the manifest was regenerated. The temporary rewrite plan, baseline and validation scripts were removed once the data pass was verified; the resulting data and spec remain.
 
 Current state: T1–T8 are complete, along with the follow-up revisions recorded
 in `docs/roadmap.md` and `docs/changelog.md`. Revision 13 added the loading-screen
-head and credit line and the first-card resistance in 翻卡學習; revision 14
+head and credit line and the first-card resistance in 翻卡練習; revision 14
 superseded that resistance and the drag-follow/spring-back paging with an
 invisible drag and a direct swap plus one short slide-in; revision 15 mounts a
-paging window around the current item (9 cards in 翻卡學習, 5 words in the
+paging window around the current item (9 cards in 翻卡練習, 5 words in the
 dictionary reader) with the current item always in the 3rd slot, so a turn only
 drops one end and adds the other; revision 16 supersedes revision 14's motion
 with a finger-tracking drag (the strip follows the finger 1:1 while held and
@@ -45,7 +51,7 @@ long-page and dropdown scrolling and horizontal paging; it does not lock the
 body or cancel every touchmove. Actual iOS/Android rubber-band behavior still
 needs real-device verification. Revision 25 sizes the outer shell (`body`,
 `#app`, framed/mobile `.column`) with `min-height: 100dvh` (`calc(100dvh -
-40px)` framed) so short screens such as settings and 翻卡學習 stop overflowing
+40px)` framed) so short screens such as settings and 翻卡練習 stop overflowing
 when an iOS toolbar makes the static `vh` taller than the visible area; `vh`
 stays as the fallback. Real-device verification remains for the dynamic
 viewport. Revision 26 makes the page and dropdown scroll thumbs draggable with
@@ -67,7 +73,7 @@ and `logo-512.png`, and `index.html` references the first four with relative
 paths so Vite hashes them into `output/assets/` under the Pages base. The same
 revision changes the loading/home lede to `涵蓋初級 1 – 50 課的動詞`; the on-screen
 head keeps its three lines and draws no image. Revision 29 moves the unflipped
-card's tag above the word in 翻卡學習, matching the answer's tag position, while
+card's tag above the word in 翻卡練習, matching the answer's tag position, while
 the pill, its wording and the 變成 prompt stay unchanged. Revision 30 adds the
 單詞目錄 screen: the reader's top bar carries a 目錄 icon to the left of the
 settings gear, and that screen lists only this run's frozen words
@@ -117,13 +123,18 @@ docs/spec.md                  product spec
 docs/screenshot-draft/        wireframes
 docs/logo/                    logo source (logo.jpg) and the icons derived from it
 scripts/write-sha256.mjs      reads vol/, writes the sha256 manifest
+scripts/zip.mjs              deterministic deflate ZIP writer
+scripts/vol-archive.mjs      verifies vol/ against the manifest, builds vol.bin
+scripts/write-vol-archive.mjs  CLI for the archive (--check, --out)
+scripts/browser-check.mjs     end-to-end walk-through of the built site
 scripts/browser-check.mjs     end-to-end walk-through of the built site
 src/main.js
 src/engine/registry.js        command registry and dispatch
 src/engine/session.js         plain session state and transitions
 src/commands/*.js             one file per area, each exports specs()
 src/dict/hash.js              sha256
-src/dict/boot.js              per-lesson verify/download/cache rule
+src/dict/archive.js           unzips dict/vol.bin with unzipit (lazy entries)
+src/dict/boot.js              verify stored lessons, then unzip the archive once
 src/dict/library.js           verified dictionary in memory
 src/dict/quiz.js              quiz keyboard and grading (pure)
 src/dict/ruby.js              kanji / reading alignment
@@ -134,6 +145,8 @@ src/data/dict-manifest.json   generated by write-sha256, commit it
 src/storage/idb.js            IndexedDB dictionary cache (read/write/remove)
 src/storage/settings.js       localStorage settings
 src/ui/store.js               connects the session to Vue reactivity
+src/ui/boot-progress.js       loading-bar percentage (cache check, download bytes,
+                              verification hold), pure
 src/ui/bootstrap.js           boot → library → settings → home
 src/views/*.vue
 src/components/*.vue
@@ -144,10 +157,10 @@ output/                       build output, do not commit
 ```
 
 There is no `public/` directory; the dictionary is copied from `vol/` into
-`output/dict/` by the Vite plugin, and the logo icons are pulled in from
+`output/dict/vol.bin` by the Vite plugin, and the logo icons are pulled in from
 `docs/logo/` by the relative `link` tags in `index.html`.
 
-`vite.config.js` serves `vol/lesson_*.json` as `/game-japanese-katsuyou-basic/dict/lesson_N.json` in dev and build, and copies those files into `output/dict/`. The source files stay in `vol/`.
+`vite.config.js` builds `vol/` into `/game-japanese-katsuyou-basic/dict/vol.bin` in dev and writes the same archive into `output/dict/` on build. The source files stay in `vol/`; no per-lesson JSON is published.
 
 ## Commands
 
@@ -155,7 +168,7 @@ There is no `public/` directory; the dictionary is copied from `vol/` into
 
 | id | What it does |
 |---|---|
-| `app.boot` | Check IndexedDB against the manifest. Download a missing file. Hash a file that is already there. Update `boot.checked` and `boot.total` |
+| `app.boot` | Check IndexedDB against the manifest. Hash lessons that are already there; collect the missing/corrupt ones, download `dict/vol.bin` once (retried once), unzip, verify and store each entry. Update `boot.checked` and `boot.total` |
 | `nav.go` | Change screen. `params.screen` |
 | `lessons.toggle` | Toggle one lesson. A lesson with no verbs returns `error` |
 | `lessons.selectAll` | Clear the verb lessons when they are all selected. Otherwise select every lesson that has verbs |
@@ -191,19 +204,19 @@ Implement `scripts/write-sha256.mjs` and `app.boot`.
 
 The script reads the raw bytes of `vol/lesson_1.json` through `vol/lesson_50.json`, computes lowercase hex sha256, and writes `src/data/dict-manifest.json`. With `--check`, a mismatch exits non-zero. `prebuild` and `pretest` both run `--check`.
 
-`app.boot` handles the 50 files one by one. A file missing from IndexedDB is fetched from same-origin `dict/lesson_N.json`, checked against the manifest, then stored. A file already in IndexedDB is hashed again. A mismatch downloads once more. A second mismatch sets `boot.error` to that lesson and leaves `boot.done` false. Each finished lesson increments `boot.checked`. `boot.total` is 50.
+`app.boot` walks the 50 manifest entries in order and hashes what IndexedDB already holds. Missing or corrupt lessons are collected, then the same-origin archive `dict/vol.bin` is fetched once, unzipped entry by entry with `unzipit`, and each collected entry is checked against the manifest before it is stored. A failed download, unreadable archive, absent entry or hash mismatch is retried with a second download. Anything still unverified sets `boot.error` to that lesson and leaves `boot.done` false. Each finished lesson increments `boot.checked`. `boot.total` is 50. `scripts/vol-archive.mjs` builds the archive and refuses to pack a lesson whose hash does not match the manifest, so `npm run build` fails instead of publishing a bad bundle.
 
 Checks:
 
 - A damaged manifest makes `node scripts/write-sha256.mjs --check` fail. Restoring it makes the command succeed.
-- Tests cover a missing file, a matching hash, a first mismatch that redownloads, and a second mismatch that stops with an error. Use a fake fetch and a fake store. Do not use a browser for these tests. `src/storage/idb.test.js` exercises the real adapter with `fake-indexeddb`.
+- Tests cover a missing file, a matching hash, a first mismatch that redownloads, and a second mismatch that stops with an error. Use a fake archive fetch and a fake store. Do not use a browser for these tests. `src/storage/idb.test.js` exercises the real adapter with `fake-indexeddb`; `src/dict/archive.test.js` and `scripts/zip.test.js` prove the real ZIP round-trips through `unzipit`, and `scripts/vol-archive.test.js` proves a tampered manifest stops the build.
 - Lessons with an empty `vols` array (lessons 1, 3, 8, and 12) are downloaded and checked too.
 
 ### T3 Loading and home
 
-The `loading` screen shows the site head (大家の日本語 / 動詞轉型練習 / 涵蓋初級 1 – 50 課的動詞), a progress bar and the text `Loading ...`, and the footer line `Build with ❤ by Mane` alone (the `🥺 如果有 BUG 記得告訴我！` line stays on home); the credit opens the same About sheet. Progress is `boot.checked / boot.total`. Opening the site runs `app.boot`. Success goes to `home`. On failure the bar stops, the screen offers retry, and retry runs `app.boot` again; the head and the footer are still there.
+The `loading` screen shows the site head (大家の日本語 / 動詞轉型練習 / 涵蓋初級 1 – 50 課的動詞), a progress bar and the text `Loading ...`, and the footer line `Build with ❤ by Mane` alone (the `🥺 如果有 BUG 記得告訴我！` line stays on home); the credit opens the same About sheet. Progress follows `docs/spec.md`: verified lessons while the cache is checked, the streaming download's bytes from the cache-check percentage to 100%, then a hold at 100% while extracted entries are verified. Opening the site runs `app.boot`. Success goes to `home`. On failure the bar stops, the screen offers retry, and retry runs `app.boot` again; the head and the footer are still there.
 
-`home` has three buttons: 字典, 翻卡學習, 測驗. Each opens `picker` in that mode. The footer line is `Build with ❤ by Mane`. Activating it shows a small sheet with a link to `https://github.com/manesec-web/game-japanese-katsuyou-basic`, opened in a new tab.
+`home` has three buttons: 字典, 翻卡練習, 測驗. Each opens `picker` in that mode. The footer line is `Build with ❤ by Mane`. Activating it shows a small sheet with a link to `https://github.com/manesec-web/game-japanese-katsuyou-basic`, opened in a new tab.
 
 The column is at most 480px wide and centered. The background fills the viewport, as described in `docs/spec.md`.
 
@@ -215,7 +228,7 @@ The three modes share the picker UI and each remembers its own lesson selection.
 
 Dictionary mode has no 從 / 到. Card and quiz mode do. The choices are the 15 forms in `docs/spec.md`.
 
-Checks: tests show lesson 1 cannot be selected, `lessons.selectAll` skips empty lessons, and a target form equal to the source form is removed.
+Checks: tests show lesson 1 cannot be selected, `lessons.selectAll` skips empty lessons, and a target form equal to the source form is removed. Revision 34 turned that silent removal into a disabled 到 chip with the tooltip `這和「從」的形式相同，不能選為「到」`, skipped by 全選 and followed when 從 changes.
 
 ### T5 Dictionary
 
@@ -245,7 +258,7 @@ Checks: the unit tests above. In a browser, answer one item correctly from the o
 
 ### T8 Finish
 
-Add the motion from the spec. Under `prefers-reduced-motion: reduce`, the background stays still and screen changes fade. Run `npm test` and `npm run build`. Confirm `output/dict/` contains 50 JSON files and `output/index.html` exists.
+Add the motion from the spec. Under `prefers-reduced-motion: reduce`, the background stays still and screen changes fade. Run `npm test` and `npm run build`. Confirm `output/dict/` contains `vol.bin` with 50 entries and `output/index.html` exists.
 
 In the reply, list the commands you ran. Name any screen you did not open in a browser.
 

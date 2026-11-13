@@ -8,7 +8,7 @@
 // every pixel of motion; the commands keep their ids and clamp the index, so
 // the window never has to refuse a move that already happened.
 
-// Cards are small, so 翻卡學習 keeps a deep row for fast flipping. One
+// Cards are small, so 翻卡練習 keeps a deep row for fast flipping. One
 // dictionary word is fifteen form blocks, so the reader keeps fewer.
 export const CARD_WINDOW = 9
 export const READER_WINDOW = 5

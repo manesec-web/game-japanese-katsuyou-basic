@@ -1,6 +1,7 @@
 <script setup>
 import { computed, inject, ref } from 'vue'
 import { bootstrap } from '../ui/bootstrap.js'
+import { bootPercent } from '../ui/boot-progress.js'
 import SiteHead from '../components/SiteHead.vue'
 import BuildFooter from '../components/BuildFooter.vue'
 import AboutSheet from '../components/AboutSheet.vue'
@@ -8,10 +9,7 @@ import AboutSheet from '../components/AboutSheet.vue'
 const store = inject('store')
 const sheetOpen = ref(false)
 const boot = computed(() => store.session.boot)
-const percent = computed(() => {
-  if (!boot.value.total) return 0
-  return Math.round((boot.value.checked / boot.value.total) * 100)
-})
+const percent = computed(() => bootPercent(boot.value))
 
 function retry() {
   bootstrap(store)

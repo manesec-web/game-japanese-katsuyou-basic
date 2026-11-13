@@ -9,7 +9,18 @@ export function createSession() {
   return {
     screen: 'loading',
     mode: 'dict',
-    boot: { checked: 0, total: 0, done: false, error: null, running: false },
+    // `download` feeds the loading bar while dict/vol.bin is streaming: `base`
+    // is the verified percentage when the attempt started, `loaded` / `total`
+    // are bytes, and `done` means the bytes have arrived and the bar holds at
+    // 100 while the extracted lessons are verified.
+    boot: {
+      checked: 0,
+      total: 0,
+      done: false,
+      error: null,
+      running: false,
+      download: { base: 0, loaded: 0, total: 0, done: false },
+    },
     lessons: [],
     settings: defaultSettings(),
     items: [],

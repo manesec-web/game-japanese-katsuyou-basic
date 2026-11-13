@@ -44,6 +44,34 @@ function check(name, ok, detail = '') {
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
+// Records every distinct loading-bar width with the time it appeared. Installed
+// as an init script so a boot that finishes in milliseconds is still sampled.
+// Serialised by Playwright, so it must not reference anything outside itself.
+function progressSampler() {
+  window.__progressSamples = []
+  const record = () => {
+    const fill = document.querySelector('.progress-fill')
+    if (!fill) return
+    const width = parseFloat(fill.style.width || '0')
+    if (!Number.isFinite(width)) return
+    const samples = window.__progressSamples
+    const last = samples[samples.length - 1]
+    if (last && last.width === width) return
+    samples.push({ width, t: Math.round(performance.now()) })
+  }
+  const start = () => {
+    record()
+    new MutationObserver(record).observe(document.body, {
+      subtree: true,
+      childList: true,
+      attributes: true,
+      attributeFilter: ['style'],
+    })
+  }
+  if (document.body) start()
+  else document.addEventListener('DOMContentLoaded', start, { once: true })
+}
+
 // Read the drawn thumb inside either dropdown frame. Kept as a helper because
 // both lists share the same open/pointer/fade rules but are reached from
 // different screens.
@@ -177,6 +205,16 @@ async function dragNeighbour(page, dx, expectedAt, mode = 'card') {
       mounted: true,
       visible: getComputedStyle(slot).visibility === 'visible',
       exposedWidth: Math.round(Math.max(0, right - left)),
+      // The neighbour's own class pill must already be painted while the
+      // finger holds the drag (it used to appear only at release).
+      faceTags: isReader ? null : face.querySelectorAll('.tag--group').length,
+      tagOnScreen: (() => {
+        if (isReader) return null
+        const pill = face.querySelector('.tag--group')
+        if (!pill) return false
+        const pillRect = pill.getBoundingClientRect()
+        return pillRect.width > 20 && pillRect.right > 0 && pillRect.left < window.innerWidth
+      })(),
       // A full-width item and its neighbour must not meet at the same edge.
       gap: Math.round(direction === 'next' ? rect.left - currentRect.right : currentRect.left - rect.right),
       hit: hitSlot === slot,
@@ -650,11 +688,29 @@ try {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } })
   page.on('pageerror', (error) => failures.push(`pageerror: ${error.message}`))
 
+  // The dictionary arrives as one archive, so the bar can finish within a few
+  // milliseconds of the first paint. Sample it from document start instead of
+  // polling after the fact, otherwise the sampling misses the whole boot.
+  await page.addInitScript(progressSampler)
+
   let dictRequests = 0
-  await page.route('**/dict/*.json', async (route) => {
+  let lessonFileRequests = 0
+  const dictResponses = []
+  await page.route('**/dict/lesson_*.json', async (route) => {
+    lessonFileRequests += 1
+    await route.continue()
+  })
+  await page.route('**/dict/vol.bin', async (route) => {
     dictRequests += 1
     await wait(50)
-    await route.continue()
+    const response = await route.fetch()
+    const body = await response.body()
+    dictResponses.push({
+      status: response.status(),
+      type: response.headers()['content-type'] || '',
+      bytes: body.length,
+    })
+    await route.fulfill({ response, body })
   })
 
   await page.goto(BASE, { waitUntil: 'load' })
@@ -753,20 +809,51 @@ try {
     (await page.locator('.loading .footer-link').textContent()).trim() === 'Build with ❤ by Mane',
   )
   check('loading has no bug line', (await page.locator('.loading .footer-feedback').count()) === 0)
-  const progressStart = await page.evaluate(() => {
-    const fill = document.querySelector('.progress-fill')
-    return fill ? parseFloat(fill.style.width || '0') : 0
-  })
-  await wait(400)
-  const progressLater = await page.evaluate(() => {
-    const fill = document.querySelector('.progress-fill')
-    return fill ? parseFloat(fill.style.width || '0') : 0
-  })
-  check('progress advances', progressLater > progressStart, `${progressStart} -> ${progressLater}`)
-
+  // Progress is finished lessons / 50. The samples prove the bar moved through
+  // intermediate values and finished at 100%, without depending on how long
+  // the single 550 KB request takes.
   await page.waitForSelector('.home-actions', { timeout: 30000 })
+  const rawSamples = await page.evaluate(() => window.__progressSamples || [])
+  const progressSamples = rawSamples.map((sample) => sample.width)
+  const progressPeak = progressSamples.length ? Math.max(...progressSamples) : 0
+  // On this unthrottled local server the whole archive can arrive in well under
+  // a frame, so no intermediate width has to appear here; the throttled boot
+  // below proves the streaming fill. What must always hold is that the bar
+  // starts empty, reaches 100, and never moves backwards.
+  check(
+    'the loading bar starts empty',
+    progressSamples.length > 0 && progressSamples[0] === 0,
+    `samples=${progressSamples.slice(0, 8).join(',')}…`,
+  )
+  check('progress reaches 100% before home', progressPeak >= 100, `peak=${progressPeak}`)
+  check(
+    'the loading bar never moves backwards',
+    progressSamples.every((value, index) => index === 0 || value >= progressSamples[index - 1]),
+    progressSamples.join(','),
+  )
+
   check('reaches home after boot', true)
-  check('fetched 50 dictionary files', dictRequests === 50, `requests=${dictRequests}`)
+  check(
+    'the whole dictionary arrives in one archive request',
+    dictRequests === 1,
+    `requests=${dictRequests}`,
+  )
+  check(
+    'no per-lesson JSON file is requested',
+    lessonFileRequests === 0,
+    `requests=${lessonFileRequests}`,
+  )
+  // The archive is a ZIP published as `vol.bin` with a binary Content-Type, so
+  // download-helper extensions do not hijack the request with a save dialog.
+  check(
+    'the archive is served as an unnamed binary, not a zip download',
+    dictResponses.length === 1 &&
+      dictResponses[0].status === 200 &&
+      dictResponses[0].type.includes('octet-stream') &&
+      dictResponses[0].bytes > 100000 &&
+      dictResponses[0].bytes < 900000,
+    JSON.stringify(dictResponses),
+  )
 
   const idbCount = await page.evaluate(async () => {
     const db = await new Promise((resolve, reject) => {
@@ -785,6 +872,45 @@ try {
   })
   check('IndexedDB holds 50 lessons', idbCount === 50, `count=${idbCount}`)
 
+  // The build ships one archive and no per-lesson files: the archive starts with
+  // a local ZIP header, its end record counts 50 entries, and dict/lesson_1.json
+  // must be gone.
+  const archiveProbe = await page.evaluate(async () => {
+    const response = await fetch(new URL('dict/vol.bin', document.baseURI).href)
+    const bytes = new Uint8Array(await response.arrayBuffer())
+    const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+    const entries = bytes.length >= 22 ? view.getUint16(bytes.length - 12, true) : 0
+    const perLesson = await fetch(new URL('dict/lesson_1.json', document.baseURI).href)
+    const perLessonText = await perLesson.text()
+    return {
+      ok: response.ok,
+      type: response.headers.get('content-type') || '',
+      bytes: bytes.length,
+      magic: Array.from(bytes.slice(0, 4)),
+      entries,
+      perLessonStatus: perLesson.status,
+      perLessonIsDictionary: perLessonText.includes('"vols"'),
+    }
+  })
+  check(
+    'the archive is a readable zip with 50 entries (published as vol.bin)',
+    archiveProbe.ok && archiveProbe.magic.join(',') === '80,75,3,4' && archiveProbe.entries === 50,
+    JSON.stringify(archiveProbe),
+  )
+  // `vite preview` answers unknown paths with index.html, so the status alone
+  // cannot prove the file is gone; the body must not be lesson JSON.
+  check(
+    'per-lesson JSON files are no longer published',
+    !archiveProbe.perLessonIsDictionary,
+    JSON.stringify(archiveProbe),
+  )
+  const dictDir = fs.readdirSync(path.resolve('output/dict'))
+  check(
+    'output/dict holds only vol.bin',
+    dictDir.length === 1 && dictDir[0] === 'vol.bin',
+    dictDir.join(','),
+  )
+
   const column = await page.locator('.column').boundingBox()
   check('column is at most 480px wide', column.width <= 480.5, `width=${column.width}`)
   const footerBox = await page.locator('.footer-link').boundingBox()
@@ -799,7 +925,7 @@ try {
   const failContext = await browser.newContext({ viewport: { width: 390, height: 844 } })
   const failPage = await failContext.newPage()
   let abortedAttempts = 0
-  await failPage.route('**/dict/lesson_1.json', (route) => {
+  await failPage.route('**/dict/vol.bin', (route) => {
     if (abortedAttempts < 2) {
       abortedAttempts += 1
       return route.abort()
@@ -874,7 +1000,7 @@ try {
   check('retry re-runs boot and reaches home', true)
   await failContext.close()
 
-  for (const label of ['字典', '翻卡學習', '測驗']) {
+  for (const label of ['字典', '翻卡練習', '測驗']) {
     await page.locator('.home-actions button', { hasText: label }).click()
     await page.waitForSelector('.chip-grid', { timeout: 5000 })
     const title = (await page.locator('.bar-title').textContent()).trim()
@@ -908,7 +1034,7 @@ try {
   const privateContext = await browser.newContext({ viewport: { width: 390, height: 844 } })
   const privatePage = await privateContext.newPage()
   let privateRequests = 0
-  await privatePage.route('**/dict/*.json', async (route) => {
+  await privatePage.route('**/dict/vol.bin', async (route) => {
     privateRequests += 1
     await route.continue()
   })
@@ -939,6 +1065,38 @@ try {
     `requests=${privateRequests}, before=${privateBefore}`,
   )
   await privateContext.close()
+
+  // Download progress, not just verification progress: throttle the network so
+  // the 550 KB archive takes seconds instead of milliseconds, then check the bar
+  // rises while the bytes stream in. Verification alone would fill the bar in a
+  // single burst, so a spread of intermediate widths proves the download itself
+  // is being shown.
+  const slowContext = await browser.newContext({ viewport: { width: 390, height: 844 } })
+  const slowPage = await slowContext.newPage()
+  await slowPage.addInitScript(progressSampler)
+  const slowCdp = await slowContext.newCDPSession(slowPage)
+  await slowCdp.send('Network.enable')
+  await slowCdp.send('Network.emulateNetworkConditions', {
+    offline: false,
+    latency: 30,
+    downloadThroughput: 200 * 1024,
+    uploadThroughput: 64 * 1024,
+  })
+  await slowPage.goto(BASE, { waitUntil: 'load' })
+  await slowPage.waitForSelector('.home-actions', { timeout: 60000 })
+  const slowSamples = await slowPage.evaluate(() => window.__progressSamples || [])
+  const slowRising = slowSamples.filter((sample) => sample.width > 0 && sample.width < 100)
+  const slowSpread = slowRising.length ? slowRising[slowRising.length - 1].t - slowRising[0].t : 0
+  check(
+    'the download itself fills the loading bar while the archive streams',
+    slowRising.length >= 3 && slowSpread >= 700,
+    `rising=${slowRising.length}, spread=${slowSpread}ms, widths=${slowRising.slice(0, 6).map((s) => s.width).join(',')}`,
+  )
+  check(
+    'the throttled boot still reaches home',
+    (await slowPage.locator('.home-actions').count()) === 1,
+  )
+  await slowContext.close()
 
   // T4 picker: dictionary mode.
   await page.locator('.home-actions button', { hasText: '字典' }).click()
@@ -1083,7 +1241,7 @@ try {
   // T4 picker: card mode form controls.
   await page.reload({ waitUntil: 'load' })
   await page.waitForSelector('.home-actions', { timeout: 30000 })
-  await page.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await page.locator('.home-actions button', { hasText: '翻卡練習' }).click()
   await page.waitForSelector('.form-select', { timeout: 5000 })
   check('card picker shows 從 and 到', (await page.locator('.form-chips').count()) === 1)
   const fromGlyph = await page.locator('.form-select').evaluate((el) => ({
@@ -1128,6 +1286,127 @@ try {
     '到 keeps a fallback target',
     (await page.locator('.chip--form', { hasText: /^ます形$/ }).getAttribute('class')).includes('chip--on'),
   )
+
+  // 從's own form cannot also be 到: the chip is disabled and explains itself
+  // with the same tooltip treatment the dictionary's 預設顯示形式 chip uses.
+  const readTargetChips = () =>
+    page.evaluate(() => {
+      const chips = [...document.querySelectorAll('.form-chips .chip')]
+      const locked = chips.find((chip) => chip.disabled) || null
+      const tip = document.querySelector('.form-chips .chip-tip')
+      return {
+        total: chips.length,
+        pressed: chips.filter((chip) => chip.getAttribute('aria-pressed') === 'true').length,
+        lockedName: locked ? locked.textContent.trim() : null,
+        lockedClass: locked ? locked.getAttribute('class') : null,
+        lockedPressed: locked ? locked.getAttribute('aria-pressed') : null,
+        describedBy: locked ? locked.getAttribute('aria-describedby') : null,
+        tipId: tip ? tip.id : null,
+        tipText: tip ? tip.textContent.trim() : null,
+        tipOpacity: tip ? Number(getComputedStyle(tip).opacity) : null,
+        tipRect: tip
+          ? (() => {
+              const r = tip.getBoundingClientRect()
+              return {
+                left: Math.round(r.left),
+                right: Math.round(r.right),
+                width: Math.round(r.width),
+                height: Math.round(r.height),
+              }
+            })()
+          : null,
+        sideways: document.documentElement.scrollWidth - window.innerWidth,
+      }
+    })
+  // 從 is 字典形 here, so 字典形 is the locked chip (到 holds ます形 only).
+  let targetState = await readTargetChips()
+  check(
+    'the 從 form is disabled as a 到 chip',
+    targetState.total === 15 && targetState.lockedName === '字典形' &&
+      targetState.lockedClass.includes('chip--locked') &&
+      targetState.lockedPressed === 'false',
+    JSON.stringify(targetState),
+  )
+  check(
+    'the locked 到 chip carries its tooltip',
+    targetState.tipText === '這和「從」的形式相同，不能選為「到」' &&
+      targetState.describedBy === `hint-target-dictionary-form` &&
+      targetState.tipId === 'hint-target-dictionary-form' &&
+      targetState.tipOpacity === 0,
+    JSON.stringify(targetState),
+  )
+  // Hovering the wrapper (the chip itself ignores the pointer) reveals the tip
+  // and it must not widen the page.
+  await page
+    .locator('.form-chips .chip-wrap')
+    .filter({ has: page.locator('.chip--locked') })
+    .hover()
+  await wait(200)
+  targetState = await readTargetChips()
+  check(
+    'hovering the locked 到 chip shows its tooltip',
+    targetState.tipOpacity === 1 && targetState.sideways <= 0,
+    JSON.stringify(targetState),
+  )
+  check(
+    'the tooltip is twice the old width, on one line',
+    targetState.tipRect.width >= 200 &&
+      targetState.tipRect.width <= 320 &&
+      // One line: padding plus a single line box, not the old three-line wrap.
+      targetState.tipRect.height <= 32,
+    JSON.stringify(targetState.tipRect),
+  )
+  await page.mouse.move(0, 0)
+  await wait(200)
+  await page.locator('.targets-head .text-button').click()
+  targetState = await readTargetChips()
+  check(
+    '全選 never selects the locked 到 form',
+    targetState.pressed === 14 && targetState.lockedPressed === 'false',
+    JSON.stringify(targetState),
+  )
+  // Changing 從 moves the lock: ます形 becomes disabled and leaves 到.
+  await page.locator('.form-select').click()
+  await page.locator('.form-option', { hasText: /^ます形$/ }).click()
+  targetState = await readTargetChips()
+  check(
+    'the lock follows a new 從',
+    targetState.lockedName === 'ます形' &&
+      targetState.lockedPressed === 'false' &&
+      (await page.locator('.chip--form', { hasText: /^字典形$/ }).isEnabled()),
+    JSON.stringify(targetState),
+  )
+  // The widest chip sits in the last column, where a centred tooltip would
+  // cross the viewport edge: the hover clamp must pull it back inside.
+  await page.locator('.form-select').click()
+  await page.locator('.form-option', { hasText: /^使役形$/ }).click()
+  await page
+    .locator('.form-chips .chip-wrap')
+    .filter({ has: page.locator('.chip--locked') })
+    .hover()
+  await wait(200)
+  targetState = await readTargetChips()
+  check(
+    'the lock lands on the last form when 從 is 使役形',
+    targetState.lockedName === '使役形' && targetState.lockedPressed === 'false',
+    JSON.stringify(targetState),
+  )
+  const pickerViewportWidth = page.viewportSize().width
+  check(
+    'a right-edge tooltip is clamped inside the viewport',
+    targetState.tipOpacity === 1 &&
+      targetState.tipRect.right <= pickerViewportWidth - 4 &&
+      targetState.tipRect.left >= 4 &&
+      targetState.sideways <= 0,
+    JSON.stringify(targetState),
+  )
+  await page.mouse.move(0, 0)
+  await wait(200)
+
+  // These checks left 從 on ます形 and 到 on 14 forms; later card runs expect
+  // the defaults, so drop the stored settings and let the next reload restore
+  // them (only a settings.patch writes the key).
+  await page.evaluate(() => localStorage.removeItem('katsuyou-settings'))
 
   // T5 dictionary reader: selection, swipe threshold, controls, settings.
   await page.reload({ waitUntil: 'load' })
@@ -2162,7 +2441,7 @@ try {
   // T6 flashcards.
   await page.reload({ waitUntil: 'load' })
   await page.waitForSelector('.home-actions', { timeout: 30000 })
-  await page.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await page.locator('.home-actions button', { hasText: '翻卡練習' }).click()
   await page.waitForSelector('.chip-grid', { timeout: 5000 })
   await page.locator('.chip', { hasText: '第5課' }).click()
   await page.locator('.form-select').click()
@@ -2620,10 +2899,10 @@ try {
   await page.locator('.complete-home').click()
   await page.waitForSelector('.home-actions', { timeout: 5000 })
 
-  // 翻卡學習 error_usage: the card carries 錯誤單詞 and 跳過錯誤的單詞 drops it.
+  // 翻卡練習 error_usage: the card carries 錯誤單詞 and 跳過錯誤的單詞 drops it.
   await page.reload({ waitUntil: 'load' })
   await page.waitForSelector('.home-actions', { timeout: 30000 })
-  await page.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await page.locator('.home-actions button', { hasText: '翻卡練習' }).click()
   await page.waitForSelector('.chip-grid', { timeout: 5000 })
   for (const chip of await page.locator('.chip-grid .chip').all()) {
     const label = (await chip.textContent()).trim()
@@ -2671,6 +2950,24 @@ try {
   await page.waitForSelector('.chip-grid', { timeout: 5000 })
   await page.locator('.chip', { hasText: '第5課' }).click()
   checkLabelAlignment('quiz picker', await labelAlignment(page))
+  // The quiz picker shares the card picker's rule: 從's own form is locked.
+  const quizTargets = await page.evaluate(() => {
+    const chips = [...document.querySelectorAll('.form-chips .chip')]
+    const locked = chips.find((chip) => chip.disabled)
+    const tip = document.querySelector('.form-chips .chip-tip')
+    return {
+      lockedName: locked ? locked.textContent.trim() : null,
+      tipText: tip ? tip.textContent.trim() : null,
+      pressed: chips.filter((chip) => chip.getAttribute('aria-pressed') === 'true').length,
+    }
+  })
+  check(
+    'the quiz picker locks the 從 form under 到 as well',
+    quizTargets.lockedName === 'ます形' &&
+      quizTargets.tipText === '這和「從」的形式相同，不能選為「到」' &&
+      quizTargets.pressed === 1,
+    JSON.stringify(quizTargets),
+  )
   await page.locator('.form-select').click()
   await page.locator('.form-option', { hasText: /^ます形$/ }).click()
   await page.locator('.picker-start').click()
@@ -3136,7 +3433,7 @@ try {
   // Reduced motion must also work for cards (3 cards in lesson 5).
   await page.reload({ waitUntil: 'load' })
   await page.waitForSelector('.home-actions', { timeout: 30000 })
-  await page.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await page.locator('.home-actions button', { hasText: '翻卡練習' }).click()
   await page.waitForSelector('.chip-grid', { timeout: 5000 })
   if (!(await page.locator('.chip', { hasText: '第5課' }).getAttribute('class')).includes('chip--on')) {
     await page.locator('.chip', { hasText: '第5課' }).click()
@@ -3171,7 +3468,7 @@ try {
   await cardPage.waitForSelector('.home-actions', { timeout: 60000 })
 
   const startCardRun = async () => {
-    await cardPage.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+    await cardPage.locator('.home-actions button', { hasText: '翻卡練習' }).click()
     await cardPage.waitForSelector('.chip-grid', { timeout: 5000 })
     const chip = cardPage.locator('.chip', { hasText: '第5課' })
     if (!((await chip.getAttribute('class')) || '').includes('chip--on')) await chip.click()
@@ -3212,6 +3509,12 @@ try {
       nextNeighbour.hit && nextNeighbour.gap === 24 && nextNeighbour.clipFillsViewport,
     JSON.stringify(nextNeighbour),
   )
+  check(
+    'the incoming card is already tagged before the release',
+    nextNeighbour.faceTags === 1 &&
+      (await cardPage.locator('.card--current .card-face .tag--group').count()) === 1,
+    JSON.stringify(nextNeighbour),
+  )
   check('the revealed next card becomes current on release', (await cardTitle()) === '練習（2/3）', await cardTitle())
   check('the touch-paged card opens on its face', !(await cardFlipped(cardPage)))
 
@@ -3234,6 +3537,21 @@ try {
   check('a short touch drag settles back to the same card', (await cardTitle()) === '練習（1/3）', await cardTitle())
   const shortRest = await cardPage.locator('.card-window').evaluate((el) => getComputedStyle(el).transform)
   check('a short touch drag leaves no residual offset', Math.abs(translateXOf(shortRest)) < 1, shortRest)
+
+  // Revision-34 regression: the tag row used to be rendered for the current
+  // slot only, so the class pill appeared when the finger lifted. A deep held
+  // drag exposes most of the incoming card, so its own centred pill — like its
+  // word — must already be on screen before the release.
+  const deepNeighbour = await dragNeighbour(cardPage, -240, 1)
+  check(
+    'the incoming card already shows its own class pill while held',
+    deepNeighbour.faceTags === 1 && deepNeighbour.tagOnScreen === true,
+    JSON.stringify(deepNeighbour),
+  )
+  check('the deep drag pages to the second card', (await cardTitle()) === '練習（2/3）', await cardTitle())
+  await cardPage.locator('.card-controls .control').first().click()
+  await wait(400)
+  check('上一張 returns to the first card', (await cardTitle()) === '練習（1/3）', await cardTitle())
 
   // The first card has nothing behind it: a right-hand drag is completely
   // still — the card never follows the finger, so nothing springs back. The
@@ -3318,7 +3636,7 @@ try {
   await cardTouchContext.close()
 
   // The paging window itself: 5 words mounted in the dictionary, 9 cards in
-  // 翻卡學習, the current item in the 3rd slot and on screen, and a turn that
+  // 翻卡練習, the current item in the 3rd slot and on screen, and a turn that
   // really does delete the front node and add one at the back. 第4課 has 6
   // words and 第6課 has 11 verbs, so both lists are longer than their window
   // and the front slot has to leave.
@@ -3417,10 +3735,10 @@ try {
   await windowPage.locator('.icon-button[aria-label="返回"]').click()
   await windowPage.waitForSelector('.chip-grid', { timeout: 5000 })
 
-  // 翻卡學習, 第6課: eleven verbs, a nine-slot window.
+  // 翻卡練習, 第6課: eleven verbs, a nine-slot window.
   await windowPage.locator('.icon-button[aria-label="返回"]').click()
   await windowPage.waitForSelector('.home-actions', { timeout: 5000 })
-  await windowPage.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await windowPage.locator('.home-actions button', { hasText: '翻卡練習' }).click()
   await windowPage.waitForSelector('.chip-grid', { timeout: 5000 })
   const lessonSix = windowPage.locator('.chip', { hasText: '第6課' })
   if (!((await lessonSix.getAttribute('class')) || '').includes('chip--on')) await lessonSix.click()
@@ -3523,7 +3841,7 @@ try {
   // A dropdown list is its own scroll container: the native bar is hidden and
   // the list draws the same 4px rounded thumb the page draws, inside its own
   // frame.
-  await barPage.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await barPage.locator('.home-actions button', { hasText: '翻卡練習' }).click()
   await barPage.waitForSelector('.form-select', { timeout: 5000 })
   await barPage.locator('.form-select').click()
   const readListThumb = () =>
@@ -3916,7 +4234,7 @@ try {
   await fitPage.addStyleTag({
     content: '.form-list { max-height: none !important; height: 260px !important; } .form-option { min-height: 0 !important; height: 10px !important; line-height: 10px !important; padding: 0 !important; } .form-list .hrule { display: none !important; }',
   })
-  await fitPage.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await fitPage.locator('.home-actions button', { hasText: '翻卡練習' }).click()
   await fitPage.waitForSelector('.form-select', { timeout: 5000 })
   await fitPage.locator('.form-select').click()
   await wait(250)
@@ -4097,7 +4415,7 @@ try {
   )
 
   // The loading screen needs a stall: hold lesson 1 back long enough to pinch.
-  await zoomPage.route('**/dict/lesson_1.json', async (route) => {
+  await zoomPage.route('**/dict/vol.bin', async (route) => {
     await wait(2600)
     await route.continue()
   })
@@ -4113,7 +4431,7 @@ try {
   check('the page declares touch-action: manipulation', rootTouch === 'manipulation' && bodyTouch === 'manipulation', `${rootTouch} / ${bodyTouch}`)
   await zoomLocked(zoomPage, zoomCdp, 'loading', 195, 360, '.progress')
   await zoomPage.waitForSelector('.home-actions', { timeout: 30000 })
-  await zoomPage.unroute('**/dict/lesson_1.json')
+  await zoomPage.unroute('**/dict/vol.bin')
 
   await zoomLocked(zoomPage, zoomCdp, 'home', 195, 40, '.home-actions')
 
@@ -4148,7 +4466,7 @@ try {
   await zoomPage.waitForSelector('.chip-grid', { timeout: 5000 })
   await zoomPage.locator('.icon-button[aria-label="返回"]').click()
   await zoomPage.waitForSelector('.home-actions', { timeout: 5000 })
-  await zoomPage.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await zoomPage.locator('.home-actions button', { hasText: '翻卡練習' }).click()
   await zoomPage.waitForSelector('.chip-grid', { timeout: 5000 })
   const cardZoomChip = zoomPage.locator('.chip', { hasText: '第5課' })
   if (!((await cardZoomChip.getAttribute('class')) || '').includes('chip--on')) await cardZoomChip.click()

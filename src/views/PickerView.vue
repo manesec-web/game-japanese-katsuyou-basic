@@ -2,10 +2,18 @@
 import { computed, inject, ref, watch } from 'vue'
 import { ArrowLeft, ChevronDown } from 'lucide-vue-next'
 import { FORMS, formName } from '../dict/forms.js'
-import { canStart, nextSelectAllTargets, startHint } from '../dict/settings.js'
+import {
+  LOCKED_TARGET_HINT,
+  canStart,
+  nextSelectAllTargets,
+  startHint,
+  targetChips,
+  toggleTarget,
+} from '../dict/settings.js'
 import { EMPTY_LESSON_HINT, selectAllLabel } from '../dict/lessons.js'
 import ScrollThumb from '../components/ScrollThumb.vue'
 import { useElementThumb } from '../ui/element-thumb.js'
+import { tooltipShift } from '../ui/tooltip.js'
 
 const store = inject('store')
 const session = store.session
@@ -21,6 +29,12 @@ const needsForms = computed(() => session.mode !== 'dict')
 const startEnabled = computed(() => canStart(session.settings, session.mode))
 const selectAllText = computed(() => selectAllLabel(session.lessons, settings.value.lessons))
 const startHintText = computed(() => startHint(session.settings, session.mode))
+// One chip per form; the 從 form is locked and explains itself in a tooltip,
+// the same way the dictionary's 預設顯示形式 chip does.
+const targetForms = computed(() => targetChips(settings.value.from, settings.value.to))
+// The lock explanation is wider than a chip and can sit near the right edge on
+// a narrow column, so its centred position is clamped to the viewport on hover.
+const lockedTipShift = ref(0)
 
 function toggleLesson(entry) {
   store.send('lessons.toggle', { lesson: entry.lesson })
@@ -32,10 +46,22 @@ function selectFrom(formId) {
 }
 
 function selectTarget(formId) {
-  const to = settings.value.to.includes(formId)
-    ? settings.value.to.filter((id) => id !== formId)
-    : [...settings.value.to, formId]
+  const to = toggleTarget(settings.value.to, formId, settings.value.from)
   store.send('settings.patch', { patch: { [session.mode]: { to } } })
+}
+
+function showLockedTip(event) {
+  const tip = event.currentTarget.querySelector('.chip-tip')
+  const chip = event.currentTarget.getBoundingClientRect()
+  if (!tip || typeof window === 'undefined') {
+    lockedTipShift.value = 0
+    return
+  }
+  lockedTipShift.value = tooltipShift({
+    anchorCenterX: chip.left + chip.width / 2,
+    width: tip.offsetWidth,
+    viewportWidth: window.innerWidth,
+  })
 }
 
 function selectAllTargets() {
@@ -143,17 +169,33 @@ function back() {
         <button class="text-button" type="button" @click="selectAllTargets">全選</button>
       </div>
       <div class="form-chips">
-        <button
-          v-for="form in FORMS"
+        <span
+          v-for="form in targetForms"
           :key="form.id"
-          class="chip chip--form"
-          :class="{ 'chip--on': settings.to.includes(form.id) }"
-          type="button"
-          :aria-pressed="settings.to.includes(form.id)"
-          @click="selectTarget(form.id)"
+          class="chip-wrap"
+          @mouseenter="showLockedTip"
         >
-          {{ form.name }}
-        </button>
+          <button
+            class="chip chip--form"
+            :class="{ 'chip--on': form.on, 'chip--locked': form.locked }"
+            type="button"
+            :disabled="form.locked"
+            :aria-pressed="form.on"
+            :aria-describedby="form.locked ? `hint-target-${form.id}` : undefined"
+            @click="selectTarget(form.id)"
+          >
+            {{ form.name }}
+          </button>
+          <!-- The 從 form cannot also be the target; the tooltip says why. -->
+          <span
+            v-if="form.locked"
+            :id="`hint-target-${form.id}`"
+            class="chip-tip chip-tip--wide"
+            :style="{ transform: `translateX(calc(-50% + ${lockedTipShift}px))` }"
+          >
+            {{ LOCKED_TARGET_HINT }}
+          </span>
+        </span>
       </div>
     </div>
 
@@ -446,6 +488,31 @@ function back() {
   padding: 0 6px;
   border: 1px solid var(--line);
   font-size: 0.8rem;
+}
+
+/* The 從 form's own chip: same muted look as an empty 第1課 chip, but it is the
+   wrapper that takes the hover so the tooltip can explain the lock. */
+.chip--locked:disabled {
+  color: var(--muted);
+  background: transparent;
+  border-color: var(--line);
+  font-weight: 400;
+  opacity: 0.45;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* The lock explanation is twice the empty-lesson hint's width (320px), so it
+   fits on one line; the hover-time clamp above keeps a chip in the right-hand
+   column from pushing it past the viewport edge. */
+/* `width: max-content` is what makes it wider: an absolutely positioned span
+   otherwise shrinks to its chip's ~96px cell and wraps the sentence into three
+   lines. */
+.chip-tip--wide {
+  width: max-content;
+  max-width: 320px;
+  white-space: normal;
+  line-height: 1.35;
 }
 
 /* 開始 is the one primary action on this screen, so it keeps a tall target. */

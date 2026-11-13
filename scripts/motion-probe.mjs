@@ -251,7 +251,7 @@ try {
   // 4. Card: drag 60px below threshold.
   await page.goto(BASE, { waitUntil: 'load' })
   await page.waitForSelector('.home-actions', { timeout: 60000 })
-  await page.locator('.home-actions button', { hasText: '翻卡學習' }).click()
+  await page.locator('.home-actions button', { hasText: '翻卡練習' }).click()
   await page.waitForSelector('.chip-grid', { timeout: 5000 })
   const cardChip = page.locator('.chip', { hasText: '第5課' })
   if (!((await cardChip.getAttribute('class')) || '').includes('chip--on')) await cardChip.click()

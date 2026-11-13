@@ -1,12 +1,86 @@
 # Progress
 
-Last updated: 2026-11-13 (revision 31: a native-Japanese-teacher pass over
-all 5,790 form-level Chinese glosses).
+Last updated: 2026-11-13 (revision 34: locked 到 chips, the 翻卡練習 rename and
+the card class pill that now arrives with the card).
 
-**Status: complete.** T1–T8 are done and revisions 2–31 have landed and been
+**Status: complete.** T1–T8 are done and revisions 2–34 have landed and been
 verified, including follow-up UI passes A/B. The site is not published yet;
 the remaining product step is to deploy `output/` to GitHub Pages. Backlog
-B1–B3 remain `pending`; B3 is open for further, unspecified UI work.
+B1 (朗讀功能) and B3 (優化UI) remain `pending`; B2 (優化下載文件) is done as
+revision 32.
+
+## Revision 34 — locked 到 chips, 翻卡練習, immediate class pill
+
+- **到 follows 從.** The chip that equals the current 從 is now a disabled
+  button with the dictionary's locked-chip look and the tooltip
+  `這和「從」的形式相同，不能選為「到」` on hover, up to 320px wide (one line)
+  and clamped to the viewport by the pure `src/ui/tooltip.js`, so a right-hand
+  chip cannot widen the page. It is never selected,
+  全選 skips it, and changing 從 moves the lock; the picker renders two pure
+  helpers (`targetChips`, `toggleTarget`), so no rule lives in the `.vue`.
+- **Rename.** Home button, spec, README and all current docs say 翻卡練習. The
+  quoted user request in the changelog keeps its original wording.
+- **Card class pill.** `CardView.vue` no longer renders tag rows only on the
+  current slot, so the card sliding in already carries its own class pill while
+  the finger holds the drag; it no longer pops in at release.
+- Verification: `npm test` 35 files / **370 tests**; `npm run build`;
+  `node scripts/browser-check.mjs` **597 checks**, 0 failures. `vol/` untouched.
+
+## Revision 33 — the loading bar shows the download
+
+- Requested:「另外，可以做到下載的進度條嗎？」The bar used to be verified
+  lessons / 50, so the 550 KB archive download looked like a freeze.
+- `src/ui/boot-progress.js` (pure, 8 tests) computes the percentage: cache-check
+  progress, then the streaming download's bytes against `Content-Length` from
+  the percentage the cache check reached, then a hold at 100% while the
+  extracted entries are verified. No `Content-Length` holds the bar; a retry
+  restarts at the already-verified percentage; the bar never moves backwards.
+- `app.boot` streams `dict/vol.bin` with `response.body.getReader()` and
+  `session.boot.download = { base, loaded, total, done }` carries the phase;
+  `LoadingView.vue` only renders `bootPercent(boot)`, so no rule lives in a `.vue`.
+- Verification: `npm test` 34 files / **360 tests**; `npm run build`; the
+  browser suite is **584 checks**, 0 failures, including a boot throttled to
+  200 KB/s on which the recorded bar widths rise through ≥3 intermediate values
+  spread over ≥700 ms (verification alone fills the bar in one ~100 ms burst,
+  so that spread can only come from the download).
+- The archive is published as `dict/vol.bin` (a ZIP without the `.zip` suffix,
+  `application/octet-stream`), because 「一些插件會抓取然後劫持之後彈出下載框」.
+  Bytes, ZIP format, manifest, per-entry hashing and the boot rule are unchanged.
+
+## Revision 32 — one verified dictionary archive
+
+- First load now makes **one** request for 4.9 MB of dictionary data instead of
+  50: the build packs `vol/` into `dict/vol.bin`, a level-9 ZIP of 549 KB
+  (11.5% of raw, measured at 4,899,916 bytes).
+- The manifest did not change: still 50 per-lesson SHA-256 records. Boot hashes
+  each extracted entry against its own record, so `boot.checked / boot.total`
+  still means finished lessons / 50 and the loading screen is unchanged.
+- `scripts/zip.mjs` writes a deterministic archive (fixed timestamps), so the
+  same input yields byte-identical output; `scripts/vol-archive.mjs` verifies
+  `vol/` before packing and throws on a mismatch, a missing source or an empty
+  manifest, which fails `npm run build`. `scripts/write-vol-archive.mjs`
+  (`--check`, `--out`) is the manual/CI entry point.
+- `output/dict/` no longer holds `lesson_N.json`; the Vite plugin writes only
+  `vol.bin` and serves the same archive in dev (rebuilding when `vol/` or the
+  manifest changes). `dict/lesson_N.json` returns no dictionary content any more.
+- `src/dict/archive.js` wraps `unzipit` (`useWorkers: false`) and reads entries
+  lazily; `src/dict/boot.js` is two-phase: hash the cache first, then download
+  the archive once, verify each collected entry and store only matches. A failed
+  download, unreadable archive, absent entry or mismatch is retried with a
+  second download; whatever still fails stops boot naming the lesson and those
+  bytes are never written. No per-lesson fallback file remains by decision.
+- `scripts/browser-check.mjs` follows the new URL and adds checks for one archive
+  request per fresh boot, zero per-lesson requests, `application/zip`, the
+  `PK\x03\x04` header with a 50-entry end record, `output/dict` containing only
+  the archive, no dictionary content at `dict/lesson_1.json`, the two-abort
+  failure path, and the single download in a private window. The loading
+  progress check moved to a document-start sampler, because a single 550 KB
+  request can finish the whole boot before an after-the-fact poll runs.
+- Verification: `npm test` 33 files / **349 tests**; `npm run build`
+  (`output/index.html` + `output/dict/vol.bin` 549 KB); `node
+  scripts/write-sha256.mjs --check` ok; `node scripts/write-vol-archive.mjs
+  --check` ok; `node scripts/browser-check.mjs` **580 checks**, 0 failures.
+  `vol/` bytes untouched; `unzipit@2` added as a runtime dependency.
 
 ## Revision 31 — per-form Chinese glosses (data only)
 
@@ -42,7 +116,7 @@ paging follow/spring-back
 (“跟手拖曳、短拖回彈、第一張卡阻力”) with an invisible drag and a direct swap
 plus one short slide-in, and fixed the post-settle flash (“歸位後閃一下、再動
 一次”). Revision 15 mounts a paging window around the current item — 9 cards in
-翻卡學習, 5 words in the dictionary — keeps the current item in the 3rd slot and
+翻卡練習, 5 words in the dictionary — keeps the current item in the 3rd slot and
 shifts the window by dropping one end and adding the other. Revision 16
 supersedes revision 14's motion with the finger-tracking drag the user asked
 for (“按住無法實現跟手的拖動”): the strip follows the finger 1:1 while held and
@@ -112,13 +186,14 @@ the unchanged word on back.
 
 - Vue 3.5 + Vite 7.3 + Vitest 3 static app. Verified with Node v26.4.0 and
   npm 11.18.0; Vite 7 requires Node `^20.19.0` or `>=22.12.0`.
-- `npm test`: 30 files, **331 tests passing**. `pretest` verifies the 50-lesson
+- `npm test`: 35 files, **370 tests passing**. `pretest` verifies the 50-lesson
   SHA-256 manifest first.
 - `npm run build`: `output/index.html`, `output/assets/` (one JS + one CSS
   bundle plus the four hashed logo icons — `favicon*.ico`, `favicon-32*.png`,
-  `favicon-192*.png`, `apple-touch-icon*.png`) and `output/dict/` with exactly
-  **50** lesson files. `output/` is gitignored.
-- `node scripts/browser-check.mjs`: **574 checks passing on the revision-31
+  `favicon-192*.png`, `apple-touch-icon*.png`) and `output/dict/vol.bin` with
+  **50** entries (549 KB; no per-lesson JSON, a ZIP served as
+  `application/octet-stream`). `output/` is gitignored.
+- `node scripts/browser-check.mjs`: **597 checks passing on the revision-34
   final run** (headless Chromium, 390×844 with 550/551/800/900 width probes,
   plus a touch context for the zoom lock, thumb-drag/proximity assertions,
   frame-by-frame motion checks, and 8 new checks that the reader renders each
@@ -139,12 +214,13 @@ the unchanged word on back.
 ## Verification as of this refresh
 
 ```bash
-npm test                                # 30 files, 331 tests passed
-npm run build                           # manifest ok: 50 lessons; output/index.html + 50 dict files
-ls output/dict | wc -l                  # 50
-node scripts/browser-check.mjs          # browser check passed (574 checks)
+npm test                                # 35 files, 370 tests passed
+npm run build                           # manifest ok; output/index.html + output/dict/vol.bin (50 entries)
+ls output/dict                          # vol.bin
+node scripts/browser-check.mjs          # browser check passed (597 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 node scripts/write-sha256.mjs --check   # manifest ok: 50 lessons
+node scripts/write-vol-archive.mjs --check  # checked 50 lessons: 4.65 MB -> 549 KB (11.5%)
 ```
 
 ## History in one line each
@@ -216,7 +292,7 @@ in [`docs/changelog.md`](changelog.md). Task acceptance evidence is in
 
 - **Revision 25**: `body`, `#app` and the framed/mobile `.column` now size short
   screens with `min-height: 100dvh` (framed column `calc(100dvh - 40px)`),
-  keeping `vh` as the fallback, so short screens such as 翻卡學習 and settings no
+  keeping `vh` as the fallback, so short screens such as 翻卡練習 and settings no
   longer overflow when an iOS browser toolbar makes the static `vh` taller than
   the visible area. Home and loading already used `dvh`. A new browser check
   asserts a fresh card run has no vertical overflow (533 checks on the final
@@ -292,7 +368,7 @@ in [`docs/changelog.md`](changelog.md). Task acceptance evidence is in
 - **Revision 13**: the loading screen carries the site head
   (`大家の日本語` / `轉型練習` / `涵蓋初級 1 – 50 課的單詞`) and the credit line
   `Build with ❤ by Mane` (which opens the About sheet) but not the bug line;
-  the first card in 翻卡學習 resists a right-hand drag (a third of the finger,
+  the first card in 翻卡練習 resists a right-hand drag (a third of the finger,
   capped at 40px, then a 140ms spring-back) instead of sitting still; and the
   roadmap gained a backlog (朗讀功能, 優化下載文件, 優化UI).
 - **Revision 14** (requested 2026-11-10: the paging bounce made the user ill —
@@ -304,7 +380,7 @@ in [`docs/changelog.md`](changelog.md). Task acceptance evidence is in
   fixed at its suspects: no leave phase, the slide ends on the resting state,
   `will-change` is never torn down at the settle frame, and the scroll reset
   runs before the swap. `docs/spec.md` was revised before the code.
-- **Revision 15**: the paging window — 9 cards in 翻卡學習 and 5 words in the
+- **Revision 15**: the paging window — 9 cards in 翻卡練習 and 5 words in the
   dictionary keep their neighbours mounted with the current item in the 3rd
   slot; a turn is one front delete plus one back append, and only the current
   item is ever visible.
@@ -409,15 +485,15 @@ in [`docs/changelog.md`](changelog.md). Task acceptance evidence is in
   the artwork reads at 16px in a real tab, and the iOS home-screen icon, were
   not inspected on a device.
 - Plain-HTTP LAN origins: IndexedDB works but `crypto.subtle` does not, so boot
-  stops on lesson 1 with `download 2 could not be hashed`. Fixing that would
+  stops on lesson 1 with `archive 2 cannot hash lesson_1.json`. Fixing that would
   require shipping a non-WebCrypto SHA-256 implementation, which is a new
   product rule and was deliberately not added. See `docs/serving.md`.
 
 ## Why serving the repository root fails
 
 `index.html` at the repository root is the Vite entry: it loads `/src/main.js`,
-which the browser cannot compile, and `/dict/lesson_1.json` does not exist
-there. The dictionary is copied into `output/dict/` only by the build. Use
+which the browser cannot compile, and `/dict/vol.bin` does not exist there. The
+archive is built into `output/dict/` only by the build. Use
 `npm run dev`, `npm run preview`, or mount `output/` at
 `game-japanese-katsuyou-basic/` behind any static file server.
 
@@ -428,9 +504,9 @@ number. Current causes:
 
 | Cause | Detail shown |
 |---|---|
-| Serving the repo root | `dict/lesson_1.json` returns 404 |
-| Stale/partial build | missing files under `output/dict/` |
-| Non-secure origin (`http://LAN-IP`, `file://`) | `download 2 could not be hashed: Cannot read properties of undefined (reading 'digest')` because `crypto.subtle` is absent |
+| Serving the repo root | `dict/vol.bin` returns 404 |
+| Stale/partial build | `output/dict/vol.bin` missing |
+| Non-secure origin (`http://LAN-IP`, `file://`) | `archive 2 cannot hash lesson_1.json: Cannot read properties of undefined (reading 'digest')` because `crypto.subtle` is absent |
 | Storage blocked/disabled | `IndexedDB is unavailable on this origin; storage is blocked or disabled` |
 | Two downloads mismatch | stops and names the lesson; retry after clearing site data |
 
@@ -443,12 +519,16 @@ Troubleshooting steps: [`docs/serving.md`](serving.md).
   該課沒有動詞 hint.
 - Reading defaults for cards and quiz are **on** (the spec states the
   dictionary default explicitly and leaves the other two implicit).
-- Download retries are two attempts for both a missing and a corrupt copy.
+- Download retries are two archive downloads for any failed entry; the archive is only fetched when at least one lesson is missing or corrupt.
+- The loading bar holds at 100% while extracted entries are verified instead of showing a second phase; verification after the download is a ~100 ms step, and a second bar would invent copy the loading screen does not have.
+- The 從 chip under 到 carries the tooltip text `這和「從」的形式相同，不能選為「到」`, and the tooltip wrapper (not the chip) owns the hover because the disabled chip ignores the pointer — the same pattern as the dictionary's 預設顯示形式 chip.
+- Cards in the mounted window all paint their own tags, including the ones peeking in during a drag; the window's neighbours already carried per-slot tag data, so the visible change is only that the pill no longer waits for the release.
+- The archive is not itself hashed; the 50 per-lesson hashes are the integrity gate, so a corrupt archive fails entry verification rather than blocking every lesson at once.
 - Quiz keyboard fillers come from a unique kana pool; reading characters never
   duplicate.
 - `nav.go` accepts an optional `mode` so home can open a picker in one command.
-- Verb-less lessons still download and hash on boot (lessons 1, 3, 8, 12), so
-  `boot.checked` always reaches 50.
+- Verb-less lessons still come from the archive and hash on boot (lessons 1, 3,
+  8, 12), so `boot.checked` always reaches 50.
 - The About sheet's copy is aligned to `docs/spec.md` (`提交ISSUE` →
   `/issues/`, thanks line `どうもありがとうございます。`).
 

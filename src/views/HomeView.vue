@@ -20,7 +20,7 @@ function enter(mode) {
 
     <div class="home-actions">
       <button class="button primary home-button" type="button" @click="enter('dict')">字典</button>
-      <button class="button primary home-button" type="button" @click="enter('card')">翻卡學習</button>
+      <button class="button primary home-button" type="button" @click="enter('card')">翻卡練習</button>
       <button class="button primary home-button" type="button" @click="enter('quiz')">測驗</button>
     </div>
 

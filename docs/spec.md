@@ -79,19 +79,47 @@ Lessons 1, 3, 8, and 12 have an empty `vols` array. Those four lessons are the g
 
 `scripts/write-sha256.mjs` hashes the raw bytes of each `vol/lesson_N.json` and writes lowercase hex sha256 into `src/data/dict-manifest.json`. That manifest ships with the site.
 
-The site loads `dict/lesson_N.json` from the same origin. In dev, Vite serves those files from `vol/`. The build copies them to `output/dict/`.
+The site downloads **one** archive, `dict/vol.bin`: a ZIP file holding the 50
+lesson files as deflate-compressed entries named `lesson_N.json`, byte-identical
+to the `vol/` sources. It is published without the `.zip` suffix and served as
+`application/octet-stream`, because download-helper browser extensions sniff
+`.zip` URLs and hijack them with a save dialog. `scripts/vol-archive.mjs` builds it and verifies every lesson against the manifest first, so a stale manifest or a damaged source stops the build instead of publishing a broken archive. In dev, Vite serves the same archive; the build writes it to
+`output/dict/vol.bin`. Individual `dict/lesson_N.json` URLs are no longer published.
 
 The cache lives in an IndexedDB database named `katsuyou-dict`, in an object
 store named `lessons`. One record per lesson: the key is the lesson file name
-(`lesson_N.json`) and the value is the raw file bytes.
+(`lesson_N.json`) and the value is the raw file bytes. The archive does not
+change the cache shape; it only changes how the bytes arrive.
 
 On boot, handle the 50 lessons in order:
 
-1. The file is missing from IndexedDB: download it, hash it, and write it only when the hash matches the manifest.
-2. The file is already in IndexedDB: hash it, and use it when the hash matches the manifest.
-3. The hash does not match: download once more and overwrite. If the second copy still does not match, stop, name the lesson, and offer retry.
+1. A lesson already in IndexedDB is hashed. When the hash matches the manifest it
+   counts as finished and nothing is downloaded.
+2. A missing or corrupt copy is collected instead of downloaded one file at a
+   time. When anything was collected, the archive is downloaded once and every
+   collected entry is decompressed and hashed against its own manifest record.
+   Only entries that match are written to IndexedDB.
+3. A failed download, an unreadable archive, an absent entry, or a hash mismatch
+   is retried with a second archive download. Bytes that still do not match are
+   never written; boot stops, names the lesson, and offers retry.
 
-Progress is finished lessons divided by 50. The loading text is `Loading ...`.
+Entries are decompressed one at a time, so repairing a single lesson never
+expands the other 49. The loading text is `Loading ...`.
+
+The loading bar shows the slow part it is waiting for, and never moves backwards:
+
+1. The cache check fills the bar with verified lessons divided by 50.
+2. While the archive is downloading, the bar fills from where the cache check
+   left off to 100% in proportion to bytes received, compared with the response's
+   `Content-Length`. When the response announces no length, the bar holds where
+   the cache check left it until the bytes arrive.
+3. Once the bytes have arrived, the bar holds at 100% while the extracted lessons
+   are verified and stored.
+4. A retry restarts the download portion at the lessons the cache check already
+   verified, never below it.
+
+Without a download — the usual reload, where stored copies are only re-hashed —
+the bar is simply verified lessons divided by 50.
 
 ## Screens
 
@@ -121,7 +149,7 @@ retry; only the progress area changes.
 
 The head is three lines above the entries: the large title `大家の日本語`, the medium subtitle `動詞轉型練習` under it, and the line `涵蓋初級 1 – 50 課的動詞` under that.
 
-Three large buttons, stacked: 字典, 翻卡學習, 測驗.
+Three large buttons, stacked: 字典, 翻卡練習, 測驗.
 
 The footer has two lines. The first is `🥺 如果有 BUG 記得告訴我！`; the second is `Build with ❤ by Mane`. Both open the same small sheet.
 
@@ -150,6 +178,7 @@ Card mode and quiz mode add a 變形 block.
 
 - 從 is a single choice. The default is `masu-form`. The control is one button that opens a list of the 15 names. The 從 label and that button share one centre line: the label is centred against the 36px control, never nudged up or down with padding, so the glyph sits halfway down the control's height.
 - 到 is a multiple choice. The default is `dictionary-form` only. The buttons wrap. A header row sits above the chips: 到 on the left and 全選 on the right. 全選 selects every form except 從. If those forms are already all selected, the next press leaves only `dictionary-form`, or `masu-form` when 從 is already the dictionary form.
+- The chip whose form is the current 從 cannot be selected as a target, because a card or quiz item needs two different forms. It is disabled and keeps the look of the picker's empty 第1課 chip — muted text, transparent background, the divider border, 45% opacity, no hover accent and no pointer events — so its wrapper can show the tooltip `這和「從」的形式相同，不能選為「到」` on hover. The tooltip is at most 320px wide — twice the empty-lesson hint — so the sentence fits on one line, and its centred position is clamped to the viewport (8px from either edge) when the chrome sits in a right-hand cell, so it never widens the page. It stays unselected, `aria-pressed` is false, and 全選 never selects it; changing 從 to a form that was already selected in 到 removes that target as before.
 - Changing 從 to a form that is selected in 到 removes that target immediately.
 - While no lesson is selected, the footer shows no separate warning line in any mode. The disabled 開始 button carries the message `請至少選擇一門課程才可以開始` instead of its normal label.
 - Deselecting every 到 chip is allowed. While a lesson is selected but 到 is empty, the button's label becomes `請至少選擇一個轉型才可以開始` instead. Neither message renders as a separate line above 開始; both live on the button itself. The label returns to `開始` as soon as the missing choice is supplied. Dictionary mode has no 轉型 block, so its disabled label is only ever the lesson message.
@@ -322,7 +351,7 @@ When the reading switch is off, render `vol` with no ruby.
 
 ## The paging window
 
-The dictionary reader and 翻卡學習 keep a sliding window of mounted items so a page turn never mounts or unmounts anything while it is on screen. The reader keeps 5 words mounted; 翻卡學習 keeps 9 cards mounted.
+The dictionary reader and 翻卡練習 keep a sliding window of mounted items so a page turn never mounts or unmounts anything while it is on screen. The reader keeps 5 words mounted; 翻卡練習 keeps 9 cards mounted.
 
 The window is a row of slots beside one another, with a 24px gap between adjacent slots. Each item keeps the full width of the paging container; the gap is added outside it rather than taken from the item. The current item always sits in the 3rd slot. The two slots before it hold the two previous items and the remaining slots hold the items to come. A slot that falls past either end of the list is empty and renders nothing: the two leading slots are empty at the first item, the trailing slots are empty at the last item, and a run shorter than the window simply fills fewer slots.
 
@@ -330,7 +359,9 @@ The window is invisible at rest. Only the current item is ever on screen when no
 
 The window advances the moment the item changes — the same direct swap the motion already makes — and the advance is never visible. A next move deletes the front slot's item and adds the next list item at the back; a prev move deletes the back slot's item and adds the previous list item at the front. Either way the current item sits in the 3rd slot, so the screen sits on the 3rd slot for the whole run. The footer controls run the same window as a swipe. At the ends the old rules stand: the first item does not move backward, the last dictionary word does not move forward, and the last card finishes the run.
 
-In 翻卡學習 only the current card turns over. It always opens on its face after a move; the other mounted cards sit on their face and never turn. The counter 練習（n/total）follows the current card as before.
+In 翻卡練習 only the current card turns over. It always opens on its face after a move; the other mounted cards sit on their face and never turn. The counter 練習（n/total）follows the current card as before.
+
+Every mounted card paints its own face and answer tags, not just the current one. While 一開始顯示幾類動詞 is on, the class pill of the card sliding in is already drawn as the finger carries it in, so it never appears at the moment of release.
 
 ## Look and motion
 
@@ -348,7 +379,7 @@ The wireframes say which pieces exist. Do not copy their colors or boxes.
 - A separator between two entries of the settings screen is a drawn line of its own, not a border on either row: a 1px horizontal rule in the divider colour, spanning the content width. It carries no border of its own and is hidden from assistive technology. Because it is an element rather than a row edge, a hover or press tint on either neighbour cannot paint over it, a pressed row cannot shorten it, and the line keeps one colour in every state. The first row has no rule above it, the last entry of a screen has no rule under it, and inside the 預設顯示形式 list the rule runs between the options rather than after the final one. The list opens directly under the 預設顯示形式 row with no rule between the row and the panel — a line there reads as an extra divider and the user rejected it. This covers the settings screen only: the picker's 從 list keeps its row borders.
 - A pressed button scales down slightly. The rows of the two dropdown lists (從 and 預設顯示形式) are the exception: they are rows of a panel, not free-standing buttons, so the row never scales and it tints its whole body. The settings list's 預設顯示形式 draws its separators as `hrule` elements between the options instead of as row borders, so neither hover nor press can change their colour or their length, and the row's tint may cover its whole body because nothing has to be clipped away from a border. The picker's 從 list keeps the revision-18 treatment — each row carries the panel's divider as its own bottom border, with the tint clipped to the padding box so the line keeps one colour in every state — because the drawn-line change covers the settings screen only. Pinned footers keep a transparent fade, but the fade band sits above the controls so the buttons stay solid and fully visible. Paging is one flat horizontal slide of the whole strip of items: a horizontal drag carries the strip with the finger 1:1, clamped to one item width, and on release the strip finishes the page as one decelerating move from where the finger left it — or settles back to rest when the release names no turn. The first 8px only decide whether the gesture is horizontal or vertical; after that decision the held offset is painted synchronously from the pointer event instead of waiting for a Vue render, and there is no transition while the pointer is down. Thus the direction slop is the only intentional still period, not an added drag animation. Screen changes take about 220ms. A tapped card turns over in 3D (`rotateY`, about 240ms).
 - A page turn and a card turn are one motion, not two: the swap is direct and the strip decelerates into place (about 190ms). A turn travels one item width plus the 24px inter-item gap, so the incoming item finishes in the current slot without closing the gap onto the outgoing one. Nothing overshoots its resting point or travels backwards while it is on screen, and once the item settles it never moves again — no flash and no second slide. Movement that has been interrupted is finished rather than stacked: a press during the incoming settle drops that slide first.
-- The paging window keeps the neighbours mounted (9 cards in 翻卡學習, 5 words in the dictionary reader) with the current item in the 3rd slot, and advances by deleting one end and adding to the other. At rest only the current item is visible; while a drag or a settle runs, the mounted neighbours peek in at the edges.
+- The paging window keeps the neighbours mounted (9 cards in 翻卡練習, 5 words in the dictionary reader) with the current item in the 3rd slot, and advances by deleting one end and adding to the other. At rest only the current item is visible; while a drag or a settle runs, the mounted neighbours peek in at the edges.
 - 回答正確 slides in from the top and leaves after about 1.6 seconds. A wrong answer shakes the input field and turns it red instead of a toast. A revealed answer stays on the question itself. The toast is not the only place that answer exists.
 - The page never scrolls sideways: no horizontal scrollbar appears in any screen. Paging motion is clipped by its own container, so a card that travels past the column edge is cut off rather than widening the page.
 - Under `prefers-reduced-motion: reduce`, the gradient is still, a drag stays invisible and a swipe changes the item directly, card flips are instant, and screen changes are a short fade.
