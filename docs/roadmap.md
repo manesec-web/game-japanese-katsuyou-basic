@@ -16,9 +16,8 @@ breakdown lives in `AGENTS.md`.
   `{ ok: false, error }`.
 - `vol/*.json` is read-only dictionary input. Do not edit it. **One-time
   exception (revision 31):** a user-authorized native-teacher pass rewrote
-  only `form.chinese` and one misleading `note`; see `AGENTS.md`,
-  `docs/gloss-rewrite/rewrite-rules.md` and the validator. No future edit is
-  authorized by it.
+  only `form.chinese` and one misleading `note`; see `AGENTS.md` and
+  `docs/spec.md` Data. No future edit is authorized by it.
 - No MCP, no backend, no LLM calls from the page.
 - Do not copy the wireframe's blue boxes; follow the spec's look section.
 - Text outside the green phone frame in the wireframes is annotation, not UI.
@@ -406,11 +405,12 @@ Requested: 「你是日本母語的老師，請你修改每一個單詞下面的
 
 | # | Change | Status | Acceptance evidence |
 |---|--------|--------|---------------------|
-| 31a | Spec + rules first | done | `docs/spec.md` Data defines per-form `chinese`, corrected `note`, the 191 error markers and unchanged sentences; `docs/gloss-rewrite/rewrite-rules.md`, `reference-lesson-2.md`, frozen `baseline/` |
-| 31b | Data pass, 5 batches | done | 5,420 `chinese` values + 1 `note` changed; 191 error markers; `scripts/rewrite-glosses.mjs` plan/review/apply; `scripts/validate-gloss-rewrite.mjs --all` and all five `--batch N` pass with 0 immutable-field changes |
-| 31c | Native-teacher edge cases | done | 44 hand-reviewed paradigms, adversative/honorific/concessive/optative/spontaneous classification, stative negatives, 3 already-inflected base glosses, rare-form suffixes; `docs/gloss-rewrite/batch-doubts.md` D1–D10 |
+| 31a | Spec first | done | `docs/spec.md` Data defines per-form `chinese`, corrected `note`, the 191 error markers and unchanged sentences |
+| 31b | Data pass, 5 batches | done | 5,420 `chinese` values + 1 `note` changed; 191 error markers; the temporary plan/validator passed on all 50 lessons with 0 immutable-field changes before being removed |
+| 31c | Native-teacher edge cases | done | 44 hand-reviewed paradigms, adversative/honorific/concessive/optative/spontaneous classification, stative negatives, 3 already-inflected base glosses, rare-form suffixes |
 | 31d | Docs + manifest | done | `README.md`, `AGENTS.md`, `docs/architecture.md`, `docs/progress.md`, `docs/serving.md`, `docs/changelog.md`, this board; `node scripts/write-sha256.mjs` re-run |
-| 31e | Full verification | done | `node scripts/write-sha256.mjs --check` ok; `node scripts/validate-gloss-rewrite.mjs --all` ok; `node scripts/rewrite-glosses.mjs --review --all` 0 flags; `npm test` 30 files / 331 tests; `npm run build` ok with `output/index.html` + 50 dict JSON; `node scripts/browser-check.mjs` 574 checks, 0 failures (8 new per-form gloss checks); see `docs/progress.md` |
+| 31e | Full verification | done | `node scripts/write-sha256.mjs --check` ok; `npm test` 30 files / 331 tests; `npm run build` ok with `output/index.html` + 50 dict JSON; `node scripts/browser-check.mjs` 574 checks, 0 failures (8 new per-form gloss checks); see `docs/progress.md` |
+| 31f | Temporary artifacts removed | done | The rewrite plan, frozen baseline, doubt list and the two one-off scripts were deleted at the user's request; the resulting `vol/` data, spec, manifest and browser checks remain |
 
 ## Current status
 
@@ -427,8 +427,7 @@ Requested: 「你是日本母語的老師，請你修改每一個單詞下面的
 - Revisions 23–27 have their spec and implementation in place, and the status
   documents have been resynced. Revisions 24–25's iOS rubber-band and
   dynamic-viewport behavior still needs real hardware verification; other than
-  that, the spec-silent choices listed in `docs/progress.md`, and the D1–D10
-  items awaiting user ruling in `docs/gloss-rewrite/batch-doubts.md`,
+  that and the spec-silent choices listed in `docs/progress.md`,
   revisions 2–31 have no known deviation from `docs/spec.md`.
 - The GitHub Pages site is not live yet (the project URL returned 404 when
   checked); the repository history starts at commit `933c30b`.
@@ -452,8 +451,6 @@ Requested: 「你是日本母語的老師，請你修改每一個單詞下面的
 npm test                                # Vitest unit tests (30 files / 331)
 npm run build                           # static build into output/ (50 dict files)
 node scripts/write-sha256.mjs --check   # manifest consistency
-node scripts/validate-gloss-rewrite.mjs --all  # revision-31 data invariant
-node scripts/rewrite-glosses.mjs --review --all # gloss/example consistency
 node scripts/browser-check.mjs          # headless Chromium walk-through (574 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 ```

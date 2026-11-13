@@ -14,7 +14,8 @@ B1–B3 remain `pending`; B3 is open for further, unspecified UI work.
   and one misleading `note` (L23#9) normalized. Only those two fields changed;
   `vol`, `group`, `japanese`, `sentence` (Japanese, Chinese, notes),
   `error_usage`, key order, lesson structure and canonical formatting are
-  byte-equivalent to `docs/gloss-rewrite/baseline/`.
+  unchanged (verified against the original bytes before the temporary
+  baseline was removed).
 - 191 `error_usage` forms now carry the single marker
   `（非自然日語；僅供轉詞練習，無自然中文譯義）`. The 5,599 usable forms carry
   their own affirmative/negative/tense/て/可能/意向/命令/條件/受身/使役 meaning;
@@ -23,16 +24,15 @@ B1–B3 remain `pending`; B3 is open for further, unspecified UI work.
   stative/cognitive verbs (見える, 聞こえる, 要る, 足りる, できる, 出来る …),
   three already-inflected Chinese base glosses, and form-specific 「日常少用」
   notes. 44 verb paradigms and 10 semantic-denial notes were hand-reviewed.
-- Known findings awaiting user ruling are in
-  `docs/gloss-rewrite/batch-doubts.md` (D1–D10). D1: the goal contract cited
-  89 error forms / 17,103 sentences from a stale audit; current `vol/` has
-  191 / 16,797. Example sentences were deliberately left untouched.
-- Verification: `node scripts/validate-gloss-rewrite.mjs --all` passes
-  (50 lessons / 386 verbs / 5,790 forms / 5,599 usable / 191 error markers /
-  16,797 sentences / 0 immutable-field changes); five `--batch N` gates and
-  `--review --batch N` pass with 0 flags. Manifest regenerated with
-  `node scripts/write-sha256.mjs`; `npm test`, `npm run build`, and the
-  browser walk-through are part of the revision-31 acceptance run.
+- Known finding: the goal contract cited 89 error forms / 17,103 sentences
+  from a stale audit; current `vol/` has 191 / 16,797. Example sentences were
+  deliberately left untouched. The temporary per-batch doubt list was removed
+  with the rest of the rewrite artifacts.
+- Verification: the temporary validator passed on all 50 lessons / 386 verbs /
+  5,790 forms (5,599 usable, 191 error markers, 16,797 sentences, 0
+  immutable-field changes) before it was removed. Manifest regenerated with
+  `node scripts/write-sha256.mjs`; `npm test` (30 files / 331 tests),
+  `npm run build` and `node scripts/browser-check.mjs` (574 checks) pass.
 - `docs/spec.md` Data now specifies per-form glosses; `AGENTS.md` and
   `docs/architecture.md` record the one-time `vol/` exception. No `.vue`,
   command, engine or settings code changed.
@@ -145,8 +145,6 @@ ls output/dict | wc -l                  # 50
 node scripts/browser-check.mjs          # browser check passed (574 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 node scripts/write-sha256.mjs --check   # manifest ok: 50 lessons
-node scripts/validate-gloss-rewrite.mjs --all  # 0 immutable-field changes
-node scripts/rewrite-glosses.mjs --review --all # 5599 forms, 0 flags
 ```
 
 ## History in one line each

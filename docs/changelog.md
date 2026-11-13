@@ -1581,17 +1581,20 @@ Why: all 386 verbs previously copied the 字典形 `chinese` gloss into all 15 f
 | # | Change | Verification |
 |---|--------|--------------|
 | 31a | `docs/spec.md` Data rewritten: `chinese` is a per-form gloss (with 禮貌體／普通體 labels, `；` and explanatory suffixes printed verbatim), `note` is a corrected beginner-facing usage note, `error_usage` uses one marker, `sentence` is unchanged; reader/cards clauses now say the gloss is that form's own | spec read back; no UI code changed |
-| 31b | `docs/gloss-rewrite/`: `rewrite-rules.md`, `reference-lesson-2.md` (the worked 違う 15-form sample), `overrides.json` (44 hand-reviewed paradigms + 1 note fix), `plan.json` (all 5,790 glosses), `baseline/` (50 pre-change files), `baseline-index.json`, `verbs.tsv`, `batch-doubts.md` (D1–D10) | artifacts present; baseline SHA-256 verified |
-| 31c | `scripts/rewrite-glosses.mjs`: reviewable `--init` / `--review` / `--apply`; `scripts/validate-gloss-rewrite.mjs`: `--check-invariants`, `--batch N`, `--all` | five review gates 0 flags; five batch validations OK; `--all` OK |
+| 31b | A reviewable plan, a frozen pre-change baseline and a per-batch doubt list were used during the pass (temporary artifacts) | five review gates 0 flags; five batch validations OK; all 50 lessons OK |
+| 31c | One-off scripts drove the plan and proved only `chinese` / `note` changed (temporary artifacts) | validator: 0 immutable-field changes; 0 remaining copied glosses |
 | 31d | `vol/lesson_1.json` … `lesson_50.json`: 5,420 `chinese` values rewritten, 1 `note` fixed (L23#9 「錯誤用法」→「錯誤詞語」) | `--all`: 50 lessons / 386 verbs / 5,790 forms / 5,599 usable / 191 error markers / 16,797 sentences / 0 immutable-field changes / 0 remaining copied glosses |
-| 31e | 191 `error_usage` forms now read `（非自然日語；僅供轉詞練習，無自然中文譯義）`; no fluent translation invented for non-natural Japanese | validator enforces the exact marker on every error form |
+| 31e | 191 `error_usage` forms now read `（非自然日語；僅供轉詞練習，無自然中文譯義）`; no fluent translation invented for non-natural Japanese | all 191 forms checked |
 | 31f | Data-driven linguistic exceptions: 迷惑受身, 尊敬語, 讓步構文 (就算…也), 文語祈願, 自發用法, 32 個無意志動詞的意向形寫成「正快要／即將…（不是『～吧』）」, `知らせる`＝通知／告訴, potential/passive homographs, stative/cognitive negatives (見える→看不見, 要る→不需要, 足りる→不夠, できる→不會／做不到), 3 already-inflected base glosses (違う ×2, なくなる), and `（此形日常少用）` on form-specific rare notes | note/gloss contradiction scan: 0; ungrammatical-Chinese scan: 0; non-volitional 吧／打算 scan: 0; gloss/example review gates: 0 flags |
 | 31g | `src/data/dict-manifest.json` regenerated from the new raw bytes | `node scripts/write-sha256.mjs --check` |
 | 31h | Docs: `README.md`, `AGENTS.md`, `docs/architecture.md`, `docs/progress.md`, `docs/roadmap.md`, `docs/serving.md`, this changelog. `AGENTS.md` / `architecture.md` now record the one-time `vol/` exception | docs read back; revision-30 uncommitted work left intact |
 
-Known findings (not changed without user ruling) are listed in
-`docs/gloss-rewrite/batch-doubts.md`: D1 — the goal contract quoted 89
-`error_usage` forms / 17,103 sentences from the stale
-`docs/audit/hy4-preview-2026-11-10.md`; current `vol/` has 191 / 16,797.
+The goal contract quoted 89 `error_usage` forms / 17,103 sentences from the
+stale `docs/audit/hy4-preview-2026-11-10.md`; current `vol/` has 191 / 16,797.
 Example sentences were deliberately left untouched. Revisions 24–25 still
 need real-device iOS/Android viewport verification.
+
+At the user's request the temporary rewrite directory (rules, baseline,
+plan, doubt list) and its two one-off scripts were deleted once the data pass
+was verified. The rewritten `vol/` data, the regenerated manifest, the spec's
+per-form gloss definition and the browser checks remain.

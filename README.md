@@ -88,8 +88,6 @@ npm run preview    # 預覽建置結果（http://localhost:4173/game-japanese-ka
 | `npm run test:watch` | 監看模式 |
 | `node scripts/write-sha256.mjs` | 重新產生 `src/data/dict-manifest.json` |
 | `node scripts/write-sha256.mjs --check` | 校驗 manifest 與 `vol/` 位元組是否一致（不一致則非 0 結束） |
-| `node scripts/validate-gloss-rewrite.mjs --all` | 校驗修訂 31 只改了各形 `chinese`／`note`，且 15 鍵、例句與標色條件完整 |
-| `node scripts/rewrite-glosses.mjs --review --all` | 重審 5,790 筆逐形中文與各形例句是否矛盾（唯讀） |
 | `node scripts/browser-check.mjs` | 以 headless Chromium 對建置結果做端到端檢查（需先 `npm run build`） |
 | `node scripts/motion-probe.mjs` | 印出翻頁／翻卡的逐幀動效軌跡（資訊用，不做通過判定） |
 | `node scripts/strike-probe.mjs` | 量測錯誤單詞雙刪除線的繪製位置（開發用探針） |
@@ -106,7 +104,6 @@ npm run preview    # 預覽建置結果（http://localhost:4173/game-japanese-ka
 ```text
 vol/                        字典來源：lesson_1.json … lesson_50.json（唯讀；
                             修訂 31 曾一次性授權改寫各形 chinese／note）
-docs/gloss-rewrite/          修訂 31 的改寫規則、凍結基準、逐形計畫與疑義清單
 docs/                       規格、架構、進度、變更紀錄、本機伺服說明
 docs/screenshot-draft/      初期的線框稿（wireframe）
 docs/logo/                  網站 logo：logo.jpg 與由其轉存的 favicon／touch icon
@@ -137,8 +134,7 @@ output/                     建置輸出（不提交）
 `違って` 是「（因為）不同，而…；不同，接著…」。`error_usage` 形統一標示
 「（非自然日語；僅供轉詞練習，無自然中文譯義）」；`note` 會提醒罕用形、
 尊敬語、迷惑受身與讓步構文。例句的中文翻譯與日文原文則完全保留。完整規則見
-[`docs/spec.md`](docs/spec.md) 的 Data 一節與
-[`docs/gloss-rewrite/rewrite-rules.md`](docs/gloss-rewrite/rewrite-rules.md)。
+[`docs/spec.md`](docs/spec.md) 的 Data 一節。
 
 目前資料：50 課、46 課有單詞（1、3、8、12 課為空）、386 個單詞、5,790 筆形式
 （5,599 個可用形、191 個 `error_usage` 形、16,797 組例句）。
@@ -165,7 +161,6 @@ output/                     建置輸出（不提交）
 npm test                                # 30 檔 / 331 個單元測試
 npm run build                           # output/index.html + output/dict/（50 檔）
 node scripts/write-sha256.mjs --check   # manifest 一致
-node scripts/validate-gloss-rewrite.mjs --all  # 逐形中文改寫不變性
 node scripts/browser-check.mjs          # 574 項端到端檢查（390×844 為主；測驗題目
                                         # 由亂數種子決定，假名按鍵檢查數會上下浮動幾項）
 ```

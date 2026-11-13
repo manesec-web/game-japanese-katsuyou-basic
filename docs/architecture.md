@@ -99,8 +99,6 @@ unless the spec says so.
 ```text
 vol/                          dictionary source, lesson_1..50.json (read-only,
                               except the one-time revision-31 chinese/note pass)
-docs/gloss-rewrite/           revision-31 rules, frozen baseline, gloss plan,
-                              per-batch doubt list
 docs/spec.md                  product behaviour
 docs/architecture.md          this file
 docs/serving.md               local serving and boot-failure troubleshooting
@@ -110,8 +108,6 @@ docs/changelog.md             dated change log
 docs/logo/                    logo source logo.jpg plus the derived tab icons
 README.md                     user-facing overview, setup, test and deploy notes
 scripts/write-sha256.mjs      hashes vol/*.json into src/data/dict-manifest.json
-scripts/rewrite-glosses.mjs   builds/applies the per-form chinese plan
-scripts/validate-gloss-rewrite.mjs  proves only chinese/note changed
 scripts/browser-check.mjs     headless Chromium walk-through of the built site
 scripts/motion-probe.mjs      frame-by-frame motion traces (informational)
 src/main.js                   app entry: store, Vue mount, overscroll guard, boot
@@ -220,20 +216,13 @@ change, not an engine or UI change.
   `error_usage`, `sentence` (Japanese, Chinese and sentence notes), key sets
   and key order, lesson names, `vols` order, and canonical 2-space JSON +
   trailing newline are frozen.
-- `docs/gloss-rewrite/baseline/` holds the 50 pre-change files;
-  `baseline-index.json` holds their SHA-256; `verbs.tsv` indexes the 386 verbs.
-- `docs/gloss-rewrite/rewrite-rules.md` is the construction spec;
-  `reference-lesson-2.md` is the worked 違う sample; `overrides.json` holds
-  44 hand-reviewed verb paradigms and the one note fix; `plan.json` records
-  all 5,790 planned glosses; `batch-doubts.md` lists the D1–D10 findings.
-- `scripts/rewrite-glosses.mjs --init/--review/--apply` makes the plan
-  reviewable before writing. `scripts/validate-gloss-rewrite.mjs --all`
-  compares live `vol/` with the baseline, enforces the immutable-field
-  invariant, the 191 error markers, unchanged sentence/highlight conditions,
-  and zero non-字典形 rows still showing the old copied gloss.
+- The change was checked against the original bytes before the temporary
+  baseline, plan and validator were removed. Only `form.chinese` and one
+  `form.note` differ; the 15 keys and their order, every sentence and the
+  highlight condition are intact.
 - The UI still renders `form.chinese` verbatim; no `.vue`, command, engine or
   settings code was changed for this revision. Because the manifest hashes
-  raw bytes, `scripts/write-sha256.mjs` must be re-run after the data pass.
+  raw bytes, `scripts/write-sha256.mjs` was re-run after the data pass.
 
 ## Testing
 

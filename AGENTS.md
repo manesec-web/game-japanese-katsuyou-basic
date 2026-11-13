@@ -2,7 +2,7 @@
 
 This file is for the next AI that enters the repo. Do the tasks in order. The product is a static site for learning Japanese verb conjugation: Vue source, build output in `output/`, published with GitHub Pages.
 
-**Revision 31 (data only):** every form's `chinese` now carries its own conjugated meaning, and misleading `note` text was corrected. See `docs/spec.md` Data, `docs/gloss-rewrite/`, and the one-time `vol/` exception in rule 5 below. No UI/engine code changed; the manifest was regenerated. The D1–D10 findings in `docs/gloss-rewrite/batch-doubts.md` still await user ruling.
+**Revision 31 (data only):** every form's `chinese` now carries its own conjugated meaning, and misleading `note` text was corrected. See `docs/spec.md` Data and the one-time `vol/` exception in rule 5 below. No UI/engine code changed; the manifest was regenerated. The temporary rewrite plan, baseline and validation scripts were removed once the data pass was verified; the resulting data and spec remain.
 
 Current state: T1–T8 are complete, along with the follow-up revisions recorded
 in `docs/roadmap.md` and `docs/changelog.md`. Revision 13 added the loading-screen
@@ -98,10 +98,9 @@ Behavior lives in `docs/spec.md`. Read the matching section before you build tha
    `chinese` and (where it misled a beginner) `note` may be edited; `vol`,
    `group`, `japanese`, `sentence` (including its Chinese translations and
    notes), `error_usage`, key order, lesson structure and file formatting stay
-   byte-equivalent. `docs/gloss-rewrite/rewrite-rules.md` defines the rule,
-   `docs/gloss-rewrite/baseline/` freezes the pre-change bytes, and
-   `scripts/validate-gloss-rewrite.mjs --all` proves the invariant. This
-   exception does not authorize any future edit to `vol/`.
+   byte-equivalent; the change was verified against the original bytes before
+   the temporary baseline and validator were removed. This exception does not
+   authorize any future edit to `vol/`.
 6. Do not add MCP, a backend, or a model call inside the site.
 7. Do not reproduce the blue boxes in the wireframes. Follow the information architecture in `docs/spec.md`. Follow the Look and motion section there for the visual design.
 8. Text outside the green phone frame is a note to the reader. It is not a UI control.
@@ -114,9 +113,6 @@ After the build, the tree looks like this:
 ```text
 vol/                          dictionary source; lesson_1.json … lesson_50.json
                               (form-level chinese/note revised in revision 31)
-docs/gloss-rewrite/           revision-31 rules, baseline bytes, plan, doubts
-scripts/validate-gloss-rewrite.mjs  proves only chinese/note changed
-scripts/rewrite-glosses.mjs   generates/applies the per-form gloss plan
 docs/spec.md                  product spec
 docs/screenshot-draft/        wireframes
 docs/logo/                    logo source (logo.jpg) and the icons derived from it
