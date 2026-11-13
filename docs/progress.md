@@ -24,7 +24,8 @@ revision 32.
   current slot, so the card sliding in already carries its own class pill while
   the finger holds the drag; it no longer pops in at release.
 - Verification: `npm test` 35 files / **370 tests**; `npm run build`;
-  `node scripts/browser-check.mjs` **597 checks**, 0 failures. `vol/` untouched.
+  `node scripts/browser-check.mjs` **597 checks**, 0 failures (the seeded quiz
+  moves the count by one). `vol/` untouched.
 
 ## Revision 33 — the loading bar shows the download
 
@@ -70,7 +71,8 @@ revision 32.
   second download; whatever still fails stops boot naming the lesson and those
   bytes are never written. No per-lesson fallback file remains by decision.
 - `scripts/browser-check.mjs` follows the new URL and adds checks for one archive
-  request per fresh boot, zero per-lesson requests, `application/zip`, the
+  request per fresh boot, zero per-lesson requests, a binary
+  `application/octet-stream` response, the
   `PK\x03\x04` header with a 50-entry end record, `output/dict` containing only
   the archive, no dictionary content at `dict/lesson_1.json`, the two-abort
   failure path, and the single download in a private window. The loading

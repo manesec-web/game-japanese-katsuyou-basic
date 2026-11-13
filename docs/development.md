@@ -122,6 +122,11 @@ Current data: 50 lessons, 46 with verbs (1, 3, 8, 12 are empty), 386 words,
   and stores only matches in IndexedDB. The loading bar shows the streaming
   download in proportion to `Content-Length`, then holds at 100% while the
   extracted entries are verified (`src/ui/boot-progress.js`, pure).
+- **Picker rules**: `targetChips(from, to)` marks the 從 form's 到 chip as
+  locked and `toggleTarget(to, id, from)` refuses to add it, so the picker
+  renders a disabled chip with the dictionary's locked-chip look and a
+  viewport-clamped tooltip (`src/ui/tooltip.js`); the `.vue` files carry no
+  rule.
 - **Testing strategy**: rules are pure functions tested with Vitest under
   Node; browser APIs are injected fakes; the IndexedDB adapter is tested with
   `fake-indexeddb`; the view layer is walked by `browser-check.mjs` on

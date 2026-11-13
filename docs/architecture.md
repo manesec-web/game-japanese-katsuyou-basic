@@ -3,7 +3,8 @@
 ## Shape of the app
 
 One static Vue 3 single-page app built with Vite. No router library, no
-server, no network calls except fetching same-origin dictionary JSON.
+server, and the only network call is fetching the same-origin dictionary
+archive (`dict/vol.bin`).
 
 Three layers:
 
@@ -60,7 +61,7 @@ Command ids (complete list, from `AGENTS.md`):
 
 | id | Purpose |
 |---|---|
-| `app.boot` | Check IndexedDB against manifest, download missing files, verify hashes |
+| `app.boot` | Hash cached lessons, then download `dict/vol.bin` once, unzip with `unzipit`, verify each needed entry against its manifest hash and store only matches (one retry) |
 | `nav.go` | Switch screen; `params.screen` |
 | `lessons.toggle` | Toggle one lesson; error when the lesson has no verbs |
 | `lessons.selectAll` | Select all verb-bearing lessons, or clear when all selected |
@@ -258,7 +259,8 @@ change, not an engine or UI change.
   lists, quiz queue reconciliation, keyboard, grading, ruby, swipe/drag
   resolution, paging window, overscroll touch boundaries, scrollbar geometry
   and drag mapping, dropdown thumb timers/dragging, archive packing/unpacking,
-  the loading bar and result tallies: 34 files, 364 tests.
+  the loading bar, the 到 lock and tooltip clamp, and result tallies: 35 files,
+  370 tests.
 - Browser APIs (IndexedDB, fetch) are injected so tests use fakes; the IDB
   adapter itself is tested with `fake-indexeddb`. No browser is needed for
   `npm test`.
@@ -267,11 +269,20 @@ change, not an engine or UI change.
   home, all three pickers, reader, 單詞目錄, three settings screens, cards, quiz and
   completion, including IndexedDB reuse, the loading head and credit line, the
   first-card wall, reduced motion and the 550px breakpoint. It is a
-  separate command, not part of `npm test`. Its 565 checks on the final pass
-  cover the dictionary display-form filter and error-word hiding, live quiz
-  queue reconciliation, wrong-answer shake/red feedback, the settings' locked
-  chip and select-all state, both drawn dropdown thumbs (now mouse-draggable),
-  the framed desktop page thumb (now mouse-draggable with proximity reveal),
+  separate command, not part of `npm test`. Its 597 checks on the final pass
+  (the seeded quiz moves the count by one)
+  cover the single archive request (one `vol.bin` request, no per-lesson file,
+  a binary Content-Type, a 50-entry ZIP header, `output/dict` holding only the
+  archive), the streaming download bar (sampled from document start, never
+  moving backwards, and a CDP-throttled boot whose bar rises over hundreds of
+  milliseconds), the dictionary display-form filter and error-word hiding,
+  live quiz queue reconciliation, wrong-answer shake/red feedback, the settings'
+  locked chip and select-all state, the 到 chip lock (disabled, tooltip text,
+  全選 skipped, lock following 從, one-line 320px tooltip and a clamped
+  right-edge tooltip with no sideways scroll), the incoming card's own class
+  pill sampled before the pointer lifts, both drawn dropdown thumbs (now
+  mouse-draggable), and the framed desktop page thumb (now mouse-draggable with
+  proximity reveal).
 
 ## Styling and motion
 

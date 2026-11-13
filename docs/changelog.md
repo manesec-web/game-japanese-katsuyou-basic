@@ -1296,7 +1296,8 @@ after pointer or scroll activity. The broader 優化UI backlog stays pending.
   text, `var(--line)` border, 45% opacity, default cursor and no pointer
   events as `.chip--empty:disabled` in the picker. It overrides the filled
   `.chip--on` style but stays `aria-pressed="true"`; its wrapper continues to
-  show `這是預設顯示形式，必須顯示，不能取消` on hover or focus.
+  show `這是預設顯示形式，必須顯示，不能取消` on hover (the chip is disabled and
+  takes no focus).
 - **23c Dropdown thumb hints** (`src/ui/scrollbar.js`,
   `src/ui/element-thumb.js`): `LIST_SCROLLBAR.fadeDelay` is 2000ms while the
   page thumb stays 1000ms. `useElementThumb` reveals on attach (the list's
@@ -1744,7 +1745,8 @@ Requested as one UI pass:
   disabled button with the dictionary's locked-chip look (muted, transparent,
   divider border, 45% opacity, no hover accent, no pointer events) and the
   tooltip `這和「從」的形式相同，不能選為「到」` on the wrapper, revealed on hover
-  or focus. It stays `aria-pressed="false"` and 全選 skips it, so the old
+  (the disabled chip takes no focus, so hover is the only reveal). It stays
+  `aria-pressed="false"` and 全選 skips it, so the old
   silent exclusion became a visible, explained one. The tooltip wraps inside
   160px so a right-hand chip cannot widen the page.
 - **2 — naming.** The home button, the spec, `README.md` and every current doc
