@@ -1,0 +1,2990 @@
+{
+  "lesson_24": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "くれる",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "父は ときどき お菓子を くれる。",
+              "chinese": "父親有時會給我點心。",
+              "note": null
+            },
+            {
+              "japanese": "友だちは いつも 元気を くれる。",
+              "chinese": "朋友總是給我活力。",
+              "note": null
+            },
+            {
+              "japanese": "姉は 古い 本を くれる。",
+              "chinese": "姊姊會給我舊書。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "くれます",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 毎週 本を くれます。",
+              "chinese": "老師每週都給我書。",
+              "note": null
+            },
+            {
+              "japanese": "母は よく 野菜を くれます。",
+              "chinese": "母親常給我蔬菜。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 時々 お金を くれます。",
+              "chinese": "哥哥有時會給我錢。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "くれません",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "父は もう お菓子を くれません。",
+              "chinese": "父親已經不給我點心了。",
+              "note": null
+            },
+            {
+              "japanese": "妹は 私に 何も くれません。",
+              "chinese": "妹妹什麼都不給我。",
+              "note": null
+            },
+            {
+              "japanese": "店の 人は 袋を くれません。",
+              "chinese": "店員不給我袋子。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "くれました",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 友だちが 切符を くれました。",
+              "chinese": "昨天朋友給了我車票。",
+              "note": null
+            },
+            {
+              "japanese": "祖父は 先月 時計を くれました。",
+              "chinese": "祖父上個月給了我手錶。",
+              "note": null
+            },
+            {
+              "japanese": "山田さんは 地図を くれました。",
+              "chinese": "山田先生給了我地圖。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "くれませんでした",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "店の 人は お釣りを くれませんでした。",
+              "chinese": "店員沒有找我零錢。",
+              "note": null
+            },
+            {
+              "japanese": "友だちは 写真を くれませんでした。",
+              "chinese": "朋友沒有給我照片。",
+              "note": null
+            },
+            {
+              "japanese": "父は 先週 返事を くれませんでした。",
+              "chinese": "父親上週沒有回覆我。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "くれない",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "弟は なかなか ボールを くれない。",
+              "chinese": "弟弟遲遲不肯把球給我。",
+              "note": null
+            },
+            {
+              "japanese": "母は 今日は お小遣いを くれない。",
+              "chinese": "母親今天不給我零用錢。",
+              "note": null
+            },
+            {
+              "japanese": "友だちは 電話番号を くれない。",
+              "chinese": "朋友不給我電話號碼。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "くれた",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先輩が 古い 辞書を くれた。",
+              "chinese": "學長給了我舊辭典。",
+              "note": null
+            },
+            {
+              "japanese": "祖母は 手作りの お菓子を くれた。",
+              "chinese": "祖母給了我親手做的點心。",
+              "note": null
+            },
+            {
+              "japanese": "友だちが きのう 花を くれた。",
+              "chinese": "朋友昨天送了我花。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "くれなかった",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "店の 人は レシートを くれなかった。",
+              "chinese": "店員沒有給我收據。",
+              "note": null
+            },
+            {
+              "japanese": "父は 先週 お小遣いを くれなかった。",
+              "chinese": "父親上週沒有給我零用錢。",
+              "note": null
+            },
+            {
+              "japanese": "弟は パンを くれなかった。",
+              "chinese": "弟弟沒有分我麵包。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "くれて",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母が 傘を くれて、うれしかった。",
+              "chinese": "母親給我傘，我很高興。",
+              "note": null
+            },
+            {
+              "japanese": "父が お金を くれて、本を 買いました。",
+              "chinese": "父親給我錢，我買了書。",
+              "note": null
+            },
+            {
+              "japanese": "先輩が ノートを くれて、授業が よく わかりました。",
+              "chinese": "學長給我筆記，課就聽懂了。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "くれられる",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「くれられる」是錯的：「くれる」不用可能形，通常改說「もらえる」",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "くれよう",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は お菓子を くれようとした。",
+              "chinese": "母親正想把點心給我。",
+              "note": null
+            },
+            {
+              "japanese": "友だちは 切符を くれようとした。",
+              "chinese": "朋友正想把車票給我。",
+              "note": null
+            },
+            {
+              "japanese": "先輩は 傘を くれようとした。",
+              "chinese": "學長正想把傘給我。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "くれろ",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれろ",
+          "note": "字典有但是不常用：命令形日常多說「くれ」（例：本を くれ），「くれろ」少用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "弟は 「ボールを くれろ」と 兄に 言った。",
+              "chinese": "弟弟對哥哥說「把球給我」。",
+              "note": null
+            },
+            {
+              "japanese": "私は 友だちに 「パンを くれろ」と 言った。",
+              "chinese": "我對朋友說「給我麵包」。",
+              "note": null
+            },
+            {
+              "japanese": "男は 店の 人に 「袋を くれろ」と 叫んだ。",
+              "chinese": "那名男子對店員喊「給我袋子」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "くれれば",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "父が 車を くれれば、旅行に 行きます。",
+              "chinese": "父親給我車的話，我就去旅行。",
+              "note": null
+            },
+            {
+              "japanese": "友だちが 地図を くれれば、一人で 行けます。",
+              "chinese": "朋友給我地圖的話，我就能自己去。",
+              "note": null
+            },
+            {
+              "japanese": "先生が 時間を くれれば、質問します。",
+              "chinese": "老師給我時間的話，我就提問。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "くれられる",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「くれる」沒有普通的受身形，也沒有「くれられる」這種尊敬語。尊敬要說「くださる」。",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "くれさせる",
+          "group": "2",
+          "chinese": "給（我）; 給我",
+          "japanese": "くれさせる",
+          "note": "字典有但是不常用：「くれさせる」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 兄に お菓子を くれさせる。",
+              "chinese": "母親讓哥哥給我點心。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 友だちに ノートを くれさせる。",
+              "chinese": "老師讓朋友給我筆記。",
+              "note": null
+            },
+            {
+              "japanese": "父は 妹に 花を くれさせる。",
+              "chinese": "父親讓妹妹送我花。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "連れて行く",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていく",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "父は 日曜日に 弟を 公園へ 連れて行く。",
+              "chinese": "父親星期天帶弟弟去公園。",
+              "note": null
+            },
+            {
+              "japanese": "毎週 犬を 病院へ 連れて行く。",
+              "chinese": "每週帶狗去醫院。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 子どもを 学校へ 連れて行く。",
+              "chinese": "哥哥帶孩子去學校。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "連れて行きます",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていきます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "明日 妹を 動物園へ 連れて行きます。",
+              "chinese": "明天帶妹妹去動物園。",
+              "note": null
+            },
+            {
+              "japanese": "母は 私を 病院へ 連れて行きます。",
+              "chinese": "母親帶我去醫院。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生を 工場へ 連れて行きます。",
+              "chinese": "老師帶學生去工廠。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "連れて行きません",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていきません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 弟を 公園へ 連れて行きません。",
+              "chinese": "今天不帶弟弟去公園。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 犬を 外へ 連れて行きません。",
+              "chinese": "下雨天不帶狗外出。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私を 海へ 連れて行きません。",
+              "chinese": "父親不帶我去海邊。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "連れて行きました",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていきました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 妹を 映画館へ 連れて行きました。",
+              "chinese": "昨天帶妹妹去了電影院。",
+              "note": null
+            },
+            {
+              "japanese": "先週 母を 温泉へ 連れて行きました。",
+              "chinese": "上週帶母親去了溫泉。",
+              "note": null
+            },
+            {
+              "japanese": "日曜日に 子どもを 動物園へ 連れて行きました。",
+              "chinese": "星期天帶孩子去了動物園。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "連れて行きませんでした",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていきませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 弟を 学校へ 連れて行きませんでした。",
+              "chinese": "昨天沒有帶弟弟去學校。",
+              "note": null
+            },
+            {
+              "japanese": "雨だったので 犬を 公園へ 連れて行きませんでした。",
+              "chinese": "因為下雨，沒有帶狗去公園。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私を コンサートへ 連れて行きませんでした。",
+              "chinese": "父親沒有帶我去演唱會。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "連れて行かない",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていかない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 犬を 海へ 連れて行かない。",
+              "chinese": "今天不帶狗去海邊。",
+              "note": null
+            },
+            {
+              "japanese": "母は 弟を 夜の 公園へ 連れて行かない。",
+              "chinese": "母親不帶弟弟去夜裡的公園。",
+              "note": null
+            },
+            {
+              "japanese": "私は 子どもを 山へ 連れて行かない。",
+              "chinese": "我不帶孩子去山上。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "連れて行った",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 友だちを 祭りへ 連れて行った。",
+              "chinese": "昨天帶朋友去了廟會。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私を スキーに 連れて行った。",
+              "chinese": "父親帶我去滑雪。",
+              "note": null
+            },
+            {
+              "japanese": "姉は 犬を 川へ 連れて行った。",
+              "chinese": "姊姊帶狗去了河邊。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "連れて行かなかった",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていかなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 妹を 海へ 連れて行かなかった。",
+              "chinese": "昨天沒有帶妹妹去海邊。",
+              "note": null
+            },
+            {
+              "japanese": "父は 弟を 花見に 連れて行かなかった。",
+              "chinese": "父親沒有帶弟弟去賞花。",
+              "note": null
+            },
+            {
+              "japanese": "忙しかったので 犬を 病院へ 連れて行かなかった。",
+              "chinese": "因為很忙，沒有帶狗去醫院。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "連れて行って",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていって",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 弟を 公園へ 連れて行って、一緒に 遊んだ。",
+              "chinese": "母親帶弟弟去公園，一起玩了。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私を 病院へ 連れて行って くれました。",
+              "chinese": "父親帶我去了醫院。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 犬を 海へ 連れて行って、泳いだ。",
+              "chinese": "哥哥帶狗去海邊，一起游泳。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "連れて行ける",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていける",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "明日は 犬を 公園へ 連れて行ける。",
+              "chinese": "明天能帶狗去公園。",
+              "note": null
+            },
+            {
+              "japanese": "車が あるので 妹を 遠くへ 連れて行ける。",
+              "chinese": "因為有車，能帶妹妹去遠一點的地方。",
+              "note": null
+            },
+            {
+              "japanese": "休みの 日は 子どもを 海へ 連れて行ける。",
+              "chinese": "放假的日子能帶孩子去海邊。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "連れて行こう",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていこう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "午後から 弟を 公園へ 連れて行こう。",
+              "chinese": "下午帶弟弟去公園吧。",
+              "note": null
+            },
+            {
+              "japanese": "今度 犬を 山へ 連れて行こう。",
+              "chinese": "下次帶狗去山上吧。",
+              "note": null
+            },
+            {
+              "japanese": "夏休みに 妹を 海へ 連れて行こう。",
+              "chinese": "暑假帶妹妹去海邊吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "連れて行け",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていけ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "部長は 私に 「お客さんを 会場へ 連れて行け」と 言った。",
+              "chinese": "部長對我說了「帶客人去會場」。",
+              "note": null
+            },
+            {
+              "japanese": "母は 兄に 「弟を 病院へ 連れて行け」と 言った。",
+              "chinese": "母親對哥哥說「帶弟弟去醫院」。",
+              "note": null
+            },
+            {
+              "japanese": "コーチは 「子どもを グラウンドへ 連れて行け」と 叫んだ。",
+              "chinese": "教練喊著「帶孩子去球場」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "連れて行けば",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていけば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "犬を 公園へ 連れて行けば、喜びます。",
+              "chinese": "帶狗去公園的話，牠會很高興。",
+              "note": null
+            },
+            {
+              "japanese": "妹を 動物園へ 連れて行けば、楽しめます。",
+              "chinese": "帶妹妹去動物園的話，就能玩得開心。",
+              "note": null
+            },
+            {
+              "japanese": "子どもを 海へ 連れて行けば、元気に なります。",
+              "chinese": "帶孩子去海邊的話，孩子會很有精神。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "連れて行かれる",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていかれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は よく 父に 病院へ 連れて行かれる。",
+              "chinese": "我常被父親帶去醫院。",
+              "note": null
+            },
+            {
+              "japanese": "弟は 兄に 海へ 連れて行かれる。",
+              "chinese": "弟弟被哥哥帶去海邊。",
+              "note": null
+            },
+            {
+              "japanese": "犬は 母に 公園へ 連れて行かれる。",
+              "chinese": "狗被母親帶去公園。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "連れて行かせる",
+          "group": "0",
+          "chinese": "帶（某人）去; 帶去",
+          "japanese": "つれていかせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 兄に 弟を 公園へ 連れて行かせる。",
+              "chinese": "母親讓哥哥帶弟弟去公園。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に お客さんを 工場へ 連れて行かせる。",
+              "chinese": "老師讓學生帶客人去工廠。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私に 犬を 病院へ 連れて行かせる。",
+              "chinese": "父親讓我帶狗去醫院。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "連れて来る",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてくる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "父は 弟を 家へ 連れて来る。",
+              "chinese": "父親帶弟弟回家。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生を 教室へ 連れて来る。",
+              "chinese": "老師帶學生來教室。",
+              "note": null
+            },
+            {
+              "japanese": "母は 犬を 庭へ 連れて来る。",
+              "chinese": "母親帶狗來院子。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "連れて来ます",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてきます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "明日 妹を ここへ 連れて来ます。",
+              "chinese": "明天帶妹妹來這裡。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 友だちを 家へ 連れて来ます。",
+              "chinese": "哥哥帶朋友來家裡。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 新しい 学生を 教室へ 連れて来ます。",
+              "chinese": "老師帶新學生來教室。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "連れて来ません",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてきません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 弟を ここへ 連れて来ません。",
+              "chinese": "今天不帶弟弟來這裡。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 犬を 庭へ 連れて来ません。",
+              "chinese": "下雨天不帶狗來院子。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私を 会社へ 連れて来ません。",
+              "chinese": "父親不帶我去公司。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "連れて来ました",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてきました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 母を 病院へ 連れて来ました。",
+              "chinese": "昨天帶母親來了醫院。",
+              "note": null
+            },
+            {
+              "japanese": "先週 友だちを 家へ 連れて来ました。",
+              "chinese": "上週帶朋友來家裡。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 犬を 庭へ 連れて来ました。",
+              "chinese": "哥哥帶狗來了院子。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "連れて来ませんでした",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてきませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 弟を 教室へ 連れて来ませんでした。",
+              "chinese": "昨天沒有帶弟弟來教室。",
+              "note": null
+            },
+            {
+              "japanese": "忙しかったので 犬を 庭へ 連れて来ませんでした。",
+              "chinese": "因為很忙，沒有帶狗來院子。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私を 空港へ 連れて来ませんでした。",
+              "chinese": "父親沒有帶我去機場。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "連れて来ない",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてこない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 今日は 弟を 家へ 連れて来ない。",
+              "chinese": "母親今天不帶弟弟回家。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 犬を 庭へ 連れて来ない。",
+              "chinese": "哥哥不帶狗來院子。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私を 海へ 連れて来ない。",
+              "chinese": "父親不帶我來海邊。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "連れて来た",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてきた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 先輩を 家へ 連れて来た。",
+              "chinese": "昨天帶學長來家裡了。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私を 会社へ 連れて来た。",
+              "chinese": "父親帶我來了公司。",
+              "note": null
+            },
+            {
+              "japanese": "姉は 犬を 公園へ 連れて来た。",
+              "chinese": "姊姊帶狗來了公園。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "連れて来なかった",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてこなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 妹を 家へ 連れて来なかった。",
+              "chinese": "昨天沒有帶妹妹回家。",
+              "note": null
+            },
+            {
+              "japanese": "父は 弟を 教室へ 連れて来なかった。",
+              "chinese": "父親沒有帶弟弟來教室。",
+              "note": null
+            },
+            {
+              "japanese": "雨だったので 犬を 庭へ 連れて来なかった。",
+              "chinese": "因為下雨，沒有帶狗來院子。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "連れて来て",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてきて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 弟を 家へ 連れて来て、夕食を 作った。",
+              "chinese": "母親帶弟弟回家，做了晚飯。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 友だちを 連れて来て、部屋で 話した。",
+              "chinese": "哥哥帶朋友來，在房裡聊天。",
+              "note": null
+            },
+            {
+              "japanese": "父は 犬を 庭へ 連れて来て、遊んだ。",
+              "chinese": "父親帶狗來院子玩。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "連れて来られる",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてこられる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "明日は 妹を 教室へ 連れて来られる。",
+              "chinese": "明天能帶妹妹來教室。",
+              "note": null
+            },
+            {
+              "japanese": "車が あるので 犬を 遠くから 連れて来られる。",
+              "chinese": "因為有車，能帶狗從遠方來。",
+              "note": null
+            },
+            {
+              "japanese": "休みの 日に 子どもを 家へ 連れて来られる。",
+              "chinese": "放假的日子能帶孩子回家。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "連れて来よう",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてこよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "午後から 友だちを 家へ 連れて来よう。",
+              "chinese": "下午帶朋友來家裡吧。",
+              "note": null
+            },
+            {
+              "japanese": "今度 犬を 庭へ 連れて来よう。",
+              "chinese": "下次帶狗來院子吧。",
+              "note": null
+            },
+            {
+              "japanese": "明日は 弟を 教室へ 連れて来よう。",
+              "chinese": "明天帶弟弟來教室吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "連れて来い",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてこい",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "部長は 「お客さんを 会議室へ 連れて来い」と 言った。",
+              "chinese": "部長說了「帶客人來會議室」。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に 「新しい 人を 教室へ 連れて来い」と 言った。",
+              "chinese": "老師對學生說「帶新同學來教室」。",
+              "note": null
+            },
+            {
+              "japanese": "父は 「犬を 庭へ 連れて来い」と 言った。",
+              "chinese": "父親說「把狗帶到院子來」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "連れて来れば",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてくれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "妹を 教室へ 連れて来れば、喜びます。",
+              "chinese": "帶妹妹來教室的話，她會很高興。",
+              "note": null
+            },
+            {
+              "japanese": "犬を 庭へ 連れて来れば、安心します。",
+              "chinese": "帶狗來院子的話，牠會安心。",
+              "note": null
+            },
+            {
+              "japanese": "友だちを 家へ 連れて来れば、楽しく なります。",
+              "chinese": "帶朋友來家裡的話，會很熱鬧。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "連れて来られる",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてこられる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は よく 父に 会社へ 連れて来られる。",
+              "chinese": "我常被父親帶來公司。",
+              "note": null
+            },
+            {
+              "japanese": "弟は 兄に 家へ 連れて来られる。",
+              "chinese": "弟弟被哥哥帶回家。",
+              "note": null
+            },
+            {
+              "japanese": "犬は 母に 庭へ 連れて来られる。",
+              "chinese": "狗被母親帶到院子。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "連れて来させる",
+          "group": "0",
+          "chinese": "帶（某人）來; 帶來",
+          "japanese": "つれてこさせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 兄に 弟を 家へ 連れて来させる。",
+              "chinese": "母親讓哥哥帶弟弟回家。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に 友だちを 教室へ 連れて来させる。",
+              "chinese": "老師讓學生帶朋友來教室。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私に 犬を 庭へ 連れて来させる。",
+              "chinese": "父親讓我帶狗來院子。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "送る",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "毎年 友だちに 年賀状を 送る。",
+              "chinese": "每年寄賀年卡給朋友。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 外国の 友だちに 手紙を 送る。",
+              "chinese": "哥哥寄信給外國的朋友。",
+              "note": null
+            },
+            {
+              "japanese": "母は バスで 子どもを 学校へ 送る。",
+              "chinese": "母親用巴士送孩子去學校。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "送ります",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくります",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "明日 先生に メールを 送ります。",
+              "chinese": "明天寄郵件給老師。",
+              "note": null
+            },
+            {
+              "japanese": "父は 毎月 荷物を 送ります。",
+              "chinese": "父親每月寄包裹。",
+              "note": null
+            },
+            {
+              "japanese": "駅まで 友だちを 車で 送ります。",
+              "chinese": "開車送朋友到車站。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "送りません",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくりません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今年は 年賀状を 送りません。",
+              "chinese": "今年不寄賀年卡。",
+              "note": null
+            },
+            {
+              "japanese": "兄は まだ 手紙を 送りません。",
+              "chinese": "哥哥還沒寄信。",
+              "note": null
+            },
+            {
+              "japanese": "今日は 友だちを 駅まで 送りません。",
+              "chinese": "今天不送朋友到車站。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "送りました",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくりました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 友だちに 写真を 送りました。",
+              "chinese": "昨天寄了照片給朋友。",
+              "note": null
+            },
+            {
+              "japanese": "先週 お土産を 国へ 送りました。",
+              "chinese": "上週寄了土產回國。",
+              "note": null
+            },
+            {
+              "japanese": "父を 空港まで 送りました。",
+              "chinese": "送父親到了機場。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "送りませんでした",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくりませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "去年は 年賀状を 送りませんでした。",
+              "chinese": "去年沒有寄賀年卡。",
+              "note": null
+            },
+            {
+              "japanese": "忙しくて 兄に 手紙を 送りませんでした。",
+              "chinese": "因為忙，沒有寄信給哥哥。",
+              "note": null
+            },
+            {
+              "japanese": "母を 駅まで 送りませんでした。",
+              "chinese": "沒有送母親到車站。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "送らない",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくらない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は 今年 年賀状を 送らない。",
+              "chinese": "我今年不寄賀年卡。",
+              "note": null
+            },
+            {
+              "japanese": "弟は 友だちに 手紙を 送らない。",
+              "chinese": "弟弟不寄信給朋友。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私を 駅まで 送らない。",
+              "chinese": "父親不送我到車站。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "送った",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 母に 花を 送った。",
+              "chinese": "昨天送了花給母親。",
+              "note": null
+            },
+            {
+              "japanese": "先月 国へ 荷物を 送った。",
+              "chinese": "上個月寄了包裹回國。",
+              "note": null
+            },
+            {
+              "japanese": "夜 友だちを 家まで 送った。",
+              "chinese": "晚上送朋友回家。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "送らなかった",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくらなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "去年は 母に カードを 送らなかった。",
+              "chinese": "去年沒有寄卡片給母親。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 私に メールを 送らなかった。",
+              "chinese": "哥哥沒有寄郵件給我。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 友だちを 駅まで 送らなかった。",
+              "chinese": "下雨天沒有送朋友到車站。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "送って",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくって",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "友だちに 写真を 送って、返事を 待ちます。",
+              "chinese": "寄照片給朋友，等回信。",
+              "note": null
+            },
+            {
+              "japanese": "母を 駅まで 送って、家へ 帰りました。",
+              "chinese": "送母親到車站後回家了。",
+              "note": null
+            },
+            {
+              "japanese": "荷物を 送って、安心しました。",
+              "chinese": "寄了包裹，鬆了一口氣。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "送れる",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ネットで 手紙を 送れる。",
+              "chinese": "可以用網路寄信。",
+              "note": null
+            },
+            {
+              "japanese": "明日の 朝なら 荷物を 送れる。",
+              "chinese": "明天早上就能寄包裹。",
+              "note": null
+            },
+            {
+              "japanese": "車で 友だちを 送れる。",
+              "chinese": "能開車送朋友。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "送ろう",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくろう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今年は 年賀状を 送ろう。",
+              "chinese": "今年寄賀年卡吧。",
+              "note": null
+            },
+            {
+              "japanese": "帰りに 母を 駅まで 送ろう。",
+              "chinese": "回去時送母親到車站吧。",
+              "note": null
+            },
+            {
+              "japanese": "国へ 写真を 送ろう。",
+              "chinese": "把照片寄回國吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "送れ",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくれ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "課長は 「この 書類を 本社へ 送れ」と 言った。",
+              "chinese": "課長說了「把這份文件寄到總公司」。",
+              "note": null
+            },
+            {
+              "japanese": "母は 「早く 手紙を 送れ」と 言った。",
+              "chinese": "母親說「快點寄信」。",
+              "note": null
+            },
+            {
+              "japanese": "部長は 「お客さんを 駅まで 送れ」と 命じた。",
+              "chinese": "部長命令「送客人到車站」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "送れば",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "メールで 送れば、すぐに 届きます。",
+              "chinese": "用郵件寄的話，馬上就送到。",
+              "note": null
+            },
+            {
+              "japanese": "手紙を 送れば、喜びます。",
+              "chinese": "寄信的話，他會很高興。",
+              "note": null
+            },
+            {
+              "japanese": "車で 送れば、早く 着きます。",
+              "chinese": "開車送的話，很快就到。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "送られる",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくられる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 荷物は 外国へ 送られる。",
+              "chinese": "這個包裹被寄往國外。",
+              "note": null
+            },
+            {
+              "japanese": "手紙は 毎週 友だちに 送られる。",
+              "chinese": "信每週被寄給朋友。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは 親に 駅まで 送られる。",
+              "chinese": "孩子被父母送到車站。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "送らせる",
+          "group": "1",
+          "chinese": "送; 寄; 送行",
+          "japanese": "おくらせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 弟に 年賀状を 送らせる。",
+              "chinese": "母親讓弟弟寄賀年卡。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に 書類を 本社へ 送らせる。",
+              "chinese": "老師讓學生把文件寄到總公司。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私に 荷物を 国へ 送らせる。",
+              "chinese": "父親讓我寄包裹回國。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "紹介する",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいする",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は 友だちに 兄を 紹介する。",
+              "chinese": "我把哥哥介紹給朋友。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 新しい 学生を 紹介する。",
+              "chinese": "老師介紹新學生。",
+              "note": null
+            },
+            {
+              "japanese": "課長は 新入社員を 紹介する。",
+              "chinese": "課長介紹新進員工。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "紹介します",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいします",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きょう 皆さんに 私の 友だちを 紹介します。",
+              "chinese": "今天向大家介紹我的朋友。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 授業で 国を 紹介します。",
+              "chinese": "老師在課堂上介紹國家。",
+              "note": null
+            },
+            {
+              "japanese": "部長は 新しい 社員を 紹介します。",
+              "chinese": "部長介紹新員工。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "紹介しません",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいしません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は 彼の 名前を 紹介しません。",
+              "chinese": "我不介紹他的名字。",
+              "note": null
+            },
+            {
+              "japanese": "今日は 新しい 人を 紹介しません。",
+              "chinese": "今天不介紹新朋友。",
+              "note": null
+            },
+            {
+              "japanese": "先生は まだ ゲストを 紹介しません。",
+              "chinese": "老師還沒介紹來賓。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "紹介しました",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいしました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 母に 友だちを 紹介しました。",
+              "chinese": "昨天把朋友介紹給母親。",
+              "note": null
+            },
+            {
+              "japanese": "先週 社長に 新しい 社員を 紹介しました。",
+              "chinese": "上週向社長介紹了新員工。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 授業で 日本の 本を 紹介しました。",
+              "chinese": "老師在課堂上介紹了日本的書。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "紹介しませんでした",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいしませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 私の 友だちを 紹介しませんでした。",
+              "chinese": "昨天沒有介紹我的朋友。",
+              "note": null
+            },
+            {
+              "japanese": "先週 私は その 人を 紹介しませんでした。",
+              "chinese": "上週我沒有介紹那個人。",
+              "note": null
+            },
+            {
+              "japanese": "母は 先生に 私を 紹介しませんでした。",
+              "chinese": "母親沒有向老師介紹我。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "紹介しない",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいしない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 誰も 紹介しない。",
+              "chinese": "今天不介紹任何人。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 友だちを 紹介しない。",
+              "chinese": "哥哥不介紹朋友。",
+              "note": null
+            },
+            {
+              "japanese": "父は 会社の 人を 家では 紹介しない。",
+              "chinese": "父親在家裡不介紹公司的人。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "紹介した",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう パーティーで 友だちを 紹介した。",
+              "chinese": "昨天在派對上介紹了朋友。",
+              "note": null
+            },
+            {
+              "japanese": "先輩は 私を 社長に 紹介した。",
+              "chinese": "學長把我介紹給社長。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 新しい 本を 授業で 紹介した。",
+              "chinese": "老師在課堂上介紹了新書。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "紹介しなかった",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいしなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 友だちを 紹介しなかった。",
+              "chinese": "昨天沒有介紹朋友。",
+              "note": null
+            },
+            {
+              "japanese": "母は 私を 先生に 紹介しなかった。",
+              "chinese": "母親沒有把我介紹給老師。",
+              "note": null
+            },
+            {
+              "japanese": "兄は その 人を 私に 紹介しなかった。",
+              "chinese": "哥哥沒有把那個人介紹給我。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "紹介して",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいして",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "課長に 私を 紹介して ください。",
+              "chinese": "請向課長介紹我。",
+              "note": null
+            },
+            {
+              "japanese": "友だちを 家族に 紹介して、一緒に 食事しました。",
+              "chinese": "把朋友介紹給家人，一起吃了飯。",
+              "note": null
+            },
+            {
+              "japanese": "先生は ゲストを 紹介して、授業を 始めた。",
+              "chinese": "老師介紹來賓後開始上課。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "紹介できる",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいできる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "明日は 新しい 人を 紹介できる。",
+              "chinese": "明天能介紹新朋友。",
+              "note": null
+            },
+            {
+              "japanese": "この 店では 店主が 料理を 紹介できる。",
+              "chinese": "在這家店，老闆能介紹料理。",
+              "note": null
+            },
+            {
+              "japanese": "私は 日本語で 自分の 会社を 紹介できる。",
+              "chinese": "我能用日語介紹自己的公司。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "紹介しよう",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいしよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "みんなに この 本を 紹介しよう。",
+              "chinese": "向大家介紹這本書吧。",
+              "note": null
+            },
+            {
+              "japanese": "次に 私の 友だちを 紹介しよう。",
+              "chinese": "接下來介紹我的朋友吧。",
+              "note": null
+            },
+            {
+              "japanese": "会議で 新しい 計画を 紹介しよう。",
+              "chinese": "在會議上介紹新計畫吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "紹介しろ",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいしろ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "部長は 「お客さんを 紹介しろ」と 言った。",
+              "chinese": "部長說了「介紹客人」。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に 「この 本を 紹介しろ」と 言った。",
+              "chinese": "老師對學生說「介紹這本書」。",
+              "note": null
+            },
+            {
+              "japanese": "父は 「友だちを 紹介しろ」と 言った。",
+              "chinese": "父親說「介紹你的朋友」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "紹介すれば",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいすれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生に 紹介すれば、すぐに 友だちに なれます。",
+              "chinese": "向老師介紹的話，馬上就能成為朋友。",
+              "note": null
+            },
+            {
+              "japanese": "家族に 紹介すれば、みんな 喜びます。",
+              "chinese": "介紹給家人的話，大家會很高興。",
+              "note": null
+            },
+            {
+              "japanese": "会議で 紹介すれば、皆が 理解します。",
+              "chinese": "在會議上介紹的話，大家都會理解。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "紹介される",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいされる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は よく 先生に 友だちを 紹介される。",
+              "chinese": "我常被老師介紹朋友。",
+              "note": null
+            },
+            {
+              "japanese": "新しい 社員は 部長に 紹介される。",
+              "chinese": "新員工由部長介紹。",
+              "note": null
+            },
+            {
+              "japanese": "この 本は 授業で 先生に 紹介される。",
+              "chinese": "這本書在課堂上由老師介紹。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "紹介させる",
+          "group": "3",
+          "chinese": "介紹",
+          "japanese": "しょうかいさせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "部長は 私に 新しい 社員を 紹介させる。",
+              "chinese": "部長讓我介紹新員工。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に 本を 紹介させる。",
+              "chinese": "老師讓學生介紹書。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私に 友だちを 家族に 紹介させる。",
+              "chinese": "父親讓我向家人介紹朋友。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "案内する",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないする",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は 友だちに 町を 案内する。",
+              "chinese": "我帶朋友遊覽市區。",
+              "note": null
+            },
+            {
+              "japanese": "兄は お客さんに 工場を 案内する。",
+              "chinese": "哥哥帶客人參觀工廠。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に 学校を 案内する。",
+              "chinese": "老師帶學生參觀學校。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "案内します",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないします",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "明日 お客さんに 会社を 案内します。",
+              "chinese": "明天帶客人參觀公司。",
+              "note": null
+            },
+            {
+              "japanese": "私が 駅まで 案内します。",
+              "chinese": "我帶您到車站。",
+              "note": null
+            },
+            {
+              "japanese": "姉は 観光客に お寺を 案内します。",
+              "chinese": "姊姊帶觀光客參觀寺廟。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "案内しません",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないしません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は お客さんを 案内しません。",
+              "chinese": "今天不帶客人參觀。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 公園を 案内しません。",
+              "chinese": "下雨天不帶人遊公園。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 夜は 町を 案内しません。",
+              "chinese": "哥哥晚上不帶人逛市區。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "案内しました",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないしました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 友だちに 京都を 案内しました。",
+              "chinese": "昨天帶朋友遊了京都。",
+              "note": null
+            },
+            {
+              "japanese": "先週 お客さんを 会社で 案内しました。",
+              "chinese": "上週帶客人參觀了公司。",
+              "note": null
+            },
+            {
+              "japanese": "母は 私に 駅を 案内しました。",
+              "chinese": "母親帶我看了車站。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "案内しませんでした",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないしませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は お客さんを 工場で 案内しませんでした。",
+              "chinese": "昨天沒有帶客人參觀工廠。",
+              "note": null
+            },
+            {
+              "japanese": "雨だったので 町を 案内しませんでした。",
+              "chinese": "因為下雨，沒有帶人逛市區。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 私に お寺を 案内しませんでした。",
+              "chinese": "哥哥沒有帶我去寺廟。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "案内しない",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないしない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 誰も 町を 案内しない。",
+              "chinese": "今天不帶任何人逛市區。",
+              "note": null
+            },
+            {
+              "japanese": "私は 夜の 公園を 案内しない。",
+              "chinese": "我不帶人逛夜裡的公園。",
+              "note": null
+            },
+            {
+              "japanese": "父は 人を 家の 中で 案内しない。",
+              "chinese": "父親不帶人在家裡逛。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "案内した",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 友だちを 大学で 案内した。",
+              "chinese": "昨天帶朋友參觀了大學。",
+              "note": null
+            },
+            {
+              "japanese": "先輩は 私に 店を 案内した。",
+              "chinese": "學長帶我看了店。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 新しい 学生に 校舎を 案内した。",
+              "chinese": "老師帶新學生參觀了校舍。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "案内しなかった",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないしなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 友だちを 町で 案内しなかった。",
+              "chinese": "昨天沒有帶朋友逛市區。",
+              "note": null
+            },
+            {
+              "japanese": "兄は お客さんを 工場で 案内しなかった。",
+              "chinese": "哥哥沒有帶客人參觀工廠。",
+              "note": null
+            },
+            {
+              "japanese": "忙しかったので 母に 店を 案内しなかった。",
+              "chinese": "因為忙，沒有帶母親看店。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "案内して",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないして",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "駅まで 案内して ください。",
+              "chinese": "請帶我到車站。",
+              "note": null
+            },
+            {
+              "japanese": "友だちが 町を 案内して、お寺を 見ました。",
+              "chinese": "朋友帶我逛市區，看了寺廟。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生を 案内して、教室へ 行った。",
+              "chinese": "老師帶學生去了教室。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "案内できる",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないできる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は この 町を 案内できる。",
+              "chinese": "我能帶人遊這個市區。",
+              "note": null
+            },
+            {
+              "japanese": "明日は お客さんを 会社で 案内できる。",
+              "chinese": "明天能帶客人參觀公司。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 英語で 工場を 案内できる。",
+              "chinese": "哥哥能用英語帶人參觀工廠。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "案内しよう",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないしよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "午後 友だちに 町を 案内しよう。",
+              "chinese": "下午帶朋友逛市區吧。",
+              "note": null
+            },
+            {
+              "japanese": "今度 お客さんを 工場で 案内しよう。",
+              "chinese": "下次帶客人參觀工廠吧。",
+              "note": null
+            },
+            {
+              "japanese": "明日 新しい 学生に 学校を 案内しよう。",
+              "chinese": "明天帶新學生參觀學校吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "案内しろ",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないしろ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "部長は 「お客さんを 会議室へ 案内しろ」と 言った。",
+              "chinese": "部長說了「帶客人去會議室」。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 「学生を 図書館へ 案内しろ」と 言った。",
+              "chinese": "老師說了「帶學生去圖書館」。",
+              "note": null
+            },
+            {
+              "japanese": "母は 「友だちを 部屋へ 案内しろ」と 言った。",
+              "chinese": "母親說了「帶朋友去房間」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "案内すれば",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないすれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私が 案内すれば、すぐに 着きます。",
+              "chinese": "我帶路的話，馬上就到。",
+              "note": null
+            },
+            {
+              "japanese": "先生が 案内すれば、学生は 安心します。",
+              "chinese": "老師帶路的話，學生會安心。",
+              "note": null
+            },
+            {
+              "japanese": "友だちが 案内すれば、道が わかります。",
+              "chinese": "朋友帶路的話，就知道路。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "案内される",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないされる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は 兄に 町を 案内される。",
+              "chinese": "我被哥哥帶去逛市區。",
+              "note": null
+            },
+            {
+              "japanese": "お客さんは 部長に 工場を 案内される。",
+              "chinese": "客人由部長帶去參觀工廠。",
+              "note": null
+            },
+            {
+              "japanese": "学生は 先生に 学校を 案内される。",
+              "chinese": "學生由老師帶去參觀學校。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "案内させる",
+          "group": "3",
+          "chinese": "帶路; 引路; 導覽",
+          "japanese": "あんないさせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "部長は 私に お客さんを 案内させる。",
+              "chinese": "部長讓我帶客人參觀。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に 図書館を 案内させる。",
+              "chinese": "老師讓學生帶路去圖書館。",
+              "note": null
+            },
+            {
+              "japanese": "母は 私に 友だちを 町で 案内させる。",
+              "chinese": "母親讓我帶朋友逛市區。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "説明する",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいする",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 文法を 説明する。",
+              "chinese": "老師說明文法。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 使い方を 説明する。",
+              "chinese": "哥哥說明使用方法。",
+              "note": null
+            },
+            {
+              "japanese": "私は 母に 計画を 説明する。",
+              "chinese": "我向母親說明計畫。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "説明します",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいします",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "これから ルールを 説明します。",
+              "chinese": "接下來說明規則。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 地図を 見て 道を 説明します。",
+              "chinese": "老師看著地圖說明路怎麼走。",
+              "note": null
+            },
+            {
+              "japanese": "部長は 会議で 計画を 説明します。",
+              "chinese": "部長在會議上說明計畫。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "説明しません",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいしません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は その 話を 説明しません。",
+              "chinese": "今天不說明那件事。",
+              "note": null
+            },
+            {
+              "japanese": "先生は まだ 答えを 説明しません。",
+              "chinese": "老師還沒說明答案。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 私に 理由を 説明しません。",
+              "chinese": "哥哥不向我說明理由。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "説明しました",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいしました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 先生に 計画を 説明しました。",
+              "chinese": "昨天向老師說明了計畫。",
+              "note": null
+            },
+            {
+              "japanese": "母は 私に 料理の 作り方を 説明しました。",
+              "chinese": "母親向我說明了做菜方法。",
+              "note": null
+            },
+            {
+              "japanese": "部長は 会議で 新しい 仕事を 説明しました。",
+              "chinese": "部長在會議上說明了新工作。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "説明しませんでした",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいしませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 理由を 説明しませんでした。",
+              "chinese": "昨天沒有說明理由。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 使い方を 説明しませんでした。",
+              "chinese": "哥哥沒有說明使用方法。",
+              "note": null
+            },
+            {
+              "japanese": "先生は テストの 結果を 説明しませんでした。",
+              "chinese": "老師沒有說明考試結果。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "説明しない",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいしない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 詳しい ことを 説明しない。",
+              "chinese": "今天不說明細節。",
+              "note": null
+            },
+            {
+              "japanese": "弟は まだ 道を 説明しない。",
+              "chinese": "弟弟還不說明路怎麼走。",
+              "note": null
+            },
+            {
+              "japanese": "父は 家では 仕事を 説明しない。",
+              "chinese": "父親在家裡不說明工作。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "説明した",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 先生が 文法を 説明した。",
+              "chinese": "昨天老師說明了文法。",
+              "note": null
+            },
+            {
+              "japanese": "姉は 私に 地図を 見て 道を 説明した。",
+              "chinese": "姊姊看著地圖向我說明路怎麼走。",
+              "note": null
+            },
+            {
+              "japanese": "先輩は 仕事の やり方を 説明した。",
+              "chinese": "學長說明了工作的做法。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "説明しなかった",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいしなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 私に ルールを 説明しなかった。",
+              "chinese": "母親沒有向我說明規則。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 値段を 説明しなかった。",
+              "chinese": "哥哥沒有說明價格。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 文法を 説明しなかった。",
+              "chinese": "老師沒有說明文法。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "説明して",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいして",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生が 文法を 説明して、学生は 理解しました。",
+              "chinese": "老師說明了文法，學生就懂了。",
+              "note": null
+            },
+            {
+              "japanese": "母が 道を 説明して、私は 一人で 行きました。",
+              "chinese": "母親說明了路，我就自己去了。",
+              "note": null
+            },
+            {
+              "japanese": "部長が 計画を 説明して、会議が 終わった。",
+              "chinese": "部長說明了計畫，會議就結束了。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "説明できる",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいできる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は この 問題を 説明できる。",
+              "chinese": "我能說明這個問題。",
+              "note": null
+            },
+            {
+              "japanese": "先生は どんな 文法も 説明できる。",
+              "chinese": "老師任何文法都能說明。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 英語で 使い方を 説明できる。",
+              "chinese": "哥哥能用英語說明使用方法。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "説明しよう",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいしよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "これから 計画を 説明しよう。",
+              "chinese": "接下來說明計畫吧。",
+              "note": null
+            },
+            {
+              "japanese": "会議で 新しい ルールを 説明しよう。",
+              "chinese": "在會議上說明新規則吧。",
+              "note": null
+            },
+            {
+              "japanese": "明日 先生に 理由を 説明しよう。",
+              "chinese": "明天向老師說明理由吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "説明しろ",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいしろ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "部長は 「計画を 説明しろ」と 言った。",
+              "chinese": "部長說了「說明計畫」。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に 「理由を 説明しろ」と 言った。",
+              "chinese": "老師對學生說「說明理由」。",
+              "note": null
+            },
+            {
+              "japanese": "父は 「使い方を 説明しろ」と 言った。",
+              "chinese": "父親說「說明使用方法」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "説明すれば",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいすれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生が 説明すれば、学生は すぐに わかります。",
+              "chinese": "老師說明的話，學生馬上就懂。",
+              "note": null
+            },
+            {
+              "japanese": "地図で 説明すれば、道が 簡単です。",
+              "chinese": "用地圖說明的話，路就簡單了。",
+              "note": null
+            },
+            {
+              "japanese": "母が 説明すれば、弟も 作れます。",
+              "chinese": "母親說明的話，弟弟也會做。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "説明される",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいされる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は 先生に 文法を 説明される。",
+              "chinese": "我被老師說明了文法。",
+              "note": null
+            },
+            {
+              "japanese": "新しい ルールは 部長に 説明される。",
+              "chinese": "新規則由部長說明。",
+              "note": null
+            },
+            {
+              "japanese": "計画は 会議で 兄に 説明される。",
+              "chinese": "計畫在會議上由哥哥說明。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "説明させる",
+          "group": "3",
+          "chinese": "說明; 解釋",
+          "japanese": "せつめいさせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 文法を 説明させる。",
+              "chinese": "老師讓學生說明文法。",
+              "note": null
+            },
+            {
+              "japanese": "部長は 私に 計画を 説明させる。",
+              "chinese": "部長讓我說明計畫。",
+              "note": null
+            },
+            {
+              "japanese": "母は 私に 作り方を 説明させる。",
+              "chinese": "母親讓我說明做法。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "入れる",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は コーヒーに 砂糖を 入れる。",
+              "chinese": "母親在咖啡裡加糖。",
+              "note": null
+            },
+            {
+              "japanese": "私は カップに ミルクを 入れる。",
+              "chinese": "我在杯子裡加牛奶。",
+              "note": null
+            },
+            {
+              "japanese": "兄は お茶に レモンを 入れる。",
+              "chinese": "哥哥在茶裡加檸檬。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "入れます",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "毎朝 コーヒーに 砂糖を 入れます。",
+              "chinese": "每天早上在咖啡裡加糖。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 紅茶に ミルクを 入れます。",
+              "chinese": "老師在紅茶裡加牛奶。",
+              "note": null
+            },
+            {
+              "japanese": "私は お湯を カップに 入れます。",
+              "chinese": "我把熱水倒進杯子。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "入れません",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は コーヒーに 砂糖を 入れません。",
+              "chinese": "我不在咖啡裡加糖。",
+              "note": null
+            },
+            {
+              "japanese": "母は お茶に ミルクを 入れません。",
+              "chinese": "母親不在茶裡加牛奶。",
+              "note": null
+            },
+            {
+              "japanese": "兄は スープに 塩を 入れません。",
+              "chinese": "哥哥不在湯裡加鹽。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "入れました",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう コーヒーに 砂糖を 入れました。",
+              "chinese": "昨天在咖啡裡加了糖。",
+              "note": null
+            },
+            {
+              "japanese": "母は 紅茶に レモンを 入れました。",
+              "chinese": "母親在紅茶裡加了檸檬。",
+              "note": null
+            },
+            {
+              "japanese": "私は スープに 野菜を 入れました。",
+              "chinese": "我在湯裡加了蔬菜。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "入れませんでした",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は コーヒーに ミルクを 入れませんでした。",
+              "chinese": "今天沒有在咖啡裡加牛奶。",
+              "note": null
+            },
+            {
+              "japanese": "母は スープに 塩を 入れませんでした。",
+              "chinese": "母親沒有在湯裡加鹽。",
+              "note": null
+            },
+            {
+              "japanese": "私は お茶に 砂糖を 入れませんでした。",
+              "chinese": "我沒有在茶裡加糖。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "入れない",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今夜は コーヒーに 砂糖を 入れない。",
+              "chinese": "今晚不在咖啡裡加糖。",
+              "note": null
+            },
+            {
+              "japanese": "弟は お茶に レモンを 入れない。",
+              "chinese": "弟弟不在茶裡加檸檬。",
+              "note": null
+            },
+            {
+              "japanese": "父は スープに 塩を 入れない。",
+              "chinese": "父親不在湯裡加鹽。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "入れた",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 紅茶に ミルクを 入れた。",
+              "chinese": "昨天在紅茶裡加了牛奶。",
+              "note": null
+            },
+            {
+              "japanese": "母は カップに お湯を 入れた。",
+              "chinese": "母親把熱水倒進了杯子。",
+              "note": null
+            },
+            {
+              "japanese": "兄は スープに 肉を 入れた。",
+              "chinese": "哥哥在湯裡加了肉。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "入れなかった",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は コーヒーに 砂糖を 入れなかった。",
+              "chinese": "昨天沒有在咖啡裡加糖。",
+              "note": null
+            },
+            {
+              "japanese": "母は お茶に レモンを 入れなかった。",
+              "chinese": "母親沒有在茶裡加檸檬。",
+              "note": null
+            },
+            {
+              "japanese": "私は スープに 野菜を 入れなかった。",
+              "chinese": "我沒有在湯裡加蔬菜。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "入れて",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "コーヒーに 砂糖を 入れて、飲みました。",
+              "chinese": "在咖啡裡加了糖後喝了。",
+              "note": null
+            },
+            {
+              "japanese": "母は スープに 野菜を 入れて、煮ました。",
+              "chinese": "母親在湯裡加了蔬菜後煮了。",
+              "note": null
+            },
+            {
+              "japanese": "私は カップに お湯を 入れて、お茶を 作りました。",
+              "chinese": "我把熱水倒進杯子，泡了茶。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "入れられる",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれられる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この カップには コーヒーが 入れられる。",
+              "chinese": "這個杯子可以裝咖啡。",
+              "note": null
+            },
+            {
+              "japanese": "冷蔵庫に 牛乳を 入れられる。",
+              "chinese": "可以把牛奶放進冰箱。",
+              "note": null
+            },
+            {
+              "japanese": "この 袋には お菓子を 入れられる。",
+              "chinese": "這個袋子可以裝點心。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "入れよう",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "コーヒーに 砂糖を 入れよう。",
+              "chinese": "在咖啡裡加糖吧。",
+              "note": null
+            },
+            {
+              "japanese": "スープに 野菜を 入れよう。",
+              "chinese": "在湯裡加蔬菜吧。",
+              "note": null
+            },
+            {
+              "japanese": "お茶に レモンを 入れよう。",
+              "chinese": "在茶裡加檸檬吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "入れろ",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれろ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 「コーヒーに 砂糖を 入れろ」と 言った。",
+              "chinese": "母親說了「在咖啡裡加糖」。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 「カップに お湯を 入れろ」と 言った。",
+              "chinese": "哥哥說了「把熱水倒進杯子」。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 「スープに 塩を 入れろ」と 言った。",
+              "chinese": "老師說了「在湯裡加鹽」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "入れれば",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "砂糖を 入れれば、コーヒーが 甘く なります。",
+              "chinese": "加糖的話，咖啡會變甜。",
+              "note": null
+            },
+            {
+              "japanese": "ミルクを 入れれば、お茶が おいしく なります。",
+              "chinese": "加牛奶的話，茶會變好喝。",
+              "note": null
+            },
+            {
+              "japanese": "野菜を 入れれば、スープが おいしく なります。",
+              "chinese": "加蔬菜的話，湯會變好喝。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "入れられる",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれられる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "砂糖は コーヒーに 入れられる。",
+              "chinese": "糖被加進咖啡裡。",
+              "note": null
+            },
+            {
+              "japanese": "ミルクは お茶に 入れられる。",
+              "chinese": "牛奶被加進茶裡。",
+              "note": null
+            },
+            {
+              "japanese": "野菜は スープに 入れられる。",
+              "chinese": "蔬菜被加進湯裡。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "入れさせる",
+          "group": "2",
+          "chinese": "沖; 泡（咖啡）; 放入",
+          "japanese": "いれさせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 私に コーヒーに 砂糖を 入れさせる。",
+              "chinese": "母親讓我在咖啡裡加糖。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に スープに 塩を 入れさせる。",
+              "chinese": "老師讓學生在湯裡加鹽。",
+              "note": null
+            },
+            {
+              "japanese": "父は 弟に カップに お湯を 入れさせる。",
+              "chinese": "父親讓弟弟把熱水倒進杯子。",
+              "note": null
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

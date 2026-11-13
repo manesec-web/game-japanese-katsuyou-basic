@@ -30,7 +30,7 @@
         "masu-form": {
           "vol": "行きます",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "去; 前往（禮貌體）",
           "japanese": "いきます",
           "note": null,
           "error_usage": false,
@@ -55,7 +55,7 @@
         "masu-form-negative": {
           "vol": "行きません",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "不去（禮貌體）",
           "japanese": "いきません",
           "note": null,
           "error_usage": false,
@@ -80,7 +80,7 @@
         "masu-form-past": {
           "vol": "行きました",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "去了（禮貌體）",
           "japanese": "いきました",
           "note": null,
           "error_usage": false,
@@ -105,7 +105,7 @@
         "masu-form-past-negative": {
           "vol": "行きませんでした",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "（當時）沒有去（禮貌體）",
           "japanese": "いきませんでした",
           "note": null,
           "error_usage": false,
@@ -130,7 +130,7 @@
         "nai-form": {
           "vol": "行かない",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "不去（普通體）",
           "japanese": "いかない",
           "note": null,
           "error_usage": false,
@@ -155,7 +155,7 @@
         "ta-form": {
           "vol": "行った",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "去了（普通體）",
           "japanese": "いった",
           "note": null,
           "error_usage": false,
@@ -180,7 +180,7 @@
         "nakatta-form": {
           "vol": "行かなかった",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "（當時）沒有去（普通體）",
           "japanese": "いかなかった",
           "note": null,
           "error_usage": false,
@@ -205,7 +205,7 @@
         "te-form": {
           "vol": "行って",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "去，然後…；去，而…",
           "japanese": "いって",
           "note": null,
           "error_usage": false,
@@ -230,7 +230,7 @@
         "potential-form": {
           "vol": "行ける",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "能去；可以去",
           "japanese": "いける",
           "note": null,
           "error_usage": false,
@@ -255,7 +255,7 @@
         "volitional-form": {
           "vol": "行こう",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "去吧；打算去",
           "japanese": "いこう",
           "note": null,
           "error_usage": false,
@@ -280,7 +280,7 @@
         "imperative-form": {
           "vol": "行け",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "快去！",
           "japanese": "いけ",
           "note": null,
           "error_usage": false,
@@ -305,7 +305,7 @@
         "conditional-form": {
           "vol": "行けば",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "如果去，就…",
           "japanese": "いけば",
           "note": null,
           "error_usage": false,
@@ -330,7 +330,7 @@
         "passive-form": {
           "vol": "行かれる",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "（弟弟等）搶先去／擅自去，使自己受影響／困擾；不是「被去」",
           "japanese": "いかれる",
           "note": null,
           "error_usage": false,
@@ -355,7 +355,7 @@
         "causative-form": {
           "vol": "行かせる",
           "group": "0",
-          "chinese": "去; 前往",
+          "chinese": "讓…去；使…去",
           "japanese": "いかせる",
           "note": null,
           "error_usage": false,
@@ -407,7 +407,7 @@
         "masu-form": {
           "vol": "来ます",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "來; 到來（禮貌體）",
           "japanese": "きます",
           "note": null,
           "error_usage": false,
@@ -432,7 +432,7 @@
         "masu-form-negative": {
           "vol": "来ません",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "不來（禮貌體）",
           "japanese": "きません",
           "note": null,
           "error_usage": false,
@@ -457,7 +457,7 @@
         "masu-form-past": {
           "vol": "来ました",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "來了（禮貌體）",
           "japanese": "きました",
           "note": null,
           "error_usage": false,
@@ -482,7 +482,7 @@
         "masu-form-past-negative": {
           "vol": "来ませんでした",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "（當時）沒有來（禮貌體）",
           "japanese": "きませんでした",
           "note": null,
           "error_usage": false,
@@ -507,7 +507,7 @@
         "nai-form": {
           "vol": "来ない",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "不來（普通體）",
           "japanese": "こない",
           "note": null,
           "error_usage": false,
@@ -532,7 +532,7 @@
         "ta-form": {
           "vol": "来た",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "來了（普通體）",
           "japanese": "きた",
           "note": null,
           "error_usage": false,
@@ -557,7 +557,7 @@
         "nakatta-form": {
           "vol": "来なかった",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "（當時）沒有來（普通體）",
           "japanese": "こなかった",
           "note": null,
           "error_usage": false,
@@ -582,7 +582,7 @@
         "te-form": {
           "vol": "来て",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "來，然後…；來，而…",
           "japanese": "きて",
           "note": null,
           "error_usage": false,
@@ -607,7 +607,7 @@
         "potential-form": {
           "vol": "来られる",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "能來；可以來",
           "japanese": "こられる",
           "note": null,
           "error_usage": false,
@@ -632,7 +632,7 @@
         "volitional-form": {
           "vol": "来よう",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "來吧；打算來",
           "japanese": "こよう",
           "note": null,
           "error_usage": false,
@@ -657,7 +657,7 @@
         "imperative-form": {
           "vol": "来い",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "快來！",
           "japanese": "こい",
           "note": null,
           "error_usage": false,
@@ -682,7 +682,7 @@
         "conditional-form": {
           "vol": "来れば",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "如果來，就…",
           "japanese": "くれば",
           "note": null,
           "error_usage": false,
@@ -707,7 +707,7 @@
         "passive-form": {
           "vol": "来られる",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "（客人等）偏在忙的時候來，使自己受影響／困擾；不是「被來」",
           "japanese": "こられる",
           "note": null,
           "error_usage": false,
@@ -732,7 +732,7 @@
         "causative-form": {
           "vol": "来させる",
           "group": "0",
-          "chinese": "來; 到來",
+          "chinese": "讓…來；使…來",
           "japanese": "こさせる",
           "note": null,
           "error_usage": false,
@@ -784,7 +784,7 @@
         "masu-form": {
           "vol": "帰ります",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "回家; 回去（禮貌體）",
           "japanese": "かえります",
           "note": null,
           "error_usage": false,
@@ -809,7 +809,7 @@
         "masu-form-negative": {
           "vol": "帰りません",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "不回家（禮貌體）",
           "japanese": "かえりません",
           "note": null,
           "error_usage": false,
@@ -834,7 +834,7 @@
         "masu-form-past": {
           "vol": "帰りました",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "回家了（禮貌體）",
           "japanese": "かえりました",
           "note": null,
           "error_usage": false,
@@ -859,7 +859,7 @@
         "masu-form-past-negative": {
           "vol": "帰りませんでした",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "（當時）沒有回家（禮貌體）",
           "japanese": "かえりませんでした",
           "note": null,
           "error_usage": false,
@@ -884,7 +884,7 @@
         "nai-form": {
           "vol": "帰らない",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "不回家（普通體）",
           "japanese": "かえらない",
           "note": null,
           "error_usage": false,
@@ -909,7 +909,7 @@
         "ta-form": {
           "vol": "帰った",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "回家了（普通體）",
           "japanese": "かえった",
           "note": null,
           "error_usage": false,
@@ -934,7 +934,7 @@
         "nakatta-form": {
           "vol": "帰らなかった",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "（當時）沒有回家（普通體）",
           "japanese": "かえらなかった",
           "note": null,
           "error_usage": false,
@@ -959,7 +959,7 @@
         "te-form": {
           "vol": "帰って",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "回家，然後…；回家，而…",
           "japanese": "かえって",
           "note": null,
           "error_usage": false,
@@ -984,7 +984,7 @@
         "potential-form": {
           "vol": "帰れる",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "能回家；可以回家",
           "japanese": "かえれる",
           "note": null,
           "error_usage": false,
@@ -1009,7 +1009,7 @@
         "volitional-form": {
           "vol": "帰ろう",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "回家吧；打算回家",
           "japanese": "かえろう",
           "note": null,
           "error_usage": false,
@@ -1034,7 +1034,7 @@
         "imperative-form": {
           "vol": "帰れ",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "快回家！",
           "japanese": "かえれ",
           "note": null,
           "error_usage": false,
@@ -1059,7 +1059,7 @@
         "conditional-form": {
           "vol": "帰れば",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "如果回家，就…",
           "japanese": "かえれば",
           "note": null,
           "error_usage": false,
@@ -1084,7 +1084,7 @@
         "passive-form": {
           "vol": "帰られる",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "（弟弟等）先回去，使自己受影響／困擾；不是「被回去」",
           "japanese": "かえられる",
           "note": null,
           "error_usage": false,
@@ -1109,7 +1109,7 @@
         "causative-form": {
           "vol": "帰らせる",
           "group": "0",
-          "chinese": "回家; 回去",
+          "chinese": "讓…回家；使…回家",
           "japanese": "かえらせる",
           "note": null,
           "error_usage": false,

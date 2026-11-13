@@ -146,7 +146,7 @@ describe('shiftWindow', () => {
 describe('the paging commands keep their ids and params', () => {
   it('names the four paging commands with no params', () => {
     const paging = [...cardSpecs(), ...dictSpecs()]
-      .filter((spec) => spec.id !== 'card.flip')
+      .filter((spec) => spec.id !== 'card.flip' && spec.id !== 'dict.goto')
       .map((spec) => ({ id: spec.id, params: spec.params }))
     expect(paging).toEqual([
       { id: 'card.next', params: [] },

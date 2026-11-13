@@ -20,8 +20,10 @@ Each file has this shape:
           "group": "1",
           "chinese": "站; 站立",
           "japanese": "たつ",
+          "note": null,
+          "error_usage": false,
           "sentence": [
-            { "japanese": "……", "chinese": "……" }
+            { "japanese": "……", "chinese": "……", "note": null }
           ]
         }
       }
@@ -50,7 +52,15 @@ A verb object has exactly these 15 keys, in this order:
 | `passive-form` | 受身形 |
 | `causative-form` | 使役形 |
 
-Every form has `vol` (the written word), `group`, `chinese`, `japanese` (the reading), and `sentence` (three pairs of Japanese and Chinese). A form may also carry `note` — a usage note, or the explanation of a misuse — and `error_usage`, a boolean that marks a form kept for conjugation practice only: such a form has no sentences, and its `note` says why the form is wrong. A sentence may carry its own `note` beside its Japanese and Chinese lines. All 15 forms of one verb share the same `group`.
+Every form has `vol` (the written word), `group`, `chinese`, `japanese` (the reading), `note`, `error_usage`, and `sentence` (three pairs of Japanese and Chinese). All 15 forms of one verb share the same `group`. A sentence may carry its own `note` beside its Japanese and Chinese lines.
+
+`chinese` is a **per-form Chinese gloss**, not a copy of the dictionary form's meaning. It states what that conjugated form itself means in natural Traditional Chinese: a negative form carries the negation, a past form carries the tense, a て形 carries the continuative/causal sense, and potential, volitional, imperative, conditional, passive and causative forms carry their own grammar. Polite and plain pairs are distinguished by a short `（禮貌體）` / `（普通體）` label because Chinese has no equivalent inflection. For example, `違う` is `不同；不對；不是`, but its `masu-form-negative` `違いません` is `沒有不同；相同（禮貌體）` and its `te-form` `違って` is `（因為）不同，而…；不同，接著…`. Where the Japanese form is not the textbook pattern, the gloss follows that form's own example sentences and usage note: adversative passive is written as 迷惑受身, honorific passive as `（尊敬語）`, concessive volitional as `就算…也`, and literary optatives as 文語祈願用法. A form marked `error_usage` uses the single marker `（非自然日語；僅供轉詞練習，無自然中文譯義）` — it does not invent a translation for Japanese that is not natural. The gloss is printed exactly as stored: its `；`, `…`, parentheses and explanatory suffixes are part of the text.
+
+`note` is a corrected usage explanation for beginners. It says when a form is rare (`字典有但是不常用` / `日常不用`), when a form is an honorific, an adversative passive, a concessive or a spontaneous use rather than its literal-looking meaning, and why an `error_usage` form is wrong. Every `error_usage` note begins `錯誤詞語，僅供轉詞練習：`. A note whose text denies a meaning (`不是「X」`) is never contradicted by that form's `chinese`. A rare-form note is accompanied by `（此形日常少用）` in that form's gloss; a note about the whole lexeme (the same note on all 15 forms, for example 造る vs 作る) is not.
+
+`error_usage`, a boolean, marks a form kept for conjugation practice only: such a form has no sentences, and its `note` says why the form is wrong. There are 191 such forms in `vol/`. They are still drawn with the double strikethrough and the `錯誤單詞` tag; `跳過錯誤的單詞` still hides them. Their `chinese` is the marker above, not a usable translation.
+
+`sentence` is unchanged by the gloss rewrite: the Japanese line, its Chinese translation and any sentence `note` are the original text. Only the form-level `chinese` and `note` were revised. Every usable form still contains its own `vol` inside at least one of its sentences, so the purple highlight works.
 
 `group` labels:
 
@@ -61,7 +71,7 @@ Every form has `vol` (the written word), `group`, `chinese`, `japanese` (the rea
 | `2` | 2類動詞 |
 | `3` | 3類動詞 |
 
-Lessons 1, 3, 8, and 12 have an empty `vols` array. Those four lessons are the gray “no verb” chips in the wireframe and cannot be selected. The other lessons hold 386 verbs in total.
+Lessons 1, 3, 8, and 12 have an empty `vols` array. Those four lessons are the gray “no verb” chips in the wireframe and cannot be selected. The other lessons hold 386 verbs in total: 5,790 forms, 5,599 usable forms, 191 `error_usage` forms and 16,797 Japanese/Chinese sentence pairs.
 
 `japanese` is the reading of that form. It has no spaces. Most values are hiragana. Some include katakana (for example `コピーする`) and the long-vowel mark `ー`.
 
@@ -87,7 +97,7 @@ Progress is finished lessons divided by 50. The loading text is `Loading ...`.
 
 State machine:
 
-`loading` → `home` → `picker` → (`reader` | `card` | `quiz`). Those last three can open `settings` and return.
+`loading` → `home` → `picker` → (`reader` | `card` | `quiz`). Those last three can open `settings` and return, and the dictionary reader can also open `toc` (單詞目錄) and return.
 
 A reload starts at `loading` again. When the dictionary is already in IndexedDB, boot only checks hashes, and the progress bar still runs.
 
@@ -151,15 +161,15 @@ Each mode remembers its own lessons and form choices under the `localStorage` ke
 
 ### Dictionary reader
 
-Top: back (to the picker), the title `學習（n/total）`, and a settings gear.
+Top: back (to the picker), the title `學習（n/total）`, a 目錄 button, and a settings gear. The two icon buttons sit at the right edge in that order: 目錄 first, then the gear.
 
 The body draws the forms selected in 選擇顯示的類型, with the 預設顯示形式 first and the remaining drawn forms in the canonical order of the table above; 跳過錯誤的單詞 also leaves out `error_usage` forms. With the default settings all 15 are drawn. Each drawn form block shows:
 
 - A small heading with the form name, for example `字典形` or `ます形`. Every block has one.
 - The word `vol`, centred in the block. When readings are on, apply the ruby rules below so `japanese` sits on the kanji. When the form carries `error_usage`, the word takes the error colour and its base text is struck through twice — two lines in that same error colour, across the kanji and the kana — while the reading above it keeps the colour and is not struck; the strike never changes the colour. With 跳過錯誤的單詞 on, such forms are not drawn at all.
-- The gloss `chinese`, with its semicolons kept, centred in the block.
+- The gloss `chinese`, centred in the block. It is the per-form meaning defined in Data, printed exactly as stored: `；`, `…`, parentheses and the `（禮貌體）` / `（普通體）` / `（此形日常少用）` suffixes stay in the text.
 - Two tags, the group label and `第N課`, as a centred row. Only the first drawn block carries them, so the pills appear once per word rather than once per form.
-- The form's `note`, when there is one, above the 例句： block. It is laid out like a sentence line — left-aligned, not centred — and marked with its own colour.
+- The form's `note`, when there is one, above the 例句： block. It is the corrected beginner-facing usage explanation from Data, laid out like a sentence line — left-aligned, not centred — and marked with its own colour.
 - 例句： that form's sentences. Japanese first, then Chinese. Inside the Japanese line, every occurrence of that form's own `vol` is painted in purple so the word is visible in context. The match is exact: the sentence text is never rewritten, and the Chinese line is left plain. A sentence's own `note`, when present, rides under its Chinese line in the same note colour. Every usable form in `vol/` contains its own `vol` inside at least one of its sentences. A form flagged `error_usage` has no sentences at all, so its note stands alone and the 例句： block is not drawn.
 
 All drawn blocks share one format: the same padding, a hairline separator between blocks, and no tinted panel, accent border, radius or inset margins. The block for the current 預設顯示形式 is simply the first drawn block; the others follow in the canonical order. The 預設顯示形式 is always one of the selected forms (see Settings), so its block is always drawn and always first; if a skip setting hides it, the first remaining drawn form is promoted to the opening block. A word opens at the top of the page. There is no separate 字典形 section at the bottom.
@@ -171,6 +181,18 @@ Paging is a flat horizontal slide, the way a phone moves between its own screens
 Above 550px the reader does not page by gesture, so text can be selected and copied: a drag selects text and only the two footer controls change the word. The dictionary has no completion screen; it stops at the last word.
 
 The footer has two controls labeled `上一個` and `下一個`; they perform the same moves and are disabled at the first and last item. The footer is pinned to the bottom of the column, like the picker's 開始. It keeps the column colour fading to transparent above the controls, with no hairline underline, and the fade band lives inside the footer's top padding so the two buttons always sit on solid colour and are never washed out. Its buttons are 50px tall, with 10px of column colour under them, and the height keeps them clear of the window edge. The same treatment applies to the picker's 開始 footer and the card controls, where the primary action is 50px tall.
+
+### 單詞目錄
+
+The reader opens this screen from the 目錄 button. It lists the words of the current run — the same frozen list the reader pages through — so its order matches 上一個 / 下一個 and it never re-reads the settings when it opens.
+
+- Top bar: back on the left (it returns to the reader on the word the reader was showing), and the title `單詞目錄`. There is no settings gear on this screen.
+- The list is grouped by lesson, lessons ascending, and inside a lesson it keeps the run order. Each group starts with its lesson heading `第N課`. Every row under it shows one word — the item's `dictionary-form` `vol` — on the left, and a `第N課` tag on the right. Only words are listed, one row per word, never one row per form; readings are not drawn, so 顯示平假名注音 does not change a row.
+- The current word is marked: its row carries the pressed tint and `aria-current="true"`, and its word reads in the accent colour. When the list opens, the current row is scrolled into view; a run that already fits on screen still opens at its first row.
+- A press on a row opens the reader on that word, which lands at the top of the page like every other word. Leaving the screen is the ordinary screen change; under `prefers-reduced-motion: reduce` it is a short fade.
+- A row is its own outlined button, like the picker's chips: 44px tall and full content width, a 1px divider-colour border, the 10px radius and the surface background the other buttons use, and a pressed row takes the usual scale and tint. Rows sit 8px apart and no divider element or hairline is drawn between them. A lesson heading is a small muted line above the first row of its group. The list is an ordinary scrolling page, so the drawn page scroll thumb applies.
+
+The card and quiz screens do not open this screen: their top bars keep only the back button and the title.
 
 ### Dictionary settings
 
@@ -191,7 +213,7 @@ Face (top to bottom):
 - The source form, with reading.
 - A line `變成` plus the target form’s name, for example `變成字典形`.
 
-A tap flips the card with a 3D page-turn (`rotateY`, about 240ms, decelerating, no overshoot past 180°). The back shows the target `vol`, its reading, and `chinese`, plus tags: the target form's name (for example `字典形`), then the verb-class tag (for example `2類動詞`), then `第N課`, in that order. When the target form is flagged `error_usage`, a `錯誤單詞` tag follows. These answer tags are always there: they ignore 一開始顯示幾類動詞 and 顯示平假名注音, so the class is named on the answer even when the switch is off. Another tap flips back to the face.
+A tap flips the card with a 3D page-turn (`rotateY`, about 240ms, decelerating, no overshoot past 180°). The back shows the target `vol`, its reading, and that form's own `chinese` gloss (see Data), plus tags: the target form's name (for example `字典形`), then the verb-class tag (for example `2類動詞`), then `第N課`, in that order. When the target form is flagged `error_usage`, a `錯誤單詞` tag follows. These answer tags are always there: they ignore 一開始顯示幾類動詞 and 顯示平假名注音, so the class is named on the answer even when the switch is off. Another tap flips back to the face.
 
 The card list is shuffled once when 開始 is pressed; 上一張 and 下一張 then walk that frozen order rather than the lesson and form order. Swipe right-to-left for the next card, the same way the dictionary pages: the card follows the finger 1:1 while the drag is held, the card behind it peeks in at the edge, and on release past the threshold the strip finishes the page as one short decelerating move from where the finger left it. Swipe left-to-right for the previous card. The threshold matches the dictionary. A new card opens on its face. Pressing 上一張 or 下一張 runs the same move as a swipe — the strip carries the old card out and the new one in — rather than swapping instantly; under reduced motion the drag stays invisible and the swap is immediate. The nine mounted cards of the paging window follow the same rules.
 
@@ -321,7 +343,7 @@ The wireframes say which pieces exist. Do not copy their colors or boxes.
 - The page background is a slow gradient from indigo to warm amber, with a faint grain. The column is warm off-white, large radius, light shadow. At viewport widths of 550px or less the column drops its radius, shadow and side margins, fills the browser, and the background becomes the plain column colour.
 - Use the system stack: `Hiragino Sans`, `Noto Sans TC`, `Noto Sans JP`, `sans-serif`. Do not download a CJK webfont.
 - The word is large. The reading is small and sits above the kanji. Controls are 36px tall with a 10px radius, so they read as buttons rather than pills: that covers `.button`, the lesson and form chips, the 到 chips, the 選擇 buttons. Settings rows are 52px so each row can hold its switch comfortably. The quiz keyboard keys are 48px for typing. The home screen's three entries are 60px, the picker's 開始 and the reader and card footer controls are 50px, and 返回主頁 on the completion screens is 60px.
-- Every screen's top bar — the back button and the title — is pinned to the top of the viewport, on the column colour, above the scrolling content. This is the same treatment the dictionary reader has. The back and settings buttons are Lucide icons (`ArrowLeft`, `Settings`), the dropdown chevrons use `ChevronDown`, and the paging controls use `ChevronLeft` / `ChevronRight`, all inlined into the bundle at build time: no icon font, no CDN.
+- Every screen's top bar — the back button and the title — is pinned to the top of the viewport, on the column colour, above the scrolling content. This is the same treatment the dictionary reader has. The back and settings buttons are Lucide icons (`ArrowLeft`, `Settings`), the dictionary's 目錄 button uses `List`, the dropdown chevrons use `ChevronDown`, and the paging controls use `ChevronLeft` / `ChevronRight`, all inlined into the bundle at build time: no icon font, no CDN.
 - On every screen except home, the extra bottom height is gone: content ends 10px above the bottom of the column, and screens with a pinned footer carry their own bottom space instead, so the gap is the same whether the footer is pinned mid-page or resting at the end. The reader's 上一個 / 下一個, the card controls, settings and quiz all keep 10px. The picker's 開始 is the one exception at 20px, because that is where the primary action on that screen sits: its fade band stays above the button and 20px of solid column colour sits under it.
 - A separator between two entries of the settings screen is a drawn line of its own, not a border on either row: a 1px horizontal rule in the divider colour, spanning the content width. It carries no border of its own and is hidden from assistive technology. Because it is an element rather than a row edge, a hover or press tint on either neighbour cannot paint over it, a pressed row cannot shorten it, and the line keeps one colour in every state. The first row has no rule above it, the last entry of a screen has no rule under it, and inside the 預設顯示形式 list the rule runs between the options rather than after the final one. The list opens directly under the 預設顯示形式 row with no rule between the row and the panel — a line there reads as an extra divider and the user rejected it. This covers the settings screen only: the picker's 從 list keeps its row borders.
 - A pressed button scales down slightly. The rows of the two dropdown lists (從 and 預設顯示形式) are the exception: they are rows of a panel, not free-standing buttons, so the row never scales and it tints its whole body. The settings list's 預設顯示形式 draws its separators as `hrule` elements between the options instead of as row borders, so neither hover nor press can change their colour or their length, and the row's tint may cover its whole body because nothing has to be clipped away from a border. The picker's 從 list keeps the revision-18 treatment — each row carries the panel's divider as its own bottom border, with the tint clipped to the padding box so the line keeps one colour in every state — because the drawn-line change covers the settings screen only. Pinned footers keep a transparent fade, but the fade band sits above the controls so the buttons stay solid and fully visible. Paging is one flat horizontal slide of the whole strip of items: a horizontal drag carries the strip with the finger 1:1, clamped to one item width, and on release the strip finishes the page as one decelerating move from where the finger left it — or settles back to rest when the release names no turn. The first 8px only decide whether the gesture is horizontal or vertical; after that decision the held offset is painted synchronously from the pointer event instead of waiting for a Vue render, and there is no transition while the pointer is down. Thus the direction slop is the only intentional still period, not an added drag animation. Screen changes take about 220ms. A tapped card turns over in 3D (`rotateY`, about 240ms).

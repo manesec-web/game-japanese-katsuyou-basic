@@ -30,7 +30,7 @@
         "masu-form": {
           "vol": "増えます",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "增加; 增多（禮貌體）",
           "japanese": "ふえます",
           "note": null,
           "error_usage": false,
@@ -55,7 +55,7 @@
         "masu-form-negative": {
           "vol": "増えません",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "不增加（禮貌體）",
           "japanese": "ふえません",
           "note": null,
           "error_usage": false,
@@ -80,7 +80,7 @@
         "masu-form-past": {
           "vol": "増えました",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "增加了（禮貌體）",
           "japanese": "ふえました",
           "note": null,
           "error_usage": false,
@@ -105,7 +105,7 @@
         "masu-form-past-negative": {
           "vol": "増えませんでした",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "（當時）沒有增加（禮貌體）",
           "japanese": "ふえませんでした",
           "note": null,
           "error_usage": false,
@@ -130,7 +130,7 @@
         "nai-form": {
           "vol": "増えない",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "不增加（普通體）",
           "japanese": "ふえない",
           "note": null,
           "error_usage": false,
@@ -155,7 +155,7 @@
         "ta-form": {
           "vol": "増えた",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "增加了（普通體）",
           "japanese": "ふえた",
           "note": null,
           "error_usage": false,
@@ -180,7 +180,7 @@
         "nakatta-form": {
           "vol": "増えなかった",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "（當時）沒有增加（普通體）",
           "japanese": "ふえなかった",
           "note": null,
           "error_usage": false,
@@ -205,7 +205,7 @@
         "te-form": {
           "vol": "増えて",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "增加，然後…；增加，而…",
           "japanese": "ふえて",
           "note": null,
           "error_usage": false,
@@ -230,7 +230,7 @@
         "potential-form": {
           "vol": "増えられる",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "ふえられる",
           "note": "錯誤詞語，僅供轉詞練習：「増える」是無意志動詞，「増えられる」這個可能形日常不用",
           "error_usage": true,
@@ -239,7 +239,7 @@
         "volitional-form": {
           "vol": "増えよう",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "就算增加也…；不管是否增加都…（讓步用法）",
           "japanese": "ふえよう",
           "note": null,
           "error_usage": false,
@@ -264,7 +264,7 @@
         "imperative-form": {
           "vol": "増えろ",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "願…增加；但願增加（文語祈願用法）（此形日常少用）",
           "japanese": "ふえろ",
           "note": "字典有但是不常用：「増えろ」日常不用",
           "error_usage": false,
@@ -289,7 +289,7 @@
         "conditional-form": {
           "vol": "増えれば",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "如果增加，就…",
           "japanese": "ふえれば",
           "note": null,
           "error_usage": false,
@@ -314,7 +314,7 @@
         "passive-form": {
           "vol": "増えられる",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "ふえられる",
           "note": "錯誤詞語，僅供轉詞練習：「増えられる」與「増える」的可能形同形（同一字串），是可能形的誤用；「増える」是無意志動詞，沒有表示被動的自然用法",
           "error_usage": true,
@@ -323,7 +323,7 @@
         "causative-form": {
           "vol": "増えさせる",
           "group": "2",
-          "chinese": "增加; 增多",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "ふえさせる",
           "note": "錯誤詞語，僅供轉詞練習：「増えさせる」是自動詞「増える」的使役形，但他動詞是「増やす」，不用這個使役形",
           "error_usage": true,
@@ -359,7 +359,7 @@
         "masu-form": {
           "vol": "減ります",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "減少; 變少（禮貌體）",
           "japanese": "へります",
           "note": null,
           "error_usage": false,
@@ -384,7 +384,7 @@
         "masu-form-negative": {
           "vol": "減りません",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "不減少（禮貌體）",
           "japanese": "へりません",
           "note": null,
           "error_usage": false,
@@ -409,7 +409,7 @@
         "masu-form-past": {
           "vol": "減りました",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "減少了（禮貌體）",
           "japanese": "へりました",
           "note": null,
           "error_usage": false,
@@ -434,7 +434,7 @@
         "masu-form-past-negative": {
           "vol": "減りませんでした",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "（當時）沒有減少（禮貌體）",
           "japanese": "へりませんでした",
           "note": null,
           "error_usage": false,
@@ -459,7 +459,7 @@
         "nai-form": {
           "vol": "減らない",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "不減少（普通體）",
           "japanese": "へらない",
           "note": null,
           "error_usage": false,
@@ -484,7 +484,7 @@
         "ta-form": {
           "vol": "減った",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "減少了（普通體）",
           "japanese": "へった",
           "note": null,
           "error_usage": false,
@@ -509,7 +509,7 @@
         "nakatta-form": {
           "vol": "減らなかった",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "（當時）沒有減少（普通體）",
           "japanese": "へらなかった",
           "note": null,
           "error_usage": false,
@@ -534,7 +534,7 @@
         "te-form": {
           "vol": "減って",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "減少，然後…；減少，而…",
           "japanese": "へって",
           "note": null,
           "error_usage": false,
@@ -559,7 +559,7 @@
         "potential-form": {
           "vol": "減れる",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "へれる",
           "note": "錯誤詞語，僅供轉詞練習：「減る」是無意志動詞，「減れる」這個可能形日常不用",
           "error_usage": true,
@@ -568,7 +568,7 @@
         "volitional-form": {
           "vol": "減ろう",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "減少吧；打算減少",
           "japanese": "へろう",
           "note": null,
           "error_usage": false,
@@ -593,7 +593,7 @@
         "imperative-form": {
           "vol": "減れ",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "快減少！（此形日常少用）",
           "japanese": "へれ",
           "note": "字典有但是不常用：「減れ」日常不用",
           "error_usage": false,
@@ -618,7 +618,7 @@
         "conditional-form": {
           "vol": "減れば",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "如果減少，就…",
           "japanese": "へれば",
           "note": null,
           "error_usage": false,
@@ -643,7 +643,7 @@
         "passive-form": {
           "vol": "減られる",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "へられる",
           "note": "錯誤詞語，僅供轉詞練習：「減る」是無意志自動詞，「客に減られる」不成立。客人變少說「客が減る」。要說「使減少」用他動詞「減らす」的受身「減らされる」。",
           "error_usage": true,
@@ -652,7 +652,7 @@
         "causative-form": {
           "vol": "減らせる",
           "group": "0",
-          "chinese": "減少; 變少",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "へらせる",
           "note": "錯誤詞語，僅供轉詞練習：「減らせる」形態上是「減る」的使役，但現代日語不用這個使役。要說「使減少」用他動詞「減らす」。此形又和「減らす」的可能形同形，寫例句會分不清。",
           "error_usage": true,
@@ -688,7 +688,7 @@
         "masu-form": {
           "vol": "上がります",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "上漲; 上升; 提高（禮貌體）",
           "japanese": "あがります",
           "note": null,
           "error_usage": false,
@@ -713,7 +713,7 @@
         "masu-form-negative": {
           "vol": "上がりません",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "不上漲（禮貌體）",
           "japanese": "あがりません",
           "note": null,
           "error_usage": false,
@@ -738,7 +738,7 @@
         "masu-form-past": {
           "vol": "上がりました",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "上漲了（禮貌體）",
           "japanese": "あがりました",
           "note": null,
           "error_usage": false,
@@ -763,7 +763,7 @@
         "masu-form-past-negative": {
           "vol": "上がりませんでした",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "（當時）沒有上漲（禮貌體）",
           "japanese": "あがりませんでした",
           "note": null,
           "error_usage": false,
@@ -788,7 +788,7 @@
         "nai-form": {
           "vol": "上がらない",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "不上漲（普通體）",
           "japanese": "あがらない",
           "note": null,
           "error_usage": false,
@@ -813,7 +813,7 @@
         "ta-form": {
           "vol": "上がった",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "上漲了（普通體）",
           "japanese": "あがった",
           "note": null,
           "error_usage": false,
@@ -838,7 +838,7 @@
         "nakatta-form": {
           "vol": "上がらなかった",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "（當時）沒有上漲（普通體）",
           "japanese": "あがらなかった",
           "note": null,
           "error_usage": false,
@@ -863,7 +863,7 @@
         "te-form": {
           "vol": "上がって",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "上漲，然後…；上漲，而…",
           "japanese": "あがって",
           "note": null,
           "error_usage": false,
@@ -888,7 +888,7 @@
         "potential-form": {
           "vol": "上がれる",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "能上漲；可以上漲",
           "japanese": "あがれる",
           "note": null,
           "error_usage": false,
@@ -913,7 +913,7 @@
         "volitional-form": {
           "vol": "上がろう",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "就算上漲也…；不管是否上漲都…（讓步用法）",
           "japanese": "あがろう",
           "note": null,
           "error_usage": false,
@@ -938,7 +938,7 @@
         "imperative-form": {
           "vol": "上がれ",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "快上漲！",
           "japanese": "あがれ",
           "note": null,
           "error_usage": false,
@@ -963,7 +963,7 @@
         "conditional-form": {
           "vol": "上がれば",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "如果上漲，就…",
           "japanese": "あがれば",
           "note": null,
           "error_usage": false,
@@ -988,7 +988,7 @@
         "passive-form": {
           "vol": "上がられる",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "あがられる",
           "note": "錯誤詞語，僅供轉詞練習：「値段に 上がられる」「家賃に 上がられる」把無生物的價格當 に 施事，日語沒有這種受身；價格上漲只說「値段が 上がる」",
           "error_usage": true,
@@ -997,7 +997,7 @@
         "causative-form": {
           "vol": "上がらせる",
           "group": "1",
-          "chinese": "上漲; 上升; 提高",
+          "chinese": "讓…上漲；使…上漲",
           "japanese": "あがらせる",
           "note": null,
           "error_usage": false,
@@ -1049,7 +1049,7 @@
         "masu-form": {
           "vol": "下がります",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "下降; 下跌; 降低（禮貌體）",
           "japanese": "さがります",
           "note": null,
           "error_usage": false,
@@ -1074,7 +1074,7 @@
         "masu-form-negative": {
           "vol": "下がりません",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "不下降（禮貌體）",
           "japanese": "さがりません",
           "note": null,
           "error_usage": false,
@@ -1099,7 +1099,7 @@
         "masu-form-past": {
           "vol": "下がりました",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "下降了（禮貌體）",
           "japanese": "さがりました",
           "note": null,
           "error_usage": false,
@@ -1124,7 +1124,7 @@
         "masu-form-past-negative": {
           "vol": "下がりませんでした",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "（當時）沒有下降（禮貌體）",
           "japanese": "さがりませんでした",
           "note": null,
           "error_usage": false,
@@ -1149,7 +1149,7 @@
         "nai-form": {
           "vol": "下がらない",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "不下降（普通體）",
           "japanese": "さがらない",
           "note": null,
           "error_usage": false,
@@ -1174,7 +1174,7 @@
         "ta-form": {
           "vol": "下がった",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "下降了（普通體）",
           "japanese": "さがった",
           "note": null,
           "error_usage": false,
@@ -1199,7 +1199,7 @@
         "nakatta-form": {
           "vol": "下がらなかった",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "（當時）沒有下降（普通體）",
           "japanese": "さがらなかった",
           "note": null,
           "error_usage": false,
@@ -1224,7 +1224,7 @@
         "te-form": {
           "vol": "下がって",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "下降，然後…；下降，而…",
           "japanese": "さがって",
           "note": null,
           "error_usage": false,
@@ -1249,7 +1249,7 @@
         "potential-form": {
           "vol": "下がれる",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "能下降；可以下降",
           "japanese": "さがれる",
           "note": "此形是意志性的「往後退」（同條命令形「一歩下がれ」）。價格、氣溫下降沒有可能形。",
           "error_usage": false,
@@ -1274,7 +1274,7 @@
         "volitional-form": {
           "vol": "下がろう",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "下降吧；打算下降",
           "japanese": "さがろう",
           "note": null,
           "error_usage": false,
@@ -1299,7 +1299,7 @@
         "imperative-form": {
           "vol": "下がれ",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "快下降！",
           "japanese": "さがれ",
           "note": null,
           "error_usage": false,
@@ -1324,7 +1324,7 @@
         "conditional-form": {
           "vol": "下がれば",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "如果下降，就…",
           "japanese": "さがれば",
           "note": null,
           "error_usage": false,
@@ -1349,7 +1349,7 @@
         "passive-form": {
           "vol": "下がられる",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "さがられる",
           "note": "錯誤詞語，僅供轉詞練習：「気温に 下がられる」「給料に 下がられる」把無生物當 に 施事，日語沒有這種受身；下降只說「気温が 下がる」",
           "error_usage": true,
@@ -1358,7 +1358,7 @@
         "causative-form": {
           "vol": "下がらせる",
           "group": "1",
-          "chinese": "下降; 下跌; 降低",
+          "chinese": "讓…往後退；使人／車退開（不是「使下降」）",
           "japanese": "さがらせる",
           "note": "「下がらせる」是「往後退」的使役。他動詞「下げる」是把東西放低，不是這個形。例句是讓人／車後退，不是「可以降低」。",
           "error_usage": false,
@@ -1410,7 +1410,7 @@
         "masu-form": {
           "vol": "切れます",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "斷掉; 折斷; 用盡（禮貌體）",
           "japanese": "きれます",
           "note": null,
           "error_usage": false,
@@ -1435,7 +1435,7 @@
         "masu-form-negative": {
           "vol": "切れません",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "不斷掉（禮貌體）",
           "japanese": "きれません",
           "note": null,
           "error_usage": false,
@@ -1460,7 +1460,7 @@
         "masu-form-past": {
           "vol": "切れました",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "斷掉了（禮貌體）",
           "japanese": "きれました",
           "note": null,
           "error_usage": false,
@@ -1485,7 +1485,7 @@
         "masu-form-past-negative": {
           "vol": "切れませんでした",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "（當時）沒有斷掉（禮貌體）",
           "japanese": "きれませんでした",
           "note": null,
           "error_usage": false,
@@ -1510,7 +1510,7 @@
         "nai-form": {
           "vol": "切れない",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "不斷掉（普通體）",
           "japanese": "きれない",
           "note": null,
           "error_usage": false,
@@ -1535,7 +1535,7 @@
         "ta-form": {
           "vol": "切れた",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "斷掉了（普通體）",
           "japanese": "きれた",
           "note": null,
           "error_usage": false,
@@ -1560,7 +1560,7 @@
         "nakatta-form": {
           "vol": "切れなかった",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "（當時）沒有斷掉（普通體）",
           "japanese": "きれなかった",
           "note": null,
           "error_usage": false,
@@ -1585,7 +1585,7 @@
         "te-form": {
           "vol": "切れて",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "斷掉，然後…；斷掉，而…",
           "japanese": "きれて",
           "note": null,
           "error_usage": false,
@@ -1610,7 +1610,7 @@
         "potential-form": {
           "vol": "切れられる",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "きれられる",
           "note": "錯誤詞語，僅供轉詞練習：「切れる」是無意志動詞，「切れられる」這個可能形日常不用",
           "error_usage": true,
@@ -1619,7 +1619,7 @@
         "volitional-form": {
           "vol": "切れよう",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "正快要斷掉；即將斷掉（無意志動詞，不是「～吧」）",
           "japanese": "きれよう",
           "note": null,
           "error_usage": false,
@@ -1644,7 +1644,7 @@
         "imperative-form": {
           "vol": "切れろ",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "快斷掉！（此形日常少用）",
           "japanese": "きれろ",
           "note": "字典有但是不常用：「切れろ」日常不用",
           "error_usage": false,
@@ -1669,7 +1669,7 @@
         "conditional-form": {
           "vol": "切れれば",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "如果斷掉，就…",
           "japanese": "きれれば",
           "note": null,
           "error_usage": false,
@@ -1694,7 +1694,7 @@
         "passive-form": {
           "vol": "切れられる",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "きれられる",
           "note": "錯誤詞語，僅供轉詞練習：「切れられる」與「切れる」的可能形同形（同一字串），且「切れる」是無意志自動詞，被切斷要說「切られる」（他動詞「切る」的受身）",
           "error_usage": true,
@@ -1703,7 +1703,7 @@
         "causative-form": {
           "vol": "切れさせる",
           "group": "2",
-          "chinese": "斷掉; 折斷; 用盡",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "きれさせる",
           "note": "錯誤詞語，僅供轉詞練習：「切れさせる」是自動詞「切れる」的使役形，但他動詞是「切る」，不用這個使役形",
           "error_usage": true,
@@ -1739,7 +1739,7 @@
         "masu-form": {
           "vol": "とれます",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "掉下來; 脫落; 鬆開（禮貌體）",
           "japanese": "とれます",
           "note": null,
           "error_usage": false,
@@ -1764,7 +1764,7 @@
         "masu-form-negative": {
           "vol": "とれません",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "不掉下來（禮貌體）",
           "japanese": "とれません",
           "note": null,
           "error_usage": false,
@@ -1789,7 +1789,7 @@
         "masu-form-past": {
           "vol": "とれました",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "掉下來了（禮貌體）",
           "japanese": "とれました",
           "note": null,
           "error_usage": false,
@@ -1814,7 +1814,7 @@
         "masu-form-past-negative": {
           "vol": "とれませんでした",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "（當時）沒有掉下來（禮貌體）",
           "japanese": "とれませんでした",
           "note": null,
           "error_usage": false,
@@ -1839,7 +1839,7 @@
         "nai-form": {
           "vol": "とれない",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "不掉下來（普通體）",
           "japanese": "とれない",
           "note": null,
           "error_usage": false,
@@ -1864,7 +1864,7 @@
         "ta-form": {
           "vol": "とれた",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "掉下來了（普通體）",
           "japanese": "とれた",
           "note": null,
           "error_usage": false,
@@ -1889,7 +1889,7 @@
         "nakatta-form": {
           "vol": "とれなかった",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "（當時）沒有掉下來（普通體）",
           "japanese": "とれなかった",
           "note": null,
           "error_usage": false,
@@ -1914,7 +1914,7 @@
         "te-form": {
           "vol": "とれて",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "掉下來，然後…；掉下來，而…",
           "japanese": "とれて",
           "note": null,
           "error_usage": false,
@@ -1939,7 +1939,7 @@
         "potential-form": {
           "vol": "とれられる",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "とれられる",
           "note": "錯誤詞語，僅供轉詞練習：「とれる」是無意志動詞，「とれられる」這個可能形日常不用",
           "error_usage": true,
@@ -1948,7 +1948,7 @@
         "volitional-form": {
           "vol": "とれよう",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "正快要掉下來；即將掉下來（無意志動詞，不是「～吧」）",
           "japanese": "とれよう",
           "note": null,
           "error_usage": false,
@@ -1973,7 +1973,7 @@
         "imperative-form": {
           "vol": "とれろ",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "快掉下來！（此形日常少用）",
           "japanese": "とれろ",
           "note": "字典有但是不常用：「とれろ」日常不用",
           "error_usage": false,
@@ -1998,7 +1998,7 @@
         "conditional-form": {
           "vol": "とれれば",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "如果掉下來，就…",
           "japanese": "とれれば",
           "note": null,
           "error_usage": false,
@@ -2023,7 +2023,7 @@
         "passive-form": {
           "vol": "とれられる",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "とれられる",
           "note": "錯誤詞語，僅供轉詞練習：「とれられる」與「とれる」的可能形同形（同一字串）；「とれる」是「取れる」的自動詞用法，東西被弄掉要說「取られる」",
           "error_usage": true,
@@ -2032,7 +2032,7 @@
         "causative-form": {
           "vol": "とれさせる",
           "group": "2",
-          "chinese": "掉下來; 脫落; 鬆開",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "とれさせる",
           "note": "錯誤詞語，僅供轉詞練習：「とれさせる」是自動詞「とれる」的使役形，但他動詞是「取る」，不用這個使役形",
           "error_usage": true,
@@ -2068,7 +2068,7 @@
         "masu-form": {
           "vol": "落ちます",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "掉落; 落下（禮貌體）",
           "japanese": "おちます",
           "note": null,
           "error_usage": false,
@@ -2093,7 +2093,7 @@
         "masu-form-negative": {
           "vol": "落ちません",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "不掉落（禮貌體）",
           "japanese": "おちません",
           "note": null,
           "error_usage": false,
@@ -2118,7 +2118,7 @@
         "masu-form-past": {
           "vol": "落ちました",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "掉落了（禮貌體）",
           "japanese": "おちました",
           "note": null,
           "error_usage": false,
@@ -2143,7 +2143,7 @@
         "masu-form-past-negative": {
           "vol": "落ちませんでした",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "（當時）沒有掉落（禮貌體）",
           "japanese": "おちませんでした",
           "note": null,
           "error_usage": false,
@@ -2168,7 +2168,7 @@
         "nai-form": {
           "vol": "落ちない",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "不掉落（普通體）",
           "japanese": "おちない",
           "note": null,
           "error_usage": false,
@@ -2193,7 +2193,7 @@
         "ta-form": {
           "vol": "落ちた",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "掉落了（普通體）",
           "japanese": "おちた",
           "note": null,
           "error_usage": false,
@@ -2218,7 +2218,7 @@
         "nakatta-form": {
           "vol": "落ちなかった",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "（當時）沒有掉落（普通體）",
           "japanese": "おちなかった",
           "note": null,
           "error_usage": false,
@@ -2243,7 +2243,7 @@
         "te-form": {
           "vol": "落ちて",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "掉落，然後…；掉落，而…",
           "japanese": "おちて",
           "note": null,
           "error_usage": false,
@@ -2268,7 +2268,7 @@
         "potential-form": {
           "vol": "落ちられる",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "おちられる",
           "note": "錯誤詞語，僅供轉詞練習：「落ちる」是無意志動詞，「落ちられる」這個可能形日常不用",
           "error_usage": true,
@@ -2277,7 +2277,7 @@
         "volitional-form": {
           "vol": "落ちよう",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "正快要掉落；即將掉落（無意志動詞，不是「～吧」）",
           "japanese": "おちよう",
           "note": null,
           "error_usage": false,
@@ -2302,7 +2302,7 @@
         "imperative-form": {
           "vol": "落ちろ",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "快掉落！（此形日常少用）",
           "japanese": "おちろ",
           "note": "字典有但是不常用：「落ちろ」日常不用",
           "error_usage": false,
@@ -2327,7 +2327,7 @@
         "conditional-form": {
           "vol": "落ちれば",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "如果掉落，就…",
           "japanese": "おちれば",
           "note": null,
           "error_usage": false,
@@ -2352,7 +2352,7 @@
         "passive-form": {
           "vol": "落ちられる",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "おちられる",
           "note": "錯誤詞語，僅供轉詞練習：「落ちられる」與「落ちる」的可能形同形（同一字串），且「棚の 荷物に 落ちられる」把無生物當 に 施事，不是日語；東西被弄掉要說「落とされる」",
           "error_usage": true,
@@ -2361,7 +2361,7 @@
         "causative-form": {
           "vol": "落ちさせる",
           "group": "2",
-          "chinese": "掉落; 落下",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "おちさせる",
           "note": "錯誤詞語，僅供轉詞練習：「落ちさせる」是自動詞「落ちる」的使役形，但他動詞是「落とす」，不用這個使役形",
           "error_usage": true,
@@ -2372,7 +2372,7 @@
         "dictionary-form": {
           "vol": "なくなる",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "沒有了；用完；消失",
           "japanese": "なくなる",
           "note": null,
           "error_usage": false,
@@ -2397,7 +2397,7 @@
         "masu-form": {
           "vol": "なくなります",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "沒有了；用完；消失（禮貌體）",
           "japanese": "なくなります",
           "note": null,
           "error_usage": false,
@@ -2422,7 +2422,7 @@
         "masu-form-negative": {
           "vol": "なくなりません",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "還沒用完；不會沒有（禮貌體）",
           "japanese": "なくなりません",
           "note": null,
           "error_usage": false,
@@ -2447,7 +2447,7 @@
         "masu-form-past": {
           "vol": "なくなりました",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "用完了；已經沒了（禮貌體）",
           "japanese": "なくなりました",
           "note": null,
           "error_usage": false,
@@ -2472,7 +2472,7 @@
         "masu-form-past-negative": {
           "vol": "なくなりませんでした",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "（當時）還沒用完；沒有用完（禮貌體）",
           "japanese": "なくなりませんでした",
           "note": null,
           "error_usage": false,
@@ -2497,7 +2497,7 @@
         "nai-form": {
           "vol": "なくならない",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "還沒用完；不會沒有",
           "japanese": "なくならない",
           "note": null,
           "error_usage": false,
@@ -2522,7 +2522,7 @@
         "ta-form": {
           "vol": "なくなった",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "用完了；已經沒了",
           "japanese": "なくなった",
           "note": null,
           "error_usage": false,
@@ -2547,7 +2547,7 @@
         "nakatta-form": {
           "vol": "なくならなかった",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "（當時）還沒用完；沒有用完",
           "japanese": "なくならなかった",
           "note": null,
           "error_usage": false,
@@ -2572,7 +2572,7 @@
         "te-form": {
           "vol": "なくなって",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "用完了，而…；因為沒了，所以…",
           "japanese": "なくなって",
           "note": null,
           "error_usage": false,
@@ -2597,7 +2597,7 @@
         "potential-form": {
           "vol": "なくなれる",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "なくなれる",
           "note": "錯誤詞語，僅供轉詞練習：「なくなる」是無意志動詞，「なくなれる」這個可能形日常不用",
           "error_usage": true,
@@ -2606,7 +2606,7 @@
         "volitional-form": {
           "vol": "なくなろう",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "正快要沒有；快用完了（不是「～吧」）",
           "japanese": "なくなろう",
           "note": null,
           "error_usage": false,
@@ -2631,7 +2631,7 @@
         "imperative-form": {
           "vol": "なくなれ",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "但願…消失；快點消失（文語・擬人用法）",
           "japanese": "なくなれ",
           "note": null,
           "error_usage": false,
@@ -2656,7 +2656,7 @@
         "conditional-form": {
           "vol": "なくなれば",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "如果沒了／用完，就…",
           "japanese": "なくなれば",
           "note": null,
           "error_usage": false,
@@ -2681,7 +2681,7 @@
         "passive-form": {
           "vol": "なくなられる",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "なくなられる",
           "note": "錯誤詞語，僅供轉詞練習：「定期券に なくなられる」「ガソリンに なくなられる」把無生物當 に 施事，日語沒有這種受身；用完只說「ガソリンが なくなる」",
           "error_usage": true,
@@ -2690,7 +2690,7 @@
         "causative-form": {
           "vol": "なくならせる",
           "group": "1",
-          "chinese": "沒有了; 用完; 消失",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "なくならせる",
           "note": "錯誤詞語，僅供轉詞練習：「なくならせる」是自動詞「なくなる」的使役形，但他動詞是「なくす」，不用這個使役形",
           "error_usage": true,

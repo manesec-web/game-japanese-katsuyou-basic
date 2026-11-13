@@ -1238,6 +1238,99 @@ try {
   )
   check('reader shows the default-form word', (await wordText(page)) === '行きます', await wordText(page))
   check('reader shows furigana by default', (await page.locator('.reader-page--current rt').count()) > 0)
+
+  // 單詞目錄: a screen of its own, opened from the reader's top bar. It lists
+  // this run's frozen words grouped by lesson and jumps the reader to one.
+  const readerBar = await page.evaluate(() =>
+    [...document.querySelectorAll('.reader .icon-button')].map((b) => b.getAttribute('aria-label')),
+  )
+  check(
+    'the reader bar shows 目錄 beside the gear',
+    readerBar.join('|') === '返回|單詞目錄|設定',
+    readerBar.join('|'),
+  )
+  await page.locator('.reader .icon-button[aria-label="單詞目錄"]').click()
+  await page.waitForSelector('.toc', { timeout: 5000 })
+  await iconGlyphs(page, '單詞目錄')
+  check('the word list title is 單詞目錄', (await readerTitle(page)) === '單詞目錄', await readerTitle(page))
+  check('the word list has no settings gear', (await page.locator('.toc .icon-button').count()) === 1)
+  const tocBar = await page.locator('.toc .bar').evaluate((el) => getComputedStyle(el).position)
+  check('the word list bar is sticky', tocBar === 'sticky', tocBar)
+  const toc = await page.evaluate(() => {
+    const rows = [...document.querySelectorAll('.toc-row')]
+    const current = rows.find((row) => row.getAttribute('aria-current') === 'true')
+    const box = current?.getBoundingClientRect()
+    return {
+      rows: rows.length,
+      headings: [...document.querySelectorAll('.toc-lesson')].map((el) => el.textContent.trim()),
+      words: rows.map((row) => row.querySelector('.toc-word').textContent.trim()),
+      tags: rows.map((row) => row.querySelector('.tag').textContent.trim()),
+      current: rows.filter((row) => row.getAttribute('aria-current') === 'true').length,
+      currentIndex: rows.findIndex((row) => row.getAttribute('aria-current') === 'true'),
+      currentInView: Boolean(box) && box.top >= 0 && box.bottom <= window.innerHeight,
+      heights: rows.map((row) => Math.round(row.getBoundingClientRect().height * 10) / 10),
+      gaps: rows.slice(1).map((row, at) => Math.round(row.getBoundingClientRect().top - rows[at].getBoundingClientRect().bottom)),
+      noDividers: document.querySelectorAll('.toc .hrule').length === 0,
+    }
+  })
+  check(
+    'the word list groups this run by lesson',
+    toc.headings.length === 1 && toc.headings[0] === '第5課' && toc.rows === 3,
+    JSON.stringify(toc),
+  )
+  check(
+    'each row shows the word and its 第N課 tag',
+    JSON.stringify(toc.words) === JSON.stringify(lessonFiveVerbs.map((verb) => verb.dict)) &&
+      toc.tags.every((tag) => tag === '第5課'),
+    JSON.stringify(toc),
+  )
+  check(
+    'the current word is marked once and in view',
+    toc.current === 1 && toc.currentIndex === 0 && toc.currentInView,
+    JSON.stringify(toc),
+  )
+  check(
+    'the word-list rows are 44px, 8px apart, with no divider drawn',
+    toc.heights.every((h) => Math.abs(h - 44) < 0.5) &&
+      toc.gaps.every((gap) => Math.abs(gap - 8) < 0.5) &&
+      toc.noDividers,
+    JSON.stringify(toc),
+  )
+  await page.locator('.toc .icon-button[aria-label="返回"]').click()
+  await page.waitForSelector('.reader-body', { timeout: 5000 })
+  check(
+    'back keeps the word and returns to the reader',
+    (await readerTitle(page)) === '學習（1/3）' && (await wordText(page)) === '行きます',
+    await readerTitle(page),
+  )
+  // A press on a row lands the reader on that word, at the top of the page.
+  await page.locator('.reader .icon-button[aria-label="單詞目錄"]').click()
+  await page.waitForSelector('.toc', { timeout: 5000 })
+  await page.locator('.toc-row').nth(2).click()
+  await page.waitForSelector('.reader-body', { timeout: 5000 })
+  const jump = { title: await readerTitle(page), word: await wordText(page) }
+  check(
+    'pressing a row opens that word',
+    jump.title === '學習（3/3）' && jump.word === lessonFiveVerbs[2].masu,
+    JSON.stringify(jump),
+  )
+  const jumpedScroll = await page.evaluate(() => window.scrollY)
+  check('the jumped word opens at the top of the page', jumpedScroll === 0, String(jumpedScroll))
+  await page.locator('.reader .icon-button[aria-label="單詞目錄"]').click()
+  await page.waitForSelector('.toc', { timeout: 5000 })
+  const marked = await page.evaluate(() =>
+    [...document.querySelectorAll('.toc-row')].findIndex(
+      (row) => row.getAttribute('aria-current') === 'true',
+    ),
+  )
+  check('the list marks the word the reader is on', marked === 2, String(marked))
+  await page.locator('.toc-row').first().click()
+  await page.waitForSelector('.reader-body', { timeout: 5000 })
+  check(
+    'the first row goes back to the first word',
+    (await readerTitle(page)) === '學習（1/3）' && (await wordText(page)) === '行きます',
+    await readerTitle(page),
+  )
   check('previous control disabled on the first item', await page.locator('.controls-button').first().isDisabled())
   const readerControls = (await page.locator('.reader-controls .controls-button').allTextContents()).map((t) => t.trim())
   check(
@@ -1900,6 +1993,34 @@ try {
   check('the gloss is centred in its block', layout.gloss === 'center', layout.gloss)
   check('the tag row is centred in its block', layout.tags === 'center', layout.tags)
   check('the example sentences keep the reading edge', layout.sentence !== 'center', layout.sentence)
+
+  // Revision 31: each of the 15 drawn blocks must render THAT form's own
+  // Chinese gloss, not the shared 字典形 meaning. 第2課's 違う is the worked
+  // sample — ません形, て形 and the error marker must all appear verbatim.
+  // The double-strike/error blocks are still drawn with 跳過錯誤的單詞 off.
+  const glossSweep = await page.evaluate(() => {
+    const out = {}
+    for (const block of document.querySelectorAll('.reader-page--current .form-block')) {
+      const id = block.getAttribute('data-form')
+      const word = block.querySelector('.word')
+      const gloss = block.querySelector('.gloss')
+      out[id] = {
+        word: word ? word.textContent.trim() : '',
+        gloss: gloss ? gloss.textContent.trim() : '',
+      }
+    }
+    return out
+  })
+  const glossText = (id) => glossSweep[id]?.gloss || ''
+  check('the reader draws all 15 form blocks', Object.keys(glossSweep).length === 15, String(Object.keys(glossSweep).length))
+  check('違う dictionary form keeps its base meaning', glossText('dictionary-form').includes('不同；不對；不是'), glossText('dictionary-form'))
+  check('違いません renders its own negative gloss, not the base meaning', glossText('masu-form-negative').includes('沒有不同；相同'), glossText('masu-form-negative'))
+  check('違います keeps a polite-register label', glossText('masu-form').includes('禮貌體'), glossText('masu-form'))
+  check('違って renders its te-form gloss', glossText('te-form').includes('不同，而'), glossText('te-form'))
+  check('違った renders a past gloss', glossText('ta-form').includes('當時不一樣'), glossText('ta-form'))
+  check('違えば renders a conditional gloss', glossText('conditional-form').includes('如果不同'), glossText('conditional-form'))
+  check('an error_usage form renders the non-natural-Japanese marker', glossText('potential-form').includes('非自然日語；僅供轉詞練習'), glossText('potential-form'))
+  check('an error_usage form no longer shows the old shared gloss', !glossText('potential-form').includes('不同; 不對; 不是'), glossText('potential-form'))
 
   // The strike rule needs a reading on screen, and this walk turned the
   // dictionary's readings off earlier (the setting persisted). Turn them back

@@ -1,0 +1,2926 @@
+{
+  "lesson_28": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "売れる",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この パンは よく 売れる。",
+              "chinese": "這麵包很暢銷。",
+              "note": null
+            },
+            {
+              "japanese": "新発売の お菓子は すぐ 売れる。",
+              "chinese": "新發售的點心馬上就賣光。",
+              "note": null
+            },
+            {
+              "japanese": "駅の 店では お弁当が よく 売れる。",
+              "chinese": "在車站的店裡便當賣得很好。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "売れます",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この パンは 一日に 百個 売れます。",
+              "chinese": "這麵包一天賣出一百個。",
+              "note": null
+            },
+            {
+              "japanese": "夏は この 飲み物が よく 売れます。",
+              "chinese": "夏天這種飲料很暢銷。",
+              "note": null
+            },
+            {
+              "japanese": "あの 店の ケーキは 午前中に 売れます。",
+              "chinese": "那家店的蛋糕上午就會賣完。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "売れません",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "雨の 日は パンが あまり 売れません。",
+              "chinese": "下雨天麵包賣不太出去。",
+              "note": null
+            },
+            {
+              "japanese": "この 町では 高い お茶が 売れません。",
+              "chinese": "在這個城鎮高價的茶賣不出去。",
+              "note": null
+            },
+            {
+              "japanese": "平日は ケーキが あまり 売れません。",
+              "chinese": "平日蛋糕賣得不太好。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "売れました",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう チョコレートが 全部 売れました。",
+              "chinese": "昨天巧克力全部賣完了。",
+              "note": null
+            },
+            {
+              "japanese": "朝の パンは 十時までに 売れました。",
+              "chinese": "早上的麵包十點前就賣完了。",
+              "note": null
+            },
+            {
+              "japanese": "お祭りの 日は お弁当が たくさん 売れました。",
+              "chinese": "祭典那天便當賣了很多。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "売れませんでした",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは パンが あまり 売れませんでした。",
+              "chinese": "昨天麵包賣得不好。",
+              "note": null
+            },
+            {
+              "japanese": "値段が 高いので その 品物は 売れませんでした。",
+              "chinese": "因為價格貴，那件商品沒賣出去。",
+              "note": null
+            },
+            {
+              "japanese": "雨だったので お弁当が 売れませんでした。",
+              "chinese": "因為下雨，便當沒賣出去。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "売れない",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 店では パンが 売れない。",
+              "chinese": "這家店的麵包賣不出去。",
+              "note": null
+            },
+            {
+              "japanese": "値段が 高いと なかなか 売れない。",
+              "chinese": "價格貴的話很難賣出去。",
+              "note": null
+            },
+            {
+              "japanese": "冬は この アイスが 売れない。",
+              "chinese": "冬天這冰淇淋賣不出去。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "売れた",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ゆうべ ケーキが 全部 売れた。",
+              "chinese": "昨晚蛋糕全部賣完了。",
+              "note": null
+            },
+            {
+              "japanese": "新しい 雑誌は すぐ 売れた。",
+              "chinese": "新雜誌馬上賣光了。",
+              "note": null
+            },
+            {
+              "japanese": "きのうは お弁当が よく 売れた。",
+              "chinese": "昨天便當賣得很好。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "売れなかった",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは パンが 全然 売れなかった。",
+              "chinese": "昨天麵包完全沒賣出去。",
+              "note": null
+            },
+            {
+              "japanese": "値段が 高くて その 靴は 売れなかった。",
+              "chinese": "因為價格貴，那雙鞋沒賣出去。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は お弁当が 売れなかった。",
+              "chinese": "下雨天便當沒賣出去。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "売れて",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "パンが 売れて、店に 何も ない。",
+              "chinese": "麵包賣完了，店裡什麼都沒有。",
+              "note": null
+            },
+            {
+              "japanese": "人気の ケーキが 売れて、店員は うれしそうだ。",
+              "chinese": "人氣蛋糕賣完了，店員看起來很高興。",
+              "note": null
+            },
+            {
+              "japanese": "お弁当が 全部 売れて、早く 帰れた。",
+              "chinese": "便當全賣完了，所以能早點回家。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "売れられる",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「売れる」是無意志動詞，「売れられる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "売れよう",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれよう",
+          "note": "字典有但是不常用：「売れよう」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "よく 売れようと 売れまいと、 値段は 変えない。",
+              "chinese": "不管賣得好不好，價格都不變。",
+              "note": null
+            },
+            {
+              "japanese": "夏に 売れようと、 今は 仕入れない。",
+              "chinese": "就算夏天會暢銷，現在先不進貨。",
+              "note": null
+            },
+            {
+              "japanese": "新しさで 売れようと、 味が 大事だ。",
+              "chinese": "就算靠新奇暢銷，味道才重要。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "売れろ",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれろ",
+          "note": "字典有但是不常用：「売れろ」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "店長は 新しい 商品に「もっと 売れろ」と 言った。",
+              "chinese": "店長對新商品說「再多賣一點啊」。",
+              "note": null
+            },
+            {
+              "japanese": "部長は 新しい 車に「早く 売れろ」と 願った。",
+              "chinese": "部長盼望新車「快點賣出去啊」。",
+              "note": null
+            },
+            {
+              "japanese": "先輩は この 商品に「安く 売れろ」と 言った。",
+              "chinese": "前輩對這個商品說「要便宜賣出去啊」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "売れれば",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この パンが もっと 売れれば、店は 助かる。",
+              "chinese": "這麵包若賣得更好，店就輕鬆了。",
+              "note": null
+            },
+            {
+              "japanese": "お弁当が 全部 売れれば、早く 帰れる。",
+              "chinese": "便當若全賣完就能早點回家。",
+              "note": null
+            },
+            {
+              "japanese": "もっと 売れれば、ボーナスが もらえる。",
+              "chinese": "若能賣得更多，就能拿到獎金。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "売れられる",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「売れる」是自動詞且為無意志動詞，「ケーキを客に売れられる」這種受身不成立，同形的可能形「売れられる」也已判為錯誤",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "売れさせる",
+          "group": "2",
+          "chinese": "賣得出去; 暢銷; 能賣",
+          "japanese": "うれさせる",
+          "note": "錯誤詞語，僅供轉詞練習：「売れさせる」是自動詞「売れる」的使役形，但日語用他動詞「売る」或「売れるようにする」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "踊る",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "娘は 毎晩 家で 踊る。",
+              "chinese": "女兒每晚在家跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "パーティーで みんな 踊る。",
+              "chinese": "在派對上大家跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "彼は 音楽に 合わせて 踊る。",
+              "chinese": "他隨著音樂跳舞。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "踊ります",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどります",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "教室で ダンスを 踊ります。",
+              "chinese": "在教室跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "日曜日に 公園で 踊ります。",
+              "chinese": "星期日在公園跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは フラダンスを 踊ります。",
+              "chinese": "我跳草裙舞。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "踊りません",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどりません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "わたしは あまり 踊りません。",
+              "chinese": "我不太跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "父は パーティーでは 踊りません。",
+              "chinese": "父親在派對上不跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "今日は 疲れたので 踊りません。",
+              "chinese": "今天累了所以不跳舞。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "踊りました",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどりました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ゆうべ 友達と たくさん 踊りました。",
+              "chinese": "昨晚和朋友跳了很多舞。",
+              "note": null
+            },
+            {
+              "japanese": "子どもの とき よく 踊りました。",
+              "chinese": "小時候常跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "結婚式で みんな 踊りました。",
+              "chinese": "在婚禮上大家跳舞了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "踊りませんでした",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどりませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは 忙しくて 踊りませんでした。",
+              "chinese": "昨天很忙沒跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは その 日 踊りませんでした。",
+              "chinese": "我那天沒跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "雨だったので 外では 踊りませんでした。",
+              "chinese": "因為下雨沒在外面跳舞。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "踊らない",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどらない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "弟は ダンスを 踊らない。",
+              "chinese": "弟弟不跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "彼女は 人前では 踊らない。",
+              "chinese": "她不在人前跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "今日は 時間が ないから 踊らない。",
+              "chinese": "今天沒時間所以不跳舞。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "踊った",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう みんなで 踊った。",
+              "chinese": "昨天大家一起跳舞了。",
+              "note": null
+            },
+            {
+              "japanese": "文化祭で わたしも 踊った。",
+              "chinese": "在文化祭我也跳舞了。",
+              "note": null
+            },
+            {
+              "japanese": "祖母は 若い ころ よく 踊った。",
+              "chinese": "祖母年輕時常跳舞。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "踊らなかった",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどらなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは だれも 踊らなかった。",
+              "chinese": "昨天誰都沒跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは その パーティーで 踊らなかった。",
+              "chinese": "我在那派對上沒跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "足が 痛くて 踊らなかった。",
+              "chinese": "腳痛所以沒跳舞。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "踊って",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどって",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "みんな 踊って、とても 楽しかった。",
+              "chinese": "大家跳舞，非常開心。",
+              "note": null
+            },
+            {
+              "japanese": "彼女は 歌って、わたしは 踊って、夜まで 遊んだ。",
+              "chinese": "她唱歌我跳舞，玩到晚上。",
+              "note": null
+            },
+            {
+              "japanese": "子どもたちは 音楽に 合わせて 踊って いる。",
+              "chinese": "孩子們隨著音樂跳舞。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "踊れる",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "わたしは 少し なら 踊れる。",
+              "chinese": "我稍微會跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "この 曲なら だれでも 踊れる。",
+              "chinese": "這首曲子誰都會跳。",
+              "note": null
+            },
+            {
+              "japanese": "足が 治れば また 踊れる。",
+              "chinese": "腳好了就能再跳舞。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "踊ろう",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどろう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "みんなで 踊ろう。",
+              "chinese": "大家一起跳舞吧。",
+              "note": null
+            },
+            {
+              "japanese": "パーティーが 始まったら 踊ろう。",
+              "chinese": "派對開始就跳舞吧。",
+              "note": null
+            },
+            {
+              "japanese": "誕生日に みんなで 踊ろう。",
+              "chinese": "生日時大家一起跳舞吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "踊れ",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどれ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 生徒に「もっと 元気に 踊れ」と 言った。",
+              "chinese": "老師對學生說「跳得更有精神一點」。",
+              "note": null
+            },
+            {
+              "japanese": "コーチは「音楽に 合わせて 踊れ」と 指示した。",
+              "chinese": "教練指示「跟著音樂跳」。",
+              "note": null
+            },
+            {
+              "japanese": "先輩は 後輩に「恥ずかしがらないで 踊れ」と 言った。",
+              "chinese": "前輩對後輩說「別害羞，跳吧」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "踊れば",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "パーティーで 彼女が 踊れば、会場は 盛り上がる。",
+              "chinese": "她若在派對上跳舞，會場就會熱鬧起來。",
+              "note": null
+            },
+            {
+              "japanese": "みんなが 踊れば、わたしも 踊りたく なる。",
+              "chinese": "若大家跳舞，我也想跳。",
+              "note": null
+            },
+            {
+              "japanese": "上手に 踊れば、みんなに ほめられる。",
+              "chinese": "若跳得好，會被大家稱讚。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "踊られる",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどられる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 踊りは 昔から 人々に 踊られる。",
+              "chinese": "這個舞自古被人們跳。",
+              "note": null
+            },
+            {
+              "japanese": "その 曲は パーティーで よく 踊られる。",
+              "chinese": "那首曲子常在派對上被跳。",
+              "note": null
+            },
+            {
+              "japanese": "お祭りでは 伝統の 踊りが 踊られる。",
+              "chinese": "在祭典上傳統舞蹈被跳。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "踊らせる",
+          "group": "1",
+          "chinese": "跳舞; 舞蹈",
+          "japanese": "おどらせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 生徒を 全員 踊らせる。",
+              "chinese": "老師讓全體學生跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "親は 子どもを 無理に 踊らせる。",
+              "chinese": "父母強迫孩子跳舞。",
+              "note": null
+            },
+            {
+              "japanese": "店長は 店の 前で 店員を 踊らせる。",
+              "chinese": "店長讓店員在店前跳舞。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "噛む",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かむ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "犬は 骨を 噛む。",
+              "chinese": "狗咬骨頭。",
+              "note": null
+            },
+            {
+              "japanese": "ガムを 噛むのは 歯に いい。",
+              "chinese": "嚼口香糖對牙齒好。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは 爪を 噛む。",
+              "chinese": "孩子咬指甲。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "噛みます",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かみます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "犬が 私の 靴を 噛みます。",
+              "chinese": "狗咬我的鞋。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは いつも 爪を 噛みます。",
+              "chinese": "孩子總是咬指甲。",
+              "note": null
+            },
+            {
+              "japanese": "ガムを 噛みますか。",
+              "chinese": "你嚼口香糖嗎？",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "噛みません",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かみません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "うちの 犬は 人を 噛みません。",
+              "chinese": "我家的狗不咬人。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは 爪を 噛みません。",
+              "chinese": "我不咬指甲。",
+              "note": null
+            },
+            {
+              "japanese": "父は ガムを 噛みません。",
+              "chinese": "父親不嚼口香糖。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "噛みました",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かみました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "犬が 子どもを 噛みました。",
+              "chinese": "狗咬了孩子。",
+              "note": null
+            },
+            {
+              "japanese": "きのう わたしは 舌を 噛みました。",
+              "chinese": "昨天我咬到舌頭。",
+              "note": null
+            },
+            {
+              "japanese": "きのう 弟は ガムを 噛みました。",
+              "chinese": "昨天弟弟嚼了口香糖。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "噛みませんでした",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かみませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは 犬は 人を 噛みませんでした。",
+              "chinese": "昨天狗沒咬人。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは その 日 ガムを 噛みませんでした。",
+              "chinese": "我那天沒嚼口香糖。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは 爪を 噛みませんでした。",
+              "chinese": "孩子沒咬指甲。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "噛まない",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かまない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 犬は 人を 噛まない。",
+              "chinese": "這隻狗不咬人。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは いつも 爪を 噛まない。",
+              "chinese": "我總是不咬指甲。",
+              "note": null
+            },
+            {
+              "japanese": "食事の 前は ガムを 噛まない。",
+              "chinese": "飯前不嚼口香糖。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "噛んだ",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かんだ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "犬が 私の 足を 噛んだ。",
+              "chinese": "狗咬了我的腳。",
+              "note": null
+            },
+            {
+              "japanese": "弟は ガムを 噛んだ。",
+              "chinese": "弟弟嚼了口香糖。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは 爪を 噛んだ。",
+              "chinese": "孩子咬了指甲。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "噛まなかった",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かまなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "その 犬は 人を 噛まなかった。",
+              "chinese": "那隻狗沒咬人。",
+              "note": null
+            },
+            {
+              "japanese": "きのう わたしは ガムを 噛まなかった。",
+              "chinese": "昨天我沒嚼口香糖。",
+              "note": null
+            },
+            {
+              "japanese": "弟は 爪を 噛まなかった。",
+              "chinese": "弟弟沒咬指甲。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "噛んで",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かんで",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "犬が 骨を 噛んで いる。",
+              "chinese": "狗正在咬骨頭。",
+              "note": null
+            },
+            {
+              "japanese": "彼は ガムを 噛んで 歩いて いる。",
+              "chinese": "他嚼著口香糖走路。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは 爪を 噛んで 泣いた。",
+              "chinese": "孩子咬著指甲哭了。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "噛める",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かめる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 肉は 柔らかくて よく 噛める。",
+              "chinese": "這肉很軟很好嚼。",
+              "note": null
+            },
+            {
+              "japanese": "歯が 丈夫なら 固い 物も 噛める。",
+              "chinese": "牙齒健康的話硬的東西也能咬。",
+              "note": null
+            },
+            {
+              "japanese": "この ガムは 長く 噛める。",
+              "chinese": "這口香糖能嚼很久。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "噛もう",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かもう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この ガムを 噛もう。",
+              "chinese": "來嚼這口香糖吧。",
+              "note": null
+            },
+            {
+              "japanese": "少し 疲れたから ガムを 噛もう。",
+              "chinese": "有點累了，嚼個口香糖吧。",
+              "note": null
+            },
+            {
+              "japanese": "外へ 出る 前に ガムを 噛もう。",
+              "chinese": "出門前嚼口香糖吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "噛め",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かめ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 子どもに「よく 噛め」と 言った。",
+              "chinese": "母親對孩子說「好好嚼」。",
+              "note": null
+            },
+            {
+              "japanese": "医者は「固い 物は 少しずつ 噛め」と 言った。",
+              "chinese": "醫生說「硬的東西要一點一點咬」。",
+              "note": null
+            },
+            {
+              "japanese": "コーチは「しっかり 噛め」と 言った。",
+              "chinese": "教練說「好好咬」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "噛めば",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かめば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "よく 噛めば、食べ物は 消化しやすい。",
+              "chinese": "好好嚼的話食物容易消化。",
+              "note": null
+            },
+            {
+              "japanese": "この ガムを 噛めば、口が さっぱりする。",
+              "chinese": "嚼這口香糖嘴巴會清爽。",
+              "note": null
+            },
+            {
+              "japanese": "犬が 人を 噛めば、大変だ。",
+              "chinese": "狗若咬人可就麻煩了。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "噛まれる",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かまれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "散歩の とき 犬に 噛まれる ことが ある。",
+              "chinese": "散步時有時會被狗咬。",
+              "note": null
+            },
+            {
+              "japanese": "この 道では 犬に 噛まれる 人が 多い。",
+              "chinese": "在這條路上被狗咬的人很多。",
+              "note": null
+            },
+            {
+              "japanese": "知らない 犬に 噛まれるのは 危ない。",
+              "chinese": "被不認識的狗咬很危險。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "噛ませる",
+          "group": "1",
+          "chinese": "咬; 咀嚼",
+          "japanese": "かませる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 子どもに ガムを 噛ませる。",
+              "chinese": "母親讓孩子嚼口香糖。",
+              "note": null
+            },
+            {
+              "japanese": "歯医者は 患者に 固い 物を 噛ませる。",
+              "chinese": "牙醫讓患者咬硬的東西。",
+              "note": null
+            },
+            {
+              "japanese": "犬に 骨を 噛ませる。",
+              "chinese": "讓狗咬骨頭。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "選ぶ",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらぶ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "好きな 色を 選ぶ。",
+              "chinese": "選喜歡的顏色。",
+              "note": null
+            },
+            {
+              "japanese": "彼は いつも 自分で 選ぶ。",
+              "chinese": "他總是自己選。",
+              "note": null
+            },
+            {
+              "japanese": "旅行の ホテルは 早く 選ぶ ほうが いい。",
+              "chinese": "旅行的飯店最好早點選。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "選びます",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらびます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "プレゼントは 彼女が 選びます。",
+              "chinese": "禮物由她選。",
+              "note": null
+            },
+            {
+              "japanese": "メニューから 一つ 選びます。",
+              "chinese": "從菜單選一個。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは 安い 方を 選びます。",
+              "chinese": "我選便宜的那個。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "選びません",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらびません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "わたしは 高い 物は 選びません。",
+              "chinese": "我不選貴的東西。",
+              "note": null
+            },
+            {
+              "japanese": "今日は 何も 選びません。",
+              "chinese": "今天什麼都不選。",
+              "note": null
+            },
+            {
+              "japanese": "この 店では 色を 選びません。",
+              "chinese": "在這家店不能選顏色。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "選びました",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらびました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 新しい 靴を 選びました。",
+              "chinese": "昨天選了新鞋。",
+              "note": null
+            },
+            {
+              "japanese": "彼女は 白い ドレスを 選びました。",
+              "chinese": "她選了白色禮服。",
+              "note": null
+            },
+            {
+              "japanese": "わたしたちは 海の 近くの ホテルを 選びました。",
+              "chinese": "我們選了海邊的飯店。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "選びませんでした",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらびませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは 何も 選びませんでした。",
+              "chinese": "昨天什麼都沒選。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは その 中から 選びませんでした。",
+              "chinese": "我沒從那裡選。",
+              "note": null
+            },
+            {
+              "japanese": "彼は 新しい 車を 選びませんでした。",
+              "chinese": "他沒選新車。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "選ばない",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらばない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "わたしは 色で 選ばない。",
+              "chinese": "我不憑顏色選。",
+              "note": null
+            },
+            {
+              "japanese": "彼は 安い 物を 選ばない。",
+              "chinese": "他不選便宜的東西。",
+              "note": null
+            },
+            {
+              "japanese": "今日は 新しい 靴を 選ばない。",
+              "chinese": "今天不選新鞋。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "選んだ",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらんだ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "誕生日に 赤い セーターを 選んだ。",
+              "chinese": "生日時選了紅色毛衣。",
+              "note": null
+            },
+            {
+              "japanese": "みんなで 相談して ホテルを 選んだ。",
+              "chinese": "大家商量後選了飯店。",
+              "note": null
+            },
+            {
+              "japanese": "彼女は 長い スカートを 選んだ。",
+              "chinese": "她選了長裙。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "選ばなかった",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらばなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは プレゼントを 選ばなかった。",
+              "chinese": "昨天沒選禮物。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは その 色を 選ばなかった。",
+              "chinese": "我沒選那個顏色。",
+              "note": null
+            },
+            {
+              "japanese": "彼は 最後まで 一つも 選ばなかった。",
+              "chinese": "他到最後一個都沒選。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "選んで",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらんで",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "好きな 物を 選んで、店員に 渡した。",
+              "chinese": "選了喜歡的東西交給店員。",
+              "note": null
+            },
+            {
+              "japanese": "色を 選んで から 買います。",
+              "chinese": "選顏色後再買。",
+              "note": null
+            },
+            {
+              "japanese": "彼女は ケーキを 選んで いる。",
+              "chinese": "她正在選蛋糕。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "選べる",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらべる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 店では 好きな 色が 選べる。",
+              "chinese": "在這家店能選喜歡的顏色。",
+              "note": null
+            },
+            {
+              "japanese": "ネットで 席も 選べる。",
+              "chinese": "在網路上也能選座位。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは 自分で 服を 選べる。",
+              "chinese": "孩子能自己選衣服。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "選ぼう",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらぼう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "新しい 靴を 選ぼう。",
+              "chinese": "來選新鞋吧。",
+              "note": null
+            },
+            {
+              "japanese": "みんなで 食べる 物を 選ぼう。",
+              "chinese": "大家一起選要吃的東西吧。",
+              "note": null
+            },
+            {
+              "japanese": "今年の 旅行の ホテルは 海の 近くに 選ぼう。",
+              "chinese": "今年旅行的飯店選在海邊吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "選べ",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらべ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "店員は 客に「好きな 物を 選べ」と 言った。",
+              "chinese": "店員對客人說「選你喜歡的」。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に「自分で 一つ 選べ」と 言った。",
+              "chinese": "老師對學生說「自己選一個」。",
+              "note": null
+            },
+            {
+              "japanese": "母は 子どもに「早く 選べ」と 言った。",
+              "chinese": "母親對孩子說「快點選」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "選べば",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらべば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 色を 選べば、服に 合う。",
+              "chinese": "選這顏色就配衣服。",
+              "note": null
+            },
+            {
+              "japanese": "安い 物を 選べば、お金が 残る。",
+              "chinese": "選便宜的東西錢就剩得下。",
+              "note": null
+            },
+            {
+              "japanese": "今 選べば、安く 買える。",
+              "chinese": "現在選的話能便宜買到。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "選ばれる",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらばれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 曲は 若い 人に よく 選ばれる。",
+              "chinese": "這首歌常被年輕人選。",
+              "note": null
+            },
+            {
+              "japanese": "彼女は 代表に 選ばれる。",
+              "chinese": "她被選為代表。",
+              "note": null
+            },
+            {
+              "japanese": "この 店は 旅行者に 選ばれる。",
+              "chinese": "這家店被旅行者選中。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "選ばせる",
+          "group": "1",
+          "chinese": "選擇; 挑選",
+          "japanese": "えらばせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 子どもに 服を 選ばせる。",
+              "chinese": "母親讓孩子選衣服。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に テーマを 選ばせる。",
+              "chinese": "老師讓學生選題目。",
+              "note": null
+            },
+            {
+              "japanese": "店長は 客に 好きな 物を 選ばせる。",
+              "chinese": "店長讓客人選喜歡的東西。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "違う",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 二つの 色は 違う。",
+              "chinese": "這兩種顏色不同。",
+              "note": null
+            },
+            {
+              "japanese": "わたしの 考えは 彼のと 違う。",
+              "chinese": "我的想法和他的不同。",
+              "note": null
+            },
+            {
+              "japanese": "答えが 違う。",
+              "chinese": "答案錯了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "違います",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがいます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "その 答えは 違います。",
+              "chinese": "那個答案錯了。",
+              "note": null
+            },
+            {
+              "japanese": "駅の 時計は 五分 違います。",
+              "chinese": "車站的鐘差五分鐘。",
+              "note": null
+            },
+            {
+              "japanese": "この 味は 前と 違います。",
+              "chinese": "這味道和以前不同。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "違いません",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがいません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 二つの 絵は あまり 違いません。",
+              "chinese": "這兩幅畫沒什麼不同。",
+              "note": null
+            },
+            {
+              "japanese": "わたしの 答えは 先生のと 違いません。",
+              "chinese": "我的答案和老師的相同。",
+              "note": null
+            },
+            {
+              "japanese": "値段は そんなに 違いません。",
+              "chinese": "價格沒那麼不同。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "違いました",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがいました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうの 答えは 違いました。",
+              "chinese": "昨天的答案錯了。",
+              "note": null
+            },
+            {
+              "japanese": "昔と 今は ずいぶん 違いました。",
+              "chinese": "從前和現在差很多。",
+              "note": null
+            },
+            {
+              "japanese": "色が ちょっと 違いました。",
+              "chinese": "顏色有點不同。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "違いませんでした",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがいませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 二つの 味は あまり 違いませんでした。",
+              "chinese": "這兩種味道沒什麼不同。",
+              "note": null
+            },
+            {
+              "japanese": "わたしの 答えは 彼の 答えと 違いませんでした。",
+              "chinese": "我的答案和他的答案沒有不同。",
+              "note": null
+            },
+            {
+              "japanese": "値段は 思ったほど 違いませんでした。",
+              "chinese": "價格沒想像中差那麼多。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "違わない",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがわない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "わたしの 考えは 彼のと 違わない。",
+              "chinese": "我的想法和他的相同。",
+              "note": null
+            },
+            {
+              "japanese": "この 二つの 色は 違わない。",
+              "chinese": "這兩種顏色沒什麼不同。",
+              "note": null
+            },
+            {
+              "japanese": "答えは 違わない と 思う。",
+              "chinese": "我覺得答案沒錯。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "違った",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "答えが 違った。",
+              "chinese": "答案錯了。",
+              "note": null
+            },
+            {
+              "japanese": "昔と 今は とても 違った。",
+              "chinese": "從前和現在非常不同。",
+              "note": null
+            },
+            {
+              "japanese": "わたしの 傘は 弟のと 違った。",
+              "chinese": "我的傘和弟弟的不同。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "違わなかった",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがわなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうの 答えは 違わなかった。",
+              "chinese": "昨天的答案沒錯。",
+              "note": null
+            },
+            {
+              "japanese": "この 二つの 味は 違わなかった。",
+              "chinese": "這兩種味道沒什麼不同。",
+              "note": null
+            },
+            {
+              "japanese": "値段は 違わなかった。",
+              "chinese": "價格沒差。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "違って",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがって",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "答えが 違って、やり直した。",
+              "chinese": "答案錯了，重做了。",
+              "note": null
+            },
+            {
+              "japanese": "色が 違って、別の 物を 送った。",
+              "chinese": "顏色不同，寄了別的東西。",
+              "note": null
+            },
+            {
+              "japanese": "サイズが 違って 合わない。",
+              "chinese": "尺寸不同不合。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "違える",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがえる",
+          "note": "錯誤詞語，僅供轉詞練習：「違える」是另一個他動詞（たがえる／ちがえる，弄錯、改變），不是「変える（かえる）」；「違う」是狀態動詞，沒有可能形用法",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "違おう",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがおう",
+          "note": "字典有但是不常用：「違おう」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "答えが 違おうと、 結論は 変わらない。",
+              "chinese": "就算答案不同，結論也不變。",
+              "note": null
+            },
+            {
+              "japanese": "考えが 違おうと、 話し合いは 続ける。",
+              "chinese": "就算想法不同，還是繼續討論。",
+              "note": null
+            },
+            {
+              "japanese": "習慣が 違おうと、 基本は 同じだ。",
+              "chinese": "就算習慣不同，基本還是一樣。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "違え",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがえ",
+          "note": "錯誤詞語，僅供轉詞練習：「違え」是另一個動詞「違える」（＝變更、弄錯）的命令形，不是「違う」可用的命令形；「違う」是狀態動詞，沒有命令用法",
+          "error_usage": true,
+          "sentence": []
+        },
+        "conditional-form": {
+          "vol": "違えば",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがえば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "答えが 違えば、点は もらえない。",
+              "chinese": "答案若錯了就拿不到分數。",
+              "note": null
+            },
+            {
+              "japanese": "色が 違えば、別の 品物だ。",
+              "chinese": "顏色若不同就是別的商品。",
+              "note": null
+            },
+            {
+              "japanese": "考えが 違えば、話し合いが 必要だ。",
+              "chinese": "想法若不同就需要討論。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "違われる",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがわれる",
+          "note": "錯誤詞語，僅供轉詞練習：「違われる」不是「違う」的受身用法；例句的「被弄錯」是「間違えられる」的意思",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "違わせる",
+          "group": "1",
+          "chinese": "不同; 不一樣; 錯誤",
+          "japanese": "ちがわせる",
+          "note": "字典有但是不常用：「違わせる」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 店は 季節ごとに メニューを 違わせる。",
+              "chinese": "這家店讓每個季節的菜單不同。",
+              "note": null
+            },
+            {
+              "japanese": "先生は グループごとに テーマを 違わせる。",
+              "chinese": "老師讓每一組的主題不同。",
+              "note": null
+            },
+            {
+              "japanese": "町は 地区ごとに ごみの 日を 違わせる。",
+              "chinese": "鎮上讓各地區的收垃圾日不同。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "通う",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "妹は 毎日 大学に 通う。",
+              "chinese": "妹妹每天上大學。",
+              "note": null
+            },
+            {
+              "japanese": "父は 電車で 会社に 通う。",
+              "chinese": "父親搭電車通勤。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは 週に 二回 ジムに 通う。",
+              "chinese": "我一週去兩次健身房。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "通います",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよいます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "毎朝 八時に 大学に 通います。",
+              "chinese": "每天早上八點去大學。",
+              "note": null
+            },
+            {
+              "japanese": "母は バスで 病院に 通います。",
+              "chinese": "母親搭公車去醫院。",
+              "note": null
+            },
+            {
+              "japanese": "弟は 自転車で 学校に 通います。",
+              "chinese": "弟弟騎腳踏車上學。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "通いません",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよいません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "日曜日は 大学に 通いません。",
+              "chinese": "星期天不去大學。",
+              "note": null
+            },
+            {
+              "japanese": "父は もう 会社に 通いません。",
+              "chinese": "父親已經不去公司了。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは 夜は ジムに 通いません。",
+              "chinese": "我晚上不去健身房。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "通いました",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよいました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうも 大学に 通いました。",
+              "chinese": "昨天也去了大學。",
+              "note": null
+            },
+            {
+              "japanese": "去年は 毎日 会社に 通いました。",
+              "chinese": "去年每天去公司。",
+              "note": null
+            },
+            {
+              "japanese": "子どもの ころ この 学校に 通いました。",
+              "chinese": "小時候讀這所學校。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "通いませんでした",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよいませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先週は 大学に 通いませんでした。",
+              "chinese": "上週沒去大學。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 会社に 通いませんでした。",
+              "chinese": "下雨天沒去公司。",
+              "note": null
+            },
+            {
+              "japanese": "夏休みは 学校に 通いませんでした。",
+              "chinese": "暑假期間沒去學校。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "通わない",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよわない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "弟は もう 学校に 通わない。",
+              "chinese": "弟弟已經不去學校了。",
+              "note": null
+            },
+            {
+              "japanese": "日曜日は 大学に 通わない。",
+              "chinese": "星期天不去大學。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは 車では 会社に 通わない。",
+              "chinese": "我不開車去公司。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "通った",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 大学に 通った。",
+              "chinese": "昨天去了大學。",
+              "note": null
+            },
+            {
+              "japanese": "去年 毎日 会社に 通った。",
+              "chinese": "去年每天去公司。",
+              "note": null
+            },
+            {
+              "japanese": "子どもの ころ バスで 学校に 通った。",
+              "chinese": "小時候搭公車上學。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "通わなかった",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよわなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは 大学に 通わなかった。",
+              "chinese": "昨天沒去大學。",
+              "note": null
+            },
+            {
+              "japanese": "先月は 会社に 通わなかった。",
+              "chinese": "上個月沒去公司。",
+              "note": null
+            },
+            {
+              "japanese": "夏休みは 学校に 通わなかった。",
+              "chinese": "暑假期間沒去學校。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "通って",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよって",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "毎日 電車に 乗って 会社に 通って いる。",
+              "chinese": "每天搭電車通勤。",
+              "note": null
+            },
+            {
+              "japanese": "大学に 通って、経済を 勉強して いる。",
+              "chinese": "上大學學習經濟。",
+              "note": null
+            },
+            {
+              "japanese": "妹は 自転車で 学校に 通って いる。",
+              "chinese": "妹妹騎腳踏車上學。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "通える",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよえる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "家から 大学まで 歩いて 通える。",
+              "chinese": "從家到大學可以走路去。",
+              "note": null
+            },
+            {
+              "japanese": "電車が あれば 会社に 通える。",
+              "chinese": "有電車的話就能去公司。",
+              "note": null
+            },
+            {
+              "japanese": "体が 元気なら また ジムに 通える。",
+              "chinese": "身體健康的話就能再去健身房。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "通おう",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよおう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "来月から ジムに 通おう。",
+              "chinese": "下個月開始去健身房吧。",
+              "note": null
+            },
+            {
+              "japanese": "大学に 通おうと 決めた。",
+              "chinese": "決定要上大學。",
+              "note": null
+            },
+            {
+              "japanese": "毎日 歩いて 会社に 通おう。",
+              "chinese": "每天走路去公司吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "通え",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよえ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "父は 弟に「毎日 学校に 通え」と 言った。",
+              "chinese": "父親對弟弟說「每天去學校」。",
+              "note": null
+            },
+            {
+              "japanese": "部長は「もっと 病院に 通え」と 言った。",
+              "chinese": "部長說「多去醫院」。",
+              "note": null
+            },
+            {
+              "japanese": "母は「安全な 道で 通え」と 言った。",
+              "chinese": "母親說「走安全的路」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "通えば",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよえば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "大学に 通えば、友達が 増える。",
+              "chinese": "上大學的話朋友會增加。",
+              "note": null
+            },
+            {
+              "japanese": "毎日 歩いて 通えば、体が 丈夫に なる。",
+              "chinese": "每天走路去的話身體會變健康。",
+              "note": null
+            },
+            {
+              "japanese": "電車で 通えば、本が 読める。",
+              "chinese": "搭電車去的話能看書。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "通われる",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよわれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 道は 毎日 たくさんの 人に 通われる。",
+              "chinese": "這條路每天被很多人走。",
+              "note": null
+            },
+            {
+              "japanese": "この 橋は 子どもに よく 通われる。",
+              "chinese": "這座橋常被孩子走過。",
+              "note": null
+            },
+            {
+              "japanese": "駅までの 道は 学生に 通われる。",
+              "chinese": "到車站的路被學生走過。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "通わせる",
+          "group": "1",
+          "chinese": "上學; 通勤; 往返; 常去",
+          "japanese": "かよわせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "親は 子どもを 大学に 通わせる。",
+              "chinese": "父母讓孩子上大學。",
+              "note": null
+            },
+            {
+              "japanese": "父は 弟を 塾に 通わせる。",
+              "chinese": "父親讓弟弟上補習班。",
+              "note": null
+            },
+            {
+              "japanese": "会社は 社員を 病院に 通わせる。",
+              "chinese": "公司讓員工去醫院。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "メモする",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモする",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生の 話を メモする。",
+              "chinese": "記下老師的話。",
+              "note": null
+            },
+            {
+              "japanese": "買う 物を メモする。",
+              "chinese": "記下要買的東西。",
+              "note": null
+            },
+            {
+              "japanese": "電話番号を メモする。",
+              "chinese": "記下電話號碼。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "メモします",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモします",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "会議の 内容を メモします。",
+              "chinese": "記下會議內容。",
+              "note": null
+            },
+            {
+              "japanese": "大事な ことを メモします。",
+              "chinese": "記下重要的事。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは いつも 予定を メモします。",
+              "chinese": "我總是記下預定事項。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "メモしません",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモしません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 何も メモしません。",
+              "chinese": "今天什麼都不記。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは 電話番号を メモしません。",
+              "chinese": "我不記電話號碼。",
+              "note": null
+            },
+            {
+              "japanese": "この 話は メモしません。",
+              "chinese": "這個話不記下來。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "メモしました",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモしました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生の 話を メモしました。",
+              "chinese": "記下了老師的話。",
+              "note": null
+            },
+            {
+              "japanese": "きのう 買う 物を メモしました。",
+              "chinese": "昨天記下了要買的東西。",
+              "note": null
+            },
+            {
+              "japanese": "会議で 意見を メモしました。",
+              "chinese": "在會議上記下了意見。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "メモしませんでした",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモしませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは 何も メモしませんでした。",
+              "chinese": "昨天什麼都沒記。",
+              "note": null
+            },
+            {
+              "japanese": "その 話は メモしませんでした。",
+              "chinese": "那件事沒記下來。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは 電話番号を メモしませんでした。",
+              "chinese": "我沒記電話號碼。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "メモしない",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモしない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "わたしは あまり メモしない。",
+              "chinese": "我不太記筆記。",
+              "note": null
+            },
+            {
+              "japanese": "彼は 何も メモしない。",
+              "chinese": "他什麼都不記。",
+              "note": null
+            },
+            {
+              "japanese": "今日は 予定を メモしない。",
+              "chinese": "今天不記預定事項。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "メモした",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生の 話を メモした。",
+              "chinese": "記下了老師的話。",
+              "note": null
+            },
+            {
+              "japanese": "きのう 買う 物を メモした。",
+              "chinese": "昨天記下了要買的東西。",
+              "note": null
+            },
+            {
+              "japanese": "大事な ことを メモした。",
+              "chinese": "記下了重要的事。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "メモしなかった",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモしなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは 何も メモしなかった。",
+              "chinese": "昨天什麼都沒記。",
+              "note": null
+            },
+            {
+              "japanese": "その 話は メモしなかった。",
+              "chinese": "那件事沒記下來。",
+              "note": null
+            },
+            {
+              "japanese": "電話番号を メモしなかった。",
+              "chinese": "沒記電話號碼。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "メモして",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモして",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生の 話を メモして、あとで 読む。",
+              "chinese": "記下老師的話，之後再讀。",
+              "note": null
+            },
+            {
+              "japanese": "買う 物を メモして 店へ 行く。",
+              "chinese": "記下要買的東西再去店裡。",
+              "note": null
+            },
+            {
+              "japanese": "電話番号を メモして かばんに 入れた。",
+              "chinese": "記下電話號碼放進包包。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "メモできる",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモできる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この ペンで メモできる。",
+              "chinese": "用這支筆能記筆記。",
+              "note": null
+            },
+            {
+              "japanese": "スマホでも メモできる。",
+              "chinese": "用手機也能記。",
+              "note": null
+            },
+            {
+              "japanese": "忙しくても 少しなら メモできる。",
+              "chinese": "再忙也能記一點。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "メモしよう",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモしよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "大事な 話を メモしよう。",
+              "chinese": "把重要的話記下來吧。",
+              "note": null
+            },
+            {
+              "japanese": "買う 物を メモしよう。",
+              "chinese": "把要買的東西記下來吧。",
+              "note": null
+            },
+            {
+              "japanese": "電話番号を メモしよう。",
+              "chinese": "把電話號碼記下來吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "メモしろ",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモしろ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 学生に「しっかり メモしろ」と 言った。",
+              "chinese": "老師對學生說「好好記下來」。",
+              "note": null
+            },
+            {
+              "japanese": "部長は 部下に「この 話を メモしろ」と 言った。",
+              "chinese": "部長對部下說「把這件事記下來」。",
+              "note": null
+            },
+            {
+              "japanese": "先輩は「電話番号を メモしろ」と 言った。",
+              "chinese": "前輩說「把電話號碼記下來」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "メモすれば",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモすれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "メモすれば、忘れない。",
+              "chinese": "記下來的話就不會忘。",
+              "note": null
+            },
+            {
+              "japanese": "話を メモすれば、あとで 役に 立つ。",
+              "chinese": "記下話的話之後有用。",
+              "note": null
+            },
+            {
+              "japanese": "買う 物を メモすれば、むだな 物を 買わない。",
+              "chinese": "記下要買的東西就不會買不必要的東西。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "メモされる",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモされる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "会議の 内容は いつも メモされる。",
+              "chinese": "會議內容總是被記錄下來。",
+              "note": null
+            },
+            {
+              "japanese": "大事な 話は ノートに メモされる。",
+              "chinese": "重要的話被記在筆記本上。",
+              "note": null
+            },
+            {
+              "japanese": "この 予定は みんなに メモされる。",
+              "chinese": "這個預定被大家記下來。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "メモさせる",
+          "group": "3",
+          "chinese": "記筆記; 抄寫; 記錄",
+          "japanese": "メモさせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 話を メモさせる。",
+              "chinese": "老師讓學生記下話。",
+              "note": null
+            },
+            {
+              "japanese": "部長は 部下に 予定を メモさせる。",
+              "chinese": "部長讓部下記下預定事項。",
+              "note": null
+            },
+            {
+              "japanese": "母は 子どもに 買う 物を メモさせる。",
+              "chinese": "母親讓孩子記下要買的東西。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "お喋りする",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりする",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "姉は 電話で 友達と お喋りする。",
+              "chinese": "姐姐用電話和朋友聊天。",
+              "note": null
+            },
+            {
+              "japanese": "母は 台所で 近所の 人と お喋りする。",
+              "chinese": "母親在廚房和鄰居聊天。",
+              "note": null
+            },
+            {
+              "japanese": "教室で お喋りするのは よくない。",
+              "chinese": "在教室聊天不好。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "お喋りします",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりします",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昼休みに 同僚と お喋りします。",
+              "chinese": "午休時和同事聊天。",
+              "note": null
+            },
+            {
+              "japanese": "妹は いつも 家族と お喋りします。",
+              "chinese": "妹妹總是和家人聊天。",
+              "note": null
+            },
+            {
+              "japanese": "喫茶店で 一時間も お喋りします。",
+              "chinese": "在咖啡店聊了一個小時。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "お喋りしません",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりしません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "授業中は お喋りしません。",
+              "chinese": "上課中不聊天。",
+              "note": null
+            },
+            {
+              "japanese": "わたしは あまり お喋りしません。",
+              "chinese": "我不太聊天。",
+              "note": null
+            },
+            {
+              "japanese": "彼は 初対面の 人とは お喋りしません。",
+              "chinese": "他不和初次見面的人聊天。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "お喋りしました",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりしました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ゆうべ 友達と 二時間 お喋りしました。",
+              "chinese": "昨晚和朋友聊了兩小時。",
+              "note": null
+            },
+            {
+              "japanese": "パーティーで 先生と お喋りしました。",
+              "chinese": "在派對上和老師聊天了。",
+              "note": null
+            },
+            {
+              "japanese": "久しぶりに いとこと お喋りしました。",
+              "chinese": "久違地和表弟聊天了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "お喋りしませんでした",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりしませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは 忙しくて お喋りしませんでした。",
+              "chinese": "昨天很忙沒聊天。",
+              "note": null
+            },
+            {
+              "japanese": "その 日は だれとも お喋りしませんでした。",
+              "chinese": "那天和誰都沒聊天。",
+              "note": null
+            },
+            {
+              "japanese": "食事の ときは お喋りしませんでした。",
+              "chinese": "吃飯時沒聊天。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "お喋りしない",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりしない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "姉は 電話では お喋りしない。",
+              "chinese": "姐姐不講電話聊天。",
+              "note": null
+            },
+            {
+              "japanese": "授業中は お喋りしない。",
+              "chinese": "上課中不聊天。",
+              "note": null
+            },
+            {
+              "japanese": "彼は 用事が あると お喋りしない。",
+              "chinese": "他有事時就不聊天。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "お喋りした",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 友達と たくさん お喋りした。",
+              "chinese": "昨天和朋友聊了很多。",
+              "note": null
+            },
+            {
+              "japanese": "喫茶店で 母と お喋りした。",
+              "chinese": "在咖啡店和母親聊天了。",
+              "note": null
+            },
+            {
+              "japanese": "久しぶりに 先輩と お喋りした。",
+              "chinese": "久違地和學長聊天了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "お喋りしなかった",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりしなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは だれとも お喋りしなかった。",
+              "chinese": "昨天和誰都沒聊天。",
+              "note": null
+            },
+            {
+              "japanese": "忙しかったので お喋りしなかった。",
+              "chinese": "因為忙所以沒聊天。",
+              "note": null
+            },
+            {
+              "japanese": "初対面なので あまり お喋りしなかった。",
+              "chinese": "因為初次見面所以沒怎麼聊天。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "お喋りして",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりして",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "駅で 友達と お喋りして、電車に 乗り忘れた。",
+              "chinese": "在車站和朋友聊天，忘了搭車。",
+              "note": null
+            },
+            {
+              "japanese": "母は 台所で お喋りして いる。",
+              "chinese": "母親在廚房聊天。",
+              "note": null
+            },
+            {
+              "japanese": "みんな お喋りして、授業が 始まらない。",
+              "chinese": "大家聊個不停，課都開始不了。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "お喋りできる",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりできる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ここで ゆっくり お喋りできる。",
+              "chinese": "這裡能慢慢聊天。",
+              "note": null
+            },
+            {
+              "japanese": "時間が あれば もっと お喋りできる。",
+              "chinese": "有時間的話能聊更多。",
+              "note": null
+            },
+            {
+              "japanese": "この 部屋では 静かに お喋りできる。",
+              "chinese": "在這個房間能安靜地聊天。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "お喋りしよう",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりしよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "久しぶりに お喋りしよう。",
+              "chinese": "久違地聊聊吧。",
+              "note": null
+            },
+            {
+              "japanese": "お茶を 飲みながら お喋りしよう。",
+              "chinese": "邊喝茶邊聊吧。",
+              "note": null
+            },
+            {
+              "japanese": "仕事の あとで みんなで お喋りしよう。",
+              "chinese": "工作後大家一起聊吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "お喋りしろ",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりしろ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 学生に「静かに お喋りしろ」と 言った。",
+              "chinese": "老師對學生說「安靜地聊」。",
+              "note": null
+            },
+            {
+              "japanese": "部長は「あとで お喋りしろ」と 言った。",
+              "chinese": "部長說「等一下再聊」。",
+              "note": null
+            },
+            {
+              "japanese": "母は 子どもに「外で お喋りしろ」と 言った。",
+              "chinese": "母親對孩子說「到外面聊」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "お喋りすれば",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりすれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "もっと お喋りすれば、友達が 増える。",
+              "chinese": "多聊天的話朋友會增加。",
+              "note": null
+            },
+            {
+              "japanese": "英語で お喋りすれば、練習に なる。",
+              "chinese": "用英語聊天的話能練習。",
+              "note": null
+            },
+            {
+              "japanese": "毎日 お喋りすれば、日本語が 上手に なる。",
+              "chinese": "每天聊天的話日語會變好。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "お喋りされる",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりされる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "陰で お喋りされるのは 嫌だ。",
+              "chinese": "討厭在背後被說閒話。",
+              "note": null
+            },
+            {
+              "japanese": "彼の ことは よく お喋りされる。",
+              "chinese": "他的事常被人說閒話。",
+              "note": null
+            },
+            {
+              "japanese": "有名な 人は いつも お喋りされる。",
+              "chinese": "有名的人總是被說閒話。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "お喋りさせる",
+          "group": "3",
+          "chinese": "聊天; 閒聊; 說閒話",
+          "japanese": "おしゃべりさせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 学生を 二人ずつ お喋りさせる。",
+              "chinese": "老師讓學生兩人一組聊天。",
+              "note": null
+            },
+            {
+              "japanese": "母は 子どもを 外で お喋りさせる。",
+              "chinese": "母親讓孩子在外面聊天。",
+              "note": null
+            },
+            {
+              "japanese": "部長は 部下を 自由に お喋りさせる。",
+              "chinese": "部長讓部下自由聊天。",
+              "note": null
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -30,7 +30,7 @@
         "masu-form": {
           "vol": "勤めます",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "在公司工作; 任職; 服務（禮貌體）",
           "japanese": "つとめます",
           "note": null,
           "error_usage": false,
@@ -55,7 +55,7 @@
         "masu-form-negative": {
           "vol": "勤めません",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "不在公司工作（禮貌體）",
           "japanese": "つとめません",
           "note": null,
           "error_usage": false,
@@ -80,7 +80,7 @@
         "masu-form-past": {
           "vol": "勤めました",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "在公司工作了（禮貌體）",
           "japanese": "つとめました",
           "note": null,
           "error_usage": false,
@@ -105,7 +105,7 @@
         "masu-form-past-negative": {
           "vol": "勤めませんでした",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "（當時）沒有在公司工作（禮貌體）",
           "japanese": "つとめませんでした",
           "note": null,
           "error_usage": false,
@@ -130,7 +130,7 @@
         "nai-form": {
           "vol": "勤めない",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "不在公司工作（普通體）",
           "japanese": "つとめない",
           "note": null,
           "error_usage": false,
@@ -155,7 +155,7 @@
         "ta-form": {
           "vol": "勤めた",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "在公司工作了（普通體）",
           "japanese": "つとめた",
           "note": null,
           "error_usage": false,
@@ -180,7 +180,7 @@
         "nakatta-form": {
           "vol": "勤めなかった",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "（當時）沒有在公司工作（普通體）",
           "japanese": "つとめなかった",
           "note": null,
           "error_usage": false,
@@ -205,7 +205,7 @@
         "te-form": {
           "vol": "勤めて",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "在公司工作，然後…；在公司工作，而…",
           "japanese": "つとめて",
           "note": null,
           "error_usage": false,
@@ -230,7 +230,7 @@
         "potential-form": {
           "vol": "勤められる",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "能在公司工作；可以在公司工作",
           "japanese": "つとめられる",
           "note": null,
           "error_usage": false,
@@ -255,7 +255,7 @@
         "volitional-form": {
           "vol": "勤めよう",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "在公司工作吧；打算在公司工作",
           "japanese": "つとめよう",
           "note": null,
           "error_usage": false,
@@ -280,7 +280,7 @@
         "imperative-form": {
           "vol": "勤めろ",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "快在公司工作！",
           "japanese": "つとめろ",
           "note": null,
           "error_usage": false,
@@ -305,7 +305,7 @@
         "conditional-form": {
           "vol": "勤めれば",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "如果在公司工作，就…",
           "japanese": "つとめれば",
           "note": null,
           "error_usage": false,
@@ -330,7 +330,7 @@
         "passive-form": {
           "vol": "勤められる",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "つとめられる",
           "note": "錯誤詞語，僅供轉詞練習：「勤められる」這個字串是可能形，也用於尊敬（社長が勤められる）。「〜に勤める」沒有自然的受身。作可能形見可能形項。不是不存在的詞。",
           "error_usage": true,
@@ -339,7 +339,7 @@
         "causative-form": {
           "vol": "勤めさせる",
           "group": "2",
-          "chinese": "在公司工作; 任職; 服務",
+          "chinese": "讓…在公司工作；使…在公司工作",
           "japanese": "つとめさせる",
           "note": null,
           "error_usage": false,
@@ -391,7 +391,7 @@
         "masu-form": {
           "vol": "休みます",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "休息; 睡覺; 請假（禮貌體）",
           "japanese": "やすみます",
           "note": null,
           "error_usage": false,
@@ -416,7 +416,7 @@
         "masu-form-negative": {
           "vol": "休みません",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "不休息（禮貌體）",
           "japanese": "やすみません",
           "note": null,
           "error_usage": false,
@@ -441,7 +441,7 @@
         "masu-form-past": {
           "vol": "休みました",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "休息了（禮貌體）",
           "japanese": "やすみました",
           "note": null,
           "error_usage": false,
@@ -466,7 +466,7 @@
         "masu-form-past-negative": {
           "vol": "休みませんでした",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "（當時）沒有休息（禮貌體）",
           "japanese": "やすみませんでした",
           "note": null,
           "error_usage": false,
@@ -491,7 +491,7 @@
         "nai-form": {
           "vol": "休まない",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "不休息（普通體）",
           "japanese": "やすまない",
           "note": null,
           "error_usage": false,
@@ -516,7 +516,7 @@
         "ta-form": {
           "vol": "休んだ",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "休息了（普通體）",
           "japanese": "やすんだ",
           "note": null,
           "error_usage": false,
@@ -541,7 +541,7 @@
         "nakatta-form": {
           "vol": "休まなかった",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "（當時）沒有休息（普通體）",
           "japanese": "やすまなかった",
           "note": null,
           "error_usage": false,
@@ -566,7 +566,7 @@
         "te-form": {
           "vol": "休んで",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "休息，然後…；休息，而…",
           "japanese": "やすんで",
           "note": null,
           "error_usage": false,
@@ -591,7 +591,7 @@
         "potential-form": {
           "vol": "休める",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "能休息；可以休息",
           "japanese": "やすめる",
           "note": null,
           "error_usage": false,
@@ -616,7 +616,7 @@
         "volitional-form": {
           "vol": "休もう",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "休息吧；打算休息",
           "japanese": "やすもう",
           "note": null,
           "error_usage": false,
@@ -641,7 +641,7 @@
         "imperative-form": {
           "vol": "休め",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "快休息！",
           "japanese": "やすめ",
           "note": null,
           "error_usage": false,
@@ -666,7 +666,7 @@
         "conditional-form": {
           "vol": "休めば",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "如果休息，就…",
           "japanese": "やすめば",
           "note": null,
           "error_usage": false,
@@ -691,7 +691,7 @@
         "passive-form": {
           "vol": "休まれる",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "因（別人）休息而受到影響或困擾（迷惑受身）；不是「被休息」",
           "japanese": "やすまれる",
           "note": null,
           "error_usage": false,
@@ -716,7 +716,7 @@
         "causative-form": {
           "vol": "休ませる",
           "group": "1",
-          "chinese": "休息; 睡覺; 請假",
+          "chinese": "讓…休息；使…休息",
           "japanese": "やすませる",
           "note": null,
           "error_usage": false,
@@ -768,7 +768,7 @@
         "masu-form": {
           "vol": "掛けます",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "掛; 坐（椅子）; 打（電話）（禮貌體）",
           "japanese": "かけます",
           "note": null,
           "error_usage": false,
@@ -793,7 +793,7 @@
         "masu-form-negative": {
           "vol": "掛けません",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "不掛（禮貌體）",
           "japanese": "かけません",
           "note": null,
           "error_usage": false,
@@ -818,7 +818,7 @@
         "masu-form-past": {
           "vol": "掛けました",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "掛了（禮貌體）",
           "japanese": "かけました",
           "note": null,
           "error_usage": false,
@@ -843,7 +843,7 @@
         "masu-form-past-negative": {
           "vol": "掛けませんでした",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "（當時）沒有掛（禮貌體）",
           "japanese": "かけませんでした",
           "note": null,
           "error_usage": false,
@@ -868,7 +868,7 @@
         "nai-form": {
           "vol": "掛けない",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "不掛（普通體）",
           "japanese": "かけない",
           "note": null,
           "error_usage": false,
@@ -893,7 +893,7 @@
         "ta-form": {
           "vol": "掛けた",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "掛了（普通體）",
           "japanese": "かけた",
           "note": null,
           "error_usage": false,
@@ -918,7 +918,7 @@
         "nakatta-form": {
           "vol": "掛けなかった",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "（當時）沒有掛（普通體）",
           "japanese": "かけなかった",
           "note": null,
           "error_usage": false,
@@ -943,7 +943,7 @@
         "te-form": {
           "vol": "掛けて",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "掛，然後…；掛，而…",
           "japanese": "かけて",
           "note": null,
           "error_usage": false,
@@ -968,7 +968,7 @@
         "potential-form": {
           "vol": "掛けられる",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "能掛；可以掛",
           "japanese": "かけられる",
           "note": null,
           "error_usage": false,
@@ -993,7 +993,7 @@
         "volitional-form": {
           "vol": "掛けよう",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "掛吧；打算掛",
           "japanese": "かけよう",
           "note": null,
           "error_usage": false,
@@ -1018,7 +1018,7 @@
         "imperative-form": {
           "vol": "掛けろ",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "快掛！",
           "japanese": "かけろ",
           "note": null,
           "error_usage": false,
@@ -1043,7 +1043,7 @@
         "conditional-form": {
           "vol": "掛ければ",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "如果掛，就…",
           "japanese": "かければ",
           "note": null,
           "error_usage": false,
@@ -1068,7 +1068,7 @@
         "passive-form": {
           "vol": "掛けられる",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "被…掛；由…掛；受到…影響或對待",
           "japanese": "かけられる",
           "note": null,
           "error_usage": false,
@@ -1093,7 +1093,7 @@
         "causative-form": {
           "vol": "掛けさせる",
           "group": "2",
-          "chinese": "掛; 坐（椅子）; 打（電話）",
+          "chinese": "讓…掛；使…掛",
           "japanese": "かけさせる",
           "note": null,
           "error_usage": false,
@@ -1145,7 +1145,7 @@
         "masu-form": {
           "vol": "過ごします",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "度過; 過（時間）（禮貌體）",
           "japanese": "すごします",
           "note": null,
           "error_usage": false,
@@ -1170,7 +1170,7 @@
         "masu-form-negative": {
           "vol": "過ごしません",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "不度過（禮貌體）",
           "japanese": "すごしません",
           "note": null,
           "error_usage": false,
@@ -1195,7 +1195,7 @@
         "masu-form-past": {
           "vol": "過ごしました",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "度過了（禮貌體）",
           "japanese": "すごしました",
           "note": null,
           "error_usage": false,
@@ -1220,7 +1220,7 @@
         "masu-form-past-negative": {
           "vol": "過ごしませんでした",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "（當時）沒有度過（禮貌體）",
           "japanese": "すごしませんでした",
           "note": null,
           "error_usage": false,
@@ -1245,7 +1245,7 @@
         "nai-form": {
           "vol": "過ごさない",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "不度過（普通體）",
           "japanese": "すごさない",
           "note": null,
           "error_usage": false,
@@ -1270,7 +1270,7 @@
         "ta-form": {
           "vol": "過ごした",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "度過了（普通體）",
           "japanese": "すごした",
           "note": null,
           "error_usage": false,
@@ -1295,7 +1295,7 @@
         "nakatta-form": {
           "vol": "過ごさなかった",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "（當時）沒有度過（普通體）",
           "japanese": "すごさなかった",
           "note": null,
           "error_usage": false,
@@ -1320,7 +1320,7 @@
         "te-form": {
           "vol": "過ごして",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "度過，然後…；度過，而…",
           "japanese": "すごして",
           "note": null,
           "error_usage": false,
@@ -1345,7 +1345,7 @@
         "potential-form": {
           "vol": "過ごせる",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "能度過；可以度過",
           "japanese": "すごせる",
           "note": null,
           "error_usage": false,
@@ -1370,7 +1370,7 @@
         "volitional-form": {
           "vol": "過ごそう",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "度過吧；打算度過",
           "japanese": "すごそう",
           "note": null,
           "error_usage": false,
@@ -1395,7 +1395,7 @@
         "imperative-form": {
           "vol": "過ごせ",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "快度過！",
           "japanese": "すごせ",
           "note": null,
           "error_usage": false,
@@ -1420,7 +1420,7 @@
         "conditional-form": {
           "vol": "過ごせば",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "如果度過，就…",
           "japanese": "すごせば",
           "note": null,
           "error_usage": false,
@@ -1445,7 +1445,7 @@
         "passive-form": {
           "vol": "過ごされる",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "すごされる",
           "note": "錯誤詞語，僅供轉詞練習：例句「社長は正月を過ごされる」是尊敬用法，不是受身形；「過ごす」的受身「過ごされる」沒有實際用法",
           "error_usage": true,
@@ -1454,7 +1454,7 @@
         "causative-form": {
           "vol": "過ごさせる",
           "group": "1",
-          "chinese": "度過; 過（時間）",
+          "chinese": "讓…度過；使…度過",
           "japanese": "すごさせる",
           "note": null,
           "error_usage": false,
@@ -1506,7 +1506,7 @@
         "masu-form": {
           "vol": "寄ります",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "順路去; 靠近（禮貌體）",
           "japanese": "よります",
           "note": null,
           "error_usage": false,
@@ -1531,7 +1531,7 @@
         "masu-form-negative": {
           "vol": "寄りません",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "不順路去（禮貌體）",
           "japanese": "よりません",
           "note": null,
           "error_usage": false,
@@ -1556,7 +1556,7 @@
         "masu-form-past": {
           "vol": "寄りました",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "順路去了（禮貌體）",
           "japanese": "よりました",
           "note": null,
           "error_usage": false,
@@ -1581,7 +1581,7 @@
         "masu-form-past-negative": {
           "vol": "寄りませんでした",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "（當時）沒有順路去（禮貌體）",
           "japanese": "よりませんでした",
           "note": null,
           "error_usage": false,
@@ -1606,7 +1606,7 @@
         "nai-form": {
           "vol": "寄らない",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "不順路去（普通體）",
           "japanese": "よらない",
           "note": null,
           "error_usage": false,
@@ -1631,7 +1631,7 @@
         "ta-form": {
           "vol": "寄った",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "順路去了（普通體）",
           "japanese": "よった",
           "note": null,
           "error_usage": false,
@@ -1656,7 +1656,7 @@
         "nakatta-form": {
           "vol": "寄らなかった",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "（當時）沒有順路去（普通體）",
           "japanese": "よらなかった",
           "note": null,
           "error_usage": false,
@@ -1681,7 +1681,7 @@
         "te-form": {
           "vol": "寄って",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "順路去，然後…；順路去，而…",
           "japanese": "よって",
           "note": null,
           "error_usage": false,
@@ -1706,7 +1706,7 @@
         "potential-form": {
           "vol": "寄れる",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "能順路去；可以順路去",
           "japanese": "よれる",
           "note": null,
           "error_usage": false,
@@ -1731,7 +1731,7 @@
         "volitional-form": {
           "vol": "寄ろう",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "順路去吧；打算順路去",
           "japanese": "よろう",
           "note": null,
           "error_usage": false,
@@ -1756,7 +1756,7 @@
         "imperative-form": {
           "vol": "寄れ",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "快順路去！",
           "japanese": "よれ",
           "note": null,
           "error_usage": false,
@@ -1781,7 +1781,7 @@
         "conditional-form": {
           "vol": "寄れば",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "如果順路去，就…",
           "japanese": "よれば",
           "note": null,
           "error_usage": false,
@@ -1806,7 +1806,7 @@
         "passive-form": {
           "vol": "寄られる",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "因（別人）順路去而受到影響或困擾（迷惑受身）；不是「被順路去」",
           "japanese": "よられる",
           "note": null,
           "error_usage": false,
@@ -1831,7 +1831,7 @@
         "causative-form": {
           "vol": "寄らせる",
           "group": "1",
-          "chinese": "順路去; 靠近",
+          "chinese": "讓…順路去；使…順路去",
           "japanese": "よらせる",
           "note": null,
           "error_usage": false,

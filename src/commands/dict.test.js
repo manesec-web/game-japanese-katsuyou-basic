@@ -3,6 +3,7 @@ import { createRegistry } from '../engine/registry.js'
 import { createSession } from '../engine/session.js'
 import { specs as studySpecs } from './study.js'
 import { specs as dictSpecs } from './dict.js'
+import { specs as navSpecs } from './nav.js'
 
 function fakeLibrary(byLesson) {
   return {
@@ -24,7 +25,7 @@ const verbB = { 'dictionary-form': { vol: 'B' } }
 
 function makeRegistry(library) {
   const registry = createRegistry()
-  registry.registerAll([...studySpecs({ library }), ...dictSpecs()])
+  registry.registerAll([...studySpecs({ library }), ...dictSpecs(), ...navSpecs()])
   return registry
 }
 
@@ -89,6 +90,52 @@ describe('dict.next / dict.prev', () => {
     const { registry, session } = studySession()
     session.screen = 'picker'
     const result = registry.dispatch(session, 'dict.next', {})
+    expect(result.ok).toBe(false)
+    expect(result.error.code).toBe('command-disabled')
+    expect(session.index).toBe(0)
+  })
+})
+
+describe('dict.goto', () => {
+  function tocSession() {
+    const registry = makeRegistry(fakeLibrary({ 2: [verbA, verbB], 5: [verbA] }))
+    const session = createSession()
+    session.settings.dict.lessons = [2, 5]
+    registry.dispatch(session, 'study.start', {})
+    registry.dispatch(session, 'nav.go', { screen: 'toc' })
+    return { registry, session }
+  }
+
+  it('opens the reader on the pressed word', () => {
+    const { registry, session } = tocSession()
+    const result = registry.dispatch(session, 'dict.goto', { index: 2 })
+    expect(result.ok).toBe(true)
+    expect(session.index).toBe(2)
+    expect(session.screen).toBe('reader')
+  })
+
+  it('rejects an index past the last word and stays on the list', () => {
+    const { registry, session } = tocSession()
+    const result = registry.dispatch(session, 'dict.goto', { index: 3 })
+    expect(result.ok).toBe(false)
+    expect(result.error.code).toBe('invalid-index')
+    expect(session.index).toBe(0)
+    expect(session.screen).toBe('toc')
+  })
+
+  it('rejects a negative or non-integer index', () => {
+    const { registry, session } = tocSession()
+    expect(registry.dispatch(session, 'dict.goto', { index: -1 }).ok).toBe(false)
+    expect(registry.dispatch(session, 'dict.goto', { index: '1' }).ok).toBe(false)
+    expect(registry.dispatch(session, 'dict.goto', { index: 1.5 }).ok).toBe(false)
+    expect(session.screen).toBe('toc')
+    expect(session.index).toBe(0)
+  })
+
+  it('is disabled outside the word list', () => {
+    const { registry, session } = tocSession()
+    registry.dispatch(session, 'nav.go', { screen: 'reader' })
+    const result = registry.dispatch(session, 'dict.goto', { index: 1 })
     expect(result.ok).toBe(false)
     expect(result.error.code).toBe('command-disabled')
     expect(session.index).toBe(0)

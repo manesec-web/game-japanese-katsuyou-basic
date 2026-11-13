@@ -5,7 +5,7 @@
         "dictionary-form": {
           "vol": "いる",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "有；在（表示生物的存在）",
           "japanese": "いる",
           "note": null,
           "error_usage": false,
@@ -30,7 +30,7 @@
         "masu-form": {
           "vol": "います",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "有；在（表示生物的存在，禮貌體）",
           "japanese": "います",
           "note": null,
           "error_usage": false,
@@ -55,7 +55,7 @@
         "masu-form-negative": {
           "vol": "いません",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "沒有；不在（禮貌體）",
           "japanese": "いません",
           "note": null,
           "error_usage": false,
@@ -80,7 +80,7 @@
         "masu-form-past": {
           "vol": "いました",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "（當時）有；曾在（禮貌體）",
           "japanese": "いました",
           "note": null,
           "error_usage": false,
@@ -105,7 +105,7 @@
         "masu-form-past-negative": {
           "vol": "いませんでした",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "（當時）沒有；不在（禮貌體）",
           "japanese": "いませんでした",
           "note": null,
           "error_usage": false,
@@ -130,7 +130,7 @@
         "nai-form": {
           "vol": "いない",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "沒有；不在",
           "japanese": "いない",
           "note": null,
           "error_usage": false,
@@ -155,7 +155,7 @@
         "ta-form": {
           "vol": "いた",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "（當時）有；曾在",
           "japanese": "いた",
           "note": null,
           "error_usage": false,
@@ -180,7 +180,7 @@
         "nakatta-form": {
           "vol": "いなかった",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "（當時）沒有；不在",
           "japanese": "いなかった",
           "note": null,
           "error_usage": false,
@@ -205,7 +205,7 @@
         "te-form": {
           "vol": "いて",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "在…（同時）…；有…，所以…",
           "japanese": "いて",
           "note": null,
           "error_usage": false,
@@ -230,7 +230,7 @@
         "potential-form": {
           "vol": "いられる",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "能待得…；可以在（某處）",
           "japanese": "いられる",
           "note": null,
           "error_usage": false,
@@ -255,7 +255,7 @@
         "volitional-form": {
           "vol": "いよう",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "待在…吧；想一直待在…",
           "japanese": "いよう",
           "note": null,
           "error_usage": false,
@@ -280,7 +280,7 @@
         "imperative-form": {
           "vol": "いろ",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "待在…；安靜待著",
           "japanese": "いろ",
           "note": null,
           "error_usage": false,
@@ -305,7 +305,7 @@
         "conditional-form": {
           "vol": "いれば",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "有人／待在…的話，就…",
           "japanese": "いれば",
           "note": null,
           "error_usage": false,
@@ -330,7 +330,7 @@
         "passive-form": {
           "vol": "いられる",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "（孩子等）一直待著，使自己受影響／困擾；不是「被在」",
           "japanese": "いられる",
           "note": null,
           "error_usage": false,
@@ -355,7 +355,7 @@
         "causative-form": {
           "vol": "いさせる",
           "group": "2",
-          "chinese": "有; 在（表示生物的存在）",
+          "chinese": "讓…待在（某處）；使…留在",
           "japanese": "いさせる",
           "note": null,
           "error_usage": false,
@@ -382,7 +382,7 @@
         "dictionary-form": {
           "vol": "ある",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "有；在（表示無生物的存在）",
           "japanese": "ある",
           "note": null,
           "error_usage": false,
@@ -407,7 +407,7 @@
         "masu-form": {
           "vol": "あります",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "有；在（表示無生物的存在，禮貌體）",
           "japanese": "あります",
           "note": null,
           "error_usage": false,
@@ -432,7 +432,7 @@
         "masu-form-negative": {
           "vol": "ありません",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "沒有；不存在（禮貌體）",
           "japanese": "ありません",
           "note": null,
           "error_usage": false,
@@ -457,7 +457,7 @@
         "masu-form-past": {
           "vol": "ありました",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "（當時）有；曾經有（禮貌體）",
           "japanese": "ありました",
           "note": null,
           "error_usage": false,
@@ -482,7 +482,7 @@
         "masu-form-past-negative": {
           "vol": "ありませんでした",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "（當時）沒有；不曾有（禮貌體）",
           "japanese": "ありませんでした",
           "note": null,
           "error_usage": false,
@@ -507,7 +507,7 @@
         "nai-form": {
           "vol": "ない",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "沒有；不存在",
           "japanese": "ない",
           "note": null,
           "error_usage": false,
@@ -532,7 +532,7 @@
         "ta-form": {
           "vol": "あった",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "（當時）有；曾經有",
           "japanese": "あった",
           "note": null,
           "error_usage": false,
@@ -557,7 +557,7 @@
         "nakatta-form": {
           "vol": "なかった",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "（當時）沒有；不曾有",
           "japanese": "なかった",
           "note": null,
           "error_usage": false,
@@ -582,7 +582,7 @@
         "te-form": {
           "vol": "あって",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "有…，而…；有…，所以…",
           "japanese": "あって",
           "note": null,
           "error_usage": false,
@@ -607,7 +607,7 @@
         "potential-form": {
           "vol": "ありえる",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "有可能（發生）；說不定會…",
           "japanese": "ありえる",
           "note": null,
           "error_usage": false,
@@ -632,7 +632,7 @@
         "volitional-form": {
           "vol": "あろう",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "不管有什麼／有沒有都…（讓步・推量用法，此形日常少用）",
           "japanese": "あろう",
           "note": "字典有但是不常用：「あろう」的意志・推量用法日常不用；實際用於「〜あろうと」「〜であろう」等慣用表現",
           "error_usage": false,
@@ -657,7 +657,7 @@
         "imperative-form": {
           "vol": "あれ",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "願有…；但願…（文語祈願用法，此形日常少用）",
           "japanese": "あれ",
           "note": "字典有但是不常用：「あれ」是文語命令形，只用於「光あれ」「幸あれ」「〜であれ」等固定表現",
           "error_usage": false,
@@ -682,7 +682,7 @@
         "conditional-form": {
           "vol": "あれば",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "如果有的話，就…",
           "japanese": "あれば",
           "note": null,
           "error_usage": false,
@@ -707,7 +707,7 @@
         "passive-form": {
           "vol": "あられる",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "あられる",
           "note": "錯誤詞語，僅供轉詞練習：「あられる」是尊敬用法，不是受身形；日常不用",
           "error_usage": true,
@@ -716,7 +716,7 @@
         "causative-form": {
           "vol": "あらせる",
           "group": "0",
-          "chinese": "有; 在（表示無生物的存在）",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "あらせる",
           "note": "錯誤詞語，僅供轉詞練習：「あらせる」日常不用",
           "error_usage": true,

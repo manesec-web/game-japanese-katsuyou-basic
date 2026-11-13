@@ -30,7 +30,7 @@
         "masu-form": {
           "vol": "包みます",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "包; 裹; 包裝（禮貌體）",
           "japanese": "つつみます",
           "note": null,
           "error_usage": false,
@@ -55,7 +55,7 @@
         "masu-form-negative": {
           "vol": "包みません",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "不包（禮貌體）",
           "japanese": "つつみません",
           "note": null,
           "error_usage": false,
@@ -80,7 +80,7 @@
         "masu-form-past": {
           "vol": "包みました",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "包了（禮貌體）",
           "japanese": "つつみました",
           "note": null,
           "error_usage": false,
@@ -105,7 +105,7 @@
         "masu-form-past-negative": {
           "vol": "包みませんでした",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "（當時）沒有包（禮貌體）",
           "japanese": "つつみませんでした",
           "note": null,
           "error_usage": false,
@@ -130,7 +130,7 @@
         "nai-form": {
           "vol": "包まない",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "不包（普通體）",
           "japanese": "つつまない",
           "note": null,
           "error_usage": false,
@@ -155,7 +155,7 @@
         "ta-form": {
           "vol": "包んだ",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "包了（普通體）",
           "japanese": "つつんだ",
           "note": null,
           "error_usage": false,
@@ -180,7 +180,7 @@
         "nakatta-form": {
           "vol": "包まなかった",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "（當時）沒有包（普通體）",
           "japanese": "つつまなかった",
           "note": null,
           "error_usage": false,
@@ -205,7 +205,7 @@
         "te-form": {
           "vol": "包んで",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "包，然後…；包，而…",
           "japanese": "つつんで",
           "note": null,
           "error_usage": false,
@@ -230,7 +230,7 @@
         "potential-form": {
           "vol": "包める",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "能包；可以包",
           "japanese": "つつめる",
           "note": null,
           "error_usage": false,
@@ -255,7 +255,7 @@
         "volitional-form": {
           "vol": "包もう",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "包吧；打算包",
           "japanese": "つつもう",
           "note": null,
           "error_usage": false,
@@ -280,7 +280,7 @@
         "imperative-form": {
           "vol": "包め",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "快包！",
           "japanese": "つつめ",
           "note": null,
           "error_usage": false,
@@ -305,7 +305,7 @@
         "conditional-form": {
           "vol": "包めば",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "如果包，就…",
           "japanese": "つつめば",
           "note": null,
           "error_usage": false,
@@ -330,7 +330,7 @@
         "passive-form": {
           "vol": "包まれる",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "被…包；由…包；受到…影響或對待",
           "japanese": "つつまれる",
           "note": null,
           "error_usage": false,
@@ -355,7 +355,7 @@
         "causative-form": {
           "vol": "包ませる",
           "group": "1",
-          "chinese": "包; 裹; 包裝",
+          "chinese": "讓…包；使…包",
           "japanese": "つつませる",
           "note": null,
           "error_usage": false,
@@ -407,7 +407,7 @@
         "masu-form": {
           "vol": "沸かします",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "燒開; 煮沸; 使沸騰（禮貌體）",
           "japanese": "わかします",
           "note": null,
           "error_usage": false,
@@ -432,7 +432,7 @@
         "masu-form-negative": {
           "vol": "沸かしません",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "不燒開（禮貌體）",
           "japanese": "わかしません",
           "note": null,
           "error_usage": false,
@@ -457,7 +457,7 @@
         "masu-form-past": {
           "vol": "沸かしました",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "燒開了（禮貌體）",
           "japanese": "わかしました",
           "note": null,
           "error_usage": false,
@@ -482,7 +482,7 @@
         "masu-form-past-negative": {
           "vol": "沸かしませんでした",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "（當時）沒有燒開（禮貌體）",
           "japanese": "わかしませんでした",
           "note": null,
           "error_usage": false,
@@ -507,7 +507,7 @@
         "nai-form": {
           "vol": "沸かさない",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "不燒開（普通體）",
           "japanese": "わかさない",
           "note": null,
           "error_usage": false,
@@ -532,7 +532,7 @@
         "ta-form": {
           "vol": "沸かした",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "燒開了（普通體）",
           "japanese": "わかした",
           "note": null,
           "error_usage": false,
@@ -557,7 +557,7 @@
         "nakatta-form": {
           "vol": "沸かさなかった",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "（當時）沒有燒開（普通體）",
           "japanese": "わかさなかった",
           "note": null,
           "error_usage": false,
@@ -582,7 +582,7 @@
         "te-form": {
           "vol": "沸かして",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "燒開，然後…；燒開，而…",
           "japanese": "わかして",
           "note": null,
           "error_usage": false,
@@ -607,7 +607,7 @@
         "potential-form": {
           "vol": "沸かせる",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "能燒開；可以燒開",
           "japanese": "わかせる",
           "note": null,
           "error_usage": false,
@@ -632,7 +632,7 @@
         "volitional-form": {
           "vol": "沸かそう",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "燒開吧；打算燒開",
           "japanese": "わかそう",
           "note": null,
           "error_usage": false,
@@ -657,7 +657,7 @@
         "imperative-form": {
           "vol": "沸かせ",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "快燒開！",
           "japanese": "わかせ",
           "note": null,
           "error_usage": false,
@@ -682,7 +682,7 @@
         "conditional-form": {
           "vol": "沸かせば",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "如果燒開，就…",
           "japanese": "わかせば",
           "note": null,
           "error_usage": false,
@@ -707,7 +707,7 @@
         "passive-form": {
           "vol": "沸かされる",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "開水由母親燒…（此形語意見例句）",
           "japanese": "わかされる",
           "note": null,
           "error_usage": false,
@@ -732,7 +732,7 @@
         "causative-form": {
           "vol": "沸かさせる",
           "group": "1",
-          "chinese": "燒開; 煮沸; 使沸騰",
+          "chinese": "讓…燒開；使…燒開",
           "japanese": "わかさせる",
           "note": null,
           "error_usage": false,
@@ -784,7 +784,7 @@
         "masu-form": {
           "vol": "混ぜます",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "混合; 攪拌; 摻（禮貌體）",
           "japanese": "まぜます",
           "note": null,
           "error_usage": false,
@@ -809,7 +809,7 @@
         "masu-form-negative": {
           "vol": "混ぜません",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "不混合（禮貌體）",
           "japanese": "まぜません",
           "note": null,
           "error_usage": false,
@@ -834,7 +834,7 @@
         "masu-form-past": {
           "vol": "混ぜました",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "混合了（禮貌體）",
           "japanese": "まぜました",
           "note": null,
           "error_usage": false,
@@ -859,7 +859,7 @@
         "masu-form-past-negative": {
           "vol": "混ぜませんでした",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "（當時）沒有混合（禮貌體）",
           "japanese": "まぜませんでした",
           "note": null,
           "error_usage": false,
@@ -884,7 +884,7 @@
         "nai-form": {
           "vol": "混ぜない",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "不混合（普通體）",
           "japanese": "まぜない",
           "note": null,
           "error_usage": false,
@@ -909,7 +909,7 @@
         "ta-form": {
           "vol": "混ぜた",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "混合了（普通體）",
           "japanese": "まぜた",
           "note": null,
           "error_usage": false,
@@ -934,7 +934,7 @@
         "nakatta-form": {
           "vol": "混ぜなかった",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "（當時）沒有混合（普通體）",
           "japanese": "まぜなかった",
           "note": null,
           "error_usage": false,
@@ -959,7 +959,7 @@
         "te-form": {
           "vol": "混ぜて",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "混合，然後…；混合，而…",
           "japanese": "まぜて",
           "note": null,
           "error_usage": false,
@@ -984,7 +984,7 @@
         "potential-form": {
           "vol": "混ぜられる",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "能混合；可以混合",
           "japanese": "まぜられる",
           "note": null,
           "error_usage": false,
@@ -1009,7 +1009,7 @@
         "volitional-form": {
           "vol": "混ぜよう",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "混合吧；打算混合",
           "japanese": "まぜよう",
           "note": null,
           "error_usage": false,
@@ -1034,7 +1034,7 @@
         "imperative-form": {
           "vol": "混ぜろ",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "快混合！",
           "japanese": "まぜろ",
           "note": null,
           "error_usage": false,
@@ -1059,7 +1059,7 @@
         "conditional-form": {
           "vol": "混ぜれば",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "如果混合，就…",
           "japanese": "まぜれば",
           "note": null,
           "error_usage": false,
@@ -1084,7 +1084,7 @@
         "passive-form": {
           "vol": "混ぜられる",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "材料由店員攪拌…（此形語意見例句）",
           "japanese": "まぜられる",
           "note": null,
           "error_usage": false,
@@ -1109,7 +1109,7 @@
         "causative-form": {
           "vol": "混ぜさせる",
           "group": "2",
-          "chinese": "混合; 攪拌; 摻",
+          "chinese": "讓…混合；使…混合",
           "japanese": "まぜさせる",
           "note": null,
           "error_usage": false,
@@ -1161,7 +1161,7 @@
         "masu-form": {
           "vol": "計算します",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "計算; 運算（禮貌體）",
           "japanese": "けいさんします",
           "note": null,
           "error_usage": false,
@@ -1186,7 +1186,7 @@
         "masu-form-negative": {
           "vol": "計算しません",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "不計算（禮貌體）",
           "japanese": "けいさんしません",
           "note": null,
           "error_usage": false,
@@ -1211,7 +1211,7 @@
         "masu-form-past": {
           "vol": "計算しました",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "計算了（禮貌體）",
           "japanese": "けいさんしました",
           "note": null,
           "error_usage": false,
@@ -1236,7 +1236,7 @@
         "masu-form-past-negative": {
           "vol": "計算しませんでした",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "（當時）沒有計算（禮貌體）",
           "japanese": "けいさんしませんでした",
           "note": null,
           "error_usage": false,
@@ -1261,7 +1261,7 @@
         "nai-form": {
           "vol": "計算しない",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "不計算（普通體）",
           "japanese": "けいさんしない",
           "note": null,
           "error_usage": false,
@@ -1286,7 +1286,7 @@
         "ta-form": {
           "vol": "計算した",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "計算了（普通體）",
           "japanese": "けいさんした",
           "note": null,
           "error_usage": false,
@@ -1311,7 +1311,7 @@
         "nakatta-form": {
           "vol": "計算しなかった",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "（當時）沒有計算（普通體）",
           "japanese": "けいさんしなかった",
           "note": null,
           "error_usage": false,
@@ -1336,7 +1336,7 @@
         "te-form": {
           "vol": "計算して",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "計算，然後…；計算，而…",
           "japanese": "けいさんして",
           "note": null,
           "error_usage": false,
@@ -1361,7 +1361,7 @@
         "potential-form": {
           "vol": "計算できる",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "能計算；可以計算",
           "japanese": "けいさんできる",
           "note": null,
           "error_usage": false,
@@ -1386,7 +1386,7 @@
         "volitional-form": {
           "vol": "計算しよう",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "計算吧；打算計算",
           "japanese": "けいさんしよう",
           "note": null,
           "error_usage": false,
@@ -1411,7 +1411,7 @@
         "imperative-form": {
           "vol": "計算しろ",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "快計算！",
           "japanese": "けいさんしろ",
           "note": null,
           "error_usage": false,
@@ -1436,7 +1436,7 @@
         "conditional-form": {
           "vol": "計算すれば",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "如果計算，就…",
           "japanese": "けいさんすれば",
           "note": null,
           "error_usage": false,
@@ -1461,7 +1461,7 @@
         "passive-form": {
           "vol": "計算される",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "費用由會計計算…（此形語意見例句）",
           "japanese": "けいさんされる",
           "note": null,
           "error_usage": false,
@@ -1486,7 +1486,7 @@
         "causative-form": {
           "vol": "計算させる",
           "group": "3",
-          "chinese": "計算; 運算",
+          "chinese": "讓…計算；使…計算",
           "japanese": "けいさんさせる",
           "note": null,
           "error_usage": false,

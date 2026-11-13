@@ -6,6 +6,13 @@ serving, secure-origin and Pages rules below were rechecked on 2026-11-11
 against the revision-23 build (50 dictionary files, `output/index.html`); they
 are unchanged by the later settings and UI work.
 
+Revision 31 changed only the form-level Chinese `chinese` values and one
+usage `note` inside `vol/lesson_*.json`; it did not change file names, the
+50-file layout, the manifest algorithm, or the boot/hash rules. Because the
+manifest hashes raw bytes, `node scripts/write-sha256.mjs` was re-run after
+that data pass; a stale manifest still makes `pretest` / `prebuild` / `predev`
+and the loading screen fail exactly as before.
+
 ## Correct ways to run it
 
 ```bash

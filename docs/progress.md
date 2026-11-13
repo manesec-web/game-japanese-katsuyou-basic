@@ -1,12 +1,41 @@
 # Progress
 
-Last updated: 2026-11-12 (revision 28: tab title `大家の動詞轉型練習`, logo in
-`docs/logo/`, lede `涵蓋初級 1 – 50 課的動詞`).
+Last updated: 2026-11-13 (revision 31: a native-Japanese-teacher pass over
+all 5,790 form-level Chinese glosses).
 
-**Status: complete.** T1–T8 are done and revisions 2–28 have landed and been
+**Status: complete.** T1–T8 are done and revisions 2–31 have landed and been
 verified, including follow-up UI passes A/B. The site is not published yet;
 the remaining product step is to deploy `output/` to GitHub Pages. Backlog
 B1–B3 remain `pending`; B3 is open for further, unspecified UI work.
+
+## Revision 31 — per-form Chinese glosses (data only)
+
+- `vol/lesson_1.json` … `lesson_50.json`: 5,420 form `chinese` values rewritten
+  and one misleading `note` (L23#9) normalized. Only those two fields changed;
+  `vol`, `group`, `japanese`, `sentence` (Japanese, Chinese, notes),
+  `error_usage`, key order, lesson structure and canonical formatting are
+  byte-equivalent to `docs/gloss-rewrite/baseline/`.
+- 191 `error_usage` forms now carry the single marker
+  `（非自然日語；僅供轉詞練習，無自然中文譯義）`. The 5,599 usable forms carry
+  their own affirmative/negative/tense/て/可能/意向/命令/條件/受身/使役 meaning;
+  polite and plain pairs are labelled `（禮貌體）` / `（普通體）`.
+- Data-driven exceptions: 迷惑受身, 尊敬語, 讓步構文, 文語祈願, 自發用法,
+  stative/cognitive verbs (見える, 聞こえる, 要る, 足りる, できる, 出来る …),
+  three already-inflected Chinese base glosses, and form-specific 「日常少用」
+  notes. 44 verb paradigms and 10 semantic-denial notes were hand-reviewed.
+- Known findings awaiting user ruling are in
+  `docs/gloss-rewrite/batch-doubts.md` (D1–D10). D1: the goal contract cited
+  89 error forms / 17,103 sentences from a stale audit; current `vol/` has
+  191 / 16,797. Example sentences were deliberately left untouched.
+- Verification: `node scripts/validate-gloss-rewrite.mjs --all` passes
+  (50 lessons / 386 verbs / 5,790 forms / 5,599 usable / 191 error markers /
+  16,797 sentences / 0 immutable-field changes); five `--batch N` gates and
+  `--review --batch N` pass with 0 flags. Manifest regenerated with
+  `node scripts/write-sha256.mjs`; `npm test`, `npm run build`, and the
+  browser walk-through are part of the revision-31 acceptance run.
+- `docs/spec.md` Data now specifies per-form glosses; `AGENTS.md` and
+  `docs/architecture.md` record the one-time `vol/` exception. No `.vue`,
+  command, engine or settings code changed.
 
 The following revision summaries are historical. Revision 14 replaced the
 paging follow/spring-back
@@ -72,23 +101,29 @@ drag paint synchronously in the pointer event rather than waiting for Vue.
 Revision 27 then renamed the site title from `轉型練習` to `動詞轉型練習` in
 `SiteHead.vue` and the document title, and updated the current-behaviour docs
 (the spec's loading/home head, the T3 line in `AGENTS.md`, `README.md`) while
-leaving the historical revision rows at their original wording.
+leaving the historical revision rows at their original wording. Revision 29
+moved the unflipped card's tag above its word, and revision 30 added the
+dictionary's 單詞目錄: a 目錄 icon left of the settings gear opens a screen of
+its own that lists the run's frozen words grouped by 第N課, marks the current
+word, jumps the reader to a pressed row at the top of the page, and returns to
+the unchanged word on back.
 
 ## Current state
 
 - Vue 3.5 + Vite 7.3 + Vitest 3 static app. Verified with Node v26.4.0 and
   npm 11.18.0; Vite 7 requires Node `^20.19.0` or `>=22.12.0`.
-- `npm test`: 28 files, **317 tests passing**. `pretest` verifies the 50-lesson
+- `npm test`: 30 files, **331 tests passing**. `pretest` verifies the 50-lesson
   SHA-256 manifest first.
 - `npm run build`: `output/index.html`, `output/assets/` (one JS + one CSS
   bundle plus the four hashed logo icons — `favicon*.ico`, `favicon-32*.png`,
   `favicon-192*.png`, `apple-touch-icon*.png`) and `output/dict/` with exactly
   **50** lesson files. `output/` is gitignored.
-- `node scripts/browser-check.mjs`: **550 checks passing on the final run**
-  (headless Chromium, 390×844 with 550/551/800/900 width probes, plus a touch
-  context for the zoom lock, thumb-drag/proximity assertions and frame-by-frame
-  motion checks). The count moves with the seeded quiz item, which decides how
-  many kana-key assertions run.
+- `node scripts/browser-check.mjs`: **574 checks passing on the revision-31
+  final run** (headless Chromium, 390×844 with 550/551/800/900 width probes,
+  plus a touch context for the zoom lock, thumb-drag/proximity assertions,
+  frame-by-frame motion checks, and 8 new checks that the reader renders each
+  form's own Chinese gloss). The count moves with the seeded quiz item, which
+  decides how many kana-key assertions run.
 - `node scripts/motion-probe.mjs`: prints the frame-by-frame position trace for
   the paging slide and the flip. Used to measure the motion before and after a
   change; not part of the pass/fail gate.
@@ -104,12 +139,14 @@ leaving the historical revision rows at their original wording.
 ## Verification as of this refresh
 
 ```bash
-npm test                                # 28 files, 317 tests passed
+npm test                                # 30 files, 331 tests passed
 npm run build                           # manifest ok: 50 lessons; output/index.html + 50 dict files
 ls output/dict | wc -l                  # 50
-node scripts/browser-check.mjs          # browser check passed (550 checks)
+node scripts/browser-check.mjs          # browser check passed (574 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 node scripts/write-sha256.mjs --check   # manifest ok: 50 lessons
+node scripts/validate-gloss-rewrite.mjs --all  # 0 immutable-field changes
+node scripts/rewrite-glosses.mjs --review --all # 5599 forms, 0 flags
 ```
 
 ## History in one line each
@@ -238,6 +275,21 @@ in [`docs/changelog.md`](changelog.md). Task acceptance evidence is in
   tags. The pill, its wording and the prompt are unchanged. The spec's Cards
   face clause and a new browser position assertion follow; the run still
   passes 28 files / 317 tests and 550 browser checks with 0 failures.
+
+- **Revision 30** (requested 2026-11-13: 「我想在這個設置按鈕旁邊加入一個單詞的
+  目錄，點一下會顯示選擇課文的所有單詞，這樣方便用戶跳轉」): a new `toc`
+  screen behind a 目錄 icon left of the reader's settings gear. It lists only
+  the run's frozen words (`session.items`), grouped by `第N課`, each row
+  showing the word and its lesson tag, with the current word tinted and marked
+  `aria-current`. A press runs `dict.goto` — an integer inside the list or an
+  `invalid-index` error — and the reader opens on that word at the top of the
+  page; back returns to the unchanged word. `src/study/toc.js` holds the
+  grouping as a pure function, `src/commands/nav.js` allows the screen only
+  from the reader. The reader also scrolls to the top on mount, because a jump
+  changes `index` before the reader exists. Verified: `npm test` 30 files /
+  331 tests; manifest ok (50); `npm run build` ok with 50 dict files;
+  `node scripts/browser-check.mjs` 565 checks passing, 0 failures (16 of them
+  cover the new screen). No `vol/*.json` was touched.
 
 - **Revision 13**: the loading screen carries the site head
   (`大家の日本語` / `轉型練習` / `涵蓋初級 1 – 50 課的單詞`) and the credit line

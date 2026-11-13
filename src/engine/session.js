@@ -2,7 +2,7 @@
 import { defaultSettings } from '../dict/settings.js'
 import { createResults } from '../study/results.js'
 
-export const SCREENS = ['loading', 'home', 'picker', 'reader', 'card', 'quiz', 'settings']
+export const SCREENS = ['loading', 'home', 'picker', 'reader', 'toc', 'card', 'quiz', 'settings']
 export const MODES = ['dict', 'card', 'quiz']
 
 export function createSession() {

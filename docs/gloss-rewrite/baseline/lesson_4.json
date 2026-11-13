@@ -1,0 +1,2252 @@
+{
+  "lesson_4": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "起きる",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "毎朝 六時に 起きる。",
+              "chinese": "每天早上六點起床。",
+              "note": null
+            },
+            {
+              "japanese": "休みの 日も 早く 起きる。",
+              "chinese": "假日也早起。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは 七時に 起きる。",
+              "chinese": "小孩七點起床。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "起きます",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ふだんは 六時に 起きます。",
+              "chinese": "平常六點起床。",
+              "note": null
+            },
+            {
+              "japanese": "あしたは 五時に 起きます。",
+              "chinese": "明天五點起床。",
+              "note": null
+            },
+            {
+              "japanese": "兄は いつも 早く 起きます。",
+              "chinese": "哥哥總是早起。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "起きません",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "日曜日は 早く 起きません。",
+              "chinese": "星期天不早起。",
+              "note": null
+            },
+            {
+              "japanese": "きょうは 六時に 起きません。",
+              "chinese": "今天六點不起床。",
+              "note": null
+            },
+            {
+              "japanese": "妹は まだ 起きません。",
+              "chinese": "妹妹還沒起床。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "起きました",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "けさは 五時に 起きました。",
+              "chinese": "今天早上五點起床了。",
+              "note": null
+            },
+            {
+              "japanese": "ゆうべ 早く 寝たので、早く 起きました。",
+              "chinese": "昨晚早睡，所以早起了。",
+              "note": null
+            },
+            {
+              "japanese": "子どもも 一緒に 起きました。",
+              "chinese": "小孩也一起起床了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "起きませんでした",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "けさは 六時に 起きませんでした。",
+              "chinese": "今天早上六點沒起床。",
+              "note": null
+            },
+            {
+              "japanese": "きのうは 遅くまで 寝て、早く 起きませんでした。",
+              "chinese": "昨天睡到很晚，沒有早起。",
+              "note": null
+            },
+            {
+              "japanese": "弟は 九時まで 起きませんでした。",
+              "chinese": "弟弟到九點才起床。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "起きない",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "休みの 日は 早く 起きない。",
+              "chinese": "假日不早起。",
+              "note": null
+            },
+            {
+              "japanese": "妹は まだ 起きない。",
+              "chinese": "妹妹還不起床。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは なかなか 起きない。",
+              "chinese": "小孩怎麼也不起床。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "起きた",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "けさ 六時に 起きた。",
+              "chinese": "今天早上六點起床了。",
+              "note": null
+            },
+            {
+              "japanese": "妹は もう 起きた。",
+              "chinese": "妹妹已經起床了。",
+              "note": null
+            },
+            {
+              "japanese": "ゆうべ 早く 寝たから、五時に 起きた。",
+              "chinese": "昨晚早睡，所以五點就起床了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "起きなかった",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "けさは 七時に 起きなかった。",
+              "chinese": "今天早上七點還沒起床。",
+              "note": null
+            },
+            {
+              "japanese": "日曜日は 早く 起きなかった。",
+              "chinese": "星期天沒有早起。",
+              "note": null
+            },
+            {
+              "japanese": "弟は とうとう 起きなかった。",
+              "chinese": "弟弟到最後都沒起床。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "起きて",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "六時に 起きて、顔を 洗います。",
+              "chinese": "六點起床，然後洗臉。",
+              "note": null
+            },
+            {
+              "japanese": "早く 起きて、散歩します。",
+              "chinese": "早起去散步。",
+              "note": null
+            },
+            {
+              "japanese": "起きて、すぐ 新聞を 読みます。",
+              "chinese": "起床後馬上讀報。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "起きられる",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきられる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "あしたは 早く 起きられる。",
+              "chinese": "明天能早起。",
+              "note": null
+            },
+            {
+              "japanese": "よく 寝たので、五時に 起きられる。",
+              "chinese": "睡得好，所以五點能起床。",
+              "note": null
+            },
+            {
+              "japanese": "私も 六時に 起きられる。",
+              "chinese": "我也能六點起床。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "起きよう",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "あしたは 五時に 起きよう。",
+              "chinese": "明天五點起床吧。",
+              "note": null
+            },
+            {
+              "japanese": "一緒に 早く 起きよう。",
+              "chinese": "一起早起吧。",
+              "note": null
+            },
+            {
+              "japanese": "休みの 日も 早く 起きよう。",
+              "chinese": "假日也早點起床吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "起きろ",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきろ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "もう 七時だ。早く 起きろ。",
+              "chinese": "已經七點了，快起床！",
+              "note": null
+            },
+            {
+              "japanese": "授業に 遅れるぞ。起きろ。",
+              "chinese": "上課要遲到了，起來！",
+              "note": null
+            },
+            {
+              "japanese": "監督は 選手に 「起きろ」と 叫んだ。",
+              "chinese": "教練對選手喊「起來」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "起きれば",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "六時に 起きれば、間に 合います。",
+              "chinese": "六點起床就來得及。",
+              "note": null
+            },
+            {
+              "japanese": "早く 起きれば、朝ごはんが 食べられる。",
+              "chinese": "早起就能吃早餐。",
+              "note": null
+            },
+            {
+              "japanese": "今 起きれば、まだ 間に 合う。",
+              "chinese": "現在起床還來得及。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "起きられる",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきられる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "毎朝 子どもに 先に 起きられるので、ゆっくり 寝られない。",
+              "chinese": "每天早上小孩先起床，我沒法好好睡。",
+              "note": null
+            },
+            {
+              "japanese": "兄に 先に 起きられるので、私は いつも あわてる。",
+              "chinese": "哥哥先起床，我總是很慌。",
+              "note": null
+            },
+            {
+              "japanese": "弟に 早く 起きられるので、朝は ゆっくり できない。",
+              "chinese": "弟弟起得早，早上沒法輕鬆。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "起きさせる",
+          "group": "2",
+          "chinese": "起床; 起來",
+          "japanese": "おきさせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 子どもを 六時に 起きさせる。",
+              "chinese": "媽媽讓小孩六點起床。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 生徒を 早く 起きさせる。",
+              "chinese": "老師讓學生早起。",
+              "note": null
+            },
+            {
+              "japanese": "父は 毎朝 私を 五時に 起きさせる。",
+              "chinese": "爸爸每天早上讓我五點起床。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "寝る",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "毎晩 十一時に 寝る。",
+              "chinese": "每天晚上十一點睡覺。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは 九時に 寝る。",
+              "chinese": "小孩九點睡覺。",
+              "note": null
+            },
+            {
+              "japanese": "夏は 暑くて 寝るのが 大変だ。",
+              "chinese": "夏天熱，睡覺很辛苦。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "寝ます",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ふだんは 十一時に 寝ます。",
+              "chinese": "平常十一點睡覺。",
+              "note": null
+            },
+            {
+              "japanese": "あしたは 早く 寝ます。",
+              "chinese": "明天早點睡。",
+              "note": null
+            },
+            {
+              "japanese": "妹は もう 寝ます。",
+              "chinese": "妹妹已經要睡了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "寝ません",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今夜は まだ 寝ません。",
+              "chinese": "今晚還不睡。",
+              "note": null
+            },
+            {
+              "japanese": "休みの 前の 日は 早く 寝ません。",
+              "chinese": "休假前一天不早睡。",
+              "note": null
+            },
+            {
+              "japanese": "弟は まだ 寝ません。",
+              "chinese": "弟弟還不睡。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "寝ました",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ゆうべ 十時に 寝ました。",
+              "chinese": "昨晚十點睡了。",
+              "note": null
+            },
+            {
+              "japanese": "疲れたので、早く 寝ました。",
+              "chinese": "因為累，早睡了。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは 九時に 寝ました。",
+              "chinese": "小孩九點睡了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "寝ませんでした",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ゆうべは 十二時まで 寝ませんでした。",
+              "chinese": "昨晚到十二點都沒睡。",
+              "note": null
+            },
+            {
+              "japanese": "暑くて なかなか 寝ませんでした。",
+              "chinese": "太熱了，怎麼也睡不著。",
+              "note": null
+            },
+            {
+              "japanese": "弟は 十一時に 寝ませんでした。",
+              "chinese": "弟弟十一點沒睡。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "寝ない",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "妹は まだ 寝ない。",
+              "chinese": "妹妹還不睡。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは なかなか 寝ない。",
+              "chinese": "小孩怎麼也不睡。",
+              "note": null
+            },
+            {
+              "japanese": "夏は 早く 寝ない。",
+              "chinese": "夏天不早睡。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "寝た",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ゆうべ 十一時に 寝た。",
+              "chinese": "昨晚十一點睡了。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは もう 寝た。",
+              "chinese": "小孩已經睡了。",
+              "note": null
+            },
+            {
+              "japanese": "疲れて、すぐ 寝た。",
+              "chinese": "累了，馬上就睡了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "寝なかった",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ゆうべは 遅くまで 起きて、早く 寝なかった。",
+              "chinese": "昨晚熬夜，沒有早睡。",
+              "note": null
+            },
+            {
+              "japanese": "暑くて よく 寝なかった。",
+              "chinese": "太熱，沒睡好。",
+              "note": null
+            },
+            {
+              "japanese": "弟は とうとう 寝なかった。",
+              "chinese": "弟弟到最後都沒睡。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "寝て",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "十時に 寝て、六時に 起きます。",
+              "chinese": "十點睡，六點起床。",
+              "note": null
+            },
+            {
+              "japanese": "薬を 飲んで、早く 寝てください。",
+              "chinese": "請吃藥後早點睡。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは 八時に 寝て、朝まで ぐっすり 眠った。",
+              "chinese": "小孩八點睡，一覺睡到早上。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "寝られる",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねられる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今夜は ゆっくり 寝られる。",
+              "chinese": "今晚能好好睡。",
+              "note": null
+            },
+            {
+              "japanese": "あしたは 休みだから、たくさん 寝られる。",
+              "chinese": "明天休息，能睡很久。",
+              "note": null
+            },
+            {
+              "japanese": "静かなので よく 寝られる。",
+              "chinese": "很安靜，所以睡得好。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "寝よう",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きょうは 早く 寝よう。",
+              "chinese": "今天早點睡吧。",
+              "note": null
+            },
+            {
+              "japanese": "もう 十二時だ。寝よう。",
+              "chinese": "已經十二點了，睡吧。",
+              "note": null
+            },
+            {
+              "japanese": "あしたに 備えて、早く 寝よう。",
+              "chinese": "為明天做準備，早點睡吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "寝ろ",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねろ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "もう 夜中だ。早く 寝ろ。",
+              "chinese": "已經半夜了，快睡！",
+              "note": null
+            },
+            {
+              "japanese": "あした 早いから、寝ろ。",
+              "chinese": "明天要早起，睡吧！",
+              "note": null
+            },
+            {
+              "japanese": "母は 「早く 寝ろ」と 言った。",
+              "chinese": "媽媽說「快睡」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "寝れば",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "早く 寝れば、あしたは 元気だ。",
+              "chinese": "早睡的話，明天有精神。",
+              "note": null
+            },
+            {
+              "japanese": "十時に 寝れば、朝が 楽だ。",
+              "chinese": "十點睡，早上就輕鬆。",
+              "note": null
+            },
+            {
+              "japanese": "今 寝れば、六時間は 寝られる。",
+              "chinese": "現在睡，能睡六小時。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "寝られる",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねられる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "家族に 先に 寝られるので、一人で テレビを 見る。",
+              "chinese": "家人先睡，我一個人看電視。",
+              "note": null
+            },
+            {
+              "japanese": "子どもに 先に 寝られるので、話す 時間が ない。",
+              "chinese": "小孩先睡，沒時間說話。",
+              "note": null
+            },
+            {
+              "japanese": "家族に 先に 寝られる 日は、一人で 静かに 仕事を する。",
+              "chinese": "家人先睡的日子，我就一個人安靜地工作。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "寝させる",
+          "group": "2",
+          "chinese": "睡覺; 就寢",
+          "japanese": "ねさせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 子どもを 九時に 寝させる。",
+              "chinese": "媽媽讓小孩九點睡。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 弟を 早く 寝させる。",
+              "chinese": "哥哥讓弟弟早睡。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私を 八時に 寝させる。",
+              "chinese": "爸爸讓我八點睡。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "働く",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらく",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "父は 銀行で 働く。",
+              "chinese": "父親在銀行工作。",
+              "note": null
+            },
+            {
+              "japanese": "私は 東京で 働く。",
+              "chinese": "我在東京工作。",
+              "note": null
+            },
+            {
+              "japanese": "母は 毎日 働く。",
+              "chinese": "母親每天工作。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "働きます",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらきます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "兄は デパートで 働きます。",
+              "chinese": "哥哥在百貨公司工作。",
+              "note": null
+            },
+            {
+              "japanese": "私は 月曜日から 金曜日まで 働きます。",
+              "chinese": "我從星期一到星期五工作。",
+              "note": null
+            },
+            {
+              "japanese": "彼は 郵便局で 働きます。",
+              "chinese": "他在郵局工作。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "働きません",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらきません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "妹は まだ 働きません。",
+              "chinese": "妹妹還沒工作。",
+              "note": null
+            },
+            {
+              "japanese": "日曜日は 働きません。",
+              "chinese": "星期天不工作。",
+              "note": null
+            },
+            {
+              "japanese": "父は もう 働きません。",
+              "chinese": "父親已經不工作了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "働きました",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらきました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 昔 図書館で 働きました。",
+              "chinese": "母親以前在圖書館工作。",
+              "note": null
+            },
+            {
+              "japanese": "きのうは 夜 十時まで 働きました。",
+              "chinese": "昨天工作到晚上十點。",
+              "note": null
+            },
+            {
+              "japanese": "兄も 一緒に 働きました。",
+              "chinese": "哥哥也一起工作了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "働きませんでした",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらきませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは 休みだったので 働きませんでした。",
+              "chinese": "昨天休息，所以沒工作。",
+              "note": null
+            },
+            {
+              "japanese": "先週は 月曜日も 働きませんでした。",
+              "chinese": "上週星期一也沒工作。",
+              "note": null
+            },
+            {
+              "japanese": "父は 若い 時、あまり 働きませんでした。",
+              "chinese": "父親年輕時不太工作。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "働かない",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらかない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きょうは 日曜日だから 働かない。",
+              "chinese": "今天是星期天，所以不工作。",
+              "note": null
+            },
+            {
+              "japanese": "妹は まだ 働かない。",
+              "chinese": "妹妹還沒工作。",
+              "note": null
+            },
+            {
+              "japanese": "母は 夜 遅くは 働かない。",
+              "chinese": "母親不工作到深夜。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "働いた",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらいた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 八時間 働いた。",
+              "chinese": "昨天工作了八小時。",
+              "note": null
+            },
+            {
+              "japanese": "父は 三十年 同じ 会社で 働いた。",
+              "chinese": "父親在同一家公司工作了三十年。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 美術館で 働いた。",
+              "chinese": "哥哥在美術館工作過。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "働かなかった",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらかなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは 体調が 悪くて 働かなかった。",
+              "chinese": "昨天身體不好，沒工作。",
+              "note": null
+            },
+            {
+              "japanese": "日曜日は 働かなかった。",
+              "chinese": "星期天沒工作。",
+              "note": null
+            },
+            {
+              "japanese": "先月は あまり 働かなかった。",
+              "chinese": "上個月不太工作。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "働いて",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらいて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "銀行で 働いて、お金を ためています。",
+              "chinese": "在銀行工作，存著錢。",
+              "note": null
+            },
+            {
+              "japanese": "毎日 働いて、夜は 早く 寝ます。",
+              "chinese": "每天工作，晚上早睡。",
+              "note": null
+            },
+            {
+              "japanese": "父は 工場で 働いて、定年を 迎えた。",
+              "chinese": "父親在工廠工作，迎接退休。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "働ける",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらける",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 年齢でも まだ 働ける。",
+              "chinese": "這個年紀還能工作。",
+              "note": null
+            },
+            {
+              "japanese": "週に 三日なら 働ける。",
+              "chinese": "一週三天的話能工作。",
+              "note": null
+            },
+            {
+              "japanese": "元気なら 外国でも 働ける。",
+              "chinese": "健康的話在外國也能工作。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "働こう",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらこう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "あしたも 頑張って 働こう。",
+              "chinese": "明天也努力工作吧。",
+              "note": null
+            },
+            {
+              "japanese": "みんなで 働こう。",
+              "chinese": "大家一起工作吧。",
+              "note": null
+            },
+            {
+              "japanese": "定年まで 働こう。",
+              "chinese": "工作到退休吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "働け",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらけ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "部長は 「もっと 働け」と 言った。",
+              "chinese": "部長說「多工作一點」。",
+              "note": null
+            },
+            {
+              "japanese": "店長は 私に 「日曜日も 働け」と 言った。",
+              "chinese": "店長對我說「星期天也來工作」。",
+              "note": null
+            },
+            {
+              "japanese": "先輩は 後輩に 「黙って 働け」と 怒った。",
+              "chinese": "前輩對後輩生氣地說「少說話，幹活」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "働けば",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらけば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "もっと 働けば、給料が 上がる。",
+              "chinese": "多工作的話，薪水會漲。",
+              "note": null
+            },
+            {
+              "japanese": "銀行で 働けば、お金の ことが よく 分かる。",
+              "chinese": "在銀行工作的話，會很懂錢的事。",
+              "note": null
+            },
+            {
+              "japanese": "毎日 働けば、すぐ 慣れる。",
+              "chinese": "每天工作的話，很快就習慣。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "働かれる",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらかれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "同僚に 遅くまで 働かれるので、電気を 消せない。",
+              "chinese": "同事工作到很晚，我沒法關燈。",
+              "note": null
+            },
+            {
+              "japanese": "部下に 休日も 働かれるので、予算が 足りない。",
+              "chinese": "部下休日也工作，預算不夠。",
+              "note": null
+            },
+            {
+              "japanese": "父に 夜中まで 働かれるので、家族は 寝られない。",
+              "chinese": "父親工作到半夜，家人睡不著。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "働かせる",
+          "group": "1",
+          "chinese": "工作; 上班",
+          "japanese": "はたらかせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "会社は 社員を 土曜日も 働かせる。",
+              "chinese": "公司讓員工星期六也工作。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私を 工場で 働かせる。",
+              "chinese": "父親讓我在工廠工作。",
+              "note": null
+            },
+            {
+              "japanese": "店長は 学生を 夜まで 働かせる。",
+              "chinese": "店長讓學生工作到晚上。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "休む",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすむ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "日曜日は 家で 休む。",
+              "chinese": "星期天在家休息。",
+              "note": null
+            },
+            {
+              "japanese": "疲れたら 少し 休む。",
+              "chinese": "累了就休息一下。",
+              "note": null
+            },
+            {
+              "japanese": "昼休みに 少し 休む。",
+              "chinese": "午休時休息一下。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "休みます",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすみます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "土曜日は 家で 休みます。",
+              "chinese": "星期六在家休息。",
+              "note": null
+            },
+            {
+              "japanese": "午後は 少し 休みます。",
+              "chinese": "下午休息一下。",
+              "note": null
+            },
+            {
+              "japanese": "風邪なので きょうは 休みます。",
+              "chinese": "因為感冒，今天請假。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "休みません",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすみません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きょうは 忙しいので 休みません。",
+              "chinese": "今天忙，不休息。",
+              "note": null
+            },
+            {
+              "japanese": "兄は あまり 休みません。",
+              "chinese": "哥哥不太休息。",
+              "note": null
+            },
+            {
+              "japanese": "昼休みも 休みません。",
+              "chinese": "午休也不休息。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "休みました",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすみました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは 一日 休みました。",
+              "chinese": "昨天休息了一整天。",
+              "note": null
+            },
+            {
+              "japanese": "午前中 ゆっくり 休みました。",
+              "chinese": "上午好好休息了。",
+              "note": null
+            },
+            {
+              "japanese": "妹も 一緒に 休みました。",
+              "chinese": "妹妹也一起休息了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "休みませんでした",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすみませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先週は 忙しくて 休みませんでした。",
+              "chinese": "上週忙，沒休息。",
+              "note": null
+            },
+            {
+              "japanese": "きのうは 休みませんでした。",
+              "chinese": "昨天沒休息。",
+              "note": null
+            },
+            {
+              "japanese": "父は 夏休みも 休みませんでした。",
+              "chinese": "父親暑假也沒休息。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "休まない",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすまない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きょうは 休まない。",
+              "chinese": "今天不休息。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 日曜日も 休まない。",
+              "chinese": "哥哥星期天也不休息。",
+              "note": null
+            },
+            {
+              "japanese": "忙しい 時は 昼も 休まない。",
+              "chinese": "忙的時候中午也不休息。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "休んだ",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすんだ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは 家で ゆっくり 休んだ。",
+              "chinese": "昨天在家好好休息了。",
+              "note": null
+            },
+            {
+              "japanese": "昼に 少し 休んだ。",
+              "chinese": "中午休息了一會。",
+              "note": null
+            },
+            {
+              "japanese": "母は 午後 休んだ。",
+              "chinese": "母親下午休息了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "休まなかった",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすまなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先週は 一日も 休まなかった。",
+              "chinese": "上週一天也沒休息。",
+              "note": null
+            },
+            {
+              "japanese": "きのうは 忙しくて 休まなかった。",
+              "chinese": "昨天忙，沒休息。",
+              "note": null
+            },
+            {
+              "japanese": "弟は 夏休みに 休まなかった。",
+              "chinese": "弟弟暑假沒休息。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "休んで",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすんで",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "少し 休んで、また 働きます。",
+              "chinese": "休息一下，再工作。",
+              "note": null
+            },
+            {
+              "japanese": "風邪を 引いたので、家で 休んでいます。",
+              "chinese": "因為感冒，在家休息。",
+              "note": null
+            },
+            {
+              "japanese": "昼に 休んで、午後も 頑張った。",
+              "chinese": "中午休息，下午也努力了。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "休める",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすめる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "あしたは ゆっくり 休める。",
+              "chinese": "明天能好好休息。",
+              "note": null
+            },
+            {
+              "japanese": "日曜日なら 家で 休める。",
+              "chinese": "星期天的話能在家休息。",
+              "note": null
+            },
+            {
+              "japanese": "今週は やっと 休める。",
+              "chinese": "這週終於能休息。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "休もう",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすもう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "疲れたから、少し 休もう。",
+              "chinese": "累了，休息一下吧。",
+              "note": null
+            },
+            {
+              "japanese": "ここで 休もう。",
+              "chinese": "在這裡休息吧。",
+              "note": null
+            },
+            {
+              "japanese": "午後は ゆっくり 休もう。",
+              "chinese": "下午好好休息吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "休め",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすめ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "顔色が 悪い。少し 休め。",
+              "chinese": "臉色不好，休息一下！",
+              "note": null
+            },
+            {
+              "japanese": "教官は 兵士に 「休め」と 言った。",
+              "chinese": "教官對士兵說「休息」。",
+              "note": null
+            },
+            {
+              "japanese": "医者は 彼に 「家で 休め」と 言った。",
+              "chinese": "醫生對他說「在家休息」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "休めば",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすめば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "少し 休めば、元気に なる。",
+              "chinese": "休息一下就會有精神。",
+              "note": null
+            },
+            {
+              "japanese": "日曜日に 休めば、月曜日は 楽だ。",
+              "chinese": "星期天休息，星期一就輕鬆。",
+              "note": null
+            },
+            {
+              "japanese": "今 休めば、午後は 働ける。",
+              "chinese": "現在休息，下午就能工作。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "休まれる",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすまれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "部下に 急に 休まれるので、仕事が 進まない。",
+              "chinese": "部下突然請假，工作沒進展。",
+              "note": null
+            },
+            {
+              "japanese": "同僚に 休まれるので、一人で 店を 守る。",
+              "chinese": "同事請假，我一個人看店。",
+              "note": null
+            },
+            {
+              "japanese": "妹に 勝手に 休まれるので、予定が よく 狂う。",
+              "chinese": "妹妹擅自請假，計畫常亂。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "休ませる",
+          "group": "1",
+          "chinese": "休息; 請假",
+          "japanese": "やすませる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 生徒を 少し 休ませる。",
+              "chinese": "老師讓學生休息一下。",
+              "note": null
+            },
+            {
+              "japanese": "母は 子どもを 早く 休ませる。",
+              "chinese": "媽媽讓小孩早點休息。",
+              "note": null
+            },
+            {
+              "japanese": "会社は 疲れた 社員を 休ませる。",
+              "chinese": "公司讓疲勞的員工休息。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "勉強する",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうする",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "毎晩 二時間 勉強する。",
+              "chinese": "每天晚上念兩小時書。",
+              "note": null
+            },
+            {
+              "japanese": "日曜日も 図書館で 勉強する。",
+              "chinese": "星期天也在圖書館念書。",
+              "note": null
+            },
+            {
+              "japanese": "妹は 音楽を 勉強する。",
+              "chinese": "妹妹學音樂。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "勉強します",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうします",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "毎日 日本語を 勉強します。",
+              "chinese": "每天念日語。",
+              "note": null
+            },
+            {
+              "japanese": "夜は 図書館で 勉強します。",
+              "chinese": "晚上在圖書館念書。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 大学で 経済を 勉強します。",
+              "chinese": "哥哥在大學念經濟。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "勉強しません",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうしません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "日曜日は 勉強しません。",
+              "chinese": "星期天不念書。",
+              "note": null
+            },
+            {
+              "japanese": "きょうは 疲れたので 勉強しません。",
+              "chinese": "今天累了，不念書。",
+              "note": null
+            },
+            {
+              "japanese": "妹は あまり 勉強しません。",
+              "chinese": "妹妹不太用功。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "勉強しました",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうしました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 三時間 勉強しました。",
+              "chinese": "昨天念了三小時書。",
+              "note": null
+            },
+            {
+              "japanese": "けさ 漢字を 勉強しました。",
+              "chinese": "今天早上念了漢字。",
+              "note": null
+            },
+            {
+              "japanese": "父も 英語を 勉強しました。",
+              "chinese": "父親也學過英語。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "勉強しませんでした",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうしませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先週は 忙しくて 勉強しませんでした。",
+              "chinese": "上週忙，沒念書。",
+              "note": null
+            },
+            {
+              "japanese": "きのうは 全然 勉強しませんでした。",
+              "chinese": "昨天完全沒念書。",
+              "note": null
+            },
+            {
+              "japanese": "弟は 夏休みに 勉強しませんでした。",
+              "chinese": "弟弟暑假沒念書。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "勉強しない",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうしない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きょうは 勉強しない。",
+              "chinese": "今天不念書。",
+              "note": null
+            },
+            {
+              "japanese": "土曜日は 勉強しない。",
+              "chinese": "星期六不念書。",
+              "note": null
+            },
+            {
+              "japanese": "妹は 夜 勉強しない。",
+              "chinese": "妹妹晚上不念書。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "勉強した",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのう 図書館で 勉強した。",
+              "chinese": "昨天在圖書館念書了。",
+              "note": null
+            },
+            {
+              "japanese": "試験の 前に たくさん 勉強した。",
+              "chinese": "考試前念了很多書。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 日本で 医学を 勉強した。",
+              "chinese": "哥哥在日本學醫學。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "勉強しなかった",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうしなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先週は 全然 勉強しなかった。",
+              "chinese": "上週完全沒念書。",
+              "note": null
+            },
+            {
+              "japanese": "きのうは 疲れて 勉強しなかった。",
+              "chinese": "昨天累，沒念書。",
+              "note": null
+            },
+            {
+              "japanese": "妹は 試験の 前も 勉強しなかった。",
+              "chinese": "妹妹考試前也沒念書。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "勉強して",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうして",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "毎日 勉強して、日本語が 上手に なった。",
+              "chinese": "每天念書，日語變好了。",
+              "note": null
+            },
+            {
+              "japanese": "図書館で 勉強して、それから 家へ 帰ります。",
+              "chinese": "在圖書館念書，然後回家。",
+              "note": null
+            },
+            {
+              "japanese": "兄は 日本で 勉強して、今 医者だ。",
+              "chinese": "哥哥在日本念書，現在是醫生。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "勉強できる",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうできる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 部屋なら 静かに 勉強できる。",
+              "chinese": "這個房間的話能安靜念書。",
+              "note": null
+            },
+            {
+              "japanese": "時間が あれば 勉強できる。",
+              "chinese": "有時間就能念書。",
+              "note": null
+            },
+            {
+              "japanese": "図書館で 勉強できる。",
+              "chinese": "能在圖書館念書。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "勉強しよう",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうしよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "あしたは もっと 勉強しよう。",
+              "chinese": "明天多念點書吧。",
+              "note": null
+            },
+            {
+              "japanese": "一緒に 日本語を 勉強しよう。",
+              "chinese": "一起念日語吧。",
+              "note": null
+            },
+            {
+              "japanese": "試験まで 頑張って 勉強しよう。",
+              "chinese": "到考試為止努力念書吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "勉強しろ",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうしろ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 「早く 勉強しろ」と 言った。",
+              "chinese": "媽媽說「快念書」。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 生徒に 「もっと 勉強しろ」と 言う。",
+              "chinese": "老師對學生說「多用功」。",
+              "note": null
+            },
+            {
+              "japanese": "試験が 近い。勉強しろ。",
+              "chinese": "考試近了，念書！",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "勉強すれば",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうすれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "毎日 勉強すれば、上手に なる。",
+              "chinese": "每天念書就會變好。",
+              "note": null
+            },
+            {
+              "japanese": "この 本を 勉強すれば、分かる。",
+              "chinese": "念這本書就會懂。",
+              "note": null
+            },
+            {
+              "japanese": "図書館で 勉強すれば、集中できる。",
+              "chinese": "在圖書館念書就能專心。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "勉強される",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうされる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "弟に 夜中まで 勉強されるので、電気が ついて いる。",
+              "chinese": "弟弟念書到半夜，燈一直亮著。",
+              "note": null
+            },
+            {
+              "japanese": "隣の 人に 毎晩 遅くまで 勉強されるので、よく 眠れない。",
+              "chinese": "鄰居每晚念書到很晚，我睡不好。",
+              "note": null
+            },
+            {
+              "japanese": "兄に 私の 部屋で 勉強されるので、集中できない。",
+              "chinese": "哥哥在我房間念書，我沒法專心。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "勉強させる",
+          "group": "3",
+          "chinese": "念書; 用功; 學習",
+          "japanese": "べんきょうさせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "母は 子どもを 毎日 勉強させる。",
+              "chinese": "媽媽讓孩子每天念書。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 生徒に 漢字を 勉強させる。",
+              "chinese": "老師讓學生念漢字。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私を 一時間 勉強させる。",
+              "chinese": "爸爸讓我念一小時書。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "終わる",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "授業は 三時に 終わる。",
+              "chinese": "課三點結束。",
+              "note": null
+            },
+            {
+              "japanese": "仕事が 終わる まで 待つ。",
+              "chinese": "等到工作結束。",
+              "note": null
+            },
+            {
+              "japanese": "会議は 五時に 終わる。",
+              "chinese": "會議五點結束。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "終わります",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわります",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "授業は 十二時に 終わります。",
+              "chinese": "課十二點結束。",
+              "note": null
+            },
+            {
+              "japanese": "仕事は 六時に 終わります。",
+              "chinese": "工作六點結束。",
+              "note": null
+            },
+            {
+              "japanese": "会議は もう すぐ 終わります。",
+              "chinese": "會議馬上就結束。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "終わりません",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわりません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きょうは 七時まで 終わりません。",
+              "chinese": "今天到七點都不會結束。",
+              "note": null
+            },
+            {
+              "japanese": "この 仕事は まだ 終わりません。",
+              "chinese": "這工作還沒結束。",
+              "note": null
+            },
+            {
+              "japanese": "授業は 三時には 終わりません。",
+              "chinese": "課三點不會結束。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "終わりました",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわりました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "授業は 三時に 終わりました。",
+              "chinese": "課三點結束了。",
+              "note": null
+            },
+            {
+              "japanese": "きのう 仕事が 早く 終わりました。",
+              "chinese": "昨天工作早結束了。",
+              "note": null
+            },
+            {
+              "japanese": "会議は 五時に 終わりました。",
+              "chinese": "會議五點結束了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "終わりませんでした",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわりませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "会議は 六時まで 終わりませんでした。",
+              "chinese": "會議到六點都沒結束。",
+              "note": null
+            },
+            {
+              "japanese": "きのうは 仕事が 遅くまで 終わりませんでした。",
+              "chinese": "昨天工作到很晚才結束。",
+              "note": null
+            },
+            {
+              "japanese": "先週の 授業は 時間通りに 終わりませんでした。",
+              "chinese": "上週的課沒按時結束。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "終わらない",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわらない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 仕事は きょう中に 終わらない。",
+              "chinese": "這工作今天之內結束不了。",
+              "note": null
+            },
+            {
+              "japanese": "会議は まだ 終わらない。",
+              "chinese": "會議還沒結束。",
+              "note": null
+            },
+            {
+              "japanese": "授業は 三時に 終わらない。",
+              "chinese": "課三點不會結束。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "終わった",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "授業は もう 終わった。",
+              "chinese": "課已經結束了。",
+              "note": null
+            },
+            {
+              "japanese": "きのう 仕事が 早く 終わった。",
+              "chinese": "昨天工作早結束了。",
+              "note": null
+            },
+            {
+              "japanese": "会議が 五時に 終わった。",
+              "chinese": "會議五點結束了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "終わらなかった",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわらなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きのうは 仕事が 遅くまで 終わらなかった。",
+              "chinese": "昨天工作到很晚才結束。",
+              "note": null
+            },
+            {
+              "japanese": "会議は 時間通りに 終わらなかった。",
+              "chinese": "會議沒按時結束。",
+              "note": null
+            },
+            {
+              "japanese": "授業は 三時に 終わらなかった。",
+              "chinese": "課三點沒結束。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "終わって",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわって",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "授業が 終わって、家へ 帰ります。",
+              "chinese": "課結束後回家。",
+              "note": null
+            },
+            {
+              "japanese": "仕事が 終わって、友だちと 会った。",
+              "chinese": "工作結束後見了朋友。",
+              "note": null
+            },
+            {
+              "japanese": "会議が 終わって、やっと 休める。",
+              "chinese": "會議結束，終於能休息。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "終われる",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわれる",
+          "note": "錯誤詞語，僅供轉詞練習：「終わる」是無意志動詞，「終われる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "終わろう",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわろう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "きょうの 仕事を 終わろう。",
+              "chinese": "結束今天的工作吧。",
+              "note": null
+            },
+            {
+              "japanese": "会議を 早く 終わろう。",
+              "chinese": "早點結束會議吧。",
+              "note": null
+            },
+            {
+              "japanese": "この 仕事を きょうで 終わろう。",
+              "chinese": "這工作今天結束吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "終われ",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわれ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "部長は 「早く 終われ」と 言った。",
+              "chinese": "部長說「快結束」。",
+              "note": null
+            },
+            {
+              "japanese": "監督は 「きょう中に 終われ」と 命令した。",
+              "chinese": "監督命令「今天之內結束」。",
+              "note": null
+            },
+            {
+              "japanese": "店長は まだ 仕事が ある 私に 「早く 終われ」と 言った。",
+              "chinese": "店長對還有工作的我說「快點結束」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "終われば",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "会議が 早く 終われば、家へ 帰る。",
+              "chinese": "會議早結束就回家。",
+              "note": null
+            },
+            {
+              "japanese": "仕事が 終われば、飲みに 行こう。",
+              "chinese": "工作結束就去喝酒吧。",
+              "note": null
+            },
+            {
+              "japanese": "授業が 三時に 終われば、図書館へ 行ける。",
+              "chinese": "課三點結束就能去圖書館。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "終わられる",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわられる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "同僚に 先に 仕事を 終わられるので、私は 報告できない。",
+              "chinese": "同事先把工作做完，我沒法報告。",
+              "note": null
+            },
+            {
+              "japanese": "妹に 先に 宿題を 終わられるので、遊べない。",
+              "chinese": "妹妹先把作業做完，我沒法玩。",
+              "note": null
+            },
+            {
+              "japanese": "部長に 先に 会議を 終わられる と、意見が 言えない。",
+              "chinese": "部長先把會議結束，我就沒法發表意見。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "終わらせる",
+          "group": "1",
+          "chinese": "結束; 完了",
+          "japanese": "おわらせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 授業を 三時に 終わらせる。",
+              "chinese": "老師讓課程三點結束。",
+              "note": null
+            },
+            {
+              "japanese": "部長は 会議を 早く 終わらせる。",
+              "chinese": "部長讓會議早點結束。",
+              "note": null
+            },
+            {
+              "japanese": "母は 仕事を 早く 終わらせる。",
+              "chinese": "媽媽讓工作早點結束。",
+              "note": null
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

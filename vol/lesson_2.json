@@ -5,7 +5,7 @@
         "dictionary-form": {
           "vol": "違う",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "不同；不對；不是",
           "japanese": "ちがう",
           "note": null,
           "error_usage": false,
@@ -30,7 +30,7 @@
         "masu-form": {
           "vol": "違います",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "不同；不對；不是（禮貌體）",
           "japanese": "ちがいます",
           "note": null,
           "error_usage": false,
@@ -55,7 +55,7 @@
         "masu-form-negative": {
           "vol": "違いません",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "沒有不同；相同（禮貌體）",
           "japanese": "ちがいません",
           "note": null,
           "error_usage": false,
@@ -80,7 +80,7 @@
         "masu-form-past": {
           "vol": "違いました",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "之前不同；不一樣（禮貌體）",
           "japanese": "ちがいました",
           "note": null,
           "error_usage": false,
@@ -105,7 +105,7 @@
         "masu-form-past-negative": {
           "vol": "違いませんでした",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "當時沒有不同；和先前一樣（禮貌體）",
           "japanese": "ちがいませんでした",
           "note": null,
           "error_usage": false,
@@ -130,7 +130,7 @@
         "nai-form": {
           "vol": "違わない",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "沒有不同；沒什麼不一樣",
           "japanese": "ちがわない",
           "note": null,
           "error_usage": false,
@@ -155,7 +155,7 @@
         "ta-form": {
           "vol": "違った",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "當時不一樣；和原先不同了",
           "japanese": "ちがった",
           "note": null,
           "error_usage": false,
@@ -180,7 +180,7 @@
         "nakatta-form": {
           "vol": "違わなかった",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "當時沒有不同；並非不一樣",
           "japanese": "ちがわなかった",
           "note": null,
           "error_usage": false,
@@ -205,7 +205,7 @@
         "te-form": {
           "vol": "違って",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "（因為）不同，而…；不同，接著…",
           "japanese": "ちがって",
           "note": null,
           "error_usage": false,
@@ -230,7 +230,7 @@
         "potential-form": {
           "vol": "違える",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "ちがえる",
           "note": "錯誤詞語，僅供轉詞練習：「違える」是另一個動詞（＝間違える、取り違える），不是「違う」的可能形用法",
           "error_usage": true,
@@ -239,7 +239,7 @@
         "volitional-form": {
           "vol": "違おう",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "就算不同也…；不管是否不同都…（讓步用法，不是「～吧」）",
           "japanese": "ちがおう",
           "note": "字典有但是不常用：「違おう」日常不用",
           "error_usage": false,
@@ -264,7 +264,7 @@
         "imperative-form": {
           "vol": "違え",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "ちがえ",
           "note": "錯誤詞語，僅供轉詞練習：「違え」是另一個動詞「違える」（＝變更、弄錯）的命令形，不是「違う」可用的命令形；「違う」是狀態動詞，沒有命令用法",
           "error_usage": true,
@@ -273,7 +273,7 @@
         "conditional-form": {
           "vol": "違えば",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "如果不同，就…",
           "japanese": "ちがえば",
           "note": null,
           "error_usage": false,
@@ -298,7 +298,7 @@
         "passive-form": {
           "vol": "違われる",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "ちがわれる",
           "note": "錯誤詞語，僅供轉詞練習：「違う」是自動詞，「〜と違われる」不能表「被誤認」；「被誤認」是他動詞「違える」的被動「違えられる」",
           "error_usage": true,
@@ -307,7 +307,7 @@
         "causative-form": {
           "vol": "違わせる",
           "group": "1",
-          "chinese": "不同; 不對; 不是",
+          "chinese": "使…不同；讓…有所區別（此形日常少用）",
           "japanese": "ちがわせる",
           "note": "字典有但是不常用：「違わせる」日常不用",
           "error_usage": false,

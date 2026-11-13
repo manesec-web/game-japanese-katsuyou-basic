@@ -1544,3 +1544,54 @@ changes — the pill itself, its wording, and the 變成 prompt are untouched.
 - Verified: `npm test` 28 files / 317 tests; `npm run build` ok;
   `node scripts/browser-check.mjs` 550 checks passing (the seeded quiz item
   keeps the total moving by one). No `vol/*.json` was edited.
+
+## 2026-11-13
+
+### Revision 30 — 單詞目錄 beside the reader's settings gear
+
+Requested:「我想在字典那裏，選擇好課程後，出現很多單詞。然後在這個UI上，右上角會
+有一個設置按鈕，我想在這個設置按鈕旁邊加入一個單詞的目錄，點一下會顯示選擇課文的
+所有單詞，這樣方便用戶跳轉。」Confirmed with the user before code: a screen of its
+own (not an overlay, not a dropdown), rows of word + 第N課 tag grouped by lesson,
+and the source is the frozen run (`session.items`) rather than a re-read of the
+settings.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 30a | Spec first: `toc` added to the state-machine line, the reader top bar gains a 目錄 button (目錄 then gear), a full 單詞目錄 section (grouping, rows, current mark, jump and back semantics), and the Look line lists Lucide `List` | done | `docs/spec.md` screens, Dictionary reader, 單詞目錄 and Look and motion clauses; no code touched in that step |
+| 30b | `src/study/toc.js`: `tocGroups(items, currentIndex)` groups the run by lesson and marks exactly one current row; 6 tests | done | `src/study/toc.test.js` — empty run, grouping/run order, a lesson that reappears, one current row, no current row, missing dictionary form |
+| 30c | `dict.goto` command: `params.index` must be an integer inside the run; it sets `index`, opens `reader`; anything else throws `invalid-index` and leaves the session on the list; `nav.go { screen: 'toc' }` is enabled only from the reader with items | done | `src/commands/dict.test.js` (4 new tests), `src/commands/nav.test.js` (4 tests); `src/engine/session.js` `SCREENS` now lists `toc` |
+| 30d | `TocView.vue` + route + reader button: sticky 48px bar with back + `單詞目錄`, lesson headings, 44px outlined rows 8px apart, current row tinted/accent with `aria-current`, press → `dict.goto`, back → `nav.go reader`; the list opens scrolled to the current row and the reader lands on the top of the jumped word | done | `src/App.vue` route, `src/views/ReaderView.vue` (`List` icon, `onMounted` top scroll for the pre-mount jump), `src/views/TocView.vue`; playwright probe on a 386-word run: 46 lesson groups, current row in view, sticky bar at 0, jump to row 21 of 386 → `學習（21/386）`, `scrollY 0` |
+| 30e | Browser harness covers the screen | done | 16 new checks: bar order `返回|單詞目錄|設定`, Lucide glyphs, title, no gear, sticky bar, lesson grouping, row words and tags, single current mark in view, 44px rows 8px apart with no divider, back keeps the word, row press opens that word at `scrollY 0`, the list marks the word the reader is on, the first row returns to the first word |
+| 30f | Verification | done | `npm test` 30 files / 331 tests; `node scripts/write-sha256.mjs --check` manifest ok (50); `npm run build` ok (`output/index.html`, `output/dict/` = 50); `node scripts/browser-check.mjs` 565/566 checks passing, 0 failures (the count moves with the seeded quiz item) |
+
+The 30d note is the only behavioural touch outside the new screen: the reader
+now scrolls to the top of its word on mount, because a jump from the list
+changes `index` before the reader exists and the page would otherwise keep the
+list's scroll position. That matches the existing rule that a word always opens
+at the top of the page. `vol/` was not touched, and no rule was invented beyond
+the three answers the user gave.
+
+### Revision 31 — 逐形中文解釋（日本母語教師校訂）
+
+Requested:「你是日本母語的老師，請你修改每一個單詞下面的中文。例如：每一個動詞都有他的意思，但是變形后意思就不一樣了。違って 是 不同的意思吧，然後違いません 沒有不用。類似的意思。」The user also allowed misleading `note` text to be corrected, asked that anything that felt odd be raised during the work, and confirmed that example-sentence Chinese/Japanese must stay unchanged.
+
+Why: all 386 verbs previously copied the 字典形 `chinese` gloss into all 15 forms, so `違いません` displayed 「不同; 不對; 不是」 and a learner could not see the negation, tense, potential, volitional, passive or causative meaning. A native-teacher pass now gives each form its own natural Traditional-Chinese gloss.
+
+| # | Change | Verification |
+|---|--------|--------------|
+| 31a | `docs/spec.md` Data rewritten: `chinese` is a per-form gloss (with 禮貌體／普通體 labels, `；` and explanatory suffixes printed verbatim), `note` is a corrected beginner-facing usage note, `error_usage` uses one marker, `sentence` is unchanged; reader/cards clauses now say the gloss is that form's own | spec read back; no UI code changed |
+| 31b | `docs/gloss-rewrite/`: `rewrite-rules.md`, `reference-lesson-2.md` (the worked 違う 15-form sample), `overrides.json` (44 hand-reviewed paradigms + 1 note fix), `plan.json` (all 5,790 glosses), `baseline/` (50 pre-change files), `baseline-index.json`, `verbs.tsv`, `batch-doubts.md` (D1–D10) | artifacts present; baseline SHA-256 verified |
+| 31c | `scripts/rewrite-glosses.mjs`: reviewable `--init` / `--review` / `--apply`; `scripts/validate-gloss-rewrite.mjs`: `--check-invariants`, `--batch N`, `--all` | five review gates 0 flags; five batch validations OK; `--all` OK |
+| 31d | `vol/lesson_1.json` … `lesson_50.json`: 5,420 `chinese` values rewritten, 1 `note` fixed (L23#9 「錯誤用法」→「錯誤詞語」) | `--all`: 50 lessons / 386 verbs / 5,790 forms / 5,599 usable / 191 error markers / 16,797 sentences / 0 immutable-field changes / 0 remaining copied glosses |
+| 31e | 191 `error_usage` forms now read `（非自然日語；僅供轉詞練習，無自然中文譯義）`; no fluent translation invented for non-natural Japanese | validator enforces the exact marker on every error form |
+| 31f | Data-driven linguistic exceptions: 迷惑受身, 尊敬語, 讓步構文 (就算…也), 文語祈願, 自發用法, 32 個無意志動詞的意向形寫成「正快要／即將…（不是『～吧』）」, `知らせる`＝通知／告訴, potential/passive homographs, stative/cognitive negatives (見える→看不見, 要る→不需要, 足りる→不夠, できる→不會／做不到), 3 already-inflected base glosses (違う ×2, なくなる), and `（此形日常少用）` on form-specific rare notes | note/gloss contradiction scan: 0; ungrammatical-Chinese scan: 0; non-volitional 吧／打算 scan: 0; gloss/example review gates: 0 flags |
+| 31g | `src/data/dict-manifest.json` regenerated from the new raw bytes | `node scripts/write-sha256.mjs --check` |
+| 31h | Docs: `README.md`, `AGENTS.md`, `docs/architecture.md`, `docs/progress.md`, `docs/roadmap.md`, `docs/serving.md`, this changelog. `AGENTS.md` / `architecture.md` now record the one-time `vol/` exception | docs read back; revision-30 uncommitted work left intact |
+
+Known findings (not changed without user ruling) are listed in
+`docs/gloss-rewrite/batch-doubts.md`: D1 — the goal contract quoted 89
+`error_usage` forms / 17,103 sentences from the stale
+`docs/audit/hy4-preview-2026-11-10.md`; current `vol/` has 191 / 16,797.
+Example sentences were deliberately left untouched. Revisions 24–25 still
+need real-device iOS/Android viewport verification.

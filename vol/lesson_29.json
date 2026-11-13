@@ -30,7 +30,7 @@
         "masu-form": {
           "vol": "開きます",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "開; 打開（禮貌體）",
           "japanese": "あきます",
           "note": null,
           "error_usage": false,
@@ -55,7 +55,7 @@
         "masu-form-negative": {
           "vol": "開きません",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "不開（禮貌體）",
           "japanese": "あきません",
           "note": null,
           "error_usage": false,
@@ -80,7 +80,7 @@
         "masu-form-past": {
           "vol": "開きました",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "開了（禮貌體）",
           "japanese": "あきました",
           "note": null,
           "error_usage": false,
@@ -105,7 +105,7 @@
         "masu-form-past-negative": {
           "vol": "開きませんでした",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "（當時）沒有開（禮貌體）",
           "japanese": "あきませんでした",
           "note": null,
           "error_usage": false,
@@ -130,7 +130,7 @@
         "nai-form": {
           "vol": "開かない",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "不開（普通體）",
           "japanese": "あかない",
           "note": null,
           "error_usage": false,
@@ -155,7 +155,7 @@
         "ta-form": {
           "vol": "開いた",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "開了（普通體）",
           "japanese": "あいた",
           "note": null,
           "error_usage": false,
@@ -180,7 +180,7 @@
         "nakatta-form": {
           "vol": "開かなかった",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "（當時）沒有開（普通體）",
           "japanese": "あかなかった",
           "note": null,
           "error_usage": false,
@@ -205,7 +205,7 @@
         "te-form": {
           "vol": "開いて",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "開，然後…；開，而…",
           "japanese": "あいて",
           "note": null,
           "error_usage": false,
@@ -230,7 +230,7 @@
         "potential-form": {
           "vol": "開ける",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "あける",
           "note": "錯誤詞語，僅供轉詞練習：「開ける」是錯的：這是另一個動詞，不用作「開く」的可能形",
           "error_usage": true,
@@ -239,7 +239,7 @@
         "volitional-form": {
           "vol": "開こう",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "正快要開；即將開（無意志動詞，不是「～吧」）（此形日常少用）",
           "japanese": "あこう",
           "note": "字典有但是不常用：「開こう」日常不用",
           "error_usage": false,
@@ -264,7 +264,7 @@
         "imperative-form": {
           "vol": "開け",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "あけ",
           "note": "錯誤詞語，僅供轉詞練習：「開け」是錯的：這是另一個動詞，不用作「開く」的命令形",
           "error_usage": true,
@@ -273,7 +273,7 @@
         "conditional-form": {
           "vol": "開けば",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "如果開，就…",
           "japanese": "あけば",
           "note": null,
           "error_usage": false,
@@ -298,7 +298,7 @@
         "passive-form": {
           "vol": "開かれる",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "あかれる",
           "note": "錯誤詞語，僅供轉詞練習：「あかれる」不是「開く（あく）」的受身用法；「被打開」要用他動詞「開ける」的受身「開けられる」，或「開く（ひらく）」的受身「開かれる」（ひらかれる）",
           "error_usage": true,
@@ -307,7 +307,7 @@
         "causative-form": {
           "vol": "開かせる",
           "group": "1",
-          "chinese": "開; 打開",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "あかせる",
           "note": "錯誤詞語，僅供轉詞練習：「開かせる」是自動詞「開く」的使役形，但此處讀音是「あく」（自動詞），他動詞是「開ける（あける）」，不用這個使役形",
           "error_usage": true,
@@ -343,7 +343,7 @@
         "masu-form": {
           "vol": "閉まります",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "關閉; 關上（禮貌體）",
           "japanese": "しまります",
           "note": null,
           "error_usage": false,
@@ -368,7 +368,7 @@
         "masu-form-negative": {
           "vol": "閉まりません",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "不關閉（禮貌體）",
           "japanese": "しまりません",
           "note": null,
           "error_usage": false,
@@ -393,7 +393,7 @@
         "masu-form-past": {
           "vol": "閉まりました",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "關閉了（禮貌體）",
           "japanese": "しまりました",
           "note": null,
           "error_usage": false,
@@ -418,7 +418,7 @@
         "masu-form-past-negative": {
           "vol": "閉まりませんでした",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "（當時）沒有關閉（禮貌體）",
           "japanese": "しまりませんでした",
           "note": null,
           "error_usage": false,
@@ -443,7 +443,7 @@
         "nai-form": {
           "vol": "閉まらない",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "不關閉（普通體）",
           "japanese": "しまらない",
           "note": null,
           "error_usage": false,
@@ -468,7 +468,7 @@
         "ta-form": {
           "vol": "閉まった",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "關閉了（普通體）",
           "japanese": "しまった",
           "note": null,
           "error_usage": false,
@@ -493,7 +493,7 @@
         "nakatta-form": {
           "vol": "閉まらなかった",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "（當時）沒有關閉（普通體）",
           "japanese": "しまらなかった",
           "note": null,
           "error_usage": false,
@@ -518,7 +518,7 @@
         "te-form": {
           "vol": "閉まって",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "關閉，然後…；關閉，而…",
           "japanese": "しまって",
           "note": null,
           "error_usage": false,
@@ -543,7 +543,7 @@
         "potential-form": {
           "vol": "閉まれる",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "しまれる",
           "note": "錯誤詞語，僅供轉詞練習：「閉まる」是無意志動詞，「閉まれる」這個可能形日常不用",
           "error_usage": true,
@@ -552,7 +552,7 @@
         "volitional-form": {
           "vol": "閉まろう",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "正快要關閉；即將關閉（無意志動詞，不是「～吧」）",
           "japanese": "しまろう",
           "note": null,
           "error_usage": false,
@@ -577,7 +577,7 @@
         "imperative-form": {
           "vol": "閉まれ",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "快關閉！（此形日常少用）",
           "japanese": "しまれ",
           "note": "字典有但是不常用：「閉まれ」日常不用",
           "error_usage": false,
@@ -602,7 +602,7 @@
         "conditional-form": {
           "vol": "閉まれば",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "如果關閉，就…",
           "japanese": "しまれば",
           "note": null,
           "error_usage": false,
@@ -627,7 +627,7 @@
         "passive-form": {
           "vol": "閉まられる",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "しまられる",
           "note": "錯誤詞語，僅供轉詞練習：「閉まる」是無意志自動詞，「閉まられる」沒有受身用法；「被關上」要用他動詞「閉める」的受身「閉められる」",
           "error_usage": true,
@@ -636,7 +636,7 @@
         "causative-form": {
           "vol": "閉まらせる",
           "group": "1",
-          "chinese": "關閉; 關上",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "しまらせる",
           "note": "錯誤詞語，僅供轉詞練習：「閉まらせる」是自動詞「閉まる」的使役形，但他動詞是「閉める（しめる）」，不用這個使役形",
           "error_usage": true,
@@ -672,7 +672,7 @@
         "masu-form": {
           "vol": "つきます",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "亮起; 點亮（禮貌體）",
           "japanese": "つきます",
           "note": null,
           "error_usage": false,
@@ -697,7 +697,7 @@
         "masu-form-negative": {
           "vol": "つきません",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "不亮起（禮貌體）",
           "japanese": "つきません",
           "note": null,
           "error_usage": false,
@@ -722,7 +722,7 @@
         "masu-form-past": {
           "vol": "つきました",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "亮起了（禮貌體）",
           "japanese": "つきました",
           "note": null,
           "error_usage": false,
@@ -747,7 +747,7 @@
         "masu-form-past-negative": {
           "vol": "つきませんでした",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "（當時）沒有亮起（禮貌體）",
           "japanese": "つきませんでした",
           "note": null,
           "error_usage": false,
@@ -772,7 +772,7 @@
         "nai-form": {
           "vol": "つかない",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "不亮起（普通體）",
           "japanese": "つかない",
           "note": null,
           "error_usage": false,
@@ -797,7 +797,7 @@
         "ta-form": {
           "vol": "ついた",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "亮起了（普通體）",
           "japanese": "ついた",
           "note": null,
           "error_usage": false,
@@ -822,7 +822,7 @@
         "nakatta-form": {
           "vol": "つかなかった",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "（當時）沒有亮起（普通體）",
           "japanese": "つかなかった",
           "note": null,
           "error_usage": false,
@@ -847,7 +847,7 @@
         "te-form": {
           "vol": "ついて",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "亮起，然後…；亮起，而…",
           "japanese": "ついて",
           "note": null,
           "error_usage": false,
@@ -872,7 +872,7 @@
         "potential-form": {
           "vol": "つける",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "つける",
           "note": "錯誤詞語，僅供轉詞練習：「つける」是錯的：這是另一個動詞，不用作「つく」的可能形",
           "error_usage": true,
@@ -881,7 +881,7 @@
         "volitional-form": {
           "vol": "つこう",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "正快要亮起；即將亮起（無意志動詞，不是「～吧」）（此形日常少用）",
           "japanese": "つこう",
           "note": "字典有但是不常用：「つこう」日常不用",
           "error_usage": false,
@@ -906,7 +906,7 @@
         "imperative-form": {
           "vol": "つけ",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "つけ",
           "note": "錯誤詞語，僅供轉詞練習：「つけ」是錯的：這是另一個動詞，不用作「つく」的命令形",
           "error_usage": true,
@@ -915,7 +915,7 @@
         "conditional-form": {
           "vol": "つけば",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "如果亮起，就…",
           "japanese": "つけば",
           "note": null,
           "error_usage": false,
@@ -940,7 +940,7 @@
         "passive-form": {
           "vol": "つかれる",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "つかれる",
           "note": "錯誤詞語，僅供轉詞練習：「つかれる」是另一個詞「疲れる」（以及「憑かれる」），不是「つく（点く）」的受身；「燈被打開」要用「つけられる」",
           "error_usage": true,
@@ -949,7 +949,7 @@
         "causative-form": {
           "vol": "つかせる",
           "group": "1",
-          "chinese": "亮起; 點亮",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "つかせる",
           "note": "錯誤詞語，僅供轉詞練習：「つかせる」是自動詞「つく」的使役形，但他動詞是「つける／点ける」，不用這個使役形",
           "error_usage": true,
@@ -985,7 +985,7 @@
         "masu-form": {
           "vol": "消えます",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "消失; 熄滅（禮貌體）",
           "japanese": "きえます",
           "note": null,
           "error_usage": false,
@@ -1010,7 +1010,7 @@
         "masu-form-negative": {
           "vol": "消えません",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "不消失（禮貌體）",
           "japanese": "きえません",
           "note": null,
           "error_usage": false,
@@ -1035,7 +1035,7 @@
         "masu-form-past": {
           "vol": "消えました",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "消失了（禮貌體）",
           "japanese": "きえました",
           "note": null,
           "error_usage": false,
@@ -1060,7 +1060,7 @@
         "masu-form-past-negative": {
           "vol": "消えませんでした",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "（當時）沒有消失（禮貌體）",
           "japanese": "きえませんでした",
           "note": null,
           "error_usage": false,
@@ -1085,7 +1085,7 @@
         "nai-form": {
           "vol": "消えない",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "不消失（普通體）",
           "japanese": "きえない",
           "note": null,
           "error_usage": false,
@@ -1110,7 +1110,7 @@
         "ta-form": {
           "vol": "消えた",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "消失了（普通體）",
           "japanese": "きえた",
           "note": null,
           "error_usage": false,
@@ -1135,7 +1135,7 @@
         "nakatta-form": {
           "vol": "消えなかった",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "（當時）沒有消失（普通體）",
           "japanese": "きえなかった",
           "note": null,
           "error_usage": false,
@@ -1160,7 +1160,7 @@
         "te-form": {
           "vol": "消えて",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "消失，然後…；消失，而…",
           "japanese": "きえて",
           "note": null,
           "error_usage": false,
@@ -1185,7 +1185,7 @@
         "potential-form": {
           "vol": "消えられる",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "きえられる",
           "note": "錯誤詞語，僅供轉詞練習：「消える」是無意志動詞，「消えられる」這個可能形日常不用",
           "error_usage": true,
@@ -1194,7 +1194,7 @@
         "volitional-form": {
           "vol": "消えよう",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "正快要消失；即將消失（無意志動詞，不是「～吧」）",
           "japanese": "きえよう",
           "note": null,
           "error_usage": false,
@@ -1219,7 +1219,7 @@
         "imperative-form": {
           "vol": "消えろ",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "快消失！",
           "japanese": "きえろ",
           "note": null,
           "error_usage": false,
@@ -1244,7 +1244,7 @@
         "conditional-form": {
           "vol": "消えれば",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "如果消失，就…",
           "japanese": "きえれば",
           "note": null,
           "error_usage": false,
@@ -1269,7 +1269,7 @@
         "passive-form": {
           "vol": "消えられる",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "きえられる",
           "note": "錯誤詞語，僅供轉詞練習：「消える」是無意志自動詞，「消えられる」沒有受身用法；「被關掉」要用他動詞「消す」的受身「消される」",
           "error_usage": true,
@@ -1278,7 +1278,7 @@
         "causative-form": {
           "vol": "消えさせる",
           "group": "2",
-          "chinese": "消失; 熄滅",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "きえさせる",
           "note": "錯誤詞語，僅供轉詞練習：「消えさせる」不是可用的使役形；「讓燈熄掉」要用他動詞「消す」的使役形「消させる」",
           "error_usage": true,
@@ -1314,7 +1314,7 @@
         "masu-form": {
           "vol": "込みます",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "擁擠; 混雜（禮貌體）",
           "japanese": "こみます",
           "note": null,
           "error_usage": false,
@@ -1339,7 +1339,7 @@
         "masu-form-negative": {
           "vol": "込みません",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "不擁擠（禮貌體）",
           "japanese": "こみません",
           "note": null,
           "error_usage": false,
@@ -1364,7 +1364,7 @@
         "masu-form-past": {
           "vol": "込みました",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "擁擠了（禮貌體）",
           "japanese": "こみました",
           "note": null,
           "error_usage": false,
@@ -1389,7 +1389,7 @@
         "masu-form-past-negative": {
           "vol": "込みませんでした",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "（當時）沒有擁擠（禮貌體）",
           "japanese": "こみませんでした",
           "note": null,
           "error_usage": false,
@@ -1414,7 +1414,7 @@
         "nai-form": {
           "vol": "込まない",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "不擁擠（普通體）",
           "japanese": "こまない",
           "note": null,
           "error_usage": false,
@@ -1439,7 +1439,7 @@
         "ta-form": {
           "vol": "込んだ",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "擁擠了（普通體）",
           "japanese": "こんだ",
           "note": null,
           "error_usage": false,
@@ -1464,7 +1464,7 @@
         "nakatta-form": {
           "vol": "込まなかった",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "（當時）沒有擁擠（普通體）",
           "japanese": "こまなかった",
           "note": null,
           "error_usage": false,
@@ -1489,7 +1489,7 @@
         "te-form": {
           "vol": "込んで",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "擁擠，然後…；擁擠，而…",
           "japanese": "こんで",
           "note": null,
           "error_usage": false,
@@ -1514,7 +1514,7 @@
         "potential-form": {
           "vol": "込める",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "こめる",
           "note": "錯誤詞語，僅供轉詞練習：「込める」是另一個動詞（把感情、力氣裝進去），不是「込む（擁擠）」的可能形。「込む」是無意志動詞，可能形日常不用。",
           "error_usage": true,
@@ -1523,7 +1523,7 @@
         "volitional-form": {
           "vol": "込もう",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "正快要擁擠；即將擁擠（無意志動詞，不是「～吧」）",
           "japanese": "こもう",
           "note": null,
           "error_usage": false,
@@ -1548,7 +1548,7 @@
         "imperative-form": {
           "vol": "込め",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "こめ",
           "note": "錯誤詞語，僅供轉詞練習：「込め」與另一個動詞「込める」的詞幹同形，不是「込む（擁擠）」可用的命令形。「込む」是無意志動詞，沒有命令用法。",
           "error_usage": true,
@@ -1557,7 +1557,7 @@
         "conditional-form": {
           "vol": "込めば",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "如果擁擠，就…",
           "japanese": "こめば",
           "note": null,
           "error_usage": false,
@@ -1582,7 +1582,7 @@
         "passive-form": {
           "vol": "込まれる",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "こまれる",
           "note": "錯誤詞語，僅供轉詞練習：「込む」是無意志自動詞，現代日語沒有「人に込まれる」「電車に込まれる」這種受身。擁擠只說「電車が込む」。被人擠要用「押される」。",
           "error_usage": true,
@@ -1591,7 +1591,7 @@
         "causative-form": {
           "vol": "込ませる",
           "group": "1",
-          "chinese": "擁擠; 混雜",
+          "chinese": "讓…擁擠；使…擁擠（此形日常少用）",
           "japanese": "こませる",
           "note": "字典有但是不常用：「込ませる」少用，是「讓地方變擠」。把乘客往裡擠要說「奥へ 押し込む」，不是這個使役。",
           "error_usage": false,
@@ -1643,7 +1643,7 @@
         "masu-form": {
           "vol": "すきます",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "空; 不擁擠（禮貌體）",
           "japanese": "すきます",
           "note": null,
           "error_usage": false,
@@ -1668,7 +1668,7 @@
         "masu-form-negative": {
           "vol": "すきません",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "不空（禮貌體）",
           "japanese": "すきません",
           "note": null,
           "error_usage": false,
@@ -1693,7 +1693,7 @@
         "masu-form-past": {
           "vol": "すきました",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "空了（禮貌體）",
           "japanese": "すきました",
           "note": null,
           "error_usage": false,
@@ -1718,7 +1718,7 @@
         "masu-form-past-negative": {
           "vol": "すきませんでした",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "（當時）沒有空（禮貌體）",
           "japanese": "すきませんでした",
           "note": null,
           "error_usage": false,
@@ -1743,7 +1743,7 @@
         "nai-form": {
           "vol": "すかない",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "不空（普通體）",
           "japanese": "すかない",
           "note": null,
           "error_usage": false,
@@ -1768,7 +1768,7 @@
         "ta-form": {
           "vol": "すいた",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "空了（普通體）",
           "japanese": "すいた",
           "note": null,
           "error_usage": false,
@@ -1793,7 +1793,7 @@
         "nakatta-form": {
           "vol": "すかなかった",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "（當時）沒有空（普通體）",
           "japanese": "すかなかった",
           "note": null,
           "error_usage": false,
@@ -1818,7 +1818,7 @@
         "te-form": {
           "vol": "すいて",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "空，然後…；空，而…",
           "japanese": "すいて",
           "note": null,
           "error_usage": false,
@@ -1843,7 +1843,7 @@
         "potential-form": {
           "vol": "すける",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "すける",
           "note": "錯誤詞語，僅供轉詞練習：「すける」是另一個動詞「透ける」（透光），不是「すく（空く）」的可能形。「すく」是無意志動詞，可能形日常不用。",
           "error_usage": true,
@@ -1852,7 +1852,7 @@
         "volitional-form": {
           "vol": "すこう",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "正快要空；即將空（無意志動詞，不是「～吧」）（此形日常少用）",
           "japanese": "すこう",
           "note": "字典有但是不常用：「すこう」日常不用",
           "error_usage": false,
@@ -1877,7 +1877,7 @@
         "imperative-form": {
           "vol": "すけ",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "すけ",
           "note": "錯誤詞語，僅供轉詞練習：「すけ」是「梳く」「透く」等其他同音動詞的命令形；「すく（空く）」是無意志動詞，沒有命令形用法（「讓開」是「空ける」的「空けろ」）",
           "error_usage": true,
@@ -1886,7 +1886,7 @@
         "conditional-form": {
           "vol": "すけば",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "如果空，就…",
           "japanese": "すけば",
           "note": null,
           "error_usage": false,
@@ -1911,7 +1911,7 @@
         "passive-form": {
           "vol": "すかれる",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "すかれる",
           "note": "錯誤詞語，僅供轉詞練習：「すかれる」是「梳く」「透く」等其他同音動詞的形，不是「すく（空く）」的受身；「すく」是無意志自動詞，沒有受身用法",
           "error_usage": true,
@@ -1920,7 +1920,7 @@
         "causative-form": {
           "vol": "すかせる",
           "group": "1",
-          "chinese": "空; 不擁擠",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "すかせる",
           "note": "錯誤詞語，僅供轉詞練習：「すかせる」是自動詞「すく」的使役形，但他動詞是「空ける／空かす」，不用這個使役形",
           "error_usage": true,
@@ -1956,7 +1956,7 @@
         "masu-form": {
           "vol": "壊れます",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "壞; 損壞（禮貌體）",
           "japanese": "こわれます",
           "note": null,
           "error_usage": false,
@@ -1981,7 +1981,7 @@
         "masu-form-negative": {
           "vol": "壊れません",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "不壞（禮貌體）",
           "japanese": "こわれません",
           "note": null,
           "error_usage": false,
@@ -2006,7 +2006,7 @@
         "masu-form-past": {
           "vol": "壊れました",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "壞了（禮貌體）",
           "japanese": "こわれました",
           "note": null,
           "error_usage": false,
@@ -2031,7 +2031,7 @@
         "masu-form-past-negative": {
           "vol": "壊れませんでした",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "（當時）沒有壞（禮貌體）",
           "japanese": "こわれませんでした",
           "note": null,
           "error_usage": false,
@@ -2056,7 +2056,7 @@
         "nai-form": {
           "vol": "壊れない",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "不壞（普通體）",
           "japanese": "こわれない",
           "note": null,
           "error_usage": false,
@@ -2081,7 +2081,7 @@
         "ta-form": {
           "vol": "壊れた",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "壞了（普通體）",
           "japanese": "こわれた",
           "note": null,
           "error_usage": false,
@@ -2106,7 +2106,7 @@
         "nakatta-form": {
           "vol": "壊れなかった",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "（當時）沒有壞（普通體）",
           "japanese": "こわれなかった",
           "note": null,
           "error_usage": false,
@@ -2131,7 +2131,7 @@
         "te-form": {
           "vol": "壊れて",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "壞，然後…；壞，而…",
           "japanese": "こわれて",
           "note": null,
           "error_usage": false,
@@ -2156,7 +2156,7 @@
         "potential-form": {
           "vol": "壊れられる",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "こわれられる",
           "note": "錯誤詞語，僅供轉詞練習：「壊れる」是無意志動詞，「壊れられる」這個可能形日常不用",
           "error_usage": true,
@@ -2165,7 +2165,7 @@
         "volitional-form": {
           "vol": "壊れよう",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "正快要壞；即將壞（無意志動詞，不是「～吧」）",
           "japanese": "こわれよう",
           "note": null,
           "error_usage": false,
@@ -2190,7 +2190,7 @@
         "imperative-form": {
           "vol": "壊れろ",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "快壞！（此形日常少用）",
           "japanese": "こわれろ",
           "note": "字典有但是不常用：「壊れろ」日常不用",
           "error_usage": false,
@@ -2215,7 +2215,7 @@
         "conditional-form": {
           "vol": "壊れれば",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "如果壞，就…",
           "japanese": "こわれれば",
           "note": null,
           "error_usage": false,
@@ -2240,7 +2240,7 @@
         "passive-form": {
           "vol": "壊れられる",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "こわれられる",
           "note": "錯誤詞語，僅供轉詞練習：「壊れる」是無意志自動詞，「壊れられる」沒有受身用法；「被弄壞」要用他動詞「壊す」的受身「壊される」",
           "error_usage": true,
@@ -2249,7 +2249,7 @@
         "causative-form": {
           "vol": "壊れさせる",
           "group": "2",
-          "chinese": "壞; 損壞",
+          "chinese": "讓…壞；使…壞（此形日常少用）",
           "japanese": "こわれさせる",
           "note": "字典有但是不常用：「壊れさせる」少用，日常說「壊す」。不是另一個詞。下面三句只說明這個使役形，口語很少這樣說。",
           "error_usage": false,
@@ -2301,7 +2301,7 @@
         "masu-form": {
           "vol": "割れます",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "破; 裂開（禮貌體）",
           "japanese": "われます",
           "note": null,
           "error_usage": false,
@@ -2326,7 +2326,7 @@
         "masu-form-negative": {
           "vol": "割れません",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "不破（禮貌體）",
           "japanese": "われません",
           "note": null,
           "error_usage": false,
@@ -2351,7 +2351,7 @@
         "masu-form-past": {
           "vol": "割れました",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "破了（禮貌體）",
           "japanese": "われました",
           "note": null,
           "error_usage": false,
@@ -2376,7 +2376,7 @@
         "masu-form-past-negative": {
           "vol": "割れませんでした",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "（當時）沒有破（禮貌體）",
           "japanese": "われませんでした",
           "note": null,
           "error_usage": false,
@@ -2401,7 +2401,7 @@
         "nai-form": {
           "vol": "割れない",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "不破（普通體）",
           "japanese": "われない",
           "note": null,
           "error_usage": false,
@@ -2426,7 +2426,7 @@
         "ta-form": {
           "vol": "割れた",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "破了（普通體）",
           "japanese": "われた",
           "note": null,
           "error_usage": false,
@@ -2451,7 +2451,7 @@
         "nakatta-form": {
           "vol": "割れなかった",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "（當時）沒有破（普通體）",
           "japanese": "われなかった",
           "note": null,
           "error_usage": false,
@@ -2476,7 +2476,7 @@
         "te-form": {
           "vol": "割れて",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "破，然後…；破，而…",
           "japanese": "われて",
           "note": null,
           "error_usage": false,
@@ -2501,7 +2501,7 @@
         "potential-form": {
           "vol": "割れられる",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "われられる",
           "note": "錯誤詞語，僅供轉詞練習：「割れる」是無意志動詞，「割れられる」這個可能形日常不用",
           "error_usage": true,
@@ -2510,7 +2510,7 @@
         "volitional-form": {
           "vol": "割れよう",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "正快要破；即將破（無意志動詞，不是「～吧」）",
           "japanese": "われよう",
           "note": null,
           "error_usage": false,
@@ -2535,7 +2535,7 @@
         "imperative-form": {
           "vol": "割れろ",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "快破！（此形日常少用）",
           "japanese": "われろ",
           "note": "字典有但是不常用：「割れろ」日常不用",
           "error_usage": false,
@@ -2560,7 +2560,7 @@
         "conditional-form": {
           "vol": "割れれば",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "如果破，就…",
           "japanese": "われれば",
           "note": null,
           "error_usage": false,
@@ -2585,7 +2585,7 @@
         "passive-form": {
           "vol": "割れられる",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "われられる",
           "note": "錯誤詞語，僅供轉詞練習：「割れる」是無意志自動詞，「割れられる」沒有受身用法；「被打破」要用他動詞「割る」的受身「割られる」",
           "error_usage": true,
@@ -2594,7 +2594,7 @@
         "causative-form": {
           "vol": "割れさせる",
           "group": "2",
-          "chinese": "破; 裂開",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "われさせる",
           "note": "錯誤詞語，僅供轉詞練習：「割れさせる」不是可用的使役形；「讓〜破掉」要用他動詞「割る」的使役形「割らせる」",
           "error_usage": true,
@@ -2630,7 +2630,7 @@
         "masu-form": {
           "vol": "折れます",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "折斷; 斷（禮貌體）",
           "japanese": "おれます",
           "note": null,
           "error_usage": false,
@@ -2655,7 +2655,7 @@
         "masu-form-negative": {
           "vol": "折れません",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "不折斷（禮貌體）",
           "japanese": "おれません",
           "note": null,
           "error_usage": false,
@@ -2680,7 +2680,7 @@
         "masu-form-past": {
           "vol": "折れました",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "折斷了（禮貌體）",
           "japanese": "おれました",
           "note": null,
           "error_usage": false,
@@ -2705,7 +2705,7 @@
         "masu-form-past-negative": {
           "vol": "折れませんでした",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "（當時）沒有折斷（禮貌體）",
           "japanese": "おれませんでした",
           "note": null,
           "error_usage": false,
@@ -2730,7 +2730,7 @@
         "nai-form": {
           "vol": "折れない",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "不折斷（普通體）",
           "japanese": "おれない",
           "note": null,
           "error_usage": false,
@@ -2755,7 +2755,7 @@
         "ta-form": {
           "vol": "折れた",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "折斷了（普通體）",
           "japanese": "おれた",
           "note": null,
           "error_usage": false,
@@ -2780,7 +2780,7 @@
         "nakatta-form": {
           "vol": "折れなかった",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "（當時）沒有折斷（普通體）",
           "japanese": "おれなかった",
           "note": null,
           "error_usage": false,
@@ -2805,7 +2805,7 @@
         "te-form": {
           "vol": "折れて",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "折斷，然後…；折斷，而…",
           "japanese": "おれて",
           "note": null,
           "error_usage": false,
@@ -2830,7 +2830,7 @@
         "potential-form": {
           "vol": "折れられる",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "おれられる",
           "note": "錯誤詞語，僅供轉詞練習：「折れる」是無意志動詞，「折れられる」這個可能形日常不用",
           "error_usage": true,
@@ -2839,7 +2839,7 @@
         "volitional-form": {
           "vol": "折れよう",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "正快要折斷；即將折斷（無意志動詞，不是「～吧」）",
           "japanese": "おれよう",
           "note": null,
           "error_usage": false,
@@ -2864,7 +2864,7 @@
         "imperative-form": {
           "vol": "折れろ",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "快折斷！（此形日常少用）",
           "japanese": "おれろ",
           "note": "字典有但是不常用：「折れろ」日常不用",
           "error_usage": false,
@@ -2889,7 +2889,7 @@
         "conditional-form": {
           "vol": "折れれば",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "如果折斷，就…",
           "japanese": "おれれば",
           "note": null,
           "error_usage": false,
@@ -2914,7 +2914,7 @@
         "passive-form": {
           "vol": "折れられる",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "おれられる",
           "note": "錯誤詞語，僅供轉詞練習：「折れる」是無意志自動詞，「折れられる」沒有受身用法；「被折斷」要用他動詞「折る」的受身「折られる」",
           "error_usage": true,
@@ -2923,7 +2923,7 @@
         "causative-form": {
           "vol": "折れさせる",
           "group": "2",
-          "chinese": "折斷; 斷",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "おれさせる",
           "note": "錯誤詞語，僅供轉詞練習：「折れさせる」不是可用的使役形；「讓〜折斷」要用他動詞「折る」的使役形「折らせる」",
           "error_usage": true,
@@ -2959,7 +2959,7 @@
         "masu-form": {
           "vol": "破れます",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "破; 撕破（禮貌體）",
           "japanese": "やぶれます",
           "note": null,
           "error_usage": false,
@@ -2984,7 +2984,7 @@
         "masu-form-negative": {
           "vol": "破れません",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "不破（禮貌體）",
           "japanese": "やぶれません",
           "note": null,
           "error_usage": false,
@@ -3009,7 +3009,7 @@
         "masu-form-past": {
           "vol": "破れました",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "破了（禮貌體）",
           "japanese": "やぶれました",
           "note": null,
           "error_usage": false,
@@ -3034,7 +3034,7 @@
         "masu-form-past-negative": {
           "vol": "破れませんでした",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "（當時）沒有破（禮貌體）",
           "japanese": "やぶれませんでした",
           "note": null,
           "error_usage": false,
@@ -3059,7 +3059,7 @@
         "nai-form": {
           "vol": "破れない",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "不破（普通體）",
           "japanese": "やぶれない",
           "note": null,
           "error_usage": false,
@@ -3084,7 +3084,7 @@
         "ta-form": {
           "vol": "破れた",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "破了（普通體）",
           "japanese": "やぶれた",
           "note": null,
           "error_usage": false,
@@ -3109,7 +3109,7 @@
         "nakatta-form": {
           "vol": "破れなかった",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "（當時）沒有破（普通體）",
           "japanese": "やぶれなかった",
           "note": null,
           "error_usage": false,
@@ -3134,7 +3134,7 @@
         "te-form": {
           "vol": "破れて",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "破，然後…；破，而…",
           "japanese": "やぶれて",
           "note": null,
           "error_usage": false,
@@ -3159,7 +3159,7 @@
         "potential-form": {
           "vol": "破れられる",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "やぶれられる",
           "note": "錯誤詞語，僅供轉詞練習：「破れる」是無意志動詞，「破れられる」這個可能形日常不用",
           "error_usage": true,
@@ -3168,7 +3168,7 @@
         "volitional-form": {
           "vol": "破れよう",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "正快要破；即將破（無意志動詞，不是「～吧」）",
           "japanese": "やぶれよう",
           "note": null,
           "error_usage": false,
@@ -3193,7 +3193,7 @@
         "imperative-form": {
           "vol": "破れろ",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "快破！（此形日常少用）",
           "japanese": "やぶれろ",
           "note": "字典有但是不常用：「破れろ」日常不用",
           "error_usage": false,
@@ -3218,7 +3218,7 @@
         "conditional-form": {
           "vol": "破れれば",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "如果破，就…",
           "japanese": "やぶれれば",
           "note": null,
           "error_usage": false,
@@ -3243,7 +3243,7 @@
         "passive-form": {
           "vol": "破れられる",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "やぶれられる",
           "note": "錯誤詞語，僅供轉詞練習：「破れる」是無意志自動詞，「破れられる」沒有受身用法；「被撕破」要用他動詞「破る」的受身「破られる」",
           "error_usage": true,
@@ -3252,7 +3252,7 @@
         "causative-form": {
           "vol": "破れさせる",
           "group": "2",
-          "chinese": "破; 撕破",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "やぶれさせる",
           "note": "錯誤詞語，僅供轉詞練習：「破れさせる」不是可用的使役形；「讓〜破掉」要用他動詞「破る」的使役形「破らせる」",
           "error_usage": true,
@@ -3288,7 +3288,7 @@
         "masu-form": {
           "vol": "汚れます",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "髒; 弄髒（禮貌體）",
           "japanese": "よごれます",
           "note": null,
           "error_usage": false,
@@ -3313,7 +3313,7 @@
         "masu-form-negative": {
           "vol": "汚れません",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "不髒（禮貌體）",
           "japanese": "よごれません",
           "note": null,
           "error_usage": false,
@@ -3338,7 +3338,7 @@
         "masu-form-past": {
           "vol": "汚れました",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "髒了（禮貌體）",
           "japanese": "よごれました",
           "note": null,
           "error_usage": false,
@@ -3363,7 +3363,7 @@
         "masu-form-past-negative": {
           "vol": "汚れませんでした",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "（當時）沒有髒（禮貌體）",
           "japanese": "よごれませんでした",
           "note": null,
           "error_usage": false,
@@ -3388,7 +3388,7 @@
         "nai-form": {
           "vol": "汚れない",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "不髒（普通體）",
           "japanese": "よごれない",
           "note": null,
           "error_usage": false,
@@ -3413,7 +3413,7 @@
         "ta-form": {
           "vol": "汚れた",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "髒了（普通體）",
           "japanese": "よごれた",
           "note": null,
           "error_usage": false,
@@ -3438,7 +3438,7 @@
         "nakatta-form": {
           "vol": "汚れなかった",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "（當時）沒有髒（普通體）",
           "japanese": "よごれなかった",
           "note": null,
           "error_usage": false,
@@ -3463,7 +3463,7 @@
         "te-form": {
           "vol": "汚れて",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "髒，然後…；髒，而…",
           "japanese": "よごれて",
           "note": null,
           "error_usage": false,
@@ -3488,7 +3488,7 @@
         "potential-form": {
           "vol": "汚れられる",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "よごれられる",
           "note": "錯誤詞語，僅供轉詞練習：「汚れる」是無意志動詞，「汚れられる」這個可能形日常不用",
           "error_usage": true,
@@ -3497,7 +3497,7 @@
         "volitional-form": {
           "vol": "汚れよう",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "正快要髒；即將髒（無意志動詞，不是「～吧」）",
           "japanese": "よごれよう",
           "note": null,
           "error_usage": false,
@@ -3522,7 +3522,7 @@
         "imperative-form": {
           "vol": "汚れろ",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "快髒！（此形日常少用）",
           "japanese": "よごれろ",
           "note": "字典有但是不常用：「汚れろ」日常不用",
           "error_usage": false,
@@ -3547,7 +3547,7 @@
         "conditional-form": {
           "vol": "汚れれば",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "如果髒，就…",
           "japanese": "よごれれば",
           "note": null,
           "error_usage": false,
@@ -3572,7 +3572,7 @@
         "passive-form": {
           "vol": "汚れられる",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "よごれられる",
           "note": "錯誤詞語，僅供轉詞練習：「汚れる」是無意志自動詞，「汚れられる」沒有受身用法；「被弄髒」要用他動詞「汚す」的受身「汚される」",
           "error_usage": true,
@@ -3581,7 +3581,7 @@
         "causative-form": {
           "vol": "汚れさせる",
           "group": "2",
-          "chinese": "髒; 弄髒",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "よごれさせる",
           "note": "錯誤詞語，僅供轉詞練習：「汚れさせる」不是可用的使役形；「讓〜變髒」要用他動詞「汚す」的使役形「汚させる」",
           "error_usage": true,
@@ -3617,7 +3617,7 @@
         "masu-form": {
           "vol": "付きます",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "附上; 附著（禮貌體）",
           "japanese": "つきます",
           "note": null,
           "error_usage": false,
@@ -3642,7 +3642,7 @@
         "masu-form-negative": {
           "vol": "付きません",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "不附上（禮貌體）",
           "japanese": "つきません",
           "note": null,
           "error_usage": false,
@@ -3667,7 +3667,7 @@
         "masu-form-past": {
           "vol": "付きました",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "附上了（禮貌體）",
           "japanese": "つきました",
           "note": null,
           "error_usage": false,
@@ -3692,7 +3692,7 @@
         "masu-form-past-negative": {
           "vol": "付きませんでした",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "（當時）沒有附上（禮貌體）",
           "japanese": "つきませんでした",
           "note": null,
           "error_usage": false,
@@ -3717,7 +3717,7 @@
         "nai-form": {
           "vol": "付かない",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "不附上（普通體）",
           "japanese": "つかない",
           "note": null,
           "error_usage": false,
@@ -3742,7 +3742,7 @@
         "ta-form": {
           "vol": "付いた",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "附上了（普通體）",
           "japanese": "ついた",
           "note": null,
           "error_usage": false,
@@ -3767,7 +3767,7 @@
         "nakatta-form": {
           "vol": "付かなかった",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "（當時）沒有附上（普通體）",
           "japanese": "つかなかった",
           "note": null,
           "error_usage": false,
@@ -3792,7 +3792,7 @@
         "te-form": {
           "vol": "付いて",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "附上，然後…；附上，而…",
           "japanese": "ついて",
           "note": null,
           "error_usage": false,
@@ -3817,7 +3817,7 @@
         "potential-form": {
           "vol": "付ける",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "つける",
           "note": "錯誤詞語，僅供轉詞練習：「付ける」是錯的：這是另一個動詞，不用作「付く」的可能形",
           "error_usage": true,
@@ -3826,7 +3826,7 @@
         "volitional-form": {
           "vol": "付こう",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "正快要附上；即將附上（無意志動詞，不是「～吧」）（此形日常少用）",
           "japanese": "つこう",
           "note": "字典有但是不常用：「付こう」日常不用",
           "error_usage": false,
@@ -3851,7 +3851,7 @@
         "imperative-form": {
           "vol": "付け",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "つけ",
           "note": "錯誤詞語，僅供轉詞練習：「付け」是錯的：這是另一個動詞，不用作「付く」的命令形",
           "error_usage": true,
@@ -3860,7 +3860,7 @@
         "conditional-form": {
           "vol": "付けば",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "如果附上，就…",
           "japanese": "つけば",
           "note": null,
           "error_usage": false,
@@ -3885,7 +3885,7 @@
         "passive-form": {
           "vol": "付かれる",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "つかれる",
           "note": "錯誤詞語，僅供轉詞練習：「付かれる」不是「付く」的受身用法（「つかれる」是「疲れる」）；「付く」是無意志自動詞，沒有受身，要說「傷が 付く」「噂が 立つ」",
           "error_usage": true,
@@ -3894,7 +3894,7 @@
         "causative-form": {
           "vol": "付かせる",
           "group": "1",
-          "chinese": "附上; 附著",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "つかせる",
           "note": "錯誤詞語，僅供轉詞練習：「付かせる」是自動詞「付く」的使役形，但他動詞是「付ける／貼る」，不用這個使役形",
           "error_usage": true,
@@ -3930,7 +3930,7 @@
         "masu-form": {
           "vol": "外れます",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "脫落; 掉下（禮貌體）",
           "japanese": "はずれます",
           "note": null,
           "error_usage": false,
@@ -3955,7 +3955,7 @@
         "masu-form-negative": {
           "vol": "外れません",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "不脫落（禮貌體）",
           "japanese": "はずれません",
           "note": null,
           "error_usage": false,
@@ -3980,7 +3980,7 @@
         "masu-form-past": {
           "vol": "外れました",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "脫落了（禮貌體）",
           "japanese": "はずれました",
           "note": null,
           "error_usage": false,
@@ -4005,7 +4005,7 @@
         "masu-form-past-negative": {
           "vol": "外れませんでした",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "（當時）沒有脫落（禮貌體）",
           "japanese": "はずれませんでした",
           "note": null,
           "error_usage": false,
@@ -4030,7 +4030,7 @@
         "nai-form": {
           "vol": "外れない",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "不脫落（普通體）",
           "japanese": "はずれない",
           "note": null,
           "error_usage": false,
@@ -4055,7 +4055,7 @@
         "ta-form": {
           "vol": "外れた",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "脫落了（普通體）",
           "japanese": "はずれた",
           "note": null,
           "error_usage": false,
@@ -4080,7 +4080,7 @@
         "nakatta-form": {
           "vol": "外れなかった",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "（當時）沒有脫落（普通體）",
           "japanese": "はずれなかった",
           "note": null,
           "error_usage": false,
@@ -4105,7 +4105,7 @@
         "te-form": {
           "vol": "外れて",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "脫落，然後…；脫落，而…",
           "japanese": "はずれて",
           "note": null,
           "error_usage": false,
@@ -4130,7 +4130,7 @@
         "potential-form": {
           "vol": "外れられる",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "はずれられる",
           "note": "錯誤詞語，僅供轉詞練習：「外れる」是無意志動詞，「外れられる」這個可能形日常不用",
           "error_usage": true,
@@ -4139,7 +4139,7 @@
         "volitional-form": {
           "vol": "外れよう",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "正快要脫落；即將脫落（無意志動詞，不是「～吧」）",
           "japanese": "はずれよう",
           "note": null,
           "error_usage": false,
@@ -4164,7 +4164,7 @@
         "imperative-form": {
           "vol": "外れろ",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "快脫落！（此形日常少用）",
           "japanese": "はずれろ",
           "note": "字典有但是不常用：「外れろ」日常不用",
           "error_usage": false,
@@ -4189,7 +4189,7 @@
         "conditional-form": {
           "vol": "外れれば",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "如果脫落，就…",
           "japanese": "はずれれば",
           "note": null,
           "error_usage": false,
@@ -4214,7 +4214,7 @@
         "passive-form": {
           "vol": "外れられる",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "はずれられる",
           "note": "錯誤詞語，僅供轉詞練習：「外れる」是無意志自動詞，「外れられる」沒有受身用法；「被弄掉」要用他動詞「外す」的受身「外される」",
           "error_usage": true,
@@ -4223,7 +4223,7 @@
         "causative-form": {
           "vol": "外れさせる",
           "group": "2",
-          "chinese": "脫落; 掉下",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "はずれさせる",
           "note": "錯誤詞語，僅供轉詞練習：「外れさせる」不是可用的使役形；「讓〜掉下來」要用他動詞「外す」的使役形「外させる」",
           "error_usage": true,
@@ -4259,7 +4259,7 @@
         "masu-form": {
           "vol": "止まります",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "停止; 停下（禮貌體）",
           "japanese": "とまります",
           "note": null,
           "error_usage": false,
@@ -4284,7 +4284,7 @@
         "masu-form-negative": {
           "vol": "止まりません",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "不停止（禮貌體）",
           "japanese": "とまりません",
           "note": null,
           "error_usage": false,
@@ -4309,7 +4309,7 @@
         "masu-form-past": {
           "vol": "止まりました",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "停止了（禮貌體）",
           "japanese": "とまりました",
           "note": null,
           "error_usage": false,
@@ -4334,7 +4334,7 @@
         "masu-form-past-negative": {
           "vol": "止まりませんでした",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "（當時）沒有停止（禮貌體）",
           "japanese": "とまりませんでした",
           "note": null,
           "error_usage": false,
@@ -4359,7 +4359,7 @@
         "nai-form": {
           "vol": "止まらない",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "不停止（普通體）",
           "japanese": "とまらない",
           "note": null,
           "error_usage": false,
@@ -4384,7 +4384,7 @@
         "ta-form": {
           "vol": "止まった",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "停止了（普通體）",
           "japanese": "とまった",
           "note": null,
           "error_usage": false,
@@ -4409,7 +4409,7 @@
         "nakatta-form": {
           "vol": "止まらなかった",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "（當時）沒有停止（普通體）",
           "japanese": "とまらなかった",
           "note": null,
           "error_usage": false,
@@ -4434,7 +4434,7 @@
         "te-form": {
           "vol": "止まって",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "停止，然後…；停止，而…",
           "japanese": "とまって",
           "note": null,
           "error_usage": false,
@@ -4459,7 +4459,7 @@
         "potential-form": {
           "vol": "止まれる",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "能停止；可以停止（此形日常少用）",
           "japanese": "とまれる",
           "note": "字典有但是不常用：「止まれる」是「止まる」的可能形，只用於駕駛者可控制的車輛等",
           "error_usage": false,
@@ -4484,7 +4484,7 @@
         "volitional-form": {
           "vol": "止まろう",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "正快要停止；即將停止（無意志動詞，不是「～吧」）",
           "japanese": "とまろう",
           "note": null,
           "error_usage": false,
@@ -4509,7 +4509,7 @@
         "imperative-form": {
           "vol": "止まれ",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "快停止！",
           "japanese": "とまれ",
           "note": null,
           "error_usage": false,
@@ -4534,7 +4534,7 @@
         "conditional-form": {
           "vol": "止まれば",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "如果停止，就…",
           "japanese": "とまれば",
           "note": null,
           "error_usage": false,
@@ -4559,7 +4559,7 @@
         "passive-form": {
           "vol": "止まられる",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "電車中途停住的話，開會就會遲到…（受身／迷惑受身，語意見例句）",
           "japanese": "とまられる",
           "note": "字典有但是不常用：「止まられる」日常不用",
           "error_usage": false,
@@ -4584,7 +4584,7 @@
         "causative-form": {
           "vol": "止まらせる",
           "group": "1",
-          "chinese": "停止; 停下",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "とまらせる",
           "note": "錯誤詞語，僅供轉詞練習：「止まらせる」是自動詞「止まる」的使役形，但他動詞是「止める（とめる）」，不用這個使役形",
           "error_usage": true,
@@ -4620,7 +4620,7 @@
         "masu-form": {
           "vol": "間違えます",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "弄錯; 搞錯（禮貌體）",
           "japanese": "まちがえます",
           "note": null,
           "error_usage": false,
@@ -4645,7 +4645,7 @@
         "masu-form-negative": {
           "vol": "間違えません",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "不弄錯（禮貌體）",
           "japanese": "まちがえません",
           "note": null,
           "error_usage": false,
@@ -4670,7 +4670,7 @@
         "masu-form-past": {
           "vol": "間違えました",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "弄錯了（禮貌體）",
           "japanese": "まちがえました",
           "note": null,
           "error_usage": false,
@@ -4695,7 +4695,7 @@
         "masu-form-past-negative": {
           "vol": "間違えませんでした",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "（當時）沒有弄錯（禮貌體）",
           "japanese": "まちがえませんでした",
           "note": null,
           "error_usage": false,
@@ -4720,7 +4720,7 @@
         "nai-form": {
           "vol": "間違えない",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "不弄錯（普通體）",
           "japanese": "まちがえない",
           "note": null,
           "error_usage": false,
@@ -4745,7 +4745,7 @@
         "ta-form": {
           "vol": "間違えた",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "弄錯了（普通體）",
           "japanese": "まちがえた",
           "note": null,
           "error_usage": false,
@@ -4770,7 +4770,7 @@
         "nakatta-form": {
           "vol": "間違えなかった",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "（當時）沒有弄錯（普通體）",
           "japanese": "まちがえなかった",
           "note": null,
           "error_usage": false,
@@ -4795,7 +4795,7 @@
         "te-form": {
           "vol": "間違えて",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "弄錯，然後…；弄錯，而…",
           "japanese": "まちがえて",
           "note": null,
           "error_usage": false,
@@ -4820,7 +4820,7 @@
         "potential-form": {
           "vol": "間違えられる",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "能弄錯；可以弄錯（此形日常少用）",
           "japanese": "まちがえられる",
           "note": "字典有但是不常用：「間違えられる」是可能形，與受身形同形",
           "error_usage": false,
@@ -4845,7 +4845,7 @@
         "volitional-form": {
           "vol": "間違えよう",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "就算弄錯也…；不管是否弄錯都…（讓步用法）",
           "japanese": "まちがえよう",
           "note": null,
           "error_usage": false,
@@ -4870,7 +4870,7 @@
         "imperative-form": {
           "vol": "間違えろ",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "快弄錯！（此形日常少用）",
           "japanese": "まちがえろ",
           "note": "字典有但是不常用：「間違えろ」日常不用",
           "error_usage": false,
@@ -4895,7 +4895,7 @@
         "conditional-form": {
           "vol": "間違えれば",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "如果弄錯，就…",
           "japanese": "まちがえれば",
           "note": null,
           "error_usage": false,
@@ -4920,7 +4920,7 @@
         "passive-form": {
           "vol": "間違えられる",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "被…弄錯；由…弄錯；受到…影響或對待",
           "japanese": "まちがえられる",
           "note": null,
           "error_usage": false,
@@ -4945,7 +4945,7 @@
         "causative-form": {
           "vol": "間違えさせる",
           "group": "2",
-          "chinese": "弄錯; 搞錯",
+          "chinese": "讓…弄錯；使…弄錯",
           "japanese": "まちがえさせる",
           "note": null,
           "error_usage": false,
@@ -4997,7 +4997,7 @@
         "masu-form": {
           "vol": "落とします",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "弄掉; 落下（禮貌體）",
           "japanese": "おとします",
           "note": null,
           "error_usage": false,
@@ -5022,7 +5022,7 @@
         "masu-form-negative": {
           "vol": "落としません",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "不弄掉（禮貌體）",
           "japanese": "おとしません",
           "note": null,
           "error_usage": false,
@@ -5047,7 +5047,7 @@
         "masu-form-past": {
           "vol": "落としました",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "弄掉了（禮貌體）",
           "japanese": "おとしました",
           "note": null,
           "error_usage": false,
@@ -5072,7 +5072,7 @@
         "masu-form-past-negative": {
           "vol": "落としませんでした",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "（當時）沒有弄掉（禮貌體）",
           "japanese": "おとしませんでした",
           "note": null,
           "error_usage": false,
@@ -5097,7 +5097,7 @@
         "nai-form": {
           "vol": "落とさない",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "不弄掉（普通體）",
           "japanese": "おとさない",
           "note": null,
           "error_usage": false,
@@ -5122,7 +5122,7 @@
         "ta-form": {
           "vol": "落とした",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "弄掉了（普通體）",
           "japanese": "おとした",
           "note": null,
           "error_usage": false,
@@ -5147,7 +5147,7 @@
         "nakatta-form": {
           "vol": "落とさなかった",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "（當時）沒有弄掉（普通體）",
           "japanese": "おとさなかった",
           "note": null,
           "error_usage": false,
@@ -5172,7 +5172,7 @@
         "te-form": {
           "vol": "落として",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "弄掉，然後…；弄掉，而…",
           "japanese": "おとして",
           "note": null,
           "error_usage": false,
@@ -5197,7 +5197,7 @@
         "potential-form": {
           "vol": "落とせる",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "能弄掉；可以弄掉",
           "japanese": "おとせる",
           "note": null,
           "error_usage": false,
@@ -5222,7 +5222,7 @@
         "volitional-form": {
           "vol": "落とそう",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "弄掉吧；打算弄掉",
           "japanese": "おとそう",
           "note": null,
           "error_usage": false,
@@ -5247,7 +5247,7 @@
         "imperative-form": {
           "vol": "落とせ",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "快弄掉！",
           "japanese": "おとせ",
           "note": null,
           "error_usage": false,
@@ -5272,7 +5272,7 @@
         "conditional-form": {
           "vol": "落とせば",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "如果弄掉，就…",
           "japanese": "おとせば",
           "note": null,
           "error_usage": false,
@@ -5297,7 +5297,7 @@
         "passive-form": {
           "vol": "落とされる",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "被…弄掉；由…弄掉；受到…影響或對待",
           "japanese": "おとされる",
           "note": null,
           "error_usage": false,
@@ -5322,7 +5322,7 @@
         "causative-form": {
           "vol": "落とさせる",
           "group": "1",
-          "chinese": "弄掉; 落下",
+          "chinese": "讓…弄掉；使…弄掉",
           "japanese": "おとさせる",
           "note": null,
           "error_usage": false,
@@ -5374,7 +5374,7 @@
         "masu-form": {
           "vol": "掛かります",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "鎖上; 掛上（禮貌體）",
           "japanese": "かかります",
           "note": null,
           "error_usage": false,
@@ -5399,7 +5399,7 @@
         "masu-form-negative": {
           "vol": "掛かりません",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "不鎖上（禮貌體）",
           "japanese": "かかりません",
           "note": null,
           "error_usage": false,
@@ -5424,7 +5424,7 @@
         "masu-form-past": {
           "vol": "掛かりました",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "鎖上了（禮貌體）",
           "japanese": "かかりました",
           "note": null,
           "error_usage": false,
@@ -5449,7 +5449,7 @@
         "masu-form-past-negative": {
           "vol": "掛かりませんでした",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "（當時）沒有鎖上（禮貌體）",
           "japanese": "かかりませんでした",
           "note": null,
           "error_usage": false,
@@ -5474,7 +5474,7 @@
         "nai-form": {
           "vol": "掛からない",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "不鎖上（普通體）",
           "japanese": "かからない",
           "note": null,
           "error_usage": false,
@@ -5499,7 +5499,7 @@
         "ta-form": {
           "vol": "掛かった",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "鎖上了（普通體）",
           "japanese": "かかった",
           "note": null,
           "error_usage": false,
@@ -5524,7 +5524,7 @@
         "nakatta-form": {
           "vol": "掛からなかった",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "（當時）沒有鎖上（普通體）",
           "japanese": "かからなかった",
           "note": null,
           "error_usage": false,
@@ -5549,7 +5549,7 @@
         "te-form": {
           "vol": "掛かって",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "鎖上，然後…；鎖上，而…",
           "japanese": "かかって",
           "note": null,
           "error_usage": false,
@@ -5574,7 +5574,7 @@
         "potential-form": {
           "vol": "掛かれる",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "かかれる",
           "note": "錯誤詞語，僅供轉詞練習：「掛かる」是無意志動詞，「掛かれる」這個可能形日常不用",
           "error_usage": true,
@@ -5583,7 +5583,7 @@
         "volitional-form": {
           "vol": "掛かろう",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "正快要鎖上；即將鎖上（無意志動詞，不是「～吧」）（此形日常少用）",
           "japanese": "かかろう",
           "note": "字典有但是不常用：「掛かろう」日常不用",
           "error_usage": false,
@@ -5608,7 +5608,7 @@
         "imperative-form": {
           "vol": "掛かれ",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "快鎖上！（此形日常少用）",
           "japanese": "かかれ",
           "note": "字典有但是不常用：「掛かれ」日常不用",
           "error_usage": false,
@@ -5633,7 +5633,7 @@
         "conditional-form": {
           "vol": "掛かれば",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "如果鎖上，就…",
           "japanese": "かかれば",
           "note": null,
           "error_usage": false,
@@ -5658,7 +5658,7 @@
         "passive-form": {
           "vol": "掛かられる",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "かかられる",
           "note": "錯誤詞語，僅供轉詞練習：「掛かる」是自動詞（かぎが 掛かる），不能接動作主；「門に 鎖を 掛かられる」不成立，被動要說他動詞「掛ける」的受身「掛けられる」",
           "error_usage": true,
@@ -5667,7 +5667,7 @@
         "causative-form": {
           "vol": "掛からせる",
           "group": "1",
-          "chinese": "鎖上; 掛上",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "かからせる",
           "note": "錯誤詞語，僅供轉詞練習：「掛からせる」是自動詞「掛かる」的使役形，但他動詞是「掛ける（かける）」，不用這個使役形",
           "error_usage": true,

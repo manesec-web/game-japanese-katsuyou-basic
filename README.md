@@ -2,7 +2,7 @@
 
 ![Vue 3](https://img.shields.io/badge/Vue-3-42b883?logo=vue.js&logoColor=white)
 ![Vite 7](https://img.shields.io/badge/Vite-7-646cff?logo=vite&logoColor=white)
-![Vitest](https://img.shields.io/badge/tests-317%20passing-2ea44f)
+![Vitest](https://img.shields.io/badge/tests-331%20passing-2ea44f)
 ![Static site](https://img.shields.io/badge/deploy-static%20site-4a3f9f)
 
 > 朗讀功能、下載流程優化與 UI 優化列在 [`docs/roadmap.md`](docs/roadmap.md) 的
@@ -23,7 +23,7 @@ SHA-256 校驗後快取於 IndexedDB，重新開啟時只重新驗證、不重�
 
 | 模式 | 內容 |
 |---|---|
-| **字典** | 一個單詞一頁，列出在「選擇顯示的類型」中勾選的變化形（預設全部 15 種）：形式名稱、單詞、注音（ruby 對齊）、中文解釋、例句。單詞／中文／標籤置中，例句靠左；註解（Note）以專屬顏色標示並置於例句上方。例句中屬於該形的單詞以紫色標示。標註 `error_usage` 的形式（錯誤用法，僅供轉詞練習）以紅色與雙刪除線顯示並附註說明，「跳過錯誤的單詞」可隱藏這類形式。手機版（≤550px）跟手拖動翻頁，桌機版用底部按鈕翻頁以便選取文字。 |
+| **字典** | 一個單詞一頁，列出在「選擇顯示的類型」中勾選的變化形（預設全部 15 種）：形式名稱、單詞、注音（ruby 對齊）、**該變化形自己的中文解釋**（否定、過去、可能、使役等各有不同）、例句。右上角齒輪旁的「目錄」會列出這次所選課次的所有單詞（依第N課分組、標出目前單詞），點一下即跳到該單詞。單詞／中文／標籤置中，例句靠左；註解（Note）以專屬顏色標示並置於例句上方。例句中屬於該形的單詞以紫色標示。標註 `error_usage` 的形式（錯誤用法，僅供轉詞練習）以紅色與雙刪除線顯示並附註說明，「跳過錯誤的單詞」可隱藏這類形式。手機版（≤550px）跟手拖動翻頁，桌機版用底部按鈕翻頁以便選取文字。 |
 | **翻卡學習** | 正面顯示來源形與「變成＿＿形」，點擊以 3D 翻頁顯示答案（目標形、讀音、中文解釋，以及形式、動詞類別、第N課標籤；錯誤用法另有「錯誤單詞」標籤）。跟手拖動切換卡片，新卡自動回到正面；最後一張往左滑等於按「完成」。 |
 | **測驗** | 頂端標題為 `測驗（n/total）`。題目顯示來源形，作答區提供依「正確讀音」自動產生的 25 鍵假名鍵盤（5×5），其餘按鍵隨機補齊。答對立即進下一題；答錯時輸入框抖動並變紅，累計 3 次顯示答案，按「下一題」才前進（不會自動跳題）。 |
 
@@ -84,10 +84,12 @@ npm run preview    # 預覽建置結果（http://localhost:4173/game-japanese-ka
 | `npm run dev` | 啟動 Vite 開發伺服器（附字典中介層） |
 | `npm run build` | 建置靜態網站到 `output/`，並複製 50 個課程檔到 `output/dict/` |
 | `npm run preview` | 以 Vite 預覽 `output/` |
-| `npm test` | 執行 Vitest 單元測試（28 個檔案、317 個測試） |
+| `npm test` | 執行 Vitest 單元測試（30 個檔案、331 個測試） |
 | `npm run test:watch` | 監看模式 |
 | `node scripts/write-sha256.mjs` | 重新產生 `src/data/dict-manifest.json` |
 | `node scripts/write-sha256.mjs --check` | 校驗 manifest 與 `vol/` 位元組是否一致（不一致則非 0 結束） |
+| `node scripts/validate-gloss-rewrite.mjs --all` | 校驗修訂 31 只改了各形 `chinese`／`note`，且 15 鍵、例句與標色條件完整 |
+| `node scripts/rewrite-glosses.mjs --review --all` | 重審 5,790 筆逐形中文與各形例句是否矛盾（唯讀） |
 | `node scripts/browser-check.mjs` | 以 headless Chromium 對建置結果做端到端檢查（需先 `npm run build`） |
 | `node scripts/motion-probe.mjs` | 印出翻頁／翻卡的逐幀動效軌跡（資訊用，不做通過判定） |
 | `node scripts/strike-probe.mjs` | 量測錯誤單詞雙刪除線的繪製位置（開發用探針） |
@@ -102,7 +104,9 @@ npm run preview    # 預覽建置結果（http://localhost:4173/game-japanese-ka
 ## 專案結構
 
 ```text
-vol/                        字典來源：lesson_1.json … lesson_50.json（唯讀）
+vol/                        字典來源：lesson_1.json … lesson_50.json（唯讀；
+                            修訂 31 曾一次性授權改寫各形 chinese／note）
+docs/gloss-rewrite/          修訂 31 的改寫規則、凍結基準、逐形計畫與疑義清單
 docs/                       規格、架構、進度、變更紀錄、本機伺服說明
 docs/screenshot-draft/      初期的線框稿（wireframe）
 docs/logo/                  網站 logo：logo.jpg 與由其轉存的 favicon／touch icon
@@ -126,12 +130,18 @@ output/                     建置輸出（不提交）
 ## 資料模型
 
 每個動詞物件固定包含 15 個鍵（`dictionary-form`、`masu-form` … `causative-form`），
-每個形式帶 `vol`（詞形）、`group`（動詞類別）、`chinese`（中文解釋）、`japanese`
-（讀音）、`sentence`（日中對照例句），可選 `note`（註解）與 `error_usage`
-（錯誤用法標記）。完整鍵名對照、`group` 標籤與資料形狀見
-[`docs/spec.md`](docs/spec.md) 的 Data 一節。
+每個形式帶 `vol`（詞形）、`group`（動詞類別）、`chinese`（**逐形中文解釋**）、`japanese`
+（讀音）、`sentence`（日中對照例句）、`note`（用法註解）與 `error_usage`
+（錯誤用法標記）。`chinese` 不再 15 形共用同一個詞義：例如 `違う` 是
+「不同；不對；不是」，而 `違いません` 是「沒有不同；相同（禮貌體）」、
+`違って` 是「（因為）不同，而…；不同，接著…」。`error_usage` 形統一標示
+「（非自然日語；僅供轉詞練習，無自然中文譯義）」；`note` 會提醒罕用形、
+尊敬語、迷惑受身與讓步構文。例句的中文翻譯與日文原文則完全保留。完整規則見
+[`docs/spec.md`](docs/spec.md) 的 Data 一節與
+[`docs/gloss-rewrite/rewrite-rules.md`](docs/gloss-rewrite/rewrite-rules.md)。
 
-目前資料：50 課、46 課有單詞（1、3、8、12 課為空）、386 個單詞、5,790 筆形式。
+目前資料：50 課、46 課有單詞（1、3、8、12 課為空）、386 個單詞、5,790 筆形式
+（5,599 個可用形、191 個 `error_usage` 形、16,797 組例句）。
 
 ## 架構重點
 
@@ -152,17 +162,18 @@ output/                     建置輸出（不提交）
 ## 測試與驗證
 
 ```bash
-npm test                                # 28 檔 / 317 個單元測試
+npm test                                # 30 檔 / 331 個單元測試
 npm run build                           # output/index.html + output/dict/（50 檔）
 node scripts/write-sha256.mjs --check   # manifest 一致
-node scripts/browser-check.mjs          # 550 項端到端檢查（390×844 為主；測驗題目
+node scripts/validate-gloss-rewrite.mjs --all  # 逐形中文改寫不變性
+node scripts/browser-check.mjs          # 574 項端到端檢查（390×844 為主；測驗題目
                                         # 由亂數種子決定，假名按鍵檢查數會上下浮動幾項）
 ```
 
 端到端檢查涵蓋：瀏覽器分頁標題與網站圖示（favicon.ico、32/192px PNG、
 apple-touch-icon，皆由 Pages 子路徑提供且回應 `image/*`）、載入（正常／失敗／重試）、
 首頁、三種模式的選課、字典閱讀（含
-跟手拖動、顯示形式篩選、註解與雙刪除線）、設定、翻卡（含第一張卡的邊界與
+跟手拖動、顯示形式篩選、註解與雙刪除線、單詞目錄跳轉）、設定、翻卡（含第一張卡的邊界與
 錯誤單詞標籤）、測驗（含答錯抖動、中途跳過錯誤單詞）、完成畫面、減少動效、
 550px 斷點、頁面與下拉清單滾動軸（含桌面滑鼠拖動與靠近顯示）、IndexedDB 快取重用、縮放鎖定與 Lucide 圖標。
 

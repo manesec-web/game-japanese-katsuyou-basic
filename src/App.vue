@@ -4,6 +4,7 @@ import LoadingView from './views/LoadingView.vue'
 import HomeView from './views/HomeView.vue'
 import PickerView from './views/PickerView.vue'
 import ReaderView from './views/ReaderView.vue'
+import TocView from './views/TocView.vue'
 import CardView from './views/CardView.vue'
 import QuizView from './views/QuizView.vue'
 import SettingsView from './views/SettingsView.vue'
@@ -16,6 +17,7 @@ const views = {
   home: HomeView,
   picker: PickerView,
   reader: ReaderView,
+  toc: TocView,
   card: CardView,
   quiz: QuizView,
   settings: SettingsView,

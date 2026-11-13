@@ -66,6 +66,7 @@ Command ids (complete list, from `AGENTS.md`):
 | `lessons.selectAll` | Select all verb-bearing lessons, or clear when all selected |
 | `study.start` | Build the item list from mode + selected lessons, enter study |
 | `dict.next` / `dict.prev` | Move within the dictionary item list, clamped |
+| `dict.goto` | Open the reader on the word at `params.index`; an index outside the run is `invalid-index` |
 | `card.next` / `card.prev` | Move within the card list, reset to face |
 | `card.flip` | Toggle face/back |
 | `quiz.input` | `append` text or `backspace` |
@@ -73,10 +74,12 @@ Command ids (complete list, from `AGENTS.md`):
 | `quiz.advance` | Move on after a revealed answer |
 | `settings.patch` | Merge settings; reject the whole patch on an unknown key |
 
-Screen names, exactly: `loading`, `home`, `picker`, `reader`, `card`, `quiz`,
-`settings`. `picker` and `settings` vary by `session.mode` (`dict`, `card`,
-`quiz`). `nav.go` accepts an optional `mode` parameter (one of the three) so
-entering a picker from home selects the mode in the same dispatch.
+Screen names, exactly: `loading`, `home`, `picker`, `reader`, `toc`, `card`,
+`quiz`, `settings`. `picker` and `settings` vary by `session.mode` (`dict`,
+`card`, `quiz`). `nav.go` accepts an optional `mode` parameter (one of the three)
+so entering a picker from home selects the mode in the same dispatch. `toc` is
+the dictionary's 單詞目錄 and is reachable only from `reader` with a non-empty
+run; its rows come from `src/study/toc.js`.
 
 ## Session
 
@@ -94,7 +97,10 @@ unless the spec says so.
 ## File map
 
 ```text
-vol/                          dictionary source, lesson_1..50.json (read-only)
+vol/                          dictionary source, lesson_1..50.json (read-only,
+                              except the one-time revision-31 chinese/note pass)
+docs/gloss-rewrite/           revision-31 rules, frozen baseline, gloss plan,
+                              per-batch doubt list
 docs/spec.md                  product behaviour
 docs/architecture.md          this file
 docs/serving.md               local serving and boot-failure troubleshooting
@@ -104,6 +110,8 @@ docs/changelog.md             dated change log
 docs/logo/                    logo source logo.jpg plus the derived tab icons
 README.md                     user-facing overview, setup, test and deploy notes
 scripts/write-sha256.mjs      hashes vol/*.json into src/data/dict-manifest.json
+scripts/rewrite-glosses.mjs   builds/applies the per-form chinese plan
+scripts/validate-gloss-rewrite.mjs  proves only chinese/note changed
 scripts/browser-check.mjs     headless Chromium walk-through of the built site
 scripts/motion-probe.mjs      frame-by-frame motion traces (informational)
 src/main.js                   app entry: store, Vue mount, overscroll guard, boot
@@ -200,22 +208,49 @@ and leaves `boot.done` false. `boot.checked` counts verified lessons only.
   against the bundled manifest and store the bytes in the IndexedDB database
   `katsuyou-dict`, object store `lessons`, keyed by file name.
 
+### Revision 31 — per-form Chinese gloss data
+
+`vol/` is normally read-only. Revision 31 is a **one-time, user-authorized**
+exception: a native-Japanese-teacher pass rewrote the form-level `chinese`
+values (and one misleading `note`) so each of the 15 conjugated forms carries
+its own Chinese meaning rather than a copy of the 字典形 gloss. This is a data
+change, not an engine or UI change.
+
+- Allowed fields: `form.chinese`, `form.note` only. `vol`, `group`, `japanese`,
+  `error_usage`, `sentence` (Japanese, Chinese and sentence notes), key sets
+  and key order, lesson names, `vols` order, and canonical 2-space JSON +
+  trailing newline are frozen.
+- `docs/gloss-rewrite/baseline/` holds the 50 pre-change files;
+  `baseline-index.json` holds their SHA-256; `verbs.tsv` indexes the 386 verbs.
+- `docs/gloss-rewrite/rewrite-rules.md` is the construction spec;
+  `reference-lesson-2.md` is the worked 違う sample; `overrides.json` holds
+  44 hand-reviewed verb paradigms and the one note fix; `plan.json` records
+  all 5,790 planned glosses; `batch-doubts.md` lists the D1–D10 findings.
+- `scripts/rewrite-glosses.mjs --init/--review/--apply` makes the plan
+  reviewable before writing. `scripts/validate-gloss-rewrite.mjs --all`
+  compares live `vol/` with the baseline, enforces the immutable-field
+  invariant, the 191 error markers, unchanged sentence/highlight conditions,
+  and zero non-字典形 rows still showing the old copied gloss.
+- The UI still renders `form.chinese` verbatim; no `.vue`, command, engine or
+  settings code was changed for this revision. Because the manifest hashes
+  raw bytes, `scripts/write-sha256.mjs` must be re-run after the data pass.
+
 ## Testing
 
 - Vitest under Node for engine, commands, hashing, boot, settings, item
   lists, quiz queue reconciliation, keyboard, grading, ruby, swipe/drag
   resolution, paging window, overscroll touch boundaries, scrollbar geometry
-  and drag mapping, dropdown thumb timers/dragging and result tallies: 28
-  files, 317 tests.
+  and drag mapping, dropdown thumb timers/dragging and result tallies: 30
+  files, 331 tests.
 - Browser APIs (IndexedDB, fetch) are injected so tests use fakes; the IDB
   adapter itself is tested with `fake-indexeddb`. No browser is needed for
   `npm test`.
 - `scripts/browser-check.mjs` starts `vite preview` and drives headless
   Chromium at 390×844 (plus 550/551/800/900 width probes) through loading,
-  home, all three pickers, reader, three settings screens, cards, quiz and
+  home, all three pickers, reader, 單詞目錄, three settings screens, cards, quiz and
   completion, including IndexedDB reuse, the loading head and credit line, the
   first-card wall, reduced motion and the 550px breakpoint. It is a
-  separate command, not part of `npm test`. Its 549 checks on the final pass
+  separate command, not part of `npm test`. Its 565 checks on the final pass
   cover the dictionary display-form filter and error-word hiding, live quiz
   queue reconciliation, wrong-answer shake/red feedback, the settings' locked
   chip and select-all state, both drawn dropdown thumbs (now mouse-draggable),
@@ -226,7 +261,7 @@ and leaves `boot.done` false. `boot.checked` counts verified lessons only.
 Tokens in `src/styles/app.css`: indigo→amber gradient background with a faint
 grain, warm off-white `min(100%, 480px)` column with 28px radius and light
 shadow, system CJK font stack (`Hiragino Sans`, `Noto Sans TC`, `Noto Sans JP`),
-36px × 10px-radius controls (chips and settings rows), 44px+ quiz keys, 60px
+36px × 10px-radius controls (chips and settings rows), 44px 單詞目錄 rows, 44px+ quiz keys, 60px
 home entries, 50px picker/reader/card footer controls and 60px 返回主頁, ~220ms
 screen transitions, a 240ms `rotateY` card flip, a finger-tracking paging
 drag — the strip of items follows the hand 1:1 while held (clamped to one

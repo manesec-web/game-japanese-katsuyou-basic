@@ -30,7 +30,7 @@
         "masu-form": {
           "vol": "着ます",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "穿〔襯衫等〕; 穿（上衣）（禮貌體）",
           "japanese": "きます",
           "note": null,
           "error_usage": false,
@@ -55,7 +55,7 @@
         "masu-form-negative": {
           "vol": "着ません",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "不穿（禮貌體）",
           "japanese": "きません",
           "note": null,
           "error_usage": false,
@@ -80,7 +80,7 @@
         "masu-form-past": {
           "vol": "着ました",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "穿了（禮貌體）",
           "japanese": "きました",
           "note": null,
           "error_usage": false,
@@ -105,7 +105,7 @@
         "masu-form-past-negative": {
           "vol": "着ませんでした",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "（當時）沒有穿（禮貌體）",
           "japanese": "きませんでした",
           "note": null,
           "error_usage": false,
@@ -130,7 +130,7 @@
         "nai-form": {
           "vol": "着ない",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "不穿（普通體）",
           "japanese": "きない",
           "note": null,
           "error_usage": false,
@@ -155,7 +155,7 @@
         "ta-form": {
           "vol": "着た",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "穿了（普通體）",
           "japanese": "きた",
           "note": null,
           "error_usage": false,
@@ -180,7 +180,7 @@
         "nakatta-form": {
           "vol": "着なかった",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "（當時）沒有穿（普通體）",
           "japanese": "きなかった",
           "note": null,
           "error_usage": false,
@@ -205,7 +205,7 @@
         "te-form": {
           "vol": "着て",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "穿，然後…；穿，而…",
           "japanese": "きて",
           "note": null,
           "error_usage": false,
@@ -230,7 +230,7 @@
         "potential-form": {
           "vol": "着られる",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "能穿；可以穿",
           "japanese": "きられる",
           "note": null,
           "error_usage": false,
@@ -255,7 +255,7 @@
         "volitional-form": {
           "vol": "着よう",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "穿吧；打算穿",
           "japanese": "きよう",
           "note": null,
           "error_usage": false,
@@ -280,7 +280,7 @@
         "imperative-form": {
           "vol": "着ろ",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "快穿！",
           "japanese": "きろ",
           "note": null,
           "error_usage": false,
@@ -305,7 +305,7 @@
         "conditional-form": {
           "vol": "着れば",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "如果穿，就…",
           "japanese": "きれば",
           "note": null,
           "error_usage": false,
@@ -330,7 +330,7 @@
         "passive-form": {
           "vol": "着られる",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "被…穿；由…穿；受到…影響或對待",
           "japanese": "きられる",
           "note": null,
           "error_usage": false,
@@ -355,7 +355,7 @@
         "causative-form": {
           "vol": "着させる",
           "group": "2",
-          "chinese": "穿〔襯衫等〕; 穿（上衣）",
+          "chinese": "讓…穿；使…穿",
           "japanese": "きさせる",
           "note": null,
           "error_usage": false,
@@ -407,7 +407,7 @@
         "masu-form": {
           "vol": "履きます",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "穿〔鞋，褲子〕（禮貌體）",
           "japanese": "はきます",
           "note": null,
           "error_usage": false,
@@ -432,7 +432,7 @@
         "masu-form-negative": {
           "vol": "履きません",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "不穿鞋、褲子（禮貌體）",
           "japanese": "はきません",
           "note": null,
           "error_usage": false,
@@ -457,7 +457,7 @@
         "masu-form-past": {
           "vol": "履きました",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "穿鞋、褲子了（禮貌體）",
           "japanese": "はきました",
           "note": null,
           "error_usage": false,
@@ -482,7 +482,7 @@
         "masu-form-past-negative": {
           "vol": "履きませんでした",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "（當時）沒有穿鞋、褲子（禮貌體）",
           "japanese": "はきませんでした",
           "note": null,
           "error_usage": false,
@@ -507,7 +507,7 @@
         "nai-form": {
           "vol": "履かない",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "不穿鞋、褲子（普通體）",
           "japanese": "はかない",
           "note": null,
           "error_usage": false,
@@ -532,7 +532,7 @@
         "ta-form": {
           "vol": "履いた",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "穿鞋、褲子了（普通體）",
           "japanese": "はいた",
           "note": null,
           "error_usage": false,
@@ -557,7 +557,7 @@
         "nakatta-form": {
           "vol": "履かなかった",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "（當時）沒有穿鞋、褲子（普通體）",
           "japanese": "はかなかった",
           "note": null,
           "error_usage": false,
@@ -582,7 +582,7 @@
         "te-form": {
           "vol": "履いて",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "穿鞋、褲子，然後…；穿鞋、褲子，而…",
           "japanese": "はいて",
           "note": null,
           "error_usage": false,
@@ -607,7 +607,7 @@
         "potential-form": {
           "vol": "履ける",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "能穿鞋、褲子；可以穿鞋、褲子",
           "japanese": "はける",
           "note": null,
           "error_usage": false,
@@ -632,7 +632,7 @@
         "volitional-form": {
           "vol": "履こう",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "穿鞋、褲子吧；打算穿鞋、褲子",
           "japanese": "はこう",
           "note": null,
           "error_usage": false,
@@ -657,7 +657,7 @@
         "imperative-form": {
           "vol": "履け",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "快穿鞋、褲子！",
           "japanese": "はけ",
           "note": null,
           "error_usage": false,
@@ -682,7 +682,7 @@
         "conditional-form": {
           "vol": "履けば",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "如果穿鞋、褲子，就…",
           "japanese": "はけば",
           "note": null,
           "error_usage": false,
@@ -707,7 +707,7 @@
         "passive-form": {
           "vol": "履かれる",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "被…穿鞋、褲子；由…穿鞋、褲子；受到…影響或對待",
           "japanese": "はかれる",
           "note": null,
           "error_usage": false,
@@ -732,7 +732,7 @@
         "causative-form": {
           "vol": "履かせる",
           "group": "1",
-          "chinese": "穿〔鞋，褲子〕",
+          "chinese": "讓…穿鞋、褲子；使…穿鞋、褲子",
           "japanese": "はかせる",
           "note": null,
           "error_usage": false,
@@ -784,7 +784,7 @@
         "masu-form": {
           "vol": "被ります",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "戴〔帽子等〕（禮貌體）",
           "japanese": "かぶります",
           "note": null,
           "error_usage": false,
@@ -809,7 +809,7 @@
         "masu-form-negative": {
           "vol": "被りません",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "不戴（禮貌體）",
           "japanese": "かぶりません",
           "note": null,
           "error_usage": false,
@@ -834,7 +834,7 @@
         "masu-form-past": {
           "vol": "被りました",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "戴了（禮貌體）",
           "japanese": "かぶりました",
           "note": null,
           "error_usage": false,
@@ -859,7 +859,7 @@
         "masu-form-past-negative": {
           "vol": "被りませんでした",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "（當時）沒有戴（禮貌體）",
           "japanese": "かぶりませんでした",
           "note": null,
           "error_usage": false,
@@ -884,7 +884,7 @@
         "nai-form": {
           "vol": "被らない",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "不戴（普通體）",
           "japanese": "かぶらない",
           "note": null,
           "error_usage": false,
@@ -909,7 +909,7 @@
         "ta-form": {
           "vol": "被った",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "戴了（普通體）",
           "japanese": "かぶった",
           "note": null,
           "error_usage": false,
@@ -934,7 +934,7 @@
         "nakatta-form": {
           "vol": "被らなかった",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "（當時）沒有戴（普通體）",
           "japanese": "かぶらなかった",
           "note": null,
           "error_usage": false,
@@ -959,7 +959,7 @@
         "te-form": {
           "vol": "被って",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "戴，然後…；戴，而…",
           "japanese": "かぶって",
           "note": null,
           "error_usage": false,
@@ -984,7 +984,7 @@
         "potential-form": {
           "vol": "被れる",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "能戴；可以戴（此形日常少用）",
           "japanese": "かぶれる",
           "note": "字典有但是不常用：「かぶれる」是「かぶる」的可能形（這頂帽子還戴得了）。同形常用詞是「起疹子」（漆にかぶれる）和「熱中、受影響」（西洋文化にかぶれる），不要只理解成染上習癖。",
           "error_usage": false,
@@ -1009,7 +1009,7 @@
         "volitional-form": {
           "vol": "被ろう",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "戴吧；打算戴",
           "japanese": "かぶろう",
           "note": null,
           "error_usage": false,
@@ -1034,7 +1034,7 @@
         "imperative-form": {
           "vol": "被れ",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "快戴！",
           "japanese": "かぶれ",
           "note": null,
           "error_usage": false,
@@ -1059,7 +1059,7 @@
         "conditional-form": {
           "vol": "被れば",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "如果戴，就…",
           "japanese": "かぶれば",
           "note": null,
           "error_usage": false,
@@ -1084,7 +1084,7 @@
         "passive-form": {
           "vol": "被られる",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "被…戴；由…戴；受到…影響或對待",
           "japanese": "かぶられる",
           "note": null,
           "error_usage": false,
@@ -1109,7 +1109,7 @@
         "causative-form": {
           "vol": "被らせる",
           "group": "1",
-          "chinese": "戴〔帽子等〕",
+          "chinese": "讓…戴；使…戴",
           "japanese": "かぶらせる",
           "note": null,
           "error_usage": false,
@@ -1161,7 +1161,7 @@
         "masu-form": {
           "vol": "掛けます",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "戴〔眼鏡〕; 掛；戴上（禮貌體）",
           "japanese": "かけます",
           "note": null,
           "error_usage": false,
@@ -1186,7 +1186,7 @@
         "masu-form-negative": {
           "vol": "掛けません",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "不戴（禮貌體）",
           "japanese": "かけません",
           "note": null,
           "error_usage": false,
@@ -1211,7 +1211,7 @@
         "masu-form-past": {
           "vol": "掛けました",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "戴了（禮貌體）",
           "japanese": "かけました",
           "note": null,
           "error_usage": false,
@@ -1236,7 +1236,7 @@
         "masu-form-past-negative": {
           "vol": "掛けませんでした",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "（當時）沒有戴（禮貌體）",
           "japanese": "かけませんでした",
           "note": null,
           "error_usage": false,
@@ -1261,7 +1261,7 @@
         "nai-form": {
           "vol": "掛けない",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "不戴（普通體）",
           "japanese": "かけない",
           "note": null,
           "error_usage": false,
@@ -1286,7 +1286,7 @@
         "ta-form": {
           "vol": "掛けた",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "戴了（普通體）",
           "japanese": "かけた",
           "note": null,
           "error_usage": false,
@@ -1311,7 +1311,7 @@
         "nakatta-form": {
           "vol": "掛けなかった",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "（當時）沒有戴（普通體）",
           "japanese": "かけなかった",
           "note": null,
           "error_usage": false,
@@ -1336,7 +1336,7 @@
         "te-form": {
           "vol": "掛けて",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "戴，然後…；戴，而…",
           "japanese": "かけて",
           "note": null,
           "error_usage": false,
@@ -1361,7 +1361,7 @@
         "potential-form": {
           "vol": "掛けられる",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "能戴；可以戴",
           "japanese": "かけられる",
           "note": null,
           "error_usage": false,
@@ -1386,7 +1386,7 @@
         "volitional-form": {
           "vol": "掛けよう",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "戴吧；打算戴",
           "japanese": "かけよう",
           "note": null,
           "error_usage": false,
@@ -1411,7 +1411,7 @@
         "imperative-form": {
           "vol": "掛けろ",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "快戴！",
           "japanese": "かけろ",
           "note": null,
           "error_usage": false,
@@ -1436,7 +1436,7 @@
         "conditional-form": {
           "vol": "掛ければ",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "如果戴，就…",
           "japanese": "かければ",
           "note": null,
           "error_usage": false,
@@ -1461,7 +1461,7 @@
         "passive-form": {
           "vol": "掛けられる",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "被…戴；由…戴；受到…影響或對待",
           "japanese": "かけられる",
           "note": null,
           "error_usage": false,
@@ -1486,7 +1486,7 @@
         "causative-form": {
           "vol": "掛けさせる",
           "group": "2",
-          "chinese": "戴〔眼鏡〕; 掛；戴上",
+          "chinese": "讓…戴；使…戴",
           "japanese": "かけさせる",
           "note": null,
           "error_usage": false,
@@ -1538,7 +1538,7 @@
         "masu-form": {
           "vol": "生まれます",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "出生; 誕生（禮貌體）",
           "japanese": "うまれます",
           "note": null,
           "error_usage": false,
@@ -1563,7 +1563,7 @@
         "masu-form-negative": {
           "vol": "生まれません",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "不出生（禮貌體）",
           "japanese": "うまれません",
           "note": null,
           "error_usage": false,
@@ -1588,7 +1588,7 @@
         "masu-form-past": {
           "vol": "生まれました",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "出生了（禮貌體）",
           "japanese": "うまれました",
           "note": null,
           "error_usage": false,
@@ -1613,7 +1613,7 @@
         "masu-form-past-negative": {
           "vol": "生まれませんでした",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "（當時）沒有出生（禮貌體）",
           "japanese": "うまれませんでした",
           "note": null,
           "error_usage": false,
@@ -1638,7 +1638,7 @@
         "nai-form": {
           "vol": "生まれない",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "不出生（普通體）",
           "japanese": "うまれない",
           "note": null,
           "error_usage": false,
@@ -1663,7 +1663,7 @@
         "ta-form": {
           "vol": "生まれた",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "出生了（普通體）",
           "japanese": "うまれた",
           "note": null,
           "error_usage": false,
@@ -1688,7 +1688,7 @@
         "nakatta-form": {
           "vol": "生まれなかった",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "（當時）沒有出生（普通體）",
           "japanese": "うまれなかった",
           "note": null,
           "error_usage": false,
@@ -1713,7 +1713,7 @@
         "te-form": {
           "vol": "生まれて",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "出生，然後…；出生，而…",
           "japanese": "うまれて",
           "note": null,
           "error_usage": false,
@@ -1738,7 +1738,7 @@
         "potential-form": {
           "vol": "生まれられる",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "うまれられる",
           "note": "錯誤詞語，僅供轉詞練習：「生まれる」是無意志動詞，「生まれられる」這個可能形日常不用",
           "error_usage": true,
@@ -1747,7 +1747,7 @@
         "volitional-form": {
           "vol": "生まれよう",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "正快要出生；即將出生（無意志動詞，不是「～吧」）",
           "japanese": "うまれよう",
           "note": null,
           "error_usage": false,
@@ -1772,7 +1772,7 @@
         "imperative-form": {
           "vol": "生まれろ",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "願…出生；但願出生（文語祈願用法）（此形日常少用）",
           "japanese": "うまれろ",
           "note": "字典有但是不常用：「生まれろ」日常不用",
           "error_usage": false,
@@ -1797,7 +1797,7 @@
         "conditional-form": {
           "vol": "生まれれば",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "如果出生，就…",
           "japanese": "うまれれば",
           "note": null,
           "error_usage": false,
@@ -1822,7 +1822,7 @@
         "passive-form": {
           "vol": "生まれられる",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "うまれられる",
           "note": "錯誤詞語，僅供轉詞練習：「生まれる」是無意志自動詞，沒有「生まれられる」這種受身用法；要說「〜に 生まれる」的事實，直接用「生まれる」即可",
           "error_usage": true,
@@ -1831,7 +1831,7 @@
         "causative-form": {
           "vol": "生まれさせる",
           "group": "2",
-          "chinese": "出生; 誕生",
+          "chinese": "讓…出生；使…出生（此形日常少用）",
           "japanese": "うまれさせる",
           "note": "字典有但是不常用：「生まれさせる」就是「生まれる」的使役。口語多說「生む／産む」。催生可以說「赤ちゃんを生まれさせる」。「生ませる」是「生む」的使役，不是這一個形。",
           "error_usage": false,

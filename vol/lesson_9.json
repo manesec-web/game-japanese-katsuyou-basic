@@ -5,7 +5,7 @@
         "dictionary-form": {
           "vol": "わかる",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "了解；明白；懂",
           "japanese": "わかる",
           "note": null,
           "error_usage": false,
@@ -30,7 +30,7 @@
         "masu-form": {
           "vol": "わかります",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "了解；明白；懂（禮貌體）",
           "japanese": "わかります",
           "note": null,
           "error_usage": false,
@@ -55,7 +55,7 @@
         "masu-form-negative": {
           "vol": "わかりません",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "不明白；不懂（禮貌體）",
           "japanese": "わかりません",
           "note": null,
           "error_usage": false,
@@ -80,7 +80,7 @@
         "masu-form-past": {
           "vol": "わかりました",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "明白了；懂了（禮貌體）",
           "japanese": "わかりました",
           "note": null,
           "error_usage": false,
@@ -105,7 +105,7 @@
         "masu-form-past-negative": {
           "vol": "わかりませんでした",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "當時沒聽懂；沒明白（禮貌體）",
           "japanese": "わかりませんでした",
           "note": null,
           "error_usage": false,
@@ -130,7 +130,7 @@
         "nai-form": {
           "vol": "わからない",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "不懂；不明白",
           "japanese": "わからない",
           "note": null,
           "error_usage": false,
@@ -155,7 +155,7 @@
         "ta-form": {
           "vol": "わかった",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "明白了；懂了",
           "japanese": "わかった",
           "note": null,
           "error_usage": false,
@@ -180,7 +180,7 @@
         "nakatta-form": {
           "vol": "わからなかった",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "當時不懂；沒明白",
           "japanese": "わからなかった",
           "note": null,
           "error_usage": false,
@@ -205,7 +205,7 @@
         "te-form": {
           "vol": "わかって",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "雖然明白，卻…；明白之後…",
           "japanese": "わかって",
           "note": null,
           "error_usage": false,
@@ -230,7 +230,7 @@
         "potential-form": {
           "vol": "わかれる",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "わかれる",
           "note": "錯誤詞語，僅供轉詞練習：「わかれる」是錯的：「わかる」本身已表示可能（「分かれる」是另一個動詞）",
           "error_usage": true,
@@ -239,7 +239,7 @@
         "volitional-form": {
           "vol": "わかろう",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "想去理解／試著理解（不是「懂吧」）",
           "japanese": "わかろう",
           "note": null,
           "error_usage": false,
@@ -264,7 +264,7 @@
         "imperative-form": {
           "vol": "わかれ",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "わかれ",
           "note": "錯誤詞語，僅供轉詞練習：「わかれ」在現代日語是「分かれる／別れる」的命令形（例：二手に 分かれ），不是「わかる」的命令形；「わかる」是狀態動詞，不能命令",
           "error_usage": true,
@@ -273,7 +273,7 @@
         "conditional-form": {
           "vol": "わかれば",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "如果知道／懂的話，就…",
           "japanese": "わかれば",
           "note": null,
           "error_usage": false,
@@ -298,7 +298,7 @@
         "passive-form": {
           "vol": "わかられる",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "心思／弱點被…看穿；不是「被明白」",
           "japanese": "わかられる",
           "note": null,
           "error_usage": false,
@@ -323,7 +323,7 @@
         "causative-form": {
           "vol": "わからせる",
           "group": "1",
-          "chinese": "了解; 明白; 懂",
+          "chinese": "讓…明白；使…理解",
           "japanese": "わからせる",
           "note": null,
           "error_usage": false,
@@ -350,7 +350,7 @@
         "dictionary-form": {
           "vol": "ある",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "有；存在",
           "japanese": "ある",
           "note": null,
           "error_usage": false,
@@ -375,7 +375,7 @@
         "masu-form": {
           "vol": "あります",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "有；存在（禮貌體）",
           "japanese": "あります",
           "note": null,
           "error_usage": false,
@@ -400,7 +400,7 @@
         "masu-form-negative": {
           "vol": "ありません",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "沒有；不存在（禮貌體）",
           "japanese": "ありません",
           "note": null,
           "error_usage": false,
@@ -425,7 +425,7 @@
         "masu-form-past": {
           "vol": "ありました",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "（當時）有；曾經有（禮貌體）",
           "japanese": "ありました",
           "note": null,
           "error_usage": false,
@@ -450,7 +450,7 @@
         "masu-form-past-negative": {
           "vol": "ありませんでした",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "（當時）沒有；不曾有（禮貌體）",
           "japanese": "ありませんでした",
           "note": null,
           "error_usage": false,
@@ -475,7 +475,7 @@
         "nai-form": {
           "vol": "ない",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "沒有；不存在",
           "japanese": "ない",
           "note": null,
           "error_usage": false,
@@ -500,7 +500,7 @@
         "ta-form": {
           "vol": "あった",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "（當時）有；曾經有",
           "japanese": "あった",
           "note": null,
           "error_usage": false,
@@ -525,7 +525,7 @@
         "nakatta-form": {
           "vol": "なかった",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "（當時）沒有；不曾有",
           "japanese": "なかった",
           "note": null,
           "error_usage": false,
@@ -550,7 +550,7 @@
         "te-form": {
           "vol": "あって",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "因為有…，所以…；有…，而…",
           "japanese": "あって",
           "note": null,
           "error_usage": false,
@@ -575,7 +575,7 @@
         "potential-form": {
           "vol": "ありえる",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "有可能（發生）；說不定會…",
           "japanese": "ありえる",
           "note": null,
           "error_usage": false,
@@ -600,7 +600,7 @@
         "volitional-form": {
           "vol": "あろう",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "不管有沒有／有什麼都…；～であろう（此形日常少用）",
           "japanese": "あろう",
           "note": "字典有但是不常用：「あろう」的意志・推量用法日常不用；實際用於「〜あろうと」「〜であろう」等慣用表現",
           "error_usage": false,
@@ -625,7 +625,7 @@
         "imperative-form": {
           "vol": "あれ",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "願…；但願有…（文語祈願用法，此形日常少用）",
           "japanese": "あれ",
           "note": "字典有但是不常用：「あれ」是文語命令形，只用於「〜であれ」等固定說法",
           "error_usage": false,
@@ -650,7 +650,7 @@
         "conditional-form": {
           "vol": "あれば",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "如果有的話，就…",
           "japanese": "あれば",
           "note": null,
           "error_usage": false,
@@ -675,7 +675,7 @@
         "passive-form": {
           "vol": "あられる",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "あられる",
           "note": "錯誤詞語，僅供轉詞練習：「あられる」是尊敬用法，不是受身形；日常不用",
           "error_usage": true,
@@ -684,7 +684,7 @@
         "causative-form": {
           "vol": "あらせる",
           "group": "0",
-          "chinese": "有; 存在",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "あらせる",
           "note": "錯誤詞語，僅供轉詞練習：「あらせる」日常不用",
           "error_usage": true,

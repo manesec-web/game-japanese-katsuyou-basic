@@ -30,7 +30,7 @@
         "masu-form": {
           "vol": "答えます",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "回答; 作答; 答覆（禮貌體）",
           "japanese": "こたえます",
           "note": null,
           "error_usage": false,
@@ -55,7 +55,7 @@
         "masu-form-negative": {
           "vol": "答えません",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "不回答（禮貌體）",
           "japanese": "こたえません",
           "note": null,
           "error_usage": false,
@@ -80,7 +80,7 @@
         "masu-form-past": {
           "vol": "答えました",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "回答了（禮貌體）",
           "japanese": "こたえました",
           "note": null,
           "error_usage": false,
@@ -105,7 +105,7 @@
         "masu-form-past-negative": {
           "vol": "答えませんでした",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "（當時）沒有回答（禮貌體）",
           "japanese": "こたえませんでした",
           "note": null,
           "error_usage": false,
@@ -130,7 +130,7 @@
         "nai-form": {
           "vol": "答えない",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "不回答（普通體）",
           "japanese": "こたえない",
           "note": null,
           "error_usage": false,
@@ -155,7 +155,7 @@
         "ta-form": {
           "vol": "答えた",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "回答了（普通體）",
           "japanese": "こたえた",
           "note": null,
           "error_usage": false,
@@ -180,7 +180,7 @@
         "nakatta-form": {
           "vol": "答えなかった",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "（當時）沒有回答（普通體）",
           "japanese": "こたえなかった",
           "note": null,
           "error_usage": false,
@@ -205,7 +205,7 @@
         "te-form": {
           "vol": "答えて",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "回答，然後…；回答，而…",
           "japanese": "こたえて",
           "note": null,
           "error_usage": false,
@@ -230,7 +230,7 @@
         "potential-form": {
           "vol": "答えられる",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "能回答；可以回答",
           "japanese": "こたえられる",
           "note": null,
           "error_usage": false,
@@ -255,7 +255,7 @@
         "volitional-form": {
           "vol": "答えよう",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "回答吧；打算回答",
           "japanese": "こたえよう",
           "note": null,
           "error_usage": false,
@@ -280,7 +280,7 @@
         "imperative-form": {
           "vol": "答えろ",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "快回答！",
           "japanese": "こたえろ",
           "note": null,
           "error_usage": false,
@@ -305,7 +305,7 @@
         "conditional-form": {
           "vol": "答えれば",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "如果回答，就…",
           "japanese": "こたえれば",
           "note": null,
           "error_usage": false,
@@ -330,7 +330,7 @@
         "passive-form": {
           "vol": "答えられる",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "老師的問題馬上就會有人回答…（此形語意見例句）",
           "japanese": "こたえられる",
           "note": null,
           "error_usage": false,
@@ -355,7 +355,7 @@
         "causative-form": {
           "vol": "答えさせる",
           "group": "2",
-          "chinese": "回答; 作答; 答覆",
+          "chinese": "讓…回答；使…回答",
           "japanese": "こたえさせる",
           "note": null,
           "error_usage": false,
@@ -407,7 +407,7 @@
         "masu-form": {
           "vol": "倒れます",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "倒塌; 倒下; 病倒（禮貌體）",
           "japanese": "たおれます",
           "note": null,
           "error_usage": false,
@@ -432,7 +432,7 @@
         "masu-form-negative": {
           "vol": "倒れません",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "不倒塌（禮貌體）",
           "japanese": "たおれません",
           "note": null,
           "error_usage": false,
@@ -457,7 +457,7 @@
         "masu-form-past": {
           "vol": "倒れました",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "倒塌了（禮貌體）",
           "japanese": "たおれました",
           "note": null,
           "error_usage": false,
@@ -482,7 +482,7 @@
         "masu-form-past-negative": {
           "vol": "倒れませんでした",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "（當時）沒有倒塌（禮貌體）",
           "japanese": "たおれませんでした",
           "note": null,
           "error_usage": false,
@@ -507,7 +507,7 @@
         "nai-form": {
           "vol": "倒れない",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "不倒塌（普通體）",
           "japanese": "たおれない",
           "note": null,
           "error_usage": false,
@@ -532,7 +532,7 @@
         "ta-form": {
           "vol": "倒れた",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "倒塌了（普通體）",
           "japanese": "たおれた",
           "note": null,
           "error_usage": false,
@@ -557,7 +557,7 @@
         "nakatta-form": {
           "vol": "倒れなかった",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "（當時）沒有倒塌（普通體）",
           "japanese": "たおれなかった",
           "note": null,
           "error_usage": false,
@@ -582,7 +582,7 @@
         "te-form": {
           "vol": "倒れて",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "倒塌，然後…；倒塌，而…",
           "japanese": "たおれて",
           "note": null,
           "error_usage": false,
@@ -607,7 +607,7 @@
         "potential-form": {
           "vol": "倒れられる",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "能倒塌；可以倒塌（此形日常少用）",
           "japanese": "たおれられる",
           "note": "字典有但是不常用：「倒れられる」限於意圖性倒下（如護身倒法），日常會話少用",
           "error_usage": false,
@@ -632,7 +632,7 @@
         "volitional-form": {
           "vol": "倒れよう",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "正快要倒塌；即將倒塌（無意志動詞，不是「～吧」）",
           "japanese": "たおれよう",
           "note": null,
           "error_usage": false,
@@ -657,7 +657,7 @@
         "imperative-form": {
           "vol": "倒れろ",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "快倒塌！",
           "japanese": "たおれろ",
           "note": null,
           "error_usage": false,
@@ -682,7 +682,7 @@
         "conditional-form": {
           "vol": "倒れれば",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "如果倒塌，就…",
           "japanese": "たおれれば",
           "note": null,
           "error_usage": false,
@@ -707,7 +707,7 @@
         "passive-form": {
           "vol": "倒れられる",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "因（別人）倒塌而受到影響或困擾（迷惑受身）；不是「被倒塌」",
           "japanese": "たおれられる",
           "note": null,
           "error_usage": false,
@@ -732,7 +732,7 @@
         "causative-form": {
           "vol": "倒れさせる",
           "group": "2",
-          "chinese": "倒塌; 倒下; 病倒",
+          "chinese": "讓…倒塌；使…倒塌",
           "japanese": "たおれさせる",
           "note": null,
           "error_usage": false,
@@ -784,7 +784,7 @@
         "masu-form": {
           "vol": "焼けます",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "烤; 燒; 燒毀（禮貌體）",
           "japanese": "やけます",
           "note": null,
           "error_usage": false,
@@ -809,7 +809,7 @@
         "masu-form-negative": {
           "vol": "焼けません",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "不烤（禮貌體）",
           "japanese": "やけません",
           "note": null,
           "error_usage": false,
@@ -834,7 +834,7 @@
         "masu-form-past": {
           "vol": "焼けました",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "烤了（禮貌體）",
           "japanese": "やけました",
           "note": null,
           "error_usage": false,
@@ -859,7 +859,7 @@
         "masu-form-past-negative": {
           "vol": "焼けませんでした",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "（當時）沒有烤（禮貌體）",
           "japanese": "やけませんでした",
           "note": null,
           "error_usage": false,
@@ -884,7 +884,7 @@
         "nai-form": {
           "vol": "焼けない",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "不烤（普通體）",
           "japanese": "やけない",
           "note": null,
           "error_usage": false,
@@ -909,7 +909,7 @@
         "ta-form": {
           "vol": "焼けた",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "烤了（普通體）",
           "japanese": "やけた",
           "note": null,
           "error_usage": false,
@@ -934,7 +934,7 @@
         "nakatta-form": {
           "vol": "焼けなかった",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "（當時）沒有烤（普通體）",
           "japanese": "やけなかった",
           "note": null,
           "error_usage": false,
@@ -959,7 +959,7 @@
         "te-form": {
           "vol": "焼けて",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "烤，然後…；烤，而…",
           "japanese": "やけて",
           "note": null,
           "error_usage": false,
@@ -984,7 +984,7 @@
         "potential-form": {
           "vol": "焼けられる",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "やけられる",
           "note": "錯誤詞語，僅供轉詞練習：「焼ける」是無意志動詞，「焼けられる」這個可能形日常不用",
           "error_usage": true,
@@ -993,7 +993,7 @@
         "volitional-form": {
           "vol": "焼けよう",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "正快要烤；即將烤（無意志動詞，不是「～吧」）（此形日常少用）",
           "japanese": "やけよう",
           "note": "字典有但是不常用：「焼けよう」日常不用",
           "error_usage": false,
@@ -1018,7 +1018,7 @@
         "imperative-form": {
           "vol": "焼けろ",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "快烤！（此形日常少用）",
           "japanese": "やけろ",
           "note": "字典有但是不常用：「焼けろ」日常不用",
           "error_usage": false,
@@ -1043,7 +1043,7 @@
         "conditional-form": {
           "vol": "焼ければ",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "如果烤，就…",
           "japanese": "やければ",
           "note": null,
           "error_usage": false,
@@ -1068,7 +1068,7 @@
         "passive-form": {
           "vol": "焼けられる",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "やけられる",
           "note": "錯誤詞語，僅供轉詞練習：「焼ける」是無意志動詞，沒有「焼けられる」這個受身形；受身要由他動詞「焼く」構成（焼かれる）",
           "error_usage": true,
@@ -1077,7 +1077,7 @@
         "causative-form": {
           "vol": "焼けさせる",
           "group": "2",
-          "chinese": "烤; 燒; 燒毀",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "やけさせる",
           "note": "錯誤詞語，僅供轉詞練習：「焼けさせる」是自動詞「焼ける」的使役形，但他動詞是「焼く」，不用這個使役形",
           "error_usage": true,
@@ -1113,7 +1113,7 @@
         "masu-form": {
           "vol": "通ります",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "通過; 經過; 走（路）（禮貌體）",
           "japanese": "とおります",
           "note": null,
           "error_usage": false,
@@ -1138,7 +1138,7 @@
         "masu-form-negative": {
           "vol": "通りません",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "不通過（禮貌體）",
           "japanese": "とおりません",
           "note": null,
           "error_usage": false,
@@ -1163,7 +1163,7 @@
         "masu-form-past": {
           "vol": "通りました",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "通過了（禮貌體）",
           "japanese": "とおりました",
           "note": null,
           "error_usage": false,
@@ -1188,7 +1188,7 @@
         "masu-form-past-negative": {
           "vol": "通りませんでした",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "（當時）沒有通過（禮貌體）",
           "japanese": "とおりませんでした",
           "note": null,
           "error_usage": false,
@@ -1213,7 +1213,7 @@
         "nai-form": {
           "vol": "通らない",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "不通過（普通體）",
           "japanese": "とおらない",
           "note": null,
           "error_usage": false,
@@ -1238,7 +1238,7 @@
         "ta-form": {
           "vol": "通った",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "通過了（普通體）",
           "japanese": "とおった",
           "note": null,
           "error_usage": false,
@@ -1263,7 +1263,7 @@
         "nakatta-form": {
           "vol": "通らなかった",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "（當時）沒有通過（普通體）",
           "japanese": "とおらなかった",
           "note": null,
           "error_usage": false,
@@ -1288,7 +1288,7 @@
         "te-form": {
           "vol": "通って",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "通過，然後…；通過，而…",
           "japanese": "とおって",
           "note": null,
           "error_usage": false,
@@ -1313,7 +1313,7 @@
         "potential-form": {
           "vol": "通れる",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "能通過；可以通過",
           "japanese": "とおれる",
           "note": null,
           "error_usage": false,
@@ -1338,7 +1338,7 @@
         "volitional-form": {
           "vol": "通ろう",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "通過吧；打算通過",
           "japanese": "とおろう",
           "note": null,
           "error_usage": false,
@@ -1363,7 +1363,7 @@
         "imperative-form": {
           "vol": "通れ",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "快通過！",
           "japanese": "とおれ",
           "note": null,
           "error_usage": false,
@@ -1388,7 +1388,7 @@
         "conditional-form": {
           "vol": "通れば",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "如果通過，就…",
           "japanese": "とおれば",
           "note": null,
           "error_usage": false,
@@ -1413,7 +1413,7 @@
         "passive-form": {
           "vol": "通られる",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "因（別人）通過而受到影響或困擾（迷惑受身）；不是「被通過」",
           "japanese": "とおられる",
           "note": null,
           "error_usage": false,
@@ -1438,7 +1438,7 @@
         "causative-form": {
           "vol": "通らせる",
           "group": "1",
-          "chinese": "通過; 經過; 走（路）",
+          "chinese": "讓…通過；使…通過",
           "japanese": "とおらせる",
           "note": null,
           "error_usage": false,
@@ -1490,7 +1490,7 @@
         "masu-form": {
           "vol": "死にます",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "死; 死亡; 枯萎（禮貌體）",
           "japanese": "しにます",
           "note": null,
           "error_usage": false,
@@ -1515,7 +1515,7 @@
         "masu-form-negative": {
           "vol": "死にません",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "不死（禮貌體）",
           "japanese": "しにません",
           "note": null,
           "error_usage": false,
@@ -1540,7 +1540,7 @@
         "masu-form-past": {
           "vol": "死にました",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "死了（禮貌體）",
           "japanese": "しにました",
           "note": null,
           "error_usage": false,
@@ -1565,7 +1565,7 @@
         "masu-form-past-negative": {
           "vol": "死にませんでした",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "（當時）沒有死（禮貌體）",
           "japanese": "しにませんでした",
           "note": null,
           "error_usage": false,
@@ -1590,7 +1590,7 @@
         "nai-form": {
           "vol": "死なない",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "不死（普通體）",
           "japanese": "しなない",
           "note": null,
           "error_usage": false,
@@ -1615,7 +1615,7 @@
         "ta-form": {
           "vol": "死んだ",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "死了（普通體）",
           "japanese": "しんだ",
           "note": null,
           "error_usage": false,
@@ -1640,7 +1640,7 @@
         "nakatta-form": {
           "vol": "死ななかった",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "（當時）沒有死（普通體）",
           "japanese": "しななかった",
           "note": null,
           "error_usage": false,
@@ -1665,7 +1665,7 @@
         "te-form": {
           "vol": "死んで",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "死，然後…；死，而…",
           "japanese": "しんで",
           "note": null,
           "error_usage": false,
@@ -1690,7 +1690,7 @@
         "potential-form": {
           "vol": "死ねる",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "能安心地死；死而無憾（特殊用法）",
           "japanese": "しねる",
           "note": null,
           "error_usage": false,
@@ -1715,7 +1715,7 @@
         "volitional-form": {
           "vol": "死のう",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "正快要死；即將死（無意志動詞，不是「～吧」）",
           "japanese": "しのう",
           "note": null,
           "error_usage": false,
@@ -1740,7 +1740,7 @@
         "imperative-form": {
           "vol": "死ね",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "快死！",
           "japanese": "しね",
           "note": null,
           "error_usage": false,
@@ -1765,7 +1765,7 @@
         "conditional-form": {
           "vol": "死ねば",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "如果死，就…",
           "japanese": "しねば",
           "note": null,
           "error_usage": false,
@@ -1790,7 +1790,7 @@
         "passive-form": {
           "vol": "死なれる",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "因（身邊的人）去世而難受（迷惑受身）",
           "japanese": "しなれる",
           "note": null,
           "error_usage": false,
@@ -1815,7 +1815,7 @@
         "causative-form": {
           "vol": "死なせる",
           "group": "1",
-          "chinese": "死; 死亡; 枯萎",
+          "chinese": "把…弄死；使…枯死",
           "japanese": "しなせる",
           "note": null,
           "error_usage": false,
@@ -1867,7 +1867,7 @@
         "masu-form": {
           "vol": "びっくりします",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "吃驚; 嚇一跳; 驚訝（禮貌體）",
           "japanese": "びっくりします",
           "note": null,
           "error_usage": false,
@@ -1892,7 +1892,7 @@
         "masu-form-negative": {
           "vol": "びっくりしません",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "不吃驚（禮貌體）",
           "japanese": "びっくりしません",
           "note": null,
           "error_usage": false,
@@ -1917,7 +1917,7 @@
         "masu-form-past": {
           "vol": "びっくりしました",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "吃驚了（禮貌體）",
           "japanese": "びっくりしました",
           "note": null,
           "error_usage": false,
@@ -1942,7 +1942,7 @@
         "masu-form-past-negative": {
           "vol": "びっくりしませんでした",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "（當時）沒有吃驚（禮貌體）",
           "japanese": "びっくりしませんでした",
           "note": null,
           "error_usage": false,
@@ -1967,7 +1967,7 @@
         "nai-form": {
           "vol": "びっくりしない",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "不吃驚（普通體）",
           "japanese": "びっくりしない",
           "note": null,
           "error_usage": false,
@@ -1992,7 +1992,7 @@
         "ta-form": {
           "vol": "びっくりした",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "吃驚了（普通體）",
           "japanese": "びっくりした",
           "note": null,
           "error_usage": false,
@@ -2017,7 +2017,7 @@
         "nakatta-form": {
           "vol": "びっくりしなかった",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "（當時）沒有吃驚（普通體）",
           "japanese": "びっくりしなかった",
           "note": null,
           "error_usage": false,
@@ -2042,7 +2042,7 @@
         "te-form": {
           "vol": "びっくりして",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "吃驚，然後…；吃驚，而…",
           "japanese": "びっくりして",
           "note": null,
           "error_usage": false,
@@ -2067,7 +2067,7 @@
         "potential-form": {
           "vol": "びっくりできる",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "能吃驚；可以吃驚（此形日常少用）",
           "japanese": "びっくりできる",
           "note": "字典有但是不常用：「びっくりできる」日常不用；通常說「びっくりする」",
           "error_usage": false,
@@ -2092,7 +2092,7 @@
         "volitional-form": {
           "vol": "びっくりしよう",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "吃驚吧；打算吃驚（此形日常少用）",
           "japanese": "びっくりしよう",
           "note": "字典有但是不常用：「びっくりしよう」日常不用；意向形主要用於「〜ようと している」。通常說「びっくりする」",
           "error_usage": false,
@@ -2117,7 +2117,7 @@
         "imperative-form": {
           "vol": "びっくりしろ",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "快吃驚！",
           "japanese": "びっくりしろ",
           "note": null,
           "error_usage": false,
@@ -2142,7 +2142,7 @@
         "conditional-form": {
           "vol": "びっくりすれば",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "如果吃驚，就…",
           "japanese": "びっくりすれば",
           "note": null,
           "error_usage": false,
@@ -2167,7 +2167,7 @@
         "passive-form": {
           "vol": "びっくりされる",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "びっくりされる",
           "note": "錯誤詞語，僅供轉詞練習：「びっくりされる」是尊敬語，不是受身形；「びっくりする」是自動詞，沒有受身用法。要表達「讓某人嚇一跳」要用使役「びっくりさせる」",
           "error_usage": true,
@@ -2176,7 +2176,7 @@
         "causative-form": {
           "vol": "びっくりさせる",
           "group": "3",
-          "chinese": "吃驚; 嚇一跳; 驚訝",
+          "chinese": "讓…吃驚；使…吃驚",
           "japanese": "びっくりさせる",
           "note": null,
           "error_usage": false,
@@ -2228,7 +2228,7 @@
         "masu-form": {
           "vol": "がっかりします",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "失望; 沮喪; 灰心（禮貌體）",
           "japanese": "がっかりします",
           "note": null,
           "error_usage": false,
@@ -2253,7 +2253,7 @@
         "masu-form-negative": {
           "vol": "がっかりしません",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "不失望（禮貌體）",
           "japanese": "がっかりしません",
           "note": null,
           "error_usage": false,
@@ -2278,7 +2278,7 @@
         "masu-form-past": {
           "vol": "がっかりしました",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "失望了（禮貌體）",
           "japanese": "がっかりしました",
           "note": null,
           "error_usage": false,
@@ -2303,7 +2303,7 @@
         "masu-form-past-negative": {
           "vol": "がっかりしませんでした",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "（當時）沒有失望（禮貌體）",
           "japanese": "がっかりしませんでした",
           "note": null,
           "error_usage": false,
@@ -2328,7 +2328,7 @@
         "nai-form": {
           "vol": "がっかりしない",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "不失望（普通體）",
           "japanese": "がっかりしない",
           "note": null,
           "error_usage": false,
@@ -2353,7 +2353,7 @@
         "ta-form": {
           "vol": "がっかりした",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "失望了（普通體）",
           "japanese": "がっかりした",
           "note": null,
           "error_usage": false,
@@ -2378,7 +2378,7 @@
         "nakatta-form": {
           "vol": "がっかりしなかった",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "（當時）沒有失望（普通體）",
           "japanese": "がっかりしなかった",
           "note": null,
           "error_usage": false,
@@ -2403,7 +2403,7 @@
         "te-form": {
           "vol": "がっかりして",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "失望，然後…；失望，而…",
           "japanese": "がっかりして",
           "note": null,
           "error_usage": false,
@@ -2428,7 +2428,7 @@
         "potential-form": {
           "vol": "がっかりできる",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "能失望；可以失望（此形日常少用）",
           "japanese": "がっかりできる",
           "note": "字典有但是不常用：「がっかりできる」日常不用；通常說「がっかりする」",
           "error_usage": false,
@@ -2453,7 +2453,7 @@
         "volitional-form": {
           "vol": "がっかりしよう",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "失望吧；打算失望（此形日常少用）",
           "japanese": "がっかりしよう",
           "note": "字典有但是不常用：「がっかりしよう」日常不用；意向形主要用於「〜ようと している」。通常說「がっかりする」",
           "error_usage": false,
@@ -2478,7 +2478,7 @@
         "imperative-form": {
           "vol": "がっかりしろ",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "快失望！",
           "japanese": "がっかりしろ",
           "note": null,
           "error_usage": false,
@@ -2503,7 +2503,7 @@
         "conditional-form": {
           "vol": "がっかりすれば",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "如果失望，就…",
           "japanese": "がっかりすれば",
           "note": null,
           "error_usage": false,
@@ -2528,7 +2528,7 @@
         "passive-form": {
           "vol": "がっかりされる",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "がっかりされる",
           "note": "錯誤詞語，僅供轉詞練習：「がっかりされる」是尊敬語，不是受身形；「がっかりする」是自動詞，沒有受身用法。要表達「讓某人失望」要用使役「がっかりさせる」",
           "error_usage": true,
@@ -2537,7 +2537,7 @@
         "causative-form": {
           "vol": "がっかりさせる",
           "group": "3",
-          "chinese": "失望; 沮喪; 灰心",
+          "chinese": "讓…失望；使…失望",
           "japanese": "がっかりさせる",
           "note": null,
           "error_usage": false,
@@ -2589,7 +2589,7 @@
         "masu-form": {
           "vol": "安心します",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "安心; 放心; 寬心（禮貌體）",
           "japanese": "あんしんします",
           "note": null,
           "error_usage": false,
@@ -2614,7 +2614,7 @@
         "masu-form-negative": {
           "vol": "安心しません",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "不安心（禮貌體）",
           "japanese": "あんしんしません",
           "note": null,
           "error_usage": false,
@@ -2639,7 +2639,7 @@
         "masu-form-past": {
           "vol": "安心しました",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "安心了（禮貌體）",
           "japanese": "あんしんしました",
           "note": null,
           "error_usage": false,
@@ -2664,7 +2664,7 @@
         "masu-form-past-negative": {
           "vol": "安心しませんでした",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "（當時）沒有安心（禮貌體）",
           "japanese": "あんしんしませんでした",
           "note": null,
           "error_usage": false,
@@ -2689,7 +2689,7 @@
         "nai-form": {
           "vol": "安心しない",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "不安心（普通體）",
           "japanese": "あんしんしない",
           "note": null,
           "error_usage": false,
@@ -2714,7 +2714,7 @@
         "ta-form": {
           "vol": "安心した",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "安心了（普通體）",
           "japanese": "あんしんした",
           "note": null,
           "error_usage": false,
@@ -2739,7 +2739,7 @@
         "nakatta-form": {
           "vol": "安心しなかった",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "（當時）沒有安心（普通體）",
           "japanese": "あんしんしなかった",
           "note": null,
           "error_usage": false,
@@ -2764,7 +2764,7 @@
         "te-form": {
           "vol": "安心して",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "安心，然後…；安心，而…",
           "japanese": "あんしんして",
           "note": null,
           "error_usage": false,
@@ -2789,7 +2789,7 @@
         "potential-form": {
           "vol": "安心できる",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "能安心；可以安心",
           "japanese": "あんしんできる",
           "note": null,
           "error_usage": false,
@@ -2814,7 +2814,7 @@
         "volitional-form": {
           "vol": "安心しよう",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "安心吧；打算安心",
           "japanese": "あんしんしよう",
           "note": null,
           "error_usage": false,
@@ -2839,7 +2839,7 @@
         "imperative-form": {
           "vol": "安心しろ",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "快安心！",
           "japanese": "あんしんしろ",
           "note": null,
           "error_usage": false,
@@ -2864,7 +2864,7 @@
         "conditional-form": {
           "vol": "安心すれば",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "如果安心，就…",
           "japanese": "あんしんすれば",
           "note": null,
           "error_usage": false,
@@ -2889,7 +2889,7 @@
         "passive-form": {
           "vol": "安心される",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "あんしんされる",
           "note": "錯誤詞語，僅供轉詞練習：「安心される」三句都是尊敬用法（ご家族が／母も／親も 安心される），不是受身形；「安心する」沒有自然的被害受身",
           "error_usage": true,
@@ -2898,7 +2898,7 @@
         "causative-form": {
           "vol": "安心させる",
           "group": "3",
-          "chinese": "安心; 放心; 寬心",
+          "chinese": "讓…安心；使…安心",
           "japanese": "あんしんさせる",
           "note": null,
           "error_usage": false,
@@ -2950,7 +2950,7 @@
         "masu-form": {
           "vol": "遅刻します",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "遲到（禮貌體）",
           "japanese": "ちこくします",
           "note": null,
           "error_usage": false,
@@ -2975,7 +2975,7 @@
         "masu-form-negative": {
           "vol": "遅刻しません",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "不遲到（禮貌體）",
           "japanese": "ちこくしません",
           "note": null,
           "error_usage": false,
@@ -3000,7 +3000,7 @@
         "masu-form-past": {
           "vol": "遅刻しました",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "遲到了（禮貌體）",
           "japanese": "ちこくしました",
           "note": null,
           "error_usage": false,
@@ -3025,7 +3025,7 @@
         "masu-form-past-negative": {
           "vol": "遅刻しませんでした",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "（當時）沒有遲到（禮貌體）",
           "japanese": "ちこくしませんでした",
           "note": null,
           "error_usage": false,
@@ -3050,7 +3050,7 @@
         "nai-form": {
           "vol": "遅刻しない",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "不遲到（普通體）",
           "japanese": "ちこくしない",
           "note": null,
           "error_usage": false,
@@ -3075,7 +3075,7 @@
         "ta-form": {
           "vol": "遅刻した",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "遲到了（普通體）",
           "japanese": "ちこくした",
           "note": null,
           "error_usage": false,
@@ -3100,7 +3100,7 @@
         "nakatta-form": {
           "vol": "遅刻しなかった",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "（當時）沒有遲到（普通體）",
           "japanese": "ちこくしなかった",
           "note": null,
           "error_usage": false,
@@ -3125,7 +3125,7 @@
         "te-form": {
           "vol": "遅刻して",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "遲到，然後…；遲到，而…",
           "japanese": "ちこくして",
           "note": null,
           "error_usage": false,
@@ -3150,7 +3150,7 @@
         "potential-form": {
           "vol": "遅刻できる",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "能遲到；可以遲到（此形日常少用）",
           "japanese": "ちこくできる",
           "note": "字典有但是不常用：「遅刻できる」可用，但日常多說「遅刻する」",
           "error_usage": false,
@@ -3175,7 +3175,7 @@
         "volitional-form": {
           "vol": "遅刻しよう",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "遲到吧；打算遲到",
           "japanese": "ちこくしよう",
           "note": null,
           "error_usage": false,
@@ -3200,7 +3200,7 @@
         "imperative-form": {
           "vol": "遅刻しろ",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "快遲到！",
           "japanese": "ちこくしろ",
           "note": null,
           "error_usage": false,
@@ -3225,7 +3225,7 @@
         "conditional-form": {
           "vol": "遅刻すれば",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "如果遲到，就…",
           "japanese": "ちこくすれば",
           "note": null,
           "error_usage": false,
@@ -3250,7 +3250,7 @@
         "passive-form": {
           "vol": "遅刻される",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "部下遲到的話，會議就沒法開始…（受身／迷惑受身，語意見例句）",
           "japanese": "ちこくされる",
           "note": null,
           "error_usage": false,
@@ -3275,7 +3275,7 @@
         "causative-form": {
           "vol": "遅刻させる",
           "group": "3",
-          "chinese": "遲到",
+          "chinese": "讓…遲到；使…遲到",
           "japanese": "ちこくさせる",
           "note": null,
           "error_usage": false,
@@ -3327,7 +3327,7 @@
         "masu-form": {
           "vol": "喧嘩します",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "吵架; 打架; 爭吵（禮貌體）",
           "japanese": "けんかします",
           "note": null,
           "error_usage": false,
@@ -3352,7 +3352,7 @@
         "masu-form-negative": {
           "vol": "喧嘩しません",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "不吵架（禮貌體）",
           "japanese": "けんかしません",
           "note": null,
           "error_usage": false,
@@ -3377,7 +3377,7 @@
         "masu-form-past": {
           "vol": "喧嘩しました",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "吵架了（禮貌體）",
           "japanese": "けんかしました",
           "note": null,
           "error_usage": false,
@@ -3402,7 +3402,7 @@
         "masu-form-past-negative": {
           "vol": "喧嘩しませんでした",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "（當時）沒有吵架（禮貌體）",
           "japanese": "けんかしませんでした",
           "note": null,
           "error_usage": false,
@@ -3427,7 +3427,7 @@
         "nai-form": {
           "vol": "喧嘩しない",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "不吵架（普通體）",
           "japanese": "けんかしない",
           "note": null,
           "error_usage": false,
@@ -3452,7 +3452,7 @@
         "ta-form": {
           "vol": "喧嘩した",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "吵架了（普通體）",
           "japanese": "けんかした",
           "note": null,
           "error_usage": false,
@@ -3477,7 +3477,7 @@
         "nakatta-form": {
           "vol": "喧嘩しなかった",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "（當時）沒有吵架（普通體）",
           "japanese": "けんかしなかった",
           "note": null,
           "error_usage": false,
@@ -3502,7 +3502,7 @@
         "te-form": {
           "vol": "喧嘩して",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "吵架，然後…；吵架，而…",
           "japanese": "けんかして",
           "note": null,
           "error_usage": false,
@@ -3527,7 +3527,7 @@
         "potential-form": {
           "vol": "喧嘩できる",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "能吵架；可以吵架",
           "japanese": "けんかできる",
           "note": null,
           "error_usage": false,
@@ -3552,7 +3552,7 @@
         "volitional-form": {
           "vol": "喧嘩しよう",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "吵架吧；打算吵架",
           "japanese": "けんかしよう",
           "note": null,
           "error_usage": false,
@@ -3577,7 +3577,7 @@
         "imperative-form": {
           "vol": "喧嘩しろ",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "快吵架！",
           "japanese": "けんかしろ",
           "note": null,
           "error_usage": false,
@@ -3602,7 +3602,7 @@
         "conditional-form": {
           "vol": "喧嘩すれば",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "如果吵架，就…",
           "japanese": "けんかすれば",
           "note": null,
           "error_usage": false,
@@ -3627,7 +3627,7 @@
         "passive-form": {
           "vol": "喧嘩される",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "隔壁房的夫妻每晚吵架，害我睡不好…（受身／迷惑受身，語意見例句）",
           "japanese": "けんかされる",
           "note": null,
           "error_usage": false,
@@ -3652,7 +3652,7 @@
         "causative-form": {
           "vol": "喧嘩させる",
           "group": "3",
-          "chinese": "吵架; 打架; 爭吵",
+          "chinese": "讓…吵架；使…吵架",
           "japanese": "けんかさせる",
           "note": null,
           "error_usage": false,
@@ -3704,7 +3704,7 @@
         "masu-form": {
           "vol": "離婚します",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "離婚（禮貌體）",
           "japanese": "りこんします",
           "note": null,
           "error_usage": false,
@@ -3729,7 +3729,7 @@
         "masu-form-negative": {
           "vol": "離婚しません",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "不離婚（禮貌體）",
           "japanese": "りこんしません",
           "note": null,
           "error_usage": false,
@@ -3754,7 +3754,7 @@
         "masu-form-past": {
           "vol": "離婚しました",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "離婚了（禮貌體）",
           "japanese": "りこんしました",
           "note": null,
           "error_usage": false,
@@ -3779,7 +3779,7 @@
         "masu-form-past-negative": {
           "vol": "離婚しませんでした",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "（當時）沒有離婚（禮貌體）",
           "japanese": "りこんしませんでした",
           "note": null,
           "error_usage": false,
@@ -3804,7 +3804,7 @@
         "nai-form": {
           "vol": "離婚しない",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "不離婚（普通體）",
           "japanese": "りこんしない",
           "note": null,
           "error_usage": false,
@@ -3829,7 +3829,7 @@
         "ta-form": {
           "vol": "離婚した",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "離婚了（普通體）",
           "japanese": "りこんした",
           "note": null,
           "error_usage": false,
@@ -3854,7 +3854,7 @@
         "nakatta-form": {
           "vol": "離婚しなかった",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "（當時）沒有離婚（普通體）",
           "japanese": "りこんしなかった",
           "note": null,
           "error_usage": false,
@@ -3879,7 +3879,7 @@
         "te-form": {
           "vol": "離婚して",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "離婚，然後…；離婚，而…",
           "japanese": "りこんして",
           "note": null,
           "error_usage": false,
@@ -3904,7 +3904,7 @@
         "potential-form": {
           "vol": "離婚できる",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "能離婚；可以離婚",
           "japanese": "りこんできる",
           "note": null,
           "error_usage": false,
@@ -3929,7 +3929,7 @@
         "volitional-form": {
           "vol": "離婚しよう",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "離婚吧；打算離婚",
           "japanese": "りこんしよう",
           "note": null,
           "error_usage": false,
@@ -3954,7 +3954,7 @@
         "imperative-form": {
           "vol": "離婚しろ",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "快離婚！",
           "japanese": "りこんしろ",
           "note": null,
           "error_usage": false,
@@ -3979,7 +3979,7 @@
         "conditional-form": {
           "vol": "離婚すれば",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "如果離婚，就…",
           "japanese": "りこんすれば",
           "note": null,
           "error_usage": false,
@@ -4004,7 +4004,7 @@
         "passive-form": {
           "vol": "離婚される",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "被…離婚；由…離婚；受到…影響或對待",
           "japanese": "りこんされる",
           "note": null,
           "error_usage": false,
@@ -4029,7 +4029,7 @@
         "causative-form": {
           "vol": "離婚させる",
           "group": "3",
-          "chinese": "離婚",
+          "chinese": "讓…離婚；使…離婚",
           "japanese": "りこんさせる",
           "note": null,
           "error_usage": false,
@@ -4081,7 +4081,7 @@
         "masu-form": {
           "vol": "ぶつかります",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "撞上; 碰撞; 碰上（禮貌體）",
           "japanese": "ぶつかります",
           "note": null,
           "error_usage": false,
@@ -4106,7 +4106,7 @@
         "masu-form-negative": {
           "vol": "ぶつかりません",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "不撞上（禮貌體）",
           "japanese": "ぶつかりません",
           "note": null,
           "error_usage": false,
@@ -4131,7 +4131,7 @@
         "masu-form-past": {
           "vol": "ぶつかりました",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "撞上了（禮貌體）",
           "japanese": "ぶつかりました",
           "note": null,
           "error_usage": false,
@@ -4156,7 +4156,7 @@
         "masu-form-past-negative": {
           "vol": "ぶつかりませんでした",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "（當時）沒有撞上（禮貌體）",
           "japanese": "ぶつかりませんでした",
           "note": null,
           "error_usage": false,
@@ -4181,7 +4181,7 @@
         "nai-form": {
           "vol": "ぶつからない",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "不撞上（普通體）",
           "japanese": "ぶつからない",
           "note": null,
           "error_usage": false,
@@ -4206,7 +4206,7 @@
         "ta-form": {
           "vol": "ぶつかった",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "撞上了（普通體）",
           "japanese": "ぶつかった",
           "note": null,
           "error_usage": false,
@@ -4231,7 +4231,7 @@
         "nakatta-form": {
           "vol": "ぶつからなかった",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "（當時）沒有撞上（普通體）",
           "japanese": "ぶつからなかった",
           "note": null,
           "error_usage": false,
@@ -4256,7 +4256,7 @@
         "te-form": {
           "vol": "ぶつかって",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "撞上，然後…；撞上，而…",
           "japanese": "ぶつかって",
           "note": null,
           "error_usage": false,
@@ -4281,7 +4281,7 @@
         "potential-form": {
           "vol": "ぶつかれる",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "能撞上；可以撞上",
           "japanese": "ぶつかれる",
           "note": null,
           "error_usage": false,
@@ -4306,7 +4306,7 @@
         "volitional-form": {
           "vol": "ぶつかろう",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "正快要撞上；即將撞上（無意志動詞，不是「～吧」）（此形日常少用）",
           "japanese": "ぶつかろう",
           "note": "「ぶつかろう」單用少見，但「ぶつかろうとしている」（快要撞上）是常用說法。",
           "error_usage": false,
@@ -4331,7 +4331,7 @@
         "imperative-form": {
           "vol": "ぶつかれ",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "快撞上！",
           "japanese": "ぶつかれ",
           "note": null,
           "error_usage": false,
@@ -4356,7 +4356,7 @@
         "conditional-form": {
           "vol": "ぶつかれば",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "如果撞上，就…",
           "japanese": "ぶつかれば",
           "note": null,
           "error_usage": false,
@@ -4381,7 +4381,7 @@
         "passive-form": {
           "vol": "ぶつかられる",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "被…撞上；由…撞上；受到…影響或對待",
           "japanese": "ぶつかられる",
           "note": null,
           "error_usage": false,
@@ -4406,7 +4406,7 @@
         "causative-form": {
           "vol": "ぶつからせる",
           "group": "1",
-          "chinese": "撞上; 碰撞; 碰上",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "ぶつからせる",
           "note": "錯誤詞語，僅供轉詞練習：「ぶつからせる」是自動詞「ぶつかる」的使役形，但他動詞是「ぶつける」，不用這個使役形",
           "error_usage": true,
@@ -4442,7 +4442,7 @@
         "masu-form": {
           "vol": "並びます",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "排隊; 排列; 並排（禮貌體）",
           "japanese": "ならびます",
           "note": null,
           "error_usage": false,
@@ -4467,7 +4467,7 @@
         "masu-form-negative": {
           "vol": "並びません",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "不排隊（禮貌體）",
           "japanese": "ならびません",
           "note": null,
           "error_usage": false,
@@ -4492,7 +4492,7 @@
         "masu-form-past": {
           "vol": "並びました",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "排隊了（禮貌體）",
           "japanese": "ならびました",
           "note": null,
           "error_usage": false,
@@ -4517,7 +4517,7 @@
         "masu-form-past-negative": {
           "vol": "並びませんでした",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "（當時）沒有排隊（禮貌體）",
           "japanese": "ならびませんでした",
           "note": null,
           "error_usage": false,
@@ -4542,7 +4542,7 @@
         "nai-form": {
           "vol": "並ばない",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "不排隊（普通體）",
           "japanese": "ならばない",
           "note": null,
           "error_usage": false,
@@ -4567,7 +4567,7 @@
         "ta-form": {
           "vol": "並んだ",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "排隊了（普通體）",
           "japanese": "ならんだ",
           "note": null,
           "error_usage": false,
@@ -4592,7 +4592,7 @@
         "nakatta-form": {
           "vol": "並ばなかった",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "（當時）沒有排隊（普通體）",
           "japanese": "ならばなかった",
           "note": null,
           "error_usage": false,
@@ -4617,7 +4617,7 @@
         "te-form": {
           "vol": "並んで",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "排隊，然後…；排隊，而…",
           "japanese": "ならんで",
           "note": null,
           "error_usage": false,
@@ -4642,7 +4642,7 @@
         "potential-form": {
           "vol": "並べる",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "ならべる",
           "note": "錯誤詞語，僅供轉詞練習：「並べる」是錯的：這是另一個動詞，不用作「並ぶ」的可能形",
           "error_usage": true,
@@ -4651,7 +4651,7 @@
         "volitional-form": {
           "vol": "並ぼう",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "排隊吧；打算排隊",
           "japanese": "ならぼう",
           "note": null,
           "error_usage": false,
@@ -4676,7 +4676,7 @@
         "imperative-form": {
           "vol": "並べ",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "快排隊！",
           "japanese": "ならべ",
           "note": null,
           "error_usage": false,
@@ -4701,7 +4701,7 @@
         "conditional-form": {
           "vol": "並べば",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "如果排隊，就…",
           "japanese": "ならべば",
           "note": null,
           "error_usage": false,
@@ -4726,7 +4726,7 @@
         "passive-form": {
           "vol": "並ばれる",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "前面排了高個子的人，就什麼都看不到…（受身／迷惑受身，語意見例句）",
           "japanese": "ならばれる",
           "note": null,
           "error_usage": false,
@@ -4751,7 +4751,7 @@
         "causative-form": {
           "vol": "並ばせる",
           "group": "1",
-          "chinese": "排隊; 排列; 並排",
+          "chinese": "讓…排成一列；叫…排隊",
           "japanese": "ならばせる",
           "note": null,
           "error_usage": false,

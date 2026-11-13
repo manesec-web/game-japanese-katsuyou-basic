@@ -1,0 +1,5679 @@
+{
+  "lesson_29": {
+    "vols": [
+      {
+        "dictionary-form": {
+          "vol": "開く",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あく",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 店は 朝 10時に 開く。",
+              "chinese": "這家店早上十點開門。",
+              "note": null
+            },
+            {
+              "japanese": "風が 吹くと 窓が 開く。",
+              "chinese": "一吹風窗戶就會開。",
+              "note": null
+            },
+            {
+              "japanese": "この 小さい かぎで ドアが 開く。",
+              "chinese": "用這把小鑰匙門就會開。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "開きます",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あきます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "毎朝 8時に 店が 開きます。",
+              "chinese": "每天早上八點店開門。",
+              "note": null
+            },
+            {
+              "japanese": "ボタンを 押すと ドアが 開きます。",
+              "chinese": "按下按鈕門就會開。",
+              "note": null
+            },
+            {
+              "japanese": "この 門は 夕方に 開きます。",
+              "chinese": "這道大門傍晚會開。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "開きません",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あきません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "日曜日は この 店が 開きません。",
+              "chinese": "星期天這家店不開。",
+              "note": null
+            },
+            {
+              "japanese": "力が 弱いと この ドアは 開きません。",
+              "chinese": "力氣太小這扇門就打不開。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 窓が 開きません。",
+              "chinese": "下雨天窗戶不開。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "開きました",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あきました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "さっき ドアが 開きました。",
+              "chinese": "剛才門開了。",
+              "note": null
+            },
+            {
+              "japanese": "9時に 図書館が 開きました。",
+              "chinese": "九點圖書館開門了。",
+              "note": null
+            },
+            {
+              "japanese": "バスの 扉が 開きました。",
+              "chinese": "公車的門開了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "開きませんでした",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あきませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今朝は 店が 開きませんでした。",
+              "chinese": "今天早上店沒有開。",
+              "note": null
+            },
+            {
+              "japanese": "昨日は この 窓が 開きませんでした。",
+              "chinese": "昨天這扇窗沒有開。",
+              "note": null
+            },
+            {
+              "japanese": "台風の 日は 門が 開きませんでした。",
+              "chinese": "颱風那天大門沒有開。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "開かない",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あかない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 引き戸は 古くて 開かない。",
+              "chinese": "這扇拉門太舊了打不開。",
+              "note": null
+            },
+            {
+              "japanese": "かぎが 違うので ドアが 開かない。",
+              "chinese": "鑰匙不對所以門打不開。",
+              "note": null
+            },
+            {
+              "japanese": "休みの 日は 店が 開かない。",
+              "chinese": "休息日店不開。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "開いた",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あいた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "風で 窓が 開いた。",
+              "chinese": "因為風窗戶開了。",
+              "note": null
+            },
+            {
+              "japanese": "10時に 門が 開いた。",
+              "chinese": "十點大門開了。",
+              "note": null
+            },
+            {
+              "japanese": "電車の ドアが 開いた。",
+              "chinese": "電車的門開了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "開かなかった",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あかなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 店が 開かなかった。",
+              "chinese": "昨天店沒有開。",
+              "note": null
+            },
+            {
+              "japanese": "押しても ドアが 開かなかった。",
+              "chinese": "推了門也沒有開。",
+              "note": null
+            },
+            {
+              "japanese": "朝は まだ 窓が 開かなかった。",
+              "chinese": "早上窗戶還沒開。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "開いて",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あいて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ドアが 開いて います。",
+              "chinese": "門開著。",
+              "note": null
+            },
+            {
+              "japanese": "窓が 開いて いるので 寒い。",
+              "chinese": "窗戶開著所以很冷。",
+              "note": null
+            },
+            {
+              "japanese": "店が 開いて いて よかった。",
+              "chinese": "店有開著真好。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "開ける",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あける",
+          "note": "錯誤詞語，僅供轉詞練習：「開ける」是錯的：這是另一個動詞，不用作「開く」的可能形",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "開こう",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あこう",
+          "note": "字典有但是不常用：「開こう」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "10時に 店が 開こうと して いる。",
+              "chinese": "店十點就要開了。",
+              "note": null
+            },
+            {
+              "japanese": "風で ドアが 開こうと して いる。",
+              "chinese": "風吹得門快開了。",
+              "note": null
+            },
+            {
+              "japanese": "窓が 自然に 開こうと した。",
+              "chinese": "窗戶自己就要開了。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "開け",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あけ",
+          "note": "錯誤詞語，僅供轉詞練習：「開け」是錯的：這是另一個動詞，不用作「開く」的命令形",
+          "error_usage": true,
+          "sentence": []
+        },
+        "conditional-form": {
+          "vol": "開けば",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あけば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "店が 開けば すぐ 入る。",
+              "chinese": "店一開就進去。",
+              "note": null
+            },
+            {
+              "japanese": "ドアが 開けば 中に 入れる。",
+              "chinese": "門一開就能進去。",
+              "note": null
+            },
+            {
+              "japanese": "窓が 開けば 部屋が 涼しく なる。",
+              "chinese": "窗一開房間就涼快。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "開かれる",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あかれる",
+          "note": "錯誤詞語，僅供轉詞練習：「あかれる」不是「開く（あく）」的受身用法；「被打開」要用他動詞「開ける」的受身「開けられる」，或「開く（ひらく）」的受身「開かれる」（ひらかれる）",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "開かせる",
+          "group": "1",
+          "chinese": "開; 打開",
+          "japanese": "あかせる",
+          "note": "錯誤詞語，僅供轉詞練習：「開かせる」是自動詞「開く」的使役形，但此處讀音是「あく」（自動詞），他動詞是「開ける（あける）」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "閉まる",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 店は 夜 9時に 閉まる。",
+              "chinese": "這家店晚上九點關門。",
+              "note": null
+            },
+            {
+              "japanese": "風で ドアが 閉まる。",
+              "chinese": "風一吹門就關上。",
+              "note": null
+            },
+            {
+              "japanese": "夕方に 門が 自動で 閉まる。",
+              "chinese": "傍晚大門會自動關上。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "閉まります",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまります",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この スーパーは 10時に 閉まります。",
+              "chinese": "這家超市十點關門。",
+              "note": null
+            },
+            {
+              "japanese": "エレベーターの ドアが 閉まります。",
+              "chinese": "電梯的門要關了。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 店が 早く 閉まります。",
+              "chinese": "下雨天店很早關門。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "閉まりません",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまりません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 店が 閉まりません。",
+              "chinese": "今天店不關門。",
+              "note": null
+            },
+            {
+              "japanese": "故障で ドアが 閉まりません。",
+              "chinese": "因為故障門關不上。",
+              "note": null
+            },
+            {
+              "japanese": "土曜日は この 図書館は 閉まりません。",
+              "chinese": "星期六這間圖書館不閉館。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "閉まりました",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまりました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "さっき お店が 閉まりました。",
+              "chinese": "剛才店關門了。",
+              "note": null
+            },
+            {
+              "japanese": "バスの ドアが 閉まりました。",
+              "chinese": "公車的門關上了。",
+              "note": null
+            },
+            {
+              "japanese": "6時に 門が 閉まりました。",
+              "chinese": "六點大門關上了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "閉まりませんでした",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまりませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 店が 閉まりませんでした。",
+              "chinese": "昨天店沒有關門。",
+              "note": null
+            },
+            {
+              "japanese": "風が 強くて 窓が 閉まりませんでした。",
+              "chinese": "風太大窗戶關不上。",
+              "note": null
+            },
+            {
+              "japanese": "日曜は 図書館が 閉まりませんでした。",
+              "chinese": "星期天圖書館沒有關門。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "閉まらない",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまらない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この ドアは 壊れて 閉まらない。",
+              "chinese": "這扇門壞了關不上。",
+              "note": null
+            },
+            {
+              "japanese": "ボタンを 押しても 閉まらない。",
+              "chinese": "按了按鈕也關不上。",
+              "note": null
+            },
+            {
+              "japanese": "この 店は 日曜でも 閉まらない。",
+              "chinese": "這家店連星期天也不關。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "閉まった",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "風で 窓が 閉まった。",
+              "chinese": "因為風窗戶關上了。",
+              "note": null
+            },
+            {
+              "japanese": "9時に 店が 閉まった。",
+              "chinese": "九點店關門了。",
+              "note": null
+            },
+            {
+              "japanese": "エレベーターの ドアが 閉まった。",
+              "chinese": "電梯的門關上了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "閉まらなかった",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまらなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 店が 閉まらなかった。",
+              "chinese": "昨天店沒有關。",
+              "note": null
+            },
+            {
+              "japanese": "最後まで ドアが 閉まらなかった。",
+              "chinese": "到最後門都沒有關上。",
+              "note": null
+            },
+            {
+              "japanese": "夜でも 門が 閉まらなかった。",
+              "chinese": "到了晚上大門也沒有關。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "閉まって",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまって",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "店が 閉まって います。",
+              "chinese": "店關著。",
+              "note": null
+            },
+            {
+              "japanese": "ドアが 閉まって いて 入れない。",
+              "chinese": "門關著進不去。",
+              "note": null
+            },
+            {
+              "japanese": "窓が 閉まって いるので 暑い。",
+              "chinese": "窗戶關著所以很熱。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "閉まれる",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまれる",
+          "note": "錯誤詞語，僅供轉詞練習：「閉まる」是無意志動詞，「閉まれる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "閉まろう",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまろう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "店が 閉まろうと して いる。",
+              "chinese": "店快要關門了。",
+              "note": null
+            },
+            {
+              "japanese": "ドアが 静かに 閉まろうと した。",
+              "chinese": "門靜靜地就要關上了。",
+              "note": null
+            },
+            {
+              "japanese": "冬は 日が 短いので、店は 早く 閉まろうと する。",
+              "chinese": "冬天天黑得早，店總是提早打烊。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "閉まれ",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまれ",
+          "note": "字典有但是不常用：「閉まれ」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "「もう 夜だ、早く 閉まれ！」と 主人が 戸を たたいた。",
+              "chinese": "「已經入夜了，快點關上！」老闆拍著門說。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは エレベーターの 扉に「閉まれ！」と 叫んだ。",
+              "chinese": "孩子對著電梯門喊「關上！」",
+              "note": null
+            },
+            {
+              "japanese": "閉まらない ドアに、客は「早く 閉まれよ！」と いらだった。",
+              "chinese": "門關不上，客人煩躁地喊「快點關上啊！」",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "閉まれば",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "店が 閉まれば 買えない。",
+              "chinese": "店關了的話就買不到。",
+              "note": null
+            },
+            {
+              "japanese": "ドアが 閉まれば 安全だ。",
+              "chinese": "門關上就安全了。",
+              "note": null
+            },
+            {
+              "japanese": "9時に 閉まれば 帰る。",
+              "chinese": "九點關門的話就回家。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "閉まられる",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまられる",
+          "note": "錯誤詞語，僅供轉詞練習：「閉まる」是無意志自動詞，「閉まられる」沒有受身用法；「被關上」要用他動詞「閉める」的受身「閉められる」",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "閉まらせる",
+          "group": "1",
+          "chinese": "關閉; 關上",
+          "japanese": "しまらせる",
+          "note": "錯誤詞語，僅供轉詞練習：「閉まらせる」是自動詞「閉まる」的使役形，但他動詞是「閉める（しめる）」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "つく",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つく",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "暗く なると 街灯が つく。",
+              "chinese": "天變黑路燈就亮。",
+              "note": null
+            },
+            {
+              "japanese": "スイッチを 入れると 電気が つく。",
+              "chinese": "開開關燈就亮。",
+              "note": null
+            },
+            {
+              "japanese": "この 道は 夜 ライトが つく。",
+              "chinese": "這條路晚上燈會亮。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "つきます",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つきます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "夜 7時に 電気が つきます。",
+              "chinese": "晚上七點燈會亮。",
+              "note": null
+            },
+            {
+              "japanese": "センサーで ライトが つきます。",
+              "chinese": "感應到燈就會亮。",
+              "note": null
+            },
+            {
+              "japanese": "教室の 蛍光灯は 自動で つきます。",
+              "chinese": "教室的日光燈會自動亮。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "つきません",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つきません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "スイッチが 壊れて 電気が つきません。",
+              "chinese": "開關壞了燈不亮。",
+              "note": null
+            },
+            {
+              "japanese": "この 部屋は 昼でも つきません。",
+              "chinese": "這房間白天也不亮燈。",
+              "note": null
+            },
+            {
+              "japanese": "停電で ライトが つきません。",
+              "chinese": "停電所以燈不亮。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "つきました",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つきました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "さっき 電気が つきました。",
+              "chinese": "剛才燈亮了。",
+              "note": null
+            },
+            {
+              "japanese": "廊下の ライトが つきました。",
+              "chinese": "走廊的燈亮了。",
+              "note": null
+            },
+            {
+              "japanese": "夜に なって 街灯が つきました。",
+              "chinese": "天黑了路燈亮了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "つきませんでした",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つきませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今朝は 電気が つきませんでした。",
+              "chinese": "今天早上燈沒有亮。",
+              "note": null
+            },
+            {
+              "japanese": "昨日は ライトが つきませんでした。",
+              "chinese": "昨天燈沒有亮。",
+              "note": null
+            },
+            {
+              "japanese": "この 部屋は ずっと つきませんでした。",
+              "chinese": "這房間一直沒有亮燈。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "つかない",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つかない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ここは スイッチが ないので つかない。",
+              "chinese": "這裡沒有開關所以不亮。",
+              "note": null
+            },
+            {
+              "japanese": "古い ランプは もう つかない。",
+              "chinese": "舊燈已經不亮了。",
+              "note": null
+            },
+            {
+              "japanese": "昼は この ライトは つかない。",
+              "chinese": "白天這盞燈不亮。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "ついた",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "ついた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "暗く なって 街灯が ついた。",
+              "chinese": "天黑了路燈亮了。",
+              "note": null
+            },
+            {
+              "japanese": "スイッチを 押したら 電気が ついた。",
+              "chinese": "按下開關燈就亮了。",
+              "note": null
+            },
+            {
+              "japanese": "部屋の ライトが ついた。",
+              "chinese": "房間的燈亮了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "つかなかった",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つかなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨夜は 街灯が つかなかった。",
+              "chinese": "昨晚路燈沒有亮。",
+              "note": null
+            },
+            {
+              "japanese": "スイッチを 押しても つかなかった。",
+              "chinese": "按了開關也沒有亮。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は ライトが つかなかった。",
+              "chinese": "下雨天燈沒有亮。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "ついて",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "ついて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "電気が ついて います。",
+              "chinese": "燈亮著。",
+              "note": null
+            },
+            {
+              "japanese": "ライトが ついて いて まぶしい。",
+              "chinese": "燈亮著很刺眼。",
+              "note": null
+            },
+            {
+              "japanese": "台所の 明かりが ついて いる。",
+              "chinese": "廚房的燈亮著。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "つける",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つける",
+          "note": "錯誤詞語，僅供轉詞練習：「つける」是錯的：這是另一個動詞，不用作「つく」的可能形",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "つこう",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つこう",
+          "note": "字典有但是不常用：「つこう」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "暗く なると、街灯が つこうと して いる。",
+              "chinese": "天色一暗，路燈就要亮了。",
+              "note": null
+            },
+            {
+              "japanese": "スイッチを 押した とき、電気が つこうと した。",
+              "chinese": "按下開關時，電燈正要亮起。",
+              "note": null
+            },
+            {
+              "japanese": "夕方に なって、公園の 灯りが つこうと する。",
+              "chinese": "到了傍晚，公園的燈就要亮了。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "つけ",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つけ",
+          "note": "錯誤詞語，僅供轉詞練習：「つけ」是錯的：這是另一個動詞，不用作「つく」的命令形",
+          "error_usage": true,
+          "sentence": []
+        },
+        "conditional-form": {
+          "vol": "つけば",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つけば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "暗く なって 街灯が つけば 安心だ。",
+              "chinese": "天黑路燈亮了就安心。",
+              "note": null
+            },
+            {
+              "japanese": "電気が つけば よく 見える。",
+              "chinese": "燈亮的話就看得清楚。",
+              "note": null
+            },
+            {
+              "japanese": "ライトが つけば 道が 分かる。",
+              "chinese": "燈亮的話就知道路。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "つかれる",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つかれる",
+          "note": "錯誤詞語，僅供轉詞練習：「つかれる」是另一個詞「疲れる」（以及「憑かれる」），不是「つく（点く）」的受身；「燈被打開」要用「つけられる」",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "つかせる",
+          "group": "1",
+          "chinese": "亮起; 點亮",
+          "japanese": "つかせる",
+          "note": "錯誤詞語，僅供轉詞練習：「つかせる」是自動詞「つく」的使役形，但他動詞是「つける／点ける」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "消える",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "夜中に 街灯が 消える。",
+              "chinese": "半夜路燈會熄。",
+              "note": null
+            },
+            {
+              "japanese": "この テレビは 5分で 消える。",
+              "chinese": "這台電視五分鐘後就關掉。",
+              "note": null
+            },
+            {
+              "japanese": "風で ろうそくが 消える。",
+              "chinese": "風一吹蠟燭就熄了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "消えます",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "9時に 教室の 電気が 消えます。",
+              "chinese": "九點教室的燈會熄。",
+              "note": null
+            },
+            {
+              "japanese": "センサーで ライトが 消えます。",
+              "chinese": "感應不到燈就熄了。",
+              "note": null
+            },
+            {
+              "japanese": "雲が 月を 隠すと 影が 消えます。",
+              "chinese": "雲遮住月亮，影子就消失。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "消えません",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 部屋の 電気は 消えません。",
+              "chinese": "這房間的燈不會熄。",
+              "note": null
+            },
+            {
+              "japanese": "スイッチが 壊れて 消えません。",
+              "chinese": "開關壞了燈不會熄。",
+              "note": null
+            },
+            {
+              "japanese": "画面の 光は すぐには 消えません。",
+              "chinese": "畫面的光不會馬上消失。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "消えました",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "さっき 電気が 消えました。",
+              "chinese": "剛才燈熄了。",
+              "note": null
+            },
+            {
+              "japanese": "風で ろうそくが 消えました。",
+              "chinese": "風把蠟燭吹熄了。",
+              "note": null
+            },
+            {
+              "japanese": "廊下の ライトが 消えました。",
+              "chinese": "走廊的燈熄了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "消えませんでした",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨夜は 街灯が 消えませんでした。",
+              "chinese": "昨晚路燈沒有熄。",
+              "note": null
+            },
+            {
+              "japanese": "雨で 電気は 消えませんでした。",
+              "chinese": "因為下雨燈沒有熄。",
+              "note": null
+            },
+            {
+              "japanese": "この テレビは 消えませんでした。",
+              "chinese": "這台電視沒有關掉。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "消えない",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "停電の あと 電気が 消えない。",
+              "chinese": "停電之後燈不會熄。",
+              "note": null
+            },
+            {
+              "japanese": "この ランプは スイッチが ないので 消えない。",
+              "chinese": "這盞燈沒有開關所以不會熄。",
+              "note": null
+            },
+            {
+              "japanese": "画面の 光が 消えない。",
+              "chinese": "畫面的光不會消失。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "消えた",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "夜中に 街灯が 消えた。",
+              "chinese": "半夜路燈熄了。",
+              "note": null
+            },
+            {
+              "japanese": "ろうそくが 風で 消えた。",
+              "chinese": "蠟燭被風吹熄了。",
+              "note": null
+            },
+            {
+              "japanese": "教室の 電気が 消えた。",
+              "chinese": "教室的燈熄了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "消えなかった",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 街灯が 消えなかった。",
+              "chinese": "昨天路燈沒有熄。",
+              "note": null
+            },
+            {
+              "japanese": "スイッチを 押しても 消えなかった。",
+              "chinese": "按了開關也沒有熄。",
+              "note": null
+            },
+            {
+              "japanese": "夜まで ライトが 消えなかった。",
+              "chinese": "到了晚上燈都沒有熄。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "消えて",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "電気が 消えて 暗く なった。",
+              "chinese": "燈熄了變暗。",
+              "note": null
+            },
+            {
+              "japanese": "ライトが 消えて こわかった。",
+              "chinese": "燈熄了很可怕。",
+              "note": null
+            },
+            {
+              "japanese": "ろうそくが 消えて 煙が 出た。",
+              "chinese": "蠟燭熄了冒出煙。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "消えられる",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえられる",
+          "note": "錯誤詞語，僅供轉詞練習：「消える」是無意志動詞，「消えられる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "消えよう",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "電気が 消えようと して いる。",
+              "chinese": "燈快要熄了。",
+              "note": null
+            },
+            {
+              "japanese": "ろうそくの 火が 消えようと した。",
+              "chinese": "蠟燭的火快要熄了。",
+              "note": null
+            },
+            {
+              "japanese": "街灯が 自然に 消えようと する。",
+              "chinese": "路燈自己就會熄。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "消えろ",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえろ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "「早く 消えろ！」と 父が 言った。",
+              "chinese": "「快點熄掉！」爸爸說。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは テレビに「消えろ！」と 怒った。",
+              "chinese": "小孩對電視吼「關掉！」。",
+              "note": null
+            },
+            {
+              "japanese": "「消えろ！」と いう 声が 聞こえた。",
+              "chinese": "聽到了「熄掉！」的聲音。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "消えれば",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "電気が 消えれば 部屋は 真っ暗だ。",
+              "chinese": "燈一熄房間就全黑。",
+              "note": null
+            },
+            {
+              "japanese": "ライトが 消えれば 星が 見える。",
+              "chinese": "燈熄了就能看見星星。",
+              "note": null
+            },
+            {
+              "japanese": "火が 消えれば 安全だ。",
+              "chinese": "火熄了就安全。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "消えられる",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえられる",
+          "note": "錯誤詞語，僅供轉詞練習：「消える」是無意志自動詞，「消えられる」沒有受身用法；「被關掉」要用他動詞「消す」的受身「消される」",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "消えさせる",
+          "group": "2",
+          "chinese": "消失; 熄滅",
+          "japanese": "きえさせる",
+          "note": "錯誤詞語，僅供轉詞練習：「消えさせる」不是可用的使役形；「讓燈熄掉」要用他動詞「消す」的使役形「消させる」",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "込む",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こむ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "朝の 道は とても 込む。",
+              "chinese": "早上的路非常擁擠。",
+              "note": null
+            },
+            {
+              "japanese": "この 通りは 夕方に 込む。",
+              "chinese": "這條街傍晚會擁擠。",
+              "note": null
+            },
+            {
+              "japanese": "駅の 前は いつも 込む。",
+              "chinese": "車站前總是擁擠。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "込みます",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こみます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "8時の 電車は とても 込みます。",
+              "chinese": "八點的電車非常擁擠。",
+              "note": null
+            },
+            {
+              "japanese": "この 道は 夕方に 込みます。",
+              "chinese": "這條路傍晚會擁擠。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は バスが 込みます。",
+              "chinese": "下雨天公車會很擠。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "込みません",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こみません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "朝 早い 時間は 道が 込みません。",
+              "chinese": "一大早路不擁擠。",
+              "note": null
+            },
+            {
+              "japanese": "日曜の 朝は 電車が 込みません。",
+              "chinese": "星期天早上電車不擠。",
+              "note": null
+            },
+            {
+              "japanese": "この 通りは 夜は 込みません。",
+              "chinese": "這條街晚上不擁擠。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "込みました",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こみました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今朝の 電車は とても 込みました。",
+              "chinese": "今天早上的電車非常擠。",
+              "note": null
+            },
+            {
+              "japanese": "夕方の 道が 込みました。",
+              "chinese": "傍晚的路擁擠起來了。",
+              "note": null
+            },
+            {
+              "japanese": "雨で バスが 込みました。",
+              "chinese": "因為下雨公車很擠。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "込みませんでした",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こみませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 道が 込みませんでした。",
+              "chinese": "昨天路不擁擠。",
+              "note": null
+            },
+            {
+              "japanese": "朝の 電車は 込みませんでした。",
+              "chinese": "早上的電車不擠。",
+              "note": null
+            },
+            {
+              "japanese": "祝日は この 通りが 込みませんでした。",
+              "chinese": "假日這條街不擁擠。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "込まない",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こまない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 道は 夜 込まない。",
+              "chinese": "這條路晚上不擁擠。",
+              "note": null
+            },
+            {
+              "japanese": "休みの 日は 電車が 込まない。",
+              "chinese": "休息日電車不擠。",
+              "note": null
+            },
+            {
+              "japanese": "朝 早くは 通りが 込まない。",
+              "chinese": "一大早街上不擁擠。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "込んだ",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こんだ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "朝の 電車が とても 込んだ。",
+              "chinese": "早上的電車非常擠。",
+              "note": null
+            },
+            {
+              "japanese": "お祭りの 日は 道が 込んだ。",
+              "chinese": "祭典那天路上很擁擠。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 夕方は バスが 込んだ。",
+              "chinese": "下雨的傍晚公車很擠。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "込まなかった",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こまなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日の 朝は 道が 込まなかった。",
+              "chinese": "昨天早上路不擁擠。",
+              "note": null
+            },
+            {
+              "japanese": "日曜の 電車は 込まなかった。",
+              "chinese": "星期天的電車不擠。",
+              "note": null
+            },
+            {
+              "japanese": "夜の 通りは 込まなかった。",
+              "chinese": "晚上的街道不擁擠。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "込んで",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こんで",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "電車が 込んで いて 乗れない。",
+              "chinese": "電車太擠上不去。",
+              "note": null
+            },
+            {
+              "japanese": "道が 込んで いるので 時間が かかる。",
+              "chinese": "路上很擠所以很花時間。",
+              "note": null
+            },
+            {
+              "japanese": "バスは 込んで いて 苦しい。",
+              "chinese": "公車很擠很難受。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "込める",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こめる",
+          "note": "錯誤詞語，僅供轉詞練習：「込める」是另一個動詞（把感情、力氣裝進去），不是「込む（擁擠）」的可能形。「込む」是無意志動詞，可能形日常不用。",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "込もう",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こもう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "夕方に なると 道が 込もうと する。",
+              "chinese": "一到傍晚路就要擠起來。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 電車が 込もうと する。",
+              "chinese": "下雨天電車就要擠起來。",
+              "note": null
+            },
+            {
+              "japanese": "5時を 過ぎて 通りが 込もうと して いる。",
+              "chinese": "過了五點街道就要擠了。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "込め",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こめ",
+          "note": "錯誤詞語，僅供轉詞練習：「込め」與另一個動詞「込める」的詞幹同形，不是「込む（擁擠）」可用的命令形。「込む」是無意志動詞，沒有命令用法。",
+          "error_usage": true,
+          "sentence": []
+        },
+        "conditional-form": {
+          "vol": "込めば",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こめば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "朝 8時に 道が 込めば 駅まで 30分 かかる。",
+              "chinese": "早上八點路擠的話到車站要三十分鐘。",
+              "note": null
+            },
+            {
+              "japanese": "電車が 込めば 次の 電車に 乗る。",
+              "chinese": "電車擠的話就搭下一班電車。",
+              "note": null
+            },
+            {
+              "japanese": "雨で バスが 込めば 歩いて 行く。",
+              "chinese": "下雨公車擠的話就走路去。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "込まれる",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こまれる",
+          "note": "錯誤詞語，僅供轉詞練習：「込む」是無意志自動詞，現代日語沒有「人に込まれる」「電車に込まれる」這種受身。擁擠只說「電車が込む」。被人擠要用「押される」。",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "込ませる",
+          "group": "1",
+          "chinese": "擁擠; 混雜",
+          "japanese": "こませる",
+          "note": "字典有但是不常用：「込ませる」少用，是「讓地方變擠」。把乘客往裡擠要說「奥へ 押し込む」，不是這個使役。",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "特売が 店を 込ませる。",
+              "chinese": "特價活動讓店裡擠滿人。",
+              "note": null
+            },
+            {
+              "japanese": "祭りの 人出が 通りを 込ませる。",
+              "chinese": "祭典的人潮讓街道擁擠。",
+              "note": null
+            },
+            {
+              "japanese": "新しい 店が この 通りを 込ませる。",
+              "chinese": "新開的店讓這條街變擠。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "すく",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すく",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "朝 早い 時間は 道が すく。",
+              "chinese": "一大早路上很空。",
+              "note": null
+            },
+            {
+              "japanese": "休みの 日は 電車が すく。",
+              "chinese": "休息日電車很空。",
+              "note": null
+            },
+            {
+              "japanese": "夜の 通りは よく すく。",
+              "chinese": "晚上的街道常常很空。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "すきます",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すきます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "9時を 過ぎると 道が すきます。",
+              "chinese": "過了九點路上就空了。",
+              "note": null
+            },
+            {
+              "japanese": "この 時間の 電車は すきます。",
+              "chinese": "這個時間的電車很空。",
+              "note": null
+            },
+            {
+              "japanese": "昼の バスは すきます。",
+              "chinese": "白天的公車很空。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "すきません",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すきません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "夕方は 道が すきません。",
+              "chinese": "傍晚路上不空。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 電車が すきません。",
+              "chinese": "下雨天電車不空。",
+              "note": null
+            },
+            {
+              "japanese": "この 通りは 朝 すきません。",
+              "chinese": "這條街早上不空。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "すきました",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すきました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "朝の 電車は とても すきました。",
+              "chinese": "早上的電車非常空。",
+              "note": null
+            },
+            {
+              "japanese": "昼に なって 道が すきました。",
+              "chinese": "到了中午路上就空了。",
+              "note": null
+            },
+            {
+              "japanese": "祝日の バスは すきました。",
+              "chinese": "假日的公車很空。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "すきませんでした",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すきませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日の 夕方の 電車は すきませんでした。",
+              "chinese": "昨天傍晚的電車不空。",
+              "note": null
+            },
+            {
+              "japanese": "朝の 道は すきませんでした。",
+              "chinese": "早上的路不空。",
+              "note": null
+            },
+            {
+              "japanese": "祭りの 日は 通りが すきませんでした。",
+              "chinese": "祭典那天街道不空。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "すかない",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すかない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 道は いつも すかない。",
+              "chinese": "這條路總是不空。",
+              "note": null
+            },
+            {
+              "japanese": "朝の 電車は すかない。",
+              "chinese": "早上的電車不空。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は バスが すかない。",
+              "chinese": "下雨天公車不空。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "すいた",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すいた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昼に なって 電車が すいた。",
+              "chinese": "到了中午電車空了。",
+              "note": null
+            },
+            {
+              "japanese": "3時ごろ 道が すいた。",
+              "chinese": "三點左右路上空了。",
+              "note": null
+            },
+            {
+              "japanese": "祭りが 終わって 通りが すいた。",
+              "chinese": "祭典結束後街道空了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "すかなかった",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すかなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 道が すかなかった。",
+              "chinese": "昨天路上不空。",
+              "note": null
+            },
+            {
+              "japanese": "朝の 電車は すかなかった。",
+              "chinese": "早上的電車不空。",
+              "note": null
+            },
+            {
+              "japanese": "夜の バスは すかなかった。",
+              "chinese": "晚上的公車不空。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "すいて",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すいて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "電車が すいて いて 座れた。",
+              "chinese": "電車很空所以坐到座位了。",
+              "note": null
+            },
+            {
+              "japanese": "道が すいて いるので 早く 着いた。",
+              "chinese": "路上很空所以很早就到了。",
+              "note": null
+            },
+            {
+              "japanese": "バスは すいて いて 静かだ。",
+              "chinese": "公車很空很安靜。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "すける",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すける",
+          "note": "錯誤詞語，僅供轉詞練習：「すける」是另一個動詞「透ける」（透光），不是「すく（空く）」的可能形。「すく」是無意志動詞，可能形日常不用。",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "すこう",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すこう",
+          "note": "字典有但是不常用：「すこう」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昼を 過ぎて 電車が すこうと して いる。",
+              "chinese": "過了中午電車就要空起來。",
+              "note": null
+            },
+            {
+              "japanese": "夜に なって 通りが すこうと した。",
+              "chinese": "到了晚上街道就空了。",
+              "note": null
+            },
+            {
+              "japanese": "祭りが 終わって 道が すこうと する。",
+              "chinese": "祭典結束路上就要空了。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "すけ",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すけ",
+          "note": "錯誤詞語，僅供轉詞練習：「すけ」是「梳く」「透く」等其他同音動詞的命令形；「すく（空く）」是無意志動詞，沒有命令形用法（「讓開」是「空ける」的「空けろ」）",
+          "error_usage": true,
+          "sentence": []
+        },
+        "conditional-form": {
+          "vol": "すけば",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すけば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "朝 早く 出て 道が すけば 9時に 着く。",
+              "chinese": "早點出門路上空的話九點就能到。",
+              "note": null
+            },
+            {
+              "japanese": "昼に なって 電車が すけば 楽だ。",
+              "chinese": "中午電車空了就輕鬆。",
+              "note": null
+            },
+            {
+              "japanese": "祭りが 終わって 通りが すけば 帰れる。",
+              "chinese": "祭典結束街道空了就能回去。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "すかれる",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すかれる",
+          "note": "錯誤詞語，僅供轉詞練習：「すかれる」是「梳く」「透く」等其他同音動詞的形，不是「すく（空く）」的受身；「すく」是無意志自動詞，沒有受身用法",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "すかせる",
+          "group": "1",
+          "chinese": "空; 不擁擠",
+          "japanese": "すかせる",
+          "note": "錯誤詞語，僅供轉詞練習：「すかせる」是自動詞「すく」的使役形，但他動詞是「空ける／空かす」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "壊れる",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "古い 椅子は すぐ 壊れる。",
+              "chinese": "舊椅子馬上就壞。",
+              "note": null
+            },
+            {
+              "japanese": "この おもちゃは すぐ 壊れる。",
+              "chinese": "這個玩具馬上就壞。",
+              "note": null
+            },
+            {
+              "japanese": "雨で 机が 壊れる。",
+              "chinese": "因為雨桌子壞了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "壊れます",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "安い 椅子は すぐ 壊れます。",
+              "chinese": "便宜椅子馬上就壞。",
+              "note": null
+            },
+            {
+              "japanese": "この パソコンは よく 壊れます。",
+              "chinese": "這台電腦常常壞。",
+              "note": null
+            },
+            {
+              "japanese": "地震で 家が 壊れます。",
+              "chinese": "地震會讓房子壞掉。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "壊れません",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 机は なかなか 壊れません。",
+              "chinese": "這張桌子不容易壞。",
+              "note": null
+            },
+            {
+              "japanese": "プラスチックの 椅子は 壊れません。",
+              "chinese": "塑膠椅子不會壞。",
+              "note": null
+            },
+            {
+              "japanese": "この 時計は 落ちても 壊れません。",
+              "chinese": "這支錶掉了也不會壞。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "壊れました",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "座ったら 椅子が 壊れました。",
+              "chinese": "一坐下去椅子就壞了。",
+              "note": null
+            },
+            {
+              "japanese": "落とした 時計が 壊れました。",
+              "chinese": "掉下來的錶壞了。",
+              "note": null
+            },
+            {
+              "japanese": "台風で 看板が 壊れました。",
+              "chinese": "颱風把招牌吹壞了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "壊れませんでした",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日の 地震では 机が 壊れませんでした。",
+              "chinese": "昨天的地震桌子沒有壞。",
+              "note": null
+            },
+            {
+              "japanese": "落としても コップは 壊れませんでした。",
+              "chinese": "掉下來杯子也沒有壞。",
+              "note": null
+            },
+            {
+              "japanese": "この 椅子は 壊れませんでした。",
+              "chinese": "這張椅子沒有壞。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "壊れない",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 椅子は まだ 壊れない。",
+              "chinese": "這張椅子還沒壞。",
+              "note": null
+            },
+            {
+              "japanese": "強い 風でも 塀は 壊れない。",
+              "chinese": "強風也吹不壞圍牆。",
+              "note": null
+            },
+            {
+              "japanese": "この カメラは 水に 入っても 壊れない。",
+              "chinese": "這台相機泡水也不會壞。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "壊れた",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "重い 人が 座って 椅子が 壊れた。",
+              "chinese": "重的人一坐椅子就壞了。",
+              "note": null
+            },
+            {
+              "japanese": "台風で 屋根が 壊れた。",
+              "chinese": "颱風把屋頂弄壞了。",
+              "note": null
+            },
+            {
+              "japanese": "落として 時計が 壊れた。",
+              "chinese": "掉下來錶壞了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "壊れなかった",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "地震の 時 机は 壊れなかった。",
+              "chinese": "地震時桌子沒有壞。",
+              "note": null
+            },
+            {
+              "japanese": "古い テレビだが 壊れなかった。",
+              "chinese": "雖然是舊電視但沒有壞。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 看板が 壊れなかった。",
+              "chinese": "下雨那天招牌沒有壞。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "壊れて",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "椅子が 壊れて 使えない。",
+              "chinese": "椅子壞了不能用。",
+              "note": null
+            },
+            {
+              "japanese": "テレビが 壊れて 映らない。",
+              "chinese": "電視壞了不顯像。",
+              "note": null
+            },
+            {
+              "japanese": "時計が 壊れて 止まって いる。",
+              "chinese": "錶壞了停著。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "壊れられる",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「壊れる」是無意志動詞，「壊れられる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "壊れよう",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "古い 椅子が 壊れようと して いる。",
+              "chinese": "舊椅子快要壞了。",
+              "note": null
+            },
+            {
+              "japanese": "大雨で、川の 土手が 壊れようと して いる。",
+              "chinese": "大雨使河堤快要崩塌。",
+              "note": null
+            },
+            {
+              "japanese": "十年 使った 掃除機が、そろそろ 壊れようと して いる。",
+              "chinese": "用了十年的吸塵器差不多要壞了。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "壊れろ",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれろ",
+          "note": "字典有但是不常用：「壊れろ」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "「こんな 機械、壊れろ！」と 作業員は 工具を 投げた。",
+              "chinese": "「這種機器，壞掉算了！」作業員丟下工具。",
+              "note": null
+            },
+            {
+              "japanese": "男は 古い テレビに「壊れろ！」と どなった。",
+              "chinese": "男人對著舊電視吼「壞掉吧！」",
+              "note": null
+            },
+            {
+              "japanese": "弟は 壊れた おもちゃを 持ち、「もう 壊れろ」と つぶやいた。",
+              "chinese": "弟弟拿著壞掉的玩具喃喃說「乾脆壞掉算了」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "壊れれば",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 椅子が 壊れれば 新しい のを 買う。",
+              "chinese": "這張椅子壞了就買新的。",
+              "note": null
+            },
+            {
+              "japanese": "時計が 壊れれば 修理に 出す。",
+              "chinese": "錶壞了就送去修理。",
+              "note": null
+            },
+            {
+              "japanese": "古い 家は 雨で 壊れれば 危ない。",
+              "chinese": "舊房子被雨弄壞就危險了。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "壊れられる",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「壊れる」是無意志自動詞，「壊れられる」沒有受身用法；「被弄壞」要用他動詞「壊す」的受身「壊される」",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "壊れさせる",
+          "group": "2",
+          "chinese": "壞; 損壞",
+          "japanese": "こわれさせる",
+          "note": "字典有但是不常用：「壊れさせる」少用，日常說「壊す」。不是另一個詞。下面三句只說明這個使役形，口語很少這樣說。",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "強い 風が 古い 窓を 壊れさせる。",
+              "chinese": "強風讓舊窗戶壞掉。",
+              "note": null
+            },
+            {
+              "japanese": "落雷が 機械を 壊れさせる ことが ある。",
+              "chinese": "落雷有時會讓機器壞掉。",
+              "note": null
+            },
+            {
+              "japanese": "急な 温度の 変化が ガラスを 壊れさせる。",
+              "chinese": "溫度驟變讓玻璃壞掉。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "割れる",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "薄い コップは すぐ 割れる。",
+              "chinese": "薄的杯子馬上就破。",
+              "note": null
+            },
+            {
+              "japanese": "この 皿は 熱い と 割れる。",
+              "chinese": "這個盤子遇熱就會裂。",
+              "note": null
+            },
+            {
+              "japanese": "氷は 春に なると 割れる。",
+              "chinese": "冰到了春天就會裂開。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "割れます",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この ガラスは 寒さで 割れます。",
+              "chinese": "這塊玻璃會冷到裂開。",
+              "note": null
+            },
+            {
+              "japanese": "安い 皿は すぐ 割れます。",
+              "chinese": "便宜盤子馬上就破。",
+              "note": null
+            },
+            {
+              "japanese": "川の 氷は 昼に 割れます。",
+              "chinese": "河裡的冰白天會裂。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "割れません",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "プラスチックの 皿は 割れません。",
+              "chinese": "塑膠盤子不會破。",
+              "note": null
+            },
+            {
+              "japanese": "厚い ガラスは 割れません。",
+              "chinese": "厚的玻璃不會裂。",
+              "note": null
+            },
+            {
+              "japanese": "紙の コップは 割れません。",
+              "chinese": "紙杯不會破。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "割れました",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "洗った 時 コップが 割れました。",
+              "chinese": "洗的時候杯子破了。",
+              "note": null
+            },
+            {
+              "japanese": "熱い お茶を 入れて 皿が 割れました。",
+              "chinese": "倒進熱茶盤子就裂了。",
+              "note": null
+            },
+            {
+              "japanese": "川の 氷が 割れました。",
+              "chinese": "河裡的冰裂開了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "割れませんでした",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "落としたが コップは 割れませんでした。",
+              "chinese": "掉下來了但杯子沒有破。",
+              "note": null
+            },
+            {
+              "japanese": "昨日は 皿が 割れませんでした。",
+              "chinese": "昨天盤子沒有破。",
+              "note": null
+            },
+            {
+              "japanese": "冬の 氷は 割れませんでした。",
+              "chinese": "冬天的冰沒有裂。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "割れない",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この コップは 落としても 割れない。",
+              "chinese": "這個杯子掉了也不會破。",
+              "note": null
+            },
+            {
+              "japanese": "厚い 皿は 割れない。",
+              "chinese": "厚的盤子不會破。",
+              "note": null
+            },
+            {
+              "japanese": "この ガラスは 石で たたいても 割れない。",
+              "chinese": "這塊玻璃用石頭敲也不會裂。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "割れた",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "皿が 床に 落ちて 割れた。",
+              "chinese": "盤子掉到地上破了。",
+              "note": null
+            },
+            {
+              "japanese": "熱い 水を 入れて コップが 割れた。",
+              "chinese": "倒了熱水杯子就裂了。",
+              "note": null
+            },
+            {
+              "japanese": "川の 氷が 割れた。",
+              "chinese": "河裡的冰裂開了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "割れなかった",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "落とした けど コップは 割れなかった。",
+              "chinese": "掉了但杯子沒有破。",
+              "note": null
+            },
+            {
+              "japanese": "昨日の 皿は 割れなかった。",
+              "chinese": "昨天的盤子沒有破。",
+              "note": null
+            },
+            {
+              "japanese": "厚い ガラスは 割れなかった。",
+              "chinese": "厚的玻璃沒有裂。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "割れて",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "コップが 割れて 水が こぼれた。",
+              "chinese": "杯子破了水流出來。",
+              "note": null
+            },
+            {
+              "japanese": "皿が 割れて 床が 危ない。",
+              "chinese": "盤子破了地板很危險。",
+              "note": null
+            },
+            {
+              "japanese": "窓の ガラスが 割れて 寒い。",
+              "chinese": "窗玻璃破了很冷。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "割れられる",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われられる",
+          "note": "錯誤詞語，僅供轉詞練習：「割れる」是無意志動詞，「割れられる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "割れよう",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "川の 氷が 割れようと して いる。",
+              "chinese": "河裡的冰快要裂開了。",
+              "note": null
+            },
+            {
+              "japanese": "ひびの 入った ガラスが、今にも 割れようと して いる。",
+              "chinese": "有裂痕的玻璃眼看就要破了。",
+              "note": null
+            },
+            {
+              "japanese": "手から 滑った コップが 床で 割れようと した とき、父が 手で 受け止めた。",
+              "chinese": "從手中滑落的杯子快在地板上摔破時，爸爸用手接住了。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "割れろ",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われろ",
+          "note": "字典有但是不常用：「割れろ」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "男は ひびの 入った 皿に「割れろ！」と 叫んだ。",
+              "chinese": "男人對著有裂痕的盤子喊「裂開吧！」",
+              "note": null
+            },
+            {
+              "japanese": "子どもは 風船に「割れろ！」と 手を たたいた。",
+              "chinese": "孩子拍手對氣球喊「破掉！」",
+              "note": null
+            },
+            {
+              "japanese": "「早く 割れろ！」と 客は 割れない 氷を 見て 笑った。",
+              "chinese": "「快點破開！」客人看著不裂的冰塊笑了。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "割れれば",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この コップが 割れれば 新しい のを 買う。",
+              "chinese": "這個杯子破了就買新的。",
+              "note": null
+            },
+            {
+              "japanese": "氷が 割れれば 川が 流れる。",
+              "chinese": "冰裂開河就會流。",
+              "note": null
+            },
+            {
+              "japanese": "皿が 割れれば けがを する。",
+              "chinese": "盤子破了就會受傷。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "割れられる",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われられる",
+          "note": "錯誤詞語，僅供轉詞練習：「割れる」是無意志自動詞，「割れられる」沒有受身用法；「被打破」要用他動詞「割る」的受身「割られる」",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "割れさせる",
+          "group": "2",
+          "chinese": "破; 裂開",
+          "japanese": "われさせる",
+          "note": "錯誤詞語，僅供轉詞練習：「割れさせる」不是可用的使役形；「讓〜破掉」要用他動詞「割る」的使役形「割らせる」",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "折れる",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "風で 細い 枝は すぐ 折れる。",
+              "chinese": "風一吹細樹枝馬上就斷。",
+              "note": null
+            },
+            {
+              "japanese": "この 鉛筆は 柔らかくて 折れる。",
+              "chinese": "這支鉛筆太軟會斷。",
+              "note": null
+            },
+            {
+              "japanese": "古い 木は 雪で 折れる。",
+              "chinese": "老樹會被雪壓斷。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "折れます",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "台風で 木が 折れます。",
+              "chinese": "颱風會把樹吹斷。",
+              "note": null
+            },
+            {
+              "japanese": "細い 枝は すぐ 折れます。",
+              "chinese": "細樹枝馬上就斷。",
+              "note": null
+            },
+            {
+              "japanese": "雪の 重さで 傘が 折れます。",
+              "chinese": "雪太重傘會斷。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "折れません",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 木は 強いので 折れません。",
+              "chinese": "這棵樹很結實不會斷。",
+              "note": null
+            },
+            {
+              "japanese": "太い 枝は 折れません。",
+              "chinese": "粗樹枝不會斷。",
+              "note": null
+            },
+            {
+              "japanese": "この 傘は 折れません。",
+              "chinese": "這把傘不會斷。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "折れました",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "風で 木が 折れました。",
+              "chinese": "風把樹吹斷了。",
+              "note": null
+            },
+            {
+              "japanese": "雪で 枝が 折れました。",
+              "chinese": "雪把樹枝壓斷了。",
+              "note": null
+            },
+            {
+              "japanese": "座って 椅子の 足が 折れました。",
+              "chinese": "一坐椅子腳就斷了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "折れませんでした",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日の 風では 木は 折れませんでした。",
+              "chinese": "昨天的風沒有把樹吹斷。",
+              "note": null
+            },
+            {
+              "japanese": "太い 枝は 折れませんでした。",
+              "chinese": "粗樹枝沒有斷。",
+              "note": null
+            },
+            {
+              "japanese": "この 傘は 折れませんでした。",
+              "chinese": "這把傘沒有斷。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "折れない",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 木は 折れない。",
+              "chinese": "這棵樹不會斷。",
+              "note": null
+            },
+            {
+              "japanese": "細い が この 枝は 折れない。",
+              "chinese": "雖然細但這根樹枝不會斷。",
+              "note": null
+            },
+            {
+              "japanese": "この 鉛筆は 折れない。",
+              "chinese": "這支鉛筆不會斷。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "折れた",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "台風で 大きな 木が 折れた。",
+              "chinese": "颱風把大樹吹斷了。",
+              "note": null
+            },
+            {
+              "japanese": "雪の 重さで 枝が 折れた。",
+              "chinese": "雪太重樹枝斷了。",
+              "note": null
+            },
+            {
+              "japanese": "弟が 乗って 椅子の 足が 折れた。",
+              "chinese": "弟弟一坐椅子腳就斷了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "折れなかった",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日の 台風では 木は 折れなかった。",
+              "chinese": "昨天的颱風沒有把樹吹斷。",
+              "note": null
+            },
+            {
+              "japanese": "古い 枝は 折れなかった。",
+              "chinese": "老樹枝沒有斷。",
+              "note": null
+            },
+            {
+              "japanese": "傘は 折れなかった。",
+              "chinese": "傘沒有斷。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "折れて",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "木が 折れて 道を ふさいだ。",
+              "chinese": "樹斷了擋住了路。",
+              "note": null
+            },
+            {
+              "japanese": "枝が 折れて 落ちた。",
+              "chinese": "樹枝斷了掉下來。",
+              "note": null
+            },
+            {
+              "japanese": "傘の 骨が 折れて 使えない。",
+              "chinese": "傘骨斷了不能用。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "折れられる",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「折れる」是無意志動詞，「折れられる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "折れよう",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "風で 枝が 折れようと して いる。",
+              "chinese": "風吹得樹枝快要斷了。",
+              "note": null
+            },
+            {
+              "japanese": "古い 木が 折れようと する 音が した。",
+              "chinese": "聽到老樹快要斷的聲音。",
+              "note": null
+            },
+            {
+              "japanese": "傘が 折れようと した。",
+              "chinese": "傘快要斷了。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "折れろ",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれろ",
+          "note": "字典有但是不常用：「折れろ」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "「折れろ！」と 子どもが 枝を 引いた。",
+              "chinese": "小孩喊著「斷吧！」用力拉樹枝。",
+              "note": null
+            },
+            {
+              "japanese": "「折れろ！」と 声を 出して 枝を 曲げた。",
+              "chinese": "喊著「斷吧！」把樹枝彎下去。",
+              "note": null
+            },
+            {
+              "japanese": "父は 木の 枝に「折れろ！」と 言った。",
+              "chinese": "爸爸對樹枝說「斷吧！」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "折れれば",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 枝が 折れれば 新しい 木を 植える。",
+              "chinese": "這根樹枝斷了就種新的樹。",
+              "note": null
+            },
+            {
+              "japanese": "木が 折れれば 道が ふさがる。",
+              "chinese": "樹斷了路就會被擋住。",
+              "note": null
+            },
+            {
+              "japanese": "傘が 折れれば 買い替える。",
+              "chinese": "傘斷了就換新的。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "折れられる",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「折れる」是無意志自動詞，「折れられる」沒有受身用法；「被折斷」要用他動詞「折る」的受身「折られる」",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "折れさせる",
+          "group": "2",
+          "chinese": "折斷; 斷",
+          "japanese": "おれさせる",
+          "note": "錯誤詞語，僅供轉詞練習：「折れさせる」不是可用的使役形；「讓〜折斷」要用他動詞「折る」的使役形「折らせる」",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "破れる",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "薄い 紙は すぐ 破れる。",
+              "chinese": "薄紙馬上就破。",
+              "note": null
+            },
+            {
+              "japanese": "この 袋は 重い と 破れる。",
+              "chinese": "這個袋子裝重的就會破。",
+              "note": null
+            },
+            {
+              "japanese": "古い 服は 洗うと 破れる。",
+              "chinese": "舊衣服一洗就破。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "破れます",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "重い 物を 入れると 袋が 破れます。",
+              "chinese": "裝重東西袋子就會破。",
+              "note": null
+            },
+            {
+              "japanese": "薄い 紙は すぐ 破れます。",
+              "chinese": "薄紙馬上就破。",
+              "note": null
+            },
+            {
+              "japanese": "古い 服は 洗うと 破れます。",
+              "chinese": "舊衣服洗了就破。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "破れません",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 袋は 強いので 破れません。",
+              "chinese": "這個袋子很結實不會破。",
+              "note": null
+            },
+            {
+              "japanese": "厚い 紙は 破れません。",
+              "chinese": "厚紙不會破。",
+              "note": null
+            },
+            {
+              "japanese": "この シャツは 破れません。",
+              "chinese": "這件襯衫不會破。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "破れました",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "本の ページが 破れました。",
+              "chinese": "書頁破了。",
+              "note": null
+            },
+            {
+              "japanese": "買い物の 袋が 破れました。",
+              "chinese": "購物袋破了。",
+              "note": null
+            },
+            {
+              "japanese": "子どもが 引いて 紙が 破れました。",
+              "chinese": "小孩一拉紙就破了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "破れませんでした",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 袋が 破れませんでした。",
+              "chinese": "昨天袋子沒有破。",
+              "note": null
+            },
+            {
+              "japanese": "この 紙は 破れませんでした。",
+              "chinese": "這張紙沒有破。",
+              "note": null
+            },
+            {
+              "japanese": "シャツは 破れませんでした。",
+              "chinese": "襯衫沒有破。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "破れない",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 布は 引いても 破れない。",
+              "chinese": "這塊布拉也不會破。",
+              "note": null
+            },
+            {
+              "japanese": "厚い 紙は 破れない。",
+              "chinese": "厚紙不會破。",
+              "note": null
+            },
+            {
+              "japanese": "この 袋は 破れない。",
+              "chinese": "這個袋子不會破。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "破れた",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "買い物の 袋が 破れた。",
+              "chinese": "購物袋破了。",
+              "note": null
+            },
+            {
+              "japanese": "本の 表紙が 破れた。",
+              "chinese": "書的封面破了。",
+              "note": null
+            },
+            {
+              "japanese": "古い 服が 破れた。",
+              "chinese": "舊衣服破了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "破れなかった",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "重い 物を 入れても 袋は 破れなかった。",
+              "chinese": "裝了重東西袋子也沒有破。",
+              "note": null
+            },
+            {
+              "japanese": "この 紙は 破れなかった。",
+              "chinese": "這張紙沒有破。",
+              "note": null
+            },
+            {
+              "japanese": "シャツは 破れなかった。",
+              "chinese": "襯衫沒有破。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "破れて",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "袋が 破れて 物が 落ちた。",
+              "chinese": "袋子破了東西掉出來。",
+              "note": null
+            },
+            {
+              "japanese": "本が 破れて 読めない。",
+              "chinese": "書破了不能讀。",
+              "note": null
+            },
+            {
+              "japanese": "服が 破れて しまった。",
+              "chinese": "衣服破掉了。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "破れられる",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「破れる」是無意志動詞，「破れられる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "破れよう",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "古い 袋が 破れようと して いる。",
+              "chinese": "舊袋子快要破了。",
+              "note": null
+            },
+            {
+              "japanese": "本の ページが 破れようと した。",
+              "chinese": "書頁快要破了。",
+              "note": null
+            },
+            {
+              "japanese": "この 服は 破れようと する。",
+              "chinese": "這件衣服就要破了。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "破れろ",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれろ",
+          "note": "字典有但是不常用：「破れろ」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "「破れろ！」と 弟が 紙を 引いた。",
+              "chinese": "弟弟喊著「破吧！」拉紙。",
+              "note": null
+            },
+            {
+              "japanese": "「破れろ！」と 子どもが 袋を ふった。",
+              "chinese": "小孩喊著「破吧！」甩袋子。",
+              "note": null
+            },
+            {
+              "japanese": "「破れろ！」と 声が 聞こえた。",
+              "chinese": "聽到了「破吧！」的聲音。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "破れれば",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "袋が 破れれば 物が 落ちる。",
+              "chinese": "袋子破了東西會掉。",
+              "note": null
+            },
+            {
+              "japanese": "紙が 破れれば 新しい のを 使う。",
+              "chinese": "紙破了就用新的。",
+              "note": null
+            },
+            {
+              "japanese": "服が 破れれば 買う。",
+              "chinese": "衣服破了就買。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "破れられる",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「破れる」是無意志自動詞，「破れられる」沒有受身用法；「被撕破」要用他動詞「破る」的受身「破られる」",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "破れさせる",
+          "group": "2",
+          "chinese": "破; 撕破",
+          "japanese": "やぶれさせる",
+          "note": "錯誤詞語，僅供轉詞練習：「破れさせる」不是可用的使役形；「讓〜破掉」要用他動詞「破る」的使役形「破らせる」",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "汚れる",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "白い 服は すぐ 汚れる。",
+              "chinese": "白衣服馬上就髒。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 靴が 汚れる。",
+              "chinese": "下雨天鞋子會弄髒。",
+              "note": null
+            },
+            {
+              "japanese": "この 壁は 手で 触ると 汚れる。",
+              "chinese": "這面牆用手摸就會髒。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "汚れます",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "子どもは 遊ぶと 服が 汚れます。",
+              "chinese": "小孩一玩衣服就髒。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 靴が 汚れます。",
+              "chinese": "下雨天鞋子會髒。",
+              "note": null
+            },
+            {
+              "japanese": "油を 使うと 手が 汚れます。",
+              "chinese": "用油手就會髒。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "汚れません",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 服は 汚れません。",
+              "chinese": "這件衣服不會髒。",
+              "note": null
+            },
+            {
+              "japanese": "黒い 靴は あまり 汚れません。",
+              "chinese": "黑鞋子不太會髒。",
+              "note": null
+            },
+            {
+              "japanese": "この 壁は 汚れません。",
+              "chinese": "這面牆不會髒。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "汚れました",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "子どもが 遊んで 服が 汚れました。",
+              "chinese": "小孩玩耍衣服髒了。",
+              "note": null
+            },
+            {
+              "japanese": "雨で 靴が 汚れました。",
+              "chinese": "下雨鞋子髒了。",
+              "note": null
+            },
+            {
+              "japanese": "料理の 後 手が 汚れました。",
+              "chinese": "做完菜手髒了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "汚れませんでした",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 服が 汚れませんでした。",
+              "chinese": "今天衣服沒有髒。",
+              "note": null
+            },
+            {
+              "japanese": "長靴の おかげで 靴は 汚れませんでした。",
+              "chinese": "多虧雨鞋鞋子沒有髒。",
+              "note": null
+            },
+            {
+              "japanese": "手は 汚れませんでした。",
+              "chinese": "手沒有髒。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "汚れない",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 服は 汚れない。",
+              "chinese": "這件衣服不會髒。",
+              "note": null
+            },
+            {
+              "japanese": "この 素材は 汚れない。",
+              "chinese": "這種材質不會髒。",
+              "note": null
+            },
+            {
+              "japanese": "黒い 服は 汚れない ように 見える。",
+              "chinese": "黑衣服看起來不會髒。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "汚れた",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "遊んで 服が 汚れた。",
+              "chinese": "玩耍把衣服弄髒了。",
+              "note": null
+            },
+            {
+              "japanese": "雨で 靴が 汚れた。",
+              "chinese": "下雨鞋子弄髒了。",
+              "note": null
+            },
+            {
+              "japanese": "油で 手が 汚れた。",
+              "chinese": "油把手指弄髒了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "汚れなかった",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 服が 汚れなかった。",
+              "chinese": "今天衣服沒有髒。",
+              "note": null
+            },
+            {
+              "japanese": "長靴を はいたので 靴は 汚れなかった。",
+              "chinese": "穿了雨鞋鞋子沒有髒。",
+              "note": null
+            },
+            {
+              "japanese": "手は 汚れなかった。",
+              "chinese": "手沒有髒。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "汚れて",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "服が 汚れて 洗濯が 必要だ。",
+              "chinese": "衣服髒了需要洗。",
+              "note": null
+            },
+            {
+              "japanese": "靴が 汚れて いやだ。",
+              "chinese": "鞋子髒了真討厭。",
+              "note": null
+            },
+            {
+              "japanese": "手が 汚れて いる。",
+              "chinese": "手很髒。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "汚れられる",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「汚れる」是無意志動詞，「汚れられる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "汚れよう",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "白い シャツが 泥で 汚れようと して いる。",
+              "chinese": "白襯衫快被泥巴弄髒了。",
+              "note": null
+            },
+            {
+              "japanese": "子どもが 走って、服が 汚れようと した。",
+              "chinese": "孩子一跑，衣服就快要弄髒了。",
+              "note": null
+            },
+            {
+              "japanese": "ケーキの クリームで 服が 汚れようと する ところを、母が 止めた。",
+              "chinese": "衣服快被蛋糕奶油弄髒時，媽媽阻止了。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "汚れろ",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれろ",
+          "note": "字典有但是不常用：「汚れろ」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "「もう いい、汚れろ！」と 子どもは 泥の 中に 座った。",
+              "chinese": "「算了，髒就髒吧！」孩子坐進泥裡。",
+              "note": null
+            },
+            {
+              "japanese": "洗った ばかりの 車に「汚れろ」と 誰かが 書いた。",
+              "chinese": "有人在剛洗好的車上寫「弄髒吧」。",
+              "note": null
+            },
+            {
+              "japanese": "画家は 白い 布に「汚れろ！」と 絵の具を 投げた。",
+              "chinese": "畫家對著白布喊「弄髒吧！」把顏料潑上去。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "汚れれば",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "服が 汚れれば 洗濯する。",
+              "chinese": "衣服髒了就洗。",
+              "note": null
+            },
+            {
+              "japanese": "靴が 汚れれば 磨く。",
+              "chinese": "鞋子髒了就擦。",
+              "note": null
+            },
+            {
+              "japanese": "手が 汚れれば すぐ 洗う。",
+              "chinese": "手髒了馬上洗。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "汚れられる",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「汚れる」是無意志自動詞，「汚れられる」沒有受身用法；「被弄髒」要用他動詞「汚す」的受身「汚される」",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "汚れさせる",
+          "group": "2",
+          "chinese": "髒; 弄髒",
+          "japanese": "よごれさせる",
+          "note": "錯誤詞語，僅供轉詞練習：「汚れさせる」不是可用的使役形；「讓〜變髒」要用他動詞「汚す」的使役形「汚させる」",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "付く",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つく",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この ズボンには ポケットが 付く。",
+              "chinese": "這條褲子有口袋。",
+              "note": null
+            },
+            {
+              "japanese": "この ドアには かぎが 付く。",
+              "chinese": "這扇門有鎖。",
+              "note": null
+            },
+            {
+              "japanese": "この 部屋には エアコンが 付く。",
+              "chinese": "這個房間附冷氣。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "付きます",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つきます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この シャツには ポケットが 付きます。",
+              "chinese": "這件襯衫有口袋。",
+              "note": null
+            },
+            {
+              "japanese": "この 車には ナビが 付きます。",
+              "chinese": "這台車附導航。",
+              "note": null
+            },
+            {
+              "japanese": "この 部屋には お風呂が 付きます。",
+              "chinese": "這個房間附浴室。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "付きません",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つきません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "安い 部屋には エアコンが 付きません。",
+              "chinese": "便宜房間不附冷氣。",
+              "note": null
+            },
+            {
+              "japanese": "この シャツには ポケットが 付きません。",
+              "chinese": "這件襯衫沒有口袋。",
+              "note": null
+            },
+            {
+              "japanese": "この 車には ナビが 付きません。",
+              "chinese": "這台車沒有導航。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "付きました",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つきました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "新しい 車に ナビが 付きました。",
+              "chinese": "新車附了導航。",
+              "note": null
+            },
+            {
+              "japanese": "この 部屋に エアコンが 付きました。",
+              "chinese": "這個房間裝了冷氣。",
+              "note": null
+            },
+            {
+              "japanese": "注文した シャツに ポケットが 付きました。",
+              "chinese": "訂的襯衫有口袋。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "付きませんでした",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つきませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日 買った シャツには ポケットが 付きませんでした。",
+              "chinese": "昨天買的襯衫沒有口袋。",
+              "note": null
+            },
+            {
+              "japanese": "この 車には ナビが 付きませんでした。",
+              "chinese": "這台車沒有附導航。",
+              "note": null
+            },
+            {
+              "japanese": "部屋に エアコンが 付きませんでした。",
+              "chinese": "房間沒有裝冷氣。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "付かない",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つかない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この ズボンには ポケットが 付かない。",
+              "chinese": "這條褲子沒有口袋。",
+              "note": null
+            },
+            {
+              "japanese": "この 車には ナビが 付かない。",
+              "chinese": "這台車沒有導航。",
+              "note": null
+            },
+            {
+              "japanese": "この ドアには かぎが 付かない。",
+              "chinese": "這扇門沒有鎖。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "付いた",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "ついた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "シャツに ポケットが 付いた。",
+              "chinese": "襯衫有口袋了。",
+              "note": null
+            },
+            {
+              "japanese": "車に ナビが 付いた。",
+              "chinese": "車上裝了導航。",
+              "note": null
+            },
+            {
+              "japanese": "ドアに かぎが 付いた。",
+              "chinese": "門裝了鎖。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "付かなかった",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つかなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この シャツには ポケットが 付かなかった。",
+              "chinese": "這件襯衫沒有口袋。",
+              "note": null
+            },
+            {
+              "japanese": "車には ナビが 付かなかった。",
+              "chinese": "車沒有裝導航。",
+              "note": null
+            },
+            {
+              "japanese": "ドアには かぎが 付かなかった。",
+              "chinese": "門沒有裝鎖。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "付いて",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "ついて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この シャツには ポケットが 付いて いる。",
+              "chinese": "這件襯衫有口袋。",
+              "note": null
+            },
+            {
+              "japanese": "車に ナビが 付いて いる。",
+              "chinese": "車上裝著導航。",
+              "note": null
+            },
+            {
+              "japanese": "この 部屋には エアコンが 付いて いる。",
+              "chinese": "這個房間裝著冷氣。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "付ける",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つける",
+          "note": "錯誤詞語，僅供轉詞練習：「付ける」是錯的：這是另一個動詞，不用作「付く」的可能形",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "付こう",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つこう",
+          "note": "字典有但是不常用：「付こう」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "糊を 塗った 切手が 封筒に 付こうと して いる。",
+              "chinese": "塗了漿糊的郵票快要貼上信封了。",
+              "note": null
+            },
+            {
+              "japanese": "雨で 服が 体に 付こうと する。",
+              "chinese": "衣服被雨淋得快要貼在身上。",
+              "note": null
+            },
+            {
+              "japanese": "磁石が 冷蔵庫に 付こうと したが、落ちた。",
+              "chinese": "磁鐵快要吸上冰箱，卻掉了下來。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "付け",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つけ",
+          "note": "錯誤詞語，僅供轉詞練習：「付け」是錯的：這是另一個動詞，不用作「付く」的命令形",
+          "error_usage": true,
+          "sentence": []
+        },
+        "conditional-form": {
+          "vol": "付けば",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つけば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "かぎが 付けば 安心だ。",
+              "chinese": "裝上鎖就安心。",
+              "note": null
+            },
+            {
+              "japanese": "ナビが 付けば 道が 分かる。",
+              "chinese": "裝了導航就知道路。",
+              "note": null
+            },
+            {
+              "japanese": "ポケットが 付けば 便利だ。",
+              "chinese": "有口袋就方便。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "付かれる",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つかれる",
+          "note": "錯誤詞語，僅供轉詞練習：「付かれる」不是「付く」的受身用法（「つかれる」是「疲れる」）；「付く」是無意志自動詞，沒有受身，要說「傷が 付く」「噂が 立つ」",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "付かせる",
+          "group": "1",
+          "chinese": "附上; 附著",
+          "japanese": "つかせる",
+          "note": "錯誤詞語，僅供轉詞練習：「付かせる」是自動詞「付く」的使役形，但他動詞是「付ける／貼る」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "外れる",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "古い ボタンは すぐ 外れる。",
+              "chinese": "舊釦子馬上就掉。",
+              "note": null
+            },
+            {
+              "japanese": "子どもが 引くと ふたは 外れる。",
+              "chinese": "小孩一拉蓋子就掉。",
+              "note": null
+            },
+            {
+              "japanese": "この 自転車は チェーンが 外れる。",
+              "chinese": "這台腳踏車鏈條會掉。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "外れます",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "シャツの ボタンが 外れます。",
+              "chinese": "襯衫的釦子掉了。",
+              "note": null
+            },
+            {
+              "japanese": "自転車の チェーンは よく 外れます。",
+              "chinese": "腳踏車的鏈條常常掉。",
+              "note": null
+            },
+            {
+              "japanese": "力を 入れると ふたが 外れます。",
+              "chinese": "用力一拉蓋子就掉。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "外れません",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この ボタンは 外れません。",
+              "chinese": "這顆釦子不會掉。",
+              "note": null
+            },
+            {
+              "japanese": "新しい チェーンは 外れません。",
+              "chinese": "新鏈條不會掉。",
+              "note": null
+            },
+            {
+              "japanese": "この ふたは 外れません。",
+              "chinese": "這個蓋子不會掉。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "外れました",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "歩いて ボタンが 外れました。",
+              "chinese": "走一走釦子掉了。",
+              "note": null
+            },
+            {
+              "japanese": "自転車の チェーンが 外れました。",
+              "chinese": "腳踏車的鏈條掉了。",
+              "note": null
+            },
+            {
+              "japanese": "ふたが 外れました。",
+              "chinese": "蓋子掉了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "外れませんでした",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は ボタンが 外れませんでした。",
+              "chinese": "今天釦子沒有掉。",
+              "note": null
+            },
+            {
+              "japanese": "チェーンは 外れませんでした。",
+              "chinese": "鏈條沒有掉。",
+              "note": null
+            },
+            {
+              "japanese": "ふたは 外れませんでした。",
+              "chinese": "蓋子沒有掉。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "外れない",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この ボタンは 外れない。",
+              "chinese": "這顆釦子不會掉。",
+              "note": null
+            },
+            {
+              "japanese": "この ふたは 固くて 外れない。",
+              "chinese": "這個蓋子太緊掉不下來。",
+              "note": null
+            },
+            {
+              "japanese": "新しい チェーンは 外れない。",
+              "chinese": "新鏈條不會掉。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "外れた",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "歩いて ボタンが 外れた。",
+              "chinese": "走一走釦子掉了。",
+              "note": null
+            },
+            {
+              "japanese": "自転車の チェーンが 外れた。",
+              "chinese": "腳踏車的鏈條掉了。",
+              "note": null
+            },
+            {
+              "japanese": "ふたが 外れた。",
+              "chinese": "蓋子掉了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "外れなかった",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は ボタンが 外れなかった。",
+              "chinese": "今天釦子沒有掉。",
+              "note": null
+            },
+            {
+              "japanese": "チェーンは 石に 当たっても 外れなかった。",
+              "chinese": "鏈條撞到石頭也沒有掉。",
+              "note": null
+            },
+            {
+              "japanese": "ふたは 外れなかった。",
+              "chinese": "蓋子沒有掉。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "外れて",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ボタンが 外れて 服が 開いた。",
+              "chinese": "釦子掉了衣服就開了。",
+              "note": null
+            },
+            {
+              "japanese": "チェーンが 外れて 自転車が 動かない。",
+              "chinese": "鏈條掉了腳踏車不動。",
+              "note": null
+            },
+            {
+              "japanese": "ふたが 外れて 中が 見える。",
+              "chinese": "蓋子掉了能看到裡面。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "外れられる",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「外れる」是無意志動詞，「外れられる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "外れよう",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ボタンが 外れようと して いる。",
+              "chinese": "釦子快要掉了。",
+              "note": null
+            },
+            {
+              "japanese": "ふたが 外れようと した。",
+              "chinese": "蓋子快要掉了。",
+              "note": null
+            },
+            {
+              "japanese": "チェーンが 外れようと して いる。",
+              "chinese": "鏈條快要掉下來了。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "外れろ",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれろ",
+          "note": "字典有但是不常用：「外れろ」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "「外れろ！」と 弟が ふたを 引いた。",
+              "chinese": "弟弟喊著「掉下來吧！」拉蓋子。",
+              "note": null
+            },
+            {
+              "japanese": "「外れろ！」と 父が ボタンを 引っ張った。",
+              "chinese": "爸爸喊著「掉下來吧！」扯釦子。",
+              "note": null
+            },
+            {
+              "japanese": "「外れろ！」と いう 声が 聞こえた。",
+              "chinese": "聽到了「掉下來吧！」的聲音。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "外れれば",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ボタンが 外れれば 縫い付ける。",
+              "chinese": "釦子掉了就縫上。",
+              "note": null
+            },
+            {
+              "japanese": "チェーンが 外れれば 直す。",
+              "chinese": "鏈條掉了就修。",
+              "note": null
+            },
+            {
+              "japanese": "ふたが 外れれば 中が 見える。",
+              "chinese": "蓋子掉了就能看見裡面。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "外れられる",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれられる",
+          "note": "錯誤詞語，僅供轉詞練習：「外れる」是無意志自動詞，「外れられる」沒有受身用法；「被弄掉」要用他動詞「外す」的受身「外される」",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "外れさせる",
+          "group": "2",
+          "chinese": "脫落; 掉下",
+          "japanese": "はずれさせる",
+          "note": "錯誤詞語，僅供轉詞練習：「外れさせる」不是可用的使役形；「讓〜掉下來」要用他動詞「外す」的使役形「外させる」",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "止まる",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この エレベーターは 3階で 止まる。",
+              "chinese": "這台電梯在三樓停。",
+              "note": null
+            },
+            {
+              "japanese": "雨の 日は 電車が よく 止まる。",
+              "chinese": "下雨天電車常常停。",
+              "note": null
+            },
+            {
+              "japanese": "古い 時計は 12時に 止まる。",
+              "chinese": "舊鐘十二點就停。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "止まります",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまります",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "バスは 駅の 前で 止まります。",
+              "chinese": "公車在車站前停。",
+              "note": null
+            },
+            {
+              "japanese": "エレベーターは 5階で 止まります。",
+              "chinese": "電梯在五樓停。",
+              "note": null
+            },
+            {
+              "japanese": "雪で 電車が 止まります。",
+              "chinese": "因為雪電車會停。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "止まりません",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまりません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この エレベーターは 4階には 止まりません。",
+              "chinese": "這台電梯四樓不停。",
+              "note": null
+            },
+            {
+              "japanese": "急行は この 駅に 止まりません。",
+              "chinese": "快車不停這站。",
+              "note": null
+            },
+            {
+              "japanese": "この 時計は もう 止まりません。",
+              "chinese": "這個鐘已經不會停了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "止まりました",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまりました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "バスが 駅の 前で 止まりました。",
+              "chinese": "公車在車站前停了。",
+              "note": null
+            },
+            {
+              "japanese": "エレベーターが 3階で 止まりました。",
+              "chinese": "電梯在三樓停了。",
+              "note": null
+            },
+            {
+              "japanese": "雪で 電車が 止まりました。",
+              "chinese": "因為雪電車停了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "止まりませんでした",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまりませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は 電車が 止まりませんでした。",
+              "chinese": "昨天電車沒有停。",
+              "note": null
+            },
+            {
+              "japanese": "この バスは 駅前に 止まりませんでした。",
+              "chinese": "這班公車沒有在車站前停。",
+              "note": null
+            },
+            {
+              "japanese": "時計は 止まりませんでした。",
+              "chinese": "鐘沒有停。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "止まらない",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまらない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この エレベーターは 2階で 止まらない。",
+              "chinese": "這台電梯二樓不停。",
+              "note": null
+            },
+            {
+              "japanese": "古い 時計は もう 止まらない。",
+              "chinese": "舊鐘已經不會停了。",
+              "note": null
+            },
+            {
+              "japanese": "この バスは 小さい 駅に 止まらない。",
+              "chinese": "這班公車小站不停。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "止まった",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "バスが 駅の 前で 止まった。",
+              "chinese": "公車在車站前停了。",
+              "note": null
+            },
+            {
+              "japanese": "エレベーターが 3階で 止まった。",
+              "chinese": "電梯在三樓停了。",
+              "note": null
+            },
+            {
+              "japanese": "時計が 止まった。",
+              "chinese": "鐘停了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "止まらなかった",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまらなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨日は バスが 駅前に 止まらなかった。",
+              "chinese": "昨天公車沒有停在車站前。",
+              "note": null
+            },
+            {
+              "japanese": "エレベーターは 4階で 止まらなかった。",
+              "chinese": "電梯沒有在四樓停。",
+              "note": null
+            },
+            {
+              "japanese": "時計は 止まらなかった。",
+              "chinese": "鐘沒有停。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "止まって",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまって",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "エレベーターが 3階で 止まって いる。",
+              "chinese": "電梯在三樓停著。",
+              "note": null
+            },
+            {
+              "japanese": "バスが 駅の 前で 止まって いる。",
+              "chinese": "公車停在車站前。",
+              "note": null
+            },
+            {
+              "japanese": "時計が 止まって いる。",
+              "chinese": "鐘停了。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "止まれる",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまれる",
+          "note": "字典有但是不常用：「止まれる」是「止まる」的可能形，只用於駕駛者可控制的車輛等",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 電車は 次の 駅に 止まれる。",
+              "chinese": "這班電車可以在下一站停。",
+              "note": null
+            },
+            {
+              "japanese": "この バスは 病院の 前に 止まれる。",
+              "chinese": "這班公車可以在醫院前停。",
+              "note": null
+            },
+            {
+              "japanese": "タクシーなら 家の 前で 止まれる。",
+              "chinese": "搭計程車的話可以在家門口停。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "止まろう",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまろう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "エレベーターが 3階で 止まろうと して いる。",
+              "chinese": "電梯就要在三樓停了。",
+              "note": null
+            },
+            {
+              "japanese": "電車が 駅に 止まろうと した。",
+              "chinese": "電車就要靠站停了。",
+              "note": null
+            },
+            {
+              "japanese": "この 古い 時計は、もう 止まろうと して いる。",
+              "chinese": "這座舊鐘已經快要停了。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "止まれ",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまれ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "「止まれ！」と 警官が 叫んだ。",
+              "chinese": "「停下來！」警察大喊。",
+              "note": null
+            },
+            {
+              "japanese": "「ここで 止まれ！」と 先生が 言った。",
+              "chinese": "「在這裡停！」老師說。",
+              "note": null
+            },
+            {
+              "japanese": "「止まれ」と 看板に 書いて ある。",
+              "chinese": "告示牌上寫著「停止」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "止まれば",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "エレベーターが 3階で 止まれば 降りる。",
+              "chinese": "電梯在三樓停的話就下。",
+              "note": null
+            },
+            {
+              "japanese": "電車が 駅に 止まれば 乗る。",
+              "chinese": "電車靠站停的話就搭。",
+              "note": null
+            },
+            {
+              "japanese": "時計が 12時に 止まれば すぐ 分かる。",
+              "chinese": "鐘十二點停的話馬上就知道。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "止まられる",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまられる",
+          "note": "字典有但是不常用：「止まられる」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "電車に 途中で 止まられる と、会議に 遅れる。",
+              "chinese": "電車中途停住的話，開會就會遲到。",
+              "note": null
+            },
+            {
+              "japanese": "工事で バスに 止まられる と、駅まで 歩く しか ない。",
+              "chinese": "因為施工公車停駛的話，只能走到車站。",
+              "note": null
+            },
+            {
+              "japanese": "踏切で 長い 列車に 止まられる と、長く 待たされる。",
+              "chinese": "在平交道被長列車停住，會等很久。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "止まらせる",
+          "group": "1",
+          "chinese": "停止; 停下",
+          "japanese": "とまらせる",
+          "note": "錯誤詞語，僅供轉詞練習：「止まらせる」是自動詞「止まる」的使役形，但他動詞是「止める（とめる）」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "間違える",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "急ぐと よく 間違える。",
+              "chinese": "一急就容易弄錯。",
+              "note": null
+            },
+            {
+              "japanese": "私は 人の 名前を よく 間違える。",
+              "chinese": "我常常把別人的名字搞錯。",
+              "note": null
+            },
+            {
+              "japanese": "若い 人は この 漢字を 間違える。",
+              "chinese": "年輕人會把這個漢字寫錯。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "間違えます",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえます",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "急いで いると 番号を 間違えます。",
+              "chinese": "一急就會把號碼弄錯。",
+              "note": null
+            },
+            {
+              "japanese": "学生は よく 漢字を 間違えます。",
+              "chinese": "學生常把漢字寫錯。",
+              "note": null
+            },
+            {
+              "japanese": "駅で 電車を 間違えます。",
+              "chinese": "在車站會搭錯電車。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "間違えません",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 問題は 間違えません。",
+              "chinese": "這題不會弄錯。",
+              "note": null
+            },
+            {
+              "japanese": "私は もう 道を 間違えません。",
+              "chinese": "我不會再走錯路了。",
+              "note": null
+            },
+            {
+              "japanese": "気を つければ 間違えません。",
+              "chinese": "小心的話就不會弄錯。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "間違えました",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "テストで 答えを 間違えました。",
+              "chinese": "考試時答案弄錯了。",
+              "note": null
+            },
+            {
+              "japanese": "駅で 電車を 間違えました。",
+              "chinese": "在車站搭錯電車了。",
+              "note": null
+            },
+            {
+              "japanese": "人の 名前を 間違えました。",
+              "chinese": "把別人的名字搞錯了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "間違えませんでした",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今朝は 何も 間違えませんでした。",
+              "chinese": "今天早上什麼都沒有弄錯。",
+              "note": null
+            },
+            {
+              "japanese": "この 問題は 間違えませんでした。",
+              "chinese": "這題沒有弄錯。",
+              "note": null
+            },
+            {
+              "japanese": "道を 間違えませんでした。",
+              "chinese": "沒有走錯路。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "間違えない",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "古い 地図でも 間違えない。",
+              "chinese": "舊地圖也不會弄錯。",
+              "note": null
+            },
+            {
+              "japanese": "気を つけて 間違えない ように する。",
+              "chinese": "小心不要弄錯。",
+              "note": null
+            },
+            {
+              "japanese": "彼は ほとんど 間違えない。",
+              "chinese": "他幾乎不會弄錯。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "間違えた",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえた",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "テストで 二つ 間違えた。",
+              "chinese": "考試錯了兩題。",
+              "note": null
+            },
+            {
+              "japanese": "電車を 間違えた ので 遠回りした。",
+              "chinese": "因為搭錯電車繞了遠路。",
+              "note": null
+            },
+            {
+              "japanese": "電話番号を 間違えた。",
+              "chinese": "電話號碼弄錯了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "間違えなかった",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 一つも 間違えなかった。",
+              "chinese": "今天一題都沒有錯。",
+              "note": null
+            },
+            {
+              "japanese": "道は 間違えなかった。",
+              "chinese": "路沒有走錯。",
+              "note": null
+            },
+            {
+              "japanese": "名前は 間違えなかった。",
+              "chinese": "名字沒有搞錯。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "間違えて",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえて",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "電車を 間違えて 遅れた。",
+              "chinese": "搭錯電車遲到了。",
+              "note": null
+            },
+            {
+              "japanese": "道を 間違えて 遠回りした。",
+              "chinese": "走錯路繞了遠路。",
+              "note": null
+            },
+            {
+              "japanese": "番号を 間違えて 電話した。",
+              "chinese": "號碼弄錯打錯電話。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "間違えられる",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえられる",
+          "note": "字典有但是不常用：「間違えられる」是可能形，與受身形同形",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "そんなに 眠いと、簡単な 計算でも 間違えられる。",
+              "chinese": "那麼想睡的話，連簡單的計算都可能算錯。",
+              "note": null
+            },
+            {
+              "japanese": "こんな 簡単な 問題は 間違えられる はずが ない。",
+              "chinese": "這麼簡單的題目不可能弄錯。",
+              "note": null
+            },
+            {
+              "japanese": "慌てて いると、人の 名前を 間違えられる。",
+              "chinese": "一慌張就可能把別人的名字叫錯。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "間違えよう",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえよう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "急いで いて 番号を 間違えようと して いる。",
+              "chinese": "太急差點把號碼弄錯。",
+              "note": null
+            },
+            {
+              "japanese": "私も 道を 間違えようと した。",
+              "chinese": "我也差點走錯路。",
+              "note": null
+            },
+            {
+              "japanese": "間違えようと、あまり 気に しない。",
+              "chinese": "就算弄錯了，也不太在意。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "間違えろ",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえろ",
+          "note": "字典有但是不常用：「間違えろ」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は「もう 間違えろ！」と 冗談で 言った。",
+              "chinese": "老師開玩笑說「再弄錯吧！」。",
+              "note": null
+            },
+            {
+              "japanese": "「どんどん 間違えろ！」と コーチが 言った。",
+              "chinese": "教練說「儘管錯吧！」。",
+              "note": null
+            },
+            {
+              "japanese": "「間違えろ！」と いう 声が 聞こえた。",
+              "chinese": "聽到了「弄錯吧！」的聲音。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "間違えれば",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "番号を 間違えれば 電話は 通じない。",
+              "chinese": "號碼弄錯電話就打不通。",
+              "note": null
+            },
+            {
+              "japanese": "道を 間違えれば 時間が かかる。",
+              "chinese": "走錯路就會花時間。",
+              "note": null
+            },
+            {
+              "japanese": "漢字を 間違えれば 点数が 下がる。",
+              "chinese": "漢字寫錯分數就會降低。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "間違えられる",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえられる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 漢字は 学生に よく 間違えられる。",
+              "chinese": "這個漢字常被學生寫錯。",
+              "note": null
+            },
+            {
+              "japanese": "私の 名前は いつも 間違えられる。",
+              "chinese": "我的名字總是被弄錯。",
+              "note": null
+            },
+            {
+              "japanese": "この 問題は 誰にでも 間違えられる。",
+              "chinese": "這題誰都會弄錯。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "間違えさせる",
+          "group": "2",
+          "chinese": "弄錯; 搞錯",
+          "japanese": "まちがえさせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "先生は 学生に 漢字を 間違えさせる。",
+              "chinese": "老師讓學生把漢字寫錯。",
+              "note": null
+            },
+            {
+              "japanese": "急いで いると 人に 番号を 間違えさせる。",
+              "chinese": "一急就會讓人把號碼弄錯。",
+              "note": null
+            },
+            {
+              "japanese": "その 声は 私に 名前を 間違えさせる。",
+              "chinese": "那個聲音讓我搞錯名字。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "落とす",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとす",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 子は よく 物を 落とす。",
+              "chinese": "這個小孩常常掉東西。",
+              "note": null
+            },
+            {
+              "japanese": "私は よく かぎを 落とす。",
+              "chinese": "我常常把鑰匙弄丟。",
+              "note": null
+            },
+            {
+              "japanese": "彼は 電車で さいふを 落とす。",
+              "chinese": "他在電車上掉錢包。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "落とします",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとします",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "子どもが 食べ物を 落とします。",
+              "chinese": "小孩把食物弄掉。",
+              "note": null
+            },
+            {
+              "japanese": "私は よく さいふを 落とします。",
+              "chinese": "我常把錢包弄丟。",
+              "note": null
+            },
+            {
+              "japanese": "彼は 駅で かぎを 落とします。",
+              "chinese": "他在車站把鑰匙弄丟。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "落としません",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとしません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 子は ごみを 落としません。",
+              "chinese": "這個小孩不會亂丟垃圾。",
+              "note": null
+            },
+            {
+              "japanese": "私は かぎを 落としません。",
+              "chinese": "我不會把鑰匙弄丟。",
+              "note": null
+            },
+            {
+              "japanese": "彼は 何も 落としません。",
+              "chinese": "他什麼都不會掉。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "落としました",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとしました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "電車で さいふを 落としました。",
+              "chinese": "在電車上把錢包弄丟了。",
+              "note": null
+            },
+            {
+              "japanese": "子どもが コップを 落としました。",
+              "chinese": "小孩把杯子弄掉了。",
+              "note": null
+            },
+            {
+              "japanese": "私は かぎを 落としました。",
+              "chinese": "我把鑰匙弄丟了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "落としませんでした",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとしませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 何も 落としませんでした。",
+              "chinese": "今天什麼都沒有弄掉。",
+              "note": null
+            },
+            {
+              "japanese": "かぎは 落としませんでした。",
+              "chinese": "鑰匙沒有弄丟。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは コップを 落としませんでした。",
+              "chinese": "小孩沒有把杯子弄掉。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "落とさない",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとさない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は もう かぎを 落とさない。",
+              "chinese": "我不會再把鑰匙弄丟。",
+              "note": null
+            },
+            {
+              "japanese": "この 子は 物を 落とさない。",
+              "chinese": "這個小孩不會掉東西。",
+              "note": null
+            },
+            {
+              "japanese": "彼は 何も 落とさない。",
+              "chinese": "他什麼都不會掉。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "落とした",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "電車で さいふを 落とした。",
+              "chinese": "在電車上把錢包弄丟了。",
+              "note": null
+            },
+            {
+              "japanese": "子どもが コップを 落とした。",
+              "chinese": "小孩把杯子弄掉了。",
+              "note": null
+            },
+            {
+              "japanese": "私は かぎを 落とした。",
+              "chinese": "我把鑰匙弄丟了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "落とさなかった",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとさなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "今日は 何も 落とさなかった。",
+              "chinese": "今天什麼都沒有弄掉。",
+              "note": null
+            },
+            {
+              "japanese": "子どもは コップを 落とさなかった。",
+              "chinese": "小孩沒有把杯子弄掉。",
+              "note": null
+            },
+            {
+              "japanese": "彼は かぎを 落とさなかった。",
+              "chinese": "他沒有把鑰匙弄丟。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "落として",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとして",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "さいふを 落として 困った。",
+              "chinese": "錢包弄丟了很傷腦筋。",
+              "note": null
+            },
+            {
+              "japanese": "コップを 落として 割った。",
+              "chinese": "杯子掉了打破。",
+              "note": null
+            },
+            {
+              "japanese": "ごみを 落として 拾った。",
+              "chinese": "垃圾弄掉了再撿起來。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "落とせる",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 高さから 石を 落とせる。",
+              "chinese": "從這個高度能把石頭丟下去。",
+              "note": null
+            },
+            {
+              "japanese": "この ボタンを 押せば 荷物を 落とせる。",
+              "chinese": "按下這個按鈕就能把貨物放下。",
+              "note": null
+            },
+            {
+              "japanese": "ここから ボールを 落とせる。",
+              "chinese": "從這裡能把球丟下去。",
+              "note": null
+            }
+          ]
+        },
+        "volitional-form": {
+          "vol": "落とそう",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとそう",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この 石を 川に 落とそう。",
+              "chinese": "把這塊石頭丟進河裡吧。",
+              "note": null
+            },
+            {
+              "japanese": "かぎを 落とそうと した が、まだ 持って いる。",
+              "chinese": "差點把鑰匙弄丟，但還在手上。",
+              "note": null
+            },
+            {
+              "japanese": "ボールを 手から 落とそう。",
+              "chinese": "把球從手上放下吧。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "落とせ",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとせ",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "「ボールを 落とせ！」と 先生が 言った。",
+              "chinese": "「把球放下！」老師說。",
+              "note": null
+            },
+            {
+              "japanese": "「荷物を 落とせ！」と 上官が 叫んだ。",
+              "chinese": "「把行李放下！」長官大喊。",
+              "note": null
+            },
+            {
+              "japanese": "「落とせ！」と いう 声が 聞こえた。",
+              "chinese": "聽到了「放下！」的聲音。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "落とせば",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとせば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "かぎを 落とせば 家に 入れない。",
+              "chinese": "鑰匙弄丟就進不了家。",
+              "note": null
+            },
+            {
+              "japanese": "ボールを 落とせば ゲームは 終わる。",
+              "chinese": "球掉下去比賽就結束。",
+              "note": null
+            },
+            {
+              "japanese": "ごみを 落とせば 床が 汚れる。",
+              "chinese": "垃圾掉了地板就髒。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "落とされる",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとされる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "私は 弟に コップを 落とされる。",
+              "chinese": "我的杯子被弟弟弄掉。",
+              "note": null
+            },
+            {
+              "japanese": "電車で 人に 荷物を 落とされる。",
+              "chinese": "在電車上行李被人弄掉。",
+              "note": null
+            },
+            {
+              "japanese": "友だちに かぎを 落とされる。",
+              "chinese": "鑰匙被朋友弄丟。",
+              "note": null
+            }
+          ]
+        },
+        "causative-form": {
+          "vol": "落とさせる",
+          "group": "1",
+          "chinese": "弄掉; 落下",
+          "japanese": "おとさせる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "兄は 弟に 石を 川へ 落とさせる。",
+              "chinese": "哥哥讓弟弟把石頭丟進河裡。",
+              "note": null
+            },
+            {
+              "japanese": "先生は 学生に ボールを 落とさせる。",
+              "chinese": "老師讓學生把球放下。",
+              "note": null
+            },
+            {
+              "japanese": "父は 私に 荷物を 落とさせる。",
+              "chinese": "爸爸讓我放下行李。",
+              "note": null
+            }
+          ]
+        }
+      },
+      {
+        "dictionary-form": {
+          "vol": "掛かる",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かかる",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この ドアには かぎが 掛かる。",
+              "chinese": "這扇門會上鎖。",
+              "note": null
+            },
+            {
+              "japanese": "夜は 門に かぎが 掛かる。",
+              "chinese": "晚上門會上鎖。",
+              "note": null
+            },
+            {
+              "japanese": "古い 自転車は かぎが 掛かる。",
+              "chinese": "舊腳踏車會上鎖。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form": {
+          "vol": "掛かります",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かかります",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この ドアには かぎが 掛かります。",
+              "chinese": "這扇門會上鎖。",
+              "note": null
+            },
+            {
+              "japanese": "夜 10時に 門に かぎが 掛かります。",
+              "chinese": "晚上十點門會上鎖。",
+              "note": null
+            },
+            {
+              "japanese": "ここに 鎖が 掛かります。",
+              "chinese": "這裡會掛上鏈條。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-negative": {
+          "vol": "掛かりません",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かかりません",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この ドアには かぎが 掛かりません。",
+              "chinese": "這扇門不上鎖。",
+              "note": null
+            },
+            {
+              "japanese": "昼は 門に かぎが 掛かりません。",
+              "chinese": "白天門不上鎖。",
+              "note": null
+            },
+            {
+              "japanese": "この 自転車には 鎖が 掛かりません。",
+              "chinese": "這台腳踏車沒掛鏈條。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past": {
+          "vol": "掛かりました",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かかりました",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨夜 ドアに かぎが 掛かりました。",
+              "chinese": "昨晚門上鎖了。",
+              "note": null
+            },
+            {
+              "japanese": "門に 鎖が 掛かりました。",
+              "chinese": "門掛上鏈條了。",
+              "note": null
+            },
+            {
+              "japanese": "自転車に かぎが 掛かりました。",
+              "chinese": "腳踏車上鎖了。",
+              "note": null
+            }
+          ]
+        },
+        "masu-form-past-negative": {
+          "vol": "掛かりませんでした",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かかりませんでした",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨夜 ドアに かぎが 掛かりませんでした。",
+              "chinese": "昨晚門沒有上鎖。",
+              "note": null
+            },
+            {
+              "japanese": "門に 鎖は 掛かりませんでした。",
+              "chinese": "門沒有掛鏈條。",
+              "note": null
+            },
+            {
+              "japanese": "自転車に かぎは 掛かりませんでした。",
+              "chinese": "腳踏車沒有上鎖。",
+              "note": null
+            }
+          ]
+        },
+        "nai-form": {
+          "vol": "掛からない",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かからない",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "この ドアには かぎが 掛からない。",
+              "chinese": "這扇門不上鎖。",
+              "note": null
+            },
+            {
+              "japanese": "昼は 門に 鎖が 掛からない。",
+              "chinese": "白天門不掛鏈條。",
+              "note": null
+            },
+            {
+              "japanese": "この 自転車は かぎが 掛からない。",
+              "chinese": "這台腳踏車不上鎖。",
+              "note": null
+            }
+          ]
+        },
+        "ta-form": {
+          "vol": "掛かった",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨夜 ドアに かぎが 掛かった。",
+              "chinese": "昨晚門上鎖了。",
+              "note": null
+            },
+            {
+              "japanese": "門に 鎖が 掛かった。",
+              "chinese": "門掛上鏈條了。",
+              "note": null
+            },
+            {
+              "japanese": "自転車に かぎが 掛かった。",
+              "chinese": "腳踏車上鎖了。",
+              "note": null
+            }
+          ]
+        },
+        "nakatta-form": {
+          "vol": "掛からなかった",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かからなかった",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "昨夜 ドアに かぎが 掛からなかった。",
+              "chinese": "昨晚門沒有上鎖。",
+              "note": null
+            },
+            {
+              "japanese": "門に 鎖は 掛からなかった。",
+              "chinese": "門沒有掛鏈條。",
+              "note": null
+            },
+            {
+              "japanese": "自転車に かぎは 掛からなかった。",
+              "chinese": "腳踏車沒有上鎖。",
+              "note": null
+            }
+          ]
+        },
+        "te-form": {
+          "vol": "掛かって",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かかって",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ドアに かぎが 掛かって いる。",
+              "chinese": "門上著鎖。",
+              "note": null
+            },
+            {
+              "japanese": "門に 鎖が 掛かって いる。",
+              "chinese": "門掛著鏈條。",
+              "note": null
+            },
+            {
+              "japanese": "自転車に かぎが 掛かって いる。",
+              "chinese": "腳踏車鎖著。",
+              "note": null
+            }
+          ]
+        },
+        "potential-form": {
+          "vol": "掛かれる",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かかれる",
+          "note": "錯誤詞語，僅供轉詞練習：「掛かる」是無意志動詞，「掛かれる」這個可能形日常不用",
+          "error_usage": true,
+          "sentence": []
+        },
+        "volitional-form": {
+          "vol": "掛かろう",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かかろう",
+          "note": "字典有但是不常用：「掛かろう」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "かぎが 掛かろうと して いる。",
+              "chinese": "鎖快要扣上了。",
+              "note": null
+            },
+            {
+              "japanese": "ドアに かぎが 掛かろうと した。",
+              "chinese": "門鎖快要鎖上了。",
+              "note": null
+            },
+            {
+              "japanese": "鎖が 掛かろうと して いる。",
+              "chinese": "鏈條快要掛上了。",
+              "note": null
+            }
+          ]
+        },
+        "imperative-form": {
+          "vol": "掛かれ",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かかれ",
+          "note": "字典有但是不常用：「掛かれ」日常不用",
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "「早く 掛かれ！」と 父が かぎを 回した。",
+              "chinese": "爸爸喊著「快鎖上！」轉鑰匙。",
+              "note": null
+            },
+            {
+              "japanese": "「しっかり 掛かれ！」と 店長が 言った。",
+              "chinese": "店長說「好好鎖上！」。",
+              "note": null
+            },
+            {
+              "japanese": "「掛かれ」と 書いて ある 貼り紙が あった。",
+              "chinese": "有張貼紙寫著「請上鎖」。",
+              "note": null
+            }
+          ]
+        },
+        "conditional-form": {
+          "vol": "掛かれば",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かかれば",
+          "note": null,
+          "error_usage": false,
+          "sentence": [
+            {
+              "japanese": "ドアに かぎが 掛かれば 安心だ。",
+              "chinese": "門上鎖了就安心。",
+              "note": null
+            },
+            {
+              "japanese": "門に 鎖が 掛かれば 入れない。",
+              "chinese": "門掛上鏈條就進不去。",
+              "note": null
+            },
+            {
+              "japanese": "自転車に かぎが 掛かれば 盗まれない。",
+              "chinese": "腳踏車上鎖就不會被偷。",
+              "note": null
+            }
+          ]
+        },
+        "passive-form": {
+          "vol": "掛かられる",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かかられる",
+          "note": "錯誤詞語，僅供轉詞練習：「掛かる」是自動詞（かぎが 掛かる），不能接動作主；「門に 鎖を 掛かられる」不成立，被動要說他動詞「掛ける」的受身「掛けられる」",
+          "error_usage": true,
+          "sentence": []
+        },
+        "causative-form": {
+          "vol": "掛からせる",
+          "group": "1",
+          "chinese": "鎖上; 掛上",
+          "japanese": "かからせる",
+          "note": "錯誤詞語，僅供轉詞練習：「掛からせる」是自動詞「掛かる」的使役形，但他動詞是「掛ける（かける）」，不用這個使役形",
+          "error_usage": true,
+          "sentence": []
+        }
+      }
+    ]
+  }
+}

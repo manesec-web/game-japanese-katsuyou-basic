@@ -14,7 +14,11 @@ breakdown lives in `AGENTS.md`.
   Screens and tests both go through `dispatch`.
 - Commands never throw. They return `{ ok: true, result }` or
   `{ ok: false, error }`.
-- `vol/*.json` is read-only dictionary input. Do not edit it.
+- `vol/*.json` is read-only dictionary input. Do not edit it. **One-time
+  exception (revision 31):** a user-authorized native-teacher pass rewrote
+  only `form.chinese` and one misleading `note`; see `AGENTS.md`,
+  `docs/gloss-rewrite/rewrite-rules.md` and the validator. No future edit is
+  authorized by it.
 - No MCP, no backend, no LLM calls from the page.
 - Do not copy the wireframe's blue boxes; follow the spec's look section.
 - Text outside the green phone frame in the wireframes is annotation, not UI.
@@ -145,7 +149,7 @@ improvement is done.
 |---|--------|--------|----------------------------------|
 | B1 | 朗讀功能 | pending | Which text is spoken (the form alone, `vol`, `japanese`, or a `sentence`), which engine (the browser's own `SpeechSynthesis`, since the site still allows no backend and no model call), and where the control sits on reader, card and quiz |
 | B2 | 優化下載文件 | pending | Whether the 50 per-lesson files stay (one file per lesson, hashed individually) or become one bundle; what that does to the SHA-256 manifest, `app.boot` and `boot.checked / boot.total` |
-| B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–28 (including follow-up passes A/B); every new change is written into the spec's Look and motion section before code and the browser suite follow |
+| B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–31 (including follow-up passes A/B, the 單詞目錄 screen of revision 30, and the revision-31 dictionary data pass); every new change is written into the spec's Look and motion section before code and the browser suite follow |
 
 ### Revision 15 — the paging window (requested 2026-11-10)
 
@@ -321,8 +325,9 @@ section was amended before code.
 
 The view stays thin: selection and reveal rules live in `.js`, and user-visible
 actions go through `dispatch`. No backend, MCP or model call is added, and
-`vol/` is read-only. If a behavior below is not specified, stop and ask instead
-of inventing a rule.
+`vol/` is read-only apart from the one-time revision-31 `chinese`/`note`
+exception recorded above. If a behavior below is not specified, stop and ask
+instead of inventing a rule.
 
 ### Revision 26 — draggable scrollbars, no-lesson start state, snappier card drag
 
@@ -379,24 +384,52 @@ pill, its wording and the 變成 prompt stay the same.
 | 29a | `CardView.vue` renders the face `.tags` before `.word` (tag → word → 變成 prompt) | done | browser check `the face tag sits above the word like the answer` |
 | 29b | Spec + harness updated | done | `docs/spec.md` Cards face clause; `scripts/browser-check.mjs` position assertion; `npm test` 28 files / 317 tests; build ok; 550 browser checks, 0 failures |
 
+### Revision 30 — 單詞目錄 beside the reader's settings gear (requested 2026-11-13)
+
+The user asked for a word index next to the dictionary reader's settings gear,
+listing the words of the chosen lessons so they can jump to one. Confirmed
+before code: its own screen with a back button, rows of word + 第N課 tag grouped
+by lesson, and the run's frozen list as the source.
+
+| # | Change | Status | Acceptance evidence |
+|---|---|---|---|
+| 30a | Spec first: `toc` on the state-machine line, the reader bar gains 目錄, a full 單詞目錄 section, Lucide `List` in the icon list | done | `docs/spec.md` screens / Dictionary reader / 單詞目錄 / Look and motion clauses, re-read against the three confirmed answers before code |
+| 30b | `tocGroups` pure helper + 6 tests | done | `src/study/toc.js`, `src/study/toc.test.js` |
+| 30c | `dict.goto` jumps by index (`invalid-index` outside the list) and `nav.go` reaches `toc` only from the reader; `SCREENS` lists `toc` | done | `src/commands/dict.js`, `src/commands/nav.js`, `src/engine/session.js`; `src/commands/dict.test.js` 10 tests, `src/commands/nav.test.js` 4 tests |
+| 30d | `TocView.vue`, the reader's 目錄 button and the `toc` route, styled per spec (44px outlined rows, 8px spacing, lesson headings, current mark) | done | `src/views/TocView.vue`, `src/views/ReaderView.vue`, `src/App.vue`; 386-word probe: 46 groups, current row visible, `scrollY 0` after a jump, sticky bar at 0 |
+| 30e | 16 new browser checks for the list | done | open/title/no gear/sticky bar, grouping, row words + tags, single current mark, 44px + 8px + no divider, back, jump, list marks the current word, first row returns |
+| 30f | Verification | done | `npm test` 30 files / 331 tests; manifest ok (50); `npm run build` ok with 50 dict files; `node scripts/browser-check.mjs` 565/566 checks passing, 0 failures |
+
+### Revision 31 — per-form Chinese glosses (requested 2026-11-13)
+
+Requested: 「你是日本母語的老師，請你修改每一個單詞下面的中文…每一個動詞都有他的意思，但是變形后意思就不一樣了。」Confirmed with the user: a natural full translation per form, all 50 lessons, only `form.chinese` plus beginner-misleading `note`; example sentences and Japanese untouched; manifest, spec and docs regenerated.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 31a | Spec + rules first | done | `docs/spec.md` Data defines per-form `chinese`, corrected `note`, the 191 error markers and unchanged sentences; `docs/gloss-rewrite/rewrite-rules.md`, `reference-lesson-2.md`, frozen `baseline/` |
+| 31b | Data pass, 5 batches | done | 5,420 `chinese` values + 1 `note` changed; 191 error markers; `scripts/rewrite-glosses.mjs` plan/review/apply; `scripts/validate-gloss-rewrite.mjs --all` and all five `--batch N` pass with 0 immutable-field changes |
+| 31c | Native-teacher edge cases | done | 44 hand-reviewed paradigms, adversative/honorific/concessive/optative/spontaneous classification, stative negatives, 3 already-inflected base glosses, rare-form suffixes; `docs/gloss-rewrite/batch-doubts.md` D1–D10 |
+| 31d | Docs + manifest | done | `README.md`, `AGENTS.md`, `docs/architecture.md`, `docs/progress.md`, `docs/serving.md`, `docs/changelog.md`, this board; `node scripts/write-sha256.mjs` re-run |
+| 31e | Full verification | done | `node scripts/write-sha256.mjs --check` ok; `node scripts/validate-gloss-rewrite.mjs --all` ok; `node scripts/rewrite-glosses.mjs --review --all` 0 flags; `npm test` 30 files / 331 tests; `npm run build` ok with `output/index.html` + 50 dict JSON; `node scripts/browser-check.mjs` 574 checks, 0 failures (8 new per-form gloss checks); see `docs/progress.md` |
+
 ## Current status
 
-- Revisions 2–29 and follow-up passes A/B are `done`; the
+- Revisions 2–31 and follow-up passes A/B are `done`; the
   implementation was developed and verified over several incremental passes.
-  The latest verification is 28 test files / 317 tests, a build with 50
-  dictionary files, and 550 browser checks (the count moves with the seeded quiz
-  item, which decides how many kana-key assertions run).
-- Backlog B1–B3 remain `pending`. Revisions 2–29 cover specific, specified UI
+  Revision 31 is a data-only change: no `.vue`, command, engine or settings
+  file was touched. The latest verification is recorded in `docs/progress.md`.
+- Backlog B1–B3 remain `pending`. Revisions 2–31 cover specific, specified
   requests; B3 is still open for further UI work (B1 and B2 need a spec entry
-  first). The revision-23 documentation sync also updated `README.md`,
-  `docs/serving.md`, `docs/architecture.md`, `AGENTS.md` and the historical
-  report banners in `docs/audit/*.md`.
-- Revisions 23–27 have their spec and implementation in place, and `README.md`,
-  `docs/architecture.md`, `AGENTS.md` and the status documents have been
-  resynced. Revisions 24–25's iOS rubber-band and dynamic-viewport behavior
-  still needs real hardware verification; other than that and the spec-silent
-  choices listed in `docs/progress.md`, revisions 2–29 have no known deviation
-  from `docs/spec.md`.
+  first). The revision-31 documentation sync also updated `README.md`,
+  `docs/serving.md`, `docs/architecture.md`, `AGENTS.md`, `docs/spec.md`,
+  `docs/progress.md` and `docs/changelog.md`; `docs/audit/*.md` remain
+  historical snapshots.
+- Revisions 23–27 have their spec and implementation in place, and the status
+  documents have been resynced. Revisions 24–25's iOS rubber-band and
+  dynamic-viewport behavior still needs real hardware verification; other than
+  that, the spec-silent choices listed in `docs/progress.md`, and the D1–D10
+  items awaiting user ruling in `docs/gloss-rewrite/batch-doubts.md`,
+  revisions 2–31 have no known deviation from `docs/spec.md`.
 - The GitHub Pages site is not live yet (the project URL returned 404 when
   checked); the repository history starts at commit `933c30b`.
 
@@ -416,10 +449,12 @@ pill, its wording and the 變成 prompt stay the same.
 ## Verification commands
 
 ```bash
-npm test                                # Vitest unit tests (28 files / 317)
+npm test                                # Vitest unit tests (30 files / 331)
 npm run build                           # static build into output/ (50 dict files)
 node scripts/write-sha256.mjs --check   # manifest consistency
-node scripts/browser-check.mjs          # headless Chromium walk-through (550 checks)
+node scripts/validate-gloss-rewrite.mjs --all  # revision-31 data invariant
+node scripts/rewrite-glosses.mjs --review --all # gloss/example consistency
+node scripts/browser-check.mjs          # headless Chromium walk-through (574 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 ```
 

@@ -2,6 +2,8 @@
 
 This file is for the next AI that enters the repo. Do the tasks in order. The product is a static site for learning Japanese verb conjugation: Vue source, build output in `output/`, published with GitHub Pages.
 
+**Revision 31 (data only):** every form's `chinese` now carries its own conjugated meaning, and misleading `note` text was corrected. See `docs/spec.md` Data, `docs/gloss-rewrite/`, and the one-time `vol/` exception in rule 5 below. No UI/engine code changed; the manifest was regenerated. The D1–D10 findings in `docs/gloss-rewrite/batch-doubts.md` still await user ruling.
+
 Current state: T1–T8 are complete, along with the follow-up revisions recorded
 in `docs/roadmap.md` and `docs/changelog.md`. Revision 13 added the loading-screen
 head and credit line and the first-card resistance in 翻卡學習; revision 14
@@ -66,8 +68,13 @@ paths so Vite hashes them into `output/assets/` under the Pages base. The same
 revision changes the loading/home lede to `涵蓋初級 1 – 50 課的動詞`; the on-screen
 head keeps its three lines and draws no image. Revision 29 moves the unflipped
 card's tag above the word in 翻卡學習, matching the answer's tag position, while
-the pill, its wording and the 變成 prompt stay unchanged. The broader 優化UI backlog remains
-pending for further, unspecified UI work.
+the pill, its wording and the 變成 prompt stay unchanged. Revision 30 adds the
+單詞目錄 screen: the reader's top bar carries a 目錄 icon to the left of the
+settings gear, and that screen lists only this run's frozen words
+(`session.items`), grouped by `第N課`, marks the current word, and opens the
+reader on the row pressed (at the top of the page) while back returns to the
+unchanged word. The broader 優化UI backlog remains pending for further,
+unspecified UI work.
 The site builds into `output/` and has not been published to GitHub Pages yet.
 Day-to-day status, verified commands and known limitations live in
 `docs/progress.md`; `README.md` is the user-facing overview. The tasks below
@@ -86,6 +93,15 @@ Behavior lives in `docs/spec.md`. Read the matching section before you build tha
 3. Every user-visible action is a command: `id`, `params`, `enabled`, `run`. The view and the tests call the same `dispatch`.
 4. A command returns `{ ok: true, result }` or `{ ok: false, error }`. Bad params, empty data, and a hash mismatch return `error`. This path does not throw an uncaught exception.
 5. Leave the JSON in `vol/` unchanged. That directory is the dictionary source.
+   **One-time authorized exception (revision 31):** the user asked a
+   native-Japanese-teacher pass over every form's Chinese. Only each form's
+   `chinese` and (where it misled a beginner) `note` may be edited; `vol`,
+   `group`, `japanese`, `sentence` (including its Chinese translations and
+   notes), `error_usage`, key order, lesson structure and file formatting stay
+   byte-equivalent. `docs/gloss-rewrite/rewrite-rules.md` defines the rule,
+   `docs/gloss-rewrite/baseline/` freezes the pre-change bytes, and
+   `scripts/validate-gloss-rewrite.mjs --all` proves the invariant. This
+   exception does not authorize any future edit to `vol/`.
 6. Do not add MCP, a backend, or a model call inside the site.
 7. Do not reproduce the blue boxes in the wireframes. Follow the information architecture in `docs/spec.md`. Follow the Look and motion section there for the visual design.
 8. Text outside the green phone frame is a note to the reader. It is not a UI control.
@@ -96,7 +112,11 @@ Behavior lives in `docs/spec.md`. Read the matching section before you build tha
 After the build, the tree looks like this:
 
 ```text
-vol/                          already present. lesson_1.json … lesson_50.json
+vol/                          dictionary source; lesson_1.json … lesson_50.json
+                              (form-level chinese/note revised in revision 31)
+docs/gloss-rewrite/           revision-31 rules, baseline bytes, plan, doubts
+scripts/validate-gloss-rewrite.mjs  proves only chinese/note changed
+scripts/rewrite-glosses.mjs   generates/applies the per-form gloss plan
 docs/spec.md                  product spec
 docs/screenshot-draft/        wireframes
 docs/logo/                    logo source (logo.jpg) and the icons derived from it
@@ -146,6 +166,7 @@ There is no `public/` directory; the dictionary is copied from `vol/` into
 | `study.start` | Build the item list for the current mode and open the study screen |
 | `dict.next` / `dict.prev` | Next or previous dictionary word. Stop at the ends |
 | `card.next` / `card.prev` | Next or previous card, and turn the card face up |
+| `dict.goto` | Open the reader on a word from 單詞目錄. `params.index` must be an integer inside the run; anything else returns `error` |
 | `card.flip` | Swap face and back |
 | `study.finish` | End a card run (完成 on the last card) and show the completion panel |
 | `quiz.input` | Append a character or delete one. `params.op` is `append` or `backspace`. `append` includes `text` |
@@ -153,7 +174,7 @@ There is no `public/` directory; the dictionary is copied from `vol/` into
 | `quiz.advance` | Move on after the answer has been revealed and the user presses next |
 | `settings.patch` | Merge settings. An unknown field rejects the whole patch and leaves state unchanged |
 
-Screen names are only `loading`, `home`, `picker`, `reader`, `card`, `quiz`, and `settings`. `picker` and `settings` use `session.mode` (`dict`, `card`, or `quiz`) to choose their content.
+Screen names are only `loading`, `home`, `picker`, `reader`, `toc`, `card`, `quiz`, and `settings`. `picker` and `settings` use `session.mode` (`dict`, `card`, or `quiz`) to choose their content.
 
 ## Tasks
 

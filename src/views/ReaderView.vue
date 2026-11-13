@@ -1,6 +1,6 @@
 <script setup>
-import { computed, inject, onBeforeUnmount, ref, watch } from 'vue'
-import { ArrowLeft, ChevronLeft, ChevronRight, Settings as SettingsIcon } from 'lucide-vue-next'
+import { computed, inject, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { ArrowLeft, ChevronLeft, ChevronRight, List, Settings as SettingsIcon } from 'lucide-vue-next'
 import RubyWord from '../components/RubyWord.vue'
 import { groupLabel } from '../dict/forms.js'
 import { sentenceParts } from '../study/highlight.js'
@@ -55,6 +55,11 @@ watch(
   () => [session.index, defaultFormId.value],
   () => window.scrollTo({ top: 0, behavior: 'auto' }),
 )
+
+// A word swapped before the screen mounted — a jump from 單詞目錄 — never fires
+// that watch, and the page may still sit where the word list was left. The
+// reader always opens on the top of its word.
+onMounted(() => window.scrollTo({ top: 0, behavior: 'auto' }))
 
 function canGo(direction) {
   return direction === 'next' ? canNext.value : canPrev.value
@@ -195,6 +200,10 @@ function back() {
 function openSettings() {
   store.send('nav.go', { screen: 'settings' })
 }
+
+function openToc() {
+  store.send('nav.go', { screen: 'toc' })
+}
 </script>
 
 <template>
@@ -202,6 +211,7 @@ function openSettings() {
     <header class="bar bar--sticky">
       <button class="icon-button" type="button" aria-label="返回" @click="back"><ArrowLeft :size="22" aria-hidden="true" /></button>
       <h1 class="bar-title">學習（{{ session.index + 1 }}/{{ session.items.length }}）</h1>
+      <button class="icon-button" type="button" aria-label="單詞目錄" @click="openToc"><List :size="22" aria-hidden="true" /></button>
       <button class="icon-button" type="button" aria-label="設定" @click="openSettings"><SettingsIcon :size="22" aria-hidden="true" /></button>
     </header>
 

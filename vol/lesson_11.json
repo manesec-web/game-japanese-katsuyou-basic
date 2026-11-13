@@ -30,7 +30,7 @@
         "masu-form": {
           "vol": "います",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "在; 有（人或動物）（禮貌體）",
           "japanese": "います",
           "note": null,
           "error_usage": false,
@@ -55,7 +55,7 @@
         "masu-form-negative": {
           "vol": "いません",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "沒有；不存在（禮貌體）",
           "japanese": "いません",
           "note": null,
           "error_usage": false,
@@ -80,7 +80,7 @@
         "masu-form-past": {
           "vol": "いました",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "（當時）有；曾經有（禮貌體）",
           "japanese": "いました",
           "note": null,
           "error_usage": false,
@@ -105,7 +105,7 @@
         "masu-form-past-negative": {
           "vol": "いませんでした",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "（當時）沒有；不曾有（禮貌體）",
           "japanese": "いませんでした",
           "note": null,
           "error_usage": false,
@@ -130,7 +130,7 @@
         "nai-form": {
           "vol": "いない",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "沒有；不存在（普通體）",
           "japanese": "いない",
           "note": null,
           "error_usage": false,
@@ -155,7 +155,7 @@
         "ta-form": {
           "vol": "いた",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "（當時）有；曾經有（普通體）",
           "japanese": "いた",
           "note": null,
           "error_usage": false,
@@ -180,7 +180,7 @@
         "nakatta-form": {
           "vol": "いなかった",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "（當時）沒有；不曾有（普通體）",
           "japanese": "いなかった",
           "note": null,
           "error_usage": false,
@@ -205,7 +205,7 @@
         "te-form": {
           "vol": "いて",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "有…，而…；因為有…，所以…",
           "japanese": "いて",
           "note": null,
           "error_usage": false,
@@ -230,7 +230,7 @@
         "potential-form": {
           "vol": "いられる",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "能存在；可以有",
           "japanese": "いられる",
           "note": null,
           "error_usage": false,
@@ -255,7 +255,7 @@
         "volitional-form": {
           "vol": "いよう",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "不管有沒有…；～であろう（文語用法）",
           "japanese": "いよう",
           "note": null,
           "error_usage": false,
@@ -280,7 +280,7 @@
         "imperative-form": {
           "vol": "いろ",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "願…；但願有…（文語祈願用法）",
           "japanese": "いろ",
           "note": null,
           "error_usage": false,
@@ -305,7 +305,7 @@
         "conditional-form": {
           "vol": "いれば",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "如果有的話，就…",
           "japanese": "いれば",
           "note": null,
           "error_usage": false,
@@ -330,7 +330,7 @@
         "passive-form": {
           "vol": "いられる",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "弟弟老是在我旁邊待著…（受身／迷惑受身，語意見例句）",
           "japanese": "いられる",
           "note": null,
           "error_usage": false,
@@ -355,7 +355,7 @@
         "causative-form": {
           "vol": "いさせる",
           "group": "2",
-          "chinese": "在; 有（人或動物）",
+          "chinese": "使…存在；讓…有",
           "japanese": "いさせる",
           "note": null,
           "error_usage": false,
@@ -407,7 +407,7 @@
         "masu-form": {
           "vol": "かかります",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "花費（金錢或時間）; 需要（禮貌體）",
           "japanese": "かかります",
           "note": null,
           "error_usage": false,
@@ -432,7 +432,7 @@
         "masu-form-negative": {
           "vol": "かかりません",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "不花費金錢或時間（禮貌體）",
           "japanese": "かかりません",
           "note": null,
           "error_usage": false,
@@ -457,7 +457,7 @@
         "masu-form-past": {
           "vol": "かかりました",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "花費金錢或時間了（禮貌體）",
           "japanese": "かかりました",
           "note": null,
           "error_usage": false,
@@ -482,7 +482,7 @@
         "masu-form-past-negative": {
           "vol": "かかりませんでした",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "（當時）沒有花費金錢或時間（禮貌體）",
           "japanese": "かかりませんでした",
           "note": null,
           "error_usage": false,
@@ -507,7 +507,7 @@
         "nai-form": {
           "vol": "かからない",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "不花費金錢或時間（普通體）",
           "japanese": "かからない",
           "note": null,
           "error_usage": false,
@@ -532,7 +532,7 @@
         "ta-form": {
           "vol": "かかった",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "花費金錢或時間了（普通體）",
           "japanese": "かかった",
           "note": null,
           "error_usage": false,
@@ -557,7 +557,7 @@
         "nakatta-form": {
           "vol": "かからなかった",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "（當時）沒有花費金錢或時間（普通體）",
           "japanese": "かからなかった",
           "note": null,
           "error_usage": false,
@@ -582,7 +582,7 @@
         "te-form": {
           "vol": "かかって",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "花費金錢或時間，然後…；花費金錢或時間，而…",
           "japanese": "かかって",
           "note": null,
           "error_usage": false,
@@ -607,7 +607,7 @@
         "potential-form": {
           "vol": "かかれる",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "かかれる",
           "note": "錯誤詞語，僅供轉詞練習：「かかる」是無意志動詞，「かかれる」這個可能形日常不用",
           "error_usage": true,
@@ -616,7 +616,7 @@
         "volitional-form": {
           "vol": "かかろう",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "就算花費金錢或時間也…；不管是否花費金錢或時間都…（讓步用法）（此形日常少用）",
           "japanese": "かかろう",
           "note": "字典有但是不常用：「かかろう」日常不用",
           "error_usage": false,
@@ -641,7 +641,7 @@
         "imperative-form": {
           "vol": "かかれ",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "かかれ",
           "note": "錯誤詞語，僅供轉詞練習：「かかる」（花費時間或金錢）沒有命令用法，「時間がかかれ」母語者不說。",
           "error_usage": true,
@@ -650,7 +650,7 @@
         "conditional-form": {
           "vol": "かかれば",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "如果花費金錢或時間，就…",
           "japanese": "かかれば",
           "note": null,
           "error_usage": false,
@@ -675,7 +675,7 @@
         "passive-form": {
           "vol": "かかられる",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "（非自然日語；僅供轉詞練習，無自然中文譯義）",
           "japanese": "かかられる",
           "note": "錯誤詞語，僅供轉詞練習：「かかる」是無意志自動詞，「かかられる」沒有受身用法；「被多收錢」要用他動詞「取る」的受身「取られる」，或說「家賃が かかって 困る」",
           "error_usage": true,
@@ -684,7 +684,7 @@
         "causative-form": {
           "vol": "かからせる",
           "group": "1",
-          "chinese": "花費（金錢或時間）; 需要",
+          "chinese": "讓…花費金錢或時間；使…花費金錢或時間",
           "japanese": "かからせる",
           "note": "「かからせる」是「かかる」的使役，表示讓人費時間、費錢、費工夫。另一個動詞是「かける」。",
           "error_usage": false,
@@ -736,7 +736,7 @@
         "masu-form": {
           "vol": "休みます",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "請假; 休息（禮貌體）",
           "japanese": "やすみます",
           "note": null,
           "error_usage": false,
@@ -761,7 +761,7 @@
         "masu-form-negative": {
           "vol": "休みません",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "不請假（禮貌體）",
           "japanese": "やすみません",
           "note": null,
           "error_usage": false,
@@ -786,7 +786,7 @@
         "masu-form-past": {
           "vol": "休みました",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "請假了（禮貌體）",
           "japanese": "やすみました",
           "note": null,
           "error_usage": false,
@@ -811,7 +811,7 @@
         "masu-form-past-negative": {
           "vol": "休みませんでした",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "（當時）沒有請假（禮貌體）",
           "japanese": "やすみませんでした",
           "note": null,
           "error_usage": false,
@@ -836,7 +836,7 @@
         "nai-form": {
           "vol": "休まない",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "不請假（普通體）",
           "japanese": "やすまない",
           "note": null,
           "error_usage": false,
@@ -861,7 +861,7 @@
         "ta-form": {
           "vol": "休んだ",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "請假了（普通體）",
           "japanese": "やすんだ",
           "note": null,
           "error_usage": false,
@@ -886,7 +886,7 @@
         "nakatta-form": {
           "vol": "休まなかった",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "（當時）沒有請假（普通體）",
           "japanese": "やすまなかった",
           "note": null,
           "error_usage": false,
@@ -911,7 +911,7 @@
         "te-form": {
           "vol": "休んで",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "請假，然後…；請假，而…",
           "japanese": "やすんで",
           "note": null,
           "error_usage": false,
@@ -936,7 +936,7 @@
         "potential-form": {
           "vol": "休める",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "能請假；可以請假",
           "japanese": "やすめる",
           "note": null,
           "error_usage": false,
@@ -961,7 +961,7 @@
         "volitional-form": {
           "vol": "休もう",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "請假吧；打算請假",
           "japanese": "やすもう",
           "note": null,
           "error_usage": false,
@@ -986,7 +986,7 @@
         "imperative-form": {
           "vol": "休め",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "快請假！",
           "japanese": "やすめ",
           "note": null,
           "error_usage": false,
@@ -1011,7 +1011,7 @@
         "conditional-form": {
           "vol": "休めば",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "如果請假，就…",
           "japanese": "やすめば",
           "note": null,
           "error_usage": false,
@@ -1036,7 +1036,7 @@
         "passive-form": {
           "vol": "休まれる",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "忙碌的日子同事請假，店裡就運轉不過來…（此形語意見例句）",
           "japanese": "やすまれる",
           "note": null,
           "error_usage": false,
@@ -1061,7 +1061,7 @@
         "causative-form": {
           "vol": "休ませる",
           "group": "1",
-          "chinese": "請假; 休息",
+          "chinese": "讓…請假；使…請假",
           "japanese": "やすませる",
           "note": null,
           "error_usage": false,
