@@ -81,14 +81,16 @@ settings gear, and that screen lists only this run's frozen words
 reader on the row pressed (at the top of the page) while back returns to the
 unchanged word. The broader 優化UI backlog remains pending for further,
 unspecified UI work.
-The site builds into `output/` and has not been published to GitHub Pages yet.
+The site builds into `output/`, and that build is live at
+`https://manesec-web.github.io/game-japanese-katsuyou-basic/` (verified
+2026-11-14: HTTP 200, and `dict/vol.bin` answers `application/octet-stream`).
 Day-to-day status, verified commands and known limitations live in
 `docs/progress.md`; `README.md` is the user-facing overview. The tasks below
 stay as the original build plan and as the acceptance checklist — do not reopen
-them without a spec change. Three future items sit in `docs/roadmap.md` as a
-backlog (朗讀功能, 優化下載文件, 優化UI): B1 and B2 are unimplemented and need
-a spec entry first; B3 is still open for further, unspecified UI work,
-although the specific requests recorded in revisions 2–29 have been delivered.
+them without a spec change. Two future items sit in `docs/roadmap.md` as a
+backlog (B1 朗讀功能 and B3 優化UI), each needing a spec entry first; B2
+(優化下載文件) was delivered as revisions 32–33, and the specific requests
+recorded in revisions 2–34 have been delivered.
 
 Behavior lives in `docs/spec.md`. Read the matching section before you build that piece. If the spec does not cover a product behavior, stop and ask. Do not invent a rule.
 

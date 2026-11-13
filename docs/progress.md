@@ -1,13 +1,14 @@
 # Progress
 
-Last updated: 2026-11-13 (revision 34: locked 到 chips, the 翻卡練習 rename and
+Last updated: 2026-11-14 (revision 34: locked 到 chips, the 翻卡練習 rename and
 the card class pill that now arrives with the card).
 
 **Status: complete.** T1–T8 are done and revisions 2–34 have landed and been
-verified, including follow-up UI passes A/B. The site is not published yet;
-the remaining product step is to deploy `output/` to GitHub Pages. Backlog
-B1 (朗讀功能) and B3 (優化UI) remain `pending`; B2 (優化下載文件) is done as
-revision 32.
+verified, including follow-up UI passes A/B. The build is live at
+`https://manesec-web.github.io/game-japanese-katsuyou-basic/` (verified
+2026-11-14: HTTP 200, and `dict/vol.bin` answers `application/octet-stream`).
+Backlog B1 (朗讀功能) and B3 (優化UI) remain `pending`; B2 (優化下載文件) is
+done as revisions 32–33.
 
 ## Revision 34 — locked 到 chips, 翻卡練習, immediate class pill
 
@@ -207,9 +208,10 @@ the unchanged word on back.
 - `node scripts/strike-probe.mjs`: the one-off screenshot probe that measured
   where the double strike is painted and confirmed the reading is unstruck.
   It is retained as a development diagnostic, not part of the pass/fail gate.
-- Git: branch `main`, tracking `github/main`; history starts at commit
-  `933c30b` (`init`). The GitHub Pages URL returned 404 when this document
-  was refreshed, so the site has not been published yet.
+- Git: branch `main`, tracking `github/main`
+  (`git@github.com:manesec-web/game-japanese-katsuyou-basic.git`); the working
+  tree matches the remote tip. History starts at commit `933c30b` (`init`).
+  The Pages site is live; it answered 404 only before the first deploy.
 - Dictionary cache is IndexedDB (`katsuyou-dict` / `lessons`, one record per
   lesson file); settings are in `localStorage` under `katsuyou-settings`.
 

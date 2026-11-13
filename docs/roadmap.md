@@ -50,10 +50,13 @@ Status values: `pending`, `in progress`, `done`, `blocked`.
 8. T7 quiz.
 9. T8 polish and verification.
 
-All T-entries are `done`. The remaining product step is to publish `output/` as
-the GitHub Pages site root; deployment notes are in `docs/development.md` and serving
-caveats in `docs/serving.md`. Backlog B1–B3 still need a spec entry before any
-new feature work (B3 remains open for further, unspecified UI work).
+All T-entries are `done`, and `output/` is published as the GitHub Pages site
+root at `https://manesec-web.github.io/game-japanese-katsuyou-basic/` (verified
+2026-11-14: HTTP 200, `dict/vol.bin` as `application/octet-stream`); deployment
+notes are in `docs/development.md` and serving caveats in `docs/serving.md`.
+Backlog B1 (朗讀功能) and B3 (優化UI) still need a spec entry before new feature
+work (B3 remains open for further, unspecified UI work); B2 (優化下載文件) was
+delivered as revisions 32–33.
 
 ## Revision boards
 
@@ -148,7 +151,7 @@ improvement is done.
 |---|--------|--------|----------------------------------|
 | B1 | 朗讀功能 | pending | Which text is spoken (the form alone, `vol`, `japanese`, or a `sentence`), which engine (the browser's own `SpeechSynthesis`, since the site still allows no backend and no model call), and where the control sits on reader, card and quiz |
 | B2 | 優化下載文件 | done (revision 32) | Settled: the 50 per-lesson files become one verified ZIP bundle; the per-lesson manifest, per-entry hashing, `app.boot` retry rule and `boot.checked / boot.total` all stay as they were |
-| B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–31 (including follow-up passes A/B, the 單詞目錄 screen of revision 30, and the revision-31 dictionary data pass); every new change is written into the spec's Look and motion section before code and the browser suite follow |
+| B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–34 (including follow-up passes A/B, the 單詞目錄 screen of revision 30, the revision-31 dictionary data pass and revisions 32–34); every new change is written into the spec's Look and motion section before code and the browser suite follow |
 
 ### Revision 15 — the paging window (requested 2026-11-10)
 
@@ -468,7 +471,7 @@ markdown file. The spec was amended before the code.
 
 ## Current status
 
-- Revisions 2–31 and follow-up passes A/B are `done`; the
+- Revisions 2–34 and follow-up passes A/B are `done`; the
   implementation was developed and verified over several incremental passes.
   Revision 31 is a data-only change: no `.vue`, command, engine or settings
   file was touched. The latest verification is recorded in `docs/progress.md`.
@@ -484,9 +487,9 @@ markdown file. The spec was amended before the code.
   documents have been resynced. Revisions 24–25's iOS rubber-band and
   dynamic-viewport behavior still needs real hardware verification; other than
   that and the spec-silent choices listed in `docs/progress.md`,
-  revisions 2–31 have no known deviation from `docs/spec.md`.
-- The GitHub Pages site is not live yet (the project URL returned 404 when
-  checked); the repository history starts at commit `933c30b`.
+  revisions 2–34 have no known deviation from `docs/spec.md`.
+- The GitHub Pages site is live (the project URL answered 404 only before the
+  first deploy); the repository history starts at commit `933c30b`.
 
 ## How to resume a future session
 
