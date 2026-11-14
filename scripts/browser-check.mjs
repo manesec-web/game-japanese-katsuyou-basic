@@ -1532,7 +1532,14 @@ try {
   await page.waitForSelector('.toc', { timeout: 5000 })
   await iconGlyphs(page, '單詞目錄')
   check('the word list title is 單詞目錄', (await readerTitle(page)) === '單詞目錄', await readerTitle(page))
-  check('the word list has no settings gear', (await page.locator('.toc .icon-button').count()) === 1)
+  const tocBarIcons = await page.evaluate(() =>
+    [...document.querySelectorAll('.toc .bar .icon-button')].map((b) => b.getAttribute('aria-label')),
+  )
+  check(
+    'the word list bar shows back and search, no settings gear',
+    tocBarIcons.join('|') === '返回|搜尋',
+    tocBarIcons.join('|'),
+  )
   const tocBar = await page.locator('.toc .bar').evaluate((el) => getComputedStyle(el).position)
   check('the word list bar is sticky', tocBar === 'sticky', tocBar)
   const toc = await page.evaluate(() => {
@@ -1575,6 +1582,78 @@ try {
       toc.noDividers,
     JSON.stringify(toc),
   )
+
+  // Search: the button toggles a pinned box, a query filters by word text or
+  // lesson number, and the clear icon restores the full list.
+  await page.locator('.toc .icon-button[aria-label="搜尋"]').click()
+  await page.waitForSelector('.toc-search', { timeout: 3000 })
+  const searchBox = await page.evaluate(() => {
+    const bar = document.querySelector('.toc .bar')
+    const box = document.querySelector('.toc-search')
+    return {
+      present: Boolean(box),
+      position: box ? getComputedStyle(box).position : null,
+      top: box ? getComputedStyle(box).top : null,
+      barBottom: bar.getBoundingClientRect().bottom,
+    }
+  })
+  check(
+    'the search button opens a pinned box below the bar',
+    searchBox.present && searchBox.position === 'sticky' && searchBox.top === '48px',
+    JSON.stringify(searchBox),
+  )
+  check('the search box carries a clear icon', (await page.locator('.toc-search-clear').count()) === 1)
+
+  // The run here is lesson 5 only, so 5 matches every row by lesson number even
+  // though no Japanese word contains that digit.
+  await page.locator('.toc-search-input').fill('5')
+  check(
+    'a lesson-number query lists every lesson-5 word',
+    (await page.locator('.toc-row').count()) === 3 && (await page.locator('.toc-lesson').count()) === 1,
+    `rows=${await page.locator('.toc-row').count()} headings=${await page.locator('.toc-lesson').count()}`,
+  )
+
+  await page.locator('.toc-search-input').fill(lessonFiveVerbs[1].dict)
+  const filteredWord = await page.locator('.toc-word').textContent()
+  check(
+    'a word query keeps only the matching row',
+    (await page.locator('.toc-row').count()) === 1 && filteredWord.trim() === lessonFiveVerbs[1].dict,
+    `rows=${await page.locator('.toc-row').count()} word=${filteredWord}`,
+  )
+
+  await page.locator('.toc-search-input').fill('不存在的詞')
+  check(
+    'no match shows the empty line and no rows',
+    (await page.locator('.toc-empty').textContent()).trim() === '沒有符合的單詞' &&
+      (await page.locator('.toc-row').count()) === 0 &&
+      (await page.locator('.toc-lesson').count()) === 0,
+    `empty=${await page.locator('.toc-empty').count()} rows=${await page.locator('.toc-row').count()}`,
+  )
+
+  await page.locator('.toc-search-clear').click()
+  check(
+    'the clear icon restores the full list and leaves the box open',
+    (await page.locator('.toc-row').count()) === 3 &&
+      (await page.locator('.toc-empty').count()) === 0 &&
+      (await page.locator('.toc-search-input').inputValue()) === '',
+    `rows=${await page.locator('.toc-row').count()}`,
+  )
+
+  await page.locator('.toc-search-input').fill(lessonFiveVerbs[2].dict)
+  await page.locator('.toc .icon-button[aria-label="搜尋"]').click()
+  check(
+    'closing the search box returns to the full list',
+    (await page.locator('.toc-search').count()) === 0 && (await page.locator('.toc-row').count()) === 3,
+    `box=${await page.locator('.toc-search').count()} rows=${await page.locator('.toc-row').count()}`,
+  )
+  await page.locator('.toc .icon-button[aria-label="搜尋"]').click()
+  await page.waitForSelector('.toc-search', { timeout: 3000 })
+  check(
+    're-opening the box resumes the filter',
+    (await page.locator('.toc-row').count()) === 1,
+    `rows=${await page.locator('.toc-row').count()}`,
+  )
+  await page.locator('.toc-search-clear').click()
   await page.locator('.toc .icon-button[aria-label="返回"]').click()
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   check(
