@@ -1784,3 +1784,42 @@ including the disabled chip + tooltip + 全選 skip + lock-follows-從 +
 no-sideways-overflow checks, a one-line 223px tooltip and a clamped right-edge
 tooltip, and the exposed next card's own class pill sampled *before* release.
 `vol/` bytes were not touched.
+
+## 2026-11-15 (revision 35)
+
+### Voice audio in the dictionary reader
+
+Requested: every word and sentence has a Japanese Opus recording in the
+`res-miles` release; tapping a word or sentence plays it on demand, sha256
+verified once per session, with a hover grey, a download pulse, a fixed grey
+during playback that fades when it ends, and 「該音頻暫時無法播放」 when it cannot.
+
+- **Naming.** `src/dict/md5.js` is a pure MD5 (Web Crypto omits it);
+  `src/dict/audio-name.js` names an entry from the middle 16 hex characters of
+  the MD5 of the Japanese text (`ありがとうございます` → `8df33dc365b1b6aa.opus`).
+  A word keys on `form.vol`, a sentence on `sentence.japanese`.
+- **Manifest.** `scripts/write-audio-manifest.mjs` generates/checks
+  `src/data/audio-manifest.json` (the 46 bin sha256s, distinct from
+  `dict-manifest.json`).
+- **Delivery.** GitHub release assets do not allow cross-origin fetch (verified
+  in headless Chromium: `TypeError: Failed to fetch`), so the bins ship
+  same-origin. `scripts/fetch-audio.mjs` runs in `prebuild` and downloads the 46
+  `lessonX.bin` files from the release into the gitignored `dict/resource/`,
+  verifies each against the release asset `digest` (sha256), and regenerates the
+  manifest; the Vite plugin copies them into `output/dict/resource/` and serves
+  them in dev. The GitHub Actions build step therefore downloads them
+  automatically at deploy time.
+- **Playback.** `src/dict/audio-bin.js` downloads + sha256-verifies a bin once
+  per page session (a reload re-verifies the stored copy without re-downloading);
+  `src/dict/audio-entry.js` decompresses the single Opus entry;
+  `src/dict/audio-player.js` plays it through an `<audio>` Blob URL.
+  `src/commands/audio.js` adds `audio.play` (`target`/`lesson`/`text`); failures
+  raise `audio-unavailable` and the reader shows the toast.
+- **UI.** Reader words and sentences are `.audio-tap` buttons: hover shows the
+  settings-button grey, the download pulses, playback holds the grey and fades
+  it back on end, and reduced motion skips the pulse. Chinese lines stay inert.
+
+Verified: `npm test` 43 files / 425 tests; `npm run build` (46 bins in
+`output/dict/resource/`); headless Chromium walk-through — first play downloads
+one bin, reaches `.audio-tap--playing`, ends and clears; second play makes 0 new
+requests; a sentence plays too. `vol/` bytes were not touched.

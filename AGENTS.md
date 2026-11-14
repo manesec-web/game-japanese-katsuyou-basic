@@ -4,6 +4,8 @@ This file is for the next AI that enters the repo. Do the tasks in order. The pr
 
 **Revision 34 (picker lock, naming, card pill):** the 到 chip that equals 從 is now a disabled button with the dictionary settings' locked-chip look and the tooltip `這和「從」的形式相同，不能選為「到」` (up to 320px wide, one line, viewport-clamped by the pure `src/ui/tooltip.js`), and 全選 skips it; the mode is renamed 翻卡學習 → 翻卡練習 in the UI and the current docs; and every mounted card paints its own tags, so the class pill of the card sliding in is drawn while the finger still holds the drag instead of appearing at release. The rules are pure in `src/dict/settings.js` (`targetChips`, `toggleTarget`); `.vue` files only render.
 
+**Revision 35 (voice audio in the reader):** every Japanese word (`form.vol`) and example sentence (`sentence.japanese`) in the dictionary reader is now tappable to play its recorded Opus audio. Clicking lazily downloads that lesson's `lessonX.bin` from the same origin (`dict/resource/`), sha256-verifies it once per page session, decompresses the single `<md5-mid16>.opus` entry and plays it; hover shows the settings-button grey, the download pulses normal↔grey, playback holds the grey and fades it back when the audio ends, and any failure (missing entry, network, hash mismatch, decode) shows 「該音頻暫時無法播放」. Chinese gloss/translations are not clickable. The bins are not committed: `npm run build` runs `scripts/fetch-audio.mjs`, which downloads the 46 bins from the `res-miles` GitHub release into gitignored `dict/resource/`, verifies each against the release asset `digest` (sha256), and regenerates `src/data/audio-manifest.json`; the Vite plugin then ships them same-origin in `output/dict/resource/`. GitHub release assets do not allow cross-origin fetch (CORS), so this build-time download is the delivery mechanism. Rules live in `src/dict/md5.js`, `audio-name.js`, `audio-bin.js`, `audio-entry.js`, `audio-player.js`, `src/study/reader-audio.js` and `src/commands/audio.js`; `.vue` files only render.
+
 **Revision 33 (loading bar):** the bar now shows the archive download itself, not only lesson verification. While `dict/vol.bin` streams, the bar fills from the share of lessons the cache check verified up to 100% in proportion to bytes received (against `Content-Length`); when the bytes arrive it holds at 100% while the extracted entries are verified. It never moves backwards, a retry restarts the download share at the already-verified percentage, and no new visible copy was added. The rule is pure in `src/ui/boot-progress.js`; `LoadingView.vue` only renders it.
 
 **Revision 32 (download path):** the build no longer publishes 50 per-lesson JSON files. It verifies `vol/` against the manifest and packs it into one deflate ZIP, `dict/vol.bin` (~550 KB instead of 4.9 MB, one request; a ZIP published without the `.zip` suffix and served as `application/octet-stream`, because download-helper browser extensions hijack `.zip` URLs), which the browser decompresses with `unzipit` and verifies entry by entry against the unchanged manifest before writing to IndexedDB. Boot finds missing/corrupt lessons first, then downloads the archive once (retried once), so `boot.checked / boot.total` still means finished lessons / 50. See `docs/spec.md` How the dictionary reaches the browser and `docs/architecture.md` Dictionary delivery.
@@ -87,10 +89,11 @@ The site builds into `output/`, and that build is live at
 Day-to-day status, verified commands and known limitations live in
 `docs/progress.md`; `README.md` is the user-facing overview. The tasks below
 stay as the original build plan and as the acceptance checklist — do not reopen
-them without a spec change. Two future items sit in `docs/roadmap.md` as a
-backlog (B1 朗讀功能 and B3 優化UI), each needing a spec entry first; B2
-(優化下載文件) was delivered as revisions 32–33, and the specific requests
-recorded in revisions 2–34 have been delivered.
+them without a spec change. One future item sits in `docs/roadmap.md` as a
+backlog (B3 優化UI), needing a spec entry first; B2
+(優化下載文件) was delivered as revisions 32–33, B1 朗讀功能 was delivered as
+revision 35, and the specific requests recorded in revisions 2–35 have been
+delivered.
 
 Behavior lives in `docs/spec.md`. Read the matching section before you build that piece. If the spec does not cover a product behavior, stop and ask. Do not invent a rule.
 
@@ -128,7 +131,9 @@ scripts/write-sha256.mjs      reads vol/, writes the sha256 manifest
 scripts/zip.mjs              deterministic deflate ZIP writer
 scripts/vol-archive.mjs      verifies vol/ against the manifest, builds vol.bin
 scripts/write-vol-archive.mjs  CLI for the archive (--check, --out)
-scripts/browser-check.mjs     end-to-end walk-through of the built site
+scripts/write-audio-manifest.mjs  writes/checks src/data/audio-manifest.json
+scripts/fetch-audio.mjs    downloads the 46 audio bins from the release into
+                           dict/resource/ (gitignored), sha256-verified
 scripts/browser-check.mjs     end-to-end walk-through of the built site
 src/main.js
 src/engine/registry.js        command registry and dispatch
@@ -142,9 +147,16 @@ src/dict/quiz.js              quiz keyboard and grading (pure)
 src/dict/ruby.js              kanji / reading alignment
 src/dict/forms.js             the 15 form ids and their on-screen names
 src/dict/settings.js          settings defaults and validation
+src/dict/md5.js               pure MD5 (Web Crypto omits it)
+src/dict/audio-name.js        <md5-mid16>.opus file names
+src/dict/audio-bin.js         ensure a lesson bin is downloaded + sha256-verified
+src/dict/audio-entry.js       decompress the single Opus entry
+src/dict/audio-player.js      play an Opus entry through <audio>
 src/study/*.js                item lists, shuffle, highlight, results (pure)
 src/data/dict-manifest.json   generated by write-sha256, commit it
+src/data/audio-manifest.json  audio bin sha256s, regenerated by fetch-audio
 src/storage/idb.js            IndexedDB dictionary cache (read/write/remove)
+src/storage/audio-idb.js      IndexedDB cache for the audio bins
 src/storage/settings.js       localStorage settings
 src/ui/store.js               connects the session to Vue reactivity
 src/ui/boot-progress.js       loading-bar percentage (cache check, download bytes,
@@ -155,7 +167,9 @@ src/components/*.vue
 src/styles/app.css
 index.html                    document title + relative logo icon links
 vite.config.js                build.outDir = "output", base = "/game-japanese-katsuyou-basic/"
+dict/resource/                gitignored local cache of the 46 lessonX.bin files
 output/                       build output, do not commit
+output/dict/resource/         the same bins shipped same-origin in the build
 ```
 
 There is no `public/` directory; the dictionary is copied from `vol/` into
@@ -184,6 +198,7 @@ There is no `public/` directory; the dictionary is copied from `vol/` into
 | `quiz.submit` | Grade the answer. Rules are in the spec |
 | `quiz.advance` | Move on after the answer has been revealed and the user presses next |
 | `settings.patch` | Merge settings. An unknown field rejects the whole patch and leaves state unchanged |
+| `audio.play` | Play the audio for a Japanese word or sentence. `params.target` (stable element id), `params.lesson`, `params.text`. Downloads + sha256-verifies the lesson bin once per session, decompresses the one Opus entry and plays; any failure raises `audio-unavailable` |
 
 Screen names are only `loading`, `home`, `picker`, `reader`, `toc`, `card`, `quiz`, and `settings`. `picker` and `settings` use `session.mode` (`dict`, `card`, or `quiz`) to choose their content.
 

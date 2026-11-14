@@ -211,6 +211,16 @@ Above 550px the reader does not page by gesture, so text can be selected and cop
 
 The footer has two controls labeled `上一個` and `下一個`; they perform the same moves and are disabled at the first and last item. The footer is pinned to the bottom of the column, like the picker's 開始. It keeps the column colour fading to transparent above the controls, with no hairline underline, and the fade band lives inside the footer's top padding so the two buttons always sit on solid colour and are never washed out. Its buttons are 50px tall, with 10px of column colour under them, and the height keeps them clear of the window edge. The same treatment applies to the picker's 開始 footer and the card controls, where the primary action is 50px tall.
 
+### Voice audio in the reader
+
+Every Japanese word (`form.vol`) and every example sentence (`sentence.japanese`) in the reader is tappable to play its recorded Opus audio. The Chinese gloss, the Chinese sentence line and any note are not tappable and show no hover. On a mouse, hovering a word or sentence shows the same grey background as the settings button (`rgba(36, 33, 58, 0.06)`) and a pointer cursor.
+
+A tap plays that lesson's audio bin, which is fetched from the same origin, `dict/resource/lessonX.bin` (the build downloads the bins from the `res-miles` release into this gitignored directory, so the browser never crosses an origin — GitHub release assets do not allow cross-origin fetch). The bin stays zipped in IndexedDB, in a separate `katsuyou-audio` database; only the one `<16-hex>.opus` entry a word or sentence names is decompressed and played. The entry name is the middle 16 hex characters of the MD5 of the Japanese text — the first 8 and last 8 hex characters of the 32-character digest are dropped, so `ありがとうございます` → `8df33dc365b1b6aa.opus`. A word keys on `vol`, a sentence keys on `japanese`.
+
+After download the bin's sha256 is checked against `src/data/audio-manifest.json`, the audio bins' own hashes (distinct from the dictionary's `dict-manifest.json`). Each lesson is verified at most once per page session: a later tap reuses the verified copy, and a reload re-verifies the stored copy without re-downloading. A missing entry, a failed download, a hash mismatch or a decode failure shows 「該音頻暫時無法播放」.
+
+The visual states are gradual. While a bin is downloading, the tapped text and its background pulse between the normal colour and the grey. During playback the grey is fixed. When playback ends the grey fades back to normal. Only one word or sentence is tinted at a time: starting a new playback clears the previous one's grey at once. Under `prefers-reduced-motion: reduce` there is no pulse and the grey appears and disappears without motion, but the audio still plays.
+
 ### 單詞目錄
 
 The reader opens this screen from the 目錄 button. It lists the words of the current run — the same frozen list the reader pages through — so its order matches 上一個 / 下一個 and it never re-reads the settings when it opens.

@@ -6,6 +6,7 @@ import { specs as studySpecs } from './study.js'
 import { specs as dictSpecs } from './dict.js'
 import { specs as cardSpecs } from './card.js'
 import { specs as quizSpecs } from './quiz.js'
+import { specs as audioSpecs } from './audio.js'
 
 export function allSpecs(deps = {}) {
   return [
@@ -17,5 +18,6 @@ export function allSpecs(deps = {}) {
     ...dictSpecs(deps),
     ...cardSpecs(deps),
     ...quizSpecs(deps),
+    ...audioSpecs(deps),
   ]
 }

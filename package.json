@@ -4,12 +4,12 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/write-sha256.mjs --check",
+    "predev": "node scripts/write-sha256.mjs --check && node scripts/write-audio-manifest.mjs --check",
     "dev": "vite",
-    "prebuild": "node scripts/write-sha256.mjs --check",
+    "prebuild": "node scripts/write-sha256.mjs --check && node scripts/fetch-audio.mjs",
     "build": "vite build",
     "preview": "vite preview",
-    "pretest": "node scripts/write-sha256.mjs --check",
+    "pretest": "node scripts/write-sha256.mjs --check && node scripts/write-audio-manifest.mjs --check",
     "test": "vitest run",
     "test:watch": "vitest"
   },

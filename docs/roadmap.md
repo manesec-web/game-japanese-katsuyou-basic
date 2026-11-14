@@ -54,9 +54,9 @@ All T-entries are `done`, and `output/` is published as the GitHub Pages site
 root at `https://manesec-web.github.io/game-japanese-katsuyou-basic/` (verified
 2026-11-14: HTTP 200, `dict/vol.bin` as `application/octet-stream`); deployment
 notes are in `docs/development.md` and serving caveats in `docs/serving.md`.
-Backlog B1 (朗讀功能) and B3 (優化UI) still need a spec entry before new feature
-work (B3 remains open for further, unspecified UI work); B2 (優化下載文件) was
-delivered as revisions 32–33.
+Backlog B1 (朗讀功能) was delivered as revision 35; B3 (優化UI) still
+needs a spec entry before new feature work (B3 remains open for further,
+unspecified UI work); B2 (優化下載文件) was delivered as revisions 32–33.
 
 ## Revision boards
 
@@ -141,15 +141,16 @@ and the first-card resistance from revision 13a).
 
 ### Backlog — requested next work
 
-Requested by the user on 2026-11-11. B1 still needs a spec entry before
-start; B2 was specified and delivered as revision 32. Follow-up passes A/B and revision 23 specified and delivered concrete
-優化UI complaints, but the broader B3 backlog stays `pending` for any further,
-unspecified UI work; it is not a blanket claim that every possible UI
-improvement is done.
+Requested by the user on 2026-11-11. B1 was specified and delivered as
+revision 35 (recorded Opus audio, not the browser `SpeechSynthesis`); B2 was
+specified and delivered as revision 32. Follow-up passes A/B and revision 23
+specified and delivered concrete 優化UI complaints, but the broader B3 backlog
+stays `pending` for any further, unspecified UI work; it is not a blanket claim
+that every possible UI improvement is done.
 
 | # | Change | Status | What the spec has to settle first |
 |---|--------|--------|----------------------------------|
-| B1 | 朗讀功能 | pending | Which text is spoken (the form alone, `vol`, `japanese`, or a `sentence`), which engine (the browser's own `SpeechSynthesis`, since the site still allows no backend and no model call), and where the control sits on reader, card and quiz |
+| B1 | 朗讀功能 | done (revision 35) | Settled: recorded Opus audio for every word and sentence in the dictionary reader only, named by the middle 16 hex of the MD5 of the Japanese text, downloaded same-origin at build time from the `res-miles` release and sha256-verified once per session; 翻卡練習 and 測驗 stay out of scope |
 | B2 | 優化下載文件 | done (revision 32) | Settled: the 50 per-lesson files become one verified ZIP bundle; the per-lesson manifest, per-entry hashing, `app.boot` retry rule and `boot.checked / boot.total` all stay as they were |
 | B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–34 (including follow-up passes A/B, the 單詞目錄 screen of revision 30, the revision-31 dictionary data pass and revisions 32–34); every new change is written into the spec's Look and motion section before code and the browser suite follow |
 
@@ -476,9 +477,10 @@ markdown file. The spec was amended before the code.
   Revision 31 is a data-only change: no `.vue`, command, engine or settings
   file was touched. The latest verification is recorded in `docs/progress.md`.
 - Backlog B2 (優化下載文件) is `done` as revisions 32–33 (single verified
-  archive, `.bin` naming, download progress bar). Revision 34 delivers concrete
-  優化UI items, but B3 stays `pending` for any further, unspecified UI work.
-  B1 (朗讀功能) still needs a spec entry before code. Revisions 2–34 cover
+  archive, `.bin` naming, download progress bar). Backlog B1 (朗讀功能) is
+  `done` as revision 35 (reader word + sentence voice audio). Revision 34
+  delivers concrete 優化UI items, but B3 stays `pending` for any further,
+  unspecified UI work. Revisions 2–35 cover
   specific, specified requests. The revision-31 documentation sync also updated `README.md`,
   `docs/serving.md`, `docs/architecture.md`, `AGENTS.md`, `docs/spec.md`,
   `docs/progress.md` and `docs/changelog.md`; `docs/audit/*.md` remain
@@ -508,7 +510,7 @@ markdown file. The spec was amended before the code.
 ## Verification commands
 
 ```bash
-npm test                                # Vitest unit tests (35 files / 370)
+npm test                                # Vitest unit tests (43 files / 425)
 npm run build                           # static build into output/ (dict/vol.bin)
 node scripts/write-sha256.mjs --check   # manifest consistency
 node scripts/write-vol-archive.mjs --check  # archive builds from verified vol/

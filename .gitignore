@@ -1,7 +1,8 @@
+resources/*
+dict/resource/
 node_modules/
 output/
 dist/
 *.local
 .DS_Store
 *.pi/
-review-tmp/

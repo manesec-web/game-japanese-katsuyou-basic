@@ -1,14 +1,14 @@
 # Progress
 
-Last updated: 2026-11-14 (revision 34: locked 到 chips, the 翻卡練習 rename and
-the card class pill that now arrives with the card).
+Last updated: 2026-11-15 (revision 35: tap-to-play voice audio for every word
+and sentence in the dictionary reader).
 
-**Status: complete.** T1–T8 are done and revisions 2–34 have landed and been
+**Status: complete.** T1–T8 are done and revisions 2–35 have landed and been
 verified, including follow-up UI passes A/B. The build is live at
 `https://manesec-web.github.io/game-japanese-katsuyou-basic/` (verified
 2026-11-14: HTTP 200, and `dict/vol.bin` answers `application/octet-stream`).
-Backlog B1 (朗讀功能) and B3 (優化UI) remain `pending`; B2 (優化下載文件) is
-done as revisions 32–33.
+Backlog B1 (朗讀功能) is done as revision 35; B3 (優化UI) remains `pending`;
+B2 (優化下載文件) is done as revisions 32–33.
 
 ## Revision 34 — locked 到 chips, 翻卡練習, immediate class pill
 
@@ -27,6 +27,33 @@ done as revisions 32–33.
 - Verification: `npm test` 35 files / **370 tests**; `npm run build`;
   `node scripts/browser-check.mjs` **597 checks**, 0 failures (the seeded quiz
   moves the count by one). `vol/` untouched.
+
+## Revision 35 — tap-to-play voice audio in the reader
+
+- Every Japanese word (`form.vol`) and example sentence (`sentence.japanese`)
+  in the dictionary reader is tappable to play its recorded Opus audio; Chinese
+  lines are not. Hover shows the settings-button grey; the download pulses
+  normal↔grey; playback holds the grey and fades it back on end; failures show
+  「該音頻暫時無法播放」. Reduced motion skips the pulse but audio still plays.
+- Entry names are the middle 16 hex of the MD5 of the Japanese text
+  (`src/dict/md5.js` + `src/dict/audio-name.js`); a word keys on `vol`, a
+  sentence on `japanese`. `src/data/audio-manifest.json` holds the 46 bin
+  sha256s, distinct from `dict-manifest.json`.
+- GitHub release assets do not allow cross-origin fetch (verified in headless
+  Chromium), so the bins ship same-origin: `scripts/fetch-audio.mjs` (prebuild)
+  downloads the 46 `lessonX.bin` files from the release into gitignored
+  `dict/resource/`, verifies each against the release asset `digest`, and
+  regenerates the manifest; the Vite plugin copies them into
+  `output/dict/resource/`. The GitHub Actions build step downloads them
+  automatically at deploy time.
+- Playback (`src/dict/audio-bin.js`, `audio-entry.js`, `audio-player.js`,
+  `src/commands/audio.js`): download + sha256 verify once per page session,
+  decompress the single Opus entry, play via an `<audio>` Blob URL. A reload
+  re-verifies the stored copy without re-downloading.
+- Verification: `npm test` 43 files / **425 tests**; `npm run build` (46 bins
+  in `output/dict/resource/`); headless Chromium walk-through — first play
+  downloads one bin, reaches `.audio-tap--playing`, ends and clears; second
+  play makes 0 new requests; a sentence plays too. `vol/` untouched.
 
 ## Revision 33 — the loading bar shows the download
 
@@ -189,13 +216,15 @@ the unchanged word on back.
 
 - Vue 3.5 + Vite 7.3 + Vitest 3 static app. Verified with Node v26.4.0 and
   npm 11.18.0; Vite 7 requires Node `^20.19.0` or `>=22.12.0`.
-- `npm test`: 35 files, **370 tests passing**. `pretest` verifies the 50-lesson
-  SHA-256 manifest first.
+- `npm test`: 43 files, **425 tests passing**. `pretest` verifies the 50-lesson
+  SHA-256 manifest and the 46-bin audio manifest first.
 - `npm run build`: `output/index.html`, `output/assets/` (one JS + one CSS
   bundle plus the four hashed logo icons — `favicon*.ico`, `favicon-32*.png`,
-  `favicon-192*.png`, `apple-touch-icon*.png`) and `output/dict/vol.bin` with
+  `favicon-192*.png`, `apple-touch-icon*.png`), `output/dict/vol.bin` with
   **50** entries (549 KB; no per-lesson JSON, a ZIP served as
-  `application/octet-stream`). `output/` is gitignored.
+  `application/octet-stream`), and `output/dict/resource/` with the **46**
+  audio bins downloaded from the `res-miles` release by `prebuild`. `output/`
+  and `dict/resource/` are gitignored.
 - `node scripts/browser-check.mjs`: **597 checks passing on the revision-34
   final run** (headless Chromium, 390×844 with 550/551/800/900 width probes,
   plus a touch context for the zoom lock, thumb-drag/proximity assertions,
@@ -218,13 +247,14 @@ the unchanged word on back.
 ## Verification as of this refresh
 
 ```bash
-npm test                                # 35 files, 370 tests passed
-npm run build                           # manifest ok; output/index.html + output/dict/vol.bin (50 entries)
-ls output/dict                          # vol.bin
-node scripts/browser-check.mjs          # browser check passed (597 checks)
+npm test                                # 43 files, 425 tests passed
+npm run build                           # manifests ok; output/index.html + output/dict/vol.bin + 46 audio bins
+node scripts/fetch-audio.mjs            # 46 bins up to date (downloads any changed one from the release)
+ls output/dict                          # vol.bin resource/
+node scripts/browser-check.mjs          # browser check passed (597 checks; audio verified by a separate walk-through)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 node scripts/write-sha256.mjs --check   # manifest ok: 50 lessons
-node scripts/write-vol-archive.mjs --check  # checked 50 lessons: 4.65 MB -> 549 KB (11.5%)
+node scripts/write-audio-manifest.mjs --check  # audio manifest ok: 46 bins
 ```
 
 ## History in one line each

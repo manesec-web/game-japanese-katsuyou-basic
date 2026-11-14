@@ -10,6 +10,7 @@ import { prefersReducedMotion, slideRow } from '../ui/motion.js'
 import { PAGING_GAP, READER_WINDOW } from '../ui/window.js'
 import { usePagingWindow } from '../ui/paging-window.js'
 import { readerEntries } from '../study/window-views.js'
+import { audioState, sentenceAudioTarget, wordAudioTarget } from '../study/reader-audio.js'
 
 const store = inject('store')
 const session = store.session
@@ -47,8 +48,25 @@ const paging = computed(() => held.value || sliding.value)
 // `window.scrollTo`, and a local of that name would shadow it.
 const pagingSlotRow = usePagingWindow(session, READER_WINDOW)
 const slots = computed(() =>
-  readerEntries(session.items, pagingSlotRow.value, session.settings.dict),
+  readerEntries(session.items, pagingSlotRow.value, session.settings.dict).map((entry) => {
+    if (!entry.item) return entry
+    return {
+      ...entry,
+      forms: entry.forms.map((form) => ({
+        ...form,
+        wordAudio: wordAudioTarget(entry, form),
+        sentenceAudio: (form.data?.sentence ?? []).map((sentence, index) =>
+          sentenceAudioTarget(entry, form, index),
+        ),
+      })),
+    }
+  }),
 )
+
+function stateClass(target) {
+  const state = audioState(session.audio.states, target)
+  return state ? `audio-tap--${state}` : ''
+}
 
 // A new word opens at the top of the page: the default form is the first block.
 watch(
@@ -135,19 +153,31 @@ onBeforeUnmount(() => {
 })
 
 function onDown(event) {
-  // Above 550px the page shows its background: a desktop reader where text
-  // selection matters more than swiping. Only the footer buttons page there.
-  if (!swipeEnabled(window.innerWidth)) return
   if (event.pointerType === 'mouse' && event.button !== 0) return
   if (paging.value) return
+  // A word or sentence is tappable to play its audio. Read its target before
+  // pointer capture can redirect later events: a tap plays, a drag still pages.
+  const audioEl =
+    event.target instanceof Element ? event.target.closest('[data-target]') : null
   pointer = {
     x: event.clientX,
     y: event.clientY,
     axis: null,
     lastDx: 0,
     width: rowWidth(),
+    audio: audioEl
+      ? {
+          target: audioEl.getAttribute('data-target'),
+          lesson: Number(audioEl.getAttribute('data-lesson')),
+          text: audioEl.getAttribute('data-text') ?? '',
+        }
+      : null,
   }
-  event.currentTarget.setPointerCapture?.(event.pointerId)
+  // Above 550px the page shows its background: text selection matters more than
+  // swiping, so only the footer buttons page there and nothing is captured.
+  if (swipeEnabled(window.innerWidth)) {
+    event.currentTarget.setPointerCapture?.(event.pointerId)
+  }
 }
 
 function onMove(event) {
@@ -158,8 +188,9 @@ function onMove(event) {
     const axis = dragAxis(dx, dy)
     if (!axis) return
     pointer.axis = axis
-    if (axis === 'x') held.value = true
+    if (axis === 'x' && swipeEnabled(window.innerWidth)) held.value = true
   }
+  if (!swipeEnabled(window.innerWidth)) return
   if (pointer.axis !== 'x') return
   pointer.lastDx = dx
   // Under reduced motion the drag stays invisible: the release still changes
@@ -176,9 +207,15 @@ function onMove(event) {
 
 function onUp() {
   if (!pointer) return
-  const { axis, lastDx } = pointer
+  const { axis, lastDx, audio } = pointer
   pointer = null
   held.value = false
+  if (axis === null) {
+    // A tap with no travel plays the word or sentence under the finger.
+    if (audio) store.send('audio.play', audio)
+    return
+  }
+  if (!swipeEnabled(window.innerWidth)) return
   if (axis !== 'x') return
   // The finger travel names the direction. A wall — the first word backward,
   // the last word forward — names nothing at any distance.
@@ -191,6 +228,11 @@ function onUp() {
     return
   }
   settleBack()
+}
+
+function onLeave() {
+  pointer = null
+  held.value = false
 }
 
 function back() {
@@ -222,7 +264,7 @@ function openToc() {
       @pointermove="onMove"
       @pointerup="onUp"
       @pointercancel="onUp"
-      @pointerleave="onUp"
+      @pointerleave="onLeave"
     >
       <div
         ref="rowEl"
@@ -249,14 +291,21 @@ function openToc() {
               :aria-current="form.isDefault ? 'true' : undefined"
             >
               <h2 class="form-name">{{ form.name }}</h2>
-              <div class="word" :class="{ 'word--error': form.errorUsage }">
+              <button
+                class="word audio-tap"
+                :class="[stateClass(form.wordAudio.target), { 'word--error': form.errorUsage }]"
+                type="button"
+                :data-target="form.wordAudio.target"
+                :data-lesson="form.wordAudio.lesson"
+                :data-text="form.wordAudio.text"
+              >
                 <RubyWord
                   :text="form.data.vol"
                   :reading="form.data.japanese"
                   :show-reading="showReading"
                   :error="form.errorUsage"
                 />
-              </div>
+              </button>
               <p class="gloss">{{ form.data.chinese }}</p>
               <div v-if="form.isFirst" class="tags">
                 <span class="tag">{{ groupLabel(form.data.group) }}</span>
@@ -274,11 +323,19 @@ function openToc() {
                   :key="at"
                   class="sentence"
                 >
-                  <p class="sentence-ja" lang="ja"><span
+                  <button
+                    class="sentence-ja audio-tap"
+                    :class="stateClass(form.sentenceAudio[at].target)"
+                    type="button"
+                    lang="ja"
+                    :data-target="form.sentenceAudio[at].target"
+                    :data-lesson="form.sentenceAudio[at].lesson"
+                    :data-text="form.sentenceAudio[at].text"
+                  ><span
                     v-for="(part, index) in sentenceParts(sentence, form.data.vol)"
                     :key="index"
                     :class="{ 'sentence-hit': part.highlight }"
-                  >{{ part.text }}</span></p>
+                  >{{ part.text }}</span></button>
                   <p class="sentence-zh">{{ sentence.chinese }}</p>
                   <p v-if="sentence.note" class="note-line">{{ sentence.note }}</p>
                 </div>
@@ -309,6 +366,10 @@ function openToc() {
         <ChevronRight :size="18" aria-hidden="true" />
       </button>
     </footer>
+
+    <transition name="toast">
+      <div v-if="session.audio.hint" class="toast" role="status">{{ session.audio.hint }}</div>
+    </transition>
   </section>
 </template>
 
@@ -441,10 +502,26 @@ function openToc() {
   color: var(--ink-soft);
 }
 
+/* A word or Japanese sentence is a tap target for its audio. The tint uses the
+   same grey as the settings icon-button hover. */
+.audio-tap {
+  font-family: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 300ms ease;
+}
+
 .word {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 2px auto 0;
+  padding: 4px 12px;
   font-size: 2rem;
   font-weight: 600;
-  margin-top: 2px;
   text-align: center;
 }
 
@@ -493,9 +570,14 @@ function openToc() {
 }
 
 .sentence-ja {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
   margin: 0;
+  padding: 2px 8px;
   font-size: 0.98rem;
   line-height: 1.65;
+  text-align: left;
 }
 
 /* The word under study, marked where it appears in the example sentence. */
@@ -506,8 +588,46 @@ function openToc() {
 
 .sentence-zh {
   margin: 2px 0 0;
+  padding-left: 8px;
   font-size: 0.84rem;
   color: var(--ink-soft);
+}
+
+/* Hover shows on a mouse pointer only, so a touch does not leave a stuck tint.
+   Playback holds the same grey; download pulses it. The background-color
+   transition fades the tint back out when the state is removed. */
+@media (hover: hover) and (pointer: fine) {
+  .audio-tap:hover {
+    background: rgba(36, 33, 58, 0.06);
+  }
+}
+
+.audio-tap--playing {
+  background: rgba(36, 33, 58, 0.06);
+}
+
+.audio-tap--downloading {
+  animation: audio-pulse 1s ease-in-out infinite;
+}
+
+@keyframes audio-pulse {
+  0%,
+  100% {
+    background: transparent;
+  }
+  50% {
+    background: rgba(36, 33, 58, 0.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .audio-tap {
+    transition: none;
+  }
+  .audio-tap--downloading {
+    animation: none;
+    background: rgba(36, 33, 58, 0.06);
+  }
 }
 
 /* A note is laid out like the example sentences — same reading edge, not
@@ -550,5 +670,31 @@ function openToc() {
   align-items: center;
   justify-content: center;
   gap: 6px;
+}
+
+.toast {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  box-shadow: 0 10px 24px rgba(20, 16, 50, 0.25);
+  z-index: 30;
+}
+
+.toast-enter-active,
+.toast-leave-active {
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.toast-enter-from,
+.toast-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -64px);
 }
 </style>

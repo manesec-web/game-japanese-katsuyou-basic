@@ -906,10 +906,14 @@ try {
   )
   const dictDir = fs.readdirSync(path.resolve('output/dict'))
   check(
-    'output/dict holds only vol.bin',
-    dictDir.length === 1 && dictDir[0] === 'vol.bin',
+    'output/dict holds vol.bin and the audio resource dir',
+    dictDir.length === 2 && dictDir.includes('vol.bin') && dictDir.includes('resource'),
     dictDir.join(','),
   )
+  const audioBins = fs
+    .readdirSync(path.resolve('output/dict/resource'))
+    .filter((name) => name.endsWith('.bin'))
+  check('output/dict/resource holds the 46 audio bins', audioBins.length === 46, `bins=${audioBins.length}`)
 
   const column = await page.locator('.column').boundingBox()
   check('column is at most 480px wide', column.width <= 480.5, `width=${column.width}`)

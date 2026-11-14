@@ -78,9 +78,52 @@ function dictionaryPlugin() {
   }
 }
 
+// Serves and publishes the audio bins. They are downloaded into dict/resource/
+// by `npm run build` (prebuild -> scripts/fetch-audio.mjs), gitignored, and
+// shipped same-origin under /dict/resource/ so the browser never crosses an
+// origin — GitHub release assets do not allow CORS.
+const AUDIO_RESOURCE_DIR = path.join(rootDir, 'dict', 'resource')
+const AUDIO_URL = /^\/dict\/resource\/([^/]+\.bin)$/
+
+function audioResourcePlugin() {
+  return {
+    name: 'katsuyou-audio-resource',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const match = AUDIO_URL.exec(dictPathname(req.url))
+        if (!match) return next()
+        const file = match[1]
+        const full = path.join(AUDIO_RESOURCE_DIR, file)
+        if (!fs.existsSync(full)) {
+          res.statusCode = 404
+          res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+          return res.end('audio resource missing; run node scripts/fetch-audio.mjs')
+        }
+        const bytes = fs.readFileSync(full)
+        res.setHeader('Content-Type', 'application/octet-stream')
+        res.setHeader('Content-Length', String(bytes.length))
+        res.setHeader('Cache-Control', 'no-cache')
+        res.end(bytes)
+      })
+    },
+    writeBundle(options) {
+      const outDir = options.dir
+      const target = path.join(outDir, 'dict', 'resource')
+      fs.mkdirSync(target, { recursive: true })
+      const files = fs.existsSync(AUDIO_RESOURCE_DIR)
+        ? fs.readdirSync(AUDIO_RESOURCE_DIR).filter((name) => name.endsWith('.bin'))
+        : []
+      for (const file of files) {
+        fs.copyFileSync(path.join(AUDIO_RESOURCE_DIR, file), path.join(target, file))
+      }
+      console.log(`dict/resource: ${files.length} audio bins`)
+    },
+  }
+}
+
 export default defineConfig({
   base: BASE,
-  plugins: [vue(), dictionaryPlugin()],
+  plugins: [vue(), dictionaryPlugin(), audioResourcePlugin()],
   build: {
     outDir: 'output',
     emptyOutDir: true,

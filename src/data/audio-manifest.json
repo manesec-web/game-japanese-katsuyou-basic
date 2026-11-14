@@ -1,0 +1,237 @@
+{
+  "algorithm": "sha256",
+  "source": "github release res-miles",
+  "total": 46,
+  "lessons": [
+    {
+      "lesson": 2,
+      "file": "lesson2.bin",
+      "sha256": "d72467368b7e9421d91c348cbaab6715f6f284fcbdfd4987812207028bd543aa"
+    },
+    {
+      "lesson": 4,
+      "file": "lesson4.bin",
+      "sha256": "7d6654c67fe7a134a15c51cde2fe2ae3cfc0146da6010b2d07eb8d0a61882c16"
+    },
+    {
+      "lesson": 5,
+      "file": "lesson5.bin",
+      "sha256": "f903e8497479fe4a4dc258d5bbd656a2077f3d120e76001d128840626015349b"
+    },
+    {
+      "lesson": 6,
+      "file": "lesson6.bin",
+      "sha256": "dc13d4401bcda542dc9bf7782afaeb4f76162b53f7f122be6fd319ce3f7631b6"
+    },
+    {
+      "lesson": 7,
+      "file": "lesson7.bin",
+      "sha256": "ffc7e931e51d46a73df419ecd08b40affc22126c9bb66287469268b909f9a1c7"
+    },
+    {
+      "lesson": 9,
+      "file": "lesson9.bin",
+      "sha256": "05548f2e43ce31edf83393f99c72e5e8285309745406d9f83494a184deb8a544"
+    },
+    {
+      "lesson": 10,
+      "file": "lesson10.bin",
+      "sha256": "2fcc8263daa42d496a1113755ad5d2e165e0185e71acdd173495d91d18552d67"
+    },
+    {
+      "lesson": 11,
+      "file": "lesson11.bin",
+      "sha256": "ce4ce7e1c27794dac232aa425dc22721250caaef785b62639479125579cf5c13"
+    },
+    {
+      "lesson": 13,
+      "file": "lesson13.bin",
+      "sha256": "59498ebdc91f822599a399782b8736ec7d27c978131e3952c5de5ef721dc7ce8"
+    },
+    {
+      "lesson": 14,
+      "file": "lesson14.bin",
+      "sha256": "8fd2b7cb3da9c7d9f77c6aad1324db4cb04cdcb6e886d29c88eee83e6578e837"
+    },
+    {
+      "lesson": 15,
+      "file": "lesson15.bin",
+      "sha256": "9f987143213b2c9f72521f7b78ef29c7de4cbffa3fb8ed8388b704bcff2e48b9"
+    },
+    {
+      "lesson": 16,
+      "file": "lesson16.bin",
+      "sha256": "4075cac7414b495308a3cd5b2c626de2d4fe325c25ae195cf2db5efb6ca4e6eb"
+    },
+    {
+      "lesson": 17,
+      "file": "lesson17.bin",
+      "sha256": "2304ec5c86d17943338b3c87d158ffa26be245f435dfbb8f745ddaebdf759c32"
+    },
+    {
+      "lesson": 18,
+      "file": "lesson18.bin",
+      "sha256": "f64cd793f23cbe4a5fcd94ec78b135bc43ea1c81b119baa4896b73b1a86fb5bf"
+    },
+    {
+      "lesson": 19,
+      "file": "lesson19.bin",
+      "sha256": "fe2dfb1157c3c0932bcf67fc2b78115296efd4a0b180cb4f0971eb53b879f649"
+    },
+    {
+      "lesson": 20,
+      "file": "lesson20.bin",
+      "sha256": "f2f364371cec1cfd2804352095b932d521556dc6339b680d266b4959ade3fb35"
+    },
+    {
+      "lesson": 21,
+      "file": "lesson21.bin",
+      "sha256": "d739380ace6988c88b88deaf778791d18d4c83d86e807939c51a08821d5d4e53"
+    },
+    {
+      "lesson": 22,
+      "file": "lesson22.bin",
+      "sha256": "bfe7110c284267a3c0cdd45ec756b79b4701014f6da49f1d8f0a1c115678c0be"
+    },
+    {
+      "lesson": 23,
+      "file": "lesson23.bin",
+      "sha256": "59d64d07d297675112ffd7466d6a86cdb23d7e45c65196c6c733be43fe5e84af"
+    },
+    {
+      "lesson": 24,
+      "file": "lesson24.bin",
+      "sha256": "3fa12b27423b74ea11ad131c7ef2e26458e99cde659a61d46b2005c2070176f8"
+    },
+    {
+      "lesson": 25,
+      "file": "lesson25.bin",
+      "sha256": "80aa2e64fb072e9c270cbacef9eee73d35efc07435170af6ef63b5b628102f26"
+    },
+    {
+      "lesson": 26,
+      "file": "lesson26.bin",
+      "sha256": "712caaa5c45c28a1d9dfa93286900750125a6a3d188a663a628e4fc998768753"
+    },
+    {
+      "lesson": 27,
+      "file": "lesson27.bin",
+      "sha256": "0bfb27b490a619d5f460a98c47f9a267a62e3ca0ab7aef8b6229dc784f4f1090"
+    },
+    {
+      "lesson": 28,
+      "file": "lesson28.bin",
+      "sha256": "23e91e7649213a078237dfb34657905f165ededdbe92ca49760327141ae1b7db"
+    },
+    {
+      "lesson": 29,
+      "file": "lesson29.bin",
+      "sha256": "411284eb64d24e151390b90b3d587cc255b9330ba74906c9b6f46f53d38e41ca"
+    },
+    {
+      "lesson": 30,
+      "file": "lesson30.bin",
+      "sha256": "4ce152ea891089bc262434b326817c382c76a90904db1b739be7cbfcfb048643"
+    },
+    {
+      "lesson": 31,
+      "file": "lesson31.bin",
+      "sha256": "cb071969ef4aa95455e1e0d12ab388b16115048dd54130cc67bb33f1ee07a724"
+    },
+    {
+      "lesson": 32,
+      "file": "lesson32.bin",
+      "sha256": "05f5a265b0c7bc127513913e8c7f5df674509b3862f245173faad24a7bf06450"
+    },
+    {
+      "lesson": 33,
+      "file": "lesson33.bin",
+      "sha256": "4f3ac968289535860d67e917b6852f153820d14c056814570e45ab3020b986e0"
+    },
+    {
+      "lesson": 34,
+      "file": "lesson34.bin",
+      "sha256": "4eaf33ab56731bb9446f14663f84ec28add22be1335e4bbea168685fc95212da"
+    },
+    {
+      "lesson": 35,
+      "file": "lesson35.bin",
+      "sha256": "29cea924c0998e4e32d31325f0c807d4a6a99407b4d4cb7cc6b342e851adf300"
+    },
+    {
+      "lesson": 36,
+      "file": "lesson36.bin",
+      "sha256": "344a62b4a8717e87506f58a6a8ff1612a5a174ff8ea389e07e54bd4e6c2c1967"
+    },
+    {
+      "lesson": 37,
+      "file": "lesson37.bin",
+      "sha256": "5f462049aa5d3c23c1dd4e7e78d2c0863b4c8eaa0be34f597abbb5daa6edfab4"
+    },
+    {
+      "lesson": 38,
+      "file": "lesson38.bin",
+      "sha256": "cf3084c004b227a31fb2de70c4fd6ce199bfc2ddf464517335646fa77ea089a5"
+    },
+    {
+      "lesson": 39,
+      "file": "lesson39.bin",
+      "sha256": "b9e6b3ae266cc014f0777282642287558ad340396079af99909f575722495fd9"
+    },
+    {
+      "lesson": 40,
+      "file": "lesson40.bin",
+      "sha256": "496b4e36274e7b0e4cc49a2cf18bf2850edc578b0d32953bf44619411c5ca0ee"
+    },
+    {
+      "lesson": 41,
+      "file": "lesson41.bin",
+      "sha256": "f110eef423268c15ca2fc77896d41dd57fcd9ab5ca3745c91808175774a8133e"
+    },
+    {
+      "lesson": 42,
+      "file": "lesson42.bin",
+      "sha256": "ea260ad0b1b79e7c04ce4c6631b2bc4271f0555dec1b8249b5aff9dfac706bed"
+    },
+    {
+      "lesson": 43,
+      "file": "lesson43.bin",
+      "sha256": "df64bac48f4efd41f22494b13776e363b49a1428bd888298fa7ca41804133d81"
+    },
+    {
+      "lesson": 44,
+      "file": "lesson44.bin",
+      "sha256": "d882690d9dd517ed15773f77ab968b975a7e55ef27564eaef0ae9e55a6a18723"
+    },
+    {
+      "lesson": 45,
+      "file": "lesson45.bin",
+      "sha256": "ef7d85227592d90ff4e9905153bc968df8143a76908df2256a749fc96e33abd7"
+    },
+    {
+      "lesson": 46,
+      "file": "lesson46.bin",
+      "sha256": "57e4370f112ea1a6031b4c382448b6b3bba400bf4b92773959b752cb3f1d40df"
+    },
+    {
+      "lesson": 47,
+      "file": "lesson47.bin",
+      "sha256": "a51ec302590bbbecb482f0794ef90563269347360523a472bf61640be604ec8d"
+    },
+    {
+      "lesson": 48,
+      "file": "lesson48.bin",
+      "sha256": "2530c36b0f5a3c5268269f06f71ce5ba163c868cb3edbd775d5623a8a7abd0fa"
+    },
+    {
+      "lesson": 49,
+      "file": "lesson49.bin",
+      "sha256": "2914756af00499b03a1876b4abd3ceb8986b8af891f4a18df46e1c3604ea6ee7"
+    },
+    {
+      "lesson": 50,
+      "file": "lesson50.bin",
+      "sha256": "479765c4683d918cdfb99c5874fef81eaf48a9d1f5da18cc17fb48631c7b7b12"
+    }
+  ]
+}

@@ -33,5 +33,10 @@ export function createSession() {
     // Quiz only: error_usage items held out of the active queue by 跳過錯誤的
     // 單詞, so a mid-run toggle can put them back at the tail.
     quizSkipped: [],
+    // Audio playback: `verified` remembers which lesson bins were sha256-checked
+    // this session (reset on reload), `states` maps a clickable target id to
+    // its transient visual state ('downloading' | 'playing'), and `hint` is the
+    // transient 「該音頻暫時無法播放」 toast text.
+    audio: { verified: {}, states: {}, hint: null },
   }
 }
