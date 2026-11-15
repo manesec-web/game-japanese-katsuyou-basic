@@ -470,17 +470,34 @@ markdown file. The spec was amended before the code.
 | 34e | The lock tooltip widens to 320px (`width: max-content`, otherwise an absolute span wraps inside the chip's ~96px cell) and its hover position is clamped to the viewport by `src/ui/tooltip.js` | done | `src/ui/tooltip.test.js` 6 tests (centred fits, right/left clamp, margin, oversized, junk); browser check: 223px wide, 24px tall (one line), and a 使役形 lock in the last column stays inside the viewport with no sideways scroll |
 | 34f | Verification and docs sync | done | `npm test` 35 files / 370 tests; `npm run build` (`output/dict/vol.bin`, `output/index.html`); `node scripts/browser-check.mjs` 597 checks, 0 failures (the seeded quiz moves the count by one); spec, architecture, AGENTS, README, development, serving, progress, changelog and this board updated; `vol/` untouched |
 
+## Revision 36 — 單詞目錄全形式列表 + 平假名/羅馬字搜尋 (requested 2026-11-15)
+
+Requested: 單詞目錄 lists every form with a `XX形` tag and its search accepts
+partial hiragana and romaji (`dekimasu` finds `できます`) with the match painted red.
+Confirmed before code: default list expands to all 15 forms (1.b), a matched row
+shows the matched form's word (2.a), and the form tag replaces 第N課 (3.a).
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 36a | Spec first: 單詞目錄 section rewritten (all forms, form tag, romaji/hiragana/lesson matching, red highlight, dictionary-form current mark) | done | `docs/spec.md` 單詞目錄 bullets |
+| 36b | `src/dict/romaji.js`: Hepburn → hiragana (digraphs, macrons, っ, ん/n-row), katakana→hiragana, ー→vowel | done | `src/dict/romaji.test.js` 15 tests |
+| 36c | `src/study/toc.js`: form-level rows, `matchFormRanges` (literal/reading/lesson), reading→vol highlight via ruby alignment | done | `src/study/toc.test.js` rewritten (24 tests) |
+| 36d | `TocView.vue` renders `parts` with red `.toc-hit`, form tag, unique row key | done | build + browser |
+| 36e | Browser harness: 45 rows, form tags, `ikimasu`/`iki` romaji checks, red hit spans, jump/mark at row 30 | done | `node scripts/browser-check.mjs` 607 checks, 0 failures |
+| 36f | Verification + docs sync | done | `npm test` 44 files / 448; `npm run build`; spec/changelog/roadmap updated; `vol/` untouched |
+
 ## Current status
 
-- Revisions 2–34 and follow-up passes A/B are `done`; the
+- Revisions 2–36 and follow-up passes A/B are `done`; the
   implementation was developed and verified over several incremental passes.
   Revision 31 is a data-only change: no `.vue`, command, engine or settings
   file was touched. The latest verification is recorded in `docs/progress.md`.
 - Backlog B2 (優化下載文件) is `done` as revisions 32–33 (single verified
   archive, `.bin` naming, download progress bar). Backlog B1 (朗讀功能) is
   `done` as revision 35 (reader word + sentence voice audio). Revision 34
-  delivers concrete 優化UI items, but B3 stays `pending` for any further,
-  unspecified UI work. Revisions 2–35 cover
+  and revision 36 deliver concrete 優化UI items (picker lock, naming, card
+  pill; 單詞目錄 all-form list + romaji/hiragana search), but B3 stays
+  `pending` for any further, unspecified UI work. Revisions 2–36 cover
   specific, specified requests. The revision-31 documentation sync also updated `README.md`,
   `docs/serving.md`, `docs/architecture.md`, `AGENTS.md`, `docs/spec.md`,
   `docs/progress.md` and `docs/changelog.md`; `docs/audit/*.md` remain
@@ -510,11 +527,11 @@ markdown file. The spec was amended before the code.
 ## Verification commands
 
 ```bash
-npm test                                # Vitest unit tests (43 files / 425)
+npm test                                # Vitest unit tests (44 files / 448)
 npm run build                           # static build into output/ (dict/vol.bin)
 node scripts/write-sha256.mjs --check   # manifest consistency
 node scripts/write-vol-archive.mjs --check  # archive builds from verified vol/
-node scripts/browser-check.mjs          # headless Chromium walk-through (597 checks)
+node scripts/browser-check.mjs          # headless Chromium walk-through (607 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 ```
 

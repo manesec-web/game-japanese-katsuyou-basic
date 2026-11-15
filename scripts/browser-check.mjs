@@ -6,7 +6,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { chromium } from 'playwright-core'
 import { CONFETTI_EMOJI, PRACTICE_EMOJI, SCORE_BANDS } from '../src/study/results.js'
-import { groupLabel } from '../src/dict/forms.js'
+import { FORMS, groupLabel } from '../src/dict/forms.js'
 import { LIST_SCROLLBAR, SCROLLBAR } from '../src/ui/scrollbar.js'
 
 const PORT = Number(process.env.PORT || 5199)
@@ -33,6 +33,13 @@ const lessonFiveVerbs = Object.values(lessonFive)[0].vols.map((verb) => ({
   group: verb['dictionary-form'].group,
 }))
 const byMasu = (word) => lessonFiveVerbs.find((verb) => verb.masu === word)
+
+// 單詞目錄 now lists every form of every verb in this run, so its expected
+// rows are the run's verbs crossed with the canonical form order.
+const lessonFiveVols = Object.values(lessonFive)[0].vols
+const tocExpected = lessonFiveVols.flatMap((verb) =>
+  FORMS.filter((form) => verb[form.id]).map((form) => ({ word: verb[form.id].vol, tag: form.name })),
+)
 
 const failures = []
 const notes = []
@@ -1565,17 +1572,17 @@ try {
   })
   check(
     'the word list groups this run by lesson',
-    toc.headings.length === 1 && toc.headings[0] === '第5課' && toc.rows === 3,
+    toc.headings.length === 1 && toc.headings[0] === '第5課' && toc.rows === 45,
     JSON.stringify(toc),
   )
   check(
-    'each row shows the word and its 第N課 tag',
-    JSON.stringify(toc.words) === JSON.stringify(lessonFiveVerbs.map((verb) => verb.dict)) &&
-      toc.tags.every((tag) => tag === '第5課'),
+    'every form of every word is listed with its form tag',
+    JSON.stringify(toc.words) === JSON.stringify(tocExpected.map((row) => row.word)) &&
+      JSON.stringify(toc.tags) === JSON.stringify(tocExpected.map((row) => row.tag)),
     JSON.stringify(toc),
   )
   check(
-    'the current word is marked once and in view',
+    'the current word is marked once on its dictionary-form row and in view',
     toc.current === 1 && toc.currentIndex === 0 && toc.currentInView,
     JSON.stringify(toc),
   )
@@ -1612,17 +1619,51 @@ try {
   // though no Japanese word contains that digit.
   await page.locator('.toc-search-input').fill('5')
   check(
-    'a lesson-number query lists every lesson-5 word',
-    (await page.locator('.toc-row').count()) === 3 && (await page.locator('.toc-lesson').count()) === 1,
+    'a lesson-number query lists every lesson-5 form row',
+    (await page.locator('.toc-row').count()) === 45 && (await page.locator('.toc-lesson').count()) === 1,
     `rows=${await page.locator('.toc-row').count()} headings=${await page.locator('.toc-lesson').count()}`,
   )
 
   await page.locator('.toc-search-input').fill(lessonFiveVerbs[1].dict)
   const filteredWord = await page.locator('.toc-word').textContent()
+  const filteredTag = await page.locator('.toc-row .tag').textContent()
+  const filteredHits = await page.evaluate(() =>
+    [...document.querySelectorAll('.toc-hit')].map((el) => el.textContent),
+  )
   check(
-    'a word query keeps only the matching row',
-    (await page.locator('.toc-row').count()) === 1 && filteredWord.trim() === lessonFiveVerbs[1].dict,
-    `rows=${await page.locator('.toc-row').count()} word=${filteredWord}`,
+    'a word query keeps only the matching dictionary-form row, tagged and highlighted',
+    (await page.locator('.toc-row').count()) === 1 &&
+      filteredWord.trim() === lessonFiveVerbs[1].dict &&
+      filteredTag.trim() === '字典形' &&
+      filteredHits.join('|') === lessonFiveVerbs[1].dict,
+    `rows=${await page.locator('.toc-row').count()} word=${filteredWord} tag=${filteredTag} hits=${filteredHits.join('|')}`,
+  )
+
+  // Romaji: a Latin query is converted to kana and matched against the reading.
+  await page.locator('.toc-search-input').fill('ikimasu')
+  const romajiWord = await page.locator('.toc-word').textContent()
+  const romajiTag = await page.locator('.toc-row .tag').textContent()
+  const romajiHits = await page.evaluate(() =>
+    [...document.querySelectorAll('.toc-hit')].map((el) => el.textContent),
+  )
+  check(
+    'a romaji query finds the matching form and highlights the whole word',
+    (await page.locator('.toc-row').count()) === 1 &&
+      romajiWord.trim() === '行きます' &&
+      romajiTag.trim() === 'ます形' &&
+      romajiHits.join('|') === '行きます',
+    `rows=${await page.locator('.toc-row').count()} word=${romajiWord} tag=${romajiTag} hits=${romajiHits.join('|')}`,
+  )
+
+  // A partial romaji fragment highlights only the part it matched.
+  await page.locator('.toc-search-input').fill('iki')
+  const partialHits = await page.evaluate(() =>
+    [...document.querySelectorAll('.toc-hit')].map((el) => el.textContent),
+  )
+  check(
+    'a partial romaji fragment highlights only the matched part',
+    (await page.locator('.toc-row').count()) === 4 && partialHits.every((hit) => hit === '行き'),
+    `rows=${await page.locator('.toc-row').count()} hits=${partialHits.join('|')}`,
   )
 
   await page.locator('.toc-search-input').fill('不存在的詞')
@@ -1637,7 +1678,7 @@ try {
   await page.locator('.toc-search-clear').click()
   check(
     'the clear icon restores the full list and leaves the box open',
-    (await page.locator('.toc-row').count()) === 3 &&
+    (await page.locator('.toc-row').count()) === 45 &&
       (await page.locator('.toc-empty').count()) === 0 &&
       (await page.locator('.toc-search-input').inputValue()) === '',
     `rows=${await page.locator('.toc-row').count()}`,
@@ -1647,7 +1688,7 @@ try {
   await page.locator('.toc .icon-button[aria-label="搜尋"]').click()
   check(
     'closing the search box returns to the full list',
-    (await page.locator('.toc-search').count()) === 0 && (await page.locator('.toc-row').count()) === 3,
+    (await page.locator('.toc-search').count()) === 0 && (await page.locator('.toc-row').count()) === 45,
     `box=${await page.locator('.toc-search').count()} rows=${await page.locator('.toc-row').count()}`,
   )
   await page.locator('.toc .icon-button[aria-label="搜尋"]').click()
@@ -1668,7 +1709,7 @@ try {
   // A press on a row lands the reader on that word, at the top of the page.
   await page.locator('.reader .icon-button[aria-label="單詞目錄"]').click()
   await page.waitForSelector('.toc', { timeout: 5000 })
-  await page.locator('.toc-row').nth(2).click()
+  await page.locator('.toc-row').nth(30).click()
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   const jump = { title: await readerTitle(page), word: await wordText(page) }
   check(
@@ -1685,7 +1726,7 @@ try {
       (row) => row.getAttribute('aria-current') === 'true',
     ),
   )
-  check('the list marks the word the reader is on', marked === 2, String(marked))
+  check('the list marks the word the reader is on', marked === 30, String(marked))
   await page.locator('.toc-row').first().click()
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   check(

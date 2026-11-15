@@ -1823,3 +1823,33 @@ Verified: `npm test` 43 files / 425 tests; `npm run build` (46 bins in
 `output/dict/resource/`); headless Chromium walk-through — first play downloads
 one bin, reaches `.audio-tap--playing`, ends and clears; second play makes 0 new
 requests; a sentence plays too. `vol/` bytes were not touched.
+
+## 2026-11-15 (revision 36)
+
+### 單詞目錄：全形式列表 + 平假名/羅馬字搜尋
+
+Requested: the word list shows every form of every word with a form tag, and
+its search accepts partial hiragana and romaji (e.g. `dekimasu` finds
+`できます`) while painting the matched text red.
+
+- **Romaji.** `src/dict/romaji.js` (pure) converts Hepburn romaji to hiragana —
+  digraphs (`kyou` → きょう), macrons, the small つ (`itta`, `gakkou`,
+  `matcha`), and the ん/n-row split (`onna` vs `kinai`). `katakanaToHiragana`
+  and `normalizeProlonged` turn loan-word readings like コピーする into こぴいする
+  so `kopi` / `kopii` match.
+- **Matching.** `src/study/toc.js` now lists one row per form in the canonical
+  order, each with its `vol` and a `字典形`/`ます形`/… tag. A query matches the
+  displayed word literally, the kana reading, or the lesson number; a Latin
+  query is converted to kana first. `matchFormRanges` maps a reading hit back
+  onto the kanji-and-kana word through the ruby alignment, so `chiga` highlights
+  `違` and `gau` highlights `違う`.
+- **Highlight.** Matched runs render as `.toc-hit` in `--error` red; the view
+  only prints the `parts` the pure helper builds.
+- **Current mark.** One row is `aria-current`: the current verb's
+  dictionary-form row, so the scroll-to-current behaviour is unchanged.
+
+Verified: `npm test` 44 files / 448 tests (`romaji.test.js` +15,
+`toc.test.js` rewritten to 24); `npm run build`; `node scripts/browser-check.mjs`
+607 checks, 0 failures — 45 form rows for the 3-verb run, one marked row,
+`ikimasu` → 行きます/ます形, `iki` → 行き-only highlights, and the red
+`.toc-hit` spans. `vol/` bytes were not touched.

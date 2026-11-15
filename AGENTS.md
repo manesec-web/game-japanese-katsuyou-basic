@@ -2,6 +2,8 @@
 
 This file is for the next AI that enters the repo. Do the tasks in order. The product is a static site for learning Japanese verb conjugation: Vue source, build output in `output/`, published with GitHub Pages.
 
+**Revision 36 (單詞目錄 all-form list + hiragana/romaji search):** the word list now shows one row per form (run order, then canonical form order), each with that form's `vol` and a `字典形`/`ます形`/… tag, and the current verb is marked on its dictionary-form row. Search matches the displayed word, the kana reading, or the lesson number; a Latin query is Hepburn romaji converted to kana first (`dekimasu` finds `できます`, macrons, long vowels and the small つ handled, and katakana readings matched as hiragana so `kopi` finds `コピーする`), and the matched text is painted red (`--error`). Rules are pure in `src/dict/romaji.js` (converter) and `src/study/toc.js` (`matchFormRanges` + form rows, reading hits mapped back onto the kanji-and-kana word via the ruby alignment); `TocView.vue` only renders the `parts`.
+
 **Revision 34 (picker lock, naming, card pill):** the 到 chip that equals 從 is now a disabled button with the dictionary settings' locked-chip look and the tooltip `這和「從」的形式相同，不能選為「到」` (up to 320px wide, one line, viewport-clamped by the pure `src/ui/tooltip.js`), and 全選 skips it; the mode is renamed 翻卡學習 → 翻卡練習 in the UI and the current docs; and every mounted card paints its own tags, so the class pill of the card sliding in is drawn while the finger still holds the drag instead of appearing at release. The rules are pure in `src/dict/settings.js` (`targetChips`, `toggleTarget`); `.vue` files only render.
 
 **Revision 35 (voice audio in the reader):** every Japanese word (`form.vol`) and example sentence (`sentence.japanese`) in the dictionary reader is now tappable to play its recorded Opus audio. Clicking lazily downloads that lesson's `lessonX.bin` from the same origin (`dict/resource/`), sha256-verifies it once per page session, decompresses the single `<md5-mid16>.opus` entry and plays it; hover shows the settings-button grey, the download pulses normal↔grey, playback holds the grey and fades it back when the audio ends, and any failure (missing entry, network, hash mismatch, decode) shows 「該音頻暫時無法播放」. Chinese gloss/translations are not clickable. The bins are not committed: `npm run build` runs `scripts/fetch-audio.mjs`, which downloads the 46 bins from the `res-miles` GitHub release into gitignored `dict/resource/`, verifies each against the release asset `digest` (sha256), and regenerates `src/data/audio-manifest.json`; the Vite plugin then ships them same-origin in `output/dict/resource/`. GitHub release assets do not allow cross-origin fetch (CORS), so this build-time download is the delivery mechanism. Rules live in `src/dict/md5.js`, `audio-name.js`, `audio-bin.js`, `audio-entry.js`, `audio-player.js`, `src/study/reader-audio.js` and `src/commands/audio.js`; `.vue` files only render.
@@ -81,7 +83,9 @@ the pill, its wording and the 變成 prompt stay unchanged. Revision 30 adds the
 settings gear, and that screen lists only this run's frozen words
 (`session.items`), grouped by `第N課`, marks the current word, and opens the
 reader on the row pressed (at the top of the page) while back returns to the
-unchanged word. The broader 優化UI backlog remains pending for further,
+unchanged word. Revision 36 expanded that list to every form with a `XX形`
+tag and added the hiragana/romaji search with red highlight (see the
+revision block above). The broader 優化UI backlog remains pending for further,
 unspecified UI work.
 The site builds into `output/`, and that build is live at
 `https://manesec-web.github.io/game-japanese-katsuyou-basic/` (verified

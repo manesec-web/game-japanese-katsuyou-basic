@@ -1,14 +1,15 @@
 # Progress
 
-Last updated: 2026-11-15 (revision 35: tap-to-play voice audio for every word
-and sentence in the dictionary reader).
+Last updated: 2026-11-15 (revision 36: 單詞目錄 lists every form and its
+search accepts partial hiragana and romaji with the match painted red).
 
-**Status: complete.** T1–T8 are done and revisions 2–35 have landed and been
+**Status: complete.** T1–T8 are done and revisions 2–36 have landed and been
 verified, including follow-up UI passes A/B. The build is live at
 `https://manesec-web.github.io/game-japanese-katsuyou-basic/` (verified
 2026-11-14: HTTP 200, and `dict/vol.bin` answers `application/octet-stream`).
-Backlog B1 (朗讀功能) is done as revision 35; B3 (優化UI) remains `pending`;
-B2 (優化下載文件) is done as revisions 32–33.
+Backlog B1 (朗讀功能) is done as revision 35; B3 (優化UI) remains `pending`
+but revisions 34 and 36 have delivered concrete 優化UI items; B2
+(優化下載文件) is done as revisions 32–33.
 
 ## Revision 34 — locked 到 chips, 翻卡練習, immediate class pill
 
@@ -54,6 +55,25 @@ B2 (優化下載文件) is done as revisions 32–33.
   in `output/dict/resource/`); headless Chromium walk-through — first play
   downloads one bin, reaches `.audio-tap--playing`, ends and clears; second
   play makes 0 new requests; a sentence plays too. `vol/` untouched.
+
+## Revision 36 — 單詞目錄 all-form list + hiragana/romaji search
+
+- 單詞目錄 now lists one row per form (run order, then canonical form order),
+  each showing that form's `vol` and its `字典形`/`ます形`/… tag; the current
+  verb is marked on its dictionary-form row.
+- Search matches the displayed word, the kana reading, or the lesson number;
+  a Latin query is Hepburn romaji converted to kana first (`dekimasu` finds
+  `できます`), with macrons, long vowels and the small つ handled, and
+  katakana readings matched as hiragana (`kopi` finds `コピーする`). The
+  matched text renders in red (`--error`).
+- `src/dict/romaji.js` is the pure converter; `src/study/toc.js` holds the
+  form-level rows and `matchFormRanges` (reading hits map back onto the
+  kanji-and-kana word via the ruby alignment); `TocView.vue` only prints the
+  `parts`.
+- Verification: `npm test` 44 files / **448 tests**; `npm run build`;
+  `node scripts/browser-check.mjs` **607 checks**, 0 failures — 45 form rows
+  for the 3-verb run, one marked row, `ikimasu` → 行きます/ます形, `iki` →
+  行き-only highlights, red `.toc-hit` spans. `vol/` untouched.
 
 ## Revision 33 — the loading bar shows the download
 

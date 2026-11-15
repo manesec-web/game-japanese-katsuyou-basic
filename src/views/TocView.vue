@@ -65,7 +65,7 @@ onMounted(async () => {
           v-model="query"
           class="toc-search-input"
           type="text"
-          placeholder="搜尋單詞或課號"
+          placeholder="搜尋單詞、讀音或課號"
           aria-label="搜尋單詞"
         />
         <button class="toc-search-clear" type="button" aria-label="清空" @click="clearSearch"><X :size="18" aria-hidden="true" /></button>
@@ -82,15 +82,21 @@ onMounted(async () => {
       <h2 class="toc-lesson">第{{ group.lesson }}課</h2>
       <button
         v-for="row in group.rows"
-        :key="row.index"
+        :key="`${row.index}-${row.formId}`"
         class="toc-row"
         :class="{ 'toc-row--current': row.current }"
         type="button"
         :aria-current="row.current ? 'true' : undefined"
         @click="jump(row.index)"
       >
-        <span class="toc-word">{{ row.word }}</span>
-        <span class="tag">第{{ row.lesson }}課</span>
+        <span class="toc-word">
+          <span
+            v-for="(part, partIndex) in row.parts"
+            :key="partIndex"
+            :class="{ 'toc-hit': part.highlight }"
+          >{{ part.text }}</span>
+        </span>
+        <span class="tag">{{ row.formName }}</span>
       </button>
     </div>
   </section>
@@ -255,6 +261,11 @@ onMounted(async () => {
 
 .toc-word {
   font-size: 1.05rem;
+}
+
+/* The part of a word that matched the search query reads in red. */
+.toc-hit {
+  color: var(--error);
 }
 
 .tag {
