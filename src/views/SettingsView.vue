@@ -449,6 +449,7 @@ function selectAllDisplayForms() {
   border: 0;
   background: transparent;
   color: var(--ink);
+  font-size: 0.8rem;
   text-align: left;
   cursor: pointer;
 }

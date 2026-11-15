@@ -8,6 +8,9 @@ import TocView from './views/TocView.vue'
 import CardView from './views/CardView.vue'
 import QuizView from './views/QuizView.vue'
 import SettingsView from './views/SettingsView.vue'
+import LearnView from './views/LearnView.vue'
+import RuleView from './views/RuleView.vue'
+import ExampleView from './views/ExampleView.vue'
 import PageScrollBar from './components/PageScrollBar.vue'
 
 const store = inject('store')
@@ -21,6 +24,9 @@ const views = {
   card: CardView,
   quiz: QuizView,
   settings: SettingsView,
+  learn: LearnView,
+  rule: RuleView,
+  example: ExampleView,
 }
 
 const current = computed(() => views[store.session.screen] ?? null)

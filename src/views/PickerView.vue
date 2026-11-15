@@ -431,6 +431,7 @@ function back() {
   border-bottom: 1px solid var(--line);
   background: transparent;
   color: var(--ink);
+  font-size: 0.8rem;
   text-align: left;
   cursor: pointer;
   /* See SettingsView: the row's hairline belongs to the list panel, so the tint

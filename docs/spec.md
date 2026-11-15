@@ -125,7 +125,7 @@ the bar is simply verified lessons divided by 50.
 
 State machine:
 
-`loading` → `home` → `picker` → (`reader` | `card` | `quiz`). Those last three can open `settings` and return, and the dictionary reader can also open `toc` (單詞目錄) and return.
+`loading` → `home` → `picker` → (`reader` | `card` | `quiz`). Those last three can open `settings` and return, and the dictionary reader can also open `toc` (單詞目錄) and return. The home screen also opens `learn` (學習目錄), which opens `rule` (變形說明); `rule` opens `example` (選字) and returns.
 
 A reload starts at `loading` again. When the dictionary is already in IndexedDB, boot only checks hashes, and the progress bar still runs.
 
@@ -149,7 +149,7 @@ retry; only the progress area changes.
 
 The head is three lines above the entries: the large title `大家の日本語`, the medium subtitle `動詞轉型練習` under it, and the line `涵蓋初級 1 – 50 課的動詞` under that.
 
-Three large buttons, stacked: 字典, 翻卡練習, 測驗.
+Four large buttons, stacked. 學習 sits above the three study entries 字典, 翻卡練習, 測驗; it opens `learn` (學習目錄), a grammar reference rather than a practice run.
 
 The footer has two lines. The first is `🥺 如果有 BUG 記得告訴我！`; the second is `Build with ❤ by Mane`. Both open the same small sheet.
 
@@ -315,6 +315,78 @@ The Nth wrong answer on the same item reveals the correct answer, where N is 錯
 - 跳過錯誤的單詞: a switch, default off. At start it drops every item whose target form is flagged `error_usage`. Flipped mid-run: turning it on removes the error_usage items from the unanswered portion (the item on screen included) and the run ends immediately when nothing follows, and turning it off puts them back at the tail. A small note under the row explains the rule with the 始まられる example.
 - 顯示平假名注音
 
+### 學習
+
+Home adds a fourth entry, 學習, above 字典. It opens a grammar reference, not a practice run: 學習目錄 and 變形說明 never build `session.items`, never open a study screen, and have no completion screen.
+
+#### 學習目錄
+
+- Top bar: back returns home, title `變形目錄`. No settings gear, no 目錄 button.
+- The body lists the 15 forms in the Data table's canonical order, one 44px outlined row per form, 8px apart, the same surface, border and radius as the 單詞目錄 rows. Each row reads the form's on-screen name.
+- A press runs `rule.open` with 到 set to that form and 從 set to the default `ます形`; when the pressed form is `ます形`, 從 becomes `字典形` so 從 and 到 differ. The screen changes to 變形說明.
+
+#### 變形說明
+
+Top bar: back returns to 學習目錄, title `變形說明`.
+
+Top to bottom:
+
+1. A section label `變形設置`. `例如` and `小提示` use this same section-label style (one shared class), not a separate heading style.
+2. `從` — one single-choice dropdown of the 15 forms, default `ます形`, the same control as the picker's 從 (36px button, `ChevronDown`, list with drawn thumb).
+3. `到` — one single-choice dropdown of the 15 forms except the current 從, default `字典形`. Changing 從 to the current 到 moves 到 to the fallback target — `字典形`, or `ます形` when 從 is already `字典形` — so the two are never equal.
+4. A drawn 1px `.hrule` above the heading `從 {從名} 到 {到名} 的變形如下` (using the two forms' on-screen names). The same drawn rule separates 例如 and 小提示 from the content above them; it is its own element, never a border on a neighbour.
+5. The authored explanation for that ordered pair (see 學習內容): four blocks in reading order — 第一類動詞（五段）, 第二類動詞（一段）, 第三類動詞（不規則）, 例外. The 第一類 and 第二類 tables read `從形 | 變形 | 到形`; in a row the changing kana and the added suffix are painted purple (`--highlight`) and the removed suffix is painted red with a double strikethrough (紅色雙刪除線、紅色字體). The 第三類 and 例外 tables keep two columns. Each 第一類 block opens with a 段 / 音便 mapping that **changes with 從 and 到**: `字典形 → ます形` reads `う → い　く → き　ぐ → ぎ …`, `ます形 → て形` reads `い、ち、り → って …`, `ない形 → て形` reads `わ、た、ら → って …`, and a reverse pair flips the arrow (`って → い、ち、り`). The label is `變形的音變如下：` for た形/て形 pairs and `假名對應如下：` otherwise; the five 音便 rows are labelled 促音便 / 撥音便 / イ音便 / す行不變音 and note the 濁音 だ／で. Pairs whose 從 and 到 sit on the same 段 (for example `ます形 → ません形`) show no mapping. A `小提醒` list under each table prints the pair's special cases: う → わ (not あ), 行く → 行った／行って, ある → ない, する → できる, を → が, 帰る 等看似二類的一類動詞, ら抜き, and the 段 口訣. Warnings are red, tips accent-coloured. The 第一類 example rows are grouped in 音便 order for た形/て形 pairs.
+6. `例如` — the interactive example (below). It shows no extra 小提醒 notes; the special cases belong to the class tables only.
+7. `小提示` — the global teaching notes (below), rendered as a numbered list `1. … / 2. …`.
+
+從, 到 and the chosen example word are transient screen state, not saved settings: leaving 變形說明 discards them and `rule.open` resets them.
+
+#### 學習內容
+
+The explanations live in `src/data/rule-content.js` as a flat list, one entry per ordered pair with 從 ≠ 到 (15 × 14 = 210 entries):
+
+```
+{ from: 'masu-form', to: 'dictionary-form', sections: [ … ] }
+```
+
+- `from` and `to` are form ids from the Data table; the pair is ordered, so ます形 → 字典形 and 字典形 → ます形 are two entries.
+- `sections` is the list of four verb-class blocks in reading order: 第一類動詞, 第二類動詞, 第三類動詞, 例外. Each block is `{ heading, rule, map?, columns, rows, notes }`:
+  - `heading` is the block heading, for example `第一類動詞（五段動詞／動一）`.
+  - `rule` is the explanation line, phrased for the pair: which 語尾 is removed, whether the last kana moves to another 段 or follows 音便, and which 語尾 is added. It must not name one example verb's kana as if it applied to every ending.
+  - `map` is the optional `{ label, rows: [{ line, note }] }` 段 / 音便 mapping. The `line` depends on 從 and 到 (see 變形說明 above); `note` labels the 音便 type or flags う → わ. Pairs on the same 段 have `map: null`.
+  - `columns` are the table headers; `rows` are `{ from, change?, to }` triples, each a list of `{ t, c }` segments where `c` is `change` (purple) or `removed` (red double strikethrough). The 第三類 and 例外 blocks have no `change` and two columns.
+  - `notes` is a `{ t, c }` list of special-case annotations (`c` is `warn` or `tip`), printed after the table.
+  - Content is pedagogical, not minimal: supplementary explanation, extra real example rows and additional notes are welcome — the more detailed the better for a teaching app. The 例外 block heading is simply `例外`; it does not restate the data's internal `group 0` label, and notes that merely repeat another block's note are left out.
+- Example rows use real verbs from `vol/`, picked by the generator. Every `from` and `to` cell is byte-identical to that verb's stored `vol` for the pair's forms; a cell that is not a real dictionary word is a data error. The generator refuses to write an entry whose okurigana/reading alignment is inconsistent, and its test regenerates all 210 entries and compares them with the shipped file.
+- The tables and notes come from pure modules — `src/study/rule-conjugation.js` holds the 段 / 音便 tables and the special cases, `src/study/rule-content-builder.js` builds the entries from real verbs — and `scripts/generate-rule-content.mjs` only writes the file. A pure lookup (`src/study/rule.js`) finds the entry for a (from, to) pair. Every one of the 210 pairs has an entry; the lookup's test asserts completeness, and an absent pair is a data error that must not ship.
+
+The 小提示 block is global copy shown on every pair, not per-entry data. It is a plain string list rendered as a numbered list (`1. …`, `2. …`) that explains **how the mechanism works and what to watch for**, not just a study suggestion:
+
+- how to read the page (認 從/到 → 看段/音便對應 → 用例如對照原理);
+- the 五段 段 口訣 (`字典形 う段、ます形 い段、ない形 あ段、可能／命令／ば形 え段、意向形 お段`), that 第二類 only swaps the 語尾, and that 第三類 must be memorised as a whole;
+- the three common traps (う → わ not あ, 行く → 行った／行って, 濁音 だ／で), the る-ending 第一類 verbs (帰る、切る、知る…), ある → ない, 名詞＋する → できる, and を → が;
+- that a reverse pair is read backwards, and that 音便 cannot be reconstructed from the written form alone, so the dictionary form must be memorised.
+
+#### 例如（互動示範）
+
+The 例如 block applies the pair to any verb in the dictionary. The word is chosen from the dictionary only — there is no free text.
+
+- A button opens the 選字 screen; its trailing glyph is a `→` arrow. Before a word is chosen it reads `選擇單詞作為例子`; after a word is chosen it reads that word's 從-form `vol` (for example `読みます`) and can be pressed again to change it.
+- With a word chosen, the block shows one centred line `{從形} → {到形}`, then:
+  - `因為 {word} 是 {class}動詞，所以 {change}。` — `{class}` is the word's group label, and `{change}` is derived: the changed kana pair (`み → む`) for a regular 五段 pair, the suffix swap for a 一段 pair, `直接加「…」` / `去掉「…」` for a pure addition/deletion, `同形` when both forms coincide, and `不規則動詞／例外…` for group 3 / 例外.
+  - `原理：` the derivation, drawn from the two readings:
+    - For a regular pair, the 從-form is drawn with the changing kana in purple (`--highlight`) and its removable suffix double-struck-through in the error colour and written in the error colour (字體紅色、刪除線紅色), the unchanged stem keeping its normal ink; then the kana change `X → Y` in purple and the whole new ending (`changed kana + added suffix`) as `＋ Y` in dark blue; then the 到-form — the word, the change and the result all centred. When 從 has no removable 語尾 (for example 字典形), the changing kana itself is struck through as the removed part and the new ending is added.
+    - For an irregular pair (group 3 or 例外) only the 從-form and 到-form are shown, with the reason line; nothing is struck through and no kana change is invented.
+  - No 小提醒 notes are printed inside 例如; the class tables above already carry them.
+- The derivation is a pure function (`src/study/rule-demo.js`) over the two readings, the verb class and the pair's form ids. It must return a result (never `null`) for every real verb and every ordered pair, including pure additions, deletions and identical-form pairs; when a pair cannot be decomposed it falls back to the plain 從 → 到 pair rather than guessing.
+
+#### 選字
+
+- Top bar: back returns to 變形說明, title `選字`, and a 搜尋 button on the right edge (Lucide `Search`, clear `X`) like 單詞目錄. No settings gear.
+- The list is every verb in the dictionary — the 46 lessons that have verbs in lesson order, JSON order inside a lesson — one row per verb showing its current 從-form `vol` (so 從 = ます形 shows ます形 words, 從 = 字典形 shows 字典形 words), grouped by `第N課` and 8px apart like the 單詞目錄 rows.
+- The search box and matching rules are the same as 單詞目錄: a row matches when the query appears in the verb's 從-form `vol`, in its `japanese` reading (a Latin query converted to kana first), or in the lesson number; the matched text is painted red, and `沒有符合的單詞` shows when nothing matches. The query is transient, discarded on leaving, and never changes the chosen word.
+- A press on a row selects that verb as the example and returns to 變形說明. Back discards nothing; only a press changes the example.
+
 ## Completion
 
 The quiz list is shuffled once when 開始 is pressed; 下一題 walks that frozen order. The run ends when the last item resolves: a correct answer on the last item ends it immediately, and a revealed answer ends it when 下一題 is pressed.
@@ -411,7 +483,7 @@ The wireframes say which pieces exist. Do not copy their colors or boxes.
 - Quiz auto-submit.
 - Quiz 錯 X 題就顯示答案.
 
-A missing field uses the default above. Invalid JSON resets the whole object to the defaults.
+A missing field uses the default above. Invalid JSON resets the whole object to the defaults. The 學習 mode's 從, 到 and chosen example word are transient screen state and are not stored here.
 
 ## Build
 

@@ -2,7 +2,7 @@
 import { defaultSettings } from '../dict/settings.js'
 import { createResults } from '../study/results.js'
 
-export const SCREENS = ['loading', 'home', 'picker', 'reader', 'toc', 'card', 'quiz', 'settings']
+export const SCREENS = ['loading', 'home', 'picker', 'reader', 'toc', 'card', 'quiz', 'settings', 'learn', 'rule', 'example']
 export const MODES = ['dict', 'card', 'quiz']
 
 export function createSession() {
@@ -38,5 +38,9 @@ export function createSession() {
     // its transient visual state ('downloading' | 'playing'), and `hint` is the
     // transient 「該音頻暫時無法播放」 toast text.
     audio: { verified: {}, states: {}, hint: null },
+    // 學習 (grammar reference) screen state. Transient: `from` / `to` are the
+    // 從 / 到 choices on the 變形說明 page and `example` is the chosen example
+    // word as `{ lesson, index }` (null until the user picks one in 選字).
+    rule: { from: 'masu-form', to: 'dictionary-form', example: null },
   }
 }

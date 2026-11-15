@@ -543,3 +543,26 @@ needs the same binaries; it only prints traces and never fails the build.
 
 Serving and troubleshooting: see `docs/serving.md` (Python server, secure
 context, and why boot can stop at 載入失敗（lesson 1）).
+
+
+## Revision 37b — 變形說明 copy audit (done)
+
+All 210 ordered-pair explanations are now generated from the real `vol/` verbs
+and the pure conjugation tables in `src/study/rule-conjugation.js` /
+`src/study/rule-content-builder.js`. The 段 / 音便 mapping follows 從 and 到
+(`ます形 → て形` shows `い、ち、り → って`), special cases (う → わ, 行く, ある,
+する → できる, を → が, 帰る-type 第一類) are annotated, 例如 no longer leaves
+a blank, and 小提示 explains the mechanism. Evidence: `src/study/rule-conjugation.test.js`
+(28 tests, regenerates and compares all 210 entries), `npm test` 526 tests,
+`npm run build`, and `node scripts/browser-check.mjs` 623 checks / 0 failures. See `docs/spec.md` →
+學習 → 學習內容 for the data shape and `docs/changelog.md` for the full list
+of corrected descriptions.
+
+
+## Revision 37c — 變形說明 style/copy polish (done)
+
+Shared section-label style for 變形設置 / 例如 / 小提示, drawn `.hrule`
+separators, no notes inside 例如, no duplicated group-0 framing, and 小提示 as a
+numbered list. Evidence: `npm test` 526 tests, `npm run build`,
+`node scripts/browser-check.mjs` 629 checks / 0 failures. See
+`docs/spec.md` → 學習 → 變形說明.

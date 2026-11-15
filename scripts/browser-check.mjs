@@ -4561,7 +4561,9 @@ try {
 
   // A tap has to reach the handler without Chrome's old 300ms wait.
   const tapDelay = await zoomPage.evaluate(() => {
-    const button = document.querySelector('.home-actions button')
+    // 學習 is now the first home button; bind the same button the tap targets.
+    const button = [...document.querySelectorAll('.home-actions button')]
+      .find((el) => el.textContent.includes('字典'))
     window.__tapStart = null
     window.__tapDelay = null
     button.addEventListener('pointerdown', () => {
@@ -4614,6 +4616,59 @@ try {
   await zoomPage.waitForSelector('.settings', { timeout: 5000 })
   await zoomLocked(zoomPage, zoomCdp, 'settings', 195, 40, '.settings')
   await zoomContext.close()
+
+  // 學習 / 變形說明: the 段 / 音便 mapping follows 變形設置 and the special
+  // cases are annotated. The same pure rules drive the 例如 block.
+  await page.locator('.icon-button[aria-label="返回"]').click().catch(() => {})
+  await page.goto(BASE, { waitUntil: 'load' })
+  await page.waitForSelector('.home-actions', { timeout: 30000 })
+  await page.locator('.home-actions button', { hasText: '學習' }).click()
+  await page.waitForSelector('.learn-row', { timeout: 5000 })
+  check('學習目錄 lists the 15 forms', (await page.locator('.learn-row').count()) === 15, String(await page.locator('.learn-row').count()))
+  await page.locator('.learn-row', { hasText: 'て形' }).click()
+  await page.waitForSelector('.rule-map-line', { timeout: 5000 })
+  check('變形說明 opens on 從 ます形 到 て形', (await page.locator('.rule-title').textContent()).trim() === '從 ます形 到 て形 的變形如下')
+  check('ます形 → て形 shows い、ち、り → って', (await page.locator('.rule-map-line').first().textContent()).trim() === 'い、ち、り → って')
+  check('the 音便 rows are labelled', (await page.locator('.rule-map-note').first().textContent()).includes('促音便'))
+  check('the four verb-class blocks are shown', (await page.locator('.rule-section').count()) === 4)
+  check('special cases are annotated', (await page.locator('.rule-section .rule-note').count()) > 0)
+  check('小提示 explains the mechanism', (await page.locator('.tips-list li').count()) === 7)
+
+  await page.locator('.form-select').first().click()
+  await page.locator('.form-option', { hasText: '字典形' }).click()
+  await page.locator('.form-select').nth(1).click()
+  await page.locator('.form-option', { hasText: 'ます形' }).click()
+  check('字典形 → ます形 shows the 段 mapping', (await page.locator('.rule-map-line').first().textContent()).trim() === 'う → い　く → き　ぐ → ぎ')
+
+  await page.locator('.form-select').nth(1).click()
+  await page.locator('.form-option', { hasText: 'ない形' }).click()
+  check('字典形 → ない形 flags う → わ', (await page.locator('.rule-map-note').first().textContent()).includes('不是「あ」'))
+  check('字典形 → ない形 warns about 買わない', (await page.locator('.rule-section').first().locator('.rule-note--warn').allTextContents()).join(' ').includes('買う → 買わない'))
+
+  await page.locator('.example-pick').click()
+  await page.waitForSelector('.example-row', { timeout: 5000 })
+  check('選字 lists every dictionary verb', (await page.locator('.example-row').count()) === 386, String(await page.locator('.example-row').count()))
+  await page.locator('button[aria-label="搜尋"]').click()
+  await page.locator('.example-search-input').fill('買う')
+  await page.locator('.example-row').first().click()
+  await page.waitForSelector('.example-pair', { timeout: 5000 })
+  check('例如 resolves the two real forms', (await page.locator('.example-pair').textContent()).trim() === '買う → 買わない')
+  check('例如 always shows a reason', (await page.locator('.example-reason').textContent()).includes('因為'))
+  check('例如 shows 原理', (await page.locator('.example-principle').count()) === 1)
+  check('例如 carries no extra notes', (await page.locator('.example-notes').count()) === 0)
+  check('變形設置 / 例如 / 小提示 share the section-label style', (await page.locator('.rule-body .section-label').count()) === 3)
+  check('a drawn horizontal rule sits above the heading', (await page.locator('.rule-title').evaluate((el) => el.previousElementSibling?.classList.contains('hrule'))) === true)
+  check('the three labels share one computed style', await page.locator('.rule-body .section-label').evaluateAll((els) => {
+    const styles = els.map((el) => {
+      const cs = getComputedStyle(el)
+      return [cs.fontSize, cs.fontWeight, cs.letterSpacing, cs.color].join('|')
+    })
+    return styles.length === 3 && styles.every((style) => style === styles[0])
+  }))
+  check('three drawn horizontal rules separate the sections', (await page.locator('.rule-body > .hrule').count()) === 3)
+  check('小提示 items are numbered', (await page.locator('.tips-list li').first().evaluate((el) => getComputedStyle(el).listStyleType)) !== 'none')
+  check('小提示 is a numbered list', (await page.locator('.tips-list').evaluate((el) => el.tagName)) === 'OL')
+  check('the 例外 block has no group-0 framing', (await page.locator('.rule-section').last().textContent()).includes('group 0') === false)
 
 } catch (error) {
   failures.push(`error: ${error.message}`)

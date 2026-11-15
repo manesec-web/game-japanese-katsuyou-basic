@@ -1,9 +1,9 @@
 # Progress
 
-Last updated: 2026-11-15 (revision 36: 單詞目錄 lists every form and its
-search accepts partial hiragana and romaji with the match painted red).
+Last updated: 2026-11-15 (revision 37c: 變形說明 labels and separators
+unified, 例如 notes removed, 小提示 now a numbered list).
 
-**Status: complete.** T1–T8 are done and revisions 2–36 have landed and been
+**Status: complete.** T1–T8 are done and revisions 2–37c have landed and been
 verified, including follow-up UI passes A/B. The build is live at
 `https://manesec-web.github.io/game-japanese-katsuyou-basic/` (verified
 2026-11-14: HTTP 200, and `dict/vol.bin` answers `application/octet-stream`).

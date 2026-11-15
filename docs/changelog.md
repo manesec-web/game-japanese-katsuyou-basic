@@ -1853,3 +1853,103 @@ Verified: `npm test` 44 files / 448 tests (`romaji.test.js` +15,
 607 checks, 0 failures — 45 form rows for the 3-verb run, one marked row,
 `ikimasu` → 行きます/ます形, `iki` → 行き-only highlights, and the red
 `.toc-hit` spans. `vol/` bytes were not touched.
+
+
+## 2026-11-15 (revision 37b)
+
+### 變形說明：全面校正描述、隨設置變化的音便表、例外標註與小提示
+
+Requested: fix every description in 學習 / 變形說明; e.g. 字典形 → ます形 must
+show `い、ち、り → って`-style kana mappings that change with the chosen 從 / 到,
+call out the special cases (notably う → わ for ない形), review all 210
+conjugations, and rewrite 小提示 so the reader understands how it works.
+
+Problems found in the old generator:
+
+- The 第一類 rule line always used 読む (む) as its example, so it printed
+  `去「で」` or `把「み」改成「ま」` as if one ending applied to all nine
+  endings. It never showed the い、ち、り → って group the user asked for.
+- The 音便 list was hard-coded for 字典形 → た形/て形 only; from ます形 or
+  ない形, or in reverse, it showed the wrong kana, and た形 → 字典形 had no
+  list at all.
+- う → わ (ない形/使役形/受身形), 行く → 行った／行って, ある → ない,
+  する → できる, 無理をする → 無理ができる and the る-ending 第一類 verbs
+  (帰る、切る、知る…) were never annotated.
+- 第三類 used hard-coded する / 来る strings, and there was no 例外 block even
+  though `vol/` has 25 group-0 verbs.
+- 例如 returned `null` for pure additions/deletions (ません → ませんでした),
+  identical forms (可能形 = 受身形) and all 不規則/例外 words, leaving the
+  原理 blank; irregular words never appeared with a reason line.
+- 小提示 was two flat lines that did not explain the mechanism.
+
+What landed:
+
+- **Pure rules.** `src/study/rule-conjugation.js` holds the 五段 段 / 音便
+  tables, 一段 and 不規則 suffixes, the direction-aware `mappingLines(from,to)`
+  and the special-case notes. `src/study/rule-content-builder.js` builds the
+  four class blocks from real `vol/` verbs, with coloured segments, the mapping
+  and per-pair notes. `scripts/generate-rule-content.mjs` is now a thin writer
+  that verifies okurigana/reading alignment before publishing.
+- **Direction-aware copy.** 字典形→ます形 shows `う → い　く → き　ぐ → ぎ …`;
+  ます形→て形 shows `い、ち、り → って / み、び、に → んで / き → いて …`;
+  ない形→て形 shows `わ、た、ら → って`; て形→字典形 flips to
+  `って → う、つ、る`; た形↔て形 shows only the た／て swap. Same-段 pairs
+  (ます形→ません形) show no mapping. Each 音便 row is labelled 促音便 /
+  撥音便 / イ音便 / す行不變音 and notes 濁音 だ／で.
+- **例外.** Every pair now has 第一類, 第二類, 第三類 and 例外 blocks, all with
+  warnings and tips after the table: う → わ (not あ), 行く, 問う／請う,
+  ある, する → できる, を → が, 帰る-type 第一類, ら抜き, 敬語ます形, ます形
+  家族, 段 口訣, 来る 讀音.
+- **例如.** `src/study/rule-demo.js` handles identical readings, pure
+  additions, pure deletions and irregular verbs, always returning a reason;
+  no real verb / ordered pair derives to the wrong result. The pair's notes
+  are printed under 原理, from the same pure rules.
+- **小提示.** Rewritten as seven warning/tip notes: how to read the page, the
+  `一個語幹，五個段` mnemonic, the three most common traps, the special verbs,
+  and why a reverse 音便 pair cannot be reconstructed from the written form.
+- **Views.** `RuleView.vue` renders `section.map` and `section.notes`; no rule
+  is decided in a `.vue` file. The spec's 學習內容 section was updated to the
+  new data shape and to say that every table cell must be a real `vol/` form.
+
+Verified: `node scripts/generate-rule-content.mjs` (210 entries, 5,460 table
+cells); `npm test` 48 files / 526 tests, including a new
+`src/study/rule-conjugation.test.js` (28 tests) that regenerates all 210
+entries from `vol/`, compares them with `src/data/rule-content.js`, checks
+every cell against a stored `vol`, locks the direction-specific 音便 lines and
+derives all 386 × 210 real pairs; `npm run build` (whose `prebuild` now runs
+the generator); `node scripts/browser-check.mjs` 623 checks / 0 failures with
+new 學習 → 變形說明 → 選字 assertions; a separate headless Chromium probe showed
+`い、ち、り → って` for ます形→て形, `う → い` for 字典形→ます形, the う → わ
+warning, and no page errors. `vol/` bytes were not touched.
+
+
+## 2026-11-15 (revision 37c)
+
+### 變形說明：樣式統一、水平分割線、移除重複提示
+
+Requested UI/copy polish on top of revision 37b:
+
+- `變形設置`, `例如` and `小提示` now share one `.section-label` class (same
+  size, weight, letter spacing and colour); the separate `.rule-block-title`
+  heading style was removed.
+- A drawn 1px `.hrule` (the same element the settings screen uses) now sits
+  above `從 X 到 Y 的變形如下`, above `例如` and above `小提示`. The previous
+  `border-top` on the two sections was removed, so the line keeps its own
+  colour and length in every state.
+- All 小提醒 notes were removed from `例如`; the special cases stay in the
+  four class tables. `deriveChange` no longer computes or returns notes.
+- Removed the duplicated group-0 framing: the 例外 heading is now simply
+  `例外`, its rule line lists the real special verbs, and the note
+  `本教材把 行く、ある、帰る、する、来る 等標為「例外」（group 0）…` plus the
+  repeated 帰る-type tip are gone. Other blocks no longer repeat each other's
+  warnings.
+- `小提示` is a plain string list rendered as an `<ol>` (`1. … / 2. …`), no
+  longer coloured warning/tip boxes.
+
+Verified: `npm test` 48 files / 526 tests; `npm run build`;
+`node scripts/browser-check.mjs` 629 checks / 0 failures, including new
+assertions that the three labels share one computed style, three `.hrule`
+elements exist, the heading's previous sibling is the rule, 小提示 is a
+numbered `<ol>` with 7 items, 例如 has no notes, and the 例外 block contains
+no `group 0` text. A headless Chromium probe confirmed identical computed
+styles and no page errors. `vol/` bytes were not touched.
