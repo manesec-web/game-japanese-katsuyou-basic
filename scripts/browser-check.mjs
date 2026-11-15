@@ -1428,7 +1428,7 @@ try {
   await page.locator('.picker-start').click()
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   await iconGlyphs(page, 'dictionary')
-  check('reader title counts items', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  check('reader title is 字典', (await readerTitle(page)) === '字典', await readerTitle(page))
   check('reader lists all 15 forms', (await page.locator('.reader-page--current .form-block').count()) === 15, String(await page.locator('.reader-page--current .form-block').count()))
   check('every form has three sentence pairs', (await page.locator('.reader-page--current .form-block .sentence').count()) === 45)
   check('exactly one form block is the default', (await page.locator('.reader-page--current .form-block--default').count()) === 1)
@@ -1703,7 +1703,7 @@ try {
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   check(
     'back keeps the word and returns to the reader',
-    (await readerTitle(page)) === '學習（1/3）' && (await wordText(page)) === '行きます',
+    (await readerTitle(page)) === '字典' && (await wordText(page)) === '行きます',
     await readerTitle(page),
   )
   // A press on a row lands the reader on that word, at the top of the page.
@@ -1714,7 +1714,7 @@ try {
   const jump = { title: await readerTitle(page), word: await wordText(page) }
   check(
     'pressing a row opens that word',
-    jump.title === '學習（3/3）' && jump.word === lessonFiveVerbs[2].masu,
+    jump.title === '字典' && jump.word === lessonFiveVerbs[2].masu,
     JSON.stringify(jump),
   )
   const jumpedScroll = await page.evaluate(() => window.scrollY)
@@ -1731,7 +1731,7 @@ try {
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   check(
     'the first row goes back to the first word',
-    (await readerTitle(page)) === '學習（1/3）' && (await wordText(page)) === '行きます',
+    (await readerTitle(page)) === '字典' && (await wordText(page)) === '行きます',
     await readerTitle(page),
   )
   check('previous control disabled on the first item', await page.locator('.controls-button').first().isDisabled())
@@ -1796,12 +1796,12 @@ try {
     JSON.stringify(shortVerdict),
   )
   check('a 55px drag settles back to rest', Math.abs(shortVerdict.end) <= 0.5, JSON.stringify(shortVerdict))
-  check('a 55px drag keeps the word', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  check('a 55px drag keeps the word', (await readerTitle(page)) === '字典', await readerTitle(page))
 
   // Right-to-left advances: the strip follows the finger, then finishes the
   // page in one decelerating move and swaps the word under it.
   const forward = await dragSampled(page, -120)
-  check('a right-to-left swipe advances', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
+  check('a right-to-left swipe advances', (await readerTitle(page)) === '字典', await readerTitle(page))
   check(
     'the settle is still running 60ms after release',
     translateXOf(forward.mid) > 0.5 && translateXOf(forward.mid) < 400,
@@ -1836,7 +1836,7 @@ try {
   )
 
   const backward = await dragSampled(page, 120)
-  check('a left-to-right swipe goes back', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  check('a left-to-right swipe goes back', (await readerTitle(page)) === '字典', await readerTitle(page))
   check('the settle returns from the left', translateXOf(backward.mid) < -0.5, backward.mid)
 
   const readerNextNeighbour = await dragNeighbour(page, -120, 1, 'reader')
@@ -1846,7 +1846,7 @@ try {
       readerNextNeighbour.clipFillsViewport,
     JSON.stringify(readerNextNeighbour),
   )
-  check('the revealed dictionary neighbour becomes current', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
+  check('the revealed dictionary neighbour becomes current', (await readerTitle(page)) === '字典', await readerTitle(page))
   const readerPrevNeighbour = await dragNeighbour(page, 120, 0, 'reader')
   check(
     'a rightward dictionary drag reveals the previous word with a 24px gap',
@@ -1854,14 +1854,14 @@ try {
       readerPrevNeighbour.clipFillsViewport,
     JSON.stringify(readerPrevNeighbour),
   )
-  check('the previous dictionary neighbour becomes current', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  check('the previous dictionary neighbour becomes current', (await readerTitle(page)) === '字典', await readerTitle(page))
 
   // The turn judged as a curve: the strip follows the finger while held, then
   // settles once into the next word and never moves again.
   const readerTurn = await dragSettle(page, -120, '.reader-body', '.reader-window')
   check('the strip follows the finger while held', Math.abs(readerTurn.held + 120) < 3, String(readerTurn.held))
   const turnVerdict = settleVerdict(readerTurn.trace, { held: readerTurn.held, side: 1 })
-  check('the traced swipe advances', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
+  check('the traced swipe advances', (await readerTitle(page)) === '字典', await readerTitle(page))
   check(
     'the settle continues where the finger left the strip',
     turnVerdict.from !== null && Math.abs(turnVerdict.from - (readerTurn.width + 24 - 120)) < 30,
@@ -1872,23 +1872,23 @@ try {
   // The first and the last word have nothing beyond them: a drag towards the
   // edge they sit on is completely still and never changes the word.
   await drag(page, 120)
-  check('a back swipe returns to the first word', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  check('a back swipe returns to the first word', (await readerTitle(page)) === '字典', await readerTitle(page))
   const firstWall = await dragSettle(page, 120, '.reader-body', '.reader-window')
   const firstVerdict = settleVerdict(firstWall.trace, { held: firstWall.held, side: 1 })
   check('the first word never follows a backward drag', Math.abs(firstWall.held) < 1, String(firstWall.held))
   check('the first word never moves backward', firstVerdict.moved <= 1.5, JSON.stringify(firstVerdict))
-  check('a stayed first word keeps its place', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  check('a stayed first word keeps its place', (await readerTitle(page)) === '字典', await readerTitle(page))
   await drag(page, -120)
   await drag(page, -120)
-  check('two forward swipes reach the last word', (await readerTitle(page)) === '學習（3/3）', await readerTitle(page))
+  check('two forward swipes reach the last word', (await readerTitle(page)) === '字典', await readerTitle(page))
   const lastWall = await dragSettle(page, -120, '.reader-body', '.reader-window')
   const lastVerdict = settleVerdict(lastWall.trace, { held: lastWall.held, side: -1 })
   check('the last word never follows a forward drag', Math.abs(lastWall.held) < 1, String(lastWall.held))
   check('the last word never moves forward', lastVerdict.moved <= 1.5, JSON.stringify(lastVerdict))
-  check('a stayed last word keeps its place', (await readerTitle(page)) === '學習（3/3）', await readerTitle(page))
+  check('a stayed last word keeps its place', (await readerTitle(page)) === '字典', await readerTitle(page))
   await drag(page, 120)
   await drag(page, 120)
-  check('two back swipes return to the first word', (await readerTitle(page)) === '學習（1/3）', await readerTitle(page))
+  check('two back swipes return to the first word', (await readerTitle(page)) === '字典', await readerTitle(page))
 
   // Above 550px the reader keeps text selectable and pages only by button.
   await page.setViewportSize({ width: 900, height: 900 })
@@ -1911,7 +1911,7 @@ try {
   // The control runs the same direct swap plus one short slide as a swipe, so
   // the word arrives a beat later.
   await wait(460)
-  check('next control advances', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
+  check('next control advances', (await readerTitle(page)) === '字典', await readerTitle(page))
   const wordBeforeForm = await wordText(page)
 
   await page.locator('.icon-button[aria-label="設定"]').click()
@@ -1991,7 +1991,7 @@ try {
   // walk was written against the second verb, so page forward once again.
   await page.locator('.controls-button').nth(1).click()
   await wait(460)
-  check('the reload walk returns to the second verb', (await readerTitle(page)) === '學習（2/3）', await readerTitle(page))
+  check('the reload walk returns to the second verb', (await readerTitle(page)) === '字典', await readerTitle(page))
   check(
     'only the default form block is drawn after clearing',
     (await page.locator('.reader-page--current .form-block').count()) === 1 &&
@@ -3546,9 +3546,9 @@ try {
   }
   await page.locator('.picker-start').click()
   await page.waitForSelector('.reader-body', { timeout: 5000 })
-  const beforeSwipe = await readerTitle(page)
+  const beforeSwipe = await wordText(page)
   await drag(page, -120)
-  const afterSwipe = await readerTitle(page)
+  const afterSwipe = await wordText(page)
   check('reduced motion still changes the item on swipe', afterSwipe !== beforeSwipe, `${beforeSwipe} -> ${afterSwipe}`)
   const pageTransform = await page
     .locator('.reader-window')
@@ -4669,6 +4669,92 @@ try {
   check('小提示 items are numbered', (await page.locator('.tips-list li').first().evaluate((el) => getComputedStyle(el).listStyleType)) !== 'none')
   check('小提示 is a numbered list', (await page.locator('.tips-list').evaluate((el) => el.tagName)) === 'OL')
   check('the 例外 block has no group-0 framing', (await page.locator('.rule-section').last().textContent()).includes('group 0') === false)
+
+  // 選字 → 變形說明 keeps the position where 選字 was opened. A DOM click
+  // avoids Playwright's automatic scroll-into-view, so the recorded value is
+  // the exact scroll position the command sees.
+  await page.evaluate(() => window.scrollTo({ top: 1200, behavior: 'auto' }))
+  const ruleScrollBefore = await page.evaluate(() => window.scrollY)
+  await page.locator('.example-pick').evaluate((el) => el.click())
+  await page.waitForSelector('.example-row', { timeout: 5000 })
+  await page.locator('.example-row').nth(40).click()
+  await page.waitForSelector('.example-pair', { timeout: 5000 })
+  const ruleScrollAfter = await page.evaluate(() => window.scrollY)
+  check('選字 returns to the same 變形說明 scroll position', ruleScrollBefore > 100 && Math.abs(ruleScrollAfter - ruleScrollBefore) < 5, `${ruleScrollBefore} → ${ruleScrollAfter}`)
+
+  // 字典 reader: title 字典, 變形原理 next to each form name, and a jump that
+  // presets 從 / 到 / 例如 with the word on screen. Reset settings so a clean
+  // reader draws all 15 forms (earlier settings tests narrowed the list).
+  await page.evaluate(() => localStorage.removeItem('katsuyou-settings'))
+  await page.goto(BASE, { waitUntil: 'load' })
+  await page.waitForSelector('.home-actions', { timeout: 30000 })
+  await page.locator('.home-actions button', { hasText: '字典' }).click()
+  await page.waitForSelector('.chip-grid', { timeout: 5000 })
+  await page.locator('.chip', { hasText: '第5課' }).click()
+  await page.locator('.picker-start').click()
+  await page.waitForSelector('.reader-body', { timeout: 5000 })
+  check('reader title is 字典', (await readerTitle(page)) === '字典')
+  check('every non-default form carries 變形原理', (await page.locator('.reader-page--current .form-rule-link').count()) === 14)
+  check('變形原理 shares the form-name style', await page.locator('.reader-page--current .form-rule-link').first().evaluate((el) => {
+    const name = el.parentElement.querySelector('.form-name')
+    const a = getComputedStyle(el), b = getComputedStyle(name)
+    return a.fontSize === b.fontSize && a.fontWeight === b.fontWeight && a.color === b.color
+  }))
+  const readerWord = (await wordText(page)).trim()
+  // A DOM click keeps the exact scroll position (Playwright's click would
+  // first scroll the button into view and change the value the command sees).
+  await page.evaluate(() => window.scrollTo({ top: 900, behavior: 'auto' }))
+  const readerScrollBefore = await page.evaluate(() => window.scrollY)
+  await page.locator('.reader-page--current .form-block[data-form="nai-form"] .form-rule-link').evaluate((el) => el.click())
+  await page.waitForSelector('.rule-title', { timeout: 5000 })
+  check('變形原理 sets 從 ます形 到 ない形', (await page.locator('.rule-title').textContent()).trim() === '從 ます形 到 ない形 的變形如下')
+  check('變形原理 preselects the current word in 例如', (await page.locator('.example-pick').textContent()).includes(readerWord), `${readerWord} / ${await page.locator('.example-pick').textContent()}`)
+  check('變形原理 shows the two real forms', (await page.locator('.example-pair').textContent()).includes(' → '))
+  await page.locator('.rule .icon-button[aria-label="返回"]').click()
+  await page.waitForSelector('.reader-body', { timeout: 5000 })
+  const readerScrollAfter = await page.evaluate(() => window.scrollY)
+  check('returning from 變形說明 restores the reader scroll', readerScrollBefore > 100 && Math.abs(readerScrollAfter - readerScrollBefore) < 5, `${readerScrollBefore} → ${readerScrollAfter}`)
+
+  // 例如 regression: ます → ました must not cut into the shared ま and invent
+  // 「洗いますす / す → し / ＋ した」. The 原理 line reads 洗います with only
+  // ます struck, and the result is 洗いました.
+  await page.goto(BASE, { waitUntil: 'load' })
+  await page.waitForSelector('.home-actions', { timeout: 30000 })
+  await page.locator('.home-actions button', { hasText: '學習' }).click()
+  await page.locator('.learn-row', { hasText: 'ました形' }).click()
+  await page.waitForSelector('.rule-map-line', { timeout: 5000 }).catch(() => {})
+  await page.locator('.example-pick').click()
+  await page.waitForSelector('.example-row', { timeout: 5000 })
+  await page.locator('button[aria-label="搜尋"]').click()
+  await page.locator('.example-search-input').fill('洗います')
+  await page.locator('.example-row').first().click()
+  await page.waitForSelector('.example-principle', { timeout: 5000 })
+  const principleWord = (await page.locator('.principle-word').innerText()).replace(/\s+/g, '')
+  const principleResult = (await page.locator('.principle-result').innerText()).replace(/\s+/g, '')
+  check('原理 shows 洗います with no duplicated す', principleWord === '洗います', principleWord)
+  check('原理 strikes only ます', (await page.locator('.principle-struck').innerText()) === 'ます')
+  check('原理 invents no kana change for ます → ました', (await page.locator('.principle-change').count()) === 0)
+  check('原理 result is 洗いました', principleResult === '洗いました', principleResult)
+  check('reason names the two 語尾', (await page.locator('.example-reason').innerText()).includes('去掉「ます」，直接加「ました」'))
+
+  // Regression: 泳ぎます → 泳ぐ shows 「ぎ → ぐ」 but no redundant 「＋ ぐ」.
+  await page.locator('.form-select').first().click()
+  await page.locator('.form-option', { hasText: '字典形' }).click()
+  await page.locator('.form-select').nth(1).click()
+  await page.locator('.form-option', { hasText: 'ます形' }).click()
+  await page.locator('.form-select').first().click()
+  await page.locator('.form-option', { hasText: 'ます形' }).click()
+  await page.locator('.form-select').nth(1).click()
+  await page.locator('.form-option', { hasText: '字典形' }).click()
+  await page.locator('.example-pick').click()
+  await page.waitForSelector('.example-row', { timeout: 5000 })
+  await page.locator('button[aria-label="搜尋"]').click()
+  await page.locator('.example-search-input').fill('泳ぎます')
+  await page.locator('.example-row').first().click()
+  await page.waitForSelector('.example-principle', { timeout: 5000 })
+  check('泳ぎます → 泳ぐ shows ぎ → ぐ', (await page.locator('.principle-change').innerText()).includes('ぎ → ぐ'))
+  check('泳ぎます → 泳ぐ has no redundant ＋ ぐ line', (await page.locator('.principle-add-line').count()) === 0)
+  check('泳ぎます → 泳ぐ result is 泳ぐ', (await page.locator('.principle-result').innerText()).replace(/\s+/g, '') === '泳ぐ')
 
 } catch (error) {
   failures.push(`error: ${error.message}`)

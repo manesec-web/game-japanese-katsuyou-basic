@@ -234,14 +234,14 @@ describe('例如 derivation and 小提示', () => {
     const added = deriveChange({
       from: { vol: '買いません', japanese: 'かいません', group: '1' },
       to: { vol: '買いませんでした', japanese: 'かいませんでした', group: '1' },
-      fromId: 'masu-form-negative', toId: 'masu-form-past-negative',
+      fromId: 'masu-form-negative', toId: 'masu-form-past-negative', ending: 'う',
     })
     expect(added.kind).toBe('godan')
     expect(added.result).toBe('買いませんでした')
     const same = deriveChange({
       from: { vol: '食べられる', japanese: 'たべられる', group: '2' },
       to: { vol: '食べられる', japanese: 'たべられる', group: '2' },
-      fromId: 'potential-form', toId: 'passive-form',
+      fromId: 'potential-form', toId: 'passive-form', ending: 'る',
     })
     expect(same.kind).toBe('same')
     expect(same.result).toBe('食べられる')
@@ -251,7 +251,7 @@ describe('例如 derivation and 小提示', () => {
     const r = deriveChange({
       from: { vol: '買います', japanese: 'かいます', group: '1' },
       to: { vol: '買わない', japanese: 'かわない', group: '1' },
-      fromId: 'masu-form', toId: 'nai-form',
+      fromId: 'masu-form', toId: 'nai-form', ending: 'う',
     })
     expect(r.notes).toBeUndefined()
     expect(r.result).toBe('買わない')
@@ -264,9 +264,10 @@ describe('例如 derivation and 小提示', () => {
       for (const from of FORM_IDS) {
         for (const to of FORM_IDS) {
           if (from === to) continue
+          const ending = Array.from(verb['dictionary-form'].japanese).slice(-1)[0]
           const result = deriveChange({
             from: { ...verb[from], group }, to: { ...verb[to], group },
-            fromId: from, toId: to,
+            fromId: from, toId: to, ending,
           })
           expect(result, `${verb['dictionary-form'].vol} ${from}→${to}`).not.toBeNull()
           if (result.kind !== 'irregular') {

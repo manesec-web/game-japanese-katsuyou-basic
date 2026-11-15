@@ -41,6 +41,19 @@ export function createSession() {
     // 學習 (grammar reference) screen state. Transient: `from` / `to` are the
     // 從 / 到 choices on the 變形說明 page and `example` is the chosen example
     // word as `{ lesson, index }` (null until the user picks one in 選字).
-    rule: { from: 'masu-form', to: 'dictionary-form', example: null },
+    // `returnTo` names the screen 變形說明 goes back to (學習目錄 or the
+    // dictionary reader). The two scroll values are one-shot scroll memories:
+    // `ruleScrollTop` is where 選字 was opened from, so returning to 變形說明
+    // lands there instead of at the top; `readerScrollTop` is where 變形原理
+    // was pressed, and `readerRestore` is the consumed copy for the reader.
+    rule: {
+      from: 'masu-form',
+      to: 'dictionary-form',
+      example: null,
+      returnTo: 'learn',
+      ruleScrollTop: null,
+      readerScrollTop: null,
+      readerRestore: null,
+    },
   }
 }

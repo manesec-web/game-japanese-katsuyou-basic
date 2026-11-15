@@ -1,5 +1,5 @@
 <script setup>
-import { computed, inject, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, inject, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { ArrowLeft, ChevronLeft, ChevronRight, List, Settings as SettingsIcon } from 'lucide-vue-next'
 import RubyWord from '../components/RubyWord.vue'
 import { groupLabel } from '../dict/forms.js'
@@ -69,15 +69,32 @@ function stateClass(target) {
 }
 
 // A new word opens at the top of the page: the default form is the first block.
+// A return from 變形說明 instead restores the position the reader was showing
+// when 變形原理 was pressed (a one-shot value from `nav.go`).
 watch(
   () => [session.index, defaultFormId.value],
   () => window.scrollTo({ top: 0, behavior: 'auto' }),
 )
 
+function restoreScroll() {
+  const top = session.rule?.readerRestore
+  if (Number.isFinite(top)) {
+    session.rule.readerRestore = null
+    // Wait for the reader's long form list to mount before restoring, and
+    // clamp to the document's real maximum height.
+    nextTick(() => {
+      const max = Math.max(0, (document.documentElement?.scrollHeight ?? 0) - window.innerHeight)
+      window.scrollTo({ top: Math.min(top, max), behavior: 'auto' })
+    })
+    return
+  }
+  window.scrollTo({ top: 0, behavior: 'auto' })
+}
+
 // A word swapped before the screen mounted — a jump from 單詞目錄 — never fires
 // that watch, and the page may still sit where the word list was left. The
-// reader always opens on the top of its word.
-onMounted(() => window.scrollTo({ top: 0, behavior: 'auto' }))
+// reader then opens on the top of its word.
+onMounted(restoreScroll)
 
 function canGo(direction) {
   return direction === 'next' ? canNext.value : canPrev.value
@@ -157,14 +174,20 @@ function onDown(event) {
   if (paging.value) return
   // A word or sentence is tappable to play its audio. Read its target before
   // pointer capture can redirect later events: a tap plays, a drag still pages.
-  const audioEl =
-    event.target instanceof Element ? event.target.closest('[data-target]') : null
+  // Pointer capture redirects pointerup/click to the reader body, so record
+  // the tap target from pointerdown (the only event whose target is the
+  // button). A rule link keeps its form id here; onUp uses it to open the
+  // explanation even though the click never reaches the button.
+  const targetEl = event.target instanceof Element ? event.target : null
+  const audioEl = targetEl?.closest('[data-target]') ?? null
+  const ruleEl = targetEl?.closest('[data-rule-form]') ?? null
   pointer = {
     x: event.clientX,
     y: event.clientY,
     axis: null,
     lastDx: 0,
     width: rowWidth(),
+    ruleForm: ruleEl ? ruleEl.getAttribute('data-rule-form') : null,
     audio: audioEl
       ? {
           target: audioEl.getAttribute('data-target'),
@@ -207,12 +230,15 @@ function onMove(event) {
 
 function onUp() {
   if (!pointer) return
-  const { axis, lastDx, audio } = pointer
+  const { axis, lastDx, audio, ruleForm } = pointer
   pointer = null
   held.value = false
   if (axis === null) {
-    // A tap with no travel plays the word or sentence under the finger.
-    if (audio) store.send('audio.play', audio)
+    // A tap with no travel plays the word or sentence under the finger; a tap
+    // on 變形原理 opens its rule. Pointer capture redirects the click to the
+    // reader body, so the button's own @click cannot be the only path.
+    if (ruleForm) openRule(ruleForm)
+    else if (audio) store.send('audio.play', audio)
     return
   }
   if (!swipeEnabled(window.innerWidth)) return
@@ -235,6 +261,15 @@ function onLeave() {
   held.value = false
 }
 
+// A click on 變形原理 that arrives at the reader body (pointer capture moved
+// it there) still has its original pointerdown record. Guard against a second
+// dispatch from the button's own @click, which only fires when capture is off.
+function onRuleClick(event) {
+  const el = event.target instanceof Element ? event.target.closest('[data-rule-form]') : null
+  if (!el || pointer?.ruleForm) return
+  openRule(el.getAttribute('data-rule-form'))
+}
+
 function back() {
   store.send('nav.go', { screen: 'picker' })
 }
@@ -246,13 +281,20 @@ function openSettings() {
 function openToc() {
   store.send('nav.go', { screen: 'toc' })
 }
+
+// 變形原理: open 變形說明 for this exact pair (從 = 預設顯示形式, 到 = the
+// pressed form) with the current word preselected as 例如. The scroll position
+// is passed to the command so returning lands on the same block.
+function openRule(formId) {
+  store.send('rule.openFromReader', { to: formId, scrollTop: window.scrollY })
+}
 </script>
 
 <template>
   <section class="reader">
     <header class="bar bar--sticky">
       <button class="icon-button" type="button" aria-label="返回" @click="back"><ArrowLeft :size="22" aria-hidden="true" /></button>
-      <h1 class="bar-title">學習（{{ session.index + 1 }}/{{ session.items.length }}）</h1>
+      <h1 class="bar-title">字典</h1>
       <button class="icon-button" type="button" aria-label="單詞目錄" @click="openToc"><List :size="22" aria-hidden="true" /></button>
       <button class="icon-button" type="button" aria-label="設定" @click="openSettings"><SettingsIcon :size="22" aria-hidden="true" /></button>
     </header>
@@ -265,6 +307,7 @@ function openToc() {
       @pointerup="onUp"
       @pointercancel="onUp"
       @pointerleave="onLeave"
+      @click.capture="onRuleClick"
     >
       <div
         ref="rowEl"
@@ -290,7 +333,17 @@ function openToc() {
               :data-form="form.id"
               :aria-current="form.isDefault ? 'true' : undefined"
             >
-              <h2 class="form-name">{{ form.name }}</h2>
+              <div class="form-head">
+                <h2 class="form-name">{{ form.name }}</h2>
+                <button
+                  v-if="form.id !== defaultFormId"
+                  class="form-rule-link"
+                  type="button"
+                  :aria-label="`${form.name} 變形原理`"
+                  :data-rule-form="form.id"
+                  @click.stop="openRule(form.id)"
+                >變形原理</button>
+              </div>
               <button
                 class="word audio-tap"
                 :class="[stateClass(form.wordAudio.target), { 'word--error': form.errorUsage }]"
@@ -494,12 +547,50 @@ function openToc() {
   padding-top: 4px;
 }
 
-.form-name {
+/* The form name and its 變形原理 link share one row. The link uses the same
+   type as the label, but is a button: hovering on a fine pointer paints the
+   settings-button grey behind it. */
+.form-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
   margin: 0 0 6px;
+}
+
+.form-name {
+  margin: 0;
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   color: var(--ink-soft);
+}
+
+.form-rule-link {
+  flex: 0 0 auto;
+  padding: 2px 6px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .form-rule-link:hover {
+    background: rgba(36, 33, 58, 0.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-rule-link {
+    transition: none;
+  }
 }
 
 /* A word or Japanese sentence is a tap target for its audio. The tint uses the

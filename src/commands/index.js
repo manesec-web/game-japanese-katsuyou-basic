@@ -8,6 +8,7 @@ import { specs as cardSpecs } from './card.js'
 import { specs as quizSpecs } from './quiz.js'
 import { specs as audioSpecs } from './audio.js'
 import { specs as ruleSpecs } from './rule.js'
+import { specs as readerRuleSpecs } from './reader-rule.js'
 
 export function allSpecs(deps = {}) {
   return [
@@ -21,5 +22,6 @@ export function allSpecs(deps = {}) {
     ...quizSpecs(deps),
     ...audioSpecs(deps),
     ...ruleSpecs(deps),
+    ...readerRuleSpecs(deps),
   ]
 }

@@ -1953,3 +1953,68 @@ elements exist, the heading's previous sibling is the rule, 小提示 is a
 numbered `<ol>` with 7 items, 例如 has no notes, and the 例外 block contains
 no `group 0` text. A headless Chromium probe confirmed identical computed
 styles and no page errors. `vol/` bytes were not touched.
+
+
+## 2026-11-15 (revision 38)
+
+### 字典 → 變形說明, scroll memory, and the 例如 原理 bug
+
+Requested: the reader title becomes `字典`; each XX形 gets a clickable
+`變形原理` with the same type and a grey hover; pressing it opens 變形說明 with
+從 = 預設顯示形式, 到 = that form and 例如 set to the current word; and 選字 must
+return to 變形說明 at the scroll position it was opened from.
+
+A follow-up reported a broken 例如 derivation: `洗います → 洗いました` showed
+`洗いますす / す → し / ＋ した / 洗いました`.
+
+- **Root cause.** `deriveChange` split the two readings at their longest
+  common prefix. `ます` and `ました` share only `ま`, which is not a 語尾, so
+  the split landed inside the suffix and invented a kana change; the stray `す`
+  was then drawn twice.
+- **Fix.** `src/study/rule-demo.js` now takes `fromId`, `toId` and the verb's
+  dictionary `ending`, and uses the exact `godanParts` / `ICHIDAN_SUFFIX`
+  tables from `src/study/rule-conjugation.js` — the same tables the 210
+  authored class blocks use. `洗います → 洗いました` decomposes as
+  `洗い + ます(劃掉) → ました`, with no kana change. A whole shared 語尾
+  (`ません → ませんでした`) stays in the stem, so it reads `直接加「でした」`.
+  Both the 從-form and 到-form are reconstructed and verified from the pieces;
+  a pair that does not fit falls back to the plain pair.
+- **Reader link.** `src/commands/reader-rule.js` adds `rule.openFromReader`
+  (uses the reader's `defaultForm` as 從, validates 到 and resolves the
+  on-screen verb to a `{ lesson, index }` 選字 reference by its dictionary
+  reading — the library re-parses JSON each call, so object identity cannot be
+  used) and `rule.rememberScroll`. `session.rule` carries `returnTo`,
+  `ruleScrollTop`, `readerScrollTop` and `readerRestore`; `nav.go reader`
+  restores the reader position, `RuleView.vue` restores the 變形說明 position
+  after 選字. The reader's pointer capture redirects clicks on 變形原理 to the
+  reader body, so the form id is recorded on `pointerdown` and opened in
+  `onUp`.
+- **Views.** `ReaderView.vue` draws `變形原理` beside every non-default form
+  name (same font / weight / colour, grey hover) and on mount restores a
+  one-shot scroll value. `RuleView.vue` records `window.scrollY` before opening
+  選字 and restores it with `nextTick`. No rule is decided in a `.vue` file.
+
+Verified: `npm test` 49 files / 538 tests, including
+`src/commands/reader-rule.test.js` (11) and a regression test for
+`洗います → 洗いました`; a full sweep of all 59,850 regular 從 → 到 pairs
+reconstructs both written words with 0 mismatches; `npm run build`;
+`node scripts/browser-check.mjs` 642 checks / 0 failures, including the
+字典 title, 14 變形原理 buttons, 從/到/例如 presets, scroll restore in both
+directions and the 原理 line. `vol/` bytes were not touched.
+
+
+### 例如 follow-up: the changed kana was printed twice
+
+Reported: `泳ぎます → 泳ぐ` showed `ぎ → ぐ` and then a redundant `＋ ぐ`.
+The `＋` line was receiving the whole new kana ending instead of only the
+newly attached 語尾. `deriveChange` now separates `toChange` (the changed row
+kana, drawn purple in the result line) from `added` (only the new 語尾), and
+`RuleView.vue` draws the result as `base + toChange + added`. A kana-only pair
+has `added = ''`, so no `＋` line is drawn at all. The reason line also names
+the new 語尾 when one is attached (`ぎ → が，加「ない」`).
+
+Verified: a new unit test locks `泳ぎます → 泳ぐ` (no `＋ ぐ`) and
+`泳ぎます → 泳がない` (`＋ ない`); `npm test` 49 files / 540 tests;
+`npm run build`; `node scripts/browser-check.mjs` 645–646 checks / 0 failures
+with a browser assertion for the missing `＋ ぐ`; a 59,850-pair sweep
+reconstructs both written words with 0 mismatches. `vol/` bytes were not touched.

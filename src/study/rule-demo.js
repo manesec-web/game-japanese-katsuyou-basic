@@ -2,53 +2,72 @@
 //
 // Given a verb's two forms, this returns the pieces the 變形說明 page renders:
 // the reason line and the 原理 derivation (struck suffix, changed kana, result).
-// It compares the two readings (kana) and uses the verb class to pick the
-// pattern. When the two forms do not fit the regular pattern it falls back to
-// the plain 從 → 到 pair rather than guessing.
 //
-// The shared conjugation tables live in rule-conjugation.js; the suffix set
-// below is only used to tell a 五段 「語尾だけ」 swap (話します → 話して, where
-// し stays) from a real kana-row change (読みます → 読む, み → む).
+// The decomposition uses the SAME conjugation tables as the authored
+// explanations (rule-conjugation.js), not a longest-common-prefix guess. A
+// naive prefix compare cuts into a suffix when two suffixes share a start:
+// 洗います → 洗いました would become 洗いま + す → し + した, and the す was
+// drawn twice. Knowing the real 語尾 of each form gives 洗い + ます → ました
+// instead, with the 語幹 and the unchanged い段 kana left alone.
+
+import { godanParts, GODAN_SUFFIX, ICHIDAN_SUFFIX } from './rule-conjugation.js'
 
 export const IRREGULAR_HINT = '不規則動詞／例外，不套用 段 與 音便，請直接記住整組變化（見上方第三類與例外表）'
 export const SAME_FORM_HINT = '這兩個形在這個動詞上剛好同形，不用改'
-
-// The suffixes a 五段 form can end in after the row kana. When the shared
-// prefix has already eaten the row kana (す-ending verbs keep し in ます/て/た),
-// the remaining suffix is one of these and the derivation is a pure swap.
-const GODAN_SUFFIXES = new Set([
-  'ます', 'ません', 'ました', 'ませんでした',
-  'ない', 'なかった',
-  'た', 'だ', 'て', 'で',
-  'る', 'う', 'ば', 'れる', 'せる', 'ろ', 'よう',
-])
+export const PLAIN_HINT = '這個形的寫法不照規則，請直接記住兩個形'
 
 function chars(text) {
   return Array.from(text ?? '')
 }
 
-function lastChars(text, count) {
-  const list = chars(text)
-  if (count <= 0) return ''
-  return list.slice(list.length - count).join('')
+function tail(text, count) {
+  return chars(text).slice(count).join('')
 }
 
-function dropLastChars(text, count) {
+function head(text, dropCount) {
   const list = chars(text)
-  if (count <= 0) return text ?? ''
-  return list.slice(0, list.length - count).join('')
+  return list.slice(0, list.length - dropCount).join('')
 }
 
-// A regular result keeps every field the view renders, so an empty suffix or a
-// missing kana change simply hides that line instead of leaving a blank block.
-function regular({ kind, reason, base, fromChange, removed, changeFrom, changeTo, toChange, added, result, stem }) {
+// Every 語尾 a form can carry. Used only to recognise a *whole* shared 語尾
+// (ません → ませんでした keeps ません) rather than an accidental character
+// overlap (ます → ました shares only ま, which is not a 語尾).
+const KNOWN_SUFFIXES = new Set(
+  [...Object.values(GODAN_SUFFIX), ...Object.values(ICHIDAN_SUFFIX), 'だ', 'で'].filter(Boolean),
+)
+
+function sharedSuffix(fromSuffix, toSuffix) {
+  const limit = Math.min(fromSuffix.length, toSuffix.length)
+  for (let len = limit; len > 0; len -= 1) {
+    const part = fromSuffix.slice(0, len)
+    if (part === toSuffix.slice(0, len) && KNOWN_SUFFIXES.has(part)) return part
+  }
+  return ''
+}
+
+// When the row kana changes, that new kana is drawn by `changeFrom → changeTo`
+// (purple) and in the result line as `toChange`; `added` is ONLY the suffix
+// that is newly attached. So 泳ぎます → 泳ぐ shows 「ぎ → ぐ」 with no
+// redundant 「＋ ぐ」 line, while 泳ぎます → 泳がない shows 「＋ ない」.
+function reasonFor({ kanaChanged, fromKana, toKana, removed, added }) {
+  if (kanaChanged) {
+    if (added) return `${fromKana} → ${toKana}，加「${added}」`
+    return `${fromKana} → ${toKana}`
+  }
+  if (removed && added) return `去掉「${removed}」，直接加「${added}」`
+  if (added) return `直接加「${added}」`
+  if (removed) return `去掉「${removed}」`
+  return SAME_FORM_HINT
+}
+
+function resultPiece({ kind, reason, base, fromChange, stem, removed, changeFrom, changeTo, added, result }) {
   return {
     kind, reason, base, fromChange, stem, removed,
-    changeFrom, changeTo, toChange, added, result,
+    changeFrom, changeTo, toChange: changeTo, added, result,
   }
 }
 
-export function deriveChange({ from, to }) {
+export function deriveChange({ from, to, fromId, toId, ending }) {
   if (!from || !to) return null
   const group = String(from.group)
 
@@ -59,136 +78,84 @@ export function deriveChange({ from, to }) {
   }
   if (group !== '1' && group !== '2') return null
 
-  const fromReading = chars(from.japanese)
-  const toReading = chars(to.japanese)
-  if (fromReading.length === 0 || toReading.length === 0) return null
+  const fromVol = typeof from.vol === 'string' ? from.vol : ''
+  const toVol = typeof to.vol === 'string' ? to.vol : ''
+  const fromReading = typeof from.japanese === 'string' ? from.japanese : ''
+  const toReading = typeof to.japanese === 'string' ? to.japanese : ''
+  if (!fromVol || !toVol || !fromReading || !toReading) return null
 
-  // The two readings share the stem up to the first changed kana.
-  let lcp = 0
-  while (lcp < fromReading.length && lcp < toReading.length && fromReading[lcp] === toReading[lcp]) {
-    lcp += 1
-  }
-  if (lcp === 0) return null
-
-  const fromSuffix = fromReading.slice(lcp)
-  const toSuffix = toReading.slice(lcp)
-
-  // Case 1: identical readings (可能形 = 受身形 for a 一段 verb, etc.).
-  if (fromSuffix.length === 0 && toSuffix.length === 0) {
-    return regular({
-      kind: 'same',
-      reason: SAME_FORM_HINT,
-      base: from.vol,
-      fromChange: null,
-      stem: from.vol,
-      removed: '',
-      changeFrom: null,
-      changeTo: null,
-      toChange: null,
-      added: '',
-      result: to.vol,
-    })
-  }
-
-  // Case 2: pure addition (ません → ませんでした). The written form keeps the
-  // same kanji stem, so the added text is the trailing part of the 到 word.
-  if (fromSuffix.length === 0) {
-    const writtenAdded = typeof from.vol === 'string' && typeof to.vol === 'string' && to.vol.startsWith(from.vol)
-      ? to.vol.slice(from.vol.length)
-      : null
-    if (!writtenAdded) return null
-    return regular({
-      kind: group === '1' ? 'godan' : 'ichidan',
-      reason: `直接加「${writtenAdded}」`,
-      base: from.vol,
-      fromChange: null,
-      stem: from.vol,
-      removed: '',
-      changeFrom: null,
-      changeTo: null,
-      toChange: null,
-      added: writtenAdded,
-      result: to.vol,
-    })
-  }
-
-  // Case 3: pure deletion (ませんでした → ません).
-  if (toSuffix.length === 0) {
-    const writtenRemoved = typeof from.vol === 'string' && typeof to.vol === 'string' && from.vol.startsWith(to.vol)
-      ? from.vol.slice(to.vol.length)
-      : null
-    if (!writtenRemoved) return null
-    return regular({
-      kind: group === '1' ? 'godan' : 'ichidan',
-      reason: `去掉「${writtenRemoved}」`,
-      base: to.vol,
-      fromChange: null,
-      stem: to.vol,
-      removed: writtenRemoved,
-      changeFrom: null,
-      changeTo: null,
-      toChange: null,
-      added: '',
-      result: to.vol,
-    })
-  }
-
+  // The exact kana + 語尾 of both forms, from the same tables the class
+  // blocks use. `ending` is the verb's dictionary-form last kana (う…る).
+  let fromKana = ''
+  let toKana = ''
+  let fromSuffix = ''
+  let toSuffix = ''
   if (group === '1') {
-    // 五段: the last kana of the 語幹 moves onto another 段 / 音便 stem, and
-    // the 語尾 after it is swapped. The 從-form's own written ending is
-    // `row kana + suffix`; keeping that kana as the purple "fromChange" makes
-    // the 原理 line agree with the 音便 table above (う → い、い → っ …).
-    const fromEnding = fromSuffix.join('')
-    const toEnding = toSuffix.join('')
-    const pureSwap = GODAN_SUFFIXES.has(fromEnding)
-    const changeFrom = pureSwap ? null : fromSuffix[0]
-    const changeTo = pureSwap ? null : toSuffix[0]
-    // One kana is kept and changed; only the 語尾 after it is removed / added.
-    const removedCount = pureSwap ? fromSuffix.length : fromSuffix.length - 1
-    const added = pureSwap ? toEnding : toSuffix.slice(1).join('')
-    if (removedCount >= chars(from.vol).length) return null
-    const stem = dropLastChars(from.vol, removedCount)
-    // When 從 has no 語尾 (字典形 / 命令形), the changing kana itself is the
-    // part to remove: paint it purple and strike it, then add the whole new
-    // ending. This keeps 字典形→ます形 (`買う → 買います`) consistent with the
-    // 段 table rather than silently dropping the う.
-    const removedWritten = lastChars(from.vol, removedCount)
-    const noSuffix = !GODAN_SUFFIXES.has(fromEnding) && removedCount === 0 && !pureSwap
-    return regular({
-      kind: 'godan',
-      reason: changeFrom
-        ? `${changeFrom} → ${changeTo}`
-        : `去掉「${removedWritten}」，直接加「${added}」`,
-      base: pureSwap ? stem : dropLastChars(stem, 1),
-      fromChange: changeFrom,
-      stem,
-      // 字典形 has no 語尾 to strike: the changing kana is struck instead.
-      removed: noSuffix ? changeFrom : removedWritten,
-      changeFrom,
-      changeTo,
-      toChange: changeTo,
-      added: pureSwap ? added : `${changeTo ?? ''}${added}`,
-      result: to.vol,
+    if (!fromId || !toId || !ending) return null
+    const f = godanParts(fromId, ending)
+    const t = godanParts(toId, ending)
+    if (!f.kana || !t.kana) return null
+    fromKana = f.kana
+    toKana = t.kana
+    fromSuffix = f.suffix
+    toSuffix = t.suffix
+  } else {
+    fromSuffix = ICHIDAN_SUFFIX[fromId] ?? ''
+    toSuffix = ICHIDAN_SUFFIX[toId] ?? ''
+  }
+
+  const kanaChanged = group === '1' && fromKana !== toKana
+  // 語幹 (including the unchanged row kana) = the written 從-form minus its
+  // 語尾. For a 一段 verb this is simply the stem.
+  const writtenStem = head(fromVol, chars(fromSuffix).length)
+
+  let base
+  let fromChange
+  if (kanaChanged) {
+    // The last kana moves to another 段 / 音便 stem: paint it purple and take
+    // it out of `base`, so the result line can add the whole new ending.
+    base = head(writtenStem, chars(fromKana).length)
+    fromChange = fromKana
+  } else {
+    // Same kana: only the 語尾 changes. A shared *whole* 語尾 stays in `base`,
+    // so ません → ませんでした reads as 直接加「でした」 rather than removing
+    // and re-adding ません.
+    base = writtenStem + sharedSuffix(fromSuffix, toSuffix)
+    fromChange = null
+  }
+
+  const baseLen = chars(base).length
+  const removed = tail(fromVol, baseLen + (kanaChanged ? chars(fromKana).length : 0))
+  // `added` is the newly attached 語尾 ONLY. When the row kana changes, the
+  // new kana is already expressed by `changeTo` / `toChange`, so it must not
+  // also appear here (that was the duplicate 「＋ ぐ」 line).
+  const added = kanaChanged ? toSuffix : tail(toVol, baseLen)
+  const changeFrom = kanaChanged ? fromKana : null
+  const changeTo = kanaChanged ? toKana : null
+  const result = base + (changeTo ?? '') + added
+
+  // Both written words must be reproduced exactly. An intentionally wrong
+  // 練習用 form (error_usage) can break the table pattern; show the plain
+  // pair instead of inventing a kana change.
+  if (result !== toVol || base + (fromChange ?? '') + removed !== fromVol) {
+    return resultPiece({
+      kind: 'plain', reason: PLAIN_HINT, base: fromVol, fromChange: null,
+      stem: fromVol, removed: '', changeFrom: null, changeTo: null,
+      added: '', result: toVol,
     })
   }
 
-  // 一段: the whole from-suffix is removed and the whole to-suffix is added;
-  // the stem itself does not change.
-  const removedCount = fromSuffix.length
-  const added = toSuffix.join('')
-  if (removedCount >= chars(from.vol).length) return null
-  const stem = dropLastChars(from.vol, removedCount)
-  return regular({
-    kind: 'ichidan',
-    reason: `去掉「${lastChars(from.vol, removedCount)}」，直接加「${added}」`,
-    base: stem,
-    fromChange: null,
-    stem,
-    removed: lastChars(from.vol, removedCount),
-    changeFrom: null,
-    changeTo: null,
-    toChange: null,
+  const identical = fromReading === toReading && fromVol === toVol
+  return resultPiece({
+    kind: identical ? 'same' : group === '1' ? 'godan' : 'ichidan',
+    reason: identical ? SAME_FORM_HINT : reasonFor({ kanaChanged, fromKana, toKana, removed, added }),
+    base,
+    fromChange,
+    stem: writtenStem,
+    removed,
+    changeFrom,
+    changeTo,
     added,
-    result: to.vol,
+    result,
   })
 }

@@ -21,6 +21,11 @@ export function specs(deps = {}) {
         session.rule.from = to === 'masu-form' ? 'dictionary-form' : 'masu-form'
         session.rule.to = to
         session.rule.example = null
+        session.rule.returnTo = 'learn'
+        // A fresh entry from 學習目錄 starts at the top of the explanation.
+        session.rule.ruleScrollTop = null
+        session.rule.readerScrollTop = null
+        session.rule.readerRestore = null
         session.screen = 'rule'
         return { from: session.rule.from, to: session.rule.to, screen: session.screen }
       },
@@ -68,7 +73,13 @@ export function specs(deps = {}) {
         }
         session.rule.example = { lesson, index }
         session.screen = 'rule'
-        return { example: session.rule.example, screen: session.screen }
+        // `ruleScrollTop` was recorded by 變形說明 before opening 選字; keep
+        // it so the view can restore the same scroll position on return.
+        return {
+          example: session.rule.example,
+          screen: session.screen,
+          scrollTop: session.rule.ruleScrollTop,
+        }
       },
     },
   ]

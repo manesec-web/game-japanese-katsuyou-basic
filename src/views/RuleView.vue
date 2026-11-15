@@ -1,5 +1,5 @@
 <script setup>
-import { computed, inject, ref, watch } from 'vue'
+import { computed, inject, nextTick, onMounted, ref, watch } from 'vue'
 import { ArrowLeft, ChevronDown } from 'lucide-vue-next'
 import { FORMS, formName, groupLabel } from '../dict/forms.js'
 import { RULE_CONTENT } from '../data/rule-content.js'
@@ -34,6 +34,10 @@ const exampleTo = computed(() => example.value?.verb?.[toId.value] ?? null)
 
 const derived = computed(() => {
   if (!exampleFrom.value || !exampleTo.value) return null
+  // `ending` is the dictionary form's last kana (う…る); the pure derivation
+  // needs it together with the form ids to pick the exact 段 / 音便 ending
+  // from the shared conjugation tables.
+  const dictReading = example.value?.verb?.['dictionary-form']?.japanese ?? ''
   return deriveChange({
     from: {
       vol: exampleFrom.value.vol,
@@ -45,11 +49,16 @@ const derived = computed(() => {
       japanese: exampleTo.value.japanese,
       group: exampleTo.value.group,
     },
+    fromId: fromId.value,
+    toId: toId.value,
+    ending: Array.from(dictReading).slice(-1)[0] ?? '',
   })
 })
 
+// 變形說明 can be opened from 學習目錄 or from the dictionary reader's
+// 變形原理 link; back walks the same chain in reverse.
 function back() {
-  store.send('nav.go', { screen: 'learn' })
+  store.send('nav.go', { screen: session.rule.returnTo })
 }
 
 function openFrom() {
@@ -73,8 +82,29 @@ function setTo(formId) {
 }
 
 function pickExample() {
+  // Record where the reader was looking before the screen swap. The command
+  // keeps it in session state, so 選字 → 變形說明 can land on the same spot.
+  store.send('rule.rememberScroll', { scrollTop: window.scrollY })
   store.send('nav.go', { screen: 'example' })
 }
+
+// One-shot scroll restore. On a fresh entry `ruleScrollTop` is null, so the
+// page starts at the top; after 選字 it holds the position recorded above.
+function restoreRuleScroll() {
+  const top = session.rule.ruleScrollTop
+  session.rule.ruleScrollTop = null
+  // The rule page is long; wait for the tables to mount before scrolling, and
+  // clamp to the document's real maximum. nextTick covers the fade-in swap.
+  nextTick(() => {
+    const max = Math.max(0, (document.documentElement?.scrollHeight ?? 0) - window.innerHeight)
+    window.scrollTo({ top: Number.isFinite(top) ? Math.min(top, max) : 0, behavior: 'auto' })
+  })
+}
+
+// The value is consumed on mount, and a fresh `rule.open` /
+// `rule.openFromReader` resets it, so leaving for home cannot leave a stale
+// restore behind. 選字 deliberately keeps it until this view mounts again.
+onMounted(restoreRuleScroll)
 
 // One segment of a coloured example cell: 'change' paints purple, 'removed'
 // paints red with a double underline, anything else is plain text.
@@ -238,10 +268,11 @@ function segClass(seg) {
             </p>
             <p v-if="derived.changeFrom" class="principle-change" lang="ja">{{ derived.changeFrom }} → {{ derived.changeTo }}</p>
             <p v-if="derived.added" class="principle-add-line" lang="ja">＋ {{ derived.added }}</p>
-            <!-- `added` is the whole new ending; `toChange` is its first kana,
-                 already included, so the result line prints `added` only. -->
+            <!-- The result is 語幹 + the (possibly changed) row kana in purple
+                 + the newly attached 語尾 in dark blue, exactly once each. -->
             <p class="principle-result" lang="ja">
               <span>{{ derived.base }}</span>
+              <span v-if="derived.toChange" class="principle-kana">{{ derived.toChange }}</span>
               <span v-if="derived.added" class="principle-added">{{ derived.added }}</span>
             </p>
           </div>

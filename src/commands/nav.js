@@ -8,7 +8,13 @@ import { SCREENS, MODES } from '../engine/session.js'
 function reachable(session, screen) {
   if (screen === 'toc') return session.screen === 'reader' && session.items.length > 0
   if (screen === 'learn') return session.screen === 'home' || session.screen === 'rule'
+  // 變形說明 opens from 學習目錄, from the dictionary reader's 變形原理, and
+  // returns from 選字. Its back button walks the same chain in reverse.
   if (screen === 'rule') return session.screen === 'example'
+  if (screen === 'reader') {
+    if (session.screen !== 'rule') return true
+    return session.rule?.returnTo === 'reader' && session.items.length > 0
+  }
   if (screen === 'example') return session.screen === 'rule'
   return true
 }
@@ -23,6 +29,13 @@ export function specs() {
         reachable(session, params.screen) &&
         (params.mode === undefined || MODES.includes(params.mode)),
       run: (session, params) => {
+        // Returning to the dictionary reader hands the view the scroll
+        // position that was saved when 變形原理 was pressed. It is a one-shot
+        // value: the view consumes it, so a later navigation starts at top.
+        if (params.screen === 'reader' && session.screen === 'rule' && session.rule?.returnTo === 'reader') {
+          session.rule.readerRestore = session.rule.readerScrollTop
+          session.rule.readerScrollTop = null
+        }
         session.screen = params.screen
         if (params.mode !== undefined) session.mode = params.mode
         return { screen: session.screen, mode: session.mode }

@@ -566,3 +566,13 @@ separators, no notes inside 例如, no duplicated group-0 framing, and 小提示
 numbered list. Evidence: `npm test` 526 tests, `npm run build`,
 `node scripts/browser-check.mjs` 629 checks / 0 failures. See
 `docs/spec.md` → 學習 → 變形說明.
+
+
+## Revision 38 — 字典 變形原理 link and 例如 decomposition (done)
+
+Reader title `字典`, 變形原理 buttons that preset 從/到/例如 and return at the
+same scroll position, 選字 scroll restore, and a table-based `deriveChange`
+that fixes the `洗いますす` bug. Evidence: `npm test` 538 tests, `npm run
+build`, `node scripts/browser-check.mjs` 642 checks / 0 failures, and a
+59,850-pair reconstruction sweep. See `docs/spec.md` → Dictionary reader and
+學習 → 例如.

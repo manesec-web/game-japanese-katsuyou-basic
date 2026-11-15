@@ -190,11 +190,11 @@ Each mode remembers its own lessons and form choices under the `localStorage` ke
 
 ### Dictionary reader
 
-Top: back (to the picker), the title `學習（n/total）`, a 目錄 button, and a settings gear. The two icon buttons sit at the right edge in that order: 目錄 first, then the gear.
+Top: back (to the picker), the title `字典`, a 目錄 button, and a settings gear. The two icon buttons sit at the right edge in that order: 目錄 first, then the gear.
 
 The body draws the forms selected in 選擇顯示的類型, with the 預設顯示形式 first and the remaining drawn forms in the canonical order of the table above; 跳過錯誤的單詞 also leaves out `error_usage` forms. With the default settings all 15 are drawn. Each drawn form block shows:
 
-- A small heading with the form name, for example `字典形` or `ます形`. Every block has one.
+- A small heading with the form name, for example `字典形` or `ます形`. Every block has one. On the same row, to the right of every form except the 預設顯示形式, a `變形原理` button uses the same type as the heading and greys on hover. A press runs `rule.openFromReader`: it opens 變形說明 with 從 = the reader's 預設顯示形式, 到 = that form, and 例如 preselected to the word on screen. Back returns to the reader at the same scroll position.
 - The word `vol`, centred in the block. When readings are on, apply the ruby rules below so `japanese` sits on the kanji. When the form carries `error_usage`, the word takes the error colour and its base text is struck through twice — two lines in that same error colour, across the kanji and the kana — while the reading above it keeps the colour and is not struck; the strike never changes the colour. With 跳過錯誤的單詞 on, such forms are not drawn at all.
 - The gloss `chinese`, centred in the block. It is the per-form meaning defined in Data, printed exactly as stored: `；`, `…`, parentheses and the `（禮貌體）` / `（普通體）` / `（此形日常少用）` suffixes stay in the text.
 - Two tags, the group label and `第N課`, as a centred row. Only the first drawn block carries them, so the pills appear once per word rather than once per form.
@@ -339,7 +339,7 @@ Top to bottom:
 6. `例如` — the interactive example (below). It shows no extra 小提醒 notes; the special cases belong to the class tables only.
 7. `小提示` — the global teaching notes (below), rendered as a numbered list `1. … / 2. …`.
 
-從, 到 and the chosen example word are transient screen state, not saved settings: leaving 變形說明 discards them and `rule.open` resets them.
+從, 到 and the chosen example word are transient screen state, not saved settings. `rule.returnTo` remembers whether 變形說明 was opened from 學習目錄 or from the dictionary reader. Opening 選字 records the 變形說明 scroll position (`rule.rememberScroll`), and returning from 選字 restores it instead of jumping to the top; opening 變形原理 records the reader's scroll position and `nav.go reader` restores it.
 
 #### 學習內容
 
@@ -375,10 +375,10 @@ The 例如 block applies the pair to any verb in the dictionary. The word is cho
 - With a word chosen, the block shows one centred line `{從形} → {到形}`, then:
   - `因為 {word} 是 {class}動詞，所以 {change}。` — `{class}` is the word's group label, and `{change}` is derived: the changed kana pair (`み → む`) for a regular 五段 pair, the suffix swap for a 一段 pair, `直接加「…」` / `去掉「…」` for a pure addition/deletion, `同形` when both forms coincide, and `不規則動詞／例外…` for group 3 / 例外.
   - `原理：` the derivation, drawn from the two readings:
-    - For a regular pair, the 從-form is drawn with the changing kana in purple (`--highlight`) and its removable suffix double-struck-through in the error colour and written in the error colour (字體紅色、刪除線紅色), the unchanged stem keeping its normal ink; then the kana change `X → Y` in purple and the whole new ending (`changed kana + added suffix`) as `＋ Y` in dark blue; then the 到-form — the word, the change and the result all centred. When 從 has no removable 語尾 (for example 字典形), the changing kana itself is struck through as the removed part and the new ending is added.
+    - For a regular pair, the 從-form is drawn with the changing kana in purple (`--highlight`) and its removable suffix double-struck-through in the error colour and written in the error colour (字體紅色、刪除線紅色), the unchanged stem keeping its normal ink; then the kana change `X → Y` in purple; then — **only when there is a newly attached 語尾** — `＋ Y` in dark blue. The changed kana is never printed a second time as a `＋` line: `泳ぎます → 泳ぐ` shows `ぎ → ぐ` with no `＋ ぐ`, while `泳ぎます → 泳がない` shows `ぎ → が` and `＋ ない`. The result line is 語幹 + the (possibly changed) row kana in purple + the new 語尾 in dark blue, each exactly once. When 從 has no removable 語尾 (for example 字典形), the changing kana itself is struck through as the removed part.
     - For an irregular pair (group 3 or 例外) only the 從-form and 到-form are shown, with the reason line; nothing is struck through and no kana change is invented.
   - No 小提醒 notes are printed inside 例如; the class tables above already carry them.
-- The derivation is a pure function (`src/study/rule-demo.js`) over the two readings, the verb class and the pair's form ids. It must return a result (never `null`) for every real verb and every ordered pair, including pure additions, deletions and identical-form pairs; when a pair cannot be decomposed it falls back to the plain 從 → 到 pair rather than guessing.
+- The derivation is a pure function (`src/study/rule-demo.js`) over the two readings, the verb class, the pair's form ids and the verb's dictionary ending. It uses the **same 語尾 / 段 tables** as the class blocks to decompose the word, not a longest-common-prefix guess: a shared character inside a suffix is never mistaken for a kana change (`洗います → 洗いました` is `洗い + ます → ました`, never `洗いますす / す → し / ＋ した`), and a whole shared 語尾 (`ません → ませんでした`) stays in the stem. The 從-form must reconstruct exactly as `base + changed kana + struck 語尾` and the 到-form as `base + (changed-to kana) + added 語尾`; a pair that cannot be decomposed falls back to the plain 從 → 到 pair rather than inventing a change.
 
 #### 選字
 
