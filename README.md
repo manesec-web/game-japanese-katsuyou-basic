@@ -1,15 +1,18 @@
+
+
+# 大家の動詞轉型練習：初級篇
+
 <p align="center">
   <img src="docs/logo/logo-512.png" alt="大家の動詞轉型練習 logo" width="160" />
 </p>
 
-# 大家の動詞轉型練習
-
 一個練《大家的日本語》初級 1 – 50 課動詞變化（活用）的小網站。打開網頁就能用：
-不用註冊、不用安裝、不用付費，手機跟電腦都可以。
 
 | iPhone | PC |
 |---|---|
 | <img src="docs/screenshot/Iphone.jpg" alt="iPhone 上的首頁畫面" width="260"> | <img src="docs/screenshot/pc.png" alt="電腦上的字典畫面" width="480"> |
+
+不用註冊、不用安裝、不用付費，手機跟電腦都可以。
 
 **▶ 立即開始遊玩：<https://manesec-web.github.io/game-japanese-katsuyou-basic/>**
 
@@ -111,6 +114,6 @@ npm run dev
 
 ---
 
-字典資料出自《大家的日本語》，僅供學習使用。
+值得注意，該 APP 不是官方出品，且字典資料出自《大家的日本語》，僅供學習使用。
 
 Build with ❤ by Mane
