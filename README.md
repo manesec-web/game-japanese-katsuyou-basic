@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/logo/logo-512.png" alt="大家の動詞轉型練習 logo" width="160" />
+</p>
+
 # 大家の動詞轉型練習
 
 一個練《大家的日本語》初級 1 – 50 課動詞變化（活用）的小網站。打開網頁就能用：
