@@ -6,7 +6,9 @@ This file is for the next AI that enters the repo. Do the tasks in order. The pr
 
 **Revision 38 (reader → 變形說明 link and 例如 decomposition):** the dictionary reader's title is now `字典`; every form block except the 預設顯示形式 carries a `變形原理` button (same type as the XX形 label, grey hover) that runs `rule.openFromReader` — 從 = the reader's 預設顯示形式, 到 = the pressed form, 例如 preselected to the current verb — and back returns to the reader at the same scroll position. `選字 → 變形說明` also restores the scroll position instead of jumping to the top. `例如`'s `deriveChange` (`src/study/rule-demo.js`) now decomposes with the shared 語尾 / 段 tables (`src/study/rule-conjugation.js`) instead of a longest-common-prefix guess, so `洗います → 洗いました` reads `洗い + ます → ました` rather than `洗いますす / す → し / ＋ した`; a whole shared 語尾 (ません → ませんでした) stays in the stem. The follow-up fixed a duplicated `＋ ぐ` line: `deriveChange` separates the changed row kana (`toChange`) from the newly attached 語尾 (`added`), so `泳ぎます → 泳ぐ` shows only `ぎ → ぐ`. Commands are pure in `src/commands/reader-rule.js`; `.vue` files only render.
 
-**Revision 37b (變形說明 copy audit):** all 210 ordered-pair explanations were rebuilt from the real `vol/` verbs by `scripts/generate-rule-content.mjs`, backed by two new pure modules: `src/study/rule-conjugation.js` (五段/一段/不規則 tables, 段 and 音便 mappings, special-case notes) and `src/study/rule-content-builder.js` (real example rows + the four class blocks). The 第一類 mapping now changes with 變形設置 — `字典形→ます形` shows `う → い`, `ます形→て形` shows `い、ち、り → って`, `ない形→て形` shows `わ、た、ら → って`, reverse pairs flip the arrow — and each block carries 小提醒 for う→わ (not あ), 行く→行った／行って, ある→ない, する→できる, を→が, 歸る-type 第一類 る verbs, ら抜き, 濁音 だ／で and the 段 口訣. `例如` (`src/study/rule-demo.js`) no longer leaves a blank on pure additions, deletions, identical forms or irregular words, and attaches the same notes. `小提示` is a numbered seven-item list explaining the mechanism and the traps. `變形設置` / `例如` / `小提示` share one section-label style with drawn `.hrule` separators; 例如 carries no 小提醒 notes; the 例外 block heading and repeated group-0 notes were removed. Every table cell is verified byte-identical to a real `vol` form; `src/study/rule-conjugation.test.js` regenerates all 210 entries and compares them with the shipped data; `prebuild` runs the generator so a stale file cannot ship. `.vue` files only render.
+**Revision 37b (變形說明 copy audit):** all 210 ordered-pair explanations were rebuilt from the real `vol/` verbs by `scripts/generate-rule-content.mjs`, backed by two new pure modules: `src/study/rule-conjugation.js` (五段/一段/不規則 tables, 段 and 音便 mappings, special-case notes) and `src/study/rule-content-builder.js` (real example rows + the four class blocks). The 第一類 mapping now changes with 變形設置 — `字典形→ます形` shows `う → い`, `ます形→て形` shows `い、ち、り → って`, `ない形→て形` shows `わ、た、ら → って`, reverse pairs flip the arrow — and each block carries 小提醒 for う→わ (not あ), 行く→行った／行って, ある→ない, する→できる, を→が, 歸る-type 第一類 る verbs, ら抜き, 濁音 だ／で and the 段 口訣. `例如` (`src/study/rule-demo.js`) no longer leaves a blank on pure additions, deletions, identical forms or irregular words. `小提示` is a numbered seven-item list explaining the mechanism and the traps. Every table cell is verified byte-identical to a real `vol` form; `src/study/rule-conjugation.test.js` regenerates all 210 entries and compares them with the shipped data; `prebuild` runs the generator so a stale file cannot ship. `.vue` files only render.
+
+**Revision 37c (變形說明 style/copy polish):** `變形設置` / `例如` / `小提示` share one section-label style with drawn `.hrule` separators; 例如 carries no 小提醒 notes (`deriveChange` no longer returns any); the 例外 block heading is simply `例外` and repeated group-0 notes were removed; 小提示 renders as a numbered `<ol>` of seven items. `.vue` files only render.
 
 **Revision 36 (單詞目錄 all-form list + hiragana/romaji search):** the word list now shows one row per form (run order, then canonical form order), each with that form's `vol` and a `字典形`/`ます形`/… tag, and the current verb is marked on its dictionary-form row. Search matches the displayed word, the kana reading, or the lesson number; a Latin query is Hepburn romaji converted to kana first (`dekimasu` finds `できます`, macrons, long vowels and the small つ handled, and katakana readings matched as hiragana so `kopi` finds `コピーする`), and the matched text is painted red (`--error`). Rules are pure in `src/dict/romaji.js` (converter) and `src/study/toc.js` (`matchFormRanges` + form rows, reading hits mapped back onto the kanji-and-kana word via the ruby alignment); `TocView.vue` only renders the `parts`.
 
@@ -44,8 +46,9 @@ Revisions 18–19 kept dropdown option hairlines constant, removed every
 that draws each separator as its own 1px element, and put a double
 strikethrough (colour unchanged) back on the dictionary's `error_usage` words.
 Revision 20 draws the page's scroll thumb inside a framed desktop column (8px
-in, with a track that clears the corner radius) while the two dropdown lists
-swap their native bars for the same drawn, fading thumb; revision 21 then
+in, with a track that clears the corner radius) while the then-two dropdown
+lists (four today, after 變形說明) swap their native bars for the same drawn,
+fading thumb; revision 21 then
 removed the rule between the 預設顯示形式 row and its list and turned that form's
 chip in 選擇顯示的類型 into a disabled button with an explanatory tooltip,
 backed by a settings invariant. Revision 22 makes the 15 chips of 選擇顯示的類型
@@ -91,8 +94,12 @@ settings gear, and that screen lists only this run's frozen words
 reader on the row pressed (at the top of the page) while back returns to the
 unchanged word. Revision 36 expanded that list to every form with a `XX形`
 tag and added the hiragana/romaji search with red highlight (see the
-revision block above). The broader 優化UI backlog remains pending for further,
-unspecified UI work.
+revision block above). Revisions 37 / 37b / 37c added the fourth home entry
+學習, its 學習目錄 / 變形說明 / 選字 screens, all 210 generated ordered-pair
+explanations and the interactive 例如 decomposition; revision 38 added the
+reader's 變形原理 link, scroll memory and the table-based `deriveChange` fix
+(see the revision blocks above). The broader 優化UI backlog remains pending for
+further, unspecified UI work.
 The site builds into `output/`, and that build is live at
 `https://manesec-web.github.io/game-japanese-katsuyou-basic/` (verified
 2026-11-14: HTTP 200, and `dict/vol.bin` answers `application/octet-stream`).
@@ -102,7 +109,7 @@ stay as the original build plan and as the acceptance checklist — do not reope
 them without a spec change. One future item sits in `docs/roadmap.md` as a
 backlog (B3 優化UI), needing a spec entry first; B2
 (優化下載文件) was delivered as revisions 32–33, B1 朗讀功能 was delivered as
-revision 35, and the specific requests recorded in revisions 2–35 have been
+revision 35, and the specific requests recorded in revisions 2–38 have been
 delivered.
 
 Behavior lives in `docs/spec.md`. Read the matching section before you build that piece. If the spec does not cover a product behavior, stop and ask. Do not invent a rule.
@@ -163,10 +170,12 @@ src/dict/audio-name.js        <md5-mid16>.opus file names
 src/dict/audio-bin.js         ensure a lesson bin is downloaded + sha256-verified
 src/dict/audio-entry.js       decompress the single Opus entry
 src/dict/audio-player.js      play an Opus entry through <audio>
-src/study/*.js                item lists, shuffle, highlight, results (pure)
+src/study/*.js                item lists, shuffle, highlight, results, 單詞目錄
+                              form rows, 學習 pair lookup, conjugation tables,
+                              變形說明 blocks and 例如 derivation (pure)
 src/data/dict-manifest.json   generated by write-sha256, commit it
 src/data/audio-manifest.json  audio bin sha256s, regenerated by fetch-audio
-src/data/rule-content.js      210 authored 學習 explanations (from scripts/generate-rule-content.mjs)
+src/data/rule-content.js      210 generated 學習 explanations (from scripts/generate-rule-content.mjs)
 src/storage/idb.js            IndexedDB dictionary cache (read/write/remove)
 src/storage/audio-idb.js      IndexedDB cache for the audio bins
 src/storage/settings.js       localStorage settings
@@ -188,7 +197,7 @@ There is no `public/` directory; the dictionary is copied from `vol/` into
 `output/dict/vol.bin` by the Vite plugin, and the logo icons are pulled in from
 `docs/logo/` by the relative `link` tags in `index.html`.
 
-`vite.config.js` builds `vol/` into `/game-japanese-katsuyou-basic/dict/vol.bin` in dev and writes the same archive into `output/dict/` on build. The source files stay in `vol/`; no per-lesson JSON is published.
+`vite.config.js` builds `vol/` into `/game-japanese-katsuyou-basic/dict/vol.bin` in dev and writes the same archive into `output/dict/` on build; a second Vite plugin serves/copies the 46 `dict/resource/lessonX.bin` audio bins into `output/dict/resource/`. The source files stay in `vol/`; no per-lesson JSON is published. `prebuild` runs both manifest checks, `scripts/generate-rule-content.mjs` and `scripts/fetch-audio.mjs`, so a build needs release access.
 
 ## Commands
 
@@ -197,7 +206,7 @@ There is no `public/` directory; the dictionary is copied from `vol/` into
 | id | What it does |
 |---|---|
 | `app.boot` | Check IndexedDB against the manifest. Hash lessons that are already there; collect the missing/corrupt ones, download `dict/vol.bin` once (retried once), unzip, verify and store each entry. Update `boot.checked` and `boot.total` |
-| `nav.go` | Change screen. `params.screen` |
+| `nav.go` | Change screen. `params.screen`, optional `params.mode` (one of `dict` / `card` / `quiz`); returning to `reader` from `rule` also hands the view the saved reader scroll position |
 | `lessons.toggle` | Toggle one lesson. A lesson with no verbs returns `error` |
 | `lessons.selectAll` | Clear the verb lessons when they are all selected. Otherwise select every lesson that has verbs |
 | `study.start` | Build the item list for the current mode and open the study screen |
@@ -210,10 +219,12 @@ There is no `public/` directory; the dictionary is copied from `vol/` into
 | `quiz.submit` | Grade the answer. Rules are in the spec |
 | `quiz.advance` | Move on after the answer has been revealed and the user presses next |
 | `settings.patch` | Merge settings. An unknown field rejects the whole patch and leaves state unchanged |
-| `audio.play` | Play the audio for a Japanese word or sentence. `params.target` (stable element id), `params.lesson`, `params.text`. Downloads + sha256-verifies the lesson bin once per session, decompresses the one Opus entry and plays; any failure raises `audio-unavailable` |
+| `audio.play` | Play the audio for a Japanese word or sentence. `params.target` (stable element id), `params.lesson`, `params.text`. Bad params return `invalid-params`; downloads + sha256-verifies the lesson bin once per session, decompresses the one Opus entry and plays; a missing lesson or any download/decode failure raises `audio-unavailable` and shows 「該音頻暫時無法播放」 |
 | `rule.open` | Open 變形說明 from 學習目錄. `params.to` is the pressed form; 從 defaults to ます形 (or 字典形 when 到 is ます形) and the example resets |
 | `rule.setFrom` / `rule.setTo` | Change 從 or 到 on 變形說明. 到 can never equal 從; when 從 lands on 到, 到 moves to the fallback target |
 | `rule.selectExample` | Choose the example word from 選字. `params.lesson` and `params.index` must point at a real verb; anything else returns `error` |
+| `rule.openFromReader` | Open 變形說明 from the reader's 變形原理 button. `params.to` is the pressed form and optional `params.scrollTop` records the reader position; 從 = 預設顯示形式 and 例如 = the verb on screen |
+| `rule.rememberScroll` | Record 變形說明's `params.scrollTop` before opening 選字, so returning lands at the same position |
 
 Screen names are only `loading`, `home`, `picker`, `reader`, `toc`, `card`, `quiz`, `settings`, `learn`, `rule`, and `example`. `picker` and `settings` use `session.mode` (`dict`, `card`, or `quiz`) to choose their content.
 
@@ -248,11 +259,11 @@ Checks:
 
 The `loading` screen shows the site head (大家の日本語 / 動詞轉型練習 / 涵蓋初級 1 – 50 課的動詞), a progress bar and the text `Loading ...`, and the footer line `Build with ❤ by Mane` alone (the `🥺 如果有 BUG 記得告訴我！` line stays on home); the credit opens the same About sheet. Progress follows `docs/spec.md`: verified lessons while the cache is checked, the streaming download's bytes from the cache-check percentage to 100%, then a hold at 100% while extracted entries are verified. Opening the site runs `app.boot`. Success goes to `home`. On failure the bar stops, the screen offers retry, and retry runs `app.boot` again; the head and the footer are still there.
 
-`home` has three buttons: 字典, 翻卡練習, 測驗. Each opens `picker` in that mode. The footer line is `Build with ❤ by Mane`. Activating it shows a small sheet with a link to `https://github.com/manesec-web/game-japanese-katsuyou-basic`, opened in a new tab.
+`home` has four buttons: 學習, 字典, 翻卡練習, 測驗. The first opens `learn` (學習目錄, added by revision 37); the other three each open `picker` in that mode. The footer line is `Build with ❤ by Mane`. Activating it shows a small sheet with a link to `https://github.com/manesec-web/game-japanese-katsuyou-basic`, opened in a new tab.
 
 The column is at most 480px wide and centered. The background fills the viewport, as described in `docs/spec.md`.
 
-Checks: the build still succeeds. In a browser, walk through loading, the three entries, and the footer link.
+Checks: the build still succeeds. In a browser, walk through loading, the four entries, and the footer link.
 
 ### T4 Lesson picker
 

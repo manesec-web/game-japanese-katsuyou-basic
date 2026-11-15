@@ -1,7 +1,7 @@
 # Progress
 
-Last updated: 2026-11-15 (revision 38: 字典 變形原理 link, scroll
-restore, and table-based 例如 decomposition).
+Last updated: 2026-11-15 (documentation sync after revision 38; all four
+verification commands re-run on the current tree).
 
 **Status: complete.** T1–T8 are done and revisions 2–38 have landed and been
 verified, including follow-up UI passes A/B. The build is live at
@@ -11,69 +11,87 @@ Backlog B1 (朗讀功能) is done as revision 35; B3 (優化UI) remains `pending
 but revisions 34 and 36 have delivered concrete 優化UI items; B2
 (優化下載文件) is done as revisions 32–33.
 
-## Revision 34 — locked 到 chips, 翻卡練習, immediate class pill
+## Revision 38 — reader → 變形說明 and the 例如 decomposition
 
-- **到 follows 從.** The chip that equals the current 從 is now a disabled
-  button with the dictionary's locked-chip look and the tooltip
-  `這和「從」的形式相同，不能選為「到」` on hover, up to 320px wide (one line)
-  and clamped to the viewport by the pure `src/ui/tooltip.js`, so a right-hand
-  chip cannot widen the page. It is never selected,
-  全選 skips it, and changing 從 moves the lock; the picker renders two pure
-  helpers (`targetChips`, `toggleTarget`), so no rule lives in the `.vue`.
-- **Rename.** Home button, spec, README and all current docs say 翻卡練習. The
-  quoted user request in the changelog keeps its original wording.
-- **Card class pill.** `CardView.vue` no longer renders tag rows only on the
-  current slot, so the card sliding in already carries its own class pill while
-  the finger holds the drag; it no longer pops in at release.
-- Verification: `npm test` 35 files / **370 tests**; `npm run build`;
-  `node scripts/browser-check.mjs` **597 checks**, 0 failures (the seeded quiz
-  moves the count by one). `vol/` untouched.
+- The reader title is `字典` and every non-default form block carries a
+  `變形原理` button (same type as the XX形 label, grey hover).
+  `rule.openFromReader` opens 變形說明 with 從 = 預設顯示形式, 到 = that form and
+  例如 = the verb on screen; back returns to the reader at the saved scroll
+  position. `選字 → 變形說明` also restores its scroll position.
+- `src/commands/reader-rule.js` holds the pure link and `rule.rememberScroll`
+  commands; `session.rule` carries `returnTo`, `ruleScrollTop`,
+  `readerScrollTop` and `readerRestore`; `nav.go reader` hands the one-shot
+  restore value to the view.
+- `deriveChange` (`src/study/rule-demo.js`) now decomposes using the shared
+  語尾 / 段 tables (`src/study/rule-conjugation.js`) instead of a
+  longest-common-prefix guess, so `洗います → 洗いました` reads
+  `洗い + ます → ました`. The follow-up splits `toChange` from `added`, so
+  `泳ぎます → 泳ぐ` shows `ぎ → ぐ` with no stray `＋ ぐ`. Both written forms
+  are reconstructed from the pieces before a derivation is accepted.
+- Verification: `npm test` 49 files / **540 tests**; `npm run build`;
+  `node scripts/browser-check.mjs` **645 checks**, 0 failures; a 59,850-pair
+  reconstruction sweep with 0 mismatches. `vol/` untouched.
 
-## Revision 35 — tap-to-play voice audio in the reader
+## Revision 37 / 37b / 37c — 學習 grammar reference
 
-- Every Japanese word (`form.vol`) and example sentence (`sentence.japanese`)
-  in the dictionary reader is tappable to play its recorded Opus audio; Chinese
-  lines are not. Hover shows the settings-button grey; the download pulses
-  normal↔grey; playback holds the grey and fades it back on end; failures show
-  「該音頻暫時無法播放」. Reduced motion skips the pulse but audio still plays.
-- Entry names are the middle 16 hex of the MD5 of the Japanese text
-  (`src/dict/md5.js` + `src/dict/audio-name.js`); a word keys on `vol`, a
-  sentence on `japanese`. `src/data/audio-manifest.json` holds the 46 bin
-  sha256s, distinct from `dict-manifest.json`.
-- GitHub release assets do not allow cross-origin fetch (verified in headless
-  Chromium), so the bins ship same-origin: `scripts/fetch-audio.mjs` (prebuild)
-  downloads the 46 `lessonX.bin` files from the release into gitignored
-  `dict/resource/`, verifies each against the release asset `digest`, and
-  regenerates the manifest; the Vite plugin copies them into
-  `output/dict/resource/`. The GitHub Actions build step downloads them
-  automatically at deploy time.
-- Playback (`src/dict/audio-bin.js`, `audio-entry.js`, `audio-player.js`,
-  `src/commands/audio.js`): download + sha256 verify once per page session,
-  decompress the single Opus entry, play via an `<audio>` Blob URL. A reload
-  re-verifies the stored copy without re-downloading.
-- Verification: `npm test` 43 files / **425 tests**; `npm run build` (46 bins
-  in `output/dict/resource/`); headless Chromium walk-through — first play
-  downloads one bin, reaches `.audio-tap--playing`, ends and clears; second
-  play makes 0 new requests; a sentence plays too. `vol/` untouched.
+- Home gains a fourth entry, 學習, above 字典. It opens a grammar reference,
+  not a practice run: 學習目錄 (`learn`) lists the 15 forms, a press runs
+  `rule.open` and opens 變形說明 (`rule`), whose 從 / 到 are two single-choice
+  dropdowns (到 never equals 從); 選字 (`example`) picks the 例如 word from
+  the dictionary. These screens never build `session.items` and have no
+  completion screen. Commands live in `src/commands/rule.js`; rules are pure
+  in `src/study/rule.js` (lookup + completeness) and `src/study/rule-demo.js`.
+- `src/data/rule-content.js` holds 15 × 14 = **210** ordered-pair
+  explanations, generated by `scripts/generate-rule-content.mjs` (now in
+  `prebuild`) from `src/study/rule-conjugation.js` and
+  `src/study/rule-content-builder.js`: four verb-class blocks per pair with a
+  direction-aware 段 / 音便 mapping, real `vol/` example rows and 小提醒 for
+  う → わ, 行く, ある → ない, する → できる, を → が, 帰る-type 第一類 る
+  verbs, ら抜き, 濁音 だ／で and the 段 口訣. Every table cell is
+  byte-identical to a stored `vol` form, and
+  `src/study/rule-conjugation.test.js` regenerates all 210 entries and
+  compares them with the shipped data.
+- 例如 resolves the chosen verb's two forms and derives the 原理 (removable
+  語尾 double-struck in red, changed kana, result); pure additions, deletions,
+  identical forms and irregular words no longer leave a blank. 小提示 is a
+  seven-item numbered list. 變形設置 / 例如 / 小提示 share one section-label
+  style with drawn `.hrule` separators; 例如 carries no 小提醒 notes; the 例外
+  heading and repeated group-0 notes were removed.
+- Verification: `npm test` 48–49 files / 526–540 tests (depending on the
+  follow-up), `npm run build`, and `node scripts/browser-check.mjs` 629 → 645
+  checks. `vol/` untouched.
 
 ## Revision 36 — 單詞目錄 all-form list + hiragana/romaji search
 
 - 單詞目錄 now lists one row per form (run order, then canonical form order),
   each showing that form's `vol` and its `字典形`/`ます形`/… tag; the current
   verb is marked on its dictionary-form row.
-- Search matches the displayed word, the kana reading, or the lesson number;
-  a Latin query is Hepburn romaji converted to kana first (`dekimasu` finds
-  `できます`), with macrons, long vowels and the small つ handled, and
-  katakana readings matched as hiragana (`kopi` finds `コピーする`). The
-  matched text renders in red (`--error`).
-- `src/dict/romaji.js` is the pure converter; `src/study/toc.js` holds the
-  form-level rows and `matchFormRanges` (reading hits map back onto the
-  kanji-and-kana word via the ruby alignment); `TocView.vue` only prints the
-  `parts`.
+- Search matches the displayed word, the kana reading or the lesson number; a
+  Latin query is Hepburn romaji converted to kana first (`dekimasu` finds
+  `できます`), with macrons, long vowels, the small つ and katakana readings
+  handled. The matched text renders in red (`--error`).
+- `src/dict/romaji.js` is the pure converter; `src/study/toc.js` holds the form
+  rows and `matchFormRanges` (reading hits map back onto the kanji-and-kana
+  word via ruby alignment); `TocView.vue` only prints the `parts`. 選字 reuses
+  the same matching rules.
 - Verification: `npm test` 44 files / **448 tests**; `npm run build`;
-  `node scripts/browser-check.mjs` **607 checks**, 0 failures — 45 form rows
-  for the 3-verb run, one marked row, `ikimasu` → 行きます/ます形, `iki` →
-  行き-only highlights, red `.toc-hit` spans. `vol/` untouched.
+  `node scripts/browser-check.mjs` **607 checks**, 0 failures. `vol/` untouched.
+
+## Revision 35 — tap-to-play voice audio in the reader
+
+- Every Japanese word (`form.vol`) and example sentence in the reader is
+  tappable; Chinese lines are not. Hover shows the settings-button grey, the
+  download pulses normal↔grey, playback holds the grey and fades on end, and
+  any failure shows 「該音頻暫時無法播放」. Reduced motion skips the pulse.
+- Entry names are the middle 16 hex of the MD5 of the Japanese text
+  (`src/dict/md5.js` + `src/dict/audio-name.js`); `src/data/audio-manifest.json`
+  holds 46 bin sha256s. `scripts/fetch-audio.mjs` (prebuild) downloads the
+  46 `lessonX.bin` files from the `res-miles` release into gitignored
+  `dict/resource/`, verifies each against the release `digest` and regenerates
+  the manifest; the Vite plugin ships them in `output/dict/resource/` same-origin.
+- Verification: `npm test` 43 files / **425 tests**; `npm run build` (46 bins);
+  headless Chromium walk-through of first play, second play (0 new requests)
+  and a sentence. `vol/` untouched.
 
 ## Revision 33 — the loading bar shows the download
 
@@ -100,7 +118,7 @@ but revisions 34 and 36 have delivered concrete 優化UI items; B2
 
 - First load now makes **one** request for 4.9 MB of dictionary data instead of
   50: the build packs `vol/` into `dict/vol.bin`, a level-9 ZIP of 549 KB
-  (11.5% of raw, measured at 4,899,916 bytes).
+  (11.5% of raw, measured at 4,875,910 bytes).
 - The manifest did not change: still 50 per-lesson SHA-256 records. Boot hashes
   each extracted entry against its own record, so `boot.checked / boot.total`
   still means finished lessons / 50 and the loading screen is unchanged.
@@ -202,7 +220,7 @@ refined by revisions 19–23. Revision 20 moved the page's drawn thumb inside a
 framed desktop column (8px in from the box's right edge with a 32px
 track that clears the 28px corner radius, so it no longer reads as crossing
 the frame or cutting through the footer buttons) while the phone layout keeps its 3px/16px placement, and replaced the
-native scrollbars of the two dropdown lists with the same drawn 4px rounded,
+native scrollbars of the two dropdown lists that existed then (four today, after 變形說明) with the same drawn 4px rounded,
 fading thumb the page uses. Revision 21 keeps the 預設顯示形式 list opening
 directly under its row with no rule in between (the user removed that line with
 「不要加綫，很醜！」) and turns the 預設顯示形式 chip of 選擇顯示的類型 into a
@@ -236,45 +254,53 @@ the unchanged word on back.
 
 - Vue 3.5 + Vite 7.3 + Vitest 3 static app. Verified with Node v26.4.0 and
   npm 11.18.0; Vite 7 requires Node `^20.19.0` or `>=22.12.0`.
-- `npm test`: 43 files, **425 tests passing**. `pretest` verifies the 50-lesson
+- `npm test`: 49 files, **540 tests passing**. `pretest` verifies the 50-lesson
   SHA-256 manifest and the 46-bin audio manifest first.
 - `npm run build`: `output/index.html`, `output/assets/` (one JS + one CSS
   bundle plus the four hashed logo icons — `favicon*.ico`, `favicon-32*.png`,
   `favicon-192*.png`, `apple-touch-icon*.png`), `output/dict/vol.bin` with
   **50** entries (549 KB; no per-lesson JSON, a ZIP served as
   `application/octet-stream`), and `output/dict/resource/` with the **46**
-  audio bins downloaded from the `res-miles` release by `prebuild`. `output/`
-  and `dict/resource/` are gitignored.
-- `node scripts/browser-check.mjs`: **597 checks passing on the revision-34
-  final run** (headless Chromium, 390×844 with 550/551/800/900 width probes,
-  plus a touch context for the zoom lock, thumb-drag/proximity assertions,
-  frame-by-frame motion checks, and 8 new checks that the reader renders each
-  form's own Chinese gloss). The count moves with the seeded quiz item, which
-  decides how many kana-key assertions run.
+  audio bins downloaded from the `res-miles` release by `prebuild`. `prebuild`
+  also regenerates the 210 `src/data/rule-content.js` entries. `output/` and
+  `dict/resource/` are gitignored.
+- `node scripts/browser-check.mjs`: **645–646 checks passing** (headless Chromium,
+  390×844 with 550/551/800/900 width probes, plus a touch context for the
+  zoom lock, thumb-drag/proximity assertions, frame-by-frame motion checks,
+  per-form Chinese glosses, the 學習 → 變形說明 → 選字 chain, reader 變形原理
+  presets and both scroll restores, the 例如 derivation regressions and audio
+  playback). The count moves with the seeded quiz item, which decides how many
+  kana-key assertions run.
 - `node scripts/motion-probe.mjs`: prints the frame-by-frame position trace for
   the paging slide and the flip. Used to measure the motion before and after a
   change; not part of the pass/fail gate.
 - `node scripts/strike-probe.mjs`: the one-off screenshot probe that measured
   where the double strike is painted and confirmed the reading is unstruck.
   It is retained as a development diagnostic, not part of the pass/fail gate.
+- `src/data/rule-content.js` holds 210 ordered-pair explanations, regenerated
+  by `scripts/generate-rule-content.mjs` and checked byte-for-byte against real
+  `vol/` forms by `src/study/rule-conjugation.test.js`.
 - Git: branch `main`, tracking `github/main`
   (`git@github.com:manesec-web/game-japanese-katsuyou-basic.git`); the working
   tree matches the remote tip. History starts at commit `933c30b` (`init`).
   The Pages site is live; it answered 404 only before the first deploy.
 - Dictionary cache is IndexedDB (`katsuyou-dict` / `lessons`, one record per
-  lesson file); settings are in `localStorage` under `katsuyou-settings`.
+  lesson file); the audio bins live in `katsuyou-audio`; settings are in
+  `localStorage` under `katsuyou-settings`. `session.rule` (從 / 到 / example /
+  scroll memories) is transient screen state, not a saved setting.
 
 ## Verification as of this refresh
 
 ```bash
-npm test                                # 43 files, 425 tests passed
-npm run build                           # manifests ok; output/index.html + output/dict/vol.bin + 46 audio bins
-node scripts/fetch-audio.mjs            # 46 bins up to date (downloads any changed one from the release)
+npm test                                # 49 files, 540 tests passed
+npm run build                           # both manifests ok; 210 entries regenerated; 46 audio bins up to date
+npm run dev                             # not run in this refresh (browser-check uses vite preview)
 ls output/dict                          # vol.bin resource/
-node scripts/browser-check.mjs          # browser check passed (597 checks; audio verified by a separate walk-through)
-node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
+node scripts/browser-check.mjs          # browser check passed (646 checks, 0 failures)
 node scripts/write-sha256.mjs --check   # manifest ok: 50 lessons
 node scripts/write-audio-manifest.mjs --check  # audio manifest ok: 46 bins
+node scripts/generate-rule-content.mjs  # 210 entries (also run by prebuild)
+node scripts/motion-probe.mjs           # not run in this refresh (informational)
 ```
 
 ## History in one line each
@@ -498,6 +524,19 @@ in [`docs/changelog.md`](changelog.md). Task acceptance evidence is in
   grid cells, like the quiz/測驗 settings' 錯 X 題就顯示答案 buttons, so their
   wrapping rows are flush and no chip shrinks to its label. The locked default
   chip and its tooltip are unchanged.
+- **Revisions 31–38** (2026-11-13 to 2026-11-15): revision 31 rewrote each
+  form's `chinese` / `note` (data only); 32–33 replaced 50 per-lesson files
+  with one verified `dict/vol.bin` and made the loading bar show its download;
+  34 locked the 到 chip equal to 從, renamed 翻卡練習 and painted the incoming
+  card's own pill; 35 added tap-to-play Opus audio for reader words and
+  sentences, shipped as 46 same-origin bins; 36 made 單詞目錄 one row per form
+  with hiragana/romaji search and red hits; 37 / 37b / 37c added the fourth
+  home entry 學習, the 學習目錄 / 變形說明 / 選字 screens, 210 generated
+  ordered-pair explanations and the 例如 derivation; 38 linked the reader's
+  變形原理 buttons to 變形說明 with scroll memory and fixed 例如's decomposition
+  from the shared 語尾 / 段 tables. See the newest sections at the top of this
+  file and the dated entries in `docs/changelog.md`.
+
 - **Revision 23** (requested 2026-11-11:「繼續優化UI」 with three concrete
   changes): 選擇顯示的類型's control follows the selection: 全選 selects 15 forms
   and reads 取消全選, which leaves only the current 預設顯示形式 and returns to
@@ -512,6 +551,12 @@ in [`docs/changelog.md`](changelog.md). Task acceptance evidence is in
 
 ## Known limitations and unverified paths
 
+- The 學習 / 變形說明 / 選字 screens were verified in headless Chromium
+  (`browser-check.mjs`) and by the pure 210-entry regeneration test, but not on
+  real iOS/Android devices or in Safari/Firefox. Their long tables and four
+  dropdown lists have not had human visual review; the derivation is checked
+  programmatically over all real verb/pair combinations, not by reading every
+  one of the 210 rendered pages.
 - Real iOS/Android devices and Safari/Firefox were not tested; only Chromium.
   The revision-14 flash fix is verified by frame-by-frame traces (nothing moves
   after the settle) in headless Chromium; the visual “flash” itself was a
@@ -586,8 +631,10 @@ Troubleshooting steps: [`docs/serving.md`](serving.md).
 - The About sheet's copy is aligned to `docs/spec.md` (`提交ISSUE` →
   `/issues/`, thanks line `どうもありがとうございます。`).
 
-Nothing else is known to deviate from `docs/spec.md`. If a different rule is
-wanted, amend the spec first, then code and the browser suite.
+Nothing else is known to deviate from `docs/spec.md` for the shipped code;
+the historical per-revision counts above are evidence for that revision, not
+current verification totals. If a different rule is wanted, amend the spec
+first, then code and the browser suite.
 
 ## Revision 10 — Pages subpath base
 

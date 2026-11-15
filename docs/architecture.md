@@ -2,9 +2,12 @@
 
 ## Shape of the app
 
-One static Vue 3 single-page app built with Vite. No router library, no
-server, and the only network call is fetching the same-origin dictionary
-archive (`dict/vol.bin`).
+One static Vue 3 single-page app built with Vite. No router library and no
+server. At runtime it fetches the same-origin dictionary archive
+(`dict/vol.bin`) once on boot and lazily fetches one `dict/resource/lessonX.bin`
+audio bin per lesson when a Japanese word or sentence is tapped. At build time
+`scripts/fetch-audio.mjs` downloads those 46 bins from the `res-miles` GitHub
+release (see Audio delivery).
 
 Three layers:
 
@@ -38,13 +41,14 @@ Every user-visible action is a command:
 { ok: false, error: { code, message, ...details } }
 ```
 
-An async `run` (only `app.boot` so far) returns a Promise of the same
+The async commands (`app.boot` and `audio.play`) return a Promise of the same
 envelope, so callers can always `await dispatch(...)` or use the sync result.
 
 Error codes in use: dispatch-level `unknown-command`, `invalid-params`,
 `missing-param`, `command-disabled`, `command-failed`; command-level
 `boot-failed`, `library-missing`, `library-invalid`, `lesson-empty`,
-`invalid-settings`, `no-items`, `quiz-no-item`. A command may throw
+`invalid-settings`, `no-items`, `quiz-no-item`, `invalid-index`,
+`invalid-example`, `invalid-rule-link`, `audio-unavailable`. A command may throw
 `CommandError` (or any Error carrying a string `code` and optional `details`);
 dispatch converts it into that error shape instead of `command-failed`.
 
@@ -57,15 +61,16 @@ Rules:
   A command's own validation should return an error rather than throw.
 - `run` may mutate the session in place; Vue reactivity is applied by `store.js`.
 
-Command ids (complete list, from `AGENTS.md`):
+Command ids (complete list, from `src/commands/*.js`):
 
 | id | Purpose |
 |---|---|
 | `app.boot` | Hash cached lessons, then download `dict/vol.bin` once, unzip with `unzipit`, verify each needed entry against its manifest hash and store only matches (one retry) |
-| `nav.go` | Switch screen; `params.screen` |
+| `nav.go` | Switch screen; `params.screen`, optional `params.mode`. Returning to `reader` from `rule` also hands the view the saved reader scroll position |
 | `lessons.toggle` | Toggle one lesson; error when the lesson has no verbs |
 | `lessons.selectAll` | Select all verb-bearing lessons, or clear when all selected |
 | `study.start` | Build the item list from mode + selected lessons, enter study |
+| `study.finish` | End a card run (完成 on the last card) and show the completion panel |
 | `dict.next` / `dict.prev` | Move within the dictionary item list, clamped |
 | `dict.goto` | Open the reader on the word at `params.index`; an index outside the run is `invalid-index` |
 | `card.next` / `card.prev` | Move within the card list, reset to face |
@@ -74,23 +79,38 @@ Command ids (complete list, from `AGENTS.md`):
 | `quiz.submit` | Grade the current answer |
 | `quiz.advance` | Move on after a revealed answer |
 | `settings.patch` | Merge settings; reject the whole patch on an unknown key |
+| `audio.play` | Lazy-download + sha256-verify `dict/resource/lessonX.bin`, decompress one `<md5-mid16>.opus` entry and play it; `audio-unavailable` on failure |
+| `rule.open` | Open 變形說明 from 學習目錄; `params.to` sets 到, 從 defaults to ます形 (字典形 when 到 is ます形), example resets |
+| `rule.setFrom` / `rule.setTo` | Change 從 / 到 on 變形說明; 到 can never equal 從, and 從 landing on 到 moves it to the fallback target |
+| `rule.selectExample` | Choose the example verb from 選字 (`params.lesson`, `params.index`); an unknown verb is `invalid-example` |
+| `rule.openFromReader` | Open 變形說明 from a reader form's 變形原理 with 從 = 預設顯示形式, 到 = that form and 例如 = the on-screen verb |
+| `rule.rememberScroll` | Record 變形說明's scroll position before opening 選字 |
 
 Screen names, exactly: `loading`, `home`, `picker`, `reader`, `toc`, `card`,
-`quiz`, `settings`. `picker` and `settings` vary by `session.mode` (`dict`,
-`card`, `quiz`). `nav.go` accepts an optional `mode` parameter (one of the three)
-so entering a picker from home selects the mode in the same dispatch. `toc` is
-the dictionary's 單詞目錄 and is reachable only from `reader` with a non-empty
-run; its rows come from `src/study/toc.js`.
+`quiz`, `settings`, `learn`, `rule`, `example`. `picker` and `settings` vary by
+`session.mode` (`dict`, `card`, `quiz`). `nav.go` accepts an optional `mode`
+parameter (one of the three) so entering a picker from home selects the mode in
+the same dispatch. `toc` is the dictionary's 單詞目錄 and is reachable only
+from `reader` with a non-empty run; its form rows and search ranges come from
+`src/study/toc.js` and `src/dict/romaji.js`. `learn` (學習目錄) → `rule`
+(變形說明) → `example` (選字) is the grammar-reference chain; `rule` also opens
+from the reader's 變形原理 and returns there via `rule.returnTo`. These three
+screens never build `session.items` and have no completion screen.
 
 ## Session
 
 `src/engine/session.js` exports `createSession()`. The session is plain data:
-current screen, mode, boot progress (`checked`, `total`, `done`, `error`), the
-lesson lists, form selections, study item list and cursor, current answer
-state, and settings. Commands own the transitions; views only display. The
-quiz session also carries `quizSkipped`, the list of `error_usage` items pulled
-out of the unanswered queue when 跳過錯誤的單詞 is enabled; turning the switch
-off appends them back at the tail.
+current screen, mode, boot progress (`checked`, `total`, `done`, `error` and the
+streaming `download` share), the lesson lists, form selections, study item list
+and cursor, current answer state, results tally, and settings. Commands own the
+transitions; views only display. The quiz session also carries `quizSkipped`,
+the list of `error_usage` items pulled out of the unanswered queue when
+跳過錯誤的單詞 is enabled; turning the switch off appends them back at the tail.
+`audio` holds the per-session verified-bin map, per-target visual states and
+the transient failure hint. `rule` holds the 從 / 到 pair, the chosen `{ lesson,
+index }` example, `returnTo`, and the two one-shot scroll memories
+(`ruleScrollTop` for 選字 → 變形說明, `readerScrollTop` / `readerRestore` for
+變形原理 → reader).
 
 The session is the single source of truth. Nothing derived is stored twice
 unless the spec says so.
@@ -114,11 +134,16 @@ scripts/zip.mjs              deterministic deflate ZIP writer (pure)
 scripts/vol-archive.mjs      builds dict/vol.bin, verifying each lesson first
 scripts/write-vol-archive.mjs  CLI: check + write the archive (--check, --out)
 scripts/write-audio-manifest.mjs  generates/checks src/data/audio-manifest.json
-scripts/fetch-audio.mjs    downloads the 46 audio bins from the res-miles release
-                           into gitignored dict/resource/, sha256-verified, and
-                           regenerates the audio manifest (prebuild)
+scripts/fetch-audio.mjs      downloads the 46 audio bins from the res-miles release
+                             into gitignored dict/resource/, sha256-verified,
+                             and regenerates the audio manifest (prebuild)
+scripts/write-res-archive.mjs  CLI for packing the release audio bins
+scripts/res-archive.mjs       packs the per-lesson audio release assets
+scripts/generate-rule-content.mjs  regenerates the 210 變形說明 entries (prebuild)
 scripts/browser-check.mjs     headless Chromium walk-through of the built site
 scripts/motion-probe.mjs      frame-by-frame motion traces (informational)
+scripts/check-conjugation.mjs  checks vol/ conjugations against derived forms
+dict/resource/                gitignored local copy of the 46 lessonX.bin files
 src/main.js                   app entry: store, Vue mount, overscroll guard, boot
 src/App.vue                   screen switch + shared shell
 src/engine/registry.js        command registry + dispatch
@@ -137,6 +162,7 @@ src/dict/quiz.js              keyboard generation, grading, reveal rules (pure)
 src/dict/ruby.js              kanji / reading alignment for <ruby>
 src/dict/settings.js          defaults, validation, patches, form-selection
                               invariants, stateful select-all rules, start hints
+src/dict/romaji.js            Hepburn romaji → hiragana for 單詞目錄 / 選字 search
 src/dict/md5.js               pure MD5 (Web Crypto omits it)
 src/dict/audio-name.js        <md5-mid16>.opus file names
 src/dict/audio-bin.js         ensure a lesson bin is downloaded + sha256-verified
@@ -145,6 +171,7 @@ src/dict/audio-entry.js       decompress the single Opus entry (pure)
 src/dict/audio-player.js      play an Opus entry through <audio> (non-pure)
 src/data/dict-manifest.json   generated manifest, committed
 src/data/audio-manifest.json  audio bin sha256s, regenerated by fetch-audio
+src/data/rule-content.js      210 generated ordered-pair explanations
 src/storage/idb.js            IndexedDB dictionary cache (read/write/remove)
 src/storage/audio-idb.js      IndexedDB cache for the audio bins (katsuyou-audio)
 src/storage/settings.js       localStorage settings load/save
@@ -156,6 +183,18 @@ src/study/reader-forms.js     reader block order, first-block flags and the
 src/study/highlight.js        paint the studied form inside its sentences
 src/study/card-tags.js        card face/back tag composition
 src/study/results.js          run tally, score bands, completion emoji
+src/study/toc.js              單詞目錄 form rows, lessons, search hit ranges
+src/study/reader-audio.js     reader word/sentence audio targets and keying
+src/study/rule.js             210-entry lookup + completeness (pure)
+src/study/rule-demo.js        deriveChange: 語尾/stem decomposition for 例如
+src/study/rule-conjugation.js 五段/一段/不規則 tables, 段/音便 maps, notes
+src/study/rule-content-builder.js  builds the four class blocks from real vol/ verbs
+src/commands/rule.js          rule.open / setFrom / setTo / selectExample
+src/commands/reader-rule.js   rule.openFromReader / rememberScroll
+src/commands/audio.js         audio.play
+src/views/LearnView.vue       學習目錄
+src/views/RuleView.vue        變形說明 (tables + 例如 + 小提示)
+src/views/ExampleView.vue     選字
 src/ui/store.js               reactive session + send()
 src/ui/boot-progress.js       loading-bar percentage: cache-check progress,
                               streaming download bytes, verification hold (pure)
@@ -176,8 +215,6 @@ src/ui/motion.js              prefers-reduced-motion probe + slideRow (one
                               Web Animations settle of the paging row)
 src/ui/window.js              paging window: 9/5 slots, current in the 3rd
 src/ui/paging-window.js       keeps the window row and shifts it per turn
-src/ui/element-thumb.js       dropdown thumb reveal, pointer/scroll activity,
-                              and the two-second fade
 src/study/window-views.js     per-slot card/reader data for the window
 src/ui/typing.js              IME-safe field edits (pure)
 src/views/*.vue               screens (thin)
@@ -189,7 +226,8 @@ src/components/*.vue          shared UI pieces (thin: SiteHead, BuildFooter,
 src/styles/app.css            design tokens, layout, motion, breakpoints
 index.html                    document title; logo icons linked relatively from docs/logo/
 vite.config.js                outDir "output", base "/game-japanese-katsuyou-basic/", serves and writes dict/vol.bin
-output/                       build output, gitignored (output/dict/ holds only vol.bin)
+output/                       build output, gitignored; output/dict/ holds
+                              vol.bin and resource/ with the 46 audio bins
 ```
 
 ## Dictionary delivery
@@ -207,8 +245,11 @@ Manifest shape (`src/data/dict-manifest.json`, generated, committed):
 ```
 
 `scripts/write-sha256.mjs` regenerates it; `--check` compares it with the
-actual bytes and exits non-zero on any mismatch. The `pretest` and `prebuild`
-scripts run the check.
+actual bytes and exits non-zero on any mismatch. The `predev`, `pretest` and `prebuild`
+scripts run both manifest checks. `prebuild` additionally regenerates the 210
+變形說明 entries (`scripts/generate-rule-content.mjs`) and downloads the 46
+audio bins (`scripts/fetch-audio.mjs`), so a stale rule-content file cannot ship
+and a build needs release access.
 
 The loading bar is `src/ui/boot-progress.js`, a pure function of
 `session.boot`: verified lessons while the cache is checked, then the streaming
@@ -237,12 +278,14 @@ The archive is built, never checked in (it lands in `output/dict/`):
 - Dev: Vite middleware serves the archive at
   `/game-japanese-katsuyou-basic/dict/vol.bin` (with or without the base
   prefix), rebuilding it when `vol/` or the manifest changes.
-- Build: the plugin writes `output/dict/vol.bin` and nothing else under `dict/`.
+- Build: the dictionary plugin writes `output/dict/vol.bin`; the audio plugin
+  copies the 46 bins into `output/dict/resource/`.
 - Runtime: fetch `dict/vol.bin` resolved against `document.baseURI`, then read
   entries by their `lesson_N.json` names; each entry's raw bytes are what
-  `write-sha256.mjs` hashed.
+  `write-sha256.mjs` hashed. Audio fetches `dict/resource/lessonX.bin` the same
+  way.
 
-The 50 lesson files total 4,899,916 bytes; the archive is about 550 KB (11.5%)
+The 50 lesson files total 4,875,910 bytes; the archive is about 549 KB (11.5%)
 and arrives in one request instead of 50.
 
 ### Revision 31 — per-form Chinese gloss data
@@ -293,33 +336,57 @@ text), via `unzipit` and a Blob URL into an `<audio>` element.
 ## Testing
 
 - Vitest under Node for engine, commands, hashing, boot, settings, item
-  lists, quiz queue reconciliation, keyboard, grading, ruby, swipe/drag
+  lists, quiz queue reconciliation, keyboard, grading, ruby, romaji, swipe/drag
   resolution, paging window, overscroll touch boundaries, scrollbar geometry
   and drag mapping, dropdown thumb timers/dragging, archive packing/unpacking,
-  the loading bar, the 到 lock and tooltip clamp, and result tallies: 35 files,
-  370 tests.
+  the loading bar, the 到 lock and tooltip clamp, result tallies, the 210
+  變形說明 entries and every real deriveChange pair: 49 files, 540 tests.
 - Browser APIs (IndexedDB, fetch) are injected so tests use fakes; the IDB
   adapter itself is tested with `fake-indexeddb`. No browser is needed for
   `npm test`.
 - `scripts/browser-check.mjs` starts `vite preview` and drives headless
   Chromium at 390×844 (plus 550/551/800/900 width probes) through loading,
-  home, all three pickers, reader, 單詞目錄, three settings screens, cards, quiz and
-  completion, including IndexedDB reuse, the loading head and credit line, the
-  first-card wall, reduced motion and the 550px breakpoint. It is a
-  separate command, not part of `npm test`. Its 597 checks on the final pass
-  (the seeded quiz moves the count by one)
+  home, all three pickers, reader, 單詞目錄, three settings screens, cards, quiz,
+  completion and the 學習 → 變形說明 → 選字 chain, including IndexedDB reuse,
+  the loading head and credit line, the first-card wall, reduced motion and the
+  550px breakpoint. It is a separate command, not part of `npm test`. Its
+  645–646 checks on the final pass (the seeded quiz moves the count by one)
   cover the single archive request (one `vol.bin` request, no per-lesson file,
-  a binary Content-Type, a 50-entry ZIP header, `output/dict` holding only the
-  archive), the streaming download bar (sampled from document start, never
+  a binary Content-Type, a 50-entry ZIP header, `output/dict` holding
+  `vol.bin` plus the 46-bin `resource/`), the streaming download bar (sampled from document start, never
   moving backwards, and a CDP-throttled boot whose bar rises over hundreds of
   milliseconds), the dictionary display-form filter and error-word hiding,
   live quiz queue reconciliation, wrong-answer shake/red feedback, the settings'
   locked chip and select-all state, the 到 chip lock (disabled, tooltip text,
   全選 skipped, lock following 從, one-line 320px tooltip and a clamped
   right-edge tooltip with no sideways scroll), the incoming card's own class
-  pill sampled before the pointer lifts, both drawn dropdown thumbs (now
-  mouse-draggable), and the framed desktop page thumb (now mouse-draggable with
-  proximity reveal).
+  pill sampled before the pointer lifts, the drawn dropdown thumbs (now
+  mouse-draggable), the framed desktop page thumb (now mouse-draggable with
+  proximity reveal), the 字典 / 變形原理 preset and scroll restore, the 例如
+  原理 decomposition (no duplicated ＋ ぐ, no invented 洗いますす), romaji search
+  and red hits, and audio playback.
+
+## 學習 / 變形說明
+
+`src/data/rule-content.js` holds one entry per ordered pair (15 × 14 = 210),
+generated by `scripts/generate-rule-content.mjs` (run by `prebuild`) from the
+pure tables in `src/study/rule-conjugation.js` and the real-verb builder in
+`src/study/rule-content-builder.js`. Every table cell is byte-identical to a
+stored `vol/` form; `src/study/rule-conjugation.test.js` regenerates all 210
+entries and compares them with the shipped file. `src/study/rule.js` provides
+the pure pair lookup and `exampleVerb` validation. 選字 (`ExampleView.vue`) lists
+every dictionary verb by its current 從-form and shares 單詞目錄's romaji search.
+
+`src/study/rule-demo.js` (pure `deriveChange`) decomposes the two chosen forms
+using the same 語尾 / 段 tables rather than a common-prefix guess: the removable
+suffix is double-struck, `toChange` is the changed row kana and `added` is only
+the newly attached 語尾, so `泳ぎます → 泳ぐ` prints `ぎ → ぐ` with no stray
+`＋ ぐ`. Irregular / 例外 words fall back to the plain 從 → 到 pair. Both written
+forms are reconstructed from the pieces before a derivation is accepted.
+
+`src/commands/rule.js` owns the 學習目錄 → 變形說明 → 選字 transitions;
+`src/commands/reader-rule.js` owns 變形原理 and the scroll-memory commands.
+Views only render. See `docs/spec.md` → 學習 for the on-screen copy.
 
 ## Styling and motion
 
@@ -342,9 +409,10 @@ colour.
 
 ## Final implementation notes
 
-- `app.boot` is the only async command; `dispatch` returns a Promise of the
-  usual envelope for it, so `bootstrap(store)` can `await` boot and then load
-  the library and settings. `boot.running` prevents a second concurrent boot.
+- `app.boot` and `audio.play` are the async commands; `dispatch` returns a
+  Promise of the usual envelope for them, so `bootstrap(store)` can `await` boot
+  and then load the library and settings. `boot.running` prevents a second
+  concurrent boot.
 - The library lives in `src/dict/library.js` (module-level data passed to
   commands/stores as a dependency), not inside the reactive session. The
   session keeps only the small `lessons` summary the picker renders.
@@ -378,7 +446,8 @@ colour.
   primary mouse button without a jump, and pointer capture keeps the drag
   alive outside the bar. A hidden thumb is pointer-transparent, and
   coarse-pointer/touch devices keep the passive hint with ordinary scrolling.
-- The two dropdown lists draw their own thumb instead of the native bar:
+- The four dropdown lists (picker 從, settings 預設顯示形式, 變形說明 從 / 到)
+  draw their own thumb instead of the native bar:
   `.form-list` hides the native scrollbar (`scrollbar-width: none` plus
   `::-webkit-scrollbar`), and each list is wrapped in a `.form-list-frame` that
   carries the panel's margin and holds a `<ScrollThumb>` absolutely. Geometry
@@ -402,8 +471,8 @@ colour.
   `html`/`body` set `touch-action: manipulation`, so a double tap and a pinch
   both leave the page at scale 1; the gesture surfaces override with `pan-y`.
   Root `overscroll-behavior-y: none` suppresses Android pull-to-refresh and
-  root rubber-banding; the two dropdowns contain their own overscroll rather
-  than disabling it. `src/ui/scroll-guard.js` adds a non-passive `touchmove`
+  root rubber-banding; the dropdowns contain their own overscroll rather than
+  disabling it. `src/ui/scroll-guard.js` adds a non-passive `touchmove`
   fallback for iOS: it predicts whether a one-finger vertical move crosses the
   nearest scroll container's boundary, cancels only that crossing and settles
   the container at its exact edge. Ordinary vertical scrolling, horizontal
@@ -423,6 +492,9 @@ colour.
   gradient, and screen changes keep a short fade.
 - Settings and lesson selections persist under `katsuyou-settings`; every
   command that changes them saves immediately through the injected storage.
+  The 從 / 到 pair, chosen 例如 word, `returnTo` and the two scroll memories in
+  `session.rule` are deliberately transient — they are screen state, not saved
+  settings.
 - The head and the credit line are components, not per-screen markup:
   `src/components/SiteHead.vue` (the three lines, on home and on loading) and
   `src/components/BuildFooter.vue` (the credit line, with the bug line only on

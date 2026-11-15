@@ -36,7 +36,7 @@ Status values: `pending`, `in progress`, `done`, `blocked`.
 | T5 | Dictionary reader: swipe navigation, settings (default form, furigana), persistence | done | Tests: index clamps at both ends; browser check of swipe and reload persistence |
 | T6 | Flashcards: face/back, tap to flip, swipe navigation, verb × target-form ordering | done | Tests: one card per (verb, target form); navigation resets to face; browser check |
 | T7 | Quiz: keyboard generator, grading function, auto-submit, reveal-then-advance | done | Tests: all reading kana present as keys; seed changes distractor order; grading rules; auto-submit. Browser: correct answer, three misses, manual advance |
-| T8 | Polish: motion, `prefers-reduced-motion`, final verification | done | `npm test`, `npm run build`, 50 files in `output/dict/`, `output/index.html` present |
+| T8 | Polish: motion, `prefers-reduced-motion`, final verification | done | `npm test`, `npm run build`, `output/dict/vol.bin` with 50 entries (the original T8 evidence said \"50 files\", before revision 32 packed them into one archive), `output/index.html` present |
 
 ## Order of work
 
@@ -152,7 +152,7 @@ that every possible UI improvement is done.
 |---|--------|--------|----------------------------------|
 | B1 | 朗讀功能 | done (revision 35) | Settled: recorded Opus audio for every word and sentence in the dictionary reader only, named by the middle 16 hex of the MD5 of the Japanese text, downloaded same-origin at build time from the `res-miles` release and sha256-verified once per session; 翻卡練習 and 測驗 stay out of scope |
 | B2 | 優化下載文件 | done (revision 32) | Settled: the 50 per-lesson files become one verified ZIP bundle; the per-lesson manifest, per-entry hashing, `app.boot` retry rule and `boot.checked / boot.total` all stay as they were |
-| B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–34 (including follow-up passes A/B, the 單詞目錄 screen of revision 30, the revision-31 dictionary data pass and revisions 32–34); every new change is written into the spec's Look and motion section before code and the browser suite follow |
+| B3 | 優化UI | pending | Further screens and complaints beyond revisions 2–38 (including follow-up passes A/B, the 單詞目錄 screen of revision 30, the revision-31 dictionary data pass, revisions 32–36 and the 學習 screens of 37–38); every new change is written into the spec's Look and motion section before code and the browser suite follow |
 
 ### Revision 15 — the paging window (requested 2026-11-10)
 
@@ -420,8 +420,9 @@ Requested: 「你是日本母語的老師，請你修改每一個單詞下面的
 
 The user proposed 「在編譯的時候，輸出一個 vol.bin 之類的放在公開目錄中。然後瀏覽器就可以使用
 unzipit 來解壓這個文件，然後存進去IndexedDB中」 to cut the first-load download. Measured
-first: the 50 lesson files are 4,899,916 bytes; a level-9 ZIP of the same bytes is about
-550 KB (11.5%), so one request replaces 50. Confirmed before code: no per-lesson fallback
+first: the 50 lesson files were 4,899,916 bytes at that time (4,875,910 after
+the revision-31 gloss pass); a level-9 ZIP is about 549 KB (11.5%), so one
+request replaces 50. Confirmed before code: no per-lesson fallback
 files stay, `unzipit` + ZIP (not a custom container), the archive lives at
 `dict/vol.bin` beside the site, per-lesson manifest hashes are unchanged, and the build
 verifies `vol/` before packing.
@@ -488,27 +489,33 @@ shows the matched form's word (2.a), and the form tag replaces 第N課 (3.a).
 
 ## Current status
 
-- Revisions 2–36 and follow-up passes A/B are `done`; the
+- Revisions 2–38 and follow-up passes A/B are `done`; the
   implementation was developed and verified over several incremental passes.
   Revision 31 is a data-only change: no `.vue`, command, engine or settings
   file was touched. The latest verification is recorded in `docs/progress.md`.
 - Backlog B2 (優化下載文件) is `done` as revisions 32–33 (single verified
   archive, `.bin` naming, download progress bar). Backlog B1 (朗讀功能) is
-  `done` as revision 35 (reader word + sentence voice audio). Revision 34
-  and revision 36 deliver concrete 優化UI items (picker lock, naming, card
-  pill; 單詞目錄 all-form list + romaji/hiragana search), but B3 stays
-  `pending` for any further, unspecified UI work. Revisions 2–36 cover
-  specific, specified requests. The revision-31 documentation sync also updated `README.md`,
-  `docs/serving.md`, `docs/architecture.md`, `AGENTS.md`, `docs/spec.md`,
-  `docs/progress.md` and `docs/changelog.md`; `docs/audit/*.md` remain
-  historical snapshots.
-- Revisions 23–27 have their spec and implementation in place, and the status
+  `done` as revision 35 (reader word + sentence voice audio). Revisions 34,
+  36, 37 and 38 deliver concrete 優化UI items (picker lock, naming, card
+  pill; 單詞目錄 all-form list + romaji/hiragana search; 學習 grammar
+  reference; reader 變形原理 link), but B3 stays `pending` for any further,
+  unspecified UI work. Revisions 2–38 cover specific, specified requests.
+  The 2026-11-15 documentation sync updated `README.md`, `AGENTS.md`,
+  `docs/spec.md`, `docs/architecture.md`, `docs/development.md`,
+  `docs/serving.md`, `docs/logo/README.md`, `docs/progress.md`,
+  `docs/changelog.md` and this board; `docs/audit/*.md` remain historical
+  snapshots.
+- Revisions 23–38 have their spec and implementation in place, and the status
   documents have been resynced. Revisions 24–25's iOS rubber-band and
-  dynamic-viewport behavior still needs real hardware verification; other than
-  that and the spec-silent choices listed in `docs/progress.md`,
-  revisions 2–34 have no known deviation from `docs/spec.md`.
+  dynamic-viewport behavior still needs real hardware verification; the 學習
+  tables and dropdowns were verified in headless Chromium but have not had
+  real-device or human visual review. Other than that and the spec-silent
+  choices listed in `docs/progress.md`, revisions 2–38 have no known deviation
+  from `docs/spec.md`.
 - The GitHub Pages site is live (the project URL answered 404 only before the
   first deploy); the repository history starts at commit `933c30b`.
+- Latest verification on the current tree: `npm test` 49 files / 540 tests,
+  `npm run build`, `node scripts/browser-check.mjs` 645–646 checks / 0 failures.
 
 ## How to resume a future session
 
@@ -527,11 +534,15 @@ shows the matched form's word (2.a), and the form tag replaces 第N課 (3.a).
 ## Verification commands
 
 ```bash
-npm test                                # Vitest unit tests (44 files / 448)
-npm run build                           # static build into output/ (dict/vol.bin)
-node scripts/write-sha256.mjs --check   # manifest consistency
+npm test                                # Vitest unit tests (49 files / 540)
+npm run build                           # prebuild checks both manifests, regenerates
+                                        # 210 rule entries and fetches 46 audio bins;
+                                        # then builds output/ (dict/vol.bin + resource/)
+node scripts/write-sha256.mjs --check   # dictionary manifest consistency
+node scripts/write-audio-manifest.mjs --check  # audio manifest consistency
 node scripts/write-vol-archive.mjs --check  # archive builds from verified vol/
-node scripts/browser-check.mjs          # headless Chromium walk-through (607 checks)
+node scripts/generate-rule-content.mjs  # regenerate the 210 pair explanations
+node scripts/browser-check.mjs          # headless Chromium walk-through (645–646 checks)
 node scripts/motion-probe.mjs           # frame-by-frame motion traces (informational)
 ```
 
@@ -544,6 +555,26 @@ needs the same binaries; it only prints traces and never fails the build.
 Serving and troubleshooting: see `docs/serving.md` (Python server, secure
 context, and why boot can stop at 載入失敗（lesson 1）).
 
+
+## Revision 37 — 學習 grammar reference (done)
+
+Home gains a fourth entry, 學習, above 字典. It is a grammar reference, not a
+practice run: 學習目錄 → 變形說明 → 選字 never build `session.items`, never open
+a study screen and have no completion screen.
+
+| # | Change | Status | Acceptance evidence |
+|---|--------|--------|---------------------|
+| 37a | Spec first: Screens / 學習 / 變形說明 / 學習內容 / 例如 / 選字 sections | done | `docs/spec.md` (four home buttons, 從/到 single-choice dropdowns, 15 × 14 = 210 entries, class blocks, example word from the dictionary) |
+| 37b | `src/views/HomeView.vue` + `App.vue`: fourth entry; `nav.go learn` with `SCREENS` extended by `learn` / `rule` / `example` | done | browser check: home shows four buttons; back from 學習目錄 returns home |
+| 37c | `src/views/LearnView.vue`: 變形目錄 lists the 15 canonical forms, one 44px row each | done | browser check: 15 rows, a press runs `rule.open` with the pressed form as 到 |
+| 37d | `src/views/RuleView.vue`: 變形設置 (從/到), heading 從 X 到 Y 的變形如下, four class blocks, 例如 and 小提示 | done | browser check: dropdowns, heading, four blocks, section labels, 小提示 |
+| 37e | `src/views/ExampleView.vue` + `src/study/rule.js`: 選字 lists every dictionary verb by its 從-form, with search; pure lookup + completeness | done | `src/study/rule.test.js` (16 tests); browser check: a row press selects the example |
+| 37f | `src/commands/rule.js`: `rule.open` / `rule.setFrom` / `rule.setTo` / `rule.selectExample`; 到 can never equal 從; bad example refs return `invalid-example` | done | `src/commands/rule.test.js`; `rule.open` presets 從 = 字典形 when 到 = ます形 |
+| 37g | `src/data/rule-content.js` (210 entries), `scripts/generate-rule-content.mjs`, `src/study/rule-conjugation.js`, `src/study/rule-content-builder.js`, `src/study/rule-demo.js` | done | `src/study/rule-conjugation.test.js` regenerates all 210 entries and compares with the shipped file; every table cell matches a real `vol` form |
+| 37h | Verification | done | `npm test` 48 files / 526 tests; `npm run build` (prebuild runs the generator); `node scripts/browser-check.mjs` 623 checks / 0 failures; `vol/` untouched |
+
+The follow-ups 37b (copy audit) and 37c (style/copy polish) below refine this
+board; their per-revision counts are historical evidence for each pass.
 
 ## Revision 37b — 變形說明 copy audit (done)
 
@@ -572,7 +603,9 @@ numbered list. Evidence: `npm test` 526 tests, `npm run build`,
 
 Reader title `字典`, 變形原理 buttons that preset 從/到/例如 and return at the
 same scroll position, 選字 scroll restore, and a table-based `deriveChange`
-that fixes the `洗いますす` bug. Evidence: `npm test` 538 tests, `npm run
-build`, `node scripts/browser-check.mjs` 642 checks / 0 failures, and a
+that fixes the `洗いますす` bug. Its follow-up split `toChange` from `added`, so
+`泳ぎます → 泳ぐ` shows only `ぎ → ぐ` with no `＋ ぐ` line. Final evidence:
+`npm test` 49 files / 540 tests, `npm run build`,
+`node scripts/browser-check.mjs` 645 checks / 0 failures, and a
 59,850-pair reconstruction sweep. See `docs/spec.md` → Dictionary reader and
 學習 → 例如.

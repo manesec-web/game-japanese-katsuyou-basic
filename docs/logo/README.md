@@ -25,9 +25,11 @@ magick docs/logo/favicon-32.png docs/logo/favicon-192.png \
 | `apple-touch-icon.png` | 180px iOS home-screen icon, opaque (no alpha) |
 | `logo-512.png` | 512px copy of the artwork, not linked from `index.html` |
 
-`index.html` references the first four with relative hrefs (`./docs/logo/...`),
-so Vite hashes each file into `output/assets/` and prefixes it with the Pages
-base (`/game-japanese-katsuyou-basic/`). There is no `public/` directory and no
+`index.html` references the four icon files (rows 2–5 of the table above) with
+relative hrefs (`./docs/logo/...`), so Vite hashes each file into
+`output/assets/` and prefixes it with the Pages base
+(`/game-japanese-katsuyou-basic/`). There is no `public/` directory and no
 root-absolute `/favicon.ico`. `scripts/browser-check.mjs` asserts the document
-title, that every icon URL lives under that subpath, and that each one answers
-200 with an `image/*` content type.
+title, that every icon URL lives under that subpath, that the `.ico` and the
+180px touch icon answer `image/*`, and that all four URLs answer 200 with
+non-empty bodies.

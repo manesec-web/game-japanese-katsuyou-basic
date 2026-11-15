@@ -1,28 +1,35 @@
 # Serving locally (and why a Python server can fail)
 
 The site is a static build in `output/`. Nothing else in the repository is
-served to the browser: `vol/` is build input, `src/` is Vite input. The
+served to the browser as source: `vol/` is build input, `src/` is Vite input,
+and the logo icons and audio bins are copied into the build by Vite. The
 serving, secure-origin and Pages rules below were first checked on 2026-11-11
-against the revision-23 build and still hold.
+against the revision-23 build and re-checked on 2026-11-15 against revision 38.
 
 Revision 32 replaced the 50 per-lesson files under `output/dict/` with one
 archive, `output/dict/vol.bin`, which the browser unpacks after download. The
 file is a ZIP published without the `.zip` suffix and served as
 `application/octet-stream`, so a download-helper browser extension does not
 intercept it; the Content-Type is irrelevant to `unzipit`, which reads the
-bytes.
+bytes. Revision 35 added `output/dict/resource/lessonX.bin` — the 46 per-lesson
+Opus archives downloaded at build time — so `output/dict/` now holds
+`vol.bin` and `resource/`, never one alone.
+
 Every command below therefore refers to `dict/vol.bin`; `dict/lesson_N.json`
 no longer exists in the build, even though each archive entry still carries
 that name. Revision 31 changed only form-level `chinese` values and one usage
 `note` inside `vol/lesson_*.json`; because the manifest hashes raw bytes,
 `node scripts/write-sha256.mjs` was re-run after that data pass, and a stale
 manifest still makes `pretest` / `prebuild` / `predev`, the archive build and
-the loading screen fail exactly as before.
+the loading screen fail exactly as before. `prebuild` also regenerates the 210
+變形說明 entries and fetches the audio bins, so a build needs network access to
+the `res-miles` release.
 
 ## Correct ways to run it
 
 ```bash
-npm run dev          # Vite dev server; serves the site and dict/vol.bin built from vol/
+npm run dev          # Vite dev server; serves the site, dict/vol.bin from vol/
+                     # and dict/resource/*.bin from the prebuild download
 npm run preview      # serves the built output/ (recommended for a check)
 ```
 
@@ -71,7 +78,10 @@ causes:
    the subpath. Check with
    `curl -I http://localhost:8000/game-japanese-katsuyou-basic/dict/vol.bin`.
 2. **Stale or partial build.** Run `npm run build` again; confirm
-   `output/dict/` holds exactly `vol.bin` and `output/index.html` exists.
+   `output/dict/` holds `vol.bin` and `resource/` with 46 bins, and
+   `output/index.html` exists. The boot-time failure in this section is about
+   `dict/vol.bin`; a missing audio bin shows 「該音頻暫時無法播放」 only when a
+   word is tapped (see cause 6 below).
 3. **Not a secure context.** IndexedDB itself opens on plain HTTP (a LAN IP
    works), but Web Crypto does not: `crypto.subtle` is `undefined` outside
    `https://`, `http://localhost`, and `http://127.0.0.1`. Boot hashes every
@@ -88,23 +98,32 @@ causes:
    does not match after two downloads.
    Clear site data for the origin (or delete the `katsuyou-dict` IndexedDB
    database) and retry.
+6. **Audio bin missing from the build.** A tap on a Japanese word or sentence
+   shows 「該音頻暫時無法播放」 instead of stopping boot. Check that
+   `output/dict/resource/lessonX.bin` answers 200 under the subpath; if it
+   404s, run `node scripts/fetch-audio.mjs` (or `npm run build`) with network
+   access, then rebuild. `npm run dev` shows a plain-text
+   `audio resource missing; run node scripts/fetch-audio.mjs` for that URL.
+   A corrupt cached audio bin is handled by clearing site data for the
+   `katsuyou-audio` IndexedDB database.
 
 ## Check the build before blaming the server
 
 ```bash
 npm run build
-ls output/dict                          # must be exactly vol.bin
+ls output/dict                          # vol.bin and resource/ (46 .bin files)
 test -f output/index.html && echo ok
 curl -I http://localhost:8000/game-japanese-katsuyou-basic/dict/vol.bin   # must be 200
+curl -I http://localhost:8000/game-japanese-katsuyou-basic/dict/resource/lesson1.bin  # must be 200
 ```
 
 `node scripts/browser-check.mjs` runs the same build through headless
 Chromium, including a boot from an empty IndexedDB, a reload that reuses the
-cache, and a simulated storage-failure path. The current suite is 597 checks
-(the count can move by one with the seeded quiz item); the separate
-`strike-probe.mjs` paint probe is informational, not a serving gate. If the
-browser suite passes, the build and the boot rule are sound and the problem is
-the origin or the server.
+cache, the 46 audio bins, the 學習 screens and a simulated storage-failure
+path. The current suite is 645–646 checks (the count can move by one with the
+seeded quiz item); the separate `strike-probe.mjs` paint probe is
+informational, not a serving gate. If the browser suite passes, the build and
+the boot rule are sound and the problem is the origin or the server.
 
 ## GitHub Pages
 
