@@ -16,8 +16,46 @@
   --surface-strong: #f3efe6;
   --bg: #fbf7ef;
   --muted: #8b86a0;
+  /* Inverse surface: a tooltip or toast chip sits on this, its label on
+     `--tooltip-ink`. The pair stays dark in the light theme and becomes a
+     lifted ink chip in the dark theme, so a tooltip never turns into a
+     white-on-white box when `--ink` flips. */
+  --tooltip: #24213a;
+  --tooltip-ink: #ffffff;
   --radius: 28px;
   --shadow: 0 18px 40px rgba(20, 16, 50, 0.22);
+  /* Tints and drawn pieces that used to carry a literal colour: a hovered row,
+     the off track of a switch, the progress bar's groove, the current row of a
+     list, the scroll thumbs, the sheet backdrop and the card shadows. Each is
+     a token so the dark theme below can restate it once instead of every
+     screen guessing. */
+  --tint: rgba(36, 33, 58, 0.06);
+  --tint-strong: rgba(36, 33, 58, 0.15);
+  --track: rgba(36, 33, 58, 0.1);
+  --accent-tint: rgba(74, 63, 159, 0.1);
+  --thumb: rgba(36, 33, 58, 0.32);
+  --thumb-edge: rgba(255, 255, 255, 0.18);
+  --overlay: rgba(16, 12, 40, 0.45);
+  --knob: #ffffff;
+  --shadow-knob: 0 1px 4px rgba(0, 0, 0, 0.25);
+  --shadow-accent: 0 10px 24px rgba(74, 63, 159, 0.28);
+  --shadow-card: 0 12px 30px rgba(20, 16, 50, 0.08);
+  --shadow-float: 0 16px 34px rgba(20, 16, 50, 0.18);
+  --shadow-pop: 0 10px 24px rgba(20, 16, 50, 0.25);
+  --progress-from: #4a3f9f;
+  --progress-to: #c9853f;
+  --error-strong: #8a2f3a;
+  --link-strong: #1d4ed8;
+  --grain-opacity: 0.22;
+  --grain-image:
+    repeating-radial-gradient(circle at 18% 27%, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 4px),
+    repeating-radial-gradient(circle at 72% 64%, rgba(0, 0, 0, 0.04) 0 1px, transparent 1px 5px);
+  /* The page background is one token so the dark theme can restate the whole
+     gradient instead of each stop. */
+  --page-background:
+    radial-gradient(1200px 700px at 15% 10%, #3b2f7a 0%, transparent 60%),
+    radial-gradient(900px 600px at 85% 90%, #c9853f 0%, transparent 65%),
+    linear-gradient(160deg, #221c44 0%, #38275c 45%, #a9702f 100%);
   /* Decelerating: the entrance of a turn and the return of a release that
      never crossed the threshold. Its speed at the start is set close to the
      speed an exit carries into the handover, so the pace does not change
@@ -34,6 +72,102 @@
   font-family: 'Hiragino Sans', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Dark theme ----------
+   The same palette appears twice on purpose: `data-theme="dark"` is the
+   explicit choice the toggle stores, and the OS preference is the default
+   before src/main.js has run (so a dark phone sees no light flash on the first
+   paint) and everywhere the user has not chosen. `data-theme="light"` keeps
+   the palette above even on a dark OS; it needs no own block because the
+   light tokens already sit in `:root`.
+   Nothing in this file may carry a literal theme colour: everything the dark
+   theme has to restate lives in the token list above, and the screens in
+   src/views and src/components read the same tokens. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --ink: #f3eee6;
+    --ink-soft: #b8b2c4;
+    --column: #1b1824;
+    --accent: #8a7bf5;
+    --accent-ink: #ffffff;
+    --highlight: #bda6ff;
+    --note: #f0b46b;
+    --error: #ff7070;
+    --line: rgba(243, 238, 230, 0.14);
+    --surface: #262231;
+    --surface-strong: #302b3d;
+    --bg: #141119;
+    --muted: #9a94ab;
+    --tooltip: #332d45;
+    --tooltip-ink: #f6f2ea;
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    --tint: rgba(243, 238, 230, 0.07);
+    --tint-strong: rgba(243, 238, 230, 0.16);
+    --track: rgba(243, 238, 230, 0.12);
+    --accent-tint: rgba(138, 123, 245, 0.22);
+    --thumb: rgba(243, 238, 230, 0.34);
+    --thumb-edge: rgba(255, 255, 255, 0.14);
+    --overlay: rgba(4, 3, 10, 0.65);
+    --knob: #f3eee6;
+    --shadow-knob: 0 1px 4px rgba(0, 0, 0, 0.5);
+    --shadow-accent: 0 10px 24px rgba(0, 0, 0, 0.45);
+    --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.45);
+    --shadow-float: 0 16px 34px rgba(0, 0, 0, 0.5);
+    --shadow-pop: 0 10px 24px rgba(0, 0, 0, 0.55);
+    --progress-from: #8a7bf5;
+    --progress-to: #d99a54;
+    --error-strong: #ff9a9a;
+    --link-strong: #8fb6ff;
+    --grain-opacity: 0.16;
+    --page-background:
+      radial-gradient(1200px 700px at 15% 10%, #2b2260 0%, transparent 60%),
+      radial-gradient(900px 600px at 85% 90%, #6a461c 0%, transparent 65%),
+      linear-gradient(160deg, #0c0a14 0%, #171326 45%, #2a1b0c 100%);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --ink: #f3eee6;
+  --ink-soft: #b8b2c4;
+  --column: #1b1824;
+  --accent: #8a7bf5;
+  --accent-ink: #ffffff;
+  --highlight: #bda6ff;
+  --note: #f0b46b;
+  --error: #ff7070;
+  --line: rgba(243, 238, 230, 0.14);
+  --surface: #262231;
+  --surface-strong: #302b3d;
+  --bg: #141119;
+  --muted: #9a94ab;
+  --tooltip: #332d45;
+  --tooltip-ink: #f6f2ea;
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  --tint: rgba(243, 238, 230, 0.07);
+  --tint-strong: rgba(243, 238, 230, 0.16);
+  --track: rgba(243, 238, 230, 0.12);
+  --accent-tint: rgba(138, 123, 245, 0.22);
+  --thumb: rgba(243, 238, 230, 0.34);
+  --thumb-edge: rgba(255, 255, 255, 0.14);
+  --overlay: rgba(4, 3, 10, 0.65);
+  --knob: #f3eee6;
+  --shadow-knob: 0 1px 4px rgba(0, 0, 0, 0.5);
+  --shadow-accent: 0 10px 24px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.45);
+  --shadow-float: 0 16px 34px rgba(0, 0, 0, 0.5);
+  --shadow-pop: 0 10px 24px rgba(0, 0, 0, 0.55);
+  --progress-from: #8a7bf5;
+  --progress-to: #d99a54;
+  --error-strong: #ff9a9a;
+  --link-strong: #8fb6ff;
+  --grain-opacity: 0.16;
+  --page-background:
+    radial-gradient(1200px 700px at 15% 10%, #2b2260 0%, transparent 60%),
+    radial-gradient(900px 600px at 85% 90%, #6a461c 0%, transparent 65%),
+    linear-gradient(160deg, #0c0a14 0%, #171326 45%, #2a1b0c 100%);
 }
 
 * {
@@ -90,10 +224,7 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   color: var(--ink);
-  background:
-    radial-gradient(1200px 700px at 15% 10%, #3b2f7a 0%, transparent 60%),
-    radial-gradient(900px 600px at 85% 90%, #c9853f 0%, transparent 65%),
-    linear-gradient(160deg, #221c44 0%, #38275c 45%, #a9702f 100%);
+  background: var(--page-background);
   background-attachment: fixed;
 }
 
@@ -111,7 +242,7 @@ body {
 }
 
 .column {
-  width: min(100%, 480px);
+    width: min(100%, 480px);
   min-height: calc(100vh - 40px);
   min-height: calc(100dvh - 40px);
   /* The paging surfaces use this to reach the column's true edge while a
@@ -169,7 +300,7 @@ body {
 .button.primary {
   background: var(--accent);
   color: var(--accent-ink);
-  box-shadow: 0 10px 24px rgba(74, 63, 159, 0.28);
+  box-shadow: var(--shadow-accent);
 }
 
 .button.ghost {
@@ -237,10 +368,8 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.22;
-  background-image:
-    repeating-radial-gradient(circle at 18% 27%, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 4px),
-    repeating-radial-gradient(circle at 72% 64%, rgba(0, 0, 0, 0.04) 0 1px, transparent 1px 5px);
+  opacity: var(--grain-opacity);
+  background-image: var(--grain-image);
   mix-blend-mode: soft-light;
 }
 

@@ -56,7 +56,7 @@ defineEmits(['close'])
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  background: rgba(16, 12, 40, 0.45);
+  background: var(--overlay);
   padding: 16px;
   z-index: 20;
 }

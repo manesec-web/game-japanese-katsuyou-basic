@@ -1,6 +1,7 @@
 <script setup>
 import { inject, ref } from 'vue'
 import SiteHead from '../components/SiteHead.vue'
+import ThemeToggle from '../components/ThemeToggle.vue'
 import BuildFooter from '../components/BuildFooter.vue'
 import AboutSheet from '../components/AboutSheet.vue'
 
@@ -19,7 +20,13 @@ function openLearn() {
 <template>
   <section class="home">
     <div class="home-head">
-      <SiteHead />
+      <SiteHead>
+        <template #aside>
+          <span class="home-theme">
+            <ThemeToggle />
+          </span>
+        </template>
+      </SiteHead>
     </div>
 
     <div class="home-actions">
@@ -52,6 +59,17 @@ function openLearn() {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+/* The theme switch rides on the head's subtitle line, a short gap after the
+   習 of 動詞轉型練習: it takes the right track of SiteHead's subtitle grid, so
+   it starts where that word ends and the label stays centred. The grid
+   centres its items vertically on the line. */
+.home-theme {
+  display: inline-flex;
+  grid-column: 3;
+  justify-self: start;
+  margin-left: 8px;
 }
 
 /* The first three choices on the home screen stay tall and easy to hit. */

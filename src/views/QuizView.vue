@@ -396,7 +396,7 @@ onBeforeUnmount(() => {
   border: 1px solid var(--accent);
   border-radius: 10px;
   background: var(--surface);
-  box-shadow: 0 16px 34px rgba(20, 16, 50, 0.18);
+  box-shadow: var(--shadow-float);
 }
 
 .reveal-label {
@@ -428,11 +428,11 @@ onBeforeUnmount(() => {
   transform: translateX(-50%);
   padding: 10px 20px;
   border-radius: 999px;
-  background: var(--ink);
-  color: #fff;
+  background: var(--tooltip);
+  color: var(--tooltip-ink);
   font-size: 0.95rem;
   letter-spacing: 0.08em;
-  box-shadow: 0 10px 24px rgba(20, 16, 50, 0.25);
+  box-shadow: var(--shadow-pop);
   z-index: 30;
 }
 

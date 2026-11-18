@@ -76,7 +76,7 @@ function open(formId) {
 }
 
 .icon-button:hover {
-  background: rgba(36, 33, 58, 0.06);
+  background: var(--tint);
 }
 
 .learn-list {
@@ -103,7 +103,7 @@ function open(formId) {
 }
 
 .learn-row:hover {
-  background: rgba(36, 33, 58, 0.06);
+  background: var(--tint);
 }
 
 .learn-row:active {

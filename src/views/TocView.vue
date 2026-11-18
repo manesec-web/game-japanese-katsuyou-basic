@@ -140,7 +140,7 @@ onMounted(async () => {
 }
 
 .icon-button:hover {
-  background: rgba(36, 33, 58, 0.06);
+  background: var(--tint);
 }
 
 /* The search box pins below the top bar, on the column colour, so rows scroll
@@ -196,7 +196,7 @@ onMounted(async () => {
 }
 
 .toc-search-clear:hover {
-  background: rgba(36, 33, 58, 0.06);
+  background: var(--tint);
   color: var(--ink);
 }
 
@@ -241,7 +241,7 @@ onMounted(async () => {
 }
 
 .toc-row:hover {
-  background: rgba(36, 33, 58, 0.06);
+  background: var(--tint);
 }
 
 .toc-row:active {
@@ -250,7 +250,7 @@ onMounted(async () => {
 
 /* The word the reader is on keeps its tint while the list is open. */
 .toc-row--current {
-  background: rgba(74, 63, 159, 0.1);
+  background: var(--accent-tint);
   border-color: var(--accent);
 }
 

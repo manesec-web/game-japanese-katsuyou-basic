@@ -300,8 +300,8 @@ function back() {
   transform: translateX(-50%);
   padding: 4px 8px;
   border-radius: 8px;
-  background: var(--ink);
-  color: #fff;
+  background: var(--tooltip);
+  color: var(--tooltip-ink);
   font-size: 0.72rem;
   white-space: nowrap;
   pointer-events: none;
@@ -339,7 +339,7 @@ function back() {
 .chip--on {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--accent-ink);
   font-weight: 600;
 }
 

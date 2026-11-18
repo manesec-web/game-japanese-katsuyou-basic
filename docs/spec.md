@@ -131,6 +131,41 @@ A reload starts at `loading` again. When the dictionary is already in IndexedDB,
 
 The column is `min(100%, 480px)`, centered horizontally. At viewport widths of 550px or less the column is full-bleed: it fills the browser, with no side margins, radius, or shadow, and the gradient background and grain are dropped so the column colour is the whole page. Above 550px the column keeps its frame and the background is visible; that frame is also the signal that the page is in desktop mode.
 
+### Theme
+
+The `home` screen carries a theme switch immediately to the right of the 習 that
+ends the head's `動詞轉型練習` line: an 8px gap after the last character, the
+button centred vertically on that line. The head's subtitle row is a
+`1fr auto 1fr` grid, so the button starts exactly where the word ends while the
+centred subtitle keeps the centre of the head, and the button clears both the
+title above and the lede below. No other screen shows it — not the `loading`
+screen and not the screens inside a run, whose top bars own their own corners. The switch is a round icon button
+(36px, the height of a `.button`): it draws the moon (`Moon`) while the light
+theme is on and the sun (`Sun`) while the dark one is on, so the icon names the
+theme the press switches to. Its label reads `切換為深色模式` while the light
+theme is on and `切換為淺色模式` while the dark one is on, `aria-pressed` reports
+the current theme, and the same text is its hover tooltip.
+
+The site follows the operating system's `prefers-color-scheme` until the user
+presses the switch. The very first paint already follows it, before the page's
+script runs. A press flips the theme, paints it and stores it under the
+`localStorage` key `katsuyou-theme` (`light` or `dark`). From then on the stored
+choice wins over the OS, including after a reload, and flipping the phone's
+appearance while the page is open no longer repaints it. Without a stored
+choice the page keeps following the OS, so a phone that switches to dark at
+sunset turns the page dark with it. Nothing is written when the OS preference
+alone decided; only a press records a choice. A press always counts as a choice,
+so the light theme can be pinned on a dark phone and the dark theme on a light
+one.
+
+The light theme is the site as it always looked: warm off-white column, indigo
+accent, indigo→amber page gradient, dark ink. The dark theme keeps the layout,
+type sizes, wording and motion; it restates colour only — a dark ink column
+(`#1b1824`), warm near-white type, a lighter accent that keeps its labels
+readable, lifted surfaces, a deeper page gradient, and adapted tints, thumbs,
+rule lines and shadows. Both themes take their colours from the tokens in
+`src/styles/app.css`; no screen or component carries a colour of its own.
+
 ### Loading
 
 The loading screen carries the same three-line head as the home screen: the large
@@ -456,7 +491,7 @@ The wireframes say which pieces exist. Do not copy their colors or boxes.
 - The outer shell (`body`, `#app` and the `.column`) sizes its short screens to the dynamic viewport height (`dvh`, with `vh` as the fallback) rather than the static `vh`: so a page whose content fits the visible area ends at the visible bottom of a phone and gains no browser-chrome-sized scroll range. The home and loading screens already used `dvh`; settings, flashcards and the other short screens now agree. Long pages still overflow the shell normally and keep their drawn thumb.
 - Normal vertical scrolling remains available: long pages and the four dropdown lists (picker 從, settings 預設顯示形式, and the 從 / 到 lists on 變形說明) are not locked. The root viewport declares `overscroll-behavior-y: none` to stop Android Chrome's pull-to-refresh and root rubber-banding, and each dropdown uses `overscroll-behavior-y: contain` to avoid handing an edge drag to the page. For iOS versions where the CSS declaration does not suppress the bounce, a non-passive `touchmove` guard cancels only a one-finger vertical drag that its nearest scroll container cannot consume: pulling down at the top or pushing up at the bottom. A scrollable list can still move while the predicted move has room in that direction; a move that would cross its wall is finished at that exact boundary instead of handing momentum back to the viewport. Horizontal paging is untouched, and multi-touch/non-cancelable events are left alone. This is best-effort bounce suppression, not a fixed-body scroll lock; the browser chrome and version-specific Safari behavior still require a real-device check.
 - The browser's own vertical scrollbar is hidden and the page draws its own: a 4px rounded thumb against the column's right edge, sized to the share of the page that is on screen and moving with it. On the full-bleed phone layout the thumb keeps a 3px gap from the window edge and the track stops 16px short of the screen's top and bottom. On a framed desktop the thumb sits inside the box instead: 8px in from the column's right edge, with the track starting 32px from the top and bottom so the column's 28px corner radius never crosses the thumb, and far enough outside the 24px content gutter that it cannot cross a footer button. It is not drawn when the page already fits, and it is not drawn on top of a screen that does not scroll. On a fine-pointer desktop it is also a control: moving the mouse within 24px of the thumb's track reveals it before the pointer reaches the 4px drawing, and it stays visible while the pointer remains nearby. While shown, an invisible hit area extends 8px to either side of the thumb and 6px past its ends; pressing the primary mouse button there grabs the thumb without jumping, and vertical mouse movement maps the thumb's remaining track travel to the page's full scroll range, clamped at both ends. Pointer capture keeps the drag alive outside the hit area until release or cancellation, and the thumb does not fade while held. The hit area is pointer-transparent while the thumb is hidden and its 20px total width stays clear of the footer controls. On a coarse-pointer/touch device there is no proximity reveal and no draggable hit area: the thumb remains a passive scroll hint and ordinary touch scrolling owns the gesture. It appears while the page moves and fades out about a second after it stops. The four inner dropdown lists (picker 從, settings 預設顯示形式, and 變形說明 從 / 到) are their own scroll containers and hide the native bar: each draws the same 4px rounded thumb inside its panel, a small inset from the panel's right edge, sized to the share of the list that is on screen and moving with it. The list thumb appears both while the list moves and as soon as an overflowing list opens, so the bar tells the reader that more options are below. It fades about two seconds after the list opens or the last scroll or pointer activity; a pointer entering the list, or moving inside it, shows the thumb again and restarts the same two-second wait. Scrolling also restarts that wait. It is hidden from assistive technology, and a list whose options already fit draws nothing; under `prefers-reduced-motion: reduce` it still appears and leaves, without the fade. On a fine-pointer desktop the list thumb has the same expanded, pointer-captured drag hit area as the page thumb and maps its travel to the list's scroll range without a jump; it stays visible during the drag. A hidden list thumb does not intercept the option underneath, and coarse-pointer/touch devices keep ordinary list scrolling with a passive hint only. These opening and pointer rules apply to all four dropdown lists. The page thumb is separate: it still appears while the page moves and fades about a second after it stops. Desktop proximity keeps it shown, and leaving the track's neighbourhood starts that same one-second wait. Under `prefers-reduced-motion: reduce` the page thumb still appears and leaves, without the fade.
-- The page background is a slow gradient from indigo to warm amber, with a faint grain. The column is warm off-white, large radius, light shadow. At viewport widths of 550px or less the column drops its radius, shadow and side margins, fills the browser, and the background becomes the plain column colour.
+- The page background is a slow gradient from indigo to warm amber, with a faint grain. Every colour in `src/styles/app.css` is a token, and every screen and component reads those tokens rather than writing a literal colour, so the dark theme is complete without per-screen patches and the light theme keeps exactly its previous values. The column is warm off-white, large radius, light shadow. At viewport widths of 550px or less the column drops its radius, shadow and side margins, fills the browser, and the background becomes the plain column colour.
 - Use the system stack: `Hiragino Sans`, `Noto Sans TC`, `Noto Sans JP`, `sans-serif`. Do not download a CJK webfont.
 - The word is large. The reading is small and sits above the kanji. Controls are 36px tall with a 10px radius, so they read as buttons rather than pills: that covers `.button`, the lesson and form chips, the 到 chips, the 選擇 buttons. Settings rows are 52px so each row can hold its switch comfortably. The quiz keyboard keys are 48px for typing. The home screen's four entries are 60px, the picker's 開始 and the reader and card footer controls are 50px, and 返回主頁 on the completion screens is 60px.
 - Every screen's top bar — the back button and the title — is pinned to the top of the viewport, on the column colour, above the scrolling content. This is the same treatment the dictionary reader has. The back and settings buttons are Lucide icons (`ArrowLeft`, `Settings`), the dictionary's 目錄 button uses `List`, the 單詞目錄 搜尋 button uses `Search` and its clear button uses `X`, the dropdown chevrons use `ChevronDown`, and the paging controls use `ChevronLeft` / `ChevronRight`, all inlined into the bundle at build time: no icon font, no CDN.
@@ -482,6 +517,11 @@ The wireframes say which pieces exist. Do not copy their colors or boxes.
 - Each mode's 跳過錯誤的單詞 switch.
 - Quiz auto-submit.
 - Quiz 錯 X 題就顯示答案.
+
+A key `katsuyou-theme` stores the theme the user chose with the start screen's
+switch: `light` or `dark`. It is not part of the settings object and it is
+absent until the user presses the switch, so the OS preference stays in charge
+until then. An unrecognised value is ignored.
 
 A missing field uses the default above. Invalid JSON resets the whole object to the defaults. The 學習 mode's 從, 到 and chosen example word are transient screen state and are not stored here.
 

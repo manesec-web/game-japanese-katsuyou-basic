@@ -463,7 +463,7 @@ function openRule(formId) {
 }
 
 .icon-button:hover {
-  background: rgba(36, 33, 58, 0.06);
+  background: var(--tint);
 }
 
 .reader-body {
@@ -583,7 +583,7 @@ function openRule(formId) {
 
 @media (hover: hover) and (pointer: fine) {
   .form-rule-link:hover {
-    background: rgba(36, 33, 58, 0.06);
+    background: var(--tint);
   }
 }
 
@@ -689,12 +689,12 @@ function openRule(formId) {
    transition fades the tint back out when the state is removed. */
 @media (hover: hover) and (pointer: fine) {
   .audio-tap:hover {
-    background: rgba(36, 33, 58, 0.06);
+    background: var(--tint);
   }
 }
 
 .audio-tap--playing {
-  background: rgba(36, 33, 58, 0.06);
+  background: var(--tint);
 }
 
 .audio-tap--downloading {
@@ -707,7 +707,7 @@ function openRule(formId) {
     background: transparent;
   }
   50% {
-    background: rgba(36, 33, 58, 0.06);
+    background: var(--tint);
   }
 }
 
@@ -717,7 +717,7 @@ function openRule(formId) {
   }
   .audio-tap--downloading {
     animation: none;
-    background: rgba(36, 33, 58, 0.06);
+    background: var(--tint);
   }
 }
 
@@ -770,11 +770,11 @@ function openRule(formId) {
   transform: translateX(-50%);
   padding: 10px 20px;
   border-radius: 999px;
-  background: var(--ink);
-  color: #fff;
+  background: var(--tooltip);
+  color: var(--tooltip-ink);
   font-size: 0.95rem;
   letter-spacing: 0.08em;
-  box-shadow: 0 10px 24px rgba(20, 16, 50, 0.25);
+  box-shadow: var(--shadow-pop);
   z-index: 30;
 }
 

@@ -1,7 +1,8 @@
 # Progress
 
-Last updated: 2026-11-15 (documentation sync after revision 38; all four
-verification commands re-run on the current tree).
+Last updated: 2026-11-15 (revision 39 — 深色模式; `npm test`,
+`npm run build` and `node scripts/browser-check.mjs` re-run on the current
+tree).
 
 **Status: complete.** T1–T8 are done and revisions 2–38 have landed and been
 verified, including follow-up UI passes A/B. The build is live at
@@ -10,6 +11,29 @@ verified, including follow-up UI passes A/B. The build is live at
 Backlog B1 (朗讀功能) is done as revision 35; B3 (優化UI) remains `pending`
 but revisions 34 and 36 have delivered concrete 優化UI items; B2
 (優化下載文件) is done as revisions 32–33.
+
+## Revision 39 — 深色模式
+
+- A 36px round theme switch sits 8px to the right of the 習 ending the home
+  head's `動詞轉型練習` line, centred on that line (`SiteHead.vue`'s `aside`
+  slot on a `1fr auto 1fr` subtitle row); the subtitle keeps the head's centre
+  and the button clears the title and the lede (measured at 320px, 390px,
+  768px and the framed desktop column). It draws `Moon` / `Sun`, is labelled
+  `切換為深色模式` / `切換為淺色模式`, reports `aria-pressed` and runs
+  `theme.toggle`. The loading screen and the screens inside a run draw none.
+- Default is the OS `prefers-color-scheme`; a press stores `katsuyou-theme`
+  and that choice wins from then on. The CSS media query covers the first
+  paint before the module runs, so a dark phone never flashes a light column.
+- `src/styles/app.css` is now fully token-driven (light values unchanged), the
+  dark palette is restated once and applied by both selectors, and all 24
+  literal colours in `src/views` / `src/components` were replaced by tokens.
+  `src/ui/theme.js` is pure, `src/ui/theme-root.js` the DOM adapter,
+  `src/storage/theme.js` the storage, `src/commands/theme.js` the command,
+  `src/main.js` the wiring; `session.theme` is `{ value, source }`.
+- Verification: `npm test` 51 files / 554 tests; `npm run build`;
+  `node scripts/browser-check.mjs` 660 checks, 0 failures; a dark-mode
+  contrast sweep over twelve screens found no text pair under 3.2:1.
+  `vol/` untouched; nothing committed.
 
 ## Revision 38 — reader → 變形說明 and the 例如 decomposition
 

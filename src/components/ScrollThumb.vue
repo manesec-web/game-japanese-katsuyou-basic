@@ -38,9 +38,9 @@ const emit = defineEmits(['drag-start', 'drag-move', 'drag-end'])
   top: 0;
   width: 4px;
   border-radius: 999px;
-  background: rgba(36, 33, 58, 0.32);
+  background: var(--thumb);
   /* A hint of a lighter edge keeps the thumb readable over the white panel. */
-  box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 0 0 0.5px var(--thumb-edge);
   pointer-events: none;
   opacity: 0;
   user-select: none;

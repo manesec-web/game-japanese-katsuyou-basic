@@ -389,7 +389,7 @@ function selectAllDisplayForms() {
 .choice--on {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--accent-ink);
   font-weight: 600;
 }
 
@@ -516,8 +516,8 @@ function selectAllDisplayForms() {
   transform: translateX(-50%);
   padding: 4px 8px;
   border-radius: 8px;
-  background: var(--ink);
-  color: #fff;
+  background: var(--tooltip);
+  color: var(--tooltip-ink);
   font-size: 0.72rem;
   line-height: 1.35;
   white-space: nowrap;
@@ -556,7 +556,7 @@ function selectAllDisplayForms() {
 .chip--on {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--accent-ink);
   font-weight: 600;
 }
 
@@ -581,7 +581,7 @@ function selectAllDisplayForms() {
   height: 32px;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: rgba(36, 33, 58, 0.15);
+  background: var(--tint-strong);
   cursor: pointer;
   transition: background 180ms ease;
   padding: 0;
@@ -599,9 +599,9 @@ function selectAllDisplayForms() {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--knob);
   transition: transform 180ms ease;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-knob);
 }
 
 .switch--on .switch-knob {

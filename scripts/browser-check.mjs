@@ -4756,6 +4756,163 @@ try {
   check('泳ぎます → 泳ぐ has no redundant ＋ ぐ line', (await page.locator('.principle-add-line').count()) === 0)
   check('泳ぎます → 泳ぐ result is 泳ぐ', (await page.locator('.principle-result').innerText()).replace(/\s+/g, '') === '泳ぐ')
 
+  // 深色模式. The start screen owns the toggle, the OS preference decides until
+  // the user chooses, and the choice lives in localStorage. Home is the start
+  // screen once boot finishes; once a run starts, each screen's own top bar
+  // owns that corner.
+  const readTokens = (target) =>
+    target.evaluate(() => {
+      const style = getComputedStyle(document.documentElement)
+      const names = ['--ink', '--column', '--line', '--tint', '--tooltip']
+      const tokens = {}
+      for (const name of names) tokens[name] = style.getPropertyValue(name).trim()
+      tokens.scheme = style.colorScheme
+      tokens.attr = document.documentElement.dataset.theme
+      return tokens
+    })
+
+  const lightThemeContext = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    colorScheme: 'light',
+  })
+  const lightThemePage = await lightThemeContext.newPage()
+  await lightThemePage.route('**/dict/vol.bin', async (route) => {
+    await wait(250)
+    await route.continue()
+  })
+  await lightThemePage.goto(BASE, { waitUntil: 'load' })
+  await lightThemePage.waitForSelector('.progress', { timeout: 10000 })
+  check(
+    'the loading screen carries no theme switch',
+    (await lightThemePage.locator('.theme-toggle').count()) === 0,
+  )
+  await lightThemePage.waitForSelector('.home-actions', { timeout: 40000 })
+  const lightTokens = await readTokens(lightThemePage)
+  check(
+    'a light OS keeps the warm column',
+    lightTokens['--column'] === '#fbf7ef' && lightTokens.attr === 'light',
+    JSON.stringify(lightTokens),
+  )
+  check(
+    'the light palette is the shipped one',
+    lightTokens['--ink'] === '#24213a' && lightTokens.scheme === 'light',
+    `${lightTokens['--ink']} ${lightTokens.scheme}`,
+  )
+  const toggleBox = await lightThemePage.evaluate(() => {
+    const button = document.querySelector('.theme-toggle')
+    const column = document.querySelector('.column')
+    const subtitle = document.querySelector('.site-subtitle')
+    if (!button || !column || !subtitle) return null
+    const b = button.getBoundingClientRect()
+    const c = column.getBoundingClientRect()
+    const s = subtitle.getBoundingClientRect()
+    return {
+      rightGap: Math.round(c.right - b.right),
+      centerDelta: Math.round(b.top + b.height / 2 - (s.top + s.height / 2)),
+      gapAfterWord: Math.round(b.left - s.right),
+      label: button.getAttribute('aria-label'),
+      pressed: button.getAttribute('aria-pressed'),
+    }
+  })
+  check(
+    'the theme toggle hugs the 習 of 動詞轉型練習 on that line',
+    Boolean(toggleBox) && Math.abs(toggleBox.centerDelta) <= 4 &&
+      toggleBox.gapAfterWord >= 4 && toggleBox.gapAfterWord <= 20,
+    JSON.stringify(toggleBox),
+  )
+  check(
+    'the subtitle stays centred while the button sits beside it',
+    await lightThemePage.evaluate(() => {
+      const column = document.querySelector('.column')
+      const subtitle = document.querySelector('.site-subtitle')
+      const c = column.getBoundingClientRect()
+      const s = subtitle.getBoundingClientRect()
+      return Math.abs(s.left + s.width / 2 - (c.left + c.right) / 2) <= 1
+    }),
+  )
+  check(
+    'the toggle names the dark mode while the light one is on',
+    toggleBox?.pressed === 'false' && toggleBox?.label === '切換為深色模式',
+    JSON.stringify(toggleBox),
+  )
+  await lightThemePage.locator('.theme-toggle').click()
+  await wait(120)
+  const darkTokens = await readTokens(lightThemePage)
+  check(
+    'the toggle paints the dark theme',
+    darkTokens.attr === 'dark' && darkTokens['--column'] === '#1b1824' && darkTokens.scheme === 'dark',
+    JSON.stringify(darkTokens),
+  )
+  check(
+    'the toggle label follows the theme',
+    (await lightThemePage.locator('.theme-toggle').getAttribute('aria-label')) === '切換為淺色模式',
+  )
+  await lightThemePage.reload({ waitUntil: 'load' })
+  await lightThemePage.waitForSelector('.home-actions', { timeout: 40000 })
+  check(
+    'the dark choice survives a reload',
+    (await readTokens(lightThemePage)).attr === 'dark' &&
+      (await lightThemePage.evaluate(() => localStorage.getItem('katsuyou-theme'))) === 'dark',
+  )
+  await lightThemePage.locator('.theme-toggle').click()
+  await wait(120)
+  await lightThemePage.reload({ waitUntil: 'load' })
+  await lightThemePage.waitForSelector('.home-actions', { timeout: 40000 })
+  check(
+    'the light choice survives a reload too',
+    (await readTokens(lightThemePage)).attr === 'light' &&
+      (await lightThemePage.evaluate(() => localStorage.getItem('katsuyou-theme'))) === 'light',
+  )
+  await lightThemePage.locator('.home-actions button', { hasText: '字典' }).click()
+  await lightThemePage.waitForSelector('.chip-grid', { timeout: 5000 })
+  check(
+    'the toggle leaves the corner once a run starts',
+    (await lightThemePage.locator('.theme-toggle').count()) === 0,
+  )
+  await lightThemeContext.close()
+
+  // A phone in dark mode, with no stored choice: the media query paints dark
+  // before the module runs, and the module then follows the OS.
+  const darkThemeContext = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    colorScheme: 'dark',
+  })
+  const darkThemePage = await darkThemeContext.newPage()
+  await darkThemePage.goto(BASE, { waitUntil: 'load' })
+  await darkThemePage.waitForSelector('.home-actions', { timeout: 40000 })
+  const osTokens = await readTokens(darkThemePage)
+  check(
+    'a dark OS starts dark without a press',
+    osTokens.attr === 'dark' && osTokens['--column'] === '#1b1824',
+    JSON.stringify(osTokens),
+  )
+  check(
+    'an OS preference is not written as a user choice',
+    (await darkThemePage.evaluate(() => localStorage.getItem('katsuyou-theme'))) === null,
+  )
+  const mediaTokens = await darkThemePage.evaluate(() => {
+    delete document.documentElement.dataset.theme
+    const style = getComputedStyle(document.documentElement)
+    return {
+      column: style.getPropertyValue('--column').trim(),
+      ink: style.getPropertyValue('--ink').trim(),
+    }
+  })
+  check(
+    'the OS preference paints dark before the module runs',
+    mediaTokens.column === '#1b1824' && mediaTokens.ink === '#f3eee6',
+    JSON.stringify(mediaTokens),
+  )
+  await darkThemePage.evaluate(() => {
+    document.documentElement.dataset.theme = 'light'
+  })
+  check(
+    'an explicit light choice wins on a dark OS',
+    (await readTokens(darkThemePage))['--column'] === '#fbf7ef',
+  )
+  await darkThemeContext.close()
+
+
 } catch (error) {
   failures.push(`error: ${error.message}`)
   if (serverLog) failures.push(`server log:\n${serverLog.slice(-2000)}`)

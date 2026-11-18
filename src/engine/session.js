@@ -23,6 +23,10 @@ export function createSession() {
     },
     lessons: [],
     settings: defaultSettings(),
+    // Theme: `value` is the theme in force and `source` says whether it came
+    // from a stored user choice or from the OS preference. main.js resolves the
+    // start value and applies it to the document root.
+    theme: { value: 'light', source: 'system' },
     items: [],
     index: 0,
     flipped: false,

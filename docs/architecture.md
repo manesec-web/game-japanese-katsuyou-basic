@@ -85,6 +85,7 @@ Command ids (complete list, from `src/commands/*.js`):
 | `rule.selectExample` | Choose the example verb from 選字 (`params.lesson`, `params.index`); an unknown verb is `invalid-example` |
 | `rule.openFromReader` | Open 變形說明 from a reader form's 變形原理 with 從 = 預設顯示形式, 到 = that form and 例如 = the on-screen verb |
 | `rule.rememberScroll` | Record 變形說明's scroll position before opening 選字 |
+| `theme.toggle` | Flip the theme (`nextTheme`), mark it a user choice, store it under `katsuyou-theme`; painting the document root is `src/main.js`'s side |
 
 Screen names, exactly: `loading`, `home`, `picker`, `reader`, `toc`, `card`,
 `quiz`, `settings`, `learn`, `rule`, `example`. `picker` and `settings` vary by
@@ -107,7 +108,9 @@ transitions; views only display. The quiz session also carries `quizSkipped`,
 the list of `error_usage` items pulled out of the unanswered queue when
 跳過錯誤的單詞 is enabled; turning the switch off appends them back at the tail.
 `audio` holds the per-session verified-bin map, per-target visual states and
-the transient failure hint. `rule` holds the 從 / 到 pair, the chosen `{ lesson,
+the transient failure hint. `theme` holds `{ value, source }`: the theme in
+force and whether it came from a stored user choice or from the OS
+preference. `rule` holds the 從 / 到 pair, the chosen `{ lesson,
 index }` example, `returnTo`, and the two one-shot scroll memories
 (`ruleScrollTop` for 選字 → 變形說明, `readerScrollTop` / `readerRestore` for
 變形原理 → reader).
@@ -192,10 +195,17 @@ src/study/rule-content-builder.js  builds the four class blocks from real vol/ v
 src/commands/rule.js          rule.open / setFrom / setTo / selectExample
 src/commands/reader-rule.js   rule.openFromReader / rememberScroll
 src/commands/audio.js         audio.play
+src/commands/theme.js         theme.toggle
 src/views/LearnView.vue       學習目錄
 src/views/RuleView.vue        變形說明 (tables + 例如 + 小提示)
 src/views/ExampleView.vue     選字
 src/ui/store.js               reactive session + send()
+src/ui/theme.js               theme choice rules: system mapping, stored
+                              choice resolution, toggle target (pure)
+src/ui/theme-root.js          applies the theme to the document root and
+                              follows the OS preference until a choice exists
+src/storage/theme.js          localStorage theme choice (non-fatal on failure)
+src/components/ThemeToggle.vue  start screen's top-right theme switch
 src/ui/boot-progress.js       loading-bar percentage: cache-check progress,
                               streaming download bytes, verification hold (pure)
 src/ui/tooltip.js             viewport clamp for a tooltip centred on its chip
@@ -390,7 +400,11 @@ Views only render. See `docs/spec.md` → 學習 for the on-screen copy.
 
 ## Styling and motion
 
-Tokens in `src/styles/app.css`: indigo→amber gradient background with a faint
+Tokens in `src/styles/app.css`: the light palette is the `:root` default and
+the dark palette appears twice on purpose — once under `data-theme="dark"` for
+the stored choice and once under `@media (prefers-color-scheme: dark)` for the
+first paint before the module runs (and for users who never chose). Light
+tokens: indigo→amber gradient background with a faint
 grain, warm off-white `min(100%, 480px)` column with 28px radius and light
 shadow, system CJK font stack (`Hiragino Sans`, `Noto Sans TC`, `Noto Sans JP`),
 36px × 10px-radius controls (chips and settings rows), 44px 單詞目錄 rows, 44px+ quiz keys, 60px

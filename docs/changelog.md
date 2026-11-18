@@ -2085,3 +2085,55 @@ date, `output/dict/vol.bin` with 50 entries); `node scripts/browser-check.mjs`
 646 checks / 0 failures on the final run (645 on the previous run; the seeded
 quiz item moves the count by one). `node scripts/motion-probe.mjs` and
 `npm run dev` were not re-run in this refresh (informational / dev-server paths).
+
+## 2026-11-15 (revision 39 — 深色模式)
+
+- The `home` screen gained a theme switch: a 36px round icon button 8px to the
+  right of the 習 that ends the head's `動詞轉型練習` line, centred vertically
+  on that line, dropped into a new `aside` slot of `SiteHead.vue`, whose
+  subtitle row became a `1fr auto 1fr` grid. The button therefore starts exactly
+  where the word ends while the subtitle keeps the head's centre, and it clears
+  the title above and the lede below (measured at 320px, 390px, 768px and the
+  framed desktop column: gap 8px, centre delta 0, subtitle centre offset 0,
+  10px clearance above and below). It draws
+  `Moon` while the light theme is on and `Sun` while the dark one is on, is
+  labelled `切換為深色模式` / `切換為淺色模式`, reports `aria-pressed` and runs the
+  new `theme.toggle` command. The `loading` screen and the screens inside a run
+  draw no switch.
+- The site follows `prefers-color-scheme` until a press stores a choice under
+  the `localStorage` key `katsuyou-theme`; from then on the stored choice wins,
+  also after a reload. The CSS media query paints the OS theme on the very
+  first paint, before the module runs, so a dark phone no longer flashes the
+  light column. Only a press writes the key.
+- `src/styles/app.css` now holds every colour as a token: `:root` keeps the
+  shipped light values unchanged, and the dark palette appears twice on
+  purpose — under `:root[data-theme='dark']` for the stored choice and under
+  `@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) }` for
+  the pre-module paint and for users who never chose. New tokens cover the
+  tints, switch track, progress groove, current-row tint, scroll thumbs, sheet
+  overlay, knob, the three card shadows, the accent button shadow, the progress
+  gradient stops, the loading error text, the 原理 dark-blue, the tooltip pair
+  and the page gradient/grain.
+- Every literal colour in `src/views` and `src/components` was replaced with
+  one of those tokens (24 occurrences), so no screen can stay light behind the
+  dark palette. `color: #fff` split into `--accent-ink` (on an accent fill) and
+  the new `--tooltip-ink` (on a tooltip), because the tooltip used to sit on
+  `--ink` and would have turned white-on-white in the dark theme.
+- Rules are pure (`src/ui/theme.js`: `THEMES`, `THEME_KEY`, `systemTheme`,
+  `themeState`, `nextTheme`); `src/ui/theme-root.js` is the DOM adapter,
+  `src/storage/theme.js` the storage adapter, `src/commands/theme.js` the
+  command, and `src/main.js` resolves the start value, paints it and keeps
+  following the OS until a choice exists. `session.theme` is
+  `{ value, source }`.
+- Verification: `npm test` 51 files / **554 tests** (new: 11 theme rule tests,
+  3 command tests, plus `--check` on both manifests); `npm run build`;
+  `node scripts/browser-check.mjs` **660 checks**, 0 failures (645 existing plus
+  15 new theme checks: the loading screen drawing no switch, light palette
+  unchanged, the toggle on the subtitle line with the subtitle still centred and
+  the labels,
+  toggling, both choices surviving a reload, the toggle leaving a run's
+  screens, dark OS default, no stored key for an OS-only choice, the media
+  fallback before the module, and an explicit light choice on a dark OS).
+  A dark-mode contrast sweep over home / 學習目錄 / 變形說明 / 選字 / picker /
+  reader / 設定 / 單詞目錄 / card / quiz / open dropdown / tooltip found no
+  text pair below 3.2:1. `vol/` and the generated data were not touched.

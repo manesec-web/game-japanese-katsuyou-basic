@@ -79,14 +79,14 @@ function retry() {
 .progress {
   height: 10px;
   border-radius: 999px;
-  background: rgba(36, 33, 58, 0.1);
+  background: var(--track);
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #4a3f9f, #c9853f);
+  background: linear-gradient(90deg, var(--progress-from), var(--progress-to));
   transition: width 220ms ease;
 }
 
@@ -99,7 +99,7 @@ function retry() {
 
 .error-text {
   margin: 0;
-  color: #8a2f3a;
+  color: var(--error-strong);
 }
 
 .error-detail {

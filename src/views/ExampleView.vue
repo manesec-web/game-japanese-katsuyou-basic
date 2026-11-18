@@ -118,7 +118,7 @@ watch(query, () => window.scrollTo({ top: 0, behavior: 'auto' }))
 }
 
 .icon-button:hover {
-  background: rgba(36, 33, 58, 0.06);
+  background: var(--tint);
 }
 
 .example-search {
@@ -172,7 +172,7 @@ watch(query, () => window.scrollTo({ top: 0, behavior: 'auto' }))
 }
 
 .example-search-clear:hover {
-  background: rgba(36, 33, 58, 0.06);
+  background: var(--tint);
   color: var(--ink);
 }
 
@@ -213,7 +213,7 @@ watch(query, () => window.scrollTo({ top: 0, behavior: 'auto' }))
 }
 
 .example-row:hover {
-  background: rgba(36, 33, 58, 0.06);
+  background: var(--tint);
 }
 
 .example-row:active {

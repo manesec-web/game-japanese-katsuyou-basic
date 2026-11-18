@@ -98,7 +98,7 @@ function home() {
   border: 1px solid var(--line);
   border-radius: 20px;
   background: var(--surface);
-  box-shadow: 0 12px 30px rgba(20, 16, 50, 0.08);
+  box-shadow: var(--shadow-card);
   text-align: center;
 }
 

@@ -331,7 +331,7 @@ function segClass(seg) {
 }
 
 .icon-button:hover {
-  background: rgba(36, 33, 58, 0.06);
+  background: var(--tint);
 }
 
 .rule-body {
@@ -670,11 +670,11 @@ function segClass(seg) {
   font-size: 1.1rem;
   font-weight: 600;
   text-align: center;
-  color: #1d4ed8;
+  color: var(--link-strong);
 }
 
 .principle-added {
-  color: #1d4ed8;
+  color: var(--link-strong);
 }
 
 .principle-result {

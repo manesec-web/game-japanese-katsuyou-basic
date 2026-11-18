@@ -384,7 +384,7 @@ function openSettings() {
 }
 
 .icon-button:hover {
-  background: rgba(36, 33, 58, 0.06);
+  background: var(--tint);
 }
 
 .card-stage {
@@ -500,7 +500,7 @@ function openSettings() {
   border-radius: 24px;
   background: var(--surface);
   border: 1px solid var(--line);
-  box-shadow: 0 12px 30px rgba(20, 16, 50, 0.08);
+  box-shadow: var(--shadow-card);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
