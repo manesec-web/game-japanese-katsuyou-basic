@@ -24,6 +24,10 @@ const backScreen = computed(
   () => ({ dict: 'reader', card: 'card', quiz: 'quiz' })[session.mode] ?? 'home',
 )
 const displaySelectAllText = computed(() => selectAllDisplayLabel(settings.value.displayForms))
+// The two Google Analytics IDs are site-wide settings, so these rows sit under
+// every mode's settings screen instead of inside a mode section.
+const containerId = computed(() => session.settings.analytics.containerId)
+const measurementId = computed(() => session.settings.analytics.measurementId)
 
 function back() {
   store.send('nav.go', { screen: backScreen.value })
@@ -64,6 +68,16 @@ function selectAllDisplayForms() {
       settings.value.defaultForm,
     ),
   })
+}
+
+// Enter or leaving a field commits that ID. The command validates and stores it
+// (trimmed, uppercased); a rejected value stores nothing, so the field is put
+// back on the ID the site is using.
+function commitAnalytics(field, event) {
+  const input = event.target
+  store.send('settings.patch', { patch: { analytics: { [field]: input.value } } })
+  // A rejected ID stores nothing, so the field shows the ID in force.
+  input.value = session.settings.analytics[field]
 }
 </script>
 
@@ -285,6 +299,46 @@ function selectAllDisplayForms() {
         <p class="row-note">跳過錯誤的詞語，例如：「始まられる」。中途開啟會移除剩餘的不成立題目，關閉則把它們補回題目尾端。</p>
       </div>
     </template>
+
+    <!-- Site-wide, so it ends every mode's settings screen: the Google
+         Analytics container ID the page views are sent through. -->
+    <span class="hrule" aria-hidden="true"></span>
+    <div class="row row--stacked">
+      <div class="row-head">
+        <span class="row-label">Google Analytics 容器 ID</span>
+      </div>
+      <input
+        class="id-field"
+        type="text"
+        :value="containerId"
+        aria-label="Google Analytics 容器 ID"
+        autocomplete="off"
+        autocapitalize="characters"
+        spellcheck="false"
+        @change="commitAnalytics('containerId', $event)"
+        @keydown.enter.prevent="commitAnalytics('containerId', $event)"
+      />
+      <p class="row-note">GTM 容器 ID；修改後下次開啟網站生效。</p>
+    </div>
+
+    <span class="hrule" aria-hidden="true"></span>
+    <div class="row row--stacked">
+      <div class="row-head">
+        <span class="row-label">GA4 量測 ID</span>
+      </div>
+      <input
+        class="id-field"
+        type="text"
+        :value="measurementId"
+        aria-label="GA4 量測 ID"
+        autocomplete="off"
+        autocapitalize="characters"
+        spellcheck="false"
+        @change="commitAnalytics('measurementId', $event)"
+        @keydown.enter.prevent="commitAnalytics('measurementId', $event)"
+      />
+      <p class="row-note">GTM 容器內的 GA4 量測 ID，用來逐頁回報瀏覽；例如 G-NFDK8SXY0M。</p>
+    </div>
   </section>
 </template>
 
@@ -573,6 +627,23 @@ function selectAllDisplayForms() {
   opacity: 0.45;
   cursor: default;
   pointer-events: none;
+}
+
+.id-field {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.id-field:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
 }
 
 .switch {

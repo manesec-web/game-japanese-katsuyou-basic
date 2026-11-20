@@ -1,10 +1,8 @@
 # Product spec
 
-A single-page site for learning Japanese verb conjugation. Phones come first. On a computer the content column stays in the center. The data is `vol/lesson_1.json` through `vol/lesson_50.json`.
+Condensed 2026-11-18; behaviour is unchanged from revision 39. No rule was added or removed.
 
-Wireframes are in `docs/screenshot-draft/`. The green frame is the phone. Text outside that frame (the 沒有動詞 / 選中 / 可選 legend, and the input-method note beside the quiz) is a note for the reader. It is not a sidebar and it is not on-screen copy.
-
-On-screen labels below are the product copy. Keep them as written.
+A single-page site for learning Japanese verb conjugation. Phones come first; on a computer the content column stays in the center. Data: `vol/lesson_1.json` … `vol/lesson_50.json`. Wireframes are in `docs/screenshot-draft/`: the green frame is the phone, and text outside it (the 沒有動詞 / 選中 / 可選 legend, the input-method note beside the quiz) is a note for the reader, not a sidebar or on-screen copy. On-screen labels below are the product copy: keep them as written.
 
 ## Data
 
@@ -54,13 +52,11 @@ A verb object has exactly these 15 keys, in this order:
 
 Every form has `vol` (the written word), `group`, `chinese`, `japanese` (the reading), `note`, `error_usage`, and `sentence`. A usable form carries three Japanese/Chinese sentence pairs; an `error_usage` form carries none. All 15 forms of one verb share the same `group`. A sentence may carry its own `note` beside its Japanese and Chinese lines.
 
-`chinese` is a **per-form Chinese gloss**, not a copy of the dictionary form's meaning. It states what that conjugated form itself means in natural Traditional Chinese: a negative form carries the negation, a past form carries the tense, a て形 carries the continuative/causal sense, and potential, volitional, imperative, conditional, passive and causative forms carry their own grammar. Polite and plain pairs are distinguished by a short `（禮貌體）` / `（普通體）` label because Chinese has no equivalent inflection. For example, `違う` is `不同；不對；不是`, but its `masu-form-negative` `違いません` is `沒有不同；相同（禮貌體）` and its `te-form` `違って` is `（因為）不同，而…；不同，接著…`. Where the Japanese form is not the textbook pattern, the gloss follows that form's own example sentences and usage note: adversative passive is written as 迷惑受身, honorific passive as `（尊敬語）`, concessive volitional as `就算…也`, and literary optatives as 文語祈願用法. A form marked `error_usage` uses the single marker `（非自然日語；僅供轉詞練習，無自然中文譯義）` — it does not invent a translation for Japanese that is not natural. The gloss is printed exactly as stored: its `；`, `…`, parentheses and explanatory suffixes are part of the text.
+`chinese` is a **per-form Chinese gloss**, not a copy of the dictionary form's meaning: it states what that conjugated form itself means in natural Traditional Chinese — a negative carries the negation, a past carries the tense, a て形 carries the continuative/causal sense, and potential, volitional, imperative, conditional, passive and causative forms carry their own grammar. Polite and plain pairs are distinguished by a short `（禮貌體）` / `（普通體）` label because Chinese has no equivalent inflection. For example, `違う` is `不同；不對；不是`, but its `masu-form-negative` `違いません` is `沒有不同；相同（禮貌體）` and its `te-form` `違って` is `（因為）不同，而…；不同，接著…`. Where the Japanese form is not the textbook pattern, the gloss follows that form's own example sentences and usage note: adversative passive is written as 迷惑受身, honorific passive as `（尊敬語）`, concessive volitional as `就算…也`, and literary optatives as 文語祈願用法. A form marked `error_usage` uses the single marker `（非自然日語；僅供轉詞練習，無自然中文譯義）` — it does not invent a translation for Japanese that is not natural. The gloss is printed exactly as stored: its `；`, `…`, parentheses and explanatory suffixes are part of the text.
 
-`note` is a corrected usage explanation for beginners. It says when a form is rare (`字典有但是不常用` / `日常不用`), when a form is an honorific, an adversative passive, a concessive or a spontaneous use rather than its literal-looking meaning, and why an `error_usage` form is wrong. Every `error_usage` note begins `錯誤詞語，僅供轉詞練習：`. A note whose text denies a meaning (`不是「X」`) is never contradicted by that form's `chinese`. A rare-form note is accompanied by `（此形日常少用）` in that form's gloss; a note about the whole lexeme (the same note on all 15 forms, for example 造る vs 作る) is not.
+`note` is a corrected usage explanation for beginners: when a form is rare (`字典有但是不常用` / `日常不用`), when it is an honorific, adversative passive, concessive or spontaneous use rather than its literal-looking meaning, and why an `error_usage` form is wrong. Every `error_usage` note begins `錯誤詞語，僅供轉詞練習：`. A note denying a meaning (`不是「X」`) is never contradicted by that form's `chinese`. A rare-form note is accompanied by `（此形日常少用）` in that form's gloss; a note about the whole lexeme (the same note on all 15 forms, for example 造る vs 作る) is not.
 
-`error_usage`, a boolean, marks a form kept for conjugation practice only: such a form has no sentences, and its `note` says why the form is wrong. There are 191 such forms in `vol/`. They are still drawn with the double strikethrough and the `錯誤單詞` tag; `跳過錯誤的單詞` still hides them. Their `chinese` is the marker above, not a usable translation.
-
-`sentence` is unchanged by the gloss rewrite: the Japanese line, its Chinese translation and any sentence `note` are the original text. Only the form-level `chinese` and `note` were revised. Every usable form still contains its own `vol` inside at least one of its sentences, so the purple highlight works.
+`error_usage`, a boolean, marks a form kept for conjugation practice only: no sentences, and its `note` says why the form is wrong. There are 191 such forms in `vol/`. They are still drawn with the double strikethrough and the `錯誤單詞` tag; `跳過錯誤的單詞` still hides them. Their `chinese` is the marker above, not a usable translation. `sentence` is unchanged by the gloss rewrite: the Japanese line, its Chinese translation and any sentence `note` are the original text. Only the form-level `chinese` and `note` were revised. Every usable form still contains its own `vol` inside at least one of its sentences, so the purple highlight works.
 
 `group` labels:
 
@@ -71,178 +67,82 @@ Every form has `vol` (the written word), `group`, `chinese`, `japanese` (the rea
 | `2` | 2類動詞 |
 | `3` | 3類動詞 |
 
-Lessons 1, 3, 8, and 12 have an empty `vols` array. Those four lessons are the gray “no verb” chips in the wireframe and cannot be selected. The other lessons hold 386 verbs in total: 5,790 forms, 5,599 usable forms, 191 `error_usage` forms and 16,797 Japanese/Chinese sentence pairs.
-
-`japanese` is the reading of that form. It has no spaces. Most values are hiragana. Some include katakana (for example `コピーする`) and the long-vowel mark `ー`.
+Lessons 1, 3, 8, and 12 have an empty `vols` array: the gray “no verb” chips in the wireframe, not selectable. The other lessons hold 386 verbs in total: 5,790 forms, 5,599 usable forms, 191 `error_usage` forms and 16,797 Japanese/Chinese sentence pairs. `japanese` is the reading of that form: no spaces; most values are hiragana, some include katakana (for example `コピーする`) and the long-vowel mark `ー`.
 
 ## How the dictionary reaches the browser
 
-`scripts/write-sha256.mjs` hashes the raw bytes of each `vol/lesson_N.json` and writes lowercase hex sha256 into `src/data/dict-manifest.json`. That manifest ships with the site.
+`scripts/write-sha256.mjs` hashes the raw bytes of each `vol/lesson_N.json` and writes lowercase hex sha256 into `src/data/dict-manifest.json`; that manifest ships with the site. The site downloads **one** archive, `dict/vol.bin`: a ZIP holding the 50 lesson files as deflate-compressed entries named `lesson_N.json`, byte-identical to the `vol/` sources. It is published without the `.zip` suffix and served as `application/octet-stream`, because download-helper browser extensions sniff `.zip` URLs and hijack them with a save dialog. `scripts/vol-archive.mjs` builds it and verifies every lesson against the manifest first, so a stale manifest or a damaged source stops the build instead of publishing a broken archive. In dev Vite serves the same archive; the build writes it to `output/dict/vol.bin`. Individual `dict/lesson_N.json` URLs are no longer published.
 
-The site downloads **one** archive, `dict/vol.bin`: a ZIP file holding the 50
-lesson files as deflate-compressed entries named `lesson_N.json`, byte-identical
-to the `vol/` sources. It is published without the `.zip` suffix and served as
-`application/octet-stream`, because download-helper browser extensions sniff
-`.zip` URLs and hijack them with a save dialog. `scripts/vol-archive.mjs` builds it and verifies every lesson against the manifest first, so a stale manifest or a damaged source stops the build instead of publishing a broken archive. In dev, Vite serves the same archive; the build writes it to
-`output/dict/vol.bin`. Individual `dict/lesson_N.json` URLs are no longer published.
-
-The cache lives in an IndexedDB database named `katsuyou-dict`, in an object
-store named `lessons`. One record per lesson: the key is the lesson file name
-(`lesson_N.json`) and the value is the raw file bytes. The archive does not
-change the cache shape; it only changes how the bytes arrive.
+The cache is an IndexedDB database named `katsuyou-dict`, object store `lessons`: one record per lesson, key `lesson_N.json`, value the raw file bytes. The archive does not change the cache shape; it only changes how the bytes arrive.
 
 On boot, handle the 50 lessons in order:
 
-1. A lesson already in IndexedDB is hashed. When the hash matches the manifest it
-   counts as finished and nothing is downloaded.
-2. A missing or corrupt copy is collected instead of downloaded one file at a
-   time. When anything was collected, the archive is downloaded once and every
-   collected entry is decompressed and hashed against its own manifest record.
-   Only entries that match are written to IndexedDB.
-3. A failed download, an unreadable archive, an absent entry, or a hash mismatch
-   is retried with a second archive download. Bytes that still do not match are
-   never written; boot stops, names the lesson, and offers retry.
+1. A lesson already in IndexedDB is hashed. When the hash matches the manifest it counts as finished and nothing is downloaded.
+2. A missing or corrupt copy is collected instead of downloaded one file at a time. When anything was collected, the archive is downloaded once and every collected entry is decompressed and hashed against its own manifest record. Only entries that match are written to IndexedDB.
+3. A failed download, an unreadable archive, an absent entry, or a hash mismatch is retried with a second archive download. Bytes that still do not match are never written; boot stops, names the lesson, and offers retry.
 
-Entries are decompressed one at a time, so repairing a single lesson never
-expands the other 49. The loading text is `Loading ...`.
+Entries are decompressed one at a time, so repairing a single lesson never expands the other 49. The loading text is `Loading ...`.
 
 The loading bar shows the slow part it is waiting for, and never moves backwards:
 
 1. The cache check fills the bar with verified lessons divided by 50.
-2. While the archive is downloading, the bar fills from where the cache check
-   left off to 100% in proportion to bytes received, compared with the response's
-   `Content-Length`. When the response announces no length, the bar holds where
-   the cache check left it until the bytes arrive.
-3. Once the bytes have arrived, the bar holds at 100% while the extracted lessons
-   are verified and stored.
-4. A retry restarts the download portion at the lessons the cache check already
-   verified, never below it.
+2. While the archive is downloading, the bar fills from where the cache check left off to 100% in proportion to bytes received, compared with the response's `Content-Length`. When the response announces no length, the bar holds where the cache check left it until the bytes arrive.
+3. Once the bytes have arrived, the bar holds at 100% while the extracted lessons are verified and stored.
+4. A retry restarts the download portion at the lessons the cache check already verified, never below it.
 
-Without a download — the usual reload, where stored copies are only re-hashed —
-the bar is simply verified lessons divided by 50.
+Without a download — the usual reload, where stored copies are only re-hashed — the bar is simply verified lessons divided by 50.
 
 ## Screens
 
-State machine:
-
-`loading` → `home` → `picker` → (`reader` | `card` | `quiz`). Those last three can open `settings` and return, and the dictionary reader can also open `toc` (單詞目錄) and return. The home screen also opens `learn` (學習目錄), which opens `rule` (變形說明); the reader's 變形原理 buttons open the same `rule` screen directly, with `rule.returnTo` naming where back returns. `rule` opens `example` (選字) and returns to the same scroll position; from the reader it returns to the reader at the same scroll position.
-
-A reload starts at `loading` again. When the dictionary is already in IndexedDB, boot only checks hashes, and the progress bar still runs.
+State machine: `loading` → `home` → `picker` → (`reader` | `card` | `quiz`). Those last three can open `settings` and return, and the dictionary reader can also open `toc` (單詞目錄) and return. The home screen also opens `learn` (學習目錄), which opens `rule` (變形說明); the reader's 變形原理 buttons open the same `rule` screen directly, with `rule.returnTo` naming where back returns. `rule` opens `example` (選字) and returns to the same scroll position; from the reader it returns to the reader at the same scroll position. A reload starts at `loading` again; when the dictionary is already in IndexedDB, boot only checks hashes, and the progress bar still runs.
 
 The column is `min(100%, 480px)`, centered horizontally. At viewport widths of 550px or less the column is full-bleed: it fills the browser, with no side margins, radius, or shadow, and the gradient background and grain are dropped so the column colour is the whole page. Above 550px the column keeps its frame and the background is visible; that frame is also the signal that the page is in desktop mode.
 
 ### Theme
 
-The `home` screen carries a theme switch immediately to the right of the 習 that
-ends the head's `動詞轉型練習` line: an 8px gap after the last character, the
-button centred vertically on that line. The head's subtitle row is a
-`1fr auto 1fr` grid, so the button starts exactly where the word ends while the
-centred subtitle keeps the centre of the head, and the button clears both the
-title above and the lede below. No other screen shows it — not the `loading`
-screen and not the screens inside a run, whose top bars own their own corners. The switch is a round icon button
-(36px, the height of a `.button`): it draws the moon (`Moon`) while the light
-theme is on and the sun (`Sun`) while the dark one is on, so the icon names the
-theme the press switches to. Its label reads `切換為深色模式` while the light
-theme is on and `切換為淺色模式` while the dark one is on, `aria-pressed` reports
-the current theme, and the same text is its hover tooltip.
+The `home` screen carries a theme switch immediately to the right of the 習 that ends the head's `動詞轉型練習` line: an 8px gap after the last character, the button centred vertically on that line. The head's subtitle row is a `1fr auto 1fr` grid, so the button starts exactly where the word ends while the centred subtitle keeps the centre of the head, and the button clears both the title above and the lede below. No other screen shows it — not the `loading` screen and not the screens inside a run, whose top bars own their own corners. The switch is a round icon button (36px, the height of a `.button`): it draws the moon (`Moon`) while the light theme is on and the sun (`Sun`) while the dark one is on, so the icon names the theme the press switches to. Its label reads `切換為深色模式` while the light theme is on and `切換為淺色模式` while the dark one is on, `aria-pressed` reports the current theme, and the same text is its hover tooltip.
 
-The site follows the operating system's `prefers-color-scheme` until the user
-presses the switch. The very first paint already follows it, before the page's
-script runs. A press flips the theme, paints it and stores it under the
-`localStorage` key `katsuyou-theme` (`light` or `dark`). From then on the stored
-choice wins over the OS, including after a reload, and flipping the phone's
-appearance while the page is open no longer repaints it. Without a stored
-choice the page keeps following the OS, so a phone that switches to dark at
-sunset turns the page dark with it. Nothing is written when the OS preference
-alone decided; only a press records a choice. A press always counts as a choice,
-so the light theme can be pinned on a dark phone and the dark theme on a light
-one.
+The site follows the operating system's `prefers-color-scheme` until the user presses the switch; the very first paint already follows it, before the page's script runs. A press flips the theme, paints it and stores it under the `localStorage` key `katsuyou-theme` (`light` or `dark`). From then on the stored choice wins over the OS, including after a reload, and flipping the phone's appearance while the page is open no longer repaints it. Without a stored choice the page keeps following the OS, so a phone that switches to dark at sunset turns the page dark with it. Nothing is written when the OS preference alone decided; only a press records a choice, so the light theme can be pinned on a dark phone and the dark theme on a light one.
 
-The light theme is the site as it always looked: warm off-white column, indigo
-accent, indigo→amber page gradient, dark ink. The dark theme keeps the layout,
-type sizes, wording and motion; it restates colour only — a dark ink column
-(`#1b1824`), warm near-white type, a lighter accent that keeps its labels
-readable, lifted surfaces, a deeper page gradient, and adapted tints, thumbs,
-rule lines and shadows. Both themes take their colours from the tokens in
-`src/styles/app.css`; no screen or component carries a colour of its own.
+The light theme is the site as it always looked: warm off-white column, indigo accent, indigo→amber page gradient, dark ink. The dark theme keeps the layout, type sizes, wording and motion; it restates colour only — a dark ink column (`#1b1824`), warm near-white type, a lighter accent that keeps its labels readable, lifted surfaces, a deeper page gradient, and adapted tints, thumbs, rule lines and shadows. Both themes take their colours from the tokens in `src/styles/app.css` (`--highlight`, `--error`, `--note` are colour roles); no screen or component carries a colour of its own.
 
 ### Loading
 
-The loading screen carries the same three-line head as the home screen: the large
-title `大家の日本語`, the medium subtitle `動詞轉型練習`, and the line
-`涵蓋初級 1 – 50 課的動詞`. The `Loading ...` line and the progress bar sit under
-that head.
-
-Its footer is the credit line `Build with ❤ by Mane` alone; the loading screen
-does not carry the `🥺 如果有 BUG 記得告訴我！` line. The credit opens the same
-About sheet as the home footer.
-
-The head and the footer stay on screen while boot runs and while a failure offers
-retry; only the progress area changes.
+The loading screen carries the same three-line head as the home screen: the large title `大家の日本語`, the medium subtitle `動詞轉型練習`, and the line `涵蓋初級 1 – 50 課的動詞`. The `Loading ...` line and the progress bar sit under that head. Its footer is the credit line `Build with ❤ by Mane` alone; the loading screen does not carry the `🥺 如果有 BUG 記得告訴我！` line. The credit opens the same About sheet as the home footer. The head and the footer stay on screen while boot runs and while a failure offers retry; only the progress area changes.
 
 ### Home
 
-The head is three lines above the entries: the large title `大家の日本語`, the medium subtitle `動詞轉型練習` under it, and the line `涵蓋初級 1 – 50 課的動詞` under that.
-
-Four large buttons, stacked. 學習 sits above the three study entries 字典, 翻卡練習, 測驗; it opens `learn` (學習目錄), a grammar reference rather than a practice run.
-
-The footer has two lines. The first is `🥺 如果有 BUG 記得告訴我！`; the second is `Build with ❤ by Mane`. Both open the same small sheet.
-
-The sheet is the About panel. It reads:
+The head is three lines above the entries: the large title `大家の日本語`, the medium subtitle `動詞轉型練習` under it, and the line `涵蓋初級 1 – 50 課的動詞` under that. Four large buttons, stacked. 學習 sits above the three study entries 字典, 翻卡練習, 測驗; it opens `learn` (學習目錄), a grammar reference rather than a practice run. The footer has two lines: `🥺 如果有 BUG 記得告訴我！` and `Build with ❤ by Mane`; both open the same small sheet, the About panel:
 
 - `本項目已經開源，` + link + `可以獲得源代碼。` The link is `https://github.com/manesec-web/game-japanese-katsuyou-basic` and opens in a new tab.
 - `意見 & Bug 反饋：` followed by an ordered list: `提交ISSUE`, which opens `https://github.com/manesec-web/game-japanese-katsuyou-basic/issues/` in a new tab, and `或者發送郵件到` + link + the address `mane@manesec.com`, a `mailto:` link.
-- `🥺 どうもありがとうございます。`
-- 關閉 closes the sheet.
+- `🥺 どうもありがとうございます。`; 關閉 closes the sheet.
 
 ### Lesson picker
 
-Back at the top returns to home.
+Back at the top returns to home. The title is 詞彙. On the right, 全選 selects every lesson that has verbs when any of those lessons is still unselected, and clears them when they are already all selected. The control's label follows that state: 全選 until every lesson with verbs is selected, then 取消全選. Lessons are wrapping rounded buttons labeled `第1課` through `第50課`, with three looks: has verbs, not selected — outline; has verbs, selected — filled; has no verbs — gray, the button does nothing, and hovering it shows the hint 該課沒有動詞 (a disabled button cannot take keyboard focus, so hover is how the hint is reached). Dictionary mode ends there, with 開始 below; card mode and quiz mode add a 變形 block:
 
-The title is 詞彙. On the right, 全選 selects every lesson that has verbs when any of those lessons is still unselected, and clears them when they are already all selected. The control's label follows that state: it reads 全選 until every lesson with verbs is selected, then 取消全選.
+- 從 is a single choice, default `masu-form`, one button opening a list of the 15 names. The 從 label and that button share one centre line: the label is centred against the 36px control, never nudged up or down with padding, so the glyph sits halfway down the control's height.
+- 到 is a multiple choice, default `dictionary-form` only; the buttons wrap. A header row sits above the chips: 到 on the left and 全選 on the right. 全選 selects every form except 從; if those forms are already all selected, the next press leaves only `dictionary-form`, or `masu-form` when 從 is already the dictionary form.
+- The chip whose form is the current 從 cannot be selected as a target, because a card or quiz item needs two different forms. It is disabled and keeps the look of the picker's empty 第1課 chip — muted text, transparent background, the divider border, 45% opacity, no hover accent and no pointer events — so its wrapper can show the tooltip `這和「從」的形式相同，不能選為「到」` on hover. The tooltip is at most 320px wide — twice the empty-lesson hint — so the sentence fits on one line, and its centred position is clamped to the viewport (8px from either edge) when the chrome sits in a right-hand cell, so it never widens the page. It stays unselected, `aria-pressed` is false, and 全選 never selects it; changing 從 to a form that was already selected in 到 removes that target as before, immediately.
+- Deselecting every 到 chip is allowed. While no lesson is selected, the footer shows no separate warning line in any mode: the disabled 開始 button carries `請至少選擇一門課程才可以開始` instead of its normal label. While a lesson is selected but 到 is empty, its label becomes `請至少選擇一個轉型才可以開始`. Neither message renders as a separate line above 開始; both live on the button itself, and the label returns to `開始` as soon as the missing choice is supplied. Dictionary mode has no 轉型 block, so its disabled label is only ever the lesson message. 開始 is disabled when there is no target or no lesson: in either disabled state the button itself is the error affordance — red text and a red 1px border on a transparent background, with no fill or shadow, remaining disabled rather than acting as a link. The disabled label names the missing requirement — `請至少選擇一門課程才可以開始` with no lesson (all three modes), `請至少選擇一個轉型才可以開始` when only 到 is empty (card and quiz). As soon as the required lesson and target choices are valid, the same button returns to the original filled purple primary style.
 
-Lessons are wrapping rounded buttons labeled `第1課` through `第50課`. Three looks:
-
-- Has verbs, not selected: outline.
-- Has verbs, selected: filled.
-- Has no verbs: gray, the button does nothing, and hovering it shows the hint 該課沒有動詞 (a disabled button cannot take keyboard focus, so hover is how the hint is reached).
-
-Dictionary mode ends there, with 開始 below.
-
-Card mode and quiz mode add a 變形 block.
-
-- 從 is a single choice. The default is `masu-form`. The control is one button that opens a list of the 15 names. The 從 label and that button share one centre line: the label is centred against the 36px control, never nudged up or down with padding, so the glyph sits halfway down the control's height.
-- 到 is a multiple choice. The default is `dictionary-form` only. The buttons wrap. A header row sits above the chips: 到 on the left and 全選 on the right. 全選 selects every form except 從. If those forms are already all selected, the next press leaves only `dictionary-form`, or `masu-form` when 從 is already the dictionary form.
-- The chip whose form is the current 從 cannot be selected as a target, because a card or quiz item needs two different forms. It is disabled and keeps the look of the picker's empty 第1課 chip — muted text, transparent background, the divider border, 45% opacity, no hover accent and no pointer events — so its wrapper can show the tooltip `這和「從」的形式相同，不能選為「到」` on hover. The tooltip is at most 320px wide — twice the empty-lesson hint — so the sentence fits on one line, and its centred position is clamped to the viewport (8px from either edge) when the chrome sits in a right-hand cell, so it never widens the page. It stays unselected, `aria-pressed` is false, and 全選 never selects it; changing 從 to a form that was already selected in 到 removes that target as before.
-- Changing 從 to a form that is selected in 到 removes that target immediately.
-- While no lesson is selected, the footer shows no separate warning line in any mode. The disabled 開始 button carries the message `請至少選擇一門課程才可以開始` instead of its normal label.
-- Deselecting every 到 chip is allowed. While a lesson is selected but 到 is empty, the button's label becomes `請至少選擇一個轉型才可以開始` instead. Neither message renders as a separate line above 開始; both live on the button itself. The label returns to `開始` as soon as the missing choice is supplied. Dictionary mode has no 轉型 block, so its disabled label is only ever the lesson message.
-- 開始 is disabled when there is no target or no lesson. In either disabled state the button itself is the error affordance: red text and a red 1px border on a transparent background, with no fill or shadow. The disabled label names the missing requirement — `請至少選擇一門課程才可以開始` with no lesson (all three modes), `請至少選擇一個轉型才可以開始` when only 到 is empty (card and quiz). It remains disabled rather than acting as a link. As soon as the required lesson and target choices are valid, the same button returns to the original filled purple primary style with the label `開始`.
-
-Each mode remembers its own lessons and form choices under the `localStorage` key `katsuyou-settings`.
-
-開始 builds the item list and opens study. The dictionary list is the verbs in the selected lessons, lessons ascending, and inside a lesson the JSON order. The card and quiz lists are those verbs crossed with the selected target forms: lesson, then in-lesson order, then the form order in the table above. When 跳過錯誤的單詞 is on, the card and quiz lists drop any pair whose target form is flagged `error_usage`. Study starts at the first item.
+Each mode remembers its own lessons and form choices under the `localStorage` key `katsuyou-settings`. 開始 builds the item list and opens study: the dictionary list is the verbs in the selected lessons, lessons ascending, and inside a lesson the JSON order; the card and quiz lists are those verbs crossed with the selected target forms — lesson, then in-lesson order, then the form order in the table above. When 跳過錯誤的單詞 is on, the card and quiz lists drop any pair whose target form is flagged `error_usage`. Study starts at the first item.
 
 ### Dictionary reader
 
-Top: back (to the picker), the title `字典`, a 目錄 button, and a settings gear. The two icon buttons sit at the right edge in that order: 目錄 first, then the gear.
+Top: back (to the picker), the title `字典`, a 目錄 button, and a settings gear; the two icon buttons sit at the right edge in that order, 目錄 first, then the gear. The body draws the forms selected in 選擇顯示的類型, with the 預設顯示形式 first and the remaining drawn forms in the canonical order of the table above; 跳過錯誤的單詞 also leaves out `error_usage` forms. With the default settings all 15 are drawn. Each drawn form block shows:
 
-The body draws the forms selected in 選擇顯示的類型, with the 預設顯示形式 first and the remaining drawn forms in the canonical order of the table above; 跳過錯誤的單詞 also leaves out `error_usage` forms. With the default settings all 15 are drawn. Each drawn form block shows:
-
-- A small heading with the form name, for example `字典形` or `ます形`. Every block has one. On the same row, to the right of every form except the 預設顯示形式, a `變形原理` button uses the same type as the heading and greys on hover. A press runs `rule.openFromReader`: it opens 變形說明 with 從 = the reader's 預設顯示形式, 到 = that form, and 例如 preselected to the word on screen. Back returns to the reader at the same scroll position.
-- The word `vol`, centred in the block. When readings are on, apply the ruby rules below so `japanese` sits on the kanji. When the form carries `error_usage`, the word takes the error colour and its base text is struck through twice — two lines in that same error colour, across the kanji and the kana — while the reading above it keeps the colour and is not struck; the strike never changes the colour. With 跳過錯誤的單詞 on, such forms are not drawn at all.
-- The gloss `chinese`, centred in the block. It is the per-form meaning defined in Data, printed exactly as stored: `；`, `…`, parentheses and the `（禮貌體）` / `（普通體）` / `（此形日常少用）` suffixes stay in the text.
+- A small heading with the form name, for example `字典形` or `ます形`; every block has one. On the same row, to the right of every form except the 預設顯示形式, a `變形原理` button uses the same type as the heading and greys on hover. A press runs `rule.openFromReader`: 變形說明 with 從 = the reader's 預設顯示形式, 到 = that form, 例如 preselected to the word on screen; back returns to the reader at the same scroll position.
+- The word `vol`, centred. When readings are on, apply the ruby rules below so `japanese` sits on the kanji. When the form carries `error_usage`, the word takes the error colour and its base text is struck through twice — two lines in that same error colour, across the kanji and the kana — while the reading above it keeps the colour and is not struck; the strike never changes the colour. With 跳過錯誤的單詞 on, such forms are not drawn at all.
+- The gloss `chinese`, centred: the per-form meaning defined in Data, printed exactly as stored — `；`, `…`, parentheses and the `（禮貌體）` / `（普通體）` / `（此形日常少用）` suffixes stay in the text.
 - Two tags, the group label and `第N課`, as a centred row. Only the first drawn block carries them, so the pills appear once per word rather than once per form.
-- The form's `note`, when there is one, above the 例句： block. It is the corrected beginner-facing usage explanation from Data, laid out like a sentence line — left-aligned, not centred — and marked with its own colour.
-- 例句： that form's sentences. Japanese first, then Chinese. Inside the Japanese line, every occurrence of that form's own `vol` is painted in purple so the word is visible in context. The match is exact: the sentence text is never rewritten, and the Chinese line is left plain. A sentence's own `note`, when present, rides under its Chinese line in the same note colour. Every usable form in `vol/` contains its own `vol` inside at least one of its sentences. A form flagged `error_usage` has no sentences at all, so its note stands alone and the 例句： block is not drawn.
+- The form's `note`, when there is one, above the 例句： block: the corrected beginner-facing usage explanation from Data, laid out like a sentence line — left-aligned, not centred — and marked with its own colour.
+- 例句： that form's sentences, Japanese first, then Chinese. Inside the Japanese line, every occurrence of that form's own `vol` is painted in purple so the word is visible in context. The match is exact: the sentence text is never rewritten, and the Chinese line is left plain. A sentence's own `note`, when present, rides under its Chinese line in the same note colour. Every usable form in `vol/` contains its own `vol` inside at least one of its sentences. A form flagged `error_usage` has no sentences at all, so its note stands alone and the 例句： block is not drawn.
 
-All drawn blocks share one format: the same padding, a hairline separator between blocks, and no tinted panel, accent border, radius or inset margins. The block for the current 預設顯示形式 is simply the first drawn block; the others follow in the canonical order. The 預設顯示形式 is always one of the selected forms (see Settings), so its block is always drawn and always first; if a skip setting hides it, the first remaining drawn form is promoted to the opening block. A word opens at the top of the page. There is no separate 字典形 section at the bottom.
+All drawn blocks share one format: the same padding, a hairline separator between blocks, and no tinted panel, accent border, radius or inset margins. The block for the current 預設顯示形式 is simply the first drawn block; the others follow in the canonical order. The 預設顯示形式 is always one of the selected forms (see Settings), so its block is always drawn and always first; if a skip setting hides it, the first remaining drawn form is promoted to the opening block. A word opens at the top of the page; there is no separate 字典形 section at the bottom.
 
-At 550px or less, swipe right-to-left for the next word and swipe left-to-right for the previous word. A horizontal drag is finger-tracking: while the finger is down, the whole strip of words translates with it 1:1, so the word is under the hand, and the word behind it peeks in at the edge it is dragged toward. The travel is clamped to one word width. The first item does not move backward and the last item does not move forward: a drag towards a wall moves nothing at all, at any distance. A horizontal move past 72px changes the word on release. A shorter drag settles the strip back to where it started. Vertical movement stays page scroll.
-
-Paging is a flat horizontal slide, the way a phone moves between its own screens: no rotation, no tilt, no fade and no depth. On release the swap is direct — the window advances the moment the gesture resolves — and the strip finishes the page as one short decelerating move (about 190ms) from where the finger left it, carrying the old word out and the new word in. The footer presses run the same move from one word width away, so the new word is pushed in from the edge the swipe came from. Once it settles it never moves again: no flash, no second slide, no bounce. Under `prefers-reduced-motion: reduce` the drag stays invisible and the word changes at once, with no slide. Card mode pages the same way: right-to-left is the next card. Both screens page inside the paging window described below; the window never changes this motion.
-
-Above 550px the reader does not page by gesture, so text can be selected and copied: a drag selects text and only the two footer controls change the word. The dictionary has no completion screen; it stops at the last word.
+Paging (see The paging window and Look and motion): at 550px or less, swipe right-to-left for the next word and swipe left-to-right for the previous word. A horizontal drag is finger-tracking: while the finger is down, the whole strip of words translates with it 1:1, so the word is under the hand, and the word behind it peeks in at the edge it is dragged toward. The travel is clamped to one word width. The first item does not move backward and the last item does not move forward: a drag towards a wall moves nothing at all, at any distance. A horizontal move past 72px changes the word on release; a shorter drag settles the strip back to where it started. Vertical movement stays page scroll. Paging is a flat horizontal slide, the way a phone moves between its own screens: no rotation, no tilt, no fade and no depth. On release the swap is direct — the window advances the moment the gesture resolves — and the strip finishes the page as one short decelerating move (about 190ms) from where the finger left it, carrying the old word out and the new word in. The footer presses run the same move from one word width away, so the new word is pushed in from the edge the swipe came from. Once it settles it never moves again: no flash, no second slide, no bounce. Under `prefers-reduced-motion: reduce` the drag stays invisible and the word changes at once, with no slide. Card mode pages the same way: right-to-left is the next card. Both screens page inside the paging window described below; the window never changes this motion. Above 550px the reader does not page by gesture, so text can be selected and copied: a drag selects text and only the two footer controls change the word. The dictionary has no completion screen; it stops at the last word.
 
 The footer has two controls labeled `上一個` and `下一個`; they perform the same moves and are disabled at the first and last item. The footer is pinned to the bottom of the column, like the picker's 開始. It keeps the column colour fading to transparent above the controls, with no hairline underline, and the fade band lives inside the footer's top padding so the two buttons always sit on solid colour and are never washed out. Its buttons are 50px tall, with 10px of column colour under them, and the height keeps them clear of the window edge. The same treatment applies to the picker's 開始 footer and the card controls, where the primary action is 50px tall.
 
@@ -250,21 +150,19 @@ The footer has two controls labeled `上一個` and `下一個`; they perform th
 
 Every Japanese word (`form.vol`) and every example sentence (`sentence.japanese`) in the reader is tappable to play its recorded Opus audio. The Chinese gloss, the Chinese sentence line and any note are not tappable and show no hover. On a mouse, hovering a word or sentence shows the same grey background as the settings button (`rgba(36, 33, 58, 0.06)`) and a pointer cursor.
 
-A tap plays that lesson's audio bin, which is fetched from the same origin, `dict/resource/lessonX.bin` (the build downloads the bins from the `res-miles` release into this gitignored directory, so the browser never crosses an origin — GitHub release assets do not allow cross-origin fetch). The bin stays zipped in IndexedDB, in a separate `katsuyou-audio` database; only the one `<16-hex>.opus` entry a word or sentence names is decompressed and played. The entry name is the middle 16 hex characters of the MD5 of the Japanese text — the first 8 and last 8 hex characters of the 32-character digest are dropped, so `ありがとうございます` → `8df33dc365b1b6aa.opus`. A word keys on `vol`, a sentence keys on `japanese`.
+A tap plays that lesson's audio bin, fetched from the same origin, `dict/resource/lessonX.bin` (the build downloads the bins from the `res-miles` release into this gitignored directory, so the browser never crosses an origin — GitHub release assets do not allow cross-origin fetch). The bin stays zipped in IndexedDB, in a separate `katsuyou-audio` database; only the one `<16-hex>.opus` entry a word or sentence names is decompressed and played. The entry name is the middle 16 hex characters of the MD5 of the Japanese text — the first 8 and last 8 hex characters of the 32-character digest are dropped, so `ありがとうございます` → `8df33dc365b1b6aa.opus`. A word keys on `vol`, a sentence keys on `japanese`.
 
-After download the bin's sha256 is checked against `src/data/audio-manifest.json`, the audio bins' own hashes (distinct from the dictionary's `dict-manifest.json`). Each lesson is verified at most once per page session: a later tap reuses the verified copy, and a reload re-verifies the stored copy without re-downloading. A missing entry, a failed download, a hash mismatch or a decode failure shows 「該音頻暫時無法播放」.
-
-The visual states are gradual. While a bin is downloading, the tapped text and its background pulse between the normal colour and the grey. During playback the grey is fixed. When playback ends the grey fades back to normal. Only one word or sentence is tinted at a time: starting a new playback clears the previous one's grey at once. Under `prefers-reduced-motion: reduce` there is no pulse and the grey appears and disappears without motion, but the audio still plays.
+After download the bin's sha256 is checked against `src/data/audio-manifest.json`, the audio bins' own hashes (distinct from the dictionary's `dict-manifest.json`). Each lesson is verified at most once per page session: a later tap reuses the verified copy, and a reload re-verifies the stored copy without re-downloading. A missing entry, a failed download, a hash mismatch or a decode failure shows 「該音頻暫時無法播放」. The visual states are gradual: while a bin is downloading, the tapped text and its background pulse between the normal colour and the grey; during playback the grey is fixed; when playback ends the grey fades back to normal. Only one word or sentence is tinted at a time — starting a new playback clears the previous one's grey at once. Under `prefers-reduced-motion: reduce` there is no pulse and the grey appears and disappears without motion, but the audio still plays.
 
 ### 單詞目錄
 
 The reader opens this screen from the 目錄 button. It lists the words of the current run — the same frozen list the reader pages through — so its order matches 上一個 / 下一個 and it never re-reads the settings when it opens.
 
 - Top bar: back on the left (it returns to the reader on the word the reader was showing), the title `單詞目錄`, and a 搜尋 button on the right edge. There is no settings gear on this screen.
-- The 搜尋 button (Lucide `Search`) toggles a search box that appears just below the top bar and is pinned with it: the bar sticks at the top of the viewport and the box sticks right underneath it, so both stay put while the list scrolls. The box is a 44px rounded input like the other controls, with the placeholder `搜尋單詞、讀音或課號` and a clear button (Lucide `X`) inside its right edge.
+- The 搜尋 button (Lucide `Search`) toggles a search box just below the top bar, pinned with it: the bar sticks at the top of the viewport and the box sticks right underneath it, so both stay put while the list scrolls. The box is a 44px rounded input like the other controls, with the placeholder `搜尋單詞、讀音或課號` and a clear button (Lucide `X`) inside its right edge.
 - Typing filters the list in place. A row matches when the query appears as a substring of that form's `vol`, as a substring of its `japanese` reading (so a hiragana query like `いき` finds `行きます`), or as a substring of the lesson number (the digits of the `第N課` heading, so `5` matches lessons 5, 15, 25, …). A Latin query is Hepburn romaji and is converted to kana before the reading match — `deki` and `dekimasu` both find `できます` — with macrons, long vowels (`kyō` / `kyou`) and the small つ (`itta`, `gakkou`) handled, and katakana readings are matched as hiragana so `kopi` finds `コピーする`. The matched part of the word is painted in red; a lesson-number match paints nothing. A lesson whose rows all fail the match leaves no heading. When nothing matches, a single muted line reads `沒有符合的單詞` instead of the list.
 - The clear button empties the query and restores the full list. Closing the box shows the full list again, and leaving the screen discards the query: it is a transient filter, not a saved setting, and it never changes the reader's current word. A matching row still opens the reader on that word the same way an unfiltered row does.
-- The list is grouped by lesson, lessons ascending, and inside a lesson it keeps the run order and, within a word, the canonical form order of the table above. Each group starts with its lesson heading `第N課`. Every row shows one form — its `vol` — on the left, and the form's name (`字典形`, `ます形`, …) as a tag on the right. All 15 forms are listed, one row per form; readings are not drawn, so 顯示平假名注音 does not change a row.
+- The list is grouped by lesson, lessons ascending; inside a lesson it keeps the run order and, within a word, the canonical form order of the table above. Each group starts with its lesson heading `第N課`. Every row shows one form — its `vol` — on the left, and the form's name (`字典形`, `ます形`, …) as a tag on the right. All 15 forms are listed, one row per form; readings are not drawn, so 顯示平假名注音 does not change a row.
 - The current word is marked on its dictionary-form row (the first of its form rows): that row carries the pressed tint and `aria-current="true"`, and its word reads in the accent colour. When the list opens, that row is scrolled into view; a run that already fits on screen still opens at its first row.
 - A press on a row opens the reader on that word — a form row jumps to its verb, which lands at the top of the page on the default form like every other word. Leaving the screen is the ordinary screen change; under `prefers-reduced-motion: reduce` it is a short fade.
 - A row is its own outlined button, like the picker's chips: 44px tall and full content width, a 1px divider-colour border, the 10px radius and the surface background the other buttons use, and a pressed row takes the usual scale and tint. Rows sit 8px apart and no divider element or hairline is drawn between them. A lesson heading is a small muted line above the first row of its group. The list is an ordinary scrolling page, so the drawn page scroll thumb applies.
@@ -276,29 +174,19 @@ The card and quiz screens do not open this screen: their top bars keep only the 
 Back returns to the reader and keeps the current word.
 
 - 預設顯示形式: a dropdown that lists the 15 forms. Default ます形.
-- 選擇顯示的類型: the 15 forms as wrapping chip buttons, all selected by default. The chips fill equal-width cells from edge to edge, so their rows align like the quiz settings' 錯 X 題就顯示答案 button group; a label never shrinks its button or overflows it, and a partly filled last row keeps the same cell width. Deselecting a form hides it from the reader, so a form the user has not learned can be put away temporarily; at least one form stays selected. The control beside 選擇顯示的類型 follows the selection state: it reads 全選 whenever fewer than all 15 forms are selected, and 取消全選 once all 15 are selected. Pressing 全選 selects all 15 and the control becomes 取消全選; pressing 取消全選 leaves only the current 預設顯示形式 selected and the control returns to 全選. Toggling individual chips updates the label by the same rule, and the choice persists with the other settings. The current 預設顯示形式 is always selected: its chip is a disabled button and reports the reason in a tooltip reading `這是預設顯示形式，必須顯示，不能取消`, so a press cannot remove it. Like the disabled 第1課 lesson chip, this locked chip has a transparent background, muted grey text, a divider-colour border, 45% opacity, no hover accent and no pointer events; its wrapper still shows the tooltip on hover (the disabled button itself takes no focus, so hover is the reveal). It remains pressed (`aria-pressed="true"`) and its form is always drawn first in the reader. When the 預設顯示形式 changes to a form that is not currently selected, that form joins the selection and the old default becomes an ordinary selectable chip again; the selection can never end up without the default form.
+- 選擇顯示的類型: the 15 forms as wrapping chip buttons, all selected by default. The chips fill equal-width cells from edge to edge, so their rows align like the quiz settings' 錯 X 題就顯示答案 button group; a label never shrinks its button or overflows it, and a partly filled last row keeps the same cell width. Deselecting a form hides it from the reader, so a form the user has not learned can be put away temporarily; at least one form stays selected. The control beside 選擇顯示的類型 follows the selection state: 全選 whenever fewer than all 15 forms are selected, 取消全選 once all 15 are selected. Pressing 全選 selects all 15 and the control becomes 取消全選; pressing 取消全選 leaves only the current 預設顯示形式 selected and the control returns to 全選. Toggling individual chips updates the label by the same rule, and the choice persists with the other settings. The current 預設顯示形式 is always selected: its chip is a disabled button and reports the reason in a tooltip reading `這是預設顯示形式，必須顯示，不能取消`, so a press cannot remove it. Like the disabled 第1課 lesson chip, this locked chip has a transparent background, muted grey text, a divider-colour border, 45% opacity, no hover accent and no pointer events; its wrapper still shows the tooltip on hover (the disabled button itself takes no focus, so hover is the reveal). It remains pressed (`aria-pressed="true"`) and its form is always drawn first in the reader. When the 預設顯示形式 changes to a form that is not currently selected, that form joins the selection and the old default becomes an ordinary selectable chip again; the selection can never end up without the default form.
 - 跳過錯誤的單詞: a switch, default off. When on, the reader hides every form flagged `error_usage` (an invalid conjugation kept for practice only). A small note under the row reads `跳過錯誤的詞語，例如：「始まられる」。因為「始まる」是自動詞，所以「〜を始まられる」不成立，跳過這類不成立的動詞。`
 - 顯示平假名注音: a switch. Default on.
 
 ### Cards
 
-The title is `練習（n/total）`.
-
-Face (top to bottom):
-
-- The group tag while 一開始顯示幾類動詞 is on. Default on. It sits above the word, in the same position and pill style the answer's tags use.
-- The source form, with reading.
-- A line `變成` plus the target form’s name, for example `變成字典形`.
+The title is `練習（n/total）`. Face (top to bottom): the group tag while 一開始顯示幾類動詞 is on (default on), sitting above the word in the same position and pill style the answer's tags use; the source form, with reading; a line `變成` plus the target form’s name, for example `變成字典形`.
 
 A tap flips the card with a 3D page-turn (`rotateY`, about 240ms, decelerating, no overshoot past 180°). The back shows the target `vol`, its reading, and that form's own `chinese` gloss (see Data), plus tags: the target form's name (for example `字典形`), then the verb-class tag (for example `2類動詞`), then `第N課`, in that order. When the target form is flagged `error_usage`, a `錯誤單詞` tag follows. These answer tags are always there: they ignore 一開始顯示幾類動詞 and 顯示平假名注音, so the class is named on the answer even when the switch is off. Another tap flips back to the face.
 
-The card list is shuffled once when 開始 is pressed; 上一張 and 下一張 then walk that frozen order rather than the lesson and form order. Swipe right-to-left for the next card, the same way the dictionary pages: the card follows the finger 1:1 while the drag is held, the card behind it peeks in at the edge, and on release past the threshold the strip finishes the page as one short decelerating move from where the finger left it. Swipe left-to-right for the previous card. The threshold matches the dictionary. A new card opens on its face. Pressing 上一張 or 下一張 runs the same move as a swipe — the strip carries the old card out and the new one in — rather than swapping instantly; under reduced motion the drag stays invisible and the swap is immediate. The nine mounted cards of the paging window follow the same rules.
+The card list is shuffled once when 開始 is pressed; 上一張 and 下一張 then walk that frozen order rather than the lesson and form order. Paging uses the dictionary's motion and The paging window: swipe right-to-left for the next card, swipe left-to-right for the previous card; the card follows the finger 1:1 while the drag is held, the card behind it peeks in at the edge, and on release past the 72px threshold the strip finishes the page as one short decelerating move from where the finger left it. A new card opens on its face. Pressing 上一張 or 下一張 runs the same move as a swipe — the strip carries the old card out and the new one in — rather than swapping instantly; under reduced motion the drag stays invisible and the swap is immediate. The nine mounted cards of the paging window follow the same rules.
 
-The right-hand footer control reads 下一張 until the last card; on the last card it reads 完成. Pressing 完成 ends the run and shows the completion screen below.
-
-Swipe right-to-left on the last card and the run ends the same way: the completion screen takes the card's place instead of another card sliding in. Arriving on the last card does not end the run by itself, and the arrow keys stay where they are: there is nothing after the last card, so a right-to-left swipe on it finishes rather than bouncing back.
-
-The first card has nothing behind it, so a backward drag is completely still: the card does not follow the finger at any distance, nothing springs back because nothing moved, the drag never names a direction and never changes the card. The dictionary reader's first and last word are walled the same way. The last-card finish is unchanged.
+The right-hand footer control reads 下一張 until the last card; on the last card it reads 完成. Pressing 完成 ends the run and shows the completion screen below. Swipe right-to-left on the last card and the run ends the same way: the completion screen takes the card's place instead of another card sliding in. Arriving on the last card does not end the run by itself, and the arrow keys stay where they are: there is nothing after the last card, so a right-to-left swipe on it finishes rather than bouncing back. The first card has nothing behind it, so a backward drag is completely still: the card does not follow the finger at any distance, nothing springs back because nothing moved, the drag never names a direction and never changes the card. The dictionary reader's first and last word are walled the same way. The last-card finish is unchanged.
 
 ### Card settings
 
@@ -308,14 +196,7 @@ The first card has nothing behind it, so a backward drag is completely still: th
 
 ### Quiz
 
-The title is `測驗（n/total）`.
-
-The prompt shows the source form and its reading. The question is:
-
-- `原型是什麼？` when the target is `dictionary-form`.
-- `{name}是什麼？` for every other form, for example `て形是什麼？`.
-
-The field accepts kanji, hiragana, and katakana from the system input method. Backspace sits inside the field on the right. A check button outside the field submits.
+The title is `測驗（n/total）`. The prompt shows the source form and its reading. The question is `原型是什麼？` when the target is `dictionary-form`, or `{name}是什麼？` for every other form, for example `て形是什麼？`. The field accepts kanji, hiragana, and katakana from the system input method. Backspace sits inside the field on the right. A check button outside the field submits.
 
 Under the field is a keyboard. Build a new one for every item: 5 columns, 5 keys per row, 25 keys.
 
@@ -324,24 +205,13 @@ Under the field is a keyboard. Build a new one for every item: 5 columns, 5 keys
 3. Fill the remaining keys at random from hiragana: seion, dakuten, handakuten, small `ゃゅょぁぃぅぇぉっ`, `ん`, and `ー`. Do not repeat a character already placed.
 4. Shuffle the full set, then render it.
 
-If the correct reading has more than 25 distinct characters, grow the grid until they fit, still 5 keys per row. In the current data the longest reading is 13 characters, so the grid is 25 keys.
+If the correct reading has more than 25 distinct characters, grow the grid until they fit, still 5 keys per row. In the current data the longest reading is 13 characters, so the grid is 25 keys. A key appends that character to the field.
 
-A key appends that character to the field.
-
-Grading applies NFKC, removes whitespace, and converts katakana to hiragana. Either of these is correct:
-
-- The normalized input equals the normalized `japanese`.
-- The normalized input equals the normalized `vol`.
-
-A correct answer shows 回答正確, opens the next item immediately, clears the field, and builds a new keyboard.
-
-A wrong answer keeps the input and shakes the input field, then turns it red; the item stays. A wrong answer also shows the countdown 再答錯 X 題就顯示答案, where X counts down on that item.
+Grading applies NFKC, removes whitespace, and converts katakana to hiragana. Either of these is correct: the normalized input equals the normalized `japanese`, or the normalized input equals the normalized `vol`. A correct answer shows 回答正確, opens the next item immediately, clears the field, and builds a new keyboard. A wrong answer keeps the input and shakes the input field, then turns it red; the item stays. A wrong answer also shows the countdown 再答錯 X 題就顯示答案, where X counts down on that item.
 
 The Nth wrong answer on the same item reveals the correct answer, where N is 錯 X 題就顯示答案: default 3, and 1 to 5. The revealed answer shows both `vol` and `japanese` in a panel that sits on top of the keyboard and covers it. The keyboard and the field then stop accepting input, and 下一題 appears inside that panel. The user presses it to continue; the revealed answer never advances by itself. The earlier misses do not reveal and do not advance.
 
-自動提交答案 defaults to on. While it is on, each append or backspace that already equals an accepted answer grades immediately. While it is off, only the check button grades. After the answer is revealed, nothing grades automatically.
-
-跳過錯誤的單詞 can be flipped while a run is live: the answered items stay; turning it on removes the error_usage items from the unanswered portion (the item on screen included), and the run ends immediately when nothing follows; turning it off appends those items to the tail of the queue.
+自動提交答案 defaults to on: each append or backspace that already equals an accepted answer grades immediately; while it is off, only the check button grades. After the answer is revealed, nothing grades automatically. 跳過錯誤的單詞 can be flipped while a run is live: the answered items stay; turning it on removes the error_usage items from the unanswered portion (the item on screen included), and the run ends immediately when nothing follows; turning it off appends those items to the tail of the queue.
 
 ### Quiz settings
 
@@ -362,16 +232,14 @@ Home adds a fourth entry, 學習, above 字典. It opens a grammar reference, no
 
 #### 變形說明
 
-Top bar: back returns to 學習目錄 (or to the dictionary reader, at its saved scroll position, when opened from 變形原理), title `變形說明`.
-
-Top to bottom:
+Top bar: back returns to 學習目錄 (or to the dictionary reader, at its saved scroll position, when opened from 變形原理), title `變形說明`. Top to bottom:
 
 1. A section label `變形設置`. `例如` and `小提示` use this same section-label style (one shared class), not a separate heading style.
 2. `從` — one single-choice dropdown of the 15 forms, default `ます形`, the same control as the picker's 從 (36px button, `ChevronDown`, list with drawn thumb).
 3. `到` — one single-choice dropdown of the 15 forms except the current 從, default `字典形`. Changing 從 to the current 到 moves 到 to the fallback target — `字典形`, or `ます形` when 從 is already `字典形` — so the two are never equal.
 4. A drawn 1px `.hrule` above the heading `從 {從名} 到 {到名} 的變形如下` (using the two forms' on-screen names). The same drawn rule separates 例如 and 小提示 from the content above them; it is its own element, never a border on a neighbour.
 5. The authored explanation for that ordered pair (see 學習內容): four blocks in reading order — 第一類動詞（五段）, 第二類動詞（一段）, 第三類動詞（不規則）, 例外. The 第一類 and 第二類 tables read `從形 | 變形 | 到形`; in a row the changing kana and the added suffix are painted purple (`--highlight`) and the removed suffix is painted red with a double strikethrough (紅色雙刪除線、紅色字體). The 第三類 and 例外 tables keep two columns. Each 第一類 block opens with a 段 / 音便 mapping that **changes with 從 and 到**: `字典形 → ます形` reads `う → い　く → き　ぐ → ぎ …`, `ます形 → て形` reads `い、ち、り → って …`, `ない形 → て形` reads `わ、た、ら → って …`, and a reverse pair flips the arrow (`って → い、ち、り`). The label is `變形的音變如下：` for た形/て形 pairs and `假名對應如下：` otherwise; the five 音便 rows are labelled 促音便 / 撥音便 / イ音便 / す行不變音 and note the 濁音 だ／で. Pairs whose 從 and 到 sit on the same 段 (for example `ます形 → ません形`) show no mapping. A `小提醒` list under each table prints the pair's special cases: う → わ (not あ), 行く → 行った／行って, ある → ない, する → できる, を → が, 帰る 等看似二類的一類動詞, ら抜き, and the 段 口訣. Warnings are red, tips accent-coloured. The 第一類 example rows are grouped in 音便 order for た形/て形 pairs.
-6. `例如` — the interactive example (below). It shows no extra 小提醒 notes; the special cases belong to the class tables only.
+6. `例如` — the interactive example (below), with no extra 小提醒 notes; the special cases belong to the class tables only.
 7. `小提示` — the global teaching notes (below), rendered as a numbered list `1. … / 2. …`.
 
 從, 到 and the chosen example word are transient screen state, not saved settings. `rule.returnTo` remembers whether 變形說明 was opened from 學習目錄 or from the dictionary reader. Opening 選字 records the 變形說明 scroll position (`rule.rememberScroll`), and returning from 選字 restores it instead of jumping to the top; opening 變形原理 records the reader's scroll position and `nav.go reader` restores it.
@@ -395,7 +263,7 @@ The explanations live in `src/data/rule-content.js` as a flat list, one entry pe
 - Example rows use real verbs from `vol/`, picked by the generator. Every `from` and `to` cell is byte-identical to that verb's stored `vol` for the pair's forms; a cell that is not a real dictionary word is a data error. The generator refuses to write an entry whose okurigana/reading alignment is inconsistent, and its test regenerates all 210 entries and compares them with the shipped file.
 - The tables and notes come from pure modules — `src/study/rule-conjugation.js` holds the 段 / 音便 tables and the special cases, `src/study/rule-content-builder.js` builds the entries from real verbs — and `scripts/generate-rule-content.mjs` only writes the file. A pure lookup (`src/study/rule.js`) finds the entry for a (from, to) pair. Every one of the 210 pairs has an entry; the lookup's test asserts completeness, and an absent pair is a data error that must not ship.
 
-The 小提示 block is global copy shown on every pair, not per-entry data. It is a plain string list rendered as a numbered list (`1. …`, `2. …`) that explains **how the mechanism works and what to watch for**, not just a study suggestion:
+The 小提示 block is global copy shown on every pair, not per-entry data: a plain string list rendered as a numbered list (`1. …`, `2. …`) that explains **how the mechanism works and what to watch for**, not just a study suggestion:
 
 - how to read the page (認 從/到 → 看段/音便對應 → 用例如對照原理);
 - the 五段 段 口訣 (`字典形 う段、ます形 い段、ない形 あ段、可能／命令／ば形 え段、意向形 お段`), that 第二類 only swaps the 語尾, and that 第三類 must be memorised as a whole;
@@ -424,17 +292,9 @@ The 例如 block applies the pair to any verb in the dictionary. The word is cho
 
 ## Completion
 
-The quiz list is shuffled once when 開始 is pressed; 下一題 walks that frozen order. The run ends when the last item resolves: a correct answer on the last item ends it immediately, and a revealed answer ends it when 下一題 is pressed.
+The quiz list is shuffled once when 開始 is pressed; 下一題 walks that frozen order. The run ends when the last item resolves: a correct answer on the last item ends it immediately, and a revealed answer ends it when 下一題 is pressed. The completion screen replaces the study body and shows: 恭喜，你已經做完了練習。; 正確 N 題 and 錯誤 M 題 (an item counts as wrong when its answer had to be revealed); a simple bar showing the correct percentage, with the percentage beside it — correct over resolved items, and 0% when nothing was resolved, with items removed by a mid-run 跳過錯誤的單詞 switch not counted, because only actually answered items feed the tally; 錯誤的單詞, one row per missed item with the prompt word, the form that was asked, and the answer that was revealed (left out when nothing was missed); and 返回主頁, 60px tall, the same height in card and quiz mode.
 
-The completion screen replaces the study body and shows:
-
-- 恭喜，你已經做完了練習。
-- 正確 N 題 and 錯誤 M 題. An item counts as wrong when its answer had to be revealed.
-- A simple bar showing the correct percentage, with the percentage beside it. The percentage is correct over resolved items, and 0% when nothing was resolved. Items removed by a mid-run 跳過錯誤的單詞 switch are not counted, because only actually answered items feed the tally.
-- 錯誤的單詞: one row per missed item with the prompt word, the form that was asked, and the answer that was revealed. This list is left out when nothing was missed.
-- 返回主頁. It is 60px tall, the same height in card and quiz mode.
-
-One emoji sits above 恭喜，你已經做完了練習。 It is drawn large — the only piece of colour on the panel. It is a single emoji drawn at random, never a row. In quiz mode it comes from the row that matches the score, where the score is floored to its decade: 87% reads the 80% row, an exact 90% reads the 90% row, and 100% reads the 100% row. One emoji is picked at random from that row.
+One emoji sits above 恭喜，你已經做完了練習。: drawn large — the only piece of colour on the panel — a single emoji drawn at random, never a row. In quiz mode it comes from the row that matches the score, where the score is floored to its decade: 87% reads the 80% row, an exact 90% reads the 90% row, and 100% reads the 100% row. One emoji is picked at random from that row.
 
 | Score | Emoji |
 |---|---|
@@ -450,11 +310,7 @@ One emoji sits above 恭喜，你已經做完了練習。 It is drawn large — 
 | 90% | 🥳 🎊 🎉 🏅 🏆 |
 | 100% | 🎉 🥳 🎊 🎆 🎇 🏆 🥇 👑 💐 🎁 ✨ 🌈 🪅 🎈 🤩 🙌 👏 💖 ❤️‍🔥 💯 |
 
-A perfect 100% run also gets a falling-emoji confetti layer behind the panel contents: pieces spread across the width, each with its own delay, duration, size and drift. Under `prefers-reduced-motion: reduce` the confetti is not shown.
-
-Card mode shows the same title, the same single emoji above it and the same 返回主頁, without the score block, and draws that emoji from the bowing figures: 🙇‍♂️, 🙇 or 🙇‍♀️. The dictionary has no completion screen.
-
-The emoji is drawn once, when the completion screen mounts, so a re-render does not re-roll it.
+A perfect 100% run also gets a falling-emoji confetti layer behind the panel contents: pieces spread across the width, each with its own delay, duration, size and drift. Under `prefers-reduced-motion: reduce` the confetti is not shown. Card mode shows the same title, the same single emoji above it and the same 返回主頁, without the score block, and draws that emoji from the bowing figures: 🙇‍♂️, 🙇 or 🙇‍♀️. The dictionary has no completion screen. The emoji is drawn once, when the completion screen mounts, so a re-render does not re-roll it.
 
 ## Readings
 
@@ -465,30 +321,22 @@ The emoji is drawn once, when the completion screen mounts, so a re-render does 
 3. A run of kanji takes the reading up to the next okurigana, and that whole slice is the `rt` for the run.
 4. When the strings do not align, show the full `japanese` above the whole word. Do not invent a misaligned ruby, and do not fail the screen.
 
-Tests must cover `置く/おく`, `置きます/おきます`, `勉強する/べんきょうする`, `コピーする/コピーする`, `持って行く/もっていく`, and `来ます/きます`.
-
-When the reading switch is off, render `vol` with no ruby.
+Tests must cover `置く/おく`, `置きます/おきます`, `勉強する/べんきょうする`, `コピーする/コピーする`, `持って行く/もっていく`, and `来ます/きます`. When the reading switch is off, render `vol` with no ruby.
 
 ## The paging window
 
-The dictionary reader and 翻卡練習 keep a sliding window of mounted items so a page turn never mounts or unmounts anything while it is on screen. The reader keeps 5 words mounted; 翻卡練習 keeps 9 cards mounted.
-
-The window is a row of slots beside one another, with a 24px gap between adjacent slots. Each item keeps the full width of the paging container; the gap is added outside it rather than taken from the item. The current item always sits in the 3rd slot. The two slots before it hold the two previous items and the remaining slots hold the items to come. A slot that falls past either end of the list is empty and renders nothing: the two leading slots are empty at the first item, the trailing slots are empty at the last item, and a run shorter than the window simply fills fewer slots.
+The dictionary reader and 翻卡練習 keep a sliding window of mounted items so a page turn never mounts or unmounts anything while it is on screen. The reader keeps 5 words mounted; 翻卡練習 keeps 9 cards mounted. The window is a row of slots beside one another, with a 24px gap between adjacent slots. Each item keeps the full width of the paging container; the gap is added outside it rather than taken from the item. The current item always sits in the 3rd slot. The two slots before it hold the two previous items and the remaining slots hold the items to come. A slot that falls past either end of the list is empty and renders nothing: the two leading slots are empty at the first item, the trailing slots are empty at the last item, and a run shorter than the window simply fills fewer slots.
 
 The window is invisible at rest. Only the current item is ever on screen when nothing moves — the other slots sit outside the column and are cut off by the same container that clips the paging motion, so no neighbour peeks at an edge while the screen is still. While a drag is held or a settle is running, the neighbours really are there and peek in at the edges: the strip follows the finger, so what it reveals is the mounted neighbour, not a picture. During that motion the clipped surface spans the column's full width, ignoring the column's side padding, so the item travelling out reaches the true column edge without leaving a gutter gap and the neighbour peeks in from that same edge; at rest the surface returns to its padded width. The paging motion is unchanged by the window: on release the window advances the moment the gesture resolves and the strip finishes the page with its one short decelerating move. Having the neighbours mounted ahead of time is what keeps that slide clean, because nothing is laid out while it travels.
 
-The window advances the moment the item changes — the same direct swap the motion already makes — and the advance is never visible. A next move deletes the front slot's item and adds the next list item at the back; a prev move deletes the back slot's item and adds the previous list item at the front. Either way the current item sits in the 3rd slot, so the screen sits on the 3rd slot for the whole run. The footer controls run the same window as a swipe. At the ends the old rules stand: the first item does not move backward, the last dictionary word does not move forward, and the last card finishes the run.
-
-In 翻卡練習 only the current card turns over. It always opens on its face after a move; the other mounted cards sit on their face and never turn. The counter 練習（n/total）follows the current card as before.
-
-Every mounted card paints its own face and answer tags, not just the current one. While 一開始顯示幾類動詞 is on, the class pill of the card sliding in is already drawn as the finger carries it in, so it never appears at the moment of release.
+The window advances the moment the item changes — the same direct swap the motion already makes — and the advance is never visible. A next move deletes the front slot's item and adds the next list item at the back; a prev move deletes the back slot's item and adds the previous list item at the front. Either way the current item sits in the 3rd slot, so the screen sits on the 3rd slot for the whole run. The footer controls run the same window as a swipe. At the ends the old rules stand: the first item does not move backward, the last dictionary word does not move forward, and the last card finishes the run. In 翻卡練習 only the current card turns over; it always opens on its face after a move, and the other mounted cards sit on their face and never turn. The counter 練習（n/total）follows the current card as before. Every mounted card paints its own face and answer tags, not just the current one. While 一開始顯示幾類動詞 is on, the class pill of the card sliding in is already drawn as the finger carries it in, so it never appears at the moment of release.
 
 ## Look and motion
 
 The wireframes say which pieces exist. Do not copy their colors or boxes.
 
 - The page is a fixed-scale phone screen. Its viewport meta pins the scale (`maximum-scale=1, user-scalable=no`) and `html`/`body` declare `touch-action: manipulation`, so neither a double tap nor a pinch changes the scale, and a tap is not held back waiting for a possible second tap. The gesture surfaces keep `touch-action: pan-y` so a horizontal drag belongs to the swipe. Screen readers keep their browser zoom override; nothing in the page fights it.
-- The outer shell (`body`, `#app` and the `.column`) sizes its short screens to the dynamic viewport height (`dvh`, with `vh` as the fallback) rather than the static `vh`: so a page whose content fits the visible area ends at the visible bottom of a phone and gains no browser-chrome-sized scroll range. The home and loading screens already used `dvh`; settings, flashcards and the other short screens now agree. Long pages still overflow the shell normally and keep their drawn thumb.
+- The outer shell (`body`, `#app` and the `.column`) sizes its short screens to the dynamic viewport height (`dvh`, with `vh` as the fallback) rather than the static `vh`: a page whose content fits the visible area ends at the visible bottom of a phone and gains no browser-chrome-sized scroll range. The home and loading screens already used `dvh`; settings, flashcards and the other short screens now agree. Long pages still overflow the shell normally and keep their drawn thumb.
 - Normal vertical scrolling remains available: long pages and the four dropdown lists (picker 從, settings 預設顯示形式, and the 從 / 到 lists on 變形說明) are not locked. The root viewport declares `overscroll-behavior-y: none` to stop Android Chrome's pull-to-refresh and root rubber-banding, and each dropdown uses `overscroll-behavior-y: contain` to avoid handing an edge drag to the page. For iOS versions where the CSS declaration does not suppress the bounce, a non-passive `touchmove` guard cancels only a one-finger vertical drag that its nearest scroll container cannot consume: pulling down at the top or pushing up at the bottom. A scrollable list can still move while the predicted move has room in that direction; a move that would cross its wall is finished at that exact boundary instead of handing momentum back to the viewport. Horizontal paging is untouched, and multi-touch/non-cancelable events are left alone. This is best-effort bounce suppression, not a fixed-body scroll lock; the browser chrome and version-specific Safari behavior still require a real-device check.
 - The browser's own vertical scrollbar is hidden and the page draws its own: a 4px rounded thumb against the column's right edge, sized to the share of the page that is on screen and moving with it. On the full-bleed phone layout the thumb keeps a 3px gap from the window edge and the track stops 16px short of the screen's top and bottom. On a framed desktop the thumb sits inside the box instead: 8px in from the column's right edge, with the track starting 32px from the top and bottom so the column's 28px corner radius never crosses the thumb, and far enough outside the 24px content gutter that it cannot cross a footer button. It is not drawn when the page already fits, and it is not drawn on top of a screen that does not scroll. On a fine-pointer desktop it is also a control: moving the mouse within 24px of the thumb's track reveals it before the pointer reaches the 4px drawing, and it stays visible while the pointer remains nearby. While shown, an invisible hit area extends 8px to either side of the thumb and 6px past its ends; pressing the primary mouse button there grabs the thumb without jumping, and vertical mouse movement maps the thumb's remaining track travel to the page's full scroll range, clamped at both ends. Pointer capture keeps the drag alive outside the hit area until release or cancellation, and the thumb does not fade while held. The hit area is pointer-transparent while the thumb is hidden and its 20px total width stays clear of the footer controls. On a coarse-pointer/touch device there is no proximity reveal and no draggable hit area: the thumb remains a passive scroll hint and ordinary touch scrolling owns the gesture. It appears while the page moves and fades out about a second after it stops. The four inner dropdown lists (picker 從, settings 預設顯示形式, and 變形說明 從 / 到) are their own scroll containers and hide the native bar: each draws the same 4px rounded thumb inside its panel, a small inset from the panel's right edge, sized to the share of the list that is on screen and moving with it. The list thumb appears both while the list moves and as soon as an overflowing list opens, so the bar tells the reader that more options are below. It fades about two seconds after the list opens or the last scroll or pointer activity; a pointer entering the list, or moving inside it, shows the thumb again and restarts the same two-second wait. Scrolling also restarts that wait. It is hidden from assistive technology, and a list whose options already fit draws nothing; under `prefers-reduced-motion: reduce` it still appears and leaves, without the fade. On a fine-pointer desktop the list thumb has the same expanded, pointer-captured drag hit area as the page thumb and maps its travel to the list's scroll range without a jump; it stays visible during the drag. A hidden list thumb does not intercept the option underneath, and coarse-pointer/touch devices keep ordinary list scrolling with a passive hint only. These opening and pointer rules apply to all four dropdown lists. The page thumb is separate: it still appears while the page moves and fades about a second after it stops. Desktop proximity keeps it shown, and leaving the track's neighbourhood starts that same one-second wait. Under `prefers-reduced-motion: reduce` the page thumb still appears and leaves, without the fade.
 - The page background is a slow gradient from indigo to warm amber, with a faint grain. Every colour in `src/styles/app.css` is a token, and every screen and component reads those tokens rather than writing a literal colour, so the dark theme is complete without per-screen patches and the light theme keeps exactly its previous values. The column is warm off-white, large radius, light shadow. At viewport widths of 550px or less the column drops its radius, shadow and side margins, fills the browser, and the background becomes the plain column colour.
@@ -498,64 +346,31 @@ The wireframes say which pieces exist. Do not copy their colors or boxes.
 - On every screen except home, the extra bottom height is gone: content ends 10px above the bottom of the column, and screens with a pinned footer carry their own bottom space instead, so the gap is the same whether the footer is pinned mid-page or resting at the end. The reader's 上一個 / 下一個, the card controls, settings and quiz all keep 10px. The picker's 開始 is the one exception at 20px, because that is where the primary action on that screen sits: its fade band stays above the button and 20px of solid column colour sits under it.
 - A separator between two entries of the settings screen is a drawn line of its own, not a border on either row: a 1px horizontal rule in the divider colour, spanning the content width. It carries no border of its own and is hidden from assistive technology. Because it is an element rather than a row edge, a hover or press tint on either neighbour cannot paint over it, a pressed row cannot shorten it, and the line keeps one colour in every state. The first row has no rule above it, the last entry of a screen has no rule under it, and inside the 預設顯示形式 list the rule runs between the options rather than after the final one. The list opens directly under the 預設顯示形式 row with no rule between the row and the panel — a line there reads as an extra divider and the user rejected it. This covers the settings screen only: the picker's 從 list keeps its row borders.
 - A pressed button scales down slightly. The rows of the dropdown lists (picker 從, settings 預設顯示形式, 變形說明 從 / 到) are the exception: they are rows of a panel, not free-standing buttons, so the row never scales and it tints its whole body. The settings list's 預設顯示形式 draws its separators as `hrule` elements between the options instead of as row borders, so neither hover nor press can change their colour or their length, and the row's tint may cover its whole body because nothing has to be clipped away from a border. The picker's 從 list keeps the revision-18 treatment — each row carries the panel's divider as its own bottom border, with the tint clipped to the padding box so the line keeps one colour in every state — because the drawn-line change covers the settings screen only; the 變形說明 lists use the same clipped-border treatment. Pinned footers keep a transparent fade, but the fade band sits above the controls so the buttons stay solid and fully visible. Paging is one flat horizontal slide of the whole strip of items: a horizontal drag carries the strip with the finger 1:1, clamped to one item width, and on release the strip finishes the page as one decelerating move from where the finger left it — or settles back to rest when the release names no turn. The first 8px only decide whether the gesture is horizontal or vertical; after that decision the held offset is painted synchronously from the pointer event instead of waiting for a Vue render, and there is no transition while the pointer is down. Thus the direction slop is the only intentional still period, not an added drag animation. Screen changes take about 220ms. A tapped card turns over in 3D (`rotateY`, about 240ms).
-- A page turn and a card turn are one motion, not two: the swap is direct and the strip decelerates into place (about 190ms). A turn travels one item width plus the 24px inter-item gap, so the incoming item finishes in the current slot without closing the gap onto the outgoing one. Nothing overshoots its resting point or travels backwards while it is on screen, and once the item settles it never moves again — no flash and no second slide. Movement that has been interrupted is finished rather than stacked: a press during the incoming settle drops that slide first.
-- The paging window keeps the neighbours mounted (9 cards in 翻卡練習, 5 words in the dictionary reader) with the current item in the 3rd slot, and advances by deleting one end and adding to the other. At rest only the current item is visible; while a drag or a settle runs, the mounted neighbours peek in at the edges.
+- A page turn and a card turn are one motion, not two: the swap is direct and the strip decelerates into place (about 190ms). A turn travels one item width plus the 24px inter-item gap, so the incoming item finishes in the current slot without closing the gap onto the outgoing one. Nothing overshoots its resting point or travels backwards while it is on screen, and once the item settles it never moves again — no flash and no second slide. Movement that has been interrupted is finished rather than stacked: a press during the incoming settle drops that slide first. The paging window keeps the neighbours mounted (9 cards in 翻卡練習, 5 words in the dictionary reader) with the current item in the 3rd slot, and advances by deleting one end and adding to the other. At rest only the current item is visible; while a drag or a settle runs, the mounted neighbours peek in at the edges.
 - 回答正確 slides in from the top and leaves after about 1.6 seconds. A wrong answer shakes the input field and turns it red instead of a toast. A revealed answer stays on the question itself. The toast is not the only place that answer exists.
 - The page never scrolls sideways: no horizontal scrollbar appears in any screen. Paging motion is clipped by its own container, so a card that travels past the column edge is cut off rather than widening the page.
 - Under `prefers-reduced-motion: reduce`, the gradient is still, a drag stays invisible and a swipe changes the item directly, card flips are instant, and screen changes are a short fade.
 
+## Analytics
+
+The site loads Google Tag Manager and sends Google Analytics one page view per screen. Two IDs are saved settings in the `analytics` section of the `katsuyou-settings` object: `containerId`, the GTM container, default `GTM-W7387LLQ`; and `measurementId`, the GA4 destination inside that container, default `G-NFDK8SXY0M`. Both fields end every mode's settings screen, below that mode's last row, labelled `Google Analytics 容器 ID` and `GA4 量測 ID`, each with a note naming the shipped example. A field commits on Enter or when it loses focus and runs `settings.patch` with `{ analytics: { containerId } }` or `{ analytics: { measurementId } }`; the stored value is trimmed and uppercased. A container ID is `GTM-` plus 4 to 12 letters or digits, a measurement ID is `G-` plus 6 to 20; anything else is an invalid setting — the patch is rejected, nothing is stored and the field shows the stored ID again. Both IDs take effect on the next page load; a running page keeps the pair it started with.
+
+The container is loaded with the standard snippet from `src/analytics/gtm.js` rather than `index.html` because the ID is a setting: `window.dataLayer` is created when missing, `{ 'gtm.start': <time>, event: 'gtm.js' }` is pushed and one `async` script loading `https://www.googletagmanager.com/gtm.js?id=<containerId>` is appended to the document head. A container is never loaded twice, and there is no `<noscript>` iframe: without JavaScript the site draws no screen. The container's own configuration sends the page's initial page view when it loads; that view is the landing screen.
+
+That container alone does not report this site's screen changes: its enhanced-measurement page view follows browser history changes, and the site's screens do not change the URL. So the measurement ID is loaded with the gtag snippet as well: `gtag('js', new Date())` and `gtag('config', <measurementId>, { send_page_view: false })` are queued, then one async script loading `https://www.googletagmanager.com/gtag/js?id=<measurementId>` is appended. `send_page_view: false` keeps the container's page view as the only landing one.
+
+Every screen change pushes `{ event: 'page_view', screen_name, page_title, page_location }` into the dataLayer and, from the first screen after the landing, sends the same entry through `gtag('event', 'page_view', …)`, which is what Google Analytics receives. The `loading` screen and the first `home` are the landing pair the container already reported, so they send no second page view; every later screen does, including a later return to `home`. `screen_name` is the screen id: `loading`, `home`, `picker`, `reader`, `toc`, `card`, `quiz`, `settings`, `learn`, `rule`, `example`. `page_title` is `大家の動詞轉型練習` on `home` and `<screen title> · 大家の動詞轉型練習` on every other screen, with 載入中, 主頁, 詞彙, 字典, 單詞目錄, 練習, 測驗, 設定, 變形目錄, 變形說明 and 選字 in that order. `page_location` is the page's own URL with the screen as its fragment, `#/<screen>`; the browser URL itself is never changed, because a screen is reported, not routed. Turning a dictionary page or a card pushes nothing, because the screen did not change. Only those four fields are sent: no answer, typed input, chosen lesson or run result leaves the page.
+
 ## Saved settings
 
-`localStorage` key `katsuyou-settings` stores:
+`localStorage` key `katsuyou-settings` stores: each mode’s lesson list; 從 and 到 for cards and for the quiz; the dictionary's default form; the dictionary's 選擇顯示的類型 list; three reading switches, one each for dictionary, cards, and quiz; the card verb-class switch; each mode's 跳過錯誤的單詞 switch; quiz auto-submit; quiz 錯 X 題就顯示答案; the Google Analytics container ID and GA4 measurement ID.
 
-- Each mode’s lesson list.
-- 從 and 到 for cards and for the quiz.
-- The dictionary's default form.
-- The dictionary's 選擇顯示的類型 list.
-- Three reading switches, one each for dictionary, cards, and quiz.
-- The card verb-class switch.
-- Each mode's 跳過錯誤的單詞 switch.
-- Quiz auto-submit.
-- Quiz 錯 X 題就顯示答案.
-
-A key `katsuyou-theme` stores the theme the user chose with the start screen's
-switch: `light` or `dark`. It is not part of the settings object and it is
-absent until the user presses the switch, so the OS preference stays in charge
-until then. An unrecognised value is ignored.
-
-A missing field uses the default above. Invalid JSON resets the whole object to the defaults. The 學習 mode's 從, 到 and chosen example word are transient screen state and are not stored here.
+A key `katsuyou-theme` stores the theme the user chose with the start screen's switch: `light` or `dark`. It is not part of the settings object and it is absent until the user presses the switch, so the OS preference stays in charge until then. An unrecognised value is ignored. A missing field uses the default above. Invalid JSON resets the whole object to the defaults. The 學習 mode's 從, 到 and chosen example word are transient screen state and are not stored here.
 
 ## Build
 
-`npm run build` writes to `output/`. `base` is `/game-japanese-katsuyou-basic/`
-(the repository name), so the build runs as a GitHub Pages project site under
-that subpath. `npm run dev` and `npm run preview` serve the same subpath
-(`/` redirects to it). Renaming the repository means changing that one constant
-in `vite.config.js` plus `SITE_BASE` in `scripts/browser-check.mjs`. Asset,
-dictionary and audio URLs are prefixed with the base; the runtime fetches
-`dict/vol.bin` and `dict/resource/lessonX.bin` against `document.baseURI`, so
-they follow the base automatically. Individual `dict/lesson_N.json` URLs are
-not published (that name survives only as an entry inside the ZIP).
+`npm run build` writes to `output/`. `base` is `/game-japanese-katsuyou-basic/` (the repository name), so the build runs as a GitHub Pages project site under that subpath. `npm run dev` and `npm run preview` serve the same subpath (`/` redirects to it). Renaming the repository means changing that one constant in `vite.config.js` plus `SITE_BASE` in `scripts/browser-check.mjs`. Asset, dictionary and audio URLs are prefixed with the base; the runtime fetches `dict/vol.bin` and `dict/resource/lessonX.bin` against `document.baseURI`, so they follow the base automatically. Individual `dict/lesson_N.json` URLs are not published (that name survives only as an entry inside the ZIP).
 
-The document title is `大家の動詞轉型練習`, and `index.html` declares the site's
-logo as icons derived from `docs/logo/logo.jpg`: `docs/logo/favicon.ico` (16,
-32 and 48px), `docs/logo/favicon-32.png`, `docs/logo/favicon-192.png` and
-`docs/logo/apple-touch-icon.png` (180px), with `docs/logo/logo-512.png` kept as
-the 512px copy of the same artwork. `index.html` references them with relative
-paths, so Vite hashes each file into `output/assets/` and prefixes it with the
-base; no root-absolute `/favicon.ico` and no third-party icon host. The logo is
-the browser-tab mark only: the loading and home screens keep their three-line
-head and draw no image.
+The document title is `大家の動詞轉型練習`, and `index.html` declares the site's logo as icons derived from `docs/logo/logo.jpg`: `docs/logo/favicon.ico` (16, 32 and 48px), `docs/logo/favicon-32.png`, `docs/logo/favicon-192.png` and `docs/logo/apple-touch-icon.png` (180px), with `docs/logo/logo-512.png` kept as the 512px copy of the same artwork. `index.html` references them with relative paths, so Vite hashes each file into `output/assets/` and prefixes it with the base; no root-absolute `/favicon.ico` and no third-party icon host. The logo is the browser-tab mark only: the loading and home screens keep their three-line head and draw no image.
 
-`prebuild` runs `scripts/write-sha256.mjs --check`,
-`scripts/write-audio-manifest.mjs --check`,
-`scripts/generate-rule-content.mjs` (regenerating all 210 pair explanations so
-a stale `src/data/rule-content.js` cannot ship) and `scripts/fetch-audio.mjs`
-(downloading the 46 verified bins into gitignored `dict/resource/`), so a build
-needs network access to the `res-miles` release. The build writes
-`output/dict/vol.bin` and `output/dict/resource/`, plus the hashed logo icons
-under `output/assets/`.
-
-Do not commit `output/` or `dict/resource/`. Publish the contents of `output/`
-at the root of the Pages branch or folder; Pages adds the repository subpath
-itself.
+`prebuild` runs `scripts/write-sha256.mjs --check`, `scripts/write-audio-manifest.mjs --check`, `scripts/generate-rule-content.mjs` (regenerating all 210 pair explanations so a stale `src/data/rule-content.js` cannot ship) and `scripts/fetch-audio.mjs` (downloading the 46 verified bins into gitignored `dict/resource/`), so a build needs network access to the `res-miles` release. The build writes `output/dict/vol.bin` and `output/dict/resource/`, plus the hashed logo icons under `output/assets/`. Do not commit `output/` or `dict/resource/`. Publish the contents of `output/` at the root of the Pages branch or folder; Pages adds the repository subpath itself.

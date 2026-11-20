@@ -13,6 +13,7 @@ import { createThemeStorage } from './storage/theme.js'
 import { createScrollGuard } from './ui/scroll-guard.js'
 import { systemTheme, themeState } from './ui/theme.js'
 import { applyTheme, watchSystemTheme } from './ui/theme-root.js'
+import { createGtm } from './analytics/gtm.js'
 
 const library = createLibrary({ store: idb, manifest })
 const settingsStorage = createSettingsStorage()
@@ -21,6 +22,23 @@ const themeStorage = createThemeStorage()
 registry.registerAll(allSpecs({ library, settingsStorage, themeStorage }))
 
 const store = createStore(registry, { library, settingsStorage, themeStorage })
+
+// Analytics reads the container ID from the saved settings, so restore them
+// here before the container loads (bootstrap re-reads the same object).
+store.session.settings = settingsStorage.load()
+
+// The GTM container is loaded once with the stored ID, and gtag.js is loaded
+// with the GA4 measurement ID for the per-screen page views. Both IDs take
+// effect on the next page load, so one page load never loads the container
+// twice. The browser URL is not changed: a screen is reported, not routed.
+const analytics = createGtm()
+analytics.load(store.session.settings.analytics.containerId)
+analytics.loadTag(store.session.settings.analytics.measurementId)
+watch(
+  () => store.session.screen,
+  (screen) => analytics.screen(screen),
+  { immediate: true },
+)
 
 // Resolve the start theme before the first render: a stored choice wins, else
 // the OS preference. The CSS already draws the OS theme before this module runs

@@ -1,11 +1,10 @@
 # docs/logo
 
-`logo.jpg` is the source artwork for the site's browser-tab mark. The other files
-here are derived from it and are what `index.html` links; they live in this
-folder so the artwork and its conversions stay together. The page itself draws
-no logo — the loading and home head stay three text lines.
+`logo.jpg` is the source artwork for the browser-tab icons; the derived files
+stay beside it. The on-screen head draws no logo. The icons are theme-independent:
+light and dark themes use the same artwork.
 
-Regenerate them with ImageMagick after replacing `logo.jpg`:
+Regenerate after replacing the source with ImageMagick:
 
 ```bash
 magick docs/logo/logo.jpg -filter Lanczos -resize 512x512 docs/logo/logo-512.png
@@ -16,20 +15,13 @@ magick docs/logo/favicon-32.png docs/logo/favicon-192.png \
   -define icon:auto-resize=48,32,16 docs/logo/favicon.ico
 ```
 
-| File | Role |
+| File | Dimensions / role |
 |---|---|
-| `logo.jpg` | Source artwork (1408×1408 JPEG), not served |
-| `favicon.ico` | 16/32/48px multi-resolution tab icon |
+| `logo.jpg` | 1408×1408 source JPEG, not served |
+| `favicon.ico` | 16 / 32 / 48px multi-resolution ICO |
 | `favicon-32.png` | 32px PNG favicon |
-| `favicon-192.png` | 192px PNG icon (Android / bookmark surfaces) |
-| `apple-touch-icon.png` | 180px iOS home-screen icon, opaque (no alpha) |
-| `logo-512.png` | 512px copy of the artwork, not linked from `index.html` |
+| `favicon-192.png` | 192px PNG icon |
+| `apple-touch-icon.png` | 180px opaque iOS icon |
+| `logo-512.png` | 512px copy of the artwork, not linked |
 
-`index.html` references the four icon files (rows 2–5 of the table above) with
-relative hrefs (`./docs/logo/...`), so Vite hashes each file into
-`output/assets/` and prefixes it with the Pages base
-(`/game-japanese-katsuyou-basic/`). There is no `public/` directory and no
-root-absolute `/favicon.ico`. `scripts/browser-check.mjs` asserts the document
-title, that every icon URL lives under that subpath, that the `.ico` and the
-180px touch icon answer `image/*`, and that all four URLs answer 200 with
-non-empty bodies.
+`index.html` links the first four files above (`favicon.ico`, `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png`) with relative `./docs/logo/...` hrefs; Vite hashes them into `output/assets/` under the Pages base, with no `public/` directory or root `/favicon.ico`. `scripts/browser-check.mjs` checks those four URLs and the document title.

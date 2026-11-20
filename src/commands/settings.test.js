@@ -122,3 +122,50 @@ describe('settings.patch reconciles a live quiz queue', () => {
     expect(session.finished).toBe(true)
   })
 })
+
+describe('settings.patch stores the Google Analytics container ID', () => {
+  it('saves a valid ID and rejects an invalid one', () => {
+    const saved = []
+    const registry = createRegistry()
+    registry.registerAll(settingsSpecs({ settingsStorage: { save: (value) => saved.push(value) } }))
+    const session = createSession()
+
+    const result = registry.dispatch(session, 'settings.patch', {
+      patch: { analytics: { containerId: ' gtm-abc123 ' } },
+    })
+    expect(result.ok).toBe(true)
+    expect(session.settings.analytics.containerId).toBe('GTM-ABC123')
+    expect(saved.at(-1).analytics.containerId).toBe('GTM-ABC123')
+
+    const bad = registry.dispatch(session, 'settings.patch', {
+      patch: { analytics: { containerId: 'GTM-' } },
+    })
+    expect(bad.ok).toBe(false)
+    expect(bad.error.code).toBe('invalid-settings')
+    expect(session.settings.analytics.containerId).toBe('GTM-ABC123')
+    expect(saved).toHaveLength(1)
+  })
+})
+
+describe('settings.patch stores the GA4 measurement ID', () => {
+  it('saves a valid ID and rejects an invalid one', () => {
+    const saved = []
+    const registry = createRegistry()
+    registry.registerAll(settingsSpecs({ settingsStorage: { save: (value) => saved.push(value) } }))
+    const session = createSession()
+
+    const result = registry.dispatch(session, 'settings.patch', {
+      patch: { analytics: { measurementId: ' g-abc123 ' } },
+    })
+    expect(result.ok).toBe(true)
+    expect(session.settings.analytics.measurementId).toBe('G-ABC123')
+    expect(saved.at(-1).analytics.measurementId).toBe('G-ABC123')
+
+    const bad = registry.dispatch(session, 'settings.patch', {
+      patch: { analytics: { measurementId: 'nope' } },
+    })
+    expect(bad.ok).toBe(false)
+    expect(session.settings.analytics.measurementId).toBe('G-ABC123')
+    expect(saved).toHaveLength(1)
+  })
+})

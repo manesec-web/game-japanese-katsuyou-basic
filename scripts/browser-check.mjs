@@ -839,6 +839,37 @@ try {
     progressSamples.join(','),
   )
 
+  // Google Analytics. The container script is a third-party request, so it can
+  // be unreachable offline; the local dataLayer queue is what the site controls
+  // and what GTM would consume, so every screen report is checked here.
+  const analyticsInit = await page.evaluate(() => ({
+    layer: Array.isArray(window.dataLayer) ? window.dataLayer : [],
+    container: document.querySelector('script[data-gtm-id]')?.getAttribute('data-gtm-id') ?? null,
+  }))
+  check('analytics loads the shipped GTM container once', analyticsInit.container === 'GTM-W7387LLQ', String(analyticsInit.container))
+  check('analytics pushes the GTM start entry first', analyticsInit.layer[0]?.event === 'gtm.js', JSON.stringify(analyticsInit.layer[0] ?? null))
+  const analyticsViews = analyticsInit.layer.filter((entry) => entry.event === 'page_view')
+  check(
+    'analytics reports the loading and home screens',
+    analyticsViews.map((entry) => entry.screen_name).join(',') === 'loading,home',
+    JSON.stringify(analyticsViews.map((entry) => entry.screen_name)),
+  )
+  check(
+    'the home page view carries the site title and its own page URL',
+    analyticsViews.at(-1)?.page_title === '大家の動詞轉型練習' &&
+      String(analyticsViews.at(-1)?.page_location).endsWith('#/home'),
+    JSON.stringify(analyticsViews.at(-1) ?? null),
+  )
+  // The GA4 measurement tag is loaded from the setting and configured to leave
+  // the initial page view to the GTM container, so only the site's own screen
+  // events are page views after it.
+  const gtagState = await page.evaluate(() => ({
+    script: document.querySelector('script[data-gtag-id]')?.getAttribute('data-gtag-id') ?? null,
+    gtag: typeof window.gtag,
+  }))
+  check('analytics loads the shipped GA4 measurement tag', gtagState.script === 'G-NFDK8SXY0M', String(gtagState.script))
+  check('the GA4 tag exposes the gtag queue', gtagState.gtag === 'function', gtagState.gtag)
+
   check('reaches home after boot', true)
   check(
     'the whole dictionary arrives in one archive request',
@@ -1113,6 +1144,26 @@ try {
   await page.locator('.home-actions button', { hasText: '字典' }).click()
   await page.waitForSelector('.chip-grid', { timeout: 5000 })
   check('picker shows 50 lesson chips', (await page.locator('.chip-grid .chip').count()) === 50)
+  const pickerViews = await page.evaluate(() =>
+    (window.dataLayer ?? []).filter((entry) => entry.event === 'page_view').map((entry) => entry.screen_name),
+  )
+  check('opening the picker reports its screen', pickerViews.at(-1) === 'picker', JSON.stringify(pickerViews))
+  // The browser URL does not change: a screen is reported, not routed. The
+  // page view names the screen in its fragment instead.
+  const pickerLocation = await page.evaluate(() => {
+    const entry = (window.dataLayer ?? []).filter((e) => e.event === 'page_view').at(-1)
+    return entry?.page_location ?? null
+  })
+  check(
+    'the picker page view names the screen in its URL fragment',
+    String(pickerLocation).endsWith('#/picker'),
+    String(pickerLocation),
+  )
+  check(
+    'a screen change leaves the browser URL alone',
+    new URL(await page.evaluate(() => window.location.href)).search === '',
+    await page.evaluate(() => window.location.href),
+  )
   await iconGlyphs(page, 'picker')
   const chipLabels = await page.locator('.chip-grid .chip').allTextContents()
   check(
@@ -1920,6 +1971,59 @@ try {
   check('settings shows 預設顯示形式', (await page.locator('.row-label').first().textContent()).trim() === '預設顯示形式')
   check('settings shows 選擇顯示的類型', (await page.locator('.row-label', { hasText: '選擇顯示的類型' }).count()) === 1)
   check('settings shows 顯示平假名注音', (await page.locator('.row-label', { hasText: '顯示平假名注音' }).count()) === 1)
+  check(
+    'settings shows the Google Analytics container field',
+    (await page.locator('.settings .id-field[aria-label="Google Analytics 容器 ID"]').count()) === 1,
+  )
+  check(
+    'the container field holds the shipped GTM ID',
+    (await page.locator('.settings .id-field').first().inputValue()) === 'GTM-W7387LLQ',
+    await page.locator('.settings .id-field').first().inputValue(),
+  )
+  check(
+    'settings shows the GA4 measurement field',
+    (await page.locator('.settings .id-field[aria-label="GA4 量測 ID"]').count()) === 1,
+  )
+  check(
+    'the measurement field holds the shipped GA4 ID',
+    (await page.locator('.settings .id-field').nth(1).inputValue()) === 'G-NFDK8SXY0M',
+    await page.locator('.settings .id-field').nth(1).inputValue(),
+  )
+  // The field commits on Enter through settings.patch: a valid ID is stored
+  // trimmed and uppercased, an invalid one stores nothing and the field shows
+  // the ID the page is still using.
+  const idField = page.locator('.settings .id-field').first()
+  const storedId = () =>
+    page.evaluate(
+      () => JSON.parse(localStorage.getItem('katsuyou-settings') || '{}').analytics?.containerId ?? null,
+    )
+  await idField.fill('gtm-test123')
+  await idField.press('Enter')
+  check('the container field stores a valid ID uppercased', (await storedId()) === 'GTM-TEST123', String(await storedId()))
+  check('the field shows the normalised ID', (await idField.inputValue()) === 'GTM-TEST123', await idField.inputValue())
+  await idField.fill('not-a-container')
+  await idField.press('Enter')
+  check('an invalid ID is rejected and not stored', (await storedId()) === 'GTM-TEST123', String(await storedId()))
+  check('the field returns to the stored ID', (await idField.inputValue()) === 'GTM-TEST123', await idField.inputValue())
+  await idField.fill('GTM-W7387LLQ')
+  await idField.press('Enter')
+  check('the shipped ID can be restored', (await storedId()) === 'GTM-W7387LLQ', String(await storedId()))
+  // The GA4 measurement field follows the same rules.
+  const gaField = page.locator('.settings .id-field').nth(1)
+  const storedMeasurement = () =>
+    page.evaluate(
+      () => JSON.parse(localStorage.getItem('katsuyou-settings') || '{}').analytics?.measurementId ?? null,
+    )
+  await gaField.fill('g-test123')
+  await gaField.press('Enter')
+  check('the measurement field stores a valid ID uppercased', (await storedMeasurement()) === 'G-TEST123', String(await storedMeasurement()))
+  await gaField.fill('nope')
+  await gaField.press('Enter')
+  check('an invalid measurement ID is rejected and not stored', (await storedMeasurement()) === 'G-TEST123', String(await storedMeasurement()))
+  check('the measurement field returns to the stored ID', (await gaField.inputValue()) === 'G-TEST123', await gaField.inputValue())
+  await gaField.fill('G-NFDK8SXY0M')
+  await gaField.press('Enter')
+  check('the shipped measurement ID can be restored', (await storedMeasurement()) === 'G-NFDK8SXY0M', String(await storedMeasurement()))
   const switchBox = await page.locator('.switch').first().boundingBox()
   check('switch control is 32px tall', switchBox.height >= 31.9 && switchBox.height <= 33, `height=${switchBox.height}`)
   // The current 預設顯示形式 is always selected: its 選擇顯示的類型 chip is a

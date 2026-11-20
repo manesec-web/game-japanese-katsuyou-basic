@@ -1,140 +1,51 @@
-# Serving locally (and why a Python server can fail)
+# Serving locally
+Updated for revision 39 (dark theme). Behavior rules: [`spec.md`](spec.md); wiring: [`architecture.md`](architecture.md); setup: [`development.md`](development.md).
 
-The site is a static build in `output/`. Nothing else in the repository is
-served to the browser as source: `vol/` is build input, `src/` is Vite input,
-and the logo icons and audio bins are copied into the build by Vite. The
-serving, secure-origin and Pages rules below were first checked on 2026-11-11
-against the revision-23 build and re-checked on 2026-11-15 against revision 38.
-
-Revision 32 replaced the 50 per-lesson files under `output/dict/` with one
-archive, `output/dict/vol.bin`, which the browser unpacks after download. The
-file is a ZIP published without the `.zip` suffix and served as
-`application/octet-stream`, so a download-helper browser extension does not
-intercept it; the Content-Type is irrelevant to `unzipit`, which reads the
-bytes. Revision 35 added `output/dict/resource/lessonX.bin` — the 46 per-lesson
-Opus archives downloaded at build time — so `output/dict/` now holds
-`vol.bin` and `resource/`, never one alone.
-
-Every command below therefore refers to `dict/vol.bin`; `dict/lesson_N.json`
-no longer exists in the build, even though each archive entry still carries
-that name. Revision 31 changed only form-level `chinese` values and one usage
-`note` inside `vol/lesson_*.json`; because the manifest hashes raw bytes,
-`node scripts/write-sha256.mjs` was re-run after that data pass, and a stale
-manifest still makes `pretest` / `prebuild` / `predev`, the archive build and
-the loading screen fail exactly as before. `prebuild` also regenerates the 210
-變形說明 entries and fetches the audio bins, so a build needs network access to
-the `res-miles` release.
-
-## Correct ways to run it
-
+## Correct ways to run
 ```bash
-npm run dev          # Vite dev server; serves the site, dict/vol.bin from vol/
-                     # and dict/resource/*.bin from the prebuild download
-npm run preview      # serves the built output/ (recommended for a check)
+npm run dev       # http://localhost:5173/game-japanese-katsuyou-basic/
+npm run preview   # http://localhost:4173/game-japanese-katsuyou-basic/ (after npm run build)
 ```
-
-The site is built for GitHub Pages, so it lives under the project subpath
-`/game-japanese-katsuyou-basic/` everywhere: `base` in `vite.config.js` is
-`/game-japanese-katsuyou-basic/`. Opening `http://localhost:5173/` redirects to
-`http://localhost:5173/game-japanese-katsuyou-basic/`, and `npm run preview`
-serves `http://localhost:4173/game-japanese-katsuyou-basic/`. Opening
-`output/index.html` straight from the filesystem (`file://`) no longer works:
-the script and stylesheet are requested from `/game-japanese-katsuyou-basic/assets/`,
-which no local file path can satisfy.
-
-Python static server: the build directory has to be mounted **at the subpath**, because the built URLs are absolute:
-
+`vite.config.js` pins `base = '/game-japanese-katsuyou-basic/'`, so open the subpath, not the server root. Dev builds `dict/vol.bin` from `vol/`; preview serves `output/`. Both also serve the 46 `dict/resource/*.bin` audio bins.
+A plain Python server works only if `output/` is mounted at that subpath:
 ```bash
 npm run build
 mkdir -p /tmp/katsuyou-site
 cp -r output /tmp/katsuyou-site/game-japanese-katsuyou-basic
-cd /tmp/katsuyou-site
-python3 -m http.server 8000
+cd /tmp/katsuyou-site && python3 -m http.server 8000
 # open http://localhost:8000/game-japanese-katsuyou-basic/
 ```
+Serving `output/` at `/`, or `output/index.html` over `file://`, fails: built URLs for assets and `dict/vol.bin` are under the Pages subpath.
 
-Serving `output/` itself at `http://localhost:8000/` shows a blank page: every
-asset and dictionary request points under the subpath and 404s.
+## Why the repository root fails
+Do not run `python3 -m http.server` in the repository root:
 
-Do NOT run `python3 -m http.server` in the repository root:
+- Root `index.html` is the Vite template (`/src/main.js`, bare `vue` imports); a static server leaves a blank page with a module-specifier error.
+- `dict/vol.bin` does not exist there: it is generated from `vol/` into `output/dict/`. The browser requests `<base>dict/vol.bin`, a 50-entry ZIP named `.bin` and served `application/octet-stream` so download-helper extensions do not hijack it (`unzipit` reads bytes). No per-lesson JSON ships.
+- `crypto.subtle` is undefined outside a secure origin (`https://`, `http://localhost`, `http://127.0.0.1`); boot hashes every lesson, so LAN-IP or `file://` origins fail. IndexedDB can also be blocked by storage settings.
 
-- `index.html` there is the Vite template, which loads `/src/main.js`; Python
-  serves the `.vue` files and bare `import 'vue'` statements raw, so the page
-  stays blank with a module-specifier error.
-- `dict/vol.bin` does not exist at the root (it is built from `vol/` into
-  `output/dict/` only). The browser asks for it under the subpath:
-  `game-japanese-katsuyou-basic/dict/vol.bin`.
+## `載入失敗（lesson 1）` checklist
+Boot checks lesson 1 first, so any pre-dictionary problem appears there; the loading screen prints the underlying reason under the lesson number and offers retry (`app.boot` again).
 
-## Why it can stop at `載入失敗（lesson 1）`
+| Cause | Fix |
+|---|---|
+| Wrong directory / subpath | serve `output/` at `/game-japanese-katsuyou-basic/`; `curl -I http://localhost:8000/game-japanese-katsuyou-basic/dict/vol.bin` must be 200 |
+| Stale or partial build | `npm run build`; confirm `output/index.html`, `output/dict/vol.bin` and 46 bins in `output/dict/resource/` |
+| Insecure origin | localhost, HTTPS tunnel or GitHub Pages (Web Crypto required) |
+| Blocked IndexedDB (`katsuyou-dict`) | unblock storage / clear site data |
+| Corrupt cache still failing after two archive downloads | clear site data (or delete `katsuyou-dict`) and retry |
+| Missing / corrupt audio bin | 「該音頻暫時無法播放」 on tap, not a boot failure; run `node scripts/fetch-audio.mjs` (or `npm run build`) with network access; clear `katsuyou-audio` if cached |
 
-Boot checks lesson 1 first, so a problem before any dictionary work shows up
-there. The loading screen now prints the underlying reason under the lesson
-number. The site head and the `Build with ❤ by Mane` credit line stay on screen
-during that failure; only the progress area changes, so a screenshot of the
-failure still shows the site name and the About sheet is still reachable. Common
-causes:
-
-1. **Wrong directory served.** `output/dict/vol.bin` must return 200 under
-   the subpath. Check with
-   `curl -I http://localhost:8000/game-japanese-katsuyou-basic/dict/vol.bin`.
-2. **Stale or partial build.** Run `npm run build` again; confirm
-   `output/dict/` holds `vol.bin` and `resource/` with 46 bins, and
-   `output/index.html` exists. The boot-time failure in this section is about
-   `dict/vol.bin`; a missing audio bin shows 「該音頻暫時無法播放」 only when a
-   word is tapped (see cause 6 below).
-3. **Not a secure context.** IndexedDB itself opens on plain HTTP (a LAN IP
-   works), but Web Crypto does not: `crypto.subtle` is `undefined` outside
-   `https://`, `http://localhost`, and `http://127.0.0.1`. Boot hashes every
-   lesson with SHA-256, so it still stops on the first lesson over
-   `http://192.168.x.x:8000` or a `file://` URL, with the detail
-   `archive 2 cannot hash lesson_1.json: Cannot read properties of undefined
-   (reading 'digest')`. Use localhost, a tunnel with HTTPS, or GitHub Pages.
-4. **Storage blocked.** "Block all cookies", a browser that refuses IndexedDB,
-   or a private window with an ephemeral quota can fail the same way. The detail
-   line names the error (`IndexedDB is unavailable on this origin; storage is
-   blocked or disabled` when the API is missing).
-5. **Corrupt cached copy that also fails to download.** Boot hashes the
-   stored file, downloads the archive again, and stops if its entry still
-   does not match after two downloads.
-   Clear site data for the origin (or delete the `katsuyou-dict` IndexedDB
-   database) and retry.
-6. **Audio bin missing from the build.** A tap on a Japanese word or sentence
-   shows 「該音頻暫時無法播放」 instead of stopping boot. Check that
-   `output/dict/resource/lessonX.bin` answers 200 under the subpath; if it
-   404s, run `node scripts/fetch-audio.mjs` (or `npm run build`) with network
-   access, then rebuild. `npm run dev` shows a plain-text
-   `audio resource missing; run node scripts/fetch-audio.mjs` for that URL.
-   A corrupt cached audio bin is handled by clearing site data for the
-   `katsuyou-audio` IndexedDB database.
+`prebuild` regenerates the 210 變形說明 entries and fetches the audio bins, so `npm run build` needs network access to the `res-miles` release; a stale manifest fails `predev` / `pretest` / `prebuild` and the archive build.
 
 ## Check the build before blaming the server
-
 ```bash
+node scripts/write-sha256.mjs --check
+node scripts/write-audio-manifest.mjs --check
 npm run build
-ls output/dict                          # vol.bin and resource/ (46 .bin files)
-test -f output/index.html && echo ok
-curl -I http://localhost:8000/game-japanese-katsuyou-basic/dict/vol.bin   # must be 200
-curl -I http://localhost:8000/game-japanese-katsuyou-basic/dict/resource/lesson1.bin  # must be 200
+ls output/dict                 # vol.bin + resource/ (46 .bin files)
 ```
-
-`node scripts/browser-check.mjs` runs the same build through headless
-Chromium, including a boot from an empty IndexedDB, a reload that reuses the
-cache, the 46 audio bins, the 學習 screens and a simulated storage-failure
-path. The current suite is 645–646 checks (the count can move by one with the
-seeded quiz item); the separate `strike-probe.mjs` paint probe is
-informational, not a serving gate. If the browser suite passes, the build and
-the boot rule are sound and the problem is the origin or the server.
+`node scripts/browser-check.mjs` runs `vite preview` + headless Chromium over loading (cold boot, cache reuse, simulated storage failure), all screens and audio: 682 checks / 0 failures here (±1 with the seeded quiz item); it also asserts one `vol.bin` request, binary Content-Type, a 50-entry ZIP and 46 audio bins. If it passes, suspect the origin or server, not the build. Env: `PORT` (default 5199), `CHROMIUM_PATH`, `SHOT_DIR`, `--screenshots`.
 
 ## GitHub Pages
-
-GitHub Pages serves over HTTPS, so `crypto.subtle` and IndexedDB are both
-available. The base is pinned to `/game-japanese-katsuyou-basic/` to match the
-repository name, so the repo publishes as a project site at
-`https://<user>.github.io/game-japanese-katsuyou-basic/`. Build first (`output/`
-is gitignored) and publish the contents of `output/` at the root of the Pages
-branch or folder: Pages adds the subpath, the files do not contain it.
-Renaming the repository means changing that one constant in `vite.config.js`
-plus the matching `SITE_BASE` in `scripts/browser-check.mjs`.
-
-The dictionary is fetched from `dict/vol.bin` resolved against the page URL, so
-it follows the subpath without any extra setting.
+Pages serves HTTPS, so Web Crypto and IndexedDB work. Publish the contents of `output/` (gitignored) at the root of the Pages branch/folder; Pages adds the subpath and `dict/vol.bin` is fetched relative to the page URL. Live site: https://manesec-web.github.io/game-japanese-katsuyou-basic/ (verified 2026-11-14: HTTP 200; `vol.bin` answers `application/octet-stream`). Renaming the repo means changing `base` in `vite.config.js` and `SITE_BASE` in `scripts/browser-check.mjs`.
