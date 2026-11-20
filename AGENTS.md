@@ -9,18 +9,18 @@
 3. Every user-visible action is a command with `id`, `params`, `enabled`, `run`. The view and the tests call the same `dispatch(session, id, params)`; when `enabled` is false, `dispatch` returns `error` and does not call `run`.
 4. A command returns `{ ok: true, result }` or `{ ok: false, error }`. Bad params, empty data and a hash mismatch return `error`; this path must not throw an uncaught exception.
 5. Leave the JSON in `vol/` unchanged — that directory is the dictionary source. **One-time authorized exception (revision 31):** only each form's `chinese` and misleading `note` were edited; `vol`, `group`, `japanese`, `sentence` (including its Chinese translations and notes), `error_usage`, key order, lesson structure and file formatting stayed byte-equivalent, verified against the original bytes before the temporary baseline and validator were removed. This exception does **not** authorize any future edit to `vol/`.
-6. Do not add MCP, a backend, or a model call inside the site. The one third-party runtime script is the Google Tag Manager container of revision 40 (`src/analytics/gtm.js`); do not add another without a spec entry.
+6. Do not add MCP, a backend, or a model call inside the site. The only third-party runtime scripts are the Google Tag Manager container and the GA4 measurement tag of revision 40 (`src/analytics/gtm.js`, IDs in `src/config/analytics.js`); do not add another without a spec entry.
 7. Do not reproduce the blue boxes in the wireframes. Follow the information architecture in `docs/spec.md` and its Look and motion section for visual design.
 8. Text outside the green phone frame is a note to the reader, not a UI control.
 9. When you finish, say which commands you ran and which checks you could not run.
 
 ## History (delivered; not pending work)
 
-T1–T8 are complete. Delivered revisions: **40** Google Analytics page views + saved GTM container and GA4 measurement IDs; **39** dark theme; **38** reader → 變形說明 link, scroll memory, table-based 例如 decomposition; **37 / 37b / 37c** 學習 mode, 學習目錄, 變形說明, 選字, 210 generated ordered-pair explanations from real `vol/` forms, 例如 and 小提示; **36** all-form 單詞目錄 with hiragana/romaji search and red highlights; **35** reader Opus audio; **34** locked/disabled 到 chips, 翻卡練習 rename, card pill during drag; **33** download-aware loading bar; **32** single `dict/vol.bin` archive; **31** form-level Chinese gloss data. Earlier revisions 2–30 (motion, paging window, settings, scroll thumbs, title/logo, 單詞目錄, etc.) are also delivered. Details live in `docs/changelog.md`, `docs/progress.md`, `docs/roadmap.md`; do not reopen tasks without a spec change. Backlog: B1 朗讀 (done rev 35), B2 優化下載文件 (done rev 32–33), **B3 優化UI pending — needs a `docs/spec.md` entry first**.
+T1–T8 are complete. Delivered revisions: **40** Google Analytics page views via repo-config IDs (`src/config/analytics.js`); **39** dark theme; **38** reader → 變形說明 link, scroll memory, table-based 例如 decomposition; **37 / 37b / 37c** 學習 mode, 學習目錄, 變形說明, 選字, 210 generated ordered-pair explanations from real `vol/` forms, 例如 and 小提示; **36** all-form 單詞目錄 with hiragana/romaji search and red highlights; **35** reader Opus audio; **34** locked/disabled 到 chips, 翻卡練習 rename, card pill during drag; **33** download-aware loading bar; **32** single `dict/vol.bin` archive; **31** form-level Chinese gloss data. Earlier revisions 2–30 (motion, paging window, settings, scroll thumbs, title/logo, 單詞目錄, etc.) are also delivered. Details live in `docs/changelog.md`, `docs/progress.md`, `docs/roadmap.md`; do not reopen tasks without a spec change. Backlog: B1 朗讀 (done rev 35), B2 優化下載文件 (done rev 32–33), **B3 優化UI pending — needs a `docs/spec.md` entry first**.
 
 ## Current feature: Google Analytics (revision 40)
 
-Every screen change reports one page view. Two IDs are saved in `katsuyou-settings` under `analytics`: the GTM container (`containerId`, default `GTM-W7387LLQ`) and the GA4 destination inside it (`measurementId`, default `G-NFDK8SXY0M`). All three settings screens end with both fields (`Google Analytics 容器 ID`, `GA4 量測 ID`); each commits on Enter or blur through `settings.patch`, trimmed and uppercased, validates `GTM-`/`G-` forms, and shows the stored ID again after a rejected value. Both IDs apply on the next load. `src/analytics/gtm.js` loads the container with the standard snippet (dataLayer, `gtm.start`, one async `gtm.js` script) and loads gtag.js with `send_page_view: false` for the measurement ID; the browser URL never changes. Every screen change pushes `{ event: 'page_view', screen_name, page_title, page_location }` into the dataLayer and sends it through `gtag('event', 'page_view', …)`, except `loading` and the first `home`: the container's own landing page view covers those. Screen ids, titles and `#/<screen>` page locations: `docs/spec.md` → Analytics. Pure rules: `src/analytics/page-view.js`. Settings schema/validation: `src/dict/settings.js`. `src/main.js` restores settings, loads both IDs and watches `session.screen`. No `.vue` logic: `SettingsView.vue` only renders the fields and calls `settings.patch`.
+The Analytics IDs are repo configuration, not user settings: `src/config/analytics.js` exports `GTM_ID` and `GA4_ID` (shipped `GTM-W7387LLQ` / `G-NFDK8SXY0M`), an empty string disables one, and the settings screens carry neither field. `src/analytics/gtm.js` loads the container with the standard snippet (dataLayer, `gtm.start`, one async `gtm.js` script) and loads gtag.js with `send_page_view: false` for the measurement ID; the browser URL never changes. Every screen change pushes `{ event: 'page_view', screen_name, page_title, page_location }` into the dataLayer and sends it through `gtag('event', 'page_view', …)`, except `loading` and the first `home`: the container's own landing page view covers those. `src/storage/settings.js` drops a stale `analytics` section from an old `katsuyou-settings` object and writes the cleaned object back. Screen ids, titles and `#/<screen>` page locations: `docs/spec.md` → Analytics. Pure rules: `src/analytics/page-view.js`. `src/main.js` reads the config and watches `session.screen`. Settings schema: `src/dict/settings.js` (no analytics section). No `.vue` involvement.
 
 ## Previous feature: dark theme (revision 39)
 
@@ -42,6 +42,7 @@ src/dict/                 hash, archive (unzipit), boot, library, quiz, ruby, fo
 src/study/                item lists, shuffle, highlight, results, toc, romaji, reader-audio,
                           rule.js, rule-demo.js, rule-conjugation.js, rule-content-builder.js
 src/analytics/            page-view.js (pure rules), gtm.js (GTM + gtag.js adapters)
+src/config/analytics.js    GTM_ID / GA4_ID — edit here to change Analytics IDs
 src/data/                 dict-manifest.json, audio-manifest.json, rule-content.js (generated)
 src/storage/              idb.js, audio-idb.js, settings.js, theme.js
 src/ui/                   store.js, bootstrap.js, boot-progress.js, theme.js, theme-root.js, tooltip.js
@@ -97,8 +98,8 @@ T1–T8 each have test output or a browser pass; `docs/spec.md` behaviors are on
 
 ## Verification (current, 2026-11-18)
 
-- `npm test`: 53 files / 587 tests passing. `npm run build`: succeeds — `output/index.html`, `output/dict/vol.bin` with 50 entries, 46 audio bins.
-- `node scripts/browser-check.mjs`: 682 checks / 0 failures (count varies ±1 with the seeded quiz item); needs Chromium via `CHROMIUM_PATH`.
+- `npm test`: 53 files / 579 tests passing. `npx vite build` (build only, revision 40): succeeds — `output/index.html`, `output/dict/vol.bin` with 50 entries, 46 audio bins. Full `npm run build` adds the prebuild audio fetch, which can 403 outside release access.
+- `node scripts/browser-check.mjs`: 671 checks / 0 failures (count varies ±1 with the seeded quiz item); needs Chromium via `CHROMIUM_PATH`.
 - Runtime here: Node v26.13.1 / npm 12.2.2; Vite 7 requires `^20.19.0` or `>=22.12.0`.
 - Live site verified 2026-11-14: HTTP 200, `dict/vol.bin` served `application/octet-stream`.
 - `vol/` counts: 50 lessons; 386 verbs; 5,790 forms; 5,599 usable; 191 `error_usage`; 16,797 sentence pairs; empty lessons 1/3/8/12.

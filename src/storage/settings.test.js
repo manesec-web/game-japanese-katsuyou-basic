@@ -64,3 +64,29 @@ describe('settings storage', () => {
     expect(storage.save(defaultSettings())).toBe(false)
   })
 })
+
+describe('stale analytics keys', () => {
+  it('drops a stored analytics section and writes the cleaned settings back', () => {
+    const backing = fakeStorage({
+      'katsuyou-settings': JSON.stringify({
+        dict: { lessons: [2] },
+        analytics: { containerId: 'GTM-STALE01', measurementId: 'G-STALE1234' },
+      }),
+    })
+    const storage = createSettingsStorage({ storage: backing })
+    const settings = storage.load()
+    expect(settings.dict.lessons).toEqual([2])
+    expect(settings).not.toHaveProperty('analytics')
+    const written = JSON.parse(backing.getItem('katsuyou-settings'))
+    expect(written).not.toHaveProperty('analytics')
+    expect(written.dict.lessons).toEqual([2])
+  })
+
+  it('leaves a clean stored object untouched', () => {
+    const backing = fakeStorage({ 'katsuyou-settings': '{"dict":{"lessons":[2]},"analytics":{}}' })
+    const storage = createSettingsStorage({ storage: backing })
+    const settings = storage.load()
+    expect(settings).not.toHaveProperty('analytics')
+    expect(JSON.parse(backing.getItem('katsuyou-settings'))).not.toHaveProperty('analytics')
+  })
+})

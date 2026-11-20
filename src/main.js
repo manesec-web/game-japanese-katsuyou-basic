@@ -14,6 +14,7 @@ import { createScrollGuard } from './ui/scroll-guard.js'
 import { systemTheme, themeState } from './ui/theme.js'
 import { applyTheme, watchSystemTheme } from './ui/theme-root.js'
 import { createGtm } from './analytics/gtm.js'
+import { GA4_ID, GTM_ID } from './config/analytics.js'
 
 const library = createLibrary({ store: idb, manifest })
 const settingsStorage = createSettingsStorage()
@@ -23,17 +24,13 @@ registry.registerAll(allSpecs({ library, settingsStorage, themeStorage }))
 
 const store = createStore(registry, { library, settingsStorage, themeStorage })
 
-// Analytics reads the container ID from the saved settings, so restore them
-// here before the container loads (bootstrap re-reads the same object).
-store.session.settings = settingsStorage.load()
-
-// The GTM container is loaded once with the stored ID, and gtag.js is loaded
-// with the GA4 measurement ID for the per-screen page views. Both IDs take
-// effect on the next page load, so one page load never loads the container
-// twice. The browser URL is not changed: a screen is reported, not routed.
+// The Analytics IDs are repo config (src/config/analytics.js), not settings: a
+// developer edits that file and redeploys. An empty ID loads nothing. The GTM
+// container is loaded once and gtag.js carries the per-screen page views. The
+// browser URL is not changed: a screen is reported, not routed.
 const analytics = createGtm()
-analytics.load(store.session.settings.analytics.containerId)
-analytics.loadTag(store.session.settings.analytics.measurementId)
+analytics.load(GTM_ID)
+analytics.loadTag(GA4_ID)
 watch(
   () => store.session.screen,
   (screen) => analytics.screen(screen),

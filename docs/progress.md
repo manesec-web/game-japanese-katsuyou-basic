@@ -13,9 +13,9 @@ The build is live at `https://manesec-web.github.io/game-japanese-katsuyou-basic
 
 | Command | Result |
 |---|---|
-| `npm test` | **53 files / 587 tests pass**; `pretest` checks both manifests |
+| `npm test` | **53 files / 579 tests pass**; `pretest` checks both manifests |
 | `npm run build` | succeeds; `prebuild` regenerates 210 rule-content entries and downloads/verifies 46 audio bins |
-| `node scripts/browser-check.mjs` | **682 checks / 0 failures** here; ±1 with the seeded quiz item (revision 40 added 21 analytics checks) |
+| `node scripts/browser-check.mjs` | **671 checks / 0 failures** here; ±1 with the seeded quiz item (revision 40 added analytics checks) |
 | `node scripts/write-sha256.mjs --check`, `node scripts/write-audio-manifest.mjs --check` | 50-lesson and 46-bin manifests consistent |
 
 - Environment here: Node v26.13.1 / npm 12.2.2; Vue 3.5 / Vite 7.3 / Vitest 3. Vite 7 requires Node `^20.19.0` or `>=22.12.0`.
@@ -29,12 +29,13 @@ The build is live at `https://manesec-web.github.io/game-japanese-katsuyou-basic
 
 ## Revision 40 — Google Analytics (current)
 
-- Two saved IDs in `katsuyou-settings` → `analytics`: `containerId` (`GTM-W7387LLQ`) loads the GTM container with the standard snippet; `measurementId` (`G-NFDK8SXY0M`, the GA4 destination inside that container) loads gtag.js with `send_page_view: false`.
-- Every screen change pushes `{ event: 'page_view', screen_name, page_title, page_location }` into `window.dataLayer` and, past the landing pair (`loading`, first `home`, covered by the container's own page view), sends the same entry through `gtag('event', 'page_view', …)`, so Google Analytics receives one page view per screen; the browser URL is never changed (`page_location` names the screen as `#/<screen>`).
-- Both IDs are edited through the `Google Analytics 容器 ID` / `GA4 量測 ID` fields at the foot of all three settings screens; Enter/blur commits through `settings.patch`, trimmed and uppercased, invalid values rejected with the stored ID shown again, changes apply on the next load.
+- Analytics IDs are repo config in `src/config/analytics.js` — `GTM_ID` (`GTM-W7387LLQ`) and `GA4_ID` (`G-NFDK8SXY0M`) — not user settings: an empty string disables an ID, the settings screens carry no field and `katsuyou-settings` stores neither ID.
+- The GTM container is loaded with the standard snippet (dataLayer, `gtm.start`, one async `gtm.js` script); gtag.js is loaded with `send_page_view: false` for the GA4 measurement ID because the container alone does not report SPA screen changes.
+- Every screen change pushes `{ event: 'page_view', screen_name, page_title, page_location }` into `window.dataLayer` and, past the landing pair (`loading`, first `home`, covered by the container's own page view), sends it through `gtag('event', 'page_view', …)`; the browser URL is never changed and `page_location` names the screen as `#/<screen>`.
+- A stale revision-40 `analytics` section in stored settings is dropped on load and the cleaned object is written back (`src/storage/settings.js`).
+- Pure `src/analytics/page-view.js`; adapter `gtm.js`; config `src/config/analytics.js`; `main.js` wiring; `SettingsView.vue` no longer ends with an ID field.
 - Runtime probe against the built site: GA collect for the landing view at load, then one `page_view` with the right fragment for the picker, reader and settings screens (no duplicates).
-- Pure `src/analytics/page-view.js`; adapter `gtm.js`; settings schema/validation in `src/dict/settings.js`; `main.js` wiring. `.vue` only renders the fields.
-- Verification: **53 files / 587 tests**, `npm run build`, **682 browser checks / 0 failures** (21 new analytics checks: GTM/gtag scripts, gtm.start first, landing + screen page views, `#/<screen>` locations, unchanged browser URL, both fields' defaults/commits/rejection/restore). `vol/` untouched.
+- Verification: **53 files / 579 tests**, `npx vite build`, **671 browser checks / 0 failures** (analytics checks: configured GTM/gtag IDs, gtm.start first, landing + screen page views, `#/<screen>` locations, unchanged browser URL, no analytics fields in settings, no analytics keys in storage). `vol/` untouched.
 
 ## Revision 39 — dark theme (previous)
 
@@ -95,7 +96,7 @@ Full dated detail: [`docs/changelog.md`](changelog.md). Labels only, not current
 | 37c | Shared section labels, `.hrule`, numbered 小提示, no duplicate notes |
 | 38 | Reader → 變形說明 link, scroll restore, table-based `deriveChange` (incl. `＋ ぐ` fix) |
 | 39 | Dark theme, home-only switch, token-only colours |
-| 40 | Google Analytics page views + saved GTM container ID (current) |
+| 40 | Google Analytics page views through repo-config IDs (`src/config/analytics.js`); no user setting (current) |
 
 Backlog: B1 朗讀功能 done as rev 35; B2 優化下載文件 done as rev 32–33;
 **B3 優化UI remains pending** and needs a spec entry before new feature work

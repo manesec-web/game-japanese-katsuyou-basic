@@ -1,7 +1,5 @@
 import { describe, expect, it } from 'vitest'
 import {
-  DEFAULT_CONTAINER_ID,
-  DEFAULT_MEASUREMENT_ID,
   SCREEN_TITLES,
   SITE_TITLE,
   isValidContainerId,
@@ -12,12 +10,18 @@ import {
   pageViewPayload,
   screenPageLocation,
 } from './page-view.js'
+import { GTM_ID, GA4_ID } from '../config/analytics.js'
+
+describe('repo analytics config', () => {
+  it('exports a usable ID or an empty string that disables it', () => {
+    expect(GTM_ID).toBeTypeOf('string')
+    expect(GA4_ID).toBeTypeOf('string')
+    expect(GTM_ID === '' || isValidContainerId(GTM_ID)).toBe(true)
+    expect(GA4_ID === '' || isValidMeasurementId(GA4_ID)).toBe(true)
+  })
+})
 
 describe('container ID', () => {
-  it('ships the documented default', () => {
-    expect(DEFAULT_CONTAINER_ID).toBe('GTM-W7387LLQ')
-    expect(isValidContainerId(DEFAULT_CONTAINER_ID)).toBe(true)
-  })
 
   it('trims and uppercases a typed ID', () => {
     expect(normalizeContainerId('  gtm-w7387llq ')).toBe('GTM-W7387LLQ')
@@ -37,11 +41,6 @@ describe('container ID', () => {
 })
 
 describe('measurement ID', () => {
-  it('ships the GA4 destination of the shipped container', () => {
-    expect(DEFAULT_MEASUREMENT_ID).toBe('G-NFDK8SXY0M')
-    expect(isValidMeasurementId(DEFAULT_MEASUREMENT_ID)).toBe(true)
-  })
-
   it('trims and uppercases a typed ID', () => {
     expect(normalizeMeasurementId('  g-nfdk8sxy0m ')).toBe('G-NFDK8SXY0M')
   })

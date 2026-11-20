@@ -248,26 +248,26 @@ OS-only choice, pre-module media fallback, explicit light on dark OS). A dark co
 (home, 學習目錄, 變形說明, 選字, picker, reader, 設定, 單詞目錄, card, quiz, open dropdown, tooltip) found no text pair under
 3.2:1. `vol/` and generated data untouched.
 
-**Revision 40 — Google Analytics (latest/current, working tree; 2026-11-18).** Two saved IDs in the
-`analytics` section of `katsuyou-settings`: `containerId`, the GTM container (`GTM-W7387LLQ`), and
-`measurementId`, the GA4 destination inside it (`G-NFDK8SXY0M`). The container is loaded with the standard
-snippet (dataLayer, `gtm.start`, one async `gtm.js` script); its own config tag sends the landing page view.
-gtag.js is loaded with `send_page_view: false` for the measurement ID, because the container does not report
-this site's screen changes (its enhanced-measurement page view follows browser history, which the site does
-not change). Every screen change pushes `{ event: 'page_view', screen_name, page_title, page_location }`
-into the dataLayer and, past the landing pair (`loading`, first `home`), sends it through
-`gtag('event', 'page_view', …)`; the browser URL is never changed and `page_location` names the screen as
-`#/<screen>`. The `Google Analytics 容器 ID` and `GA4 量測 ID` fields end every mode's settings screen
-(commit on Enter/blur through `settings.patch`, trimmed/uppercased, invalid rejected and the stored ID
-restored). Both IDs apply on the next load. `src/analytics/page-view.js` holds the pure rules (both ID
-forms, per-screen title, `#/<screen>` location, payload); `src/analytics/gtm.js` is the DOM adapter;
-`src/dict/settings.js` validates and persists both; `src/main.js` restores settings, loads both and watches
-`session.screen`. The snippet lives in the adapter, not `index.html`, because the IDs are settings; there is
-no `<noscript>` iframe (the site draws nothing without JavaScript).
+**Revision 40 — Google Analytics (latest/current, working tree; 2026-11-18).** Analytics IDs are repo
+config, not user settings: `src/config/analytics.js` exports `GTM_ID` (`GTM-W7387LLQ`) and `GA4_ID`
+(`G-NFDK8SXY0M`), a developer edits that file to change them, and an empty string disables an ID. The
+container is loaded with the standard snippet (dataLayer, `gtm.start`, one async `gtm.js` script); its own
+config tag sends the landing page view. gtag.js is loaded with `send_page_view: false` for the GA4
+measurement ID, because the container alone does not report this site's screen changes (its
+enhanced-measurement page view follows browser history, which the site does not change). Every screen
+change pushes `{ event: 'page_view', screen_name, page_title, page_location }` into the dataLayer and, past
+the landing pair (`loading`, first `home`), sends it through `gtag('event', 'page_view', …)`; the browser
+URL is never changed and `page_location` names the screen as `#/<screen>`. No settings screen carries an
+Analytics field and `katsuyou-settings` stores no ID; a revision-40-era `analytics` section in stored
+settings is dropped on load and the cleaned object written back. `src/analytics/page-view.js` holds the
+pure rules (ID forms, per-screen title, `#/<screen>` location, payload); `src/analytics/gtm.js` is the DOM
+adapter; `src/main.js` reads the config and watches `session.screen`. The snippet lives in the adapter, not
+`index.html`, because the IDs live in the config; there is no `<noscript>` iframe (the site draws nothing
+without JavaScript).
 
 A runtime probe against the built site observed the GA collect for the landing view at load, then exactly
 one `page_view` containing the right `#/<screen>` fragment for the picker, reader and settings screens.
-Verification: **53 files / 587 tests** (2 analytics files, both IDs' settings validation/persistence plus
-command coverage), `npm run build`, **682 browser checks / 0 failures** (21 new analytics checks: both
-scripts, gtm.start first, landing and screen page views, fragment locations, unchanged browser URL, both
-fields' defaults/commits/rejection/restore). `vol/` untouched.
+Verification: **53 files / 579 tests** (2 analytics files plus storage/settings-command coverage), `npx vite
+build`, **671 browser checks / 0 failures** (analytics checks: configured GTM and gtag IDs, gtm.start first,
+landing and screen page views, fragment locations, unchanged browser URL, no Analytics fields in settings,
+no Analytics keys in storage). `vol/` untouched.

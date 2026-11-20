@@ -8,7 +8,7 @@ Node.js `^20.19.0` or `>=22.12.0` (Vite 7 minimum); verified here with v26.13.1 
 npm install
 npm run dev        # http://localhost:5173/game-japanese-katsuyou-basic/
 npm run preview    # http://localhost:4173/game-japanese-katsuyou-basic/ (after build)
-npm test           # 53 files / 587 tests
+npm test           # 53 files / 579 tests
 npm run build      # writes output/; needs network for the audio release
 ```
 Open the `/game-japanese-katsuyou-basic/` subpath, not the server root (`base` in `vite.config.js`). Dev packs `vol/` into `dict/vol.bin` on the fly and serves gitignored `dict/resource/*.bin`.
@@ -71,13 +71,13 @@ Full command/error list, session shape, file map and wiring: [`architecture.md`]
 
 ## Testing and verification
 ```bash
-npm test                                      # 53 files / 587 tests pass
+npm test                                      # 53 files / 579 tests pass
 node scripts/write-sha256.mjs --check          # dictionary manifest
 node scripts/write-audio-manifest.mjs --check  # 46-bin audio manifest
 node scripts/write-vol-archive.mjs --check    # verify vol.bin without writing
 node scripts/generate-rule-content.mjs        # regenerate 210 entries
 npm run build                                 # output/index.html, assets/, dict/
-node scripts/browser-check.mjs                # 682 checks / 0 failures here (±1)
+node scripts/browser-check.mjs                # 671 checks / 0 failures here (±1)
 ```
 `npm test` covers engine/commands, hash/boot, settings, quiz, ruby, romaji, gesture/scrollbar rules, archive packing, `fake-indexeddb`, a real ZIP round-trip through `unzipit`, and regeneration of all 210 entries. `browser-check.mjs` starts `vite preview` itself and needs Chromium: `PORT` (default 5199), `CHROMIUM_PATH` (default `/home/mane/.cache/ms-playwright/chromium-1208/chrome-linux64/chrome`), `SHOT_DIR`, `--screenshots` (write screenshots). The count varies ±1 with the seeded quiz item. Verified build: `output/index.html`, 1 JS (~1.45 MB) + 1 CSS + 4 hashed logos in `output/assets/`, `output/dict/vol.bin` (50 entries, 561,815 bytes / ~549 KB, `application/octet-stream`), 46 bins in `output/dict/resource/`.
 Not covered: real iOS/Android devices, real IMEs (composition only as pure synthetic events), Firefox/Safari, and human screenshot review. Known limitations: [`progress.md`](progress.md).

@@ -61,10 +61,11 @@ describe('GTM container', () => {
     expect(win.dataLayer.map((entry) => entry.event)).toEqual(['early', 'gtm.js'])
   })
 
-  it('loads nothing for an invalid ID', () => {
+  it('loads nothing for an invalid or empty ID', () => {
     const { win, doc, scripts } = fakeDom()
     const gtm = createGtm({ window: win, document: doc })
     expect(gtm.load('nope')).toBe(false)
+    expect(gtm.load('')).toBe(false)
     expect(scripts).toHaveLength(0)
     expect(win.dataLayer).toBeUndefined()
   })
@@ -89,10 +90,11 @@ describe('gtag.js measurement', () => {
     expect(scripts).toHaveLength(1)
   })
 
-  it('loads nothing for an invalid measurement ID', () => {
+  it('loads nothing for an invalid or empty measurement ID', () => {
     const { win, doc, scripts, gtagCalls } = fakeDom()
     const gtm = createGtm({ window: win, document: doc })
     expect(gtm.loadTag('GTM-W7387LLQ')).toBe(false)
+    expect(gtm.loadTag('')).toBe(false)
     expect(scripts).toHaveLength(0)
     expect(gtagCalls).toHaveLength(0)
   })

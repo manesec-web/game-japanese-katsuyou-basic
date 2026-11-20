@@ -1,20 +1,9 @@
 // Settings defaults, validation, and patching. Plain data; no storage here.
 import { FORM_IDS, FORMS } from './forms.js'
 import { DEFAULT_REVEAL_AFTER, isValidRevealAfter } from './quiz.js'
-import {
-  DEFAULT_CONTAINER_ID,
-  DEFAULT_MEASUREMENT_ID,
-  isValidContainerId,
-  isValidMeasurementId,
-  normalizeContainerId,
-  normalizeMeasurementId,
-} from '../analytics/page-view.js'
 
 export const SETTINGS_KEY = 'katsuyou-settings'
 export const MODE_KEYS = ['dict', 'card', 'quiz']
-// The three modes own their rows in the picker and settings screens; `analytics`
-// is one site-wide section beside them (the Google Analytics container ID).
-export const SETTINGS_SECTIONS = [...MODE_KEYS, 'analytics']
 
 export function makeDefaults() {
   return {
@@ -49,13 +38,6 @@ export function makeDefaults() {
       // 跳過錯誤的單詞: drop quiz items whose target is an error_usage form.
       skipErrorUsage: false,
     },
-    analytics: {
-      // The Google Tag Manager container the site loads.
-      containerId: DEFAULT_CONTAINER_ID,
-      // The GA4 destination inside that container; gtag.js reports the
-      // per-screen page views to it.
-      measurementId: DEFAULT_MEASUREMENT_ID,
-    },
   }
 }
 
@@ -87,10 +69,6 @@ const SCHEMA = {
     autoSubmit: 'boolean',
     revealAfter: 'revealAfter',
     skipErrorUsage: 'boolean',
-  },
-  analytics: {
-    containerId: 'containerId',
-    measurementId: 'measurementId',
   },
 }
 
@@ -130,10 +108,6 @@ function validValue(kind, value) {
       return isBoolean(value)
     case 'revealAfter':
       return isValidRevealAfter(value)
-    case 'containerId':
-      return isValidContainerId(value)
-    case 'measurementId':
-      return isValidMeasurementId(value)
     default:
       return false
   }
@@ -153,7 +127,7 @@ function cleanForms(value) {
 export function normalizeSettings(raw) {
   const defaults = makeDefaults()
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return defaults
-  for (const mode of SETTINGS_SECTIONS) {
+  for (const mode of MODE_KEYS) {
     const source = raw[mode]
     if (!source || typeof source !== 'object' || Array.isArray(source)) continue
     for (const [key, kind] of Object.entries(SCHEMA[mode])) {
@@ -161,8 +135,6 @@ export function normalizeSettings(raw) {
       if (!validValue(kind, value)) continue
       if (kind === 'lessons') defaults[mode][key] = cleanLessons(value)
       else if (kind === 'forms') defaults[mode][key] = cleanForms(value)
-      else if (kind === 'containerId') defaults[mode][key] = normalizeContainerId(value)
-      else if (kind === 'measurementId') defaults[mode][key] = normalizeMeasurementId(value)
       else defaults[mode][key] = value
     }
   }
@@ -189,7 +161,7 @@ export function validatePatch(patch) {
     return { ok: false, message: 'patch must be an object' }
   }
   for (const [mode, value] of Object.entries(patch)) {
-    if (!SETTINGS_SECTIONS.includes(mode)) {
+    if (!MODE_KEYS.includes(mode)) {
       return { ok: false, message: `unknown settings section: ${mode}` }
     }
     if (!value || typeof value !== 'object' || Array.isArray(value)) {
@@ -215,8 +187,6 @@ export function applyPatch(settings, patch) {
       const kind = SCHEMA[mode]?.[key]
       if (key === 'lessons') next[mode].lessons = cleanLessons(field)
       else if (kind === 'forms') next[mode][key] = cleanForms(field)
-      else if (kind === 'containerId') next[mode][key] = normalizeContainerId(field)
-      else if (kind === 'measurementId') next[mode][key] = normalizeMeasurementId(field)
       else next[mode][key] = field
     }
   }

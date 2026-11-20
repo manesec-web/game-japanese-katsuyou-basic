@@ -83,7 +83,7 @@ Order: docs baseline → T1 → T2 → T3 → T4 → T5 → T6 → T7 → T8 →
 | 37c | Style polish, `.hrule`, numbered list | browser check |
 | 38 | Reader link, scroll memory, `deriveChange` | 59,850-pair sweep, regression tests |
 | 39 | Dark theme | 51/554, build, 660–661 checks, contrast ≥3.2:1 |
-| 40 | Google Analytics page views + saved GTM/GA4 IDs (current) | 53/587, build, 682 checks |
+| 40 | Google Analytics page views via repo-config IDs (current) | 53/579, build, 671 checks |
 
 ## How to resume a future session
 
@@ -93,10 +93,10 @@ Order: docs baseline → T1 → T2 → T3 → T4 → T5 → T6 → T7 → T8 →
 ## Verification commands
 
 ```bash
-npm test                                # 53 files / 587 tests; pretest checks both manifests
+npm test                                # 53 files / 579 tests; pretest checks both manifests
 npm run build                           # prebuild: 210 rule entries + 46 verified bins
 node scripts/write-sha256.mjs --check   # 50-lesson manifest; also write-audio-manifest.mjs --check (46 bins)
 node scripts/generate-rule-content.mjs  # 210 ordered pairs
-node scripts/browser-check.mjs          # 682 checks / 0 failures here (±1 by seeded quiz)
+node scripts/browser-check.mjs          # 671 checks / 0 failures here (±1 by seeded quiz)
 ```
 `browser-check.mjs`: `vite preview` on `PORT` (default 5199), Chromium via `CHROMIUM_PATH`, `--screenshots` with `SHOT_DIR`. `motion-probe.mjs` (`PORT` 5201) prints traces only. Node v26.13.1 / npm 12.2.2 here; Vite 7 needs `^20.19.0` or `>=22.12.0`.

@@ -1,11 +1,13 @@
 // Google Analytics adapter: the GTM container, gtag.js and the page views.
 // Thin DOM layer — the rules live in ./page-view.js.
 //
-// The GTM container is loaded with the standard snippet (dataLayer, gtm.start,
-// one async gtm.js script). Its own config tag sends the landing page view, but
-// it does not report this SPA's screen changes, so gtag.js is loaded as well
-// with the GA4 measurement ID that lives inside the container, configured with
-// `send_page_view: false`. Every screen change then sends one GA4 page view.
+// The IDs come from src/config/analytics.js (a developer edits that file; they
+// are not user settings). The GTM container is loaded with the standard
+// snippet (dataLayer, gtm.start, one async gtm.js script). Its own config tag
+// sends the landing page view, but it does not report this SPA's screen
+// changes, so gtag.js is loaded as well with the GA4 measurement ID, configured
+// with `send_page_view: false`. Every screen change then sends one GA4 page
+// view. An empty ID loads nothing.
 import {
   normalizeContainerId,
   normalizeMeasurementId,

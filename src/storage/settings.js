@@ -12,11 +12,18 @@ export function createSettingsStorage({ storage = globalThis.localStorage } = {}
       return defaultSettings()
     }
     if (raw === null) return defaultSettings()
+    let parsed
     try {
-      return normalizeSettings(JSON.parse(raw))
+      parsed = JSON.parse(raw)
     } catch {
       return defaultSettings()
     }
+    const settings = normalizeSettings(parsed)
+    // Revision 40 briefly kept the Analytics IDs in this object. They are a
+    // repo config now (src/config/analytics.js), so a stale section is removed
+    // and the cleaned object is written back; a storage failure is ignored.
+    if (parsed && typeof parsed === 'object' && 'analytics' in parsed) save(settings)
+    return settings
   }
 
   function save(settings) {

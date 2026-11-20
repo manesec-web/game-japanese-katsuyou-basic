@@ -2,7 +2,7 @@
 Updated for revision 40 (Google Analytics). Wiring only: [`spec.md`](spec.md) is the behavior authority; dated revisions live in `changelog.md` / `roadmap.md`. The old per-revision implementation notes are replaced by that pointer.
 
 ## Shape of the app
-One static Vue 3.5 SPA built with Vite 7 (Vitest 3). No router, backend, MCP or model calls. Runtime fetches same-origin `dict/vol.bin` once on boot and lazily fetches `dict/resource/lessonX.bin` per lesson when audio is requested; the one third-party request is the Google Tag Manager container that reports page views — see Analytics.
+One static Vue 3.5 SPA built with Vite 7 (Vitest 3). No router, backend, MCP or model calls. Runtime fetches same-origin `dict/vol.bin` once on boot and lazily fetches `dict/resource/lessonX.bin` per lesson when audio is requested; two third-party scripts are requested at start — the Google Tag Manager container and the GA4 measurement tag that reports the page views — see Analytics.
 Three layers: `src/engine/` (framework-free command registry + plain session), `src/commands/` (one module per area exporting `specs()`), and `src/views/` + `src/components/` (thin Vue: render state, call `dispatch`, own no rules; `.vue` files hold templates and styles only). `src/ui/store.js` wraps the session in `reactive()` with `send(id, params)`; `src/main.js` mounts, resolves the start theme, starts analytics, then runs `bootstrap(store)`.
 Scale: 11 screens, 3 modes, 15 forms, 24 command ids, 210 變形說明 pairs, 50 lessons, 386 verbs, 5,790 forms (5,599 usable, 191 `error_usage`), 16,797 example pairs; lessons 1, 3, 8, 12 have no verbs.
 
@@ -78,6 +78,7 @@ scripts/              write-sha256 + write-audio-manifest (generate, --check),
                       write-res-archive, fetch-audio, generate-rule-content,
                       check-conjugation, browser-check, motion-probe,
                       strike-probe; colocated Vitest tests
+src/config/analytics.js  GTM_ID / GA4_ID (repo config; empty disables)
 src/main.js           entry: store, settings/theme start, analytics, mount, bootstrap
 src/App.vue           screen switch + shared shell
 src/engine/           registry.js (dispatch), settle.js, errors.js, session.js
@@ -120,16 +121,16 @@ Live Pages site verified 2026-11-14: HTTP 200; `vol.bin` answers `application/oc
 ## Analytics (revision 40)
 | Layer | Responsibility |
 |---|---|
-| Pure rules | `src/analytics/page-view.js`: defaults `GTM-W7387LLQ` / `G-NFDK8SXY0M`, `GTM-`/`G-` validation + trim/uppercase, per-screen title, `#/<screen>` page location, `page_view` payload |
+| Config | `src/config/analytics.js`: `GTM_ID` / `GA4_ID` — the one file a developer edits; an empty string disables an ID |
+| Pure rules | `src/analytics/page-view.js`: `GTM-`/`G-` validation + trim/uppercase, per-screen title, `#/<screen>` page location, `page_view` payload |
 | Adapter | `src/analytics/gtm.js`: standard GTM snippet (dataLayer, `gtm.start`, one async `gtm.js` script) and gtag.js with `send_page_view: false`; pushes the dataLayer entry and the GA4 `page_view` per screen change |
-| Settings | `analytics.containerId` + `analytics.measurementId` in `katsuyou-settings` (one section beside the three modes), validated in `src/dict/settings.js`; `settings.patch` persists both |
-| View | `src/views/SettingsView.vue`: shared `Google Analytics 容器 ID` / `GA4 量測 ID` fields at the foot of every mode's settings screen |
-| Entry | `src/main.js`: restores saved settings, loads the container and the measurement tag once, watches `session.screen` |
+| Settings | none — `katsuyou-settings` has no analytics section; `src/storage/settings.js` drops a stale section from revision-40 storage on load |
+| Entry | `src/main.js`: imports `GTM_ID` / `GA4_ID`, loads the container and the measurement tag once, watches `session.screen` |
 
 The container's own page view is the landing view; the site reports `loading` and the first `home`
 through it, then sends one GA4 `page_view` per later screen change. The browser URL is not changed —
-the screen is named in `page_location` as `#/<screen>`. A changed ID applies on the next page load.
-Payload fields, titles and screen ids: `spec.md` → Analytics.
+the screen is named in `page_location` as `#/<screen>`. Payload fields, titles and screen ids:
+`spec.md` → Analytics.
 
 ## Dark theme (revision 39)
 | Layer | Responsibility |
@@ -149,9 +150,9 @@ Every colour is a token in `src/styles/app.css` (ink, column, accent, highlight,
 - Commands: `src/commands/rule.js` (學習目錄 → 變形說明 → 選字) and `src/commands/reader-rule.js` (變形原理 + scroll memory). 選字 search shares `src/dict/romaji.js` and `src/study/toc.js`. Views only render; all authored copy and 210 blocks: `spec.md` → 學習.
 
 ## Testing
-- `npm test`: 53 files / 587 tests pass (Vitest 3); `pretest` runs both manifest `--check` scripts. Pure rules are tested under Node with injected browser APIs (fetch, IndexedDB).
+- `npm test`: 53 files / 579 tests pass (Vitest 3); `pretest` runs both manifest `--check` scripts. Pure rules are tested under Node with injected browser APIs (fetch, IndexedDB).
 - `src/storage/idb.test.js` uses real adapter + `fake-indexeddb`. `scripts/zip.test.js` and `src/dict/archive.test.js` prove real ZIP round-trip through `unzipit`; `scripts/vol-archive.test.js` proves a tampered manifest stops the build; `src/study/rule-conjugation.test.js` regenerates all 210 entries and compares them with shipped data.
-- `node scripts/browser-check.mjs`: 682 checks / 0 failures here (±1 with the seeded quiz item). It starts `vite preview` and drives headless Chromium through loading/retry, home, three pickers, reader, 單詞目錄, settings, cards, quiz, completion, 學習 → 變形說明 → 選字, audio, IndexedDB reuse, the single archive request, reduced motion and the 550px breakpoint. Env: `PORT` (default 5199), `CHROMIUM_PATH` (default `/home/mane/.cache/ms-playwright/chromium-1208/chrome-linux64/chrome`), `SHOT_DIR`, `--screenshots`.
+- `node scripts/browser-check.mjs`: 671 checks / 0 failures here (±1 with the seeded quiz item). It starts `vite preview` and drives headless Chromium through loading/retry, home, three pickers, reader, 單詞目錄, settings, cards, quiz, completion, 學習 → 變形說明 → 選字, audio, IndexedDB reuse, the single archive request, reduced motion and the 550px breakpoint. Env: `PORT` (default 5199), `CHROMIUM_PATH` (default `/home/mane/.cache/ms-playwright/chromium-1208/chrome-linux64/chrome`), `SHOT_DIR`, `--screenshots`.
 - Not covered: real iOS/Android devices, real IMEs, Firefox/Safari, screenshot visual review. See `development.md` / `progress.md`.
 
 ## Build

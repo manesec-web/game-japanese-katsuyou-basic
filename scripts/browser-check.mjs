@@ -8,6 +8,7 @@ import { chromium } from 'playwright-core'
 import { CONFETTI_EMOJI, PRACTICE_EMOJI, SCORE_BANDS } from '../src/study/results.js'
 import { FORMS, groupLabel } from '../src/dict/forms.js'
 import { LIST_SCROLLBAR, SCROLLBAR } from '../src/ui/scrollbar.js'
+import { GA4_ID, GTM_ID } from '../src/config/analytics.js'
 
 const PORT = Number(process.env.PORT || 5199)
 
@@ -846,7 +847,11 @@ try {
     layer: Array.isArray(window.dataLayer) ? window.dataLayer : [],
     container: document.querySelector('script[data-gtm-id]')?.getAttribute('data-gtm-id') ?? null,
   }))
-  check('analytics loads the shipped GTM container once', analyticsInit.container === 'GTM-W7387LLQ', String(analyticsInit.container))
+  check(
+    'analytics loads the configured GTM container once',
+    GTM_ID ? analyticsInit.container === GTM_ID : analyticsInit.container === null,
+    `${GTM_ID}|${analyticsInit.container}`,
+  )
   check('analytics pushes the GTM start entry first', analyticsInit.layer[0]?.event === 'gtm.js', JSON.stringify(analyticsInit.layer[0] ?? null))
   const analyticsViews = analyticsInit.layer.filter((entry) => entry.event === 'page_view')
   check(
@@ -867,8 +872,16 @@ try {
     script: document.querySelector('script[data-gtag-id]')?.getAttribute('data-gtag-id') ?? null,
     gtag: typeof window.gtag,
   }))
-  check('analytics loads the shipped GA4 measurement tag', gtagState.script === 'G-NFDK8SXY0M', String(gtagState.script))
-  check('the GA4 tag exposes the gtag queue', gtagState.gtag === 'function', gtagState.gtag)
+  check(
+    'analytics loads the configured GA4 measurement tag',
+    GA4_ID ? gtagState.script === GA4_ID : gtagState.script === null,
+    `${GA4_ID}|${gtagState.script}`,
+  )
+  check(
+    'the GA4 tag exposes the gtag queue',
+    GA4_ID ? gtagState.gtag === 'function' : gtagState.gtag === 'undefined',
+    gtagState.gtag,
+  )
 
   check('reaches home after boot', true)
   check(
@@ -1971,59 +1984,16 @@ try {
   check('settings shows 預設顯示形式', (await page.locator('.row-label').first().textContent()).trim() === '預設顯示形式')
   check('settings shows 選擇顯示的類型', (await page.locator('.row-label', { hasText: '選擇顯示的類型' }).count()) === 1)
   check('settings shows 顯示平假名注音', (await page.locator('.row-label', { hasText: '顯示平假名注音' }).count()) === 1)
+  // The Analytics IDs are repo config (src/config/analytics.js) and must not
+  // appear as user settings or be stored in katsuyou-settings.
+  const settingsText = await page.locator('.settings').innerText()
   check(
-    'settings shows the Google Analytics container field',
-    (await page.locator('.settings .id-field[aria-label="Google Analytics 容器 ID"]').count()) === 1,
+    'settings no longer shows the analytics ID fields',
+    !settingsText.includes('Google Analytics') && !settingsText.includes('GA4'),
+    settingsText.slice(-80),
   )
-  check(
-    'the container field holds the shipped GTM ID',
-    (await page.locator('.settings .id-field').first().inputValue()) === 'GTM-W7387LLQ',
-    await page.locator('.settings .id-field').first().inputValue(),
-  )
-  check(
-    'settings shows the GA4 measurement field',
-    (await page.locator('.settings .id-field[aria-label="GA4 量測 ID"]').count()) === 1,
-  )
-  check(
-    'the measurement field holds the shipped GA4 ID',
-    (await page.locator('.settings .id-field').nth(1).inputValue()) === 'G-NFDK8SXY0M',
-    await page.locator('.settings .id-field').nth(1).inputValue(),
-  )
-  // The field commits on Enter through settings.patch: a valid ID is stored
-  // trimmed and uppercased, an invalid one stores nothing and the field shows
-  // the ID the page is still using.
-  const idField = page.locator('.settings .id-field').first()
-  const storedId = () =>
-    page.evaluate(
-      () => JSON.parse(localStorage.getItem('katsuyou-settings') || '{}').analytics?.containerId ?? null,
-    )
-  await idField.fill('gtm-test123')
-  await idField.press('Enter')
-  check('the container field stores a valid ID uppercased', (await storedId()) === 'GTM-TEST123', String(await storedId()))
-  check('the field shows the normalised ID', (await idField.inputValue()) === 'GTM-TEST123', await idField.inputValue())
-  await idField.fill('not-a-container')
-  await idField.press('Enter')
-  check('an invalid ID is rejected and not stored', (await storedId()) === 'GTM-TEST123', String(await storedId()))
-  check('the field returns to the stored ID', (await idField.inputValue()) === 'GTM-TEST123', await idField.inputValue())
-  await idField.fill('GTM-W7387LLQ')
-  await idField.press('Enter')
-  check('the shipped ID can be restored', (await storedId()) === 'GTM-W7387LLQ', String(await storedId()))
-  // The GA4 measurement field follows the same rules.
-  const gaField = page.locator('.settings .id-field').nth(1)
-  const storedMeasurement = () =>
-    page.evaluate(
-      () => JSON.parse(localStorage.getItem('katsuyou-settings') || '{}').analytics?.measurementId ?? null,
-    )
-  await gaField.fill('g-test123')
-  await gaField.press('Enter')
-  check('the measurement field stores a valid ID uppercased', (await storedMeasurement()) === 'G-TEST123', String(await storedMeasurement()))
-  await gaField.fill('nope')
-  await gaField.press('Enter')
-  check('an invalid measurement ID is rejected and not stored', (await storedMeasurement()) === 'G-TEST123', String(await storedMeasurement()))
-  check('the measurement field returns to the stored ID', (await gaField.inputValue()) === 'G-TEST123', await gaField.inputValue())
-  await gaField.fill('G-NFDK8SXY0M')
-  await gaField.press('Enter')
-  check('the shipped measurement ID can be restored', (await storedMeasurement()) === 'G-NFDK8SXY0M', String(await storedMeasurement()))
+  const savedSettings = await page.evaluate(() => JSON.parse(localStorage.getItem('katsuyou-settings') || '{}'))
+  check('no analytics keys are saved in katsuyou-settings', !('analytics' in savedSettings), JSON.stringify(Object.keys(savedSettings)))
   const switchBox = await page.locator('.switch').first().boundingBox()
   check('switch control is 32px tall', switchBox.height >= 31.9 && switchBox.height <= 33, `height=${switchBox.height}`)
   // The current 預設顯示形式 is always selected: its 選擇顯示的類型 chip is a

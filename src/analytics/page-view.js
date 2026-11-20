@@ -7,12 +7,8 @@
 // this site does not make. gtag.js, loaded with the GA4 measurement ID that
 // lives inside the container, is what reports one page view per screen.
 
-// The container the site ships with. It loads the container snippet.
-export const DEFAULT_CONTAINER_ID = 'GTM-W7387LLQ'
-
-// The GA4 destination inside that container. It is the ID that receives the
-// per-screen page views.
-export const DEFAULT_MEASUREMENT_ID = 'G-NFDK8SXY0M'
+// Both IDs live in src/config/analytics.js; this module only validates what
+// that file exports, so an empty string can switch either one off.
 
 // `GTM-` plus 4 to 12 letters or digits; `G-` plus 6 to 20 letters or digits.
 const CONTAINER_ID_PATTERN = /^GTM-[A-Z0-9]{4,12}$/

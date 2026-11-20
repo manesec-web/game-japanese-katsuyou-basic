@@ -45,7 +45,7 @@ node scripts/write-audio-manifest.mjs --check
 npm run build
 ls output/dict                 # vol.bin + resource/ (46 .bin files)
 ```
-`node scripts/browser-check.mjs` runs `vite preview` + headless Chromium over loading (cold boot, cache reuse, simulated storage failure), all screens and audio: 682 checks / 0 failures here (±1 with the seeded quiz item); it also asserts one `vol.bin` request, binary Content-Type, a 50-entry ZIP and 46 audio bins. If it passes, suspect the origin or server, not the build. Env: `PORT` (default 5199), `CHROMIUM_PATH`, `SHOT_DIR`, `--screenshots`.
+`node scripts/browser-check.mjs` runs `vite preview` + headless Chromium over loading (cold boot, cache reuse, simulated storage failure), all screens and audio: 671 checks / 0 failures here (±1 with the seeded quiz item); it also asserts one `vol.bin` request, binary Content-Type, a 50-entry ZIP and 46 audio bins. If it passes, suspect the origin or server, not the build. Env: `PORT` (default 5199), `CHROMIUM_PATH`, `SHOT_DIR`, `--screenshots`.
 
 ## GitHub Pages
 Pages serves HTTPS, so Web Crypto and IndexedDB work. Publish the contents of `output/` (gitignored) at the root of the Pages branch/folder; Pages adds the subpath and `dict/vol.bin` is fetched relative to the page URL. Live site: https://manesec-web.github.io/game-japanese-katsuyou-basic/ (verified 2026-11-14: HTTP 200; `vol.bin` answers `application/octet-stream`). Renaming the repo means changing `base` in `vite.config.js` and `SITE_BASE` in `scripts/browser-check.mjs`.
