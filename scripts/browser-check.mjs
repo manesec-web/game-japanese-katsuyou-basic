@@ -1352,7 +1352,7 @@ try {
   )
   check('card start disabled without lessons', await page.locator('.picker-start').isDisabled())
   await page.locator('.form-select').click()
-  await page.locator('.form-option', { hasText: /^字典形$/ }).click()
+  await page.locator('.form-option', { hasText: /^辭書形$/ }).click()
   check(
     'changing 從 removes that form from 到',
     (await page.locator('.chip--form.chip--on').count()) === 1,
@@ -1393,11 +1393,11 @@ try {
         sideways: document.documentElement.scrollWidth - window.innerWidth,
       }
     })
-  // 從 is 字典形 here, so 字典形 is the locked chip (到 holds ます形 only).
+  // 從 is 辭書形 here, so 辭書形 is the locked chip (到 holds ます形 only).
   let targetState = await readTargetChips()
   check(
     'the 從 form is disabled as a 到 chip',
-    targetState.total === 15 && targetState.lockedName === '字典形' &&
+    targetState.total === 15 && targetState.lockedName === '辭書形' &&
       targetState.lockedClass.includes('chip--locked') &&
       targetState.lockedPressed === 'false',
     JSON.stringify(targetState),
@@ -1448,7 +1448,7 @@ try {
     'the lock follows a new 從',
     targetState.lockedName === 'ます形' &&
       targetState.lockedPressed === 'false' &&
-      (await page.locator('.chip--form', { hasText: /^字典形$/ }).isEnabled()),
+      (await page.locator('.chip--form', { hasText: /^辭書形$/ }).isEnabled()),
     JSON.stringify(targetState),
   )
   // The widest chip sits in the last column, where a centred tooltip would
@@ -1698,7 +1698,7 @@ try {
     'a word query keeps only the matching dictionary-form row, tagged and highlighted',
     (await page.locator('.toc-row').count()) === 1 &&
       filteredWord.trim() === lessonFiveVerbs[1].dict &&
-      filteredTag.trim() === '字典形' &&
+      filteredTag.trim() === '辭書形' &&
       filteredHits.join('|') === lessonFiveVerbs[1].dict,
     `rows=${await page.locator('.toc-row').count()} word=${filteredWord} tag=${filteredTag} hits=${filteredHits.join('|')}`,
   )
@@ -2036,13 +2036,13 @@ try {
   check('全選 selects all 15 display forms again', (await pressedCount()) === 15, String(await pressedCount()))
   check('the display control becomes 取消全選 again', (await displayControlText()) === '取消全選', await displayControlText())
   // A manual toggle also updates the control's label.
-  await page.locator('.settings .form-chips .chip', { hasText: /^字典形$/ }).click()
+  await page.locator('.settings .form-chips .chip', { hasText: /^辭書形$/ }).click()
   check(
     'hiding one form returns the display control to 全選',
     (await displayControlText()) === '全選' && (await pressedCount()) === 14,
     `label=${await displayControlText()} pressed=${await pressedCount()}`,
   )
-  await page.locator('.settings .form-chips .chip', { hasText: /^字典形$/ }).click()
+  await page.locator('.settings .form-chips .chip', { hasText: /^辭書形$/ }).click()
   check(
     'restoring the last form returns the display control to 取消全選',
     (await displayControlText()) === '取消全選' && (await pressedCount()) === 15,
@@ -2401,11 +2401,11 @@ try {
   check('reading switch hides ruby', (await page.locator('.reader-page--current rt').count()) === 0)
 
   // 選擇顯示的類型 hides a deselected form; restoring it brings it back. The
-  // chip under test is 字典形, because て形 is the current 預設顯示形式 and its
+  // chip under test is 辭書形, because て形 is the current 預設顯示形式 and its
   // chip is a disabled button (it can never be switched off).
   await page.locator('.icon-button[aria-label="設定"]').click()
   await page.waitForSelector('.settings', { timeout: 5000 })
-  await page.locator('.form-chips .chip', { hasText: /^字典形$/ }).click()
+  await page.locator('.form-chips .chip', { hasText: /^辭書形$/ }).click()
   await page.locator('.icon-button[aria-label="返回"]').click()
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   check(
@@ -2418,7 +2418,7 @@ try {
   )
   await page.locator('.icon-button[aria-label="設定"]').click()
   await page.waitForSelector('.settings', { timeout: 5000 })
-  await page.locator('.form-chips .chip', { hasText: /^字典形$/ }).click()
+  await page.locator('.form-chips .chip', { hasText: /^辭書形$/ }).click()
   await page.locator('.icon-button[aria-label="返回"]').click()
   await page.waitForSelector('.reader-body', { timeout: 5000 })
   check(
@@ -2472,7 +2472,7 @@ try {
   check('the example sentences keep the reading edge', layout.sentence !== 'center', layout.sentence)
 
   // Revision 31: each of the 15 drawn blocks must render THAT form's own
-  // Chinese gloss, not the shared 字典形 meaning. 第2課's 違う is the worked
+  // Chinese gloss, not the shared 辭書形 meaning. 第2課's 違う is the worked
   // sample — ません形, て形 and the error marker must all appear verbatim.
   // The double-strike/error blocks are still drawn with 跳過錯誤的單詞 off.
   const glossSweep = await page.evaluate(() => {
@@ -2666,7 +2666,7 @@ try {
       emptied.separateHint === null,
     JSON.stringify(emptied),
   )
-  await page.locator('.chip--form', { hasText: '字典形' }).click()
+  await page.locator('.chip--form', { hasText: '辭書形' }).click()
   const restored = await page.evaluate(() => ({
     text: document.querySelector('.picker-start').textContent.trim(),
     disabled: document.querySelector('.picker-start').disabled,
@@ -2730,7 +2730,7 @@ try {
   const faceWord = await wordText(page, '.card--current .card-face .word')
   const cardVerb = byMasu(faceWord)
   check('card face shows a source form from the lesson', Boolean(cardVerb), faceWord)
-  check('card face names the target', (await page.locator('.card--current .card-face .prompt').textContent()).trim() === '變成字典形')
+  check('card face names the target', (await page.locator('.card--current .card-face .prompt').textContent()).trim() === '變成辭書形')
   check('card face shows the verb-class tag', (await page.locator('.card--current .card-face .tag--group').count()) === 1)
   const faceTagAboveWord = await page.evaluate(() => {
     const tag = document.querySelector('.card--current .card-face .tag')
@@ -2778,7 +2778,7 @@ try {
   await wait(200)
   check(
     'the answer carries the asked form as a tag',
-    (await page.locator('.card--current .card-back .tag--form').textContent()).trim() === '字典形',
+    (await page.locator('.card--current .card-back .tag--form').textContent()).trim() === '辭書形',
     (await page.locator('.card--current .card-back .tag--form').textContent()).trim(),
   )
   check(
@@ -3007,7 +3007,7 @@ try {
   })
   check(
     'the answer keeps naming the asked form',
-    answerPills?.texts?.[0] === '字典形',
+    answerPills?.texts?.[0] === '辭書形',
     JSON.stringify(answerPills?.texts),
   )
   check(
@@ -3109,7 +3109,7 @@ try {
     if (on !== want) await chip.click()
   }
   // 從 stays ます形; make 到 just 受身形 (lesson 10 flags ある's 受身形).
-  await page.locator('.chip--form', { hasText: /^字典形$/ }).click()
+  await page.locator('.chip--form', { hasText: /^辭書形$/ }).click()
   await page.locator('.chip--form', { hasText: /^受身形$/ }).click()
   await page.locator('.picker-start').click()
   await page.waitForSelector('.card-stage', { timeout: 5000 })
@@ -3289,7 +3289,7 @@ try {
   )
   check(
     'each missed row keeps the asked form and the answer',
-    missRows.every((row) => row.includes('字典形')),
+    missRows.every((row) => row.includes('辭書形')),
     missRows.join(' | '),
   )
   const band = await page.evaluate(() => {
@@ -3411,7 +3411,7 @@ try {
     const want = label === '第10課'
     if (on !== want) await chip.click()
   }
-  await page.locator('.chip--form', { hasText: /^字典形$/ }).click()
+  await page.locator('.chip--form', { hasText: /^辭書形$/ }).click()
   await page.locator('.chip--form', { hasText: /^受身形$/ }).click()
   await page.locator('.picker-start').click()
   await page.waitForSelector('.quiz-body', { timeout: 5000 })
@@ -3437,11 +3437,11 @@ try {
   await page.waitForSelector('.quiz-body', { timeout: 5000 })
   check('turning 跳過錯誤的單詞 off restores the error item', (await page.locator('.bar-title').textContent()).trim() === '測驗（1/2）')
 
-  // Restore the quiz picker's 到 to 字典形 for the sections that follow.
+  // Restore the quiz picker's 到 to 辭書形 for the sections that follow.
   await page.locator('.icon-button[aria-label="返回"]').click()
   await page.waitForSelector('.chip-grid', { timeout: 5000 })
   await page.locator('.chip--form', { hasText: /^受身形$/ }).click()
-  await page.locator('.chip--form', { hasText: /^字典形$/ }).click()
+  await page.locator('.chip--form', { hasText: /^辭書形$/ }).click()
 
   // A perfect run earns the whole 100% row plus the confetti layer.
   await page.reload({ waitUntil: 'load' })
@@ -4709,15 +4709,15 @@ try {
   check('小提示 explains the mechanism', (await page.locator('.tips-list li').count()) === 7)
 
   await page.locator('.form-select').first().click()
-  await page.locator('.form-option', { hasText: '字典形' }).click()
+  await page.locator('.form-option', { hasText: '辭書形' }).click()
   await page.locator('.form-select').nth(1).click()
   await page.locator('.form-option', { hasText: 'ます形' }).click()
-  check('字典形 → ます形 shows the 段 mapping', (await page.locator('.rule-map-line').first().textContent()).trim() === 'う → い　く → き　ぐ → ぎ')
+  check('辭書形 → ます形 shows the 段 mapping', (await page.locator('.rule-map-line').first().textContent()).trim() === 'う → い　く → き　ぐ → ぎ')
 
   await page.locator('.form-select').nth(1).click()
   await page.locator('.form-option', { hasText: 'ない形' }).click()
-  check('字典形 → ない形 flags う → わ', (await page.locator('.rule-map-note').first().textContent()).includes('不是「あ」'))
-  check('字典形 → ない形 warns about 買わない', (await page.locator('.rule-section').first().locator('.rule-note--warn').allTextContents()).join(' ').includes('買う → 買わない'))
+  check('辭書形 → ない形 flags う → わ', (await page.locator('.rule-map-note').first().textContent()).includes('不是「あ」'))
+  check('辭書形 → ない形 warns about 買わない', (await page.locator('.rule-section').first().locator('.rule-note--warn').allTextContents()).join(' ').includes('買う → 買わない'))
 
   await page.locator('.example-pick').click()
   await page.waitForSelector('.example-row', { timeout: 5000 })
@@ -4813,13 +4813,13 @@ try {
 
   // Regression: 泳ぎます → 泳ぐ shows 「ぎ → ぐ」 but no redundant 「＋ ぐ」.
   await page.locator('.form-select').first().click()
-  await page.locator('.form-option', { hasText: '字典形' }).click()
+  await page.locator('.form-option', { hasText: '辭書形' }).click()
   await page.locator('.form-select').nth(1).click()
   await page.locator('.form-option', { hasText: 'ます形' }).click()
   await page.locator('.form-select').first().click()
   await page.locator('.form-option', { hasText: 'ます形' }).click()
   await page.locator('.form-select').nth(1).click()
-  await page.locator('.form-option', { hasText: '字典形' }).click()
+  await page.locator('.form-option', { hasText: '辭書形' }).click()
   await page.locator('.example-pick').click()
   await page.waitForSelector('.example-row', { timeout: 5000 })
   await page.locator('button[aria-label="搜尋"]').click()

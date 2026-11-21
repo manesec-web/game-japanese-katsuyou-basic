@@ -72,7 +72,7 @@ No `public/` directory. `vol/` is packed into `output/dict/vol.bin` and served i
 | `quiz.advance` | Continue after a revealed answer |
 | `settings.patch` | Merge settings; unknown field rejects the whole patch |
 | `audio.play` | `params.target`, `lesson`, `text`: lazily download + sha256-verify the lesson bin, decompress and play one Opus entry; bad params → `invalid-params`, any failure → `audio-unavailable` / 「該音頻暫時無法播放」 |
-| `rule.open` | Open 變形說明 with `params.to`; 從 defaults ます形 (字典形 when 到 is ます形); example resets |
+| `rule.open` | Open 變形說明 with `params.to`; 從 defaults ます形 (辭書形 when 到 is ます形); example resets |
 | `rule.setFrom` / `rule.setTo` | Change 從 / 到; 到 never equals 從, so a collision moves 到 to the fallback |
 | `rule.selectExample` | Pick example from 選字 by `lesson` + `index` (real verb or `error`) |
 | `rule.openFromReader` | Reader's 變形原理: `params.to`, optional `scrollTop`; 從 = 預設顯示形式, 例如 = current verb |

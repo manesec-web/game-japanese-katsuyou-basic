@@ -1,7 +1,7 @@
 // The 15 conjugation forms, in the canonical order used everywhere
 // (data files, pickers, card ordering). On-screen names are product copy.
 export const FORMS = [
-  { id: 'dictionary-form', name: '字典形' },
+  { id: 'dictionary-form', name: '辭書形' },
   { id: 'masu-form', name: 'ます形' },
   { id: 'masu-form-negative', name: 'ません形' },
   { id: 'masu-form-past', name: 'ました形' },

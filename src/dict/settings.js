@@ -220,7 +220,7 @@ export function isAllTargetsSelected(to, from) {
 }
 
 // 全選 beside 到: select every form except 從; when that is already complete,
-// leave only 字典形, or ます形 when 從 is already 字典形.
+// leave only 辭書形, or ます形 when 從 is already 辭書形.
 export function nextSelectAllTargets(to, from) {
   if (isAllTargetsSelected(to, from)) return [fallbackTarget(from)]
   return allTargetsExcept(from)

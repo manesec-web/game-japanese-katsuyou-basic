@@ -51,7 +51,7 @@ describe('rule.open', () => {
     expect(session.rule.example).toBeNull()
   })
 
-  it('uses 字典形 as 從 when the pressed form is ます形', () => {
+  it('uses 辭書形 as 從 when the pressed form is ます形', () => {
     const { registry, session } = onLearnSession()
     registry.dispatch(session, 'rule.open', { to: 'masu-form' })
     expect(session.rule.from).toBe('dictionary-form')

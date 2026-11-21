@@ -53,7 +53,7 @@ describe('cardEntries', () => {
       expect(entry.face.word).toBe(`ます${entry.at}`)
       expect(entry.back.word).toBe(`辞${entry.at}`)
       expect(entry.back.gloss).toBe(`語義${entry.at}`)
-      expect(entry.face.prompt).toBe('變成字典形')
+      expect(entry.face.prompt).toBe('變成辭書形')
     }
     const words = entries.filter((entry) => entry.at !== null).map((entry) => entry.face.word)
     expect(new Set(words).size).toBe(words.length)
@@ -85,11 +85,11 @@ describe('cardEntries', () => {
     const entries = cardEntries(cardItems(20), windowSlots(20, 5, CARD_WINDOW), settings)
     const current = entries[CURRENT_SLOT]
     expect(current.face.tags).toEqual([{ kind: 'group', text: '1類動詞', className: 'tag--group' }])
-    expect(current.back.tags.map((tag) => tag.text)).toEqual(['字典形', '1類動詞', '第5課'])
+    expect(current.back.tags.map((tag) => tag.text)).toEqual(['辭書形', '1類動詞', '第5課'])
     const off = cardEntries(cardItems(20), windowSlots(20, 5, CARD_WINDOW), { ...settings, showGroup: false })
     expect(off[CURRENT_SLOT].face.tags).toEqual([])
     // The answer side names the form and the class even with the switch off.
-    expect(off[CURRENT_SLOT].back.tags.map((tag) => tag.text)).toEqual(['字典形', '1類動詞', '第5課'])
+    expect(off[CURRENT_SLOT].back.tags.map((tag) => tag.text)).toEqual(['辭書形', '1類動詞', '第5課'])
   })
 })
 

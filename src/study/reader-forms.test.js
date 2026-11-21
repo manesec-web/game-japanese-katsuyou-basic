@@ -64,7 +64,7 @@ describe('first-block labelling', () => {
 
   it('keeps a form name for every block', () => {
     const entries = orderedFormEntries(verb, 'te-form')
-    expect(entries.map((entry) => entry.name)).toEqual(['て形', '字典形', 'ます形', 'ない形'])
+    expect(entries.map((entry) => entry.name)).toEqual(['て形', '辭書形', 'ます形', 'ない形'])
     expect(entries.every((entry) => Boolean(entry.name) && Boolean(entry.data))).toBe(true)
   })
 

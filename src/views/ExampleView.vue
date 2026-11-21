@@ -14,7 +14,7 @@ const query = ref('')
 
 const rows = computed(() => exampleRows(store.deps.library))
 // The picker lists the current 從 form: 從 = ます形 shows ます形 words, 從 =
-// 字典形 shows 字典形 words, and so on.
+// 辭書形 shows 辭書形 words, and so on.
 const groups = computed(() => exampleGroups(rows.value, searchOpen.value ? query.value : '', session.rule.from))
 
 function back() {

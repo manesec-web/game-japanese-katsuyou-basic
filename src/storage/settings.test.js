@@ -15,7 +15,7 @@ describe('settings storage', () => {
     const storage = createSettingsStorage({ storage: fakeStorage() })
     const settings = storage.load()
     expect(settings).toEqual(defaultSettings())
-    // A fresh browser starts on ます形 for 從 and 預設顯示形式, 字典形 only in 到.
+    // A fresh browser starts on ます形 for 從 and 預設顯示形式, 辭書形 only in 到.
     expect(settings.dict.defaultForm).toBe('masu-form')
     expect(settings.card.from).toBe('masu-form')
     expect(settings.quiz.from).toBe('masu-form')

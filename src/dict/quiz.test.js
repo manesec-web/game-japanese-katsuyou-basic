@@ -93,7 +93,7 @@ describe('buildKeyboard', () => {
 
 describe('questionFor', () => {
   it('asks 原型是什麼？ for the dictionary form', () => {
-    expect(questionFor('字典形', 'dictionary-form')).toBe('原型是什麼？')
+    expect(questionFor('辭書形', 'dictionary-form')).toBe('原型是什麼？')
   })
 
   it('names the target form otherwise', () => {

@@ -35,7 +35,7 @@ describe('results', () => {
 
   it('reports 0% when every item was missed', () => {
     const results = createResults()
-    recordMiss(results, { vol: 'A', formName: '字典形', answer: 'A' })
+    recordMiss(results, { vol: 'A', formName: '辭書形', answer: 'A' })
     recordMiss(results, { vol: 'B', formName: 'た形', answer: 'B-ta' })
     expect(results.wrong).toBe(2)
     expect(results.misses).toHaveLength(2)
@@ -52,7 +52,7 @@ describe('results', () => {
 
   it('keeps one miss per item, not one per wrong keystroke', () => {
     const results = createResults()
-    recordMiss(results, { vol: 'A', formName: '字典形', answer: 'A' })
+    recordMiss(results, { vol: 'A', formName: '辭書形', answer: 'A' })
     expect(results.misses).toHaveLength(1)
   })
 })

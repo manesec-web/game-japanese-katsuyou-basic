@@ -221,7 +221,7 @@ describe('finishing a quiz run', () => {
     expect(session.answer.revealed).toBe(true)
     expect(session.results.wrong).toBe(1)
     expect(session.results.misses).toEqual([
-      { vol: '来ます', reading: 'きます', formName: '字典形', answer: '来る' },
+      { vol: '来ます', reading: 'きます', formName: '辭書形', answer: '来る' },
     ])
     // The answer is revealed but the run only ends on 下一題.
     expect(session.finished).toBe(false)

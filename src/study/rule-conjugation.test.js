@@ -65,7 +65,7 @@ describe('conjugation tables', () => {
 })
 
 describe('段 / 音便 mapping follows 變形設置', () => {
-  it('字典形 → ます形 shows the う段 → い段 kana pairs', () => {
+  it('辭書形 → ます形 shows the う段 → い段 kana pairs', () => {
     const lines = mappingLines('dictionary-form', 'masu-form')
     expect(lines[0].line).toBe('う → い　く → き　ぐ → ぎ')
     expect(lines[2].line).toContain('る → り')
@@ -94,7 +94,7 @@ describe('段 / 音便 mapping follows 變形設置', () => {
     expect(lines[2].line).toBe('か → いて')
   })
 
-  it('字典形 → ない形 flags the う → わ exception on the first row', () => {
+  it('辭書形 → ない形 flags the う → わ exception on the first row', () => {
     const lines = mappingLines('dictionary-form', 'nai-form')
     expect(lines[0].line).toBe('う → わ　く → か　ぐ → が')
     expect(lines[0].note).toContain('不是「あ」')

@@ -25,7 +25,7 @@ describe('backTags', () => {
   it('always names the asked form and the verb class', () => {
     const tags = backTags('dictionary-form', target)
     expect(tags).toHaveLength(2)
-    expect(tags[0]).toEqual({ kind: 'form', text: '字典形', className: 'tag--form' })
+    expect(tags[0]).toEqual({ kind: 'form', text: '辭書形', className: 'tag--form' })
     expect(tags[1]).toEqual({ kind: 'group', text: '1類動詞', className: 'tag--group' })
   })
 
@@ -61,7 +61,7 @@ describe('backTags', () => {
 
   it('adds the lesson tag when a lesson is supplied', () => {
     const tags = backTags('dictionary-form', target, { lesson: 7 })
-    expect(tags.map((tag) => tag.text)).toEqual(['字典形', '1類動詞', '第7課'])
+    expect(tags.map((tag) => tag.text)).toEqual(['辭書形', '1類動詞', '第7課'])
     expect(tags[2]).toEqual({ kind: 'lesson', text: '第7課', className: 'tag--lesson' })
   })
 

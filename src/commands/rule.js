@@ -12,7 +12,7 @@ export function specs(deps = {}) {
     {
       // A directory row opens 變形說明 with 到 set to the pressed form and 從
       // set to the default ます形; when the pressed form is ます形, 從 becomes
-      // 字典形 so 從 and 到 differ. The example resets on every entry.
+      // 辭書形 so 從 and 到 differ. The example resets on every entry.
       id: 'rule.open',
       params: ['to'],
       enabled: (session, params) => session.screen === 'learn' && FORM_IDS.includes(params.to),

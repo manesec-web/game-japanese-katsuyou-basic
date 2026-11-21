@@ -109,7 +109,7 @@ describe('全選 到', () => {
     expect(nextSelectAllTargets([DICT], MASU)).toEqual(allTargetsExcept(MASU))
   })
 
-  it('clears to the 字典形 fallback when everything is already selected', () => {
+  it('clears to the 辭書形 fallback when everything is already selected', () => {
     const all = allTargetsExcept(MASU)
     expect(isAllTargetsSelected(all, MASU)).toBe(true)
     expect(nextSelectAllTargets(all, MASU)).toEqual([DICT])

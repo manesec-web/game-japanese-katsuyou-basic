@@ -182,7 +182,7 @@ export function onbinNote(formId, ending) {
 }
 
 // The 音便 / 段 mapping for a (from, to) pair. This is the part that MUST change
-// with 變形設置: 字典形→て形 shows う、つ、る → って, ます形→て形 shows
+// with 變形設置: 辭書形→て形 shows う、つ、る → って, ます形→て形 shows
 // い、ち、り → って, ない形→て形 shows わ、た、ら → って, and a reverse pair
 // shows って → い、ち、り. Returns null when no kana mapping is needed (both
 // forms sit on the same 段 and only the 語尾 changes).
@@ -341,7 +341,7 @@ const NOTES = [
   },
   {
     c: 'tip',
-    t: '💡 記憶口訣：字典形在 う段、ます形在 い段、ない形在 あ段、可能形／命令形／ば形在 え段、意向形在 お段。',
+    t: '💡 記憶口訣：辭書形在 う段、ます形在 い段、ない形在 あ段、可能形／命令形／ば形在 え段、意向形在 お段。',
     when: () => true,
   },
   {

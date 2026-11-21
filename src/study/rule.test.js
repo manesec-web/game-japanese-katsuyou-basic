@@ -13,8 +13,8 @@ import { RULE_CONTENT } from '../data/rule-content.js'
 
 describe('ruleTitle', () => {
   it('names the two forms in the heading', () => {
-    expect(ruleTitle('masu-form', 'dictionary-form')).toBe('從 ます形 到 字典形 的變形如下')
-    expect(ruleTitle('dictionary-form', 'te-form')).toBe('從 字典形 到 て形 的變形如下')
+    expect(ruleTitle('masu-form', 'dictionary-form')).toBe('從 ます形 到 辭書形 的變形如下')
+    expect(ruleTitle('dictionary-form', 'te-form')).toBe('從 辭書形 到 て形 的變形如下')
   })
 
   it('returns an empty string for an unknown form', () => {
