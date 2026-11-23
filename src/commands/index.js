@@ -10,6 +10,8 @@ import { specs as audioSpecs } from './audio.js'
 import { specs as ruleSpecs } from './rule.js'
 import { specs as readerRuleSpecs } from './reader-rule.js'
 import { specs as themeSpecs } from './theme.js'
+import { specs as urlSpecs } from './url.js'
+import { specs as linkSpecs } from './link.js'
 
 export function allSpecs(deps = {}) {
   return [
@@ -25,5 +27,7 @@ export function allSpecs(deps = {}) {
     ...ruleSpecs(deps),
     ...readerRuleSpecs(deps),
     ...themeSpecs(deps),
+    ...urlSpecs(deps),
+    ...linkSpecs(deps),
   ]
 }

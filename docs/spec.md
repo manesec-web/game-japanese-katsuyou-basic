@@ -94,7 +94,7 @@ Without a download — the usual reload, where stored copies are only re-hashed 
 
 ## Screens
 
-State machine: `loading` → `home` → `picker` → (`reader` | `card` | `quiz`). Those last three can open `settings` and return, and the dictionary reader can also open `toc` (單詞目錄) and return. The home screen also opens `learn` (學習目錄), which opens `rule` (變形說明); the reader's 變形原理 buttons open the same `rule` screen directly, with `rule.returnTo` naming where back returns. `rule` opens `example` (選字) and returns to the same scroll position; from the reader it returns to the reader at the same scroll position. A reload starts at `loading` again; when the dictionary is already in IndexedDB, boot only checks hashes, and the progress bar still runs.
+State machine: `loading` → `home` → `picker` → (`reader` | `card` | `quiz`). Those last three can open `settings` and return, and the dictionary reader can also open `toc` (單詞目錄) and return. The home screen also opens `learn` (學習目錄), which opens `rule` (變形說明); the reader's 變形原理 buttons open the same `rule` screen directly, with `rule.returnTo` naming where back returns. `rule` opens `example` (選字) and returns to the same scroll position; from the reader it returns to the reader at the same scroll position. A reload starts at `loading` again; when the dictionary is already in IndexedDB, boot only checks hashes, and the progress bar still runs. A URL deep link (see URL deep links) applies after a successful boot lands on `home`.
 
 The column is `min(100%, 480px)`, centered horizontally. At viewport widths of 550px or less the column is full-bleed: it fills the browser, with no side margins, radius, or shadow, and the gradient background and grain are dropped so the column colour is the whole page. Above 550px the column keeps its frame and the background is visible; that frame is also the signal that the page is in desktop mode.
 
@@ -108,7 +108,7 @@ The light theme is the site as it always looked: warm off-white column, indigo a
 
 ### Loading
 
-The loading screen carries the same three-line head as the home screen: the large title `大家の日本語`, the medium subtitle `動詞轉型練習`, and the line `涵蓋初級 1 – 50 課的動詞`. The `Loading ...` line and the progress bar sit under that head. Its footer is the credit line `Build with ❤ by Mane` alone; the loading screen does not carry the `🥺 如果有 BUG 記得告訴我！` line. The credit opens the same About sheet as the home footer. The head and the footer stay on screen while boot runs and while a failure offers retry; only the progress area changes.
+The loading screen opens on a square 1:1 logo icon (`docs/logo/logo-512.png`, the same artwork as the tab icons) instead of the three-line head. Under it a circular arc spinner spins — a resting ring in the track colour with a sweeping accent-coloured arc — with no `Loading ...` line and no linear bar; the spinner is `role="status"` and labelled `載入中`. Under `prefers-reduced-motion: reduce` the arc holds still instead of spinning. Its footer is the credit line `Build with ❤ by Mane` alone; the loading screen does not carry the `🥺 如果有 BUG 記得告訴我！` line. The credit opens the same About sheet as the home footer. The icon and the footer stay on screen while boot runs and while a failure offers retry; the spinner is swapped for the error text and 重試 button on failure.
 
 ### Home
 
@@ -133,7 +133,7 @@ Each mode remembers its own lessons and form choices under the `localStorage` ke
 
 Top: back (to the picker), the title `字典`, a 目錄 button, and a settings gear; the two icon buttons sit at the right edge in that order, 目錄 first, then the gear. The body draws the forms selected in 選擇顯示的類型, with the 預設顯示形式 first and the remaining drawn forms in the canonical order of the table above; 跳過錯誤的單詞 also leaves out `error_usage` forms. With the default settings all 15 are drawn. Each drawn form block shows:
 
-- A small heading with the form name, for example `辭書形` or `ます形`; every block has one. On the same row, to the right of every form except the 預設顯示形式, a `變形原理` button uses the same type as the heading and greys on hover. A press runs `rule.openFromReader`: 變形說明 with 從 = the reader's 預設顯示形式, 到 = that form, 例如 preselected to the word on screen; back returns to the reader at the same scroll position.
+- A small heading with the form name, for example `辭書形` or `ます形`; every block has one. On the same row, to the right of every form except the 預設顯示形式, a `變形原理` button uses the same type as the heading and greys on hover. A press runs `rule.openFromReader`: 變形說明 with 從 = the reader's 預設顯示形式, 到 = that form, 例如 preselected to the word on screen; back returns to the reader at the same scroll position. The 預設顯示形式 block carries a `分享` button in that same spot instead; a press copies the current word's deep-link URL (see URL deep links) and the button briefly reads `已分享`.
 - The word `vol`, centred. When readings are on, apply the ruby rules below so `japanese` sits on the kanji. When the form carries `error_usage`, the word takes the error colour and its base text is struck through twice — two lines in that same error colour, across the kanji and the kana — while the reading above it keeps the colour and is not struck; the strike never changes the colour. With 跳過錯誤的單詞 on, such forms are not drawn at all.
 - The gloss `chinese`, centred: the per-form meaning defined in Data, printed exactly as stored — `；`, `…`, parentheses and the `（禮貌體）` / `（普通體）` / `（此形日常少用）` suffixes stay in the text.
 - Two tags, the group label and `第N課`, as a centred row. Only the first drawn block carries them, so the pills appear once per word rather than once per form.
@@ -234,7 +234,7 @@ Home adds a fourth entry, 學習, above 字典. It opens a grammar reference, no
 
 Top bar: back returns to 學習目錄 (or to the dictionary reader, at its saved scroll position, when opened from 變形原理), title `變形說明`. Top to bottom:
 
-1. A section label `變形設置`. `例如` and `小提示` use this same section-label style (one shared class), not a separate heading style.
+1. A section label `變形設置` with a `分享` button at its right edge; a press copies the current 變形說明 deep-link URL (從/到, plus the chosen example verb when there is one) and the button briefly reads `已分享`. `例如` and `小提示` use this same section-label style (one shared class), not a separate heading style.
 2. `從` — one single-choice dropdown of the 15 forms, default `ます形`, the same control as the picker's 從 (36px button, `ChevronDown`, list with drawn thumb).
 3. `到` — one single-choice dropdown of the 15 forms except the current 從, default `辭書形`. Changing 從 to the current 到 moves 到 to the fallback target — `辭書形`, or `ます形` when 從 is already `辭書形` — so the two are never equal.
 4. A drawn 1px `.hrule` above the heading `從 {從名} 到 {到名} 的變形如下` (using the two forms' on-screen names). The same drawn rule separates 例如 and 小提示 from the content above them; it is its own element, never a border on a neighbour.
@@ -366,6 +366,36 @@ Every screen change pushes `{ event: 'page_view', screen_name, page_title, page_
 `localStorage` key `katsuyou-settings` stores: each mode’s lesson list; 從 and 到 for cards and for the quiz; the dictionary's default form; the dictionary's 選擇顯示的類型 list; three reading switches, one each for dictionary, cards, and quiz; the card verb-class switch; each mode's 跳過錯誤的單詞 switch; quiz auto-submit; quiz 錯 X 題就顯示答案.
 
 A key `katsuyou-theme` stores the theme the user chose with the start screen's switch: `light` or `dark`. It is not part of the settings object and it is absent until the user presses the switch, so the OS preference stays in charge until then. An unrecognised value is ignored. A missing field uses the default above. Invalid JSON resets the whole object to the defaults. The 學習 mode's 從, 到 and chosen example word are transient screen state and are not stored here.
+
+## URL deep links
+
+A query string on the page URL deep-links into one screen after boot. The URL is read once at load; the browser URL is never changed afterwards, consistent with Analytics (a screen is reported as `#/<screen>`, not routed). A deep link applies only after a successful boot: boot still lands on `home` as before, then the deep link makes one ordinary 220ms screen change to its target. A failed boot never applies the deep link, and retry still lands on `home`.
+
+The parameters:
+
+| Param | Meaning |
+|---|---|
+| `screen` | The target screen id: `reader`, `toc`, `rule`, or `learn`. Any other value, or no `screen`, is not a deep link and the site boots to `home` as usual. |
+| `lesson` | The lesson number, an integer 1–50. Required for `reader` and `toc`; optional for `rule` (preselects 例如). |
+| `word` | The word to find, in romaji, hiragana, katakana or kanji. Optional when `index` is given. |
+| `index` | The verb's position inside the lesson's JSON order (0-based), the same reference 選字 uses. When present it names the verb exactly and `word` is ignored. |
+| `from` / `to` | Form ids from the 15-form table, for `rule` only. Both are required and must differ. |
+
+Resolution and fallback:
+
+- `lesson` must be 1–50 and a lesson that has verbs. `word` resolves against that lesson's verbs: a verb matches when the query matches any of its 15 forms — the displayed `vol` literally, or the `japanese` reading after a Latin query is converted to kana (the same rules 單詞目錄 search uses). The first matching verb in JSON order is chosen. `index`, when present, is used directly and must name a real verb. A lesson with no verbs, a word that matches no verb, or an out-of-range index makes the deep link invalid.
+- Any invalid parameter — an unknown `screen`, a bad `lesson`, a `from` equal to `to` or not a form id, an unresolvable word — makes the deep link a no-op: the site boots to `home` and nothing is applied. A deep link never throws and never shows an error screen; bad params simply fall back to `home`.
+
+Per screen:
+
+- `reader`: builds a dictionary run over the single target lesson (the current dictionary settings still decide which forms are drawn and how they are read), then opens the reader on the resolved verb. 上一個 / 下一個 then page inside that one lesson's run.
+- `toc`: builds the same single-lesson run, opens 單詞目錄 on the resolved verb, and — when `word` was given — opens the search box with `word` prefilled. The prefill is one-shot: a later ordinary visit to 單詞目錄 starts with the search closed.
+- `rule`: opens 變形說明 with `from` and `to` set to the given forms and, when `lesson` plus (`word` or `index`) name a verb, that verb preselected as 例如; without a verb the 例如 block keeps its default 選擇單詞作為例子. Back returns to 學習目錄.
+- `learn`: opens 變形目錄.
+
+When the site generates a deep-link URL (the 分享 buttons and the console log), `word` is the verb's dictionary-form written form when it contains kanji — kanji disambiguates homophones like 帰る and 変える — and the reading converted to hiragana otherwise (コピーする → こぴーする).
+
+console.log observation: at load the site logs the page's base URL and the parsed deep link (or `no deeplink`), and every screen change logs one line with the screen id and a freshly generated deep-link URL for that screen — `?screen=reader&lesson=N&word=<word>` and the like for the deep-linkable screens, the bare base URL for the rest. The log statements live in one place and are trivial to remove; they change no behavior.
 
 ## Build
 

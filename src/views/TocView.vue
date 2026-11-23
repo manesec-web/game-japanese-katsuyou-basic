@@ -42,6 +42,13 @@ watch(query, () => window.scrollTo({ top: 0, behavior: 'auto' }))
 // screen keeps its first row at the top. The page may arrive scrolled from the
 // reader, so the top comes first either way.
 onMounted(async () => {
+  // A URL deep link can hand 單詞目錄 a one-shot search prefill; consume it
+  // once so an ordinary later visit opens with the box closed.
+  const prefill = store.send('toc.takePrefill')
+  if (prefill.ok && prefill.result.query) {
+    query.value = prefill.result.query
+    searchOpen.value = true
+  }
   window.scrollTo({ top: 0, behavior: 'auto' })
   await nextTick()
   const current = document.querySelector('.toc-row[aria-current="true"]')

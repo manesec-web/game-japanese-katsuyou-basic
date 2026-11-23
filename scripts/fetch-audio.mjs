@@ -18,6 +18,7 @@ import {
   buildManifest,
   nonEmptyLessons,
   RELEASE_API,
+  validateManifest,
 } from './write-audio-manifest.mjs'
 
 const rootDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -94,17 +95,65 @@ export async function syncAudioResources({
   return { upToDate, downloaded, manifest }
 }
 
+// Offline fallback: the release API is unreachable, so the local cache is
+// verified against the committed manifest instead of re-downloading. Throws
+// when the manifest is invalid or any bin is missing / mismatched.
+export function verifyAudioResources({ lessons, manifest, dir = resourceDir, sha256 = nodeSha256 }) {
+  const check = validateManifest(manifest, lessons)
+  if (!check.ok) {
+    throw new Error(`local audio manifest is invalid: ${check.errors.join('; ')}`)
+  }
+  const expected = new Map(manifest.lessons.map((entry) => [entry.file, entry.sha256]))
+  for (const lesson of lessons) {
+    const file = audioBinFile(lesson)
+    const target = path.join(dir, file)
+    if (!fs.existsSync(target)) {
+      throw new Error(`${file} is missing from the local cache and the release API is unreachable`)
+    }
+    if (sha256(fs.readFileSync(target)) !== expected.get(file)) {
+      throw new Error(`${file} does not match its sha256 and the release API is unreachable`)
+    }
+  }
+  return { upToDate: lessons.length, downloaded: 0, manifest }
+}
+
+function readAudioManifest() {
+  if (!fs.existsSync(audioManifestPath)) {
+    throw new Error(`audio manifest is missing: ${path.relative(rootDir, audioManifestPath)}`)
+  }
+  try {
+    return JSON.parse(fs.readFileSync(audioManifestPath, 'utf8'))
+  } catch (error) {
+    throw new Error(`audio manifest is not valid JSON: ${error.message}`)
+  }
+}
+
 const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)
 
 if (isMain) {
   try {
     const lessons = nonEmptyLessons()
-    const assets = await fetchReleaseAssets()
-    const result = await syncAudioResources({ lessons, assets, log: (message) => console.log(message) })
-    console.log(
-      `audio: ${result.upToDate} up to date, ${result.downloaded} downloaded -> ${path.relative(rootDir, resourceDir)}`,
-    )
-    console.log(`wrote ${path.relative(rootDir, audioManifestPath)} (${result.manifest.lessons.length} bins)`)
+    let assets = null
+    try {
+      assets = await fetchReleaseAssets()
+    } catch (error) {
+      // The release API is unreachable (e.g. HTTP 403 outside deploy access).
+      // Fall back to the committed manifest: if every local bin is already
+      // present and matches, the build can continue without the network.
+      console.log(`${error instanceof Error ? error.message : String(error)} — using the local cache`)
+    }
+
+    let result
+    if (assets) {
+      result = await syncAudioResources({ lessons, assets, log: (message) => console.log(message) })
+      console.log(
+        `audio: ${result.upToDate} up to date, ${result.downloaded} downloaded -> ${path.relative(rootDir, resourceDir)}`,
+      )
+    } else {
+      result = verifyAudioResources({ lessons, manifest: readAudioManifest() })
+      console.log(`audio: ${result.upToDate} up to date from the local cache (no download)`)
+    }
+    console.log(`manifest ${path.relative(rootDir, audioManifestPath)} has ${result.manifest.lessons.length} bins`)
   } catch (error) {
     console.error(error instanceof Error ? error.message : String(error))
     process.exitCode = 1

@@ -52,34 +52,6 @@ function check(name, ok, detail = '') {
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
-// Records every distinct loading-bar width with the time it appeared. Installed
-// as an init script so a boot that finishes in milliseconds is still sampled.
-// Serialised by Playwright, so it must not reference anything outside itself.
-function progressSampler() {
-  window.__progressSamples = []
-  const record = () => {
-    const fill = document.querySelector('.progress-fill')
-    if (!fill) return
-    const width = parseFloat(fill.style.width || '0')
-    if (!Number.isFinite(width)) return
-    const samples = window.__progressSamples
-    const last = samples[samples.length - 1]
-    if (last && last.width === width) return
-    samples.push({ width, t: Math.round(performance.now()) })
-  }
-  const start = () => {
-    record()
-    new MutationObserver(record).observe(document.body, {
-      subtree: true,
-      childList: true,
-      attributes: true,
-      attributeFilter: ['style'],
-    })
-  }
-  if (document.body) start()
-  else document.addEventListener('DOMContentLoaded', start, { once: true })
-}
-
 // Read the drawn thumb inside either dropdown frame. Kept as a helper because
 // both lists share the same open/pointer/fade rules but are reached from
 // different screens.
@@ -696,11 +668,6 @@ try {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } })
   page.on('pageerror', (error) => failures.push(`pageerror: ${error.message}`))
 
-  // The dictionary arrives as one archive, so the bar can finish within a few
-  // milliseconds of the first paint. Sample it from document start instead of
-  // polling after the fact, otherwise the sampling misses the whole boot.
-  await page.addInitScript(progressSampler)
-
   let dictRequests = 0
   let lessonFileRequests = 0
   const dictResponses = []
@@ -722,7 +689,22 @@ try {
   })
 
   await page.goto(BASE, { waitUntil: 'load' })
-  await page.waitForSelector('.progress', { timeout: 10000 })
+  await page.waitForSelector('.loader', { timeout: 10000 })
+  // The loading screen opens on a square 1:1 logo icon and a circular arc
+  // spinner — no "Loading ..." line, no linear bar — with the build credit as
+  // its only footer line.
+  check(
+    'loading draws a square 1:1 logo icon',
+    await page.locator('.loading-logo').evaluate((el) => el.naturalWidth > 0 && el.naturalWidth === el.naturalHeight),
+    await page.locator('.loading-logo').evaluate((el) => `${el.naturalWidth}x${el.naturalHeight}`),
+  )
+  check('loading shows the spinner', (await page.locator('.loader').count()) === 1)
+  check('loading has no "Loading ..." line', (await page.locator('.loading-text').count()) === 0)
+  check(
+    'loading shows the build credit',
+    (await page.locator('.loading .footer-link').textContent()).trim() === 'Build with ❤ by Mane',
+  )
+  check('loading has no bug line', (await page.locator('.loading .footer-feedback').count()) === 0)
   const servedBase = await page.evaluate(() => document.baseURI)
   check(
     'the site is served under the Pages subpath',
@@ -796,49 +778,7 @@ try {
     headMeta.touch.ok && headMeta.touch.bytes > 0 && /image/.test(headMeta.touch.type),
     `${headMeta.touch.status} ${headMeta.touch.type} ${headMeta.touch.bytes}B`,
   )
-  check('loading text is "Loading ..."', (await page.locator('.loading-text').textContent()).trim() === 'Loading ...')
-  // The first paint already names the site: head plus the build credit, and
-  // the credit is the only footer line on this screen.
-  check(
-    'loading shows the site title',
-    (await page.locator('.loading .site-title').textContent()).trim() === '大家の日本語',
-    await page.locator('.loading .site-title').textContent(),
-  )
-  check(
-    'loading shows the subtitle',
-    (await page.locator('.loading .site-subtitle').textContent()).trim() === '動詞轉型練習',
-  )
-  check(
-    'loading shows the description',
-    (await page.locator('.loading .site-lede').textContent()).trim() === '涵蓋初級 1 – 50 課的動詞',
-  )
-  check(
-    'loading shows the build credit',
-    (await page.locator('.loading .footer-link').textContent()).trim() === 'Build with ❤ by Mane',
-  )
-  check('loading has no bug line', (await page.locator('.loading .footer-feedback').count()) === 0)
-  // Progress is finished lessons / 50. The samples prove the bar moved through
-  // intermediate values and finished at 100%, without depending on how long
-  // the single 550 KB request takes.
   await page.waitForSelector('.home-actions', { timeout: 30000 })
-  const rawSamples = await page.evaluate(() => window.__progressSamples || [])
-  const progressSamples = rawSamples.map((sample) => sample.width)
-  const progressPeak = progressSamples.length ? Math.max(...progressSamples) : 0
-  // On this unthrottled local server the whole archive can arrive in well under
-  // a frame, so no intermediate width has to appear here; the throttled boot
-  // below proves the streaming fill. What must always hold is that the bar
-  // starts empty, reaches 100, and never moves backwards.
-  check(
-    'the loading bar starts empty',
-    progressSamples.length > 0 && progressSamples[0] === 0,
-    `samples=${progressSamples.slice(0, 8).join(',')}…`,
-  )
-  check('progress reaches 100% before home', progressPeak >= 100, `peak=${progressPeak}`)
-  check(
-    'the loading bar never moves backwards',
-    progressSamples.every((value, index) => index === 0 || value >= progressSamples[index - 1]),
-    progressSamples.join(','),
-  )
 
   // Google Analytics. The container script is a third-party request, so it can
   // be unreachable offline; the local dataLayer queue is what the site controls
@@ -992,14 +932,11 @@ try {
   const errorText = (await failPage.locator('.error-text').textContent()).trim()
   check('boot failure names the lesson', errorText.includes('lesson 1'), errorText)
   check('boot failure shows a retry button', (await failPage.locator('.loading-error .button').count()) === 1)
-  check('boot failure stops the progress bar', (await failPage.locator('.progress-fill').evaluate((el) => parseFloat(el.style.width || '0'))) < 100)
-  // The head and the credit line stay on the failure screen too.
-  check(
-    'a failed boot keeps the site title',
-    (await failPage.locator('.loading .site-title').textContent()).trim() === '大家の日本語',
-  )
+  check('boot failure hides the spinner', (await failPage.locator('.loader').count()) === 0)
+  // The icon and the credit line stay on the failure screen too.
+  check('a failed boot keeps the logo icon', (await failPage.locator('.loading-logo').count()) === 1)
   check('a failed boot keeps the build credit', (await failPage.locator('.loading .footer-link').count()) === 1)
-  // Geometry: the head stays on top, the credit sits under the progress area, and
+  // Geometry: the icon stays on top, the credit sits under the error area, and
   // everything fits the 390×844 viewport without a sideways scroll.
   const loadLayout = await failPage.evaluate(() => {
     const box = (selector) => {
@@ -1009,10 +946,8 @@ try {
       return { top: rect.top, bottom: rect.bottom, height: rect.height }
     }
     return {
-      title: box('.loading .site-title'),
-      lede: box('.loading .site-lede'),
-      text: box('.loading-text'),
-      progress: box('.progress'),
+      icon: box('.loading-icon'),
+      error: box('.loading-error'),
       footer: box('.loading .footer-link'),
       viewport: window.innerHeight,
       width: document.documentElement.scrollWidth,
@@ -1020,13 +955,13 @@ try {
     }
   })
   check(
-    'the loading head sits above the progress line',
-    loadLayout.lede.bottom < loadLayout.text.top,
+    'the loading icon sits above the error area',
+    loadLayout.icon.bottom < loadLayout.error.top,
     JSON.stringify(loadLayout),
   )
   check(
-    'the loading credit sits below the progress bar',
-    loadLayout.progress.bottom < loadLayout.footer.top,
+    'the loading credit sits below the error area',
+    loadLayout.error.bottom < loadLayout.footer.top,
     JSON.stringify(loadLayout),
   )
   check(
@@ -1121,14 +1056,10 @@ try {
   )
   await privateContext.close()
 
-  // Download progress, not just verification progress: throttle the network so
-  // the 550 KB archive takes seconds instead of milliseconds, then check the bar
-  // rises while the bytes stream in. Verification alone would fill the bar in a
-  // single burst, so a spread of intermediate widths proves the download itself
-  // is being shown.
+  // Boot under a slow network still reaches home: the spinner runs while the
+  // archive streams in (there is no linear bar to sample anymore).
   const slowContext = await browser.newContext({ viewport: { width: 390, height: 844 } })
   const slowPage = await slowContext.newPage()
-  await slowPage.addInitScript(progressSampler)
   const slowCdp = await slowContext.newCDPSession(slowPage)
   await slowCdp.send('Network.enable')
   await slowCdp.send('Network.emulateNetworkConditions', {
@@ -1139,14 +1070,6 @@ try {
   })
   await slowPage.goto(BASE, { waitUntil: 'load' })
   await slowPage.waitForSelector('.home-actions', { timeout: 60000 })
-  const slowSamples = await slowPage.evaluate(() => window.__progressSamples || [])
-  const slowRising = slowSamples.filter((sample) => sample.width > 0 && sample.width < 100)
-  const slowSpread = slowRising.length ? slowRising[slowRising.length - 1].t - slowRising[0].t : 0
-  check(
-    'the download itself fills the loading bar while the archive streams',
-    slowRising.length >= 3 && slowSpread >= 700,
-    `rising=${slowRising.length}, spread=${slowSpread}ms, widths=${slowRising.slice(0, 6).map((s) => s.width).join(',')}`,
-  )
   check(
     'the throttled boot still reaches home',
     (await slowPage.locator('.home-actions').count()) === 1,
@@ -4618,7 +4541,7 @@ try {
     await route.continue()
   })
   await zoomPage.goto(BASE, { waitUntil: 'load' })
-  await zoomPage.waitForSelector('.progress', { timeout: 10000 })
+  await zoomPage.waitForSelector('.loader', { timeout: 10000 })
   const viewportMeta = await zoomPage.evaluate(
     () => document.querySelector('meta[name="viewport"]')?.getAttribute('content') ?? '',
   )
@@ -4627,7 +4550,7 @@ try {
   const rootTouch = await zoomPage.evaluate(() => getComputedStyle(document.documentElement).touchAction)
   const bodyTouch = await zoomPage.evaluate(() => getComputedStyle(document.body).touchAction)
   check('the page declares touch-action: manipulation', rootTouch === 'manipulation' && bodyTouch === 'manipulation', `${rootTouch} / ${bodyTouch}`)
-  await zoomLocked(zoomPage, zoomCdp, 'loading', 195, 360, '.progress')
+  await zoomLocked(zoomPage, zoomCdp, 'loading', 195, 360, '.loader')
   await zoomPage.waitForSelector('.home-actions', { timeout: 30000 })
   await zoomPage.unroute('**/dict/vol.bin')
 
@@ -4855,7 +4778,7 @@ try {
     await route.continue()
   })
   await lightThemePage.goto(BASE, { waitUntil: 'load' })
-  await lightThemePage.waitForSelector('.progress', { timeout: 10000 })
+  await lightThemePage.waitForSelector('.loader', { timeout: 10000 })
   check(
     'the loading screen carries no theme switch',
     (await lightThemePage.locator('.theme-toggle').count()) === 0,

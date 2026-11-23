@@ -11,6 +11,7 @@ import { PAGING_GAP, READER_WINDOW } from '../ui/window.js'
 import { usePagingWindow } from '../ui/paging-window.js'
 import { readerEntries } from '../study/window-views.js'
 import { audioState, sentenceAudioTarget, wordAudioTarget } from '../study/reader-audio.js'
+import CopyLink from '../components/CopyLink.vue'
 
 const store = inject('store')
 const session = store.session
@@ -343,6 +344,7 @@ function openRule(formId) {
                   :data-rule-form="form.id"
                   @click.stop="openRule(form.id)"
                 >變形原理</button>
+                <CopyLink v-else />
               </div>
               <button
                 class="word audio-tap"

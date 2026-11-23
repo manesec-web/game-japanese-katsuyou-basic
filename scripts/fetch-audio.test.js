@@ -3,7 +3,7 @@ import os from 'node:os'
 import path from 'node:path'
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createHash } from 'node:crypto'
-import { syncAudioResources } from './fetch-audio.mjs'
+import { syncAudioResources, verifyAudioResources } from './fetch-audio.mjs'
 
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex')
 const encoder = new TextEncoder()
@@ -89,5 +89,47 @@ describe('syncAudioResources', () => {
     await expect(run([['lesson2.bin', tampered], ['lesson4.bin', lesson4]])).rejects.toThrow(
       /download hash mismatch/,
     )
+  })
+})
+
+function binEntry(lesson, content) {
+  return { lesson, file: `lesson${lesson}.bin`, sha256: sha256(encoder.encode(content)) }
+}
+
+function manifestOf(entries) {
+  return { algorithm: 'sha256', source: 'test', total: entries.length, lessons: entries }
+}
+
+describe('verifyAudioResources', () => {
+  it('accepts a complete local cache against the manifest', () => {
+    fs.writeFileSync(path.join(dir, 'lesson2.bin'), 'lesson-two-audio')
+    fs.writeFileSync(path.join(dir, 'lesson4.bin'), 'lesson-four-audio')
+    const manifest = manifestOf([binEntry(2, 'lesson-two-audio'), binEntry(4, 'lesson-four-audio')])
+    const result = verifyAudioResources({ lessons: [2, 4], manifest, dir, sha256 })
+    expect(result.upToDate).toBe(2)
+    expect(result.downloaded).toBe(0)
+  })
+
+  it('fails when a bin is missing', () => {
+    fs.writeFileSync(path.join(dir, 'lesson2.bin'), 'lesson-two-audio')
+    const manifest = manifestOf([binEntry(2, 'lesson-two-audio'), binEntry(4, 'lesson-four-audio')])
+    expect(() => verifyAudioResources({ lessons: [2, 4], manifest, dir, sha256 })).toThrow(
+      /lesson4\.bin is missing/,
+    )
+  })
+
+  it('fails when a bin does not match its sha256', () => {
+    fs.writeFileSync(path.join(dir, 'lesson2.bin'), 'lesson-two-audio')
+    fs.writeFileSync(path.join(dir, 'lesson4.bin'), 'tampered')
+    const manifest = manifestOf([binEntry(2, 'lesson-two-audio'), binEntry(4, 'lesson-four-audio')])
+    expect(() => verifyAudioResources({ lessons: [2, 4], manifest, dir, sha256 })).toThrow(
+      /does not match its sha256/,
+    )
+  })
+
+  it('fails when the manifest does not cover a lesson', () => {
+    fs.writeFileSync(path.join(dir, 'lesson2.bin'), 'lesson-two-audio')
+    const manifest = manifestOf([binEntry(2, 'lesson-two-audio')])
+    expect(() => verifyAudioResources({ lessons: [2, 4], manifest, dir, sha256 })).toThrow(/invalid/)
   })
 })

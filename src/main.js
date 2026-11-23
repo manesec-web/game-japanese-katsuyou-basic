@@ -15,6 +15,7 @@ import { systemTheme, themeState } from './ui/theme.js'
 import { applyTheme, watchSystemTheme } from './ui/theme-root.js'
 import { createGtm } from './analytics/gtm.js'
 import { GA4_ID, GTM_ID } from './config/analytics.js'
+import { deepLinkQuery, parseDeepLink } from './study/url.js'
 
 const library = createLibrary({ store: idb, manifest })
 const settingsStorage = createSettingsStorage()
@@ -23,6 +24,19 @@ const themeStorage = createThemeStorage()
 registry.registerAll(allSpecs({ library, settingsStorage, themeStorage }))
 
 const store = createStore(registry, { library, settingsStorage, themeStorage })
+
+// Read the page URL once at load. A deep link is applied by bootstrap after a
+// successful boot; an absent or invalid one is null and changes nothing.
+store.deepLink =
+  typeof window !== 'undefined' ? parseDeepLink(window.location.search) : null
+
+// Observation aid for the URL deep link (remove when no longer needed). The
+// browser URL never changes while the app navigates, so `deeplinkBase` is the
+// stable page address and each screen change logs a freshly generated deep-link
+// URL for the current screen — the URL to copy to reopen that exact view.
+const deeplinkBase =
+  typeof window !== 'undefined' ? window.location.href.split('?')[0] : ''
+console.log('[deeplink] parse', deeplinkBase, store.deepLink ?? 'no deeplink')
 
 // The Analytics IDs are repo config (src/config/analytics.js), not settings: a
 // developer edits that file and redeploys. An empty ID loads nothing. The GTM
@@ -33,7 +47,13 @@ analytics.load(GTM_ID)
 analytics.loadTag(GA4_ID)
 watch(
   () => store.session.screen,
-  (screen) => analytics.screen(screen),
+  (screen) => {
+    // Observation aid: one line per screen change with the generated deep-link
+    // URL for that screen (params only for deep-linkable screens).
+    const query = deepLinkQuery(store.session, library)
+    console.log('[deeplink] screen', screen, query ? deeplinkBase + query : deeplinkBase)
+    analytics.screen(screen)
+  },
   { immediate: true },
 )
 

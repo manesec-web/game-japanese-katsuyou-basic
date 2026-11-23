@@ -1,15 +1,13 @@
 <script setup>
 import { computed, inject, ref } from 'vue'
 import { bootstrap } from '../ui/bootstrap.js'
-import { bootPercent } from '../ui/boot-progress.js'
-import SiteHead from '../components/SiteHead.vue'
 import BuildFooter from '../components/BuildFooter.vue'
 import AboutSheet from '../components/AboutSheet.vue'
+import logoUrl from '../../docs/logo/logo-512.png'
 
 const store = inject('store')
 const sheetOpen = ref(false)
 const boot = computed(() => store.session.boot)
-const percent = computed(() => bootPercent(boot.value))
 
 function retry() {
   bootstrap(store)
@@ -18,22 +16,15 @@ function retry() {
 
 <template>
   <section class="loading">
-    <div class="loading-head">
-      <SiteHead />
+    <div class="loading-icon">
+      <img class="loading-logo" :src="logoUrl" alt="大家の日本語" />
     </div>
 
     <div class="loading-body">
-      <p class="loading-text">Loading ...</p>
-      <div
-        class="progress"
-        role="progressbar"
-        aria-label="Loading"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        :aria-valuenow="percent"
-      >
-        <div class="progress-fill" :style="{ width: `${percent}%` }"></div>
-      </div>
+      <!-- The circular arc spinner takes the place of the old "Loading ..."
+           line and linear bar: it spins while boot runs and is swapped for the
+           error + retry when boot fails. -->
+      <div v-if="!boot.error" class="loader" role="status" aria-label="載入中"></div>
       <div v-if="boot.error" class="loading-error">
         <p class="error-text">載入失敗（lesson {{ boot.error.lesson }}）</p>
         <p v-if="boot.error.message" class="error-detail">{{ boot.error.message }}</p>
@@ -47,9 +38,6 @@ function retry() {
 </template>
 
 <style scoped>
-/* The loading screen carries the same head and credit line as the home screen,
-   so the first paint already looks like the site. The head and the footer stay
-   put while boot runs, and while an error offers retry. */
 .loading {
   display: flex;
   flex-direction: column;
@@ -59,35 +47,71 @@ function retry() {
   gap: 24px;
 }
 
-.loading-head {
+/* The brand mark replaces the three-line head: a square 1:1 logo icon. */
+.loading-icon {
   margin-top: 12vh;
+  text-align: center;
+}
+
+.loading-logo {
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  max-width: 384px;
+  border-radius: 18px;
 }
 
 .loading-body {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 18px;
 }
 
-.loading-text {
-  margin: 0;
-  font-size: 20px;
-  letter-spacing: 0.06em;
-  text-align: center;
+/* Circular arc spinner. The ring reads from the theme tokens (--track for the
+   resting ring, --accent for the sweeping arc) so it follows light and dark. */
+.loader {
+  width: 60px;
+  aspect-ratio: 1;
+  border: 15px solid var(--track);
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(45deg);
 }
 
-.progress {
-  height: 10px;
-  border-radius: 999px;
-  background: var(--track);
-  overflow: hidden;
+.loader::before {
+  content: '';
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  border: 15px solid var(--accent);
+  animation: loader-sweep 2s infinite linear;
 }
 
-.progress-fill {
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--progress-from), var(--progress-to));
-  transition: width 220ms ease;
+@keyframes loader-sweep {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
+
+/* Without motion the sweep holds still; a fixed arc still reads as loading
+   until the screen swaps. */
+@media (prefers-reduced-motion: reduce) {
+  .loader::before {
+    animation: none;
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
 }
 
 .loading-error {

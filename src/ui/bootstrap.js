@@ -25,5 +25,14 @@ export async function bootstrap(store) {
   }
 
   store.send('nav.go', { screen: 'home' })
+
+  // A URL deep link (if one was parsed at load) is applied after the boot
+  // landing on home. `url.open` is a normal command; a bad link already parsed
+  // to null, and a link that cannot resolve returns { ok: false } and leaves
+  // the session on home.
+  if (store.deepLink) {
+    store.send('url.open', store.deepLink)
+  }
+
   return result
 }

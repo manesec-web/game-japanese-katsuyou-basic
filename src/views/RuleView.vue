@@ -7,6 +7,7 @@ import { RULE_TIPS, exampleVerb, findRule, ruleTitle, targetFormIds } from '../s
 import { deriveChange } from '../study/rule-demo.js'
 import ScrollThumb from '../components/ScrollThumb.vue'
 import { useElementThumb } from '../ui/element-thumb.js'
+import CopyLink from '../components/CopyLink.vue'
 
 const store = inject('store')
 const session = store.session
@@ -123,7 +124,10 @@ function segClass(seg) {
     </header>
 
     <div class="rule-body">
-      <p class="section-label">變形設置</p>
+      <div class="section-label-row">
+        <p class="section-label">變形設置</p>
+        <CopyLink />
+      </div>
 
       <div class="field">
         <span class="field-label">從</span>
@@ -344,6 +348,20 @@ function segClass(seg) {
   font-weight: 600;
   letter-spacing: 0.14em;
   color: var(--ink-soft);
+}
+
+/* 變形設置 shares its label style, but carries the 分享 button on its
+   right edge. The row owns the label's usual margin. */
+.section-label-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 14px 0 10px;
+}
+
+.section-label-row .section-label {
+  margin: 0;
 }
 
 .field {

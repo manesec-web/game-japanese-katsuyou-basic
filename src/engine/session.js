@@ -42,6 +42,9 @@ export function createSession() {
     // its transient visual state ('downloading' | 'playing'), and `hint` is the
     // transient 「該音頻暫時無法播放」 toast text.
     audio: { verified: {}, states: {}, hint: null },
+    // 單詞目錄 one-shot search prefill, set by a URL deep link and consumed by
+    // the view on mount. `prefill` is the raw query (romaji/kana/kanji) or null.
+    toc: { prefill: null },
     // 學習 (grammar reference) screen state. Transient: `from` / `to` are the
     // 從 / 到 choices on the 變形說明 page and `example` is the chosen example
     // word as `{ lesson, index }` (null until the user picks one in 選字).
