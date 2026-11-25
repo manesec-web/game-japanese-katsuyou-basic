@@ -38,7 +38,7 @@ src/engine/          registry (dispatch), session, errors, settle
 src/commands/        24 command ids, one module per area
 src/dict/            forms, hashing, archive (unzipit), boot, library, quiz,
                      ruby, romaji, settings, md5/Opus audio helpers
-src/storage/         idb (katsuyou-dict), audio-idb (katsuyou-audio),
+src/storage/         idb (game-japanese-katsuyou-basic-dict), audio-idb (game-japanese-katsuyou-basic-audio),
                      localStorage settings.js + theme.js
 src/study/           items, shuffle, reader forms, toc, rule*, 例如 derivation
 src/ui/              store, bootstrap, boot-progress, theme.js (pure rules),
@@ -54,7 +54,7 @@ vite.config.js       base /game-japanese-katsuyou-basic/, outDir output, plugins
 dict/resource/       gitignored local cache of 46 audio bins
 output/              gitignored build output
 ```
-No `public/` directory: Vite plugins build `output/dict/vol.bin`, copy the audio bins and hash icons from `docs/logo/` into `output/assets/`. Theme modules: pure `src/ui/theme.js`, DOM adapter `src/ui/theme-root.js`, `src/storage/theme.js` (`katsuyou-theme`), command `src/commands/theme.js`, `src/components/ThemeToggle.vue`, start value + OS watch in `src/main.js`.
+No `public/` directory: Vite plugins build `output/dict/vol.bin`, copy the audio bins and hash icons from `docs/logo/` into `output/assets/`. Theme modules: pure `src/ui/theme.js`, DOM adapter `src/ui/theme-root.js`, `src/storage/theme.js` (`game-japanese-katsuyou-basic-theme`), command `src/commands/theme.js`, `src/components/ThemeToggle.vue`, start value + OS watch in `src/main.js`.
 
 ## Data model
 Each verb has 15 form keys; each form carries `vol`, `group`, `chinese`, `japanese`, `sentence`, `note`, `error_usage`. `vol/` is read-only except revision 31's one-time authorized `chinese` / misleading-`note` pass (re-hashed afterwards). Counts: 50 lessons (1, 3, 8, 12 empty), 386 verbs, 5,790 forms (5,599 usable, 191 `error_usage`), 16,797 Japanese–Chinese sentence pairs. Field semantics: [`spec.md`](spec.md) → Data.
@@ -62,8 +62,9 @@ Each verb has 15 form keys; each form carries `vol`, `group`, `chinese`, `japane
 ## Architecture highlights
 - Three layers: framework-free engine/session → command specs → thin `.vue` views; behavior stays in `.js`.
 - Every user action goes through `dispatch(session, id, params)` → `{ ok: true, result }` / `{ ok: false, error }`; 24 ids, 11 screens.
-- Dictionary: one verified `dict/vol.bin` ZIP + SHA-256 manifest + `katsuyou-dict` IndexedDB; two-phase boot, one retry.
+- Dictionary: one verified `dict/vol.bin` ZIP + SHA-256 manifest + `game-japanese-katsuyou-basic-dict` IndexedDB; two-phase boot, one retry.
 - Audio: 46 same-origin `dict/resource/lessonX.bin` bins fetched at build time (release assets lack CORS); one `<md5-mid16>.opus` entry per tap.
+- Storage: keys renamed from `katsuyou-*` to `game-japanese-katsuyou-basic-*` with a one-time migration in the adapters (legacy names kept as `LEGACY_*` constants; see [`architecture.md`](architecture.md) → Storage migration).
 - 學習: 210 generated pairs, pure lookup + `deriveChange`; romaji/kana search in `src/dict/romaji.js` and `src/study/toc.js`.
 - Testing: pure Vitest units + injected browser APIs + `scripts/browser-check.mjs`.
 

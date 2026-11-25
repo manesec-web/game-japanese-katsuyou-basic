@@ -1,7 +1,8 @@
 # Changelog
 
-Condensed dated history of record, newest last. **Revision 40 (Google Analytics) is the latest/current revision**
-(commit `852fdd6`, 2026-11-18; the source file filed it under 2026-11-15). Full pre-condensation detail, long
+Condensed dated history of record, newest last. **Revision 40 (Google Analytics) is the latest numbered revision**
+(commit `852fdd6`, 2026-11-18; the source file filed it under 2026-11-15); the storage-key
+rename/migration is a post-40 working-tree follow-up (2026-11-25, below). Full pre-condensation detail, long
 quotations and measurements are in git history; current behavior lives in `docs/spec.md`, the plan in
 `AGENTS.md`, and current verification in `docs/progress.md`. Counts below are historical evidence for that
 revision, not current state.
@@ -230,7 +231,7 @@ pass are in `docs/progress.md` history; no code/`vol/` change.
 `動詞轉型練習`, centred via `SiteHead.vue`'s `aside` slot and a `1fr auto 1fr` subtitle row; the subtitle keeps the
 head's centre and the button clears title/lede (measured 320, 390, 768px, framed desktop). `Moon` in light /
 `Sun` in dark; labels `切換為深色模式` / `切換為淺色模式`; `aria-pressed`; `theme.toggle`; loading and in-run screens draw
-none. OS `prefers-color-scheme` applies until a press stores `katsuyou-theme`; the stored choice then wins. A
+none. OS `prefers-color-scheme` applies until a press stores `game-japanese-katsuyou-basic-theme`; the stored choice then wins. A
 CSS media query paints the OS theme on the very first paint, before the module runs, so a dark phone sees no
 light flash; only a press writes the key.
 
@@ -258,7 +259,7 @@ enhanced-measurement page view follows browser history, which the site does not 
 change pushes `{ event: 'page_view', screen_name, page_title, page_location }` into the dataLayer and, past
 the landing pair (`loading`, first `home`), sends it through `gtag('event', 'page_view', …)`; the browser
 URL is never changed and `page_location` names the screen as `#/<screen>`. No settings screen carries an
-Analytics field and `katsuyou-settings` stores no ID; a revision-40-era `analytics` section in stored
+Analytics field and `game-japanese-katsuyou-basic-settings` stores no ID; a revision-40-era `analytics` section in stored
 settings is dropped on load and the cleaned object written back. `src/analytics/page-view.js` holds the
 pure rules (ID forms, per-screen title, `#/<screen>` location, payload); `src/analytics/gtm.js` is the DOM
 adapter; `src/main.js` reads the config and watches `session.screen`. The snippet lives in the adapter, not
@@ -271,3 +272,14 @@ Verification: **53 files / 579 tests** (2 analytics files plus storage/settings-
 build`, **671 browser checks / 0 failures** (analytics checks: configured GTM and gtag IDs, gtm.start first,
 landing and screen page views, fragment locations, unchanged browser URL, no Analytics fields in settings,
 no Analytics keys in storage). `vol/` untouched.
+
+## 2026-11-25 — storage keys renamed and migrated
+
+The four storage keys are renamed to fit under Chrome's 64-ASCII-byte IndexedDB name cap and to stay collision-free on the shared GitHub Pages origin:
+
+- `katsuyou-settings` → `game-japanese-katsuyou-basic-settings` (37)
+- `katsuyou-theme` → `game-japanese-katsuyou-basic-theme` (34)
+- `katsuyou-dict` (IndexedDB, store `lessons`) → `game-japanese-katsuyou-basic-dict` (33)
+- `katsuyou-audio` (IndexedDB, store `bins`) → `game-japanese-katsuyou-basic-audio` (34)
+
+On first read or write the localStorage adapters copy the old value to the new key, keep the new value when both exist, and remove the old key; `save` writes only the new key and then tries to delete a leftover legacy key, and a failed read/write leaves the old key in place. On first open the IndexedDB adapters (dictionary and audio) copy every record in the same object store into the new database when the new store is empty, keep new data when it already exists, and delete the legacy database after a successful copy (or when it was empty); if the copy fails and the new store is still empty, the old database is left for a later retry. Legacy names are exported as `LEGACY_*` constants, and test databases with custom names do not auto-migrate. The Vite plugin names (`katsuyou-dictionary`, `katsuyou-audio-resource`) and the fetch User-Agent strings (`katsuyou-audio-fetch`, `katsuyou-audio-manifest`) are intentionally unchanged. `vol/` and the Analytics IDs are unchanged.

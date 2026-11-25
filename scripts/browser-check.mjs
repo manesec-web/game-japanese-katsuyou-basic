@@ -848,7 +848,7 @@ try {
 
   const idbCount = await page.evaluate(async () => {
     const db = await new Promise((resolve, reject) => {
-      const request = indexedDB.open('katsuyou-dict')
+      const request = indexedDB.open('game-japanese-katsuyou-basic-dict')
       request.onsuccess = () => resolve(request.result)
       request.onerror = () => reject(request.error)
     })
@@ -1032,7 +1032,7 @@ try {
   await privatePage.waitForSelector('.home-actions', { timeout: 40000 })
   const privateCount = await privatePage.evaluate(async () => {
     const db = await new Promise((resolve, reject) => {
-      const request = indexedDB.open('katsuyou-dict')
+      const request = indexedDB.open('game-japanese-katsuyou-basic-dict')
       request.onsuccess = () => resolve(request.result)
       request.onerror = () => reject(request.error)
     })
@@ -1139,8 +1139,8 @@ try {
     `text=${validStart.text} hints=${await page.locator('.start-hint').count()}`,
   )
 
-  const stored = await page.evaluate(() => localStorage.getItem('katsuyou-settings'))
-  check('settings saved under katsuyou-settings', Boolean(stored))
+  const stored = await page.evaluate(() => localStorage.getItem('game-japanese-katsuyou-basic-settings'))
+  check('settings saved under game-japanese-katsuyou-basic-settings', Boolean(stored))
   const storedDict = JSON.parse(stored).dict.lessons
   check('dictionary lessons persisted', Array.isArray(storedDict) && storedDict.includes(2), JSON.stringify(storedDict))
 
@@ -1404,7 +1404,7 @@ try {
   // These checks left 從 on ます形 and 到 on 14 forms; later card runs expect
   // the defaults, so drop the stored settings and let the next reload restore
   // them (only a settings.patch writes the key).
-  await page.evaluate(() => localStorage.removeItem('katsuyou-settings'))
+  await page.evaluate(() => localStorage.removeItem('game-japanese-katsuyou-basic-settings'))
 
   // T5 dictionary reader: selection, swipe threshold, controls, settings.
   await page.reload({ waitUntil: 'load' })
@@ -1908,15 +1908,15 @@ try {
   check('settings shows 選擇顯示的類型', (await page.locator('.row-label', { hasText: '選擇顯示的類型' }).count()) === 1)
   check('settings shows 顯示平假名注音', (await page.locator('.row-label', { hasText: '顯示平假名注音' }).count()) === 1)
   // The Analytics IDs are repo config (src/config/analytics.js) and must not
-  // appear as user settings or be stored in katsuyou-settings.
+  // appear as user settings or be stored in game-japanese-katsuyou-basic-settings.
   const settingsText = await page.locator('.settings').innerText()
   check(
     'settings no longer shows the analytics ID fields',
     !settingsText.includes('Google Analytics') && !settingsText.includes('GA4'),
     settingsText.slice(-80),
   )
-  const savedSettings = await page.evaluate(() => JSON.parse(localStorage.getItem('katsuyou-settings') || '{}'))
-  check('no analytics keys are saved in katsuyou-settings', !('analytics' in savedSettings), JSON.stringify(Object.keys(savedSettings)))
+  const savedSettings = await page.evaluate(() => JSON.parse(localStorage.getItem('game-japanese-katsuyou-basic-settings') || '{}'))
+  check('no analytics keys are saved in game-japanese-katsuyou-basic-settings', !('analytics' in savedSettings), JSON.stringify(Object.keys(savedSettings)))
   const switchBox = await page.locator('.switch').first().boundingBox()
   check('switch control is 32px tall', switchBox.height >= 31.9 && switchBox.height <= 33, `height=${switchBox.height}`)
   // The current 預設顯示形式 is always selected: its 選擇顯示的類型 chip is a
@@ -1974,7 +1974,7 @@ try {
   // 取消全選 keeps its state across reload and still draws the opening block.
   await displaySelectAll.click()
   const afterClear = await page.evaluate(() => {
-    const stored = JSON.parse(localStorage.getItem('katsuyou-settings') || '{}')
+    const stored = JSON.parse(localStorage.getItem('game-japanese-katsuyou-basic-settings') || '{}')
     return stored?.dict?.displayForms ?? null
   })
   check('取消全選 persists its one-form selection', Array.isArray(afterClear) && afterClear.length === 1 && afterClear[0] === 'masu-form', JSON.stringify(afterClear))
@@ -4407,7 +4407,7 @@ try {
       dict: { lessons: [5], defaultForm: 'masu-form' },
       card: { lessons: [5], from: 'masu-form', to: ['dictionary-form'] },
     }
-    localStorage.setItem('katsuyou-settings', JSON.stringify(settings))
+    localStorage.setItem('game-japanese-katsuyou-basic-settings', JSON.stringify(settings))
   })
   await scrollPage.reload({ waitUntil: 'load' })
   await scrollPage.waitForSelector('.home-actions', { timeout: 30000 })
@@ -4682,7 +4682,7 @@ try {
   // 字典 reader: title 字典, 變形原理 next to each form name, and a jump that
   // presets 從 / 到 / 例如 with the word on screen. Reset settings so a clean
   // reader draws all 15 forms (earlier settings tests narrowed the list).
-  await page.evaluate(() => localStorage.removeItem('katsuyou-settings'))
+  await page.evaluate(() => localStorage.removeItem('game-japanese-katsuyou-basic-settings'))
   await page.goto(BASE, { waitUntil: 'load' })
   await page.waitForSelector('.home-actions', { timeout: 30000 })
   await page.locator('.home-actions button', { hasText: '字典' }).click()
@@ -4849,7 +4849,7 @@ try {
   check(
     'the dark choice survives a reload',
     (await readTokens(lightThemePage)).attr === 'dark' &&
-      (await lightThemePage.evaluate(() => localStorage.getItem('katsuyou-theme'))) === 'dark',
+      (await lightThemePage.evaluate(() => localStorage.getItem('game-japanese-katsuyou-basic-theme'))) === 'dark',
   )
   await lightThemePage.locator('.theme-toggle').click()
   await wait(120)
@@ -4858,7 +4858,7 @@ try {
   check(
     'the light choice survives a reload too',
     (await readTokens(lightThemePage)).attr === 'light' &&
-      (await lightThemePage.evaluate(() => localStorage.getItem('katsuyou-theme'))) === 'light',
+      (await lightThemePage.evaluate(() => localStorage.getItem('game-japanese-katsuyou-basic-theme'))) === 'light',
   )
   await lightThemePage.locator('.home-actions button', { hasText: '字典' }).click()
   await lightThemePage.waitForSelector('.chip-grid', { timeout: 5000 })
@@ -4885,7 +4885,7 @@ try {
   )
   check(
     'an OS preference is not written as a user choice',
-    (await darkThemePage.evaluate(() => localStorage.getItem('katsuyou-theme'))) === null,
+    (await darkThemePage.evaluate(() => localStorage.getItem('game-japanese-katsuyou-basic-theme'))) === null,
   )
   const mediaTokens = await darkThemePage.evaluate(() => {
     delete document.documentElement.dataset.theme

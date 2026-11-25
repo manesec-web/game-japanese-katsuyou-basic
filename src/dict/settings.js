@@ -2,7 +2,8 @@
 import { FORM_IDS, FORMS } from './forms.js'
 import { DEFAULT_REVEAL_AFTER, isValidRevealAfter } from './quiz.js'
 
-export const SETTINGS_KEY = 'katsuyou-settings'
+export const SETTINGS_KEY = 'game-japanese-katsuyou-basic-settings'
+export const LEGACY_SETTINGS_KEY = 'katsuyou-settings'
 export const MODE_KEYS = ['dict', 'card', 'quiz']
 
 export function makeDefaults() {

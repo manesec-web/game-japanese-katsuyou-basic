@@ -1,6 +1,6 @@
 # Progress
 
-Last updated: 2026-11-18 (revision 40 — Google Analytics, working tree).
+Last updated: 2026-11-25 (revision 40 — Google Analytics, plus the post-40 storage-key migration).
 
 **Status: complete.** T1–T8 and revisions 2–40 are delivered, including passes
 A/B. **Revision 40 is the latest/current revision.** Behavior:
@@ -25,11 +25,11 @@ The build is live at `https://manesec-web.github.io/game-japanese-katsuyou-basic
 - `src/data/rule-content.js` is regenerated and byte-compared against real `vol/` forms by `src/study/rule-conjugation.test.js`.
 - Browser harness needs Chromium (`CHROMIUM_PATH` when not in the default cache), starts `vite preview` on `PORT` (default 5199), and accepts `--screenshots` with `SHOT_DIR`.
 - `scripts/motion-probe.mjs` and `scripts/strike-probe.mjs` are diagnostics, not pass/fail gates.
-- Git/keys: branch `main` tracking `github/main`; IndexedDB `katsuyou-dict` (`lessons`) / `katsuyou-audio`; `localStorage` `katsuyou-settings` / `katsuyou-theme`; `session.rule`, `session.theme` and the loaded analytics container are transient.
+- Git/keys: branch `main` tracking `github/main`; IndexedDB `game-japanese-katsuyou-basic-dict` (`lessons`) / `game-japanese-katsuyou-basic-audio`; `localStorage` `game-japanese-katsuyou-basic-settings` / `game-japanese-katsuyou-basic-theme`; legacy `katsuyou-dict` / `katsuyou-audio` / `katsuyou-settings` / `katsuyou-theme` are migrated on first open/read (see Storage migration below). `session.rule`, `session.theme` and the loaded analytics container are transient.
 
 ## Revision 40 — Google Analytics (current)
 
-- Analytics IDs are repo config in `src/config/analytics.js` — `GTM_ID` (`GTM-W7387LLQ`) and `GA4_ID` (`G-NFDK8SXY0M`) — not user settings: an empty string disables an ID, the settings screens carry no field and `katsuyou-settings` stores neither ID.
+- Analytics IDs are repo config in `src/config/analytics.js` — `GTM_ID` (`GTM-W7387LLQ`) and `GA4_ID` (`G-NFDK8SXY0M`) — not user settings: an empty string disables an ID, the settings screens carry no field and `game-japanese-katsuyou-basic-settings` stores neither ID.
 - The GTM container is loaded with the standard snippet (dataLayer, `gtm.start`, one async `gtm.js` script); gtag.js is loaded with `send_page_view: false` for the GA4 measurement ID because the container alone does not report SPA screen changes.
 - Every screen change pushes `{ event: 'page_view', screen_name, page_title, page_location }` into `window.dataLayer` and, past the landing pair (`loading`, first `home`, covered by the container's own page view), sends it through `gtag('event', 'page_view', …)`; the browser URL is never changed and `page_location` names the screen as `#/<screen>`.
 - A stale revision-40 `analytics` section in stored settings is dropped on load and the cleaned object is written back (`src/storage/settings.js`).
@@ -37,12 +37,39 @@ The build is live at `https://manesec-web.github.io/game-japanese-katsuyou-basic
 - Runtime probe against the built site: GA collect for the landing view at load, then one `page_view` with the right fragment for the picker, reader and settings screens (no duplicates).
 - Verification: **53 files / 579 tests**, `npx vite build`, **671 browser checks / 0 failures** (analytics checks: configured GTM/gtag IDs, gtm.start first, landing + screen page views, `#/<screen>` locations, unchanged browser URL, no analytics fields in settings, no analytics keys in storage). `vol/` untouched.
 
+## Storage migration (post-revision 40, 2026-11-25)
+
+The four storage keys were renamed from the earlier `katsuyou-*` names to the
+collision-free `game-japanese-katsuyou-basic-*` names (all under Chrome's
+64-ASCII-byte IndexedDB name cap):
+
+| Old | New |
+|---|---|
+| `katsuyou-settings` | `game-japanese-katsuyou-basic-settings` (37) |
+| `katsuyou-theme` | `game-japanese-katsuyou-basic-theme` (34) |
+| `katsuyou-dict` (store `lessons`) | `game-japanese-katsuyou-basic-dict` (33) |
+| `katsuyou-audio` (store `bins`) | `game-japanese-katsuyou-basic-audio` (34) |
+
+localStorage: on load the old value is copied to the new key when the new key is
+missing and the old key is then removed; when both exist the new value wins and
+the old key is dropped. `save` writes only the new key and then tries to delete a
+leftover legacy key (a failed delete does not fail the save); a thrown read/write
+leaves the legacy key in place. IndexedDB (dictionary and audio): on first open,
+every record in the same object store is copied into the new database when the
+new store is empty, existing new data is kept, and the legacy database is deleted
+after a successful copy (or when it was empty); a failed copy leaves the old
+database for a later retry. Legacy names are exported as `LEGACY_*` constants and
+test databases with custom names do not auto-migrate. Vite plugin names
+(`katsuyou-dictionary`, `katsuyou-audio-resource`) and fetch User-Agent strings
+(`katsuyou-audio-fetch`, `katsuyou-audio-manifest`) are unchanged on purpose.
+`vol/` and the Analytics IDs are unchanged.
+
 ## Revision 39 — dark theme (previous)
 
 - Home-only 36px round switch, 8px right of the 習 in `動詞轉型練習`, vertically centred via `SiteHead.vue`'s `aside` slot on a `1fr auto 1fr` subtitle row.
 - The subtitle keeps the head's centre; the button clears title/lede; loading and in-run screens draw none.
 - `Moon` in light / `Sun` in dark; labels `切換為深色模式` / `切換為淺色模式`; `aria-pressed`; `theme.toggle`.
-- OS `prefers-color-scheme` until a press stores `katsuyou-theme`; the stored choice then wins.
+- OS `prefers-color-scheme` until a press stores `game-japanese-katsuyou-basic-theme`; the stored choice then wins.
 - A CSS media query paints the OS theme on the first paint, before the module runs, so dark phones see no light flash.
 - `src/styles/app.css` is fully token-driven (light unchanged); dark ink column, warm near-white type, lighter accent, lifted surfaces, deeper gradient; no literal colours remain in `.vue`.
 - Pure `src/ui/theme.js`; DOM adapter `theme-root.js`; storage adapter `storage/theme.js`; command `commands/theme.js`; `main.js` wiring; `session.theme = { value, source }`.

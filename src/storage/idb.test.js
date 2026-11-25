@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { IDBFactory } from 'fake-indexeddb'
-import { createIdb } from './idb.js'
+import { createIdb, IDB_NAME, LEGACY_IDB_NAME } from './idb.js'
 
 let dbCounter = 0
 
@@ -13,6 +13,13 @@ function freshIdb(options = {}) {
 const encoder = new TextEncoder()
 
 describe('createIdb', () => {
+  it('uses a project-prefixed database name within the 64-byte limit', () => {
+    expect(IDB_NAME).toBe('game-japanese-katsuyou-basic-dict')
+    expect(LEGACY_IDB_NAME).toBe('katsuyou-dict')
+    expect(IDB_NAME.length).toBeLessThanOrEqual(64)
+    expect(new TextEncoder().encode(IDB_NAME).length).toBe(IDB_NAME.length)
+  })
+
   it('reads back the bytes it wrote', async () => {
     const store = freshIdb()
     const bytes = encoder.encode('{"lesson_1":{"vols":[]}}')
@@ -75,5 +82,70 @@ describe('createIdb', () => {
     }
     const store = createIdb({ factory: () => factory })
     await expect(store.read('lesson_1.json')).rejects.toThrow('storage blocked')
+  })
+})
+
+describe('legacy IndexedDB migration', () => {
+  async function databaseNames(factory) {
+    return (await factory.databases()).map((entry) => entry.name)
+  }
+
+  it('copies records from the legacy database and deletes it', async () => {
+    const factory = new IDBFactory()
+    const legacy = createIdb({ factory: () => factory, name: LEGACY_IDB_NAME, legacyName: '' })
+    await legacy.write('lesson_1.json', encoder.encode('first'))
+    await legacy.write('lesson_2.json', encoder.encode('second'))
+    await legacy.close()
+
+    const store = createIdb({
+      factory: () => factory,
+      name: IDB_NAME,
+      legacyName: LEGACY_IDB_NAME,
+    })
+    expect(new TextDecoder().decode(await store.read('lesson_1.json'))).toBe('first')
+    expect(new TextDecoder().decode(await store.read('lesson_2.json'))).toBe('second')
+    await store.close()
+
+    const names = await databaseNames(factory)
+    expect(names).toContain(IDB_NAME)
+    expect(names).not.toContain(LEGACY_IDB_NAME)
+  })
+
+  it('keeps an already-populated new database and still drops the legacy name', async () => {
+    const factory = new IDBFactory()
+    const legacy = createIdb({ factory: () => factory, name: LEGACY_IDB_NAME, legacyName: '' })
+    await legacy.write('lesson_1.json', encoder.encode('old'))
+    await legacy.close()
+
+    const current = createIdb({ factory: () => factory, name: IDB_NAME, legacyName: '' })
+    await current.write('lesson_1.json', encoder.encode('new'))
+    await current.close()
+
+    const store = createIdb({
+      factory: () => factory,
+      name: IDB_NAME,
+      legacyName: LEGACY_IDB_NAME,
+    })
+    expect(new TextDecoder().decode(await store.read('lesson_1.json'))).toBe('new')
+    await store.close()
+
+    const names = await databaseNames(factory)
+    expect(names).toContain(IDB_NAME)
+    expect(names).not.toContain(LEGACY_IDB_NAME)
+  })
+
+  it('does not look for a legacy database when opened under a test name', async () => {
+    const factory = new IDBFactory()
+    const leftover = createIdb({ factory: () => factory, name: LEGACY_IDB_NAME, legacyName: '' })
+    await leftover.write('lesson_1.json', encoder.encode('keep'))
+    await leftover.close()
+
+    const store = createIdb({ factory: () => factory, name: 'test-isolated' })
+    await expect(store.read('lesson_1.json')).resolves.toBeNull()
+    await store.close()
+
+    const names = await databaseNames(factory)
+    expect(names).toContain(LEGACY_IDB_NAME)
+    expect(names).toContain('test-isolated')
   })
 })

@@ -60,13 +60,47 @@ Screens: `loading`, `home`, `picker`, `reader`, `toc`, `card`, `quiz`, `settings
 Commands own transitions; nothing derived is stored twice. `src/dict/library.js` holds verified data in memory, injected into commands; the session keeps only the small lesson summary the picker renders.
 
 Persistence is split: settings and lesson choices go to localStorage
-(`katsuyou-settings`) via `src/storage/settings.js`; the theme choice goes to
-`katsuyou-theme`; verified dictionary bytes and audio bins live in the two
+(`game-japanese-katsuyou-basic-settings`) via `src/storage/settings.js`; the theme choice goes to
+`game-japanese-katsuyou-basic-theme`; verified dictionary bytes and audio bins live in the two
 IndexedDB databases. `session.items`, `session.audio.verified`, `session.rule`,
 `session.quizSkipped`, the analytics container already loaded and the scroll
 memories are deliberately page-local
 run/screen state. `src/ui/bootstrap.js` restores settings after boot and loads
-the verified library before `home`.
+the verified library before `home`. Legacy `katsuyou-*` keys are migrated on
+first read/open (see Storage migration).
+
+## Storage migration
+
+The storage keys were renamed from the earlier `katsuyou-*` names to the
+`game-japanese-katsuyou-basic-*` names used throughout (all under Chrome's
+64-ASCII-byte IndexedDB name cap). The adapters migrate once and keep the old
+names exported as `LEGACY_*` constants.
+
+| Old | New |
+|---|---|
+| `katsuyou-settings` | `game-japanese-katsuyou-basic-settings` (37) |
+| `katsuyou-theme` | `game-japanese-katsuyou-basic-theme` (34) |
+| `katsuyou-dict` (store `lessons`) | `game-japanese-katsuyou-basic-dict` (33) |
+| `katsuyou-audio` (store `bins`) | `game-japanese-katsuyou-basic-audio` (34) |
+
+localStorage (`src/storage/settings.js`, `src/storage/theme.js`): on `load()`, if
+the new key is missing and the legacy key exists, the legacy value is copied to
+the new key and the old key is removed; if both exist, the new value is kept and
+the old key is dropped. `save()` writes only the new key, then tries to delete a
+leftover legacy key (a failed delete does not fail the save). A thrown read or
+write leaves the legacy key in place.
+
+IndexedDB (`src/storage/idb.js`, `src/storage/audio-idb.js`): on first `open()`,
+if a legacy database exists, every record in the same object store is copied into
+the new database when the new store is empty; existing new data is kept. After a
+successful copy — or when the new database already has data, or the legacy
+database was empty — the legacy database is deleted. If the copy fails and the
+new store is still empty while the legacy store had records, the old database is
+left for a later retry. Test databases with custom names do not auto-migrate.
+
+The Vite plugin names (`katsuyou-dictionary`, `katsuyou-audio-resource`) and the
+fetch User-Agent strings (`katsuyou-audio-fetch`, `katsuyou-audio-manifest`) were
+not renamed.
 
 ## File map
 ```text
@@ -87,7 +121,7 @@ src/commands/         index.js + specs for boot, nav, lessons, settings, study,
                       dict, card, quiz, rule, reader-rule, audio, theme
 src/dict/             forms, hash, archive (unzipit), boot, lessons, library,
                       quiz, ruby, settings, romaji, md5, audio-name/-bin/-entry/-player
-src/storage/          idb (katsuyou-dict / lessons), audio-idb (katsuyou-audio),
+src/storage/          idb (game-japanese-katsuyou-basic-dict / lessons), audio-idb (game-japanese-katsuyou-basic-audio),
                       settings.js + theme.js localStorage adapters
 src/study/            items, shuffle, reader-forms, highlight, card-tags, results,
                       toc, reader-audio, window-views, rule, rule-demo,
@@ -109,14 +143,14 @@ output/               gitignored build output (index.html, assets/, dict/)
 ## Dictionary delivery
 - **Manifest**: generated, committed `src/data/dict-manifest.json` with 50 lowercase-hex SHA-256 entries. `write-sha256.mjs --check` exits non-zero on a mismatch; `predev`, `pretest`, `prebuild` run it plus the audio check. `vol/` is read-only; revision 31 was a one-time authorized data-only exception (form-level `chinese` and misleading `note`, re-hashed afterwards) and no future edit is authorized.
 - **Archive**: one deterministic deflate ZIP `dict/vol.bin` (fixed timestamps, no `.zip` suffix, served `application/octet-stream`), 50 entries, 561,815 bytes (~549 KB) from 4,762 KB raw. `scripts/vol-archive.mjs` verifies every lesson against the manifest before packing, so a tampered source or manifest fails `npm run build`; `write-vol-archive.mjs --check` verifies without writing. Vite middleware serves it in dev and writes `output/dict/vol.bin` on build; no per-lesson JSON is published.
-- **Two-phase boot** (`src/dict/boot.js`): hash lessons already in IndexedDB `katsuyou-dict` / `lessons` and collect missing/corrupt ones (including empty lessons 1, 3, 8, 12); `boot.checked` counts verified lessons, `boot.total` is 50. Then fetch `dict/vol.bin` once, read lazy entries with `unzipit`, verify and store only matches. A failed download, unreadable archive, absent entry or hash mismatch is retried with a second download; anything still unverified sets `boot.error` and leaves `boot.done` false.
+- **Two-phase boot** (`src/dict/boot.js`): hash lessons already in IndexedDB `game-japanese-katsuyou-basic-dict` / `lessons` and collect missing/corrupt ones (including empty lessons 1, 3, 8, 12); `boot.checked` counts verified lessons, `boot.total` is 50. Then fetch `dict/vol.bin` once, read lazy entries with `unzipit`, verify and store only matches. A failed download, unreadable archive, absent entry or hash mismatch is retried with a second download; anything still unverified sets `boot.error` and leaves `boot.done` false.
 - **Progress**: pure `src/ui/boot-progress.js` maps the cache-check share, streamed bytes against `Content-Length` and a verification hold to a bar that never moves backwards; a retry restarts at the already-verified percentage.
 
 Live Pages site verified 2026-11-14: HTTP 200; `vol.bin` answers `application/octet-stream`. Loading-screen copy and retry: `spec.md`.
 
 ## Audio delivery
 - **Build**: `prebuild` runs `scripts/fetch-audio.mjs`, downloading 46 `lessonX.bin` files from the `res-miles` GitHub release into gitignored `dict/resource/`, sha256-verifying each against the release asset `digest` and regenerating `src/data/audio-manifest.json`. Release assets have no CORS, so same-origin build-time delivery is required. A Vite plugin copies the bins to `output/dict/resource/` and serves them in dev.
-- **Runtime**: `audio.play` lazily fetches `dict/resource/lessonX.bin`, sha256-verifies once per page session, caches it in `katsuyou-audio` IndexedDB, decompresses the single `<md5-mid16>.opus` entry (`src/dict/md5.js`, `audio-name.js`) and plays it through a Blob URL and `<audio>`. Any failure shows 「該音頻暫時無法播放」. Modules: `audio-bin.js`, `audio-entry.js`, `audio-player.js`, `study/reader-audio.js`, `commands/audio.js`. Targets, hover/playback states and copy: `spec.md`.
+- **Runtime**: `audio.play` lazily fetches `dict/resource/lessonX.bin`, sha256-verifies once per page session, caches it in `game-japanese-katsuyou-basic-audio` IndexedDB, decompresses the single `<md5-mid16>.opus` entry (`src/dict/md5.js`, `audio-name.js`) and plays it through a Blob URL and `<audio>`. Any failure shows 「該音頻暫時無法播放」. Modules: `audio-bin.js`, `audio-entry.js`, `audio-player.js`, `study/reader-audio.js`, `commands/audio.js`. Targets, hover/playback states and copy: `spec.md`.
 
 ## Analytics (revision 40)
 | Layer | Responsibility |
@@ -124,7 +158,7 @@ Live Pages site verified 2026-11-14: HTTP 200; `vol.bin` answers `application/oc
 | Config | `src/config/analytics.js`: `GTM_ID` / `GA4_ID` — the one file a developer edits; an empty string disables an ID |
 | Pure rules | `src/analytics/page-view.js`: `GTM-`/`G-` validation + trim/uppercase, per-screen title, `#/<screen>` page location, `page_view` payload |
 | Adapter | `src/analytics/gtm.js`: standard GTM snippet (dataLayer, `gtm.start`, one async `gtm.js` script) and gtag.js with `send_page_view: false`; pushes the dataLayer entry and the GA4 `page_view` per screen change |
-| Settings | none — `katsuyou-settings` has no analytics section; `src/storage/settings.js` drops a stale section from revision-40 storage on load |
+| Settings | none — `game-japanese-katsuyou-basic-settings` has no analytics section; `src/storage/settings.js` drops a stale section from revision-40 storage on load |
 | Entry | `src/main.js`: imports `GTM_ID` / `GA4_ID`, loads the container and the measurement tag once, watches `session.screen` |
 
 The container's own page view is the landing view; the site reports `loading` and the first `home`
@@ -135,7 +169,7 @@ the screen is named in `page_location` as `#/<screen>`. Payload fields, titles a
 ## Dark theme (revision 39)
 | Layer | Responsibility |
 |---|---|
-| Pure rules | `src/ui/theme.js`: `THEMES`, `THEME_KEY` (`katsuyou-theme`), `systemTheme`, `themeState`, `nextTheme` |
+| Pure rules | `src/ui/theme.js`: `THEMES`, `THEME_KEY` (`game-japanese-katsuyou-basic-theme`), `systemTheme`, `themeState`, `nextTheme` |
 | DOM adapter | `src/ui/theme-root.js`: `applyTheme`, `watchSystemTheme` |
 | Storage adapter | `src/storage/theme.js`: localStorage choice, non-fatal on failure |
 | Command | `src/commands/theme.js`: `theme.toggle` flips, marks `source: 'user'`, stores |

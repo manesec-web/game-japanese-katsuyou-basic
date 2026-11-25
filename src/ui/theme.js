@@ -7,7 +7,8 @@
 
 export const THEMES = ['light', 'dark']
 
-export const THEME_KEY = 'katsuyou-theme'
+export const THEME_KEY = 'game-japanese-katsuyou-basic-theme'
+export const LEGACY_THEME_KEY = 'katsuyou-theme'
 
 export function isTheme(value) {
   return THEMES.includes(value)

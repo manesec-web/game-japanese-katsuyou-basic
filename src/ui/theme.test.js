@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import {
   THEME_KEY,
+  LEGACY_THEME_KEY,
   THEMES,
   isTheme,
   nextTheme,
@@ -24,7 +25,7 @@ describe('theme rules', () => {
   })
 
   it('stores the key the storage adapter writes', () => {
-    expect(THEME_KEY).toBe('katsuyou-theme')
+    expect(THEME_KEY).toBe('game-japanese-katsuyou-basic-theme')
   })
 })
 
@@ -79,6 +80,7 @@ describe('theme storage', () => {
       data,
       getItem: (key) => (data.has(key) ? data.get(key) : null),
       setItem: (key, value) => data.set(key, value),
+      removeItem: (key) => data.delete(key),
     }
   }
 
@@ -111,5 +113,26 @@ describe('theme storage', () => {
     const theme = createThemeStorage({ storage })
     expect(theme.save('sepia')).toBe(false)
     expect(storage.data.has(THEME_KEY)).toBe(false)
+  })
+
+  it('uses a project-prefixed key within the 64-byte limit', () => {
+    expect(THEME_KEY).toBe('game-japanese-katsuyou-basic-theme')
+    expect(LEGACY_THEME_KEY).toBe('katsuyou-theme')
+    expect(THEME_KEY.length).toBeLessThanOrEqual(64)
+  })
+
+  it('migrates a legacy key and then stops using it', () => {
+    const storage = fakeStorage({ [LEGACY_THEME_KEY]: 'dark' })
+    const theme = createThemeStorage({ storage })
+    expect(theme.load()).toBe('dark')
+    expect(storage.getItem(THEME_KEY)).toBe('dark')
+    expect(storage.getItem(LEGACY_THEME_KEY)).toBe(null)
+  })
+
+  it('keeps the new key when both are present and drops the legacy key', () => {
+    const storage = fakeStorage({ [THEME_KEY]: 'light', [LEGACY_THEME_KEY]: 'dark' })
+    const theme = createThemeStorage({ storage })
+    expect(theme.load()).toBe('light')
+    expect(storage.getItem(LEGACY_THEME_KEY)).toBe(null)
   })
 })

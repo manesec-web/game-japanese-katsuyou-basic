@@ -32,9 +32,9 @@ Boot checks lesson 1 first, so any pre-dictionary problem appears there; the loa
 | Wrong directory / subpath | serve `output/` at `/game-japanese-katsuyou-basic/`; `curl -I http://localhost:8000/game-japanese-katsuyou-basic/dict/vol.bin` must be 200 |
 | Stale or partial build | `npm run build`; confirm `output/index.html`, `output/dict/vol.bin` and 46 bins in `output/dict/resource/` |
 | Insecure origin | localhost, HTTPS tunnel or GitHub Pages (Web Crypto required) |
-| Blocked IndexedDB (`katsuyou-dict`) | unblock storage / clear site data |
-| Corrupt cache still failing after two archive downloads | clear site data (or delete `katsuyou-dict`) and retry |
-| Missing / corrupt audio bin | 「該音頻暫時無法播放」 on tap, not a boot failure; run `node scripts/fetch-audio.mjs` (or `npm run build`) with network access; clear `katsuyou-audio` if cached |
+| Blocked IndexedDB (`game-japanese-katsuyou-basic-dict`) | unblock storage / clear site data |
+| Corrupt cache still failing after two archive downloads | clear site data (or delete `game-japanese-katsuyou-basic-dict`) and retry |
+| Missing / corrupt audio bin | 「該音頻暫時無法播放」 on tap, not a boot failure; run `node scripts/fetch-audio.mjs` (or `npm run build`) with network access; clear `game-japanese-katsuyou-basic-audio` if cached |
 
 `prebuild` regenerates the 210 變形說明 entries and fetches the audio bins, so `npm run build` needs network access to the `res-miles` release; a stale manifest fails `predev` / `pretest` / `prebuild` and the archive build.
 
